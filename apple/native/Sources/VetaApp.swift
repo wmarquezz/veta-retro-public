@@ -99,13 +99,8 @@ struct LibraryView:View {
     var body:some View {
         NavigationStack {
             VStack(spacing:0) {
-                HStack {
-                    VetaBrand();Spacer()
-                    Button {settings=true} label:{
-                        if dynamicTypeSize.isAccessibilitySize {Image(systemName:"slider.horizontal.3").font(.system(size:22)).accessibilityLabel("Ajustes")}
-                        else {Label("Ajustes",systemImage:"slider.horizontal.3")}
-                    }.buttonStyle(VetaButton()).accessibilityIdentifier("open-settings")
-                }.padding(.horizontal,20).padding(.top,8).padding(.bottom,14)
+                VetaLibraryHeader(openSettings: {settings=true})
+                    .padding(.horizontal,20).padding(.top,8).padding(.bottom,14)
                 if dynamicTypeSize.isAccessibilitySize {
                     Picker("Biblioteca",selection:$filter) {
                         ForEach(tabs,id:\.self) {tab in Text(LocalizedStringKey(tab)).tag(tab)}

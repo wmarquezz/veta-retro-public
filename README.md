@@ -1,3 +1,7 @@
+## Apoyar VETA189 · invitación en biblioteca
+
+Acceso junto a Ajustes; se oculta después de un aporte verificado y se recuerda localmente. Ajustes conserva el acceso. [Alcance y validación](docs/APOYAR-VETA-189.md). Fuentes completas en v0.189.0.
+
 ## Aportes188 · opcionales y sin suscripción
 
 VETA conserva todas sus funciones gratuitas. StoreKit2 preparado para aportes de CLP $4.990 / $9.990 / $15.990 con Chile como base. Productos en borrador: sin cobros reales habilitados. Validación y pendientes en [Apoyar VETA](docs/APOYAR-VETA-188.md). Fuentes completas en v0.188.0.

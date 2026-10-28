@@ -1656,8 +1656,8 @@
         "path": "Info.plist",
         "properties": {
           "CFBundleDisplayName": "VETA-Retro",
-          "CFBundleShortVersionString": "0.179.0",
-          "CFBundleVersion": "179",
+          "CFBundleShortVersionString": "0.189.0",
+          "CFBundleVersion": "189",
           "UIAppFonts": [
             "Content/Fonts/BarlowCondensed-Bold.ttf",
             "Content/Fonts/Manrope.ttf"
@@ -1742,8 +1742,8 @@
           "SWIFT_OPTIMIZATION_LEVEL": "-O",
           "GCC_OPTIMIZATION_LEVEL": "2",
           "CLANG_CXX_LANGUAGE_STANDARD": "gnu++17",
-          "CURRENT_PROJECT_VERSION": "188",
-          "MARKETING_VERSION": "0.188.0",
+          "CURRENT_PROJECT_VERSION": "189",
+          "MARKETING_VERSION": "0.189.0",
           "IPHONEOS_DEPLOYMENT_TARGET": "17.4",
           "SWIFT_ACTIVE_COMPILATION_CONDITIONS": [
             "$(inherited)",

@@ -22,6 +22,9 @@ enum VetaContribution: String, CaseIterable, Identifiable {
     @Published private(set) var purchasingID: String?
     @Published private(set) var feedback: Feedback?
     @Published private(set) var loadFailed = false
+    @Published private(set) var hasContributed: Bool
+    private let defaults: UserDefaults
+    static let contributionAcknowledgedKey = "native.support.contributionAcknowledged.v1"
     enum Feedback: Equatable {
         case thanks, cancelled, pending, failed, unverified, unavailable
         var message: String {
@@ -38,7 +41,9 @@ enum VetaContribution: String, CaseIterable, Identifiable {
     private var updates: Task<Void,Never>?
     private var recovery: Task<Void,Never>?
     private var handled = Set<UInt64>()
-    init(listenForTransactions: Bool = true) {
+    init(listenForTransactions: Bool = true, defaults: UserDefaults = .standard) {
+        self.defaults = defaults
+        hasContributed = defaults.bool(forKey: Self.contributionAcknowledgedKey)
         guard listenForTransactions else { return }
         updates = Task { [weak self] in
             for await result in StoreKit.Transaction.updates {
@@ -91,8 +96,17 @@ enum VetaContribution: String, CaseIterable, Identifiable {
         guard case .verified(let transaction) = result else { feedback = .unverified; return }
         guard transaction.productType == .consumable else { return }
         guard handled.insert(transaction.id).inserted else { return }
-        if transaction.revocationDate == nil { feedback = .thanks }
+        if transaction.revocationDate == nil {
+            recordVerifiedContribution()
+            feedback = .thanks
+        }
         await transaction.finish()
+    }
+    // A local courtesy preference, not an entitlement or a restore-purchases ledger.
+    // Called only after verification of an eligible, non-revoked contribution.
+    func recordVerifiedContribution() {
+        defaults.set(true, forKey: Self.contributionAcknowledgedKey)
+        hasContributed = true
     }
 }
 

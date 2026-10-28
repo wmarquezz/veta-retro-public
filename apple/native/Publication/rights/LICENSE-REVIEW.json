@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "reviewDate": "2026-10-28",
-  "reviewedInstalledVersion": "0.181.0",
+  "reviewedInstalledVersion": "0.188.0",
   "remediationVersion": "0.182.0",
   "technicalReviewPerformed": true,
-  "sourceVersion": "0.181.0",
-  "sourceArchiveSHA256": "12f76fffc23dfafaf71f925d35d0c73a91a454efe21732549a37520795bf1e03",
-  "sourceURL": "https://github.com/wmarquezz/veta-retro-public/releases/download/v0.181.0/VETA-Retro-public-sources-181.tar.gz",
+  "sourceVersion": "0.188.0",
+  "sourceArchiveSHA256": "9510602ebb3090ac737078fd4c8f1447346b73b44f5af6ec8722c51c183f8fe7",
+  "sourceURL": "https://github.com/wmarquezz/veta-retro-public/releases/download/v0.188.0/VETA-Retro-public-sources-188.tar.gz",
   "attributionRemediation": "ThirdPartyNotices.txt with 667 upstream notices / 304 unique texts",
   "appStoreDistributionCleared": false,
   "blockers": [
@@ -14,19 +14,20 @@
       "id": "DIST-01",
       "status": "unresolved",
       "scope": "GPL and actual App Store channel terms",
-      "evidence": "Publication/rights/REVIEW-182.md",
+      "evidence": "Publication/rights/REVIEW-188.md",
       "closeWhen": "Documented applicable compatibility analysis or sufficient permissions from affected rights holders"
     },
     {
       "id": "ART-01",
       "status": "provenance-recorded-rights-not-established",
-      "scope": "User-supplied Studio skins and CRT logo",
+      "scope": "User-supplied Studio skins and current V-with-controller logo187; historical CRT recorded separately",
       "closeWhen": "Assess specific output/reference relationship and relevant rights, obtain needed permission, or replace affected art with an independently designed asset",
       "evidence": "Publication/rights/ART-PROVENANCE.json"
     }
   ],
-  "candidatePublished": false,
-  "candidateInstalled": false,
-  "publicationStatus": "prepared-for-source-release-182",
-  "distributionDecision": "Publication/rights/DISTRIBUTION-DECISION-182.md"
+  "candidatePublished": true,
+  "candidateInstalled": true,
+  "publicationStatus": "sources188-published-installed-appstore-rights-unresolved",
+  "distributionDecision": "Publication/rights/DISTRIBUTION-DECISION-182.md",
+  "currentReview": "Publication/rights/REVIEW-188.md"
 }

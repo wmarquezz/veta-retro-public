@@ -21,7 +21,8 @@
     "27-10-2026: catálogo público de 2 títulos MIT fijado y 8 pruebas de empaquetado PASS; docs/CATALOGO-PUBLICO-MINIMO.md. Falta Archive y derechos globales.",
     "28-10-2026: paquete local de fuentes176-d, 92576 archivos con hashes y preparación desde copia limpia PASS; LICENSE-MATRIX-176.md. Atari Tia sustituye Stella2014. Sin publicación ni correspondencia con Archive de distribución definitivo.",
     "28-10-2026: separación179: PS2 fuera del target público; 19 consolas, fuente179 con URL prevista y prueba de ambas variantes del catálogo PASS. Instalación limpia y publicación se acreditan en ENTREGA-179. El Archive final y revisión Apple son etapas separadas.",
-    "28-10-2026: revisión182 documentada. Inventario181, fuentes públicas verificadas, dos juegos MIT y recursos fijados; avisos adicionales corregidos182. DIST-01: compatibilidad GPL/canal App Store sin acreditación; ART-01: procedencia declarada (ChatGPT, fotos propias NES/SNES y referencias de Internet restantes); evaluación de derechos específica no acreditada. No marcar derechos globales como autorizados."
+    "28-10-2026: revisión182 documentada. Inventario181, fuentes públicas verificadas, dos juegos MIT y recursos fijados; avisos adicionales corregidos182. DIST-01: compatibilidad GPL/canal App Store sin acreditación; ART-01: procedencia declarada (ChatGPT, fotos propias NES/SNES y referencias de Internet restantes); evaluación de derechos específica no acreditada. No marcar derechos globales como autorizados.",
+    "28-10-2026: revisión vigente188 e inventario actualizado en rights/REVIEW-188.md. Fuentes188 publicadas, paquete188 instalado; DIST-01 yART-01 sin nueva autorización acreditada. Sin cambios de motores, skins o teléfono."
   ],
   "licenseReviewRecord": "Publication/rights/LICENSE-REVIEW.json"
 }

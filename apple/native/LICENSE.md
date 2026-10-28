@@ -39,5 +39,6 @@ Al distribuir binarios debe facilitarse el código fuente correspondiente,
 incluidos los cambios y los materiales de compilación exigidos por cada
 licencia. Un archivo parcial de fuentes no satisface por sí solo ese deber.
 
-Esta aplicación de licencia está preparada localmente. No afirma que el código
-ya esté publicado ni que exista una versión aprobada por App Store.
+Las fuentes de la edición pública se publican por versión en
+https://github.com/wmarquezz/veta-retro-public/releases . Esta concesión no
+constituye una autorización de terceros ni una aprobación de App Store.

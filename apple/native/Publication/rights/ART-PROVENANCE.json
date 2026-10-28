@@ -1,0 +1,249 @@
+{
+  "date": "2026-10-28",
+  "method": "user declaration and SVG structural inspection",
+  "generation": "ChatGPT using reference photos of original controllers",
+  "referencePhotos": {
+    "NES": "user reports own photos",
+    "SNES": "user reports own photos",
+    "otherControllers": "Internet; URLs and permissions not provided"
+  },
+  "logo": "CRT logo supplied by user; initial answer grouped it with ChatGPT designs, individual photo origin not established",
+  "svgInspection": [
+    {
+      "asset": "atari2600/horizontal/skin.svg",
+      "sha256": "169d906989328e94d07d28b170774f655b9af4a105433a109675a2c6c2d9c776",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "atari2600/vertical/skin.svg",
+      "sha256": "e6cce85ad46f2c4f315e5a5910c4f7772292f210731fa378a1922f9dc5163881",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "dreamcast/horizontal/skin.svg",
+      "sha256": "a9c452de56f2542dda9d55ae5dcf0c08d2c17056b278799e258130c182754777",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "dreamcast/vertical/skin.svg",
+      "sha256": "9b63774896f96021c9b5646194e6e503b3d1b88db82bd41d24cac496f2484afe",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "ds/horizontal/skin.svg",
+      "sha256": "cfaa7ab409a6ccdeeaef62f76ca8e3fb7d80c045eaf2c82ca8e425512737323d",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "ds/vertical/skin.svg",
+      "sha256": "36e35a2b2129c005fced0bc479cab8b25eff4a2d48b4b236eff8d7ea719f623f",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "gameGear/horizontal/skin.svg",
+      "sha256": "e4e5f977e201f3baad59b4fe754dc4e7c7824f37f60e895b3f33ba3128334a65",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "gameGear/vertical/skin.svg",
+      "sha256": "88a07733358ba2a719d23010e9964000a372468caf1939510509fe4fd8bafb32",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "gamecube/horizontal/skin.svg",
+      "sha256": "51b5d10a7ded2cc0e941cf0309f7c03ffb663a246419580d8992505f6140d680",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "gamecube/vertical/skin.svg",
+      "sha256": "93d8a8964c01716a809a635692bbee8f3616d8eff538693fc2ea276380536cf6",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "gb/horizontal/skin.svg",
+      "sha256": "282c59bed1db197823339a0f1e737cb4eb8c819b986d74f38f7dfa567f688508",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "gb/vertical/skin.svg",
+      "sha256": "d2a9718cb3ea710acfd2005a76002131c396ef2dc07c195754276b7e90b47f32",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "gba/horizontal/skin.svg",
+      "sha256": "8d30cbe5b431bcaebcca13302bff45dad2677ca64ebdabc680b2eec63da0e349",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "gba/vertical/skin.svg",
+      "sha256": "0fa46188dcb5d53ae2ee30b75a9c106d94f7202d267f5f3f917624a39a920b2d",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "gbc/horizontal/skin.svg",
+      "sha256": "bef8a8c3fc147966cd9fe1d0cd8c45ed62ce88231468a11356e539b5f59407bf",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "gbc/vertical/skin.svg",
+      "sha256": "db49ac56529c2bfd624e1a5abc75b062711853569190fd788af603116229c330",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "masterSystem/horizontal/skin.svg",
+      "sha256": "b51b0a7a38ad1fd182e487c57585195415965b2c65c38ed47d696255bbb19bbd",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "masterSystem/vertical/skin.svg",
+      "sha256": "c78d1198170e8df99e97001a88ddbce8117d93bb4d5c5500db4185601c760320",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "megaDrive/horizontal/skin.svg",
+      "sha256": "a351a864728223b5cabee1d512a5d92ad111fd2987bd50c1cefa12c4d3cd6e66",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "megaDrive/vertical/skin.svg",
+      "sha256": "c6b210d7f220565208c0bbf7c94b962bc8ff246998c4c0947b4c3e3cef03c908",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "n64/horizontal/skin.svg",
+      "sha256": "40be9be20e78b06434591f5923608431a5a2bc5012f3e0eb568cf37e54f59de2",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "n64/vertical/skin.svg",
+      "sha256": "34c9e4e31a3def824e7abff2595c75b794f684adef003169969325ce21450f00",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "nes/horizontal/skin.svg",
+      "sha256": "38adf81969930bb6b1d7a8f0dc58d66a1e07dc529175ad15499f151d1ead48c4",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "nes/vertical/skin.svg",
+      "sha256": "5e4f49e569a9dbe8b96b020ef91257fefca8c5e6758dc53a8eb693c652933d15",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "pcEngine/horizontal/skin.svg",
+      "sha256": "05931b4c1e920f74090d520b76ff7cfce9a8c385e911d9a6db6f55acd9f6eb26",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "pcEngine/vertical/skin.svg",
+      "sha256": "505da4ff3c413046cb97a87a43bbdc33a0928fda0a21bfa9850632a7bf797a04",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "ps1/horizontal/skin.svg",
+      "sha256": "f91fdbda751ec485e060161a385773eaa7bb3ead197627b36a01d550de6d1836",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "ps1/vertical/skin.svg",
+      "sha256": "a9874c34bf82f846e13f38717fff47453d5943ad1357a9471417d8a870f544c5",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "psp/horizontal/skin.svg",
+      "sha256": "28972d55d7c5205b3856877f29005b313a425a3b911b09606bd47e26e23fd885",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "psp/vertical/skin.svg",
+      "sha256": "6c704a692337003ce41092a96fc0f87d77c0bf5ab313b33c96594daabb16da5b",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "saturn/horizontal/skin.svg",
+      "sha256": "f0162e2ada6a3f7ddf41999ebff8bbae3b24d329497d94054c4ede44f5658a23",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "saturn/vertical/skin.svg",
+      "sha256": "ad753cb04bc9a191d9d43f024c7900602e2998daed568b8febd87d251358915c",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "snes/horizontal/skin.svg",
+      "sha256": "429ff0d66be6c88c809fcf64fa180cd4c7ec238f2bbde0e88117f92380be64fd",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "snes/vertical/skin.svg",
+      "sha256": "029bd0ec48c48927facb2384d285cef641f064117b1a31e6ed343183273cef4a",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "threeDS/horizontal/skin.svg",
+      "sha256": "3b3b83f3f655e0d5e18e93f4181ec7b20c9b795c1c5eecb09683ab88bd0b01ac",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "threeDS/vertical/skin.svg",
+      "sha256": "70b980bd9c88f4197ba1d3df147d5a264cea02f29718c73c1efb6d3ae788ec1a",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "wii/horizontal/skin.svg",
+      "sha256": "f5f58b00f0ee73e1d2ac67ae3124c56d41914e1b9648f575aacc2d2649664bb9",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    },
+    {
+      "asset": "wii/vertical/skin.svg",
+      "sha256": "a2e030dd485afc99a207bdf53fdb2628dfaceb250b968dc33be5e43d72b661fc",
+      "embeddedImages": 0,
+      "imageReferences": 0
+    }
+  ],
+  "limits": [
+    "No raster photos or image references embedded in the 38 inspected SVGs. This does not establish whether vector shapes reproduce protected expression.",
+    "NES and PS1 PNG previews inspected visually; no comparison with original reference photographs possible.",
+    "No finding of infringement established. Internet origin alone does not establish infringement or license.",
+    "AI generation does not grant rights in third-party inputs, trademarks or designs."
+  ],
+  "distributionRightsCleared": false,
+  "source": "https://openai.com/policies/row-terms-of-use/"
+}

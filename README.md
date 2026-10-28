@@ -1,3 +1,10 @@
+## Avisos y fuentes182
+
+La entrega182 incorpora los avisos completos de dependencias a los créditos,
+verifica su integridad al empaquetar y conserva los15frameworks y19skins de181.
+No es autorización ni distribuciónAppStore. Ver
+apple/native/Publication/rights/DISTRIBUTION-DECISION-182.md.
+
 # VETA Retro — fuentes de la edición pública
 
 Fuentes de la edición pública 0.181.0, preparadas el 28-10-2026. Contribuciones originales bajo

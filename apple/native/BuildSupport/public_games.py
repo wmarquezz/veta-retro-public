@@ -128,6 +128,10 @@ def audit(app, base=BASE):
             path = folder / name
             if not path.is_file() or path.is_symlink() or digest(path) != expected:
                 errors.append('Game resource hash mismatch: ' + game['id'] + '/' + name)
+    notice_index = json.loads((base / 'Publication/rights/THIRD-PARTY-NOTICES.json').read_text())
+    notices = content / 'ThirdPartyNotices.txt'
+    if not notices.is_file() or digest(notices) != notice_index['outputSHA256']:
+        errors.append('Missing or modified third-party attribution notices')
     from public_font_assets import audit as audit_fonts
     errors.extend(audit_fonts(content, base))
     return errors

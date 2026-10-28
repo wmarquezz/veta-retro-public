@@ -69,7 +69,8 @@
     "MoltenVKLicense.txt",
     "mGBA-LICENSE.txt",
     "xBR-LICENSE.txt",
-    "PPSSPP-FONTS-LICENSE.txt"
+    "PPSSPP-FONTS-LICENSE.txt",
+    "ThirdPartyNotices.txt"
   ],
   "scope": "Public native candidate only. Engine rights, artwork and final store review remain separate. No personal library changes."
 }

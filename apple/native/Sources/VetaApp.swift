@@ -505,7 +505,12 @@ struct LibraryView:View {
         let name=DiscoverGame.catalog.first(where:{$0.title == game.name && $0.console == game.console})?.bundled ?? Library.demoNames.first(where:{$0.value == game.name})?.key ?? ""
         return Bundle.main.url(forResource:"screen",withExtension:"png",subdirectory:"Content/\(name)")
     }
-    private func extraEngineLicenses()->String {guard let url=Bundle.main.url(forResource:"EngineLicenses",withExtension:"txt",subdirectory:"Content") else{return L10n.text("No se encontraron las licencias.")};return (try? String(contentsOf:url)) ?? ""}
+    private func extraEngineLicenses()->String {
+        let notices=["ThirdPartyNotices","EngineLicenses"].compactMap {name in
+            Bundle.main.url(forResource:name,withExtension:"txt",subdirectory:"Content").flatMap {try? String(contentsOf:$0,encoding:.utf8)}
+        }
+        return notices.isEmpty ? L10n.text("No se encontraron las licencias."):notices.joined(separator:"\n\n")
+    }
     private func license()->String {(try? String(contentsOf:Bundle.main.url(forResource:"FCEUmm-COPYING",withExtension:"txt",subdirectory:"Content")!)) ?? ""}
 }
 struct GameSurface:UIViewControllerRepresentable {

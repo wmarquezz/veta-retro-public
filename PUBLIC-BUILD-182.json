@@ -1,0 +1,27 @@
+{
+  "candidate": "Public182-c",
+  "version": "0.182.0",
+  "installed": false,
+  "published": false,
+  "mainExecutableSHA256": "2a14efd5e140232780444bb628f6cd7f974a5be7f3999f95667110fd505eb641",
+  "unchangedEngineSectionsComparedWith181": [
+    "BSNESCore",
+    "DSCore",
+    "DolphinCore",
+    "DreamcastCore",
+    "DreamcastInterpreterCore",
+    "JGenesisCore",
+    "MelonDSCore",
+    "MoltenVK",
+    "N64NextCore",
+    "PCECore",
+    "PSPCore",
+    "PlayStationCore",
+    "SaturnCore",
+    "TIACore",
+    "ThreeDSCore"
+  ],
+  "unchangedSkinPackages": 19,
+  "noticesSHA256": "69fec8588f60deeb52f3a677cd6759112d88a326b9d9c0c23389743debdbc178",
+  "signatureValidation": "PASS"
+}

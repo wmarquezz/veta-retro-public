@@ -981,3 +981,30 @@
 "Activo: %@" = "当前：%@";
 "Esta es la apariencia que usarás al jugar en la orientación elegida." = "这是在所选屏幕方向下游玩时使用的外观。";
 "Skins incluidos" = "内置皮肤";
+
+/* Voluntary support, version 188 */
+"Apoyar VETA" = "支持 VETA";
+"Un impulso" = "一份鼓励";
+"Un gran apoyo" = "一份大力支持";
+"Apoyo extra" = "额外支持";
+"Aporte único" = "一次性支持";
+", aporte único" = "，一次性支持";
+"Consultando aportes…" = "正在加载支持选项…";
+"Volver a consultar" = "重试";
+"Funciones gratuitas" = "免费功能";
+"VETA es gratuita. Si te gusta, puedes ayudar a mantenerla y mejorarla con un aporte voluntario." = "VETA 免费使用。如果你喜欢，可以自愿支持，帮助维护和改进应用。";
+"Pago único. Sin suscripción. No desbloquea funciones adicionales." = "一次性付款。无订阅，不解锁额外功能。";
+"Aporte voluntario. Todas las funciones siguen siendo gratuitas." = "自愿支持。所有功能仍然免费。";
+"Las compras están restringidas en este dispositivo." = "此设备限制购买。";
+"No pudimos consultar los aportes. Revisa tu conexión." = "无法加载支持选项。请检查网络连接。";
+"Los aportes todavía no están disponibles. Puedes seguir disfrutando de VETA gratis." = "支持选项暂不可用。你可以继续免费使用 VETA。";
+"¡Gracias por apoyar VETA! Tu aporte ayuda a mantener y mejorar la app." = "感谢支持 VETA！你的支持帮助维护和改进应用。";
+"Aporte cancelado. Puedes seguir usando VETA con normalidad." = "支持已取消。你可以继续正常使用 VETA。";
+"Apple está esperando la aprobación del aporte. Puedes seguir jugando; te confirmaremos cuando se complete." = "Apple 正在等待批准。你可以继续游戏，完成后我们会确认。";
+"No se pudo completar el aporte. Revisa tu conexión e inténtalo de nuevo." = "无法完成支持。请检查网络连接后重试。";
+"No pudimos verificar el aporte con Apple. No vuelvas a pagar para resolverlo; consulta tu historial de compras o contacta con soporte." = "无法向 Apple 验证支持。请勿再次付款来解决此问题；查看购买记录或联系支持。";
+"Este aporte no está disponible ahora. Todas las funciones de VETA siguen disponibles." = "此支持选项暂不可用。VETA 所有功能仍可使用。";
+"Apple te mostrará el importe antes de confirmar. Cada aporte es independiente; sólo se repite si vuelves a elegirlo." = "Apple 会在确认前显示金额。每次支持均独立，仅在你再次选择时才会重复。";
+"Gracias también por jugar. Tus juegos, partidas y controles funcionan igual aunque no aportes." = "也感谢你来玩。即使不支持，游戏、存档和控制功能也完全相同。";
+"Las funciones de esta versión son gratuitas. Los aportes de Apoyar VETA son voluntarios y no desbloquean funciones adicionales." = "此版本的功能免费。支持 VETA 的贡献自愿，不解锁额外功能。";
+"Los aportes voluntarios se procesan mediante compras de Apple. VETA verifica y finaliza la transacción en el dispositivo; no recibe tus datos de tarjeta ni envía tus juegos o partidas para realizar el aporte." = "自愿支持通过 Apple 应用内购买处理。VETA 在设备上验证并完成交易，不接收银行卡信息，也不发送游戏或存档。";

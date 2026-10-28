@@ -1,3 +1,7 @@
+## Aportes188 · opcionales y sin suscripción
+
+VETA conserva todas sus funciones gratuitas. StoreKit2 preparado para aportes de CLP $4.990 / $9.990 / $15.990 con Chile como base. Productos en borrador: sin cobros reales habilitados. Validación y pendientes en [Apoyar VETA](docs/APOYAR-VETA-188.md). Fuentes completas en v0.188.0.
+
 ## Marca187 · V con control integrado
 
 ![VETA Retro](apple/native/Sources/Assets.xcassets/VetaLogo.imageset/VetaLogo.png)

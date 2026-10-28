@@ -1,0 +1,76 @@
+{
+  "identifier": "VETA-Support-188",
+  "nonRenewingSubscriptions": [],
+  "products": [
+    {
+      "displayPrice": "4990",
+      "familyShareable": false,
+      "internalID": "18801",
+      "localizations": [
+        {
+          "description": "Aporte voluntario de pago único. Sin suscripción ni funciones adicionales.",
+          "displayName": "Un impulso",
+          "locale": "es_MX"
+        },
+        {
+          "description": "Optional one-time tip. No subscription or additional features.",
+          "displayName": "A boost",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.krafify.vetaretro.support.small",
+      "referenceName": "VETA Support Small",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "9990",
+      "familyShareable": false,
+      "internalID": "18802",
+      "localizations": [
+        {
+          "description": "Aporte voluntario de pago único. Sin suscripción ni funciones adicionales.",
+          "displayName": "Un gran apoyo",
+          "locale": "es_MX"
+        },
+        {
+          "description": "Optional one-time tip. No subscription or additional features.",
+          "displayName": "A big thank you",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.krafify.vetaretro.support.medium",
+      "referenceName": "VETA Support Medium",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "15990",
+      "familyShareable": false,
+      "internalID": "18803",
+      "localizations": [
+        {
+          "description": "Aporte voluntario de pago único. Sin suscripción ni funciones adicionales.",
+          "displayName": "Apoyo extra",
+          "locale": "es_MX"
+        },
+        {
+          "description": "Optional one-time tip. No subscription or additional features.",
+          "displayName": "Extra support",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.krafify.vetaretro.support.large",
+      "referenceName": "VETA Support Large",
+      "type": "Consumable"
+    }
+  ],
+  "settings": {
+    "_failTransactionsEnabled": false,
+    "_locale": "es_MX",
+    "_storefront": "CHL"
+  },
+  "subscriptionGroups": [],
+  "version": {
+    "major": 3,
+    "minor": 0
+  }
+}

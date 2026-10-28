@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "appStoreConnectAppID": "6828144522",
+  "baseTerritory": "CHL",
+  "currency": "CLP",
+  "primaryLocale": "es-MX",
+  "type": "consumable",
+  "optional": true,
+  "recurring": false,
+  "unlocksFeatures": false,
+  "products": [
+    {
+      "id": "com.krafify.vetaretro.support.small",
+      "referenceName": "VETA Support Small",
+      "price": 4990,
+      "name": "Un impulso para VETA",
+      "appStoreConnectID": "6828145732",
+      "status": "READY_TO_SUBMIT_DRAFT",
+      "priceSaved": true,
+      "localizationSaved": "es-MX"
+    },
+    {
+      "id": "com.krafify.vetaretro.support.medium",
+      "referenceName": "VETA Support Medium",
+      "price": 9990,
+      "name": "Un gran apoyo para VETA",
+      "appStoreConnectID": "6828147796",
+      "status": "READY_TO_SUBMIT_DRAFT",
+      "priceSaved": true,
+      "localizationSaved": "es-MX"
+    },
+    {
+      "id": "com.krafify.vetaretro.support.large",
+      "referenceName": "VETA Support Large",
+      "price": 15990,
+      "name": "Apoyo extra para VETA",
+      "appStoreConnectID": "6828148596",
+      "status": "READY_TO_SUBMIT_DRAFT",
+      "priceSaved": true,
+      "localizationSaved": "es-MX"
+    }
+  ],
+  "productionApproved": false,
+  "note": "Precios y localización guardados en App Store Connect. No enviados ni aprobados. Los importes efectivos siempre proceden de Product.displayPrice."
+}

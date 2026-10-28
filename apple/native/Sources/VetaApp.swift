@@ -4,6 +4,7 @@ import UniformTypeIdentifiers
 @main struct VetaApp: App {
     @StateObject private var library:Library
     init() {
+        _ = VetaSupportStore.shared
         #if DEBUG && VETA_JIT_DEVELOPMENT
         _library = StateObject(wrappedValue: PS2Retail165Bootstrap.requested ? Library(root:PS2Retail165Bootstrap.libraryRoot) : Library())
         #else
@@ -430,6 +431,11 @@ struct LibraryView:View {
                     } else {
                         Text("Importa sólo juegos, BIOS e imágenes que tengas derecho a usar. Una descarga gratuita no concede por sí sola permiso para redistribuirla.").font(.caption).foregroundStyle(VetaTheme.muted)
                     }
+                }.listRowBackground(VetaTheme.panel)
+                Section {
+                    NavigationLink {SupportVetaView()} label: {Label("Apoyar VETA",systemImage:"heart")}
+                        .accessibilityIdentifier("support-veta")
+                    Text("Aporte voluntario. Todas las funciones siguen siendo gratuitas.").font(.footnote).foregroundStyle(VetaTheme.muted)
                 }.listRowBackground(VetaTheme.panel)
                 Section("Ayuda y privacidad") {
                     NavigationLink("Privacidad y datos") {PrivacyDetailsView()}.accessibilityIdentifier("privacy-details")

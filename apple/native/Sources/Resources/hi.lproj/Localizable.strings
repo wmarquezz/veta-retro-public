@@ -981,3 +981,30 @@
 "Activo: %@" = "सक्रिय: %@";
 "Esta es la apariencia que usarás al jugar en la orientación elegida." = "चुनी गई दिशा में खेलते समय यही रूप इस्तेमाल होगा।";
 "Skins incluidos" = "शामिल स्किन";
+
+/* Voluntary support, version 188 */
+"Apoyar VETA" = "VETA का समर्थन करें";
+"Un impulso" = "एक प्रोत्साहन";
+"Un gran apoyo" = "बड़ा समर्थन";
+"Apoyo extra" = "अतिरिक्त समर्थन";
+"Aporte único" = "एक बार का योगदान";
+", aporte único" = ", एक बार का योगदान";
+"Consultando aportes…" = "योगदान विकल्प लोड हो रहे हैं…";
+"Volver a consultar" = "फिर कोशिश करें";
+"Funciones gratuitas" = "मुफ़्त सुविधाएँ";
+"VETA es gratuita. Si te gusta, puedes ayudar a mantenerla y mejorarla con un aporte voluntario." = "VETA मुफ़्त है। यदि आपको पसंद है, तो स्वैच्छिक योगदान से ऐप के रखरखाव और सुधार में मदद कर सकते हैं।";
+"Pago único. Sin suscripción. No desbloquea funciones adicionales." = "एक बार भुगतान। कोई सदस्यता नहीं। अतिरिक्त सुविधाएँ अनलॉक नहीं होतीं।";
+"Aporte voluntario. Todas las funciones siguen siendo gratuitas." = "स्वैच्छिक योगदान। सभी सुविधाएँ मुफ़्त रहती हैं।";
+"Las compras están restringidas en este dispositivo." = "इस डिवाइस पर खरीदारी प्रतिबंधित है।";
+"No pudimos consultar los aportes. Revisa tu conexión." = "योगदान विकल्प लोड नहीं हुए। कनेक्शन जाँचें।";
+"Los aportes todavía no están disponibles. Puedes seguir disfrutando de VETA gratis." = "योगदान अभी उपलब्ध नहीं हैं। VETA का मुफ़्त आनंद लेते रहें।";
+"¡Gracias por apoyar VETA! Tu aporte ayuda a mantener y mejorar la app." = "VETA का समर्थन करने के लिए धन्यवाद! आपका योगदान ऐप के रखरखाव और सुधार में मदद करता है।";
+"Aporte cancelado. Puedes seguir usando VETA con normalidad." = "योगदान रद्द हुआ। VETA सामान्य रूप से इस्तेमाल कर सकते हैं।";
+"Apple está esperando la aprobación del aporte. Puedes seguir jugando; te confirmaremos cuando se complete." = "Apple स्वीकृति की प्रतीक्षा कर रहा है। खेलते रहें; योगदान पूरा होने पर पुष्टि करेंगे।";
+"No se pudo completar el aporte. Revisa tu conexión e inténtalo de nuevo." = "योगदान पूरा नहीं हुआ। कनेक्शन जाँचकर फिर कोशिश करें।";
+"No pudimos verificar el aporte con Apple. No vuelvas a pagar para resolverlo; consulta tu historial de compras o contacta con soporte." = "Apple से योगदान सत्यापित नहीं हुआ। इसे ठीक करने के लिए दोबारा भुगतान न करें; खरीद इतिहास देखें या सहायता लें।";
+"Este aporte no está disponible ahora. Todas las funciones de VETA siguen disponibles." = "यह योगदान अभी उपलब्ध नहीं है। VETA की सभी सुविधाएँ उपलब्ध हैं।";
+"Apple te mostrará el importe antes de confirmar. Cada aporte es independiente; sólo se repite si vuelves a elegirlo." = "पुष्टि से पहले Apple राशि दिखाएगा। हर योगदान अलग है और केवल दोबारा चुनने पर ही दोहराया जाता है।";
+"Gracias también por jugar. Tus juegos, partidas y controles funcionan igual aunque no aportes." = "खेलने के लिए भी धन्यवाद। बिना योगदान के भी गेम, सेव और नियंत्रण समान रूप से काम करते हैं।";
+"Las funciones de esta versión son gratuitas. Los aportes de Apoyar VETA son voluntarios y no desbloquean funciones adicionales." = "इस संस्करण की सुविधाएँ मुफ़्त हैं। VETA को योगदान स्वैच्छिक है और अतिरिक्त सुविधाएँ नहीं खोलता।";
+"Los aportes voluntarios se procesan mediante compras de Apple. VETA verifica y finaliza la transacción en el dispositivo; no recibe tus datos de tarjeta ni envía tus juegos o partidas para realizar el aporte." = "स्वैच्छिक योगदान Apple की इन-ऐप खरीद से होते हैं। VETA डिवाइस पर लेनदेन सत्यापित और पूरा करता है; कार्ड विवरण नहीं लेता और गेम या सेव नहीं भेजता।";

@@ -40,6 +40,9 @@ struct PrivacyDetailsView:View {
             Section("Juegos gratis") {
                 Text("Al descargar un juego o abrir una guía, el sitio del autor o proveedor recibe la conexión. Sus condiciones de privacidad se aplican en ese sitio.")
             }
+            Section("Apoyar VETA") {
+                Text("Los aportes voluntarios se procesan mediante compras de Apple. VETA verifica y finaliza la transacción en el dispositivo; no recibe tus datos de tarjeta ni envía tus juegos o partidas para realizar el aporte.")
+            }
             Section("Jugar juntos") {
                 Text("La conexión cercana comparte un nombre aleatorio de VETA y los controles con los jugadores conectados. Compartir un skin o respaldo sólo ocurre cuando tú lo eliges.")
             }

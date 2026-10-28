@@ -1742,8 +1742,8 @@
           "SWIFT_OPTIMIZATION_LEVEL": "-O",
           "GCC_OPTIMIZATION_LEVEL": "2",
           "CLANG_CXX_LANGUAGE_STANDARD": "gnu++17",
-          "CURRENT_PROJECT_VERSION": "187",
-          "MARKETING_VERSION": "0.187.0",
+          "CURRENT_PROJECT_VERSION": "188",
+          "MARKETING_VERSION": "0.188.0",
           "IPHONEOS_DEPLOYMENT_TARGET": "17.4",
           "SWIFT_ACTIVE_COMPILATION_CONDITIONS": [
             "$(inherited)",
@@ -1761,11 +1761,18 @@
           "excludes": [
             "play_audio_test.cpp"
           ]
+        },
+        {
+          "path": "Testing",
+          "buildPhase": "resources"
         }
       ],
       "dependencies": [
         {
           "target": "VetaNative"
+        },
+        {
+          "sdk": "StoreKitTest.framework"
         }
       ],
       "settings": {
@@ -3522,6 +3529,30 @@
         "targets": [
           "VetaNativeTests"
         ]
+      }
+    },
+    "VetaSupportPreview": {
+      "build": {
+        "targets": {
+          "VetaNative": "all"
+        }
+      },
+      "run": {
+        "config": "Debug",
+        "storeKitConfiguration": "Testing/VetaSupport.storekit"
+      },
+      "test": {
+        "config": "Debug",
+        "targets": [
+          {
+            "name": "VetaNativeTests",
+            "selectedTests": [
+              "SupportVetaTests",
+              "ReadinessLocalizationTests/testDevelopmentCatalogHasNoInventedPaidEntitlements"
+            ]
+          }
+        ],
+        "storeKitConfiguration": "Testing/VetaSupport.storekit"
       }
     }
   }

@@ -75,7 +75,7 @@ final class ReadinessLocalizationTests: XCTestCase {
     func testDevelopmentCatalogHasNoInventedPaidEntitlements() {
         XCTAssertTrue(FeatureAccess.developmentUnlocked)
         XCTAssertEqual(Set(FeatureAccess.catalog.map(\.id)).count, FeatureAccess.catalog.count)
-        XCTAssertTrue(FeatureAccess.catalog.allSatisfy { $0.classification == .undecided && FeatureAccess.isAccessible($0.id) })
+        XCTAssertTrue(FeatureAccess.catalog.allSatisfy { $0.classification == .free && FeatureAccess.isAccessible($0.id) })
         XCTAssertFalse(FeatureAccess.isAccessible("unknown-product-id"))
     }
     func testEightCompleteCatalogsAndFallback() {

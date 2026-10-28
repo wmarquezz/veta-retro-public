@@ -40,3 +40,11 @@ Fuentes y recetas de arte: apple/native/Content/StudioSkins.
 Recursos importables: apple/native/Sources/Resources/studio-*.vetaskin.
 La compilación usa los recursos ya preparados. Regenerar desde el ZIP requiere
 Node y @resvg/resvg-js; no es una dependencia del runtime del emulador.
+
+## Instalación física completada · 28-10-2026
+
+Public180-c instalada porUSB sobre la edición pública179 en iPhone15Pro, sin
+desinstalar. Respaldo previo y comparación de datos persistentes PASS; arranque
+normal, versión0.180.0/build180 y biblioteca vacía comprobados. Los38skins están
+en el producto instalado. Las comprobaciones detalladas de geometría/entrada
+corresponden a UIKit/Simulator; no se afirma una nueva matriz de19juegos físicos.

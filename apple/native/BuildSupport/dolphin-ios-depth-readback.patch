@@ -1,0 +1,138 @@
+--- a/Source/Core/VideoCommon/FramebufferManager.cpp
++++ b/Source/Core/VideoCommon/FramebufferManager.cpp
+@@ -2,6 +2,9 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later
+ 
+ #include "VideoCommon/FramebufferManager.h"
++#ifdef __APPLE__
++#include <TargetConditionals.h>
++#endif
+ 
+ #include <fmt/format.h>
+ #include <memory>
+@@ -670,6 +673,23 @@
+     }
+   }
+ 
++#if defined(__APPLE__) && TARGET_OS_IPHONE
++  if (g_backend_info.api_type == APIType::OpenGL)
++  {
++    auto shader = g_gfx->CreateShaderFromSource(ShaderStage::Pixel,
++        FramebufferShaderGen::GeneratePackedDepthPixelShader(GetEFBSamples()), nullptr,
++        "iOS lossless depth readback");
++    if (!shader)
++      return false;
++    config.vertex_shader = g_shader_cache->GetScreenQuadVertexShader();
++    config.pixel_shader = shader.get();
++    config.framebuffer_state = RenderState::GetColorFramebufferState(AbstractTextureFormat::RGBA8);
++    m_efb_state_depth_pipeline = g_gfx->CreatePipeline(config);
++    if (!m_efb_state_depth_pipeline)
++      return false;
++  }
++#endif
++
+   // EFB restore pipeline
+   auto restore_shader = g_gfx->CreateShaderFromSource(
+       ShaderStage::Pixel, FramebufferShaderGen::GenerateEFBRestorePixelShader(), nullptr,
+@@ -691,6 +711,7 @@
+ 
+ void FramebufferManager::DestroyReadbackPipelines()
+ {
++  m_efb_state_depth_pipeline.reset();
+   m_efb_depth_resolve_pipeline.reset();
+   m_efb_depth_cache.copy_pipeline.reset();
+   m_efb_color_cache.copy_pipeline.reset();
+@@ -1119,7 +1140,43 @@
+   // This won't be bit-exact when loading, which could cause interesting rendering side-effects for
+   // a frame. But whatever, MSAA doesn't exactly behave that well anyway.
+   AbstractTexture* color_texture = ResolveEFBColorTexture(m_efb_color_texture->GetRect());
+-  AbstractTexture* depth_texture = ResolveEFBDepthTexture(m_efb_depth_texture->GetRect(), true);
++  AbstractTexture* depth_texture = m_efb_depth_texture.get();
++  std::unique_ptr<AbstractTexture> packed_depth;
++  std::unique_ptr<AbstractFramebuffer> packed_framebuffer;
++#if defined(__APPLE__) && TARGET_OS_IPHONE
++  if (g_backend_info.api_type == APIType::OpenGL && p.IsWriteMode())
++  {
++    // iOS GLES cannot read D32F and cannot render to R32F. Pack the exact
++    // float bits into an RGBA8 target, whose readback yields the same four
++    // little-endian bytes expected by the existing R32F savestate format.
++    const auto& source = m_efb_depth_texture->GetConfig();
++    packed_depth = g_gfx->CreateTexture(TextureConfig(source.width, source.height, 1,
++        source.layers, 1, AbstractTextureFormat::RGBA8, AbstractTextureFlag_RenderTarget,
++        AbstractTextureType::Texture_2DArray), "iOS packed depth state");
++    if (packed_depth)
++      packed_framebuffer = g_gfx->CreateFramebuffer(packed_depth.get(), nullptr);
++    if (!packed_framebuffer || !m_efb_state_depth_pipeline)
++    {
++      p.SetMeasureMode();
++      return;
++    }
++    g_gfx->BeginUtilityDrawing();
++    m_efb_depth_texture->FinishedRendering();
++    g_gfx->SetAndDiscardFramebuffer(packed_framebuffer.get());
++    g_gfx->SetViewportAndScissor(packed_framebuffer->GetRect());
++    g_gfx->SetPipeline(m_efb_state_depth_pipeline.get());
++    g_gfx->SetTexture(0, m_efb_depth_texture.get());
++    g_gfx->SetSamplerState(0, RenderState::GetPointSamplerState());
++    g_gfx->Draw(0, 3);
++    packed_depth->FinishedRendering();
++    g_gfx->EndUtilityDrawing();
++    depth_texture = packed_depth.get();
++  }
++  else
++#endif
++  {
++    depth_texture = ResolveEFBDepthTexture(m_efb_depth_texture->GetRect(), true);
++  }
+ 
+   // We don't want to save these as rendertarget textures, just the data itself when deserializing.
+   const TextureConfig color_texture_config(
+--- a/Source/Core/VideoCommon/FramebufferManager.h
++++ b/Source/Core/VideoCommon/FramebufferManager.h
+@@ -212,6 +212,7 @@
+ 
+   // Pipeline for restoring the contents of the EFB from a save state
+   std::unique_ptr<AbstractPipeline> m_efb_restore_pipeline;
++  std::unique_ptr<AbstractPipeline> m_efb_state_depth_pipeline;
+ 
+   // Format conversion shaders
+   std::array<std::unique_ptr<AbstractPipeline>, 6> m_format_conversion_pipelines;
+--- a/Source/Core/VideoCommon/FramebufferShaderGen.cpp
++++ b/Source/Core/VideoCommon/FramebufferShaderGen.cpp
+@@ -377,6 +377,26 @@
+   return code.GetBuffer();
+ }
+ 
++std::string GeneratePackedDepthPixelShader(u32 samples)
++{
++  ShaderCode code;
++  EmitSamplerDeclarations(code, 0, 1, samples > 1);
++  EmitPixelMainDeclaration(code, 1, 0);
++  code.Write("{{\n"
++             "  int3 coords = int3(int2(gl_FragCoord.xy), int(v_tex0.z));\n"
++             "  float depth = texelFetch(samp0, coords, 0).r;\n");
++  if (samples > 1)
++  {
++    code.Write("  for (int i = 1; i < {}; i++)\n", samples);
++    code.Write("    depth = min(depth, texelFetch(samp0, coords, i).r);\n");
++  }
++  code.Write("  uint bits = floatBitsToUint(depth);\n"
++             "  ocol0 = float4(float(bits & 255u), float((bits >> 8u) & 255u),\n"
++             "                 float((bits >> 16u) & 255u), float((bits >> 24u) & 255u)) / 255.0;\n"
++             "}}\n");
++  return code.GetBuffer();
++}
++
+ std::string GenerateClearVertexShader()
+ {
+   ShaderCode code;
+--- a/Source/Core/VideoCommon/FramebufferShaderGen.h
++++ b/Source/Core/VideoCommon/FramebufferShaderGen.h
+@@ -17,6 +17,7 @@
+ std::string GenerateTextureCopyPixelShader();
+ std::string GenerateResolveColorPixelShader(u32 samples);
+ std::string GenerateResolveDepthPixelShader(u32 samples);
++std::string GeneratePackedDepthPixelShader(u32 samples);
+ std::string GenerateClearVertexShader();
+ std::string GenerateEFBPokeVertexShader();
+ std::string GenerateColorPixelShader();

@@ -1,0 +1,16 @@
+--- a/Source/gs/GSHandler.cpp
++++ b/Source/gs/GSHandler.cpp
+@@ -571,6 +571,13 @@
+ 		    {
+ 			    FlipImpl(displayInfo);
+ 		    }
++		    else if(!m_gsThreaded)
++		    {
++			    // A non-threaded frontend must regain control even when the
++			    // guest did not change GS registers during this VBlank.
++			    // Do not present or emit OnFlipComplete for an unchanged frame.
++			    m_flipped = true;
++		    }
+ 		    m_regsDirty = false;
+ 	    },
+ 	    waitForCompletion, waitForCompletion);

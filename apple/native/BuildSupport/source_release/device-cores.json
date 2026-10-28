@@ -1,0 +1,69 @@
+[
+  {
+    "engine": "dolphin-retro",
+    "framework": "DolphinCore",
+    "source": ".build/public-engine-sources/dolphin-retro",
+    "commit": "3aac3f052f733f8df2f1616843a4d2e14002ed11",
+    "flags": [
+      "-DCMAKE_SYSTEM_NAME=iOS",
+      "-DCMAKE_OSX_ARCHITECTURES=arm64",
+      "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.4",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_SYSTEM_PROCESSOR=aarch64",
+      "-DLIBRETRO=ON",
+      "-DIOS=ON",
+      "-DENABLE_VULKAN=OFF",
+      "-DUSE_MGBA=OFF",
+      "-DENABLE_TESTS=OFF",
+      "-DUSE_SYSTEM_LIBS=OFF",
+      "-DCMAKE_SHARED_LINKER_FLAGS=-framework Foundation",
+      "-DENABLE_LTO=ON"
+    ],
+    "target": "dolphin_libretro",
+    "artifact": "dolphin_libretro.dylib",
+    "minimum": "16.4"
+  },
+  {
+    "engine": "mupen-next",
+    "framework": "N64NextCore",
+    "source": ".build/public-engine-sources/mupen-next",
+    "commit": "15bada85906593376e8fd697f1b0b3af3a20f512",
+    "flags": [
+      "-DCMAKE_SYSTEM_NAME=iOS",
+      "-DCMAKE_OSX_ARCHITECTURES=arm64",
+      "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.4",
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "target": "N64NextCore",
+    "artifact": "N64NextCore.dylib",
+    "minimum": "16.4"
+  },
+  {
+    "engine": "flycast-interpreter",
+    "framework": "DreamcastInterpreterCore",
+    "source": ".build/public-engine-sources/flycast-interpreter",
+    "commit": "6d81b998169b916ad7d7d6f403f7dc2c18e2aea5",
+    "flags": [
+      "-DCMAKE_SYSTEM_NAME=iOS",
+      "-DCMAKE_OSX_ARCHITECTURES=arm64",
+      "-DCMAKE_OSX_DEPLOYMENT_TARGET=17.4",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DIOS=ON",
+      "-DLIBRETRO=ON",
+      "-DUSE_GLES=OFF",
+      "-DUSE_GLES2=OFF",
+      "-DUSE_VULKAN=OFF",
+      "-DUSE_BREAKPAD=OFF",
+      "-DUSE_LUA=OFF",
+      "-DUSE_HOST_LIBZIP=OFF",
+      "-DUSE_OPENMP=OFF",
+      "-DCMAKE_C_FLAGS=-DIOS -DTARGET_NO_REC",
+      "-DCMAKE_CXX_FLAGS=-DIOS -DTARGET_NO_REC",
+      "-DCMAKE_OSX_SYSROOT=iphoneos",
+      "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+    ],
+    "target": "flycast_libretro",
+    "artifact": "flycast_libretro.dylib",
+    "minimum": "17.4"
+  }
+]

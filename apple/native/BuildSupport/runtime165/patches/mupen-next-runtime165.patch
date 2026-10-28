@@ -1,0 +1,50 @@
+--- a/libretro/libretro.c
++++ b/libretro/libretro.c
+@@ -2170,7 +2170,7 @@
+ 
+ bool retro_unserialize(const void *data, size_t size)
+ {
+-   if (initializing)
++   if (!data || size < retro_serialize_size() || initializing)
+       return false;
+ 
+    retro_savestate_complete = false;
+@@ -2198,7 +2198,7 @@
+       glsm_ctl(GLSM_CTL_STATE_UNBIND, NULL);
+    }
+ 
+-   return true;
++   return !!retro_savestate_result;
+ }
+ 
+ //Needed to be able to detach controllers for Lylat Wars multiplayer
+--- a/mupen64plus-core/src/device/rcp/ai/ai_controller.c
++++ b/mupen64plus-core/src/device/rcp/ai/ai_controller.c
+@@ -193,8 +193,13 @@
+ 
+     switch (reg)
+     {
++    case AI_DRAM_ADDR_REG:
++        masked_write(&ai->regs[AI_DRAM_ADDR_REG], value, mask);
++        ai->regs[AI_DRAM_ADDR_REG] &= UINT32_C(0x00fffff8);
++        return;
+     case AI_LEN_REG:
+         masked_write(&ai->regs[AI_LEN_REG], value, mask);
++        ai->regs[AI_LEN_REG] &= UINT32_C(0x0003fff8);
+         if (ai->regs[AI_LEN_REG] != 0) {
+             fifo_push(ai);
+         }
+--- a/mupen64plus-core/src/main/savestates.c
++++ b/mupen64plus-core/src/main/savestates.c
+@@ -270,6 +270,11 @@
+     if(strncmp((char *)curr, savestate_magic, 8)!=0)
+     {
+         main_message(M64MSG_STATUS, OSD_BOTTOM_LEFT, "Savestate is not a valid Mupen64plus savestate.");
++#ifdef USE_SDL
++        SDL_UnlockMutex(savestates_lock);
++#else
++        pthread_mutex_unlock(&savestates_lock);
++#endif
+         return 0;
+     }
+ #endif

@@ -1,0 +1,35 @@
+{
+  "version": "0.179.0",
+  "build": "179",
+  "bundleIdentifier": "com.krafify.vetaretro",
+  "configuration": "Release public target; development signing for USB only",
+  "publicConsoleCount": 19,
+  "PS2Included": false,
+  "JITVPNHelpersIncluded": false,
+  "publicCatalogCount": 2,
+  "mainExecutableSHA256": "86154783962dd92a497934a871c58418dfa625479ef7f43008c5129a2a33d7a3",
+  "frameworks": {
+    "PCECore": "54623506b2beaa611c7e1f8a68f723214234dff6a4055657720c973897cb0fa5",
+    "BSNESCore": "450b003365f469673adb52713fd3a857284229902c33e849570fe5c68c5d49cd",
+    "DreamcastCore": "8a95f352a1b7a454b09ff51029033de37dad6c7ebf8e75486c24f681da2ac5c3",
+    "MelonDSCore": "0fd7af6a252e5f03baa1287ca25a0dcd8d3a5f52977897b5852e57d9cb1d47fd",
+    "MoltenVK": "aef1618bfbd972a120ac1229f946469ed84ca7f76b24d72b29e05b970a7b33a8",
+    "JGenesisCore": "ddbf268c00188aa4d240b5732fcc755e998510b22a23124763388b3758afa847",
+    "DolphinCore": "c383dca4c1e4b5783420713ce68b20639f74a32200ba8875df071d5fc6e0adb0",
+    "DSCore": "23ecaaa24dc8f2064df79e5cd99f01d751d0f6e95726043364aca67a8772b520",
+    "N64NextCore": "46b5ac6f57d4cd24bdd71027dcc3f644d85497c7bb5f1680ba5a4efd4902ce64",
+    "PSPCore": "b048107f053d9db08ffec77195455424b6d826690b8fcdbc98b365a25b19c629",
+    "DreamcastInterpreterCore": "5390cf987de1369053bdcbf6763e1dc8865ec9b928321d54f10f2a0066238830",
+    "ThreeDSCore": "96730ba74af0eb152217bba58a5b914b44075baeee246a30f3f53a5da75511dc",
+    "PlayStationCore": "1ca7ef1a25f32996e4f6afb5a9fb83eb599228a236c93aa254a9bbbab961c25a",
+    "TIACore": "70a6a402f99b083640580f044e0878e0fe98dbcc3958c3d4eb66871ae546767a",
+    "SaturnCore": "3fd3a1eb2f74faec4ae51b8b7da61d9a346f3dd8e68927b2c5999f4afc23582d"
+  },
+  "retainedLocalEngineSections": [
+    "DolphinCore",
+    "N64NextCore",
+    "DreamcastInterpreterCore"
+  ],
+  "fullRebuildFromScratch": false,
+  "appleApprovalClaimed": false
+}

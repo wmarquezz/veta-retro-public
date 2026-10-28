@@ -1,0 +1,3528 @@
+{
+  "name": "VetaNative",
+  "options": {
+    "deploymentTarget": {
+      "iOS": "16.4"
+    }
+  },
+  "settings": {
+    "base": {
+      "SWIFT_VERSION": "5.0",
+      "TARGETED_DEVICE_FAMILY": "1,2",
+      "IPHONEOS_DEPLOYMENT_TARGET": "16.4",
+      "ENABLE_USER_SCRIPT_SANDBOXING": "YES"
+    }
+  },
+  "targets": {
+    "FCEUmm": {
+      "type": "library.static",
+      "platform": "iOS",
+      "sources": [
+        {
+          "path": ".build/fceumm/src/boards/09-034a.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/103.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/104.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/106.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/108.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/112.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/116.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/117.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/120.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/121.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/122.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/126_422_534.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/128.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/12in1.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/134.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/14.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/15.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/151.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/156.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/162.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/163.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/164.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/168.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/170.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/174.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/175.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/177.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/178.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/18.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/182.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/183.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/185.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/186.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/187.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/189.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/190.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/191.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/193.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/195.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/199.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/206_486.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/208.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/213.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/218.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/21_22_23_25.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/222.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/225.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/228.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/230.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/232.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/233.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/234.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/235.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/236.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/237.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/239.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/242.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/244.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/246.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/252_253.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/265.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/266.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/267.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/268.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/269.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/272.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/273.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/277.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/28.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/280.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/283.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/285.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/291.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/293.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/294.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/298.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/301.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/308.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/31.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/310.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/319.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/32.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/321.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/326.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/33.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/330.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/334.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/34.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/340.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/341.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/343.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/351.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/352.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/353.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/354.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/355.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/356.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/357.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/359.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/360.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/361.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/362.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/363.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/364.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/366.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/368.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/369.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/370.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/372.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/375.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/376.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/377.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/378.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/379.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/380.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/382.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/383.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/384.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/389.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/390.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/391.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/393.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/395.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/396.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/398.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/399.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/40.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/400.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/401.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/403.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/406.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/41.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/410.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/411.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/411120-c.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/412.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/413.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/414.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/416.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/417.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/418.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/42.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/420.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/428.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/43.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/430.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/431.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/432.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/433.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/434.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/437.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/438.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/439.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/441.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/443.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/444.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/445.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/446.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/447.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/448.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/449.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/450.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/451.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/452.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/453.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/454.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/455.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/456.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/457.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/458.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/46.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/460.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/461.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/463.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/465.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/466.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/467.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/468.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/471.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/473.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/474.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/475.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/476.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/478.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/480.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/482.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/483.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/484.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/485.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/487.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/489.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/490.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/491.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/492.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/493.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/494.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/495.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/498.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/499.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/50.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/500.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/501.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/502.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/503.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/504.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/505.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/506.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/507.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/508.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/509.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/51.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/510.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/511.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/512.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/514.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/516.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/518.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/520.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/524.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/525.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/527.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/528.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/529.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/530.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/533.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/536.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/537.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/539.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/542.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/544.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/545.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/546.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/548.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/549.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/554.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/556.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/557.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/558.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/559.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/563.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/564.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/565.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/566.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/567.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/568.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/569.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/57.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/570.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/571.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/572.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/573.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/574.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/575.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/576.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/577.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/578.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/579.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/580.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/581.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/582.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/583.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/584.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/585.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/586.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/587.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/588.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/589.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/590.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/591.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/592.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/594.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/595.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/596.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/597.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/598.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/599.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/60.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/603-5052.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/603.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/605.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/606.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/607.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/608.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/609.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/610.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/611.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/612.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/613.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/614.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/615.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/616.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/617.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/618.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/619.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/62.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/620.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/621.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/622.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/623.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/624.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/625.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/65.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/67.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/68.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/69.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/6_8_12_17_561_562.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/71.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/72.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/77.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/79.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/80.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/81.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/8237.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/82_552.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/830118C.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/830134C.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/83_264.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/88.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/8in1.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/91.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/96.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/99.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/BMW8544.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/KG256.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/KS7012.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/KS7013.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/KS7016.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/KS7017.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/KS7030.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/KS7031.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/KS7032.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/KS7037.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/KS7057.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/SA-9602B.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/__dummy_mapper.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/__serial.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/a9746.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/ac-08.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/addrlatch.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/asic_fme7.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/asic_h3001.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/asic_latch.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/asic_mmc1.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/asic_mmc2and4.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/asic_mmc3.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/asic_n118.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/asic_pt8154.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/asic_qj.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/asic_tc3294.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/asic_vrc1.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/asic_vrc2and4.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/asic_vrc3.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/asic_vrc6.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/asic_vrc7.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/bandai.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/bb.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/bj56.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/bmc42in1r.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/bmc60311c.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/bmc64in1nr.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/bmc80013b.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/bmc830425C4391t.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/bmcctc09.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/bmcgamecard.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/bmck3006.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/bmck3033.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/bmcl6in1.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/bonza.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/bs-5.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/cartram.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/cheapocabra.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/coolgirl.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/datalatch.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/dream.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/edu2000.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/eeprom_93Cx6.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/eh8813a.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/emu2413.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/et-100.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/et-4320.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/f-15.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/famicombox.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/faridunrom.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/fifo.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/fk23c.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/flashrom.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/gn26.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/h2288.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/hp10xx_hp20xx.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/hp898f.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/inx007t.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/jyasic.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/karaoke.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/kof97.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/latch.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/le05.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/lh32.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/lh51.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/lh53.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/malee.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/mihunche.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/mmc1.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/mmc2and4.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/mmc3.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/mmc5.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/msm6585.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/n106.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/n625092.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/novel.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/onebus.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/pec-586.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/pic16c5x.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/resetnromxin1.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/resettxrom.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/rt-01.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/sachen.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/sheroes.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/subor.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/super40in1.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/supervision.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/t-227-1.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/t-262.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/tengen.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/transformer.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/txcchip.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/unrom512.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/vrc1.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/vrc3.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/vrc6.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/vrc7.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/vrc7p.c"
+        },
+        {
+          "path": ".build/fceumm/src/boards/vrcirq.c"
+        },
+        {
+          "path": ".build/fceumm/src/input/arkanoid.c"
+        },
+        {
+          "path": ".build/fceumm/src/input/bbox.c"
+        },
+        {
+          "path": ".build/fceumm/src/input/bworld.c"
+        },
+        {
+          "path": ".build/fceumm/src/input/cursor.c"
+        },
+        {
+          "path": ".build/fceumm/src/input/fkb.c"
+        },
+        {
+          "path": ".build/fceumm/src/input/ftrainer.c"
+        },
+        {
+          "path": ".build/fceumm/src/input/hypershot.c"
+        },
+        {
+          "path": ".build/fceumm/src/input/mahjong.c"
+        },
+        {
+          "path": ".build/fceumm/src/input/mouse.c"
+        },
+        {
+          "path": ".build/fceumm/src/input/oekakids.c"
+        },
+        {
+          "path": ".build/fceumm/src/input/pec586kb.c"
+        },
+        {
+          "path": ".build/fceumm/src/input/powerpad.c"
+        },
+        {
+          "path": ".build/fceumm/src/input/quiz.c"
+        },
+        {
+          "path": ".build/fceumm/src/input/shadow.c"
+        },
+        {
+          "path": ".build/fceumm/src/input/suborkb.c"
+        },
+        {
+          "path": ".build/fceumm/src/input/toprider.c"
+        },
+        {
+          "path": ".build/fceumm/src/input/zapper.c"
+        },
+        {
+          "path": ".build/fceumm/src/drivers/libretro/libretro.c"
+        },
+        {
+          "path": ".build/fceumm/src/drivers/libretro/libretro_dipswitch.c"
+        },
+        {
+          "path": ".build/fceumm/src/cart.c"
+        },
+        {
+          "path": ".build/fceumm/src/cheat.c"
+        },
+        {
+          "path": ".build/fceumm/src/crc32.c"
+        },
+        {
+          "path": ".build/fceumm/src/fceu-endian.c"
+        },
+        {
+          "path": ".build/fceumm/src/fceu-memory.c"
+        },
+        {
+          "path": ".build/fceumm/src/fceu.c"
+        },
+        {
+          "path": ".build/fceumm/src/fds.c"
+        },
+        {
+          "path": ".build/fceumm/src/fds_apu.c"
+        },
+        {
+          "path": ".build/fceumm/src/file.c"
+        },
+        {
+          "path": ".build/fceumm/src/filter.c"
+        },
+        {
+          "path": ".build/fceumm/src/general.c"
+        },
+        {
+          "path": ".build/fceumm/src/input.c"
+        },
+        {
+          "path": ".build/fceumm/src/md5.c"
+        },
+        {
+          "path": ".build/fceumm/src/nsf.c"
+        },
+        {
+          "path": ".build/fceumm/src/palette.c"
+        },
+        {
+          "path": ".build/fceumm/src/ppu.c"
+        },
+        {
+          "path": ".build/fceumm/src/sound.c"
+        },
+        {
+          "path": ".build/fceumm/src/state.c"
+        },
+        {
+          "path": ".build/fceumm/src/video.c"
+        },
+        {
+          "path": ".build/fceumm/src/vsuni.c"
+        },
+        {
+          "path": ".build/fceumm/src/ines.c"
+        },
+        {
+          "path": ".build/fceumm/src/unif.c"
+        },
+        {
+          "path": ".build/fceumm/src/x6502.c"
+        },
+        {
+          "path": ".build/fceumm/src/drivers/libretro/libretro-common/streams/memory_stream.c"
+        },
+        {
+          "path": ".build/fceumm/src/drivers/libretro/libretro-common/compat/compat_posix_string.c"
+        },
+        {
+          "path": ".build/fceumm/src/drivers/libretro/libretro-common/compat/compat_snprintf.c"
+        },
+        {
+          "path": ".build/fceumm/src/drivers/libretro/libretro-common/compat/compat_strcasestr.c"
+        },
+        {
+          "path": ".build/fceumm/src/drivers/libretro/libretro-common/compat/compat_strl.c"
+        },
+        {
+          "path": ".build/fceumm/src/drivers/libretro/libretro-common/compat/fopen_utf8.c"
+        },
+        {
+          "path": ".build/fceumm/src/drivers/libretro/libretro-common/encodings/encoding_utf.c"
+        },
+        {
+          "path": ".build/fceumm/src/drivers/libretro/libretro-common/file/file_path.c"
+        },
+        {
+          "path": ".build/fceumm/src/drivers/libretro/libretro-common/file/file_path_io.c"
+        },
+        {
+          "path": ".build/fceumm/src/drivers/libretro/libretro-common/streams/file_stream.c"
+        },
+        {
+          "path": ".build/fceumm/src/drivers/libretro/libretro-common/streams/file_stream_transforms.c"
+        },
+        {
+          "path": ".build/fceumm/src/drivers/libretro/libretro-common/string/stdstring.c"
+        },
+        {
+          "path": ".build/fceumm/src/drivers/libretro/libretro-common/time/rtime.c"
+        },
+        {
+          "path": ".build/fceumm/src/drivers/libretro/libretro-common/vfs/vfs_implementation.c"
+        }
+      ],
+      "settings": {
+        "base": {
+          "HEADER_SEARCH_PATHS": [
+            "$(SRCROOT)/.build/fceumm/src",
+            "$(SRCROOT)/.build/fceumm/src/input",
+            "$(SRCROOT)/.build/fceumm/src/boards",
+            "$(SRCROOT)/.build/fceumm/src/drivers/libretro",
+            "$(SRCROOT)/.build/fceumm/src/drivers/libretro/libretro-common/include"
+          ],
+          "GCC_PREPROCESSOR_DEFINITIONS": [
+            "__LIBRETRO__",
+            "FRONTEND_SUPPORTS_RGB888",
+            "FCEU_VERSION_NUMERIC=9900"
+          ],
+          "GCC_OPTIMIZATION_LEVEL": "2",
+          "GCC_C_LANGUAGE_STANDARD": "gnu11",
+          "GCC_WARN_INHIBIT_ALL_WARNINGS": "YES",
+          "SKIP_INSTALL": "YES",
+          "IPHONEOS_DEPLOYMENT_TARGET": "17.4"
+        }
+      },
+      "dependencies": []
+    },
+    "VetaNative": {
+      "type": "application",
+      "platform": "iOS",
+      "sources": [
+        {
+          "path": "Sources",
+          "excludes": [
+            "NextGen",
+            "DiscoveryCatalog.json"
+          ]
+        },
+        {
+          "path": ".build/public-games/Content",
+          "type": "folder",
+          "buildPhase": "resources"
+        },
+        {
+          "path": ".build/public-games/DiscoveryCatalog.json",
+          "buildPhase": "resources"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "FCEUmm"
+        },
+        {
+          "sdk": "MetalKit.framework"
+        },
+        {
+          "sdk": "OpenGLES.framework"
+        },
+        {
+          "sdk": "AVFoundation.framework"
+        },
+        {
+          "sdk": "GameController.framework"
+        },
+        {
+          "sdk": "libc++.tbd"
+        },
+        {
+          "target": "mGBA"
+        },
+        {
+          "target": "TIACore",
+          "embed": true,
+          "link": false,
+          "codeSign": true
+        },
+        {
+          "target": "PCECore",
+          "embed": true,
+          "link": false,
+          "codeSign": true
+        },
+        {
+          "target": "PlayStationCore",
+          "embed": true,
+          "link": false,
+          "codeSign": true
+        },
+        {
+          "target": "DSCore",
+          "embed": true,
+          "link": false,
+          "codeSign": true
+        },
+        {
+          "target": "SaturnCore",
+          "embed": true,
+          "link": false,
+          "codeSign": true
+        },
+        {
+          "framework": ".build/PSPCore.xcframework",
+          "embed": true,
+          "link": false,
+          "codeSign": true
+        },
+        {
+          "framework": ".build/DreamcastCore.xcframework",
+          "embed": true,
+          "link": false,
+          "codeSign": true
+        },
+        {
+          "framework": ".build/ThreeDSCore.xcframework",
+          "embed": true,
+          "link": false,
+          "codeSign": true
+        },
+        {
+          "framework": ".build/public-device/DolphinCore.framework",
+          "embed": true,
+          "link": false,
+          "codeSign": true
+        },
+        {
+          "framework": ".build/public-device/N64NextCore.framework",
+          "embed": true,
+          "link": false,
+          "codeSign": true
+        },
+        {
+          "sdk": "CoreHaptics.framework"
+        },
+        {
+          "sdk": "GameKit.framework"
+        },
+        {
+          "sdk": "MultipeerConnectivity.framework"
+        },
+        {
+          "sdk": "AVKit.framework"
+        },
+        {
+          "framework": ".build/MelonDSCore.xcframework",
+          "embed": true,
+          "link": false,
+          "codeSign": true
+        },
+        {
+          "framework": ".build/MoltenVK.xcframework",
+          "embed": true,
+          "link": true,
+          "codeSign": true
+        },
+        {
+          "framework": ".build/commercial170/BSNESCore.xcframework",
+          "embed": true,
+          "link": false,
+          "codeSign": true
+        },
+        {
+          "framework": ".build/commercial170/JGenesisCore.xcframework",
+          "embed": true,
+          "link": false,
+          "codeSign": true
+        },
+        {
+          "framework": ".build/public-device/DreamcastInterpreterCore.framework",
+          "embed": true,
+          "link": false,
+          "codeSign": true
+        }
+      ],
+      "info": {
+        "path": "Info.plist",
+        "properties": {
+          "CFBundleDisplayName": "VETA-Retro",
+          "CFBundleShortVersionString": "0.179.0",
+          "CFBundleVersion": "179",
+          "UIAppFonts": [
+            "Content/Fonts/BarlowCondensed-Bold.ttf",
+            "Content/Fonts/Manrope.ttf"
+          ],
+          "UILaunchScreen": {},
+          "UIFileSharingEnabled": true,
+          "LSSupportsOpeningDocumentsInPlace": true,
+          "CADisableMinimumFrameDurationOnPhone": true,
+          "UISupportedInterfaceOrientations": [
+            "UIInterfaceOrientationPortrait",
+            "UIInterfaceOrientationLandscapeLeft",
+            "UIInterfaceOrientationLandscapeRight"
+          ],
+          "UISupportedInterfaceOrientations~ipad": [
+            "UIInterfaceOrientationPortrait",
+            "UIInterfaceOrientationPortraitUpsideDown",
+            "UIInterfaceOrientationLandscapeLeft",
+            "UIInterfaceOrientationLandscapeRight"
+          ],
+          "NSLocalNetworkUsageDescription": "VETA conecta controles y jugadores cercanos en tu red local.",
+          "NSBonjourServices": [
+            "_veta-play._tcp",
+            "_veta-play._udp"
+          ],
+          "CFBundleDevelopmentRegion": "es",
+          "CFBundleLocalizations": [
+            "es",
+            "en",
+            "zh-Hans",
+            "hi",
+            "ar",
+            "fr",
+            "de",
+            "it"
+          ],
+          "UIApplicationSceneManifest": {
+            "UIApplicationSupportsMultipleScenes": true,
+            "UISceneConfigurations": {
+              "UIWindowSceneSessionRoleExternalDisplayNonInteractive": [
+                {
+                  "UISceneConfigurationName": "VETA TV",
+                  "UISceneClassName": "UIWindowScene",
+                  "UISceneDelegateClassName": "$(PRODUCT_MODULE_NAME).VetaExternalSceneDelegate"
+                }
+              ]
+            }
+          },
+          "UTExportedTypeDeclarations": [
+            {
+              "UTTypeIdentifier": "com.krafify.vetaretro.skin",
+              "UTTypeDescription": "VETA personal skin",
+              "UTTypeConformsTo": [
+                "public.json"
+              ],
+              "UTTypeTagSpecification": {
+                "public.filename-extension": [
+                  "vetaskin"
+                ],
+                "public.mime-type": [
+                  "application/vnd.veta.skin+json"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "settings": {
+        "base": {
+          "PRODUCT_BUNDLE_IDENTIFIER": "com.krafify.vetaretro",
+          "ASSETCATALOG_COMPILER_APPICON_NAME": "AppIcon",
+          "SWIFT_OBJC_BRIDGING_HEADER": "Sources/VetaNative-Bridging-Header.h",
+          "HEADER_SEARCH_PATHS": [
+            "$(SRCROOT)/.build/fceumm/src/drivers/libretro/libretro-common/include",
+            "$(SRCROOT)/.build/engine-sources/azahar/externals/vulkan-headers/include",
+            "$(SRCROOT)/.build/engine-sources/azahar/externals/libretro-common/libretro-common/include"
+          ],
+          "CODE_SIGN_STYLE": "Automatic",
+          "GCC_PREPROCESSOR_DEFINITIONS": [
+            "$(inherited)",
+            "VETA_ATARI_TIA=1"
+          ],
+          "SWIFT_OPTIMIZATION_LEVEL": "-O",
+          "GCC_OPTIMIZATION_LEVEL": "2",
+          "CLANG_CXX_LANGUAGE_STANDARD": "gnu++17",
+          "CURRENT_PROJECT_VERSION": "179",
+          "MARKETING_VERSION": "0.179.0",
+          "IPHONEOS_DEPLOYMENT_TARGET": "17.4",
+          "SWIFT_ACTIVE_COMPILATION_CONDITIONS": [
+            "$(inherited)",
+            "VETA_ATARI_TIA"
+          ]
+        }
+      }
+    },
+    "VetaNativeTests": {
+      "type": "bundle.unit-test",
+      "platform": "iOS",
+      "sources": [
+        {
+          "path": "Tests",
+          "excludes": [
+            "play_audio_test.cpp"
+          ]
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "VetaNative"
+        }
+      ],
+      "settings": {
+        "base": {
+          "PRODUCT_BUNDLE_IDENTIFIER": "com.krafify.vetaretro.tests",
+          "GENERATE_INFOPLIST_FILE": "YES",
+          "SWIFT_OBJC_BRIDGING_HEADER": "Sources/VetaNative-Bridging-Header.h",
+          "IPHONEOS_DEPLOYMENT_TARGET": "17.4"
+        }
+      }
+    },
+    "mGBA": {
+      "type": "library.static",
+      "platform": "iOS",
+      "sources": [
+        {
+          "path": ".build/mgba/src/core/bitmap-cache.c"
+        },
+        {
+          "path": ".build/mgba/src/core/cache-set.c"
+        },
+        {
+          "path": ".build/mgba/src/core/cheats.c"
+        },
+        {
+          "path": ".build/mgba/src/core/config.c"
+        },
+        {
+          "path": ".build/mgba/src/core/core.c"
+        },
+        {
+          "path": ".build/mgba/src/core/directories.c"
+        },
+        {
+          "path": ".build/mgba/src/core/input.c"
+        },
+        {
+          "path": ".build/mgba/src/core/interface.c"
+        },
+        {
+          "path": ".build/mgba/src/core/library.c"
+        },
+        {
+          "path": ".build/mgba/src/core/lockstep.c"
+        },
+        {
+          "path": ".build/mgba/src/core/log.c"
+        },
+        {
+          "path": ".build/mgba/src/core/map-cache.c"
+        },
+        {
+          "path": ".build/mgba/src/core/mem-search.c"
+        },
+        {
+          "path": ".build/mgba/src/core/rewind.c"
+        },
+        {
+          "path": ".build/mgba/src/core/serialize.c"
+        },
+        {
+          "path": ".build/mgba/src/core/sync.c"
+        },
+        {
+          "path": ".build/mgba/src/core/thread.c"
+        },
+        {
+          "path": ".build/mgba/src/core/tile-cache.c"
+        },
+        {
+          "path": ".build/mgba/src/core/timing.c"
+        },
+        {
+          "path": ".build/mgba/src/sm83/decoder.c"
+        },
+        {
+          "path": ".build/mgba/src/sm83/isa-sm83.c"
+        },
+        {
+          "path": ".build/mgba/src/sm83/sm83.c"
+        },
+        {
+          "path": ".build/mgba/src/gb/audio.c"
+        },
+        {
+          "path": ".build/mgba/src/gb/cheats.c"
+        },
+        {
+          "path": ".build/mgba/src/gb/core.c"
+        },
+        {
+          "path": ".build/mgba/src/gb/gb.c"
+        },
+        {
+          "path": ".build/mgba/src/gb/input.c"
+        },
+        {
+          "path": ".build/mgba/src/gb/io.c"
+        },
+        {
+          "path": ".build/mgba/src/gb/mbc.c"
+        },
+        {
+          "path": ".build/mgba/src/gb/memory.c"
+        },
+        {
+          "path": ".build/mgba/src/gb/overrides.c"
+        },
+        {
+          "path": ".build/mgba/src/gb/serialize.c"
+        },
+        {
+          "path": ".build/mgba/src/gb/renderers/cache-set.c"
+        },
+        {
+          "path": ".build/mgba/src/gb/renderers/software.c"
+        },
+        {
+          "path": ".build/mgba/src/gb/sio.c"
+        },
+        {
+          "path": ".build/mgba/src/gb/timer.c"
+        },
+        {
+          "path": ".build/mgba/src/gb/video.c"
+        },
+        {
+          "path": ".build/mgba/src/arm/arm.c"
+        },
+        {
+          "path": ".build/mgba/src/arm/decoder-arm.c"
+        },
+        {
+          "path": ".build/mgba/src/arm/decoder.c"
+        },
+        {
+          "path": ".build/mgba/src/arm/decoder-thumb.c"
+        },
+        {
+          "path": ".build/mgba/src/arm/isa-arm.c"
+        },
+        {
+          "path": ".build/mgba/src/arm/isa-thumb.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/audio.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/bios.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/cart/ereader.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/cart/gpio.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/cart/matrix.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/cart/vfame.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/cheats.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/cheats/codebreaker.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/cheats/gameshark.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/cheats/parv3.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/core.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/dma.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/gba.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/hle-bios.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/input.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/io.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/memory.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/overrides.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/renderers/cache-set.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/renderers/common.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/renderers/gl.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/renderers/software-bg.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/renderers/software-mode0.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/renderers/software-obj.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/renderers/video-software.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/savedata.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/serialize.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/sharkport.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/sio.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/sio/gbp.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/sio/joybus.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/timer.c"
+        },
+        {
+          "path": ".build/mgba/src/gba/video.c"
+        },
+        {
+          "path": ".build/mgba/src/util/circle-buffer.c"
+        },
+        {
+          "path": ".build/mgba/src/util/configuration.c"
+        },
+        {
+          "path": ".build/mgba/src/util/crc32.c"
+        },
+        {
+          "path": ".build/mgba/src/util/formatting.c"
+        },
+        {
+          "path": ".build/mgba/src/util/gbk-table.c"
+        },
+        {
+          "path": ".build/mgba/src/util/hash.c"
+        },
+        {
+          "path": ".build/mgba/src/util/string.c"
+        },
+        {
+          "path": ".build/mgba/src/util/table.c"
+        },
+        {
+          "path": ".build/mgba/src/util/vfs.c"
+        },
+        {
+          "path": ".build/mgba/src/util/convolve.c"
+        },
+        {
+          "path": ".build/mgba/src/util/elf-read.c"
+        },
+        {
+          "path": ".build/mgba/src/util/export.c"
+        },
+        {
+          "path": ".build/mgba/src/util/patch.c"
+        },
+        {
+          "path": ".build/mgba/src/util/patch-fast.c"
+        },
+        {
+          "path": ".build/mgba/src/util/patch-ips.c"
+        },
+        {
+          "path": ".build/mgba/src/util/patch-ups.c"
+        },
+        {
+          "path": ".build/mgba/src/util/png-io.c"
+        },
+        {
+          "path": ".build/mgba/src/util/ring-fifo.c"
+        },
+        {
+          "path": ".build/mgba/src/util/text-codec.c"
+        },
+        {
+          "path": "BuildSupport/mgba/version.c"
+        },
+        {
+          "path": ".build/mgba/src/util/vfs/vfs-mem.c"
+        },
+        {
+          "path": ".build/mgba/src/util/vfs/vfs-fifo.c"
+        },
+        {
+          "path": ".build/mgba/src/util/vfs/vfs-fd.c"
+        },
+        {
+          "path": ".build/mgba/src/util/vfs/vfs-dirent.c"
+        },
+        {
+          "path": ".build/mgba/src/platform/posix/memory.c"
+        },
+        {
+          "path": ".build/mgba/src/third-party/inih/ini.c"
+        },
+        {
+          "path": ".build/mgba/src/third-party/blip_buf/blip_buf.c"
+        },
+        {
+          "path": ".build/mgba/src/platform/libretro/libretro.c"
+        }
+      ],
+      "settings": {
+        "base": {
+          "HEADER_SEARCH_PATHS": [
+            "$(SRCROOT)/BuildSupport/mgba/include",
+            "$(SRCROOT)/.build/mgba/src",
+            "$(SRCROOT)/.build/mgba/include"
+          ],
+          "GCC_PREPROCESSOR_DEFINITIONS": [
+            "BUILD_STATIC",
+            "COLOR_16_BIT",
+            "COLOR_5_6_5",
+            "DISABLE_THREADING",
+            "HAVE_FREELOCALE",
+            "HAVE_FUTIMENS",
+            "HAVE_FUTIMES",
+            "HAVE_LOCALE",
+            "HAVE_LOCALTIME_R",
+            "HAVE_NEWLOCALE",
+            "HAVE_PTHREAD_CREATE",
+            "HAVE_PTHREAD_SETNAME_NP",
+            "HAVE_SETLOCALE",
+            "HAVE_SNPRINTF_L",
+            "HAVE_STRDUP",
+            "HAVE_STRLCPY",
+            "HAVE_STRNDUP",
+            "HAVE_STRTOF_L",
+            "HAVE_USELOCALE",
+            "HAVE_VASPRINTF",
+            "HAVE_XLOCALE",
+            "MGBA_STANDALONE",
+            "MINIMAL_CORE=2",
+            "M_CORE_GB",
+            "M_CORE_GBA",
+            "USE_PTHREADS",
+            "_DARWIN_C_SOURCE",
+            "__LIBRETRO__",
+            "NDEBUG",
+            "retro_api_version=mgba_retro_api_version",
+            "retro_cheat_reset=mgba_retro_cheat_reset",
+            "retro_cheat_set=mgba_retro_cheat_set",
+            "retro_deinit=mgba_retro_deinit",
+            "retro_get_memory_data=mgba_retro_get_memory_data",
+            "retro_get_memory_size=mgba_retro_get_memory_size",
+            "retro_get_region=mgba_retro_get_region",
+            "retro_get_system_av_info=mgba_retro_get_system_av_info",
+            "retro_get_system_info=mgba_retro_get_system_info",
+            "retro_init=mgba_retro_init",
+            "retro_load_game=mgba_retro_load_game",
+            "retro_load_game_special=mgba_retro_load_game_special",
+            "retro_reset=mgba_retro_reset",
+            "retro_run=mgba_retro_run",
+            "retro_serialize=mgba_retro_serialize",
+            "retro_serialize_size=mgba_retro_serialize_size",
+            "retro_set_audio_sample=mgba_retro_set_audio_sample",
+            "retro_set_audio_sample_batch=mgba_retro_set_audio_sample_batch",
+            "retro_set_controller_port_device=mgba_retro_set_controller_port_device",
+            "retro_set_environment=mgba_retro_set_environment",
+            "retro_set_input_poll=mgba_retro_set_input_poll",
+            "retro_set_input_state=mgba_retro_set_input_state",
+            "retro_set_video_refresh=mgba_retro_set_video_refresh",
+            "retro_unload_game=mgba_retro_unload_game",
+            "retro_unserialize=mgba_retro_unserialize",
+            "PPU=mgba_PPU",
+            "option_cats_ar=mgba_option_cats_ar",
+            "option_cats_ast=mgba_option_cats_ast",
+            "option_cats_ca=mgba_option_cats_ca",
+            "option_cats_chs=mgba_option_cats_chs",
+            "option_cats_cht=mgba_option_cats_cht",
+            "option_cats_cs=mgba_option_cats_cs",
+            "option_cats_cy=mgba_option_cats_cy",
+            "option_cats_da=mgba_option_cats_da",
+            "option_cats_de=mgba_option_cats_de",
+            "option_cats_el=mgba_option_cats_el",
+            "option_cats_eo=mgba_option_cats_eo",
+            "option_cats_es=mgba_option_cats_es",
+            "option_cats_fa=mgba_option_cats_fa",
+            "option_cats_fi=mgba_option_cats_fi",
+            "option_cats_fr=mgba_option_cats_fr",
+            "option_cats_gl=mgba_option_cats_gl",
+            "option_cats_he=mgba_option_cats_he",
+            "option_cats_hu=mgba_option_cats_hu",
+            "option_cats_id=mgba_option_cats_id",
+            "option_cats_it=mgba_option_cats_it",
+            "option_cats_ja=mgba_option_cats_ja",
+            "option_cats_ko=mgba_option_cats_ko",
+            "option_cats_mt=mgba_option_cats_mt",
+            "option_cats_nl=mgba_option_cats_nl",
+            "option_cats_oc=mgba_option_cats_oc",
+            "option_cats_pl=mgba_option_cats_pl",
+            "option_cats_pt_br=mgba_option_cats_pt_br",
+            "option_cats_pt_pt=mgba_option_cats_pt_pt",
+            "option_cats_ro=mgba_option_cats_ro",
+            "option_cats_ru=mgba_option_cats_ru",
+            "option_cats_si=mgba_option_cats_si",
+            "option_cats_sk=mgba_option_cats_sk",
+            "option_cats_sr=mgba_option_cats_sr",
+            "option_cats_sv=mgba_option_cats_sv",
+            "option_cats_tr=mgba_option_cats_tr",
+            "option_cats_uk=mgba_option_cats_uk",
+            "option_cats_us=mgba_option_cats_us",
+            "option_cats_vn=mgba_option_cats_vn",
+            "option_defs_ar=mgba_option_defs_ar",
+            "option_defs_ast=mgba_option_defs_ast",
+            "option_defs_ca=mgba_option_defs_ca",
+            "option_defs_chs=mgba_option_defs_chs",
+            "option_defs_cht=mgba_option_defs_cht",
+            "option_defs_cs=mgba_option_defs_cs",
+            "option_defs_cy=mgba_option_defs_cy",
+            "option_defs_da=mgba_option_defs_da",
+            "option_defs_de=mgba_option_defs_de",
+            "option_defs_el=mgba_option_defs_el",
+            "option_defs_eo=mgba_option_defs_eo",
+            "option_defs_es=mgba_option_defs_es",
+            "option_defs_fa=mgba_option_defs_fa",
+            "option_defs_fi=mgba_option_defs_fi",
+            "option_defs_fr=mgba_option_defs_fr",
+            "option_defs_gl=mgba_option_defs_gl",
+            "option_defs_he=mgba_option_defs_he",
+            "option_defs_hu=mgba_option_defs_hu",
+            "option_defs_id=mgba_option_defs_id",
+            "option_defs_it=mgba_option_defs_it",
+            "option_defs_ja=mgba_option_defs_ja",
+            "option_defs_ko=mgba_option_defs_ko",
+            "option_defs_mt=mgba_option_defs_mt",
+            "option_defs_nl=mgba_option_defs_nl",
+            "option_defs_oc=mgba_option_defs_oc",
+            "option_defs_pl=mgba_option_defs_pl",
+            "option_defs_pt_br=mgba_option_defs_pt_br",
+            "option_defs_pt_pt=mgba_option_defs_pt_pt",
+            "option_defs_ro=mgba_option_defs_ro",
+            "option_defs_ru=mgba_option_defs_ru",
+            "option_defs_si=mgba_option_defs_si",
+            "option_defs_sk=mgba_option_defs_sk",
+            "option_defs_sr=mgba_option_defs_sr",
+            "option_defs_sv=mgba_option_defs_sv",
+            "option_defs_tr=mgba_option_defs_tr",
+            "option_defs_uk=mgba_option_defs_uk",
+            "option_defs_us=mgba_option_defs_us",
+            "option_defs_vn=mgba_option_defs_vn",
+            "options_ar=mgba_options_ar",
+            "options_ast=mgba_options_ast",
+            "options_ca=mgba_options_ca",
+            "options_chs=mgba_options_chs",
+            "options_cht=mgba_options_cht",
+            "options_cs=mgba_options_cs",
+            "options_cy=mgba_options_cy",
+            "options_da=mgba_options_da",
+            "options_de=mgba_options_de",
+            "options_el=mgba_options_el",
+            "options_eo=mgba_options_eo",
+            "options_es=mgba_options_es",
+            "options_fa=mgba_options_fa",
+            "options_fi=mgba_options_fi",
+            "options_fr=mgba_options_fr",
+            "options_gl=mgba_options_gl",
+            "options_he=mgba_options_he",
+            "options_hu=mgba_options_hu",
+            "options_id=mgba_options_id",
+            "options_intl=mgba_options_intl",
+            "options_it=mgba_options_it",
+            "options_ja=mgba_options_ja",
+            "options_ko=mgba_options_ko",
+            "options_mt=mgba_options_mt",
+            "options_nl=mgba_options_nl",
+            "options_oc=mgba_options_oc",
+            "options_pl=mgba_options_pl",
+            "options_pt_br=mgba_options_pt_br",
+            "options_pt_pt=mgba_options_pt_pt",
+            "options_ro=mgba_options_ro",
+            "options_ru=mgba_options_ru",
+            "options_si=mgba_options_si",
+            "options_sk=mgba_options_sk",
+            "options_sr=mgba_options_sr",
+            "options_sv=mgba_options_sv",
+            "options_tr=mgba_options_tr",
+            "options_uk=mgba_options_uk",
+            "options_us=mgba_options_us",
+            "options_vn=mgba_options_vn"
+          ],
+          "GCC_OPTIMIZATION_LEVEL": "2",
+          "GCC_C_LANGUAGE_STANDARD": "gnu11",
+          "CLANG_CXX_LANGUAGE_STANDARD": "gnu++17",
+          "GCC_WARN_INHIBIT_ALL_WARNINGS": "YES",
+          "SKIP_INSTALL": "YES",
+          "IPHONEOS_DEPLOYMENT_TARGET": "17.4"
+        }
+      },
+      "dependencies": []
+    },
+    "PCECore": {
+      "type": "framework",
+      "platform": "iOS",
+      "sources": [
+        {
+          "path": ".build/pce/mednafen/hw_misc/arcade_card/arcade_card.c"
+        },
+        {
+          "path": ".build/pce/mednafen/pce_fast/pcecd_drive.c"
+        },
+        {
+          "path": ".build/pce/mednafen/pce_fast/pcecd.c"
+        },
+        {
+          "path": ".build/pce/mednafen/pce_fast/psg.c"
+        },
+        {
+          "path": ".build/pce/mednafen/pce_fast/huc6280.c"
+        },
+        {
+          "path": ".build/pce/mednafen/pce_fast/input.c"
+        },
+        {
+          "path": ".build/pce/mednafen/pce_fast/vdc.c"
+        },
+        {
+          "path": ".build/pce/mednafen/sound/Blip_Buffer.c"
+        },
+        {
+          "path": ".build/pce/mednafen/cdrom/CDAccess.c"
+        },
+        {
+          "path": ".build/pce/mednafen/cdrom/CDAccess_Image.c"
+        },
+        {
+          "path": ".build/pce/mednafen/cdrom/CDAccess_CCD.c"
+        },
+        {
+          "path": ".build/pce/mednafen/cdrom/audioreader.c"
+        },
+        {
+          "path": ".build/pce/mednafen/cdrom/cdromif.c"
+        },
+        {
+          "path": ".build/pce/mednafen/cdrom/CDUtility.c"
+        },
+        {
+          "path": ".build/pce/mednafen/cdrom/lec.c"
+        },
+        {
+          "path": ".build/pce/mednafen/cdrom/galois.c"
+        },
+        {
+          "path": ".build/pce/mednafen/cdrom/l-ec.c"
+        },
+        {
+          "path": ".build/pce/mednafen/cdrom/edc_crc32.c"
+        },
+        {
+          "path": ".build/pce/mednafen/cdrom/recover-raw.c"
+        },
+        {
+          "path": ".build/pce/mednafen/tremor/bitwise.c"
+        },
+        {
+          "path": ".build/pce/mednafen/tremor/block.c"
+        },
+        {
+          "path": ".build/pce/mednafen/tremor/codebook.c"
+        },
+        {
+          "path": ".build/pce/mednafen/tremor/floor0.c"
+        },
+        {
+          "path": ".build/pce/mednafen/tremor/floor1.c"
+        },
+        {
+          "path": ".build/pce/mednafen/tremor/framing.c"
+        },
+        {
+          "path": ".build/pce/mednafen/tremor/info.c"
+        },
+        {
+          "path": ".build/pce/mednafen/tremor/mapping0.c"
+        },
+        {
+          "path": ".build/pce/mednafen/tremor/mdct.c"
+        },
+        {
+          "path": ".build/pce/mednafen/tremor/registry.c"
+        },
+        {
+          "path": ".build/pce/mednafen/tremor/res012.c"
+        },
+        {
+          "path": ".build/pce/mednafen/tremor/sharedbook.c"
+        },
+        {
+          "path": ".build/pce/mednafen/tremor/synthesis.c"
+        },
+        {
+          "path": ".build/pce/mednafen/tremor/vorbisfile.c"
+        },
+        {
+          "path": ".build/pce/mednafen/tremor/window.c"
+        },
+        {
+          "path": ".build/pce/libretro.c"
+        },
+        {
+          "path": ".build/pce/mednafen/general.c"
+        },
+        {
+          "path": ".build/pce/mednafen/cdstream.c"
+        },
+        {
+          "path": ".build/pce/mednafen/mempatcher.c"
+        },
+        {
+          "path": ".build/pce/mednafen/okiadpcm.c"
+        },
+        {
+          "path": ".build/pce/mednafen/file.c"
+        },
+        {
+          "path": ".build/pce/mednafen/settings.c"
+        },
+        {
+          "path": ".build/pce/mednafen/state.c"
+        },
+        {
+          "path": ".build/pce/mednafen/mednafen-endian.c"
+        },
+        {
+          "path": ".build/pce/libretro-common/streams/file_stream.c"
+        },
+        {
+          "path": ".build/pce/libretro-common/streams/file_stream_transforms.c"
+        },
+        {
+          "path": ".build/pce/libretro-common/file/file_path.c"
+        },
+        {
+          "path": ".build/pce/libretro-common/file/retro_dirent.c"
+        },
+        {
+          "path": ".build/pce/libretro-common/lists/string_list.c"
+        },
+        {
+          "path": ".build/pce/libretro-common/lists/dir_list.c"
+        },
+        {
+          "path": ".build/pce/libretro-common/compat/compat_strl.c"
+        },
+        {
+          "path": ".build/pce/libretro-common/compat/compat_snprintf.c"
+        },
+        {
+          "path": ".build/pce/libretro-common/compat/compat_posix_string.c"
+        },
+        {
+          "path": ".build/pce/libretro-common/compat/compat_strcasestr.c"
+        },
+        {
+          "path": ".build/pce/libretro-common/compat/fopen_utf8.c"
+        },
+        {
+          "path": ".build/pce/libretro-common/encodings/encoding_utf.c"
+        },
+        {
+          "path": ".build/pce/libretro-common/encodings/encoding_crc32.c"
+        },
+        {
+          "path": ".build/pce/libretro-common/memmap/memalign.c"
+        },
+        {
+          "path": ".build/pce/libretro-common/string/stdstring.c"
+        },
+        {
+          "path": ".build/pce/libretro-common/time/rtime.c"
+        },
+        {
+          "path": ".build/pce/libretro-common/vfs/vfs_implementation.c"
+        }
+      ],
+      "dependencies": [
+        {
+          "sdk": "libz.tbd"
+        },
+        {
+          "sdk": "libc++.tbd"
+        }
+      ],
+      "settings": {
+        "base": {
+          "PRODUCT_BUNDLE_IDENTIFIER": "com.krafify.vetaretro.core.pce",
+          "GENERATE_INFOPLIST_FILE": "YES",
+          "DEFINES_MODULE": "NO",
+          "SKIP_INSTALL": "YES",
+          "DEAD_CODE_STRIPPING": "NO",
+          "GCC_SYMBOLS_PRIVATE_EXTERN": "NO",
+          "CLANG_ENABLE_MODULES": "NO",
+          "CLANG_CXX_LANGUAGE_STANDARD": "gnu++17",
+          "GCC_C_LANGUAGE_STANDARD": "gnu11",
+          "GCC_OPTIMIZATION_LEVEL": "2",
+          "GCC_WARN_INHIBIT_ALL_WARNINGS": "YES",
+          "OTHER_CFLAGS": [
+            "-fno-strict-aliasing"
+          ],
+          "OTHER_CPLUSPLUSFLAGS": [
+            "-fno-strict-aliasing"
+          ],
+          "HEADER_SEARCH_PATHS": [
+            "$(SRCROOT)/.build/pce/.",
+            "$(SRCROOT)/.build/pce/mednafen",
+            "$(SRCROOT)/.build/pce/mednafen/include",
+            "$(SRCROOT)/.build/pce/mednafen/hw_sound",
+            "$(SRCROOT)/.build/pce/mednafen/hw_cpu",
+            "$(SRCROOT)/.build/pce/mednafen/hw_misc",
+            "$(SRCROOT)/.build/pce/libretro-common/include"
+          ],
+          "GCC_PREPROCESSOR_DEFINITIONS": [
+            "HAVE_UNISTD_H",
+            "FRONTEND_SUPPORTS_RGB565",
+            "USE_CHEATS",
+            "NEED_CD",
+            "NEED_TREMOR",
+            "NDEBUG",
+            "MEDNAFEN_VERSION_NUMERIC=931",
+            "WANT_PCE_FAST_EMU",
+            "STDC_HEADERS",
+            "__STDC_LIMIT_MACROS",
+            "__LIBRETRO__",
+            "_LOW_ACCURACY_",
+            "INLINE=inline"
+          ],
+          "IPHONEOS_DEPLOYMENT_TARGET": "17.4"
+        }
+      }
+    },
+    "PlayStationCore": {
+      "type": "framework",
+      "platform": "iOS",
+      "sources": [
+        {
+          "path": ".build/pcsx/libpcsxcore/cdriso.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/cdrom.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/cdrom-async.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/cheat.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/database.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/decode_xa.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/mdec.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/misc.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/plugins.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/ppf.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/psxbios.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/psxcommon.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/psxcounters.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/psxdma.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/psxhw.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/psxinterpreter.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/psxmem.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/psxevents.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/r3000a.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/sio.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/spu.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/gpu.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/pad.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/gte.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/gte_nf.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/gte_divider.c"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/gte_arm64.S"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/gte_nf_arm64.S"
+        },
+        {
+          "path": ".build/pcsx/libpcsxcore/new_dynarec/emu_if.c"
+        },
+        {
+          "path": ".build/pcsx/plugins/dfsound/dma.c"
+        },
+        {
+          "path": ".build/pcsx/plugins/dfsound/freeze.c"
+        },
+        {
+          "path": ".build/pcsx/plugins/dfsound/registers.c"
+        },
+        {
+          "path": ".build/pcsx/plugins/dfsound/spu.c"
+        },
+        {
+          "path": ".build/pcsx/plugins/dfsound/out.c"
+        },
+        {
+          "path": ".build/pcsx/plugins/dfsound/nullsnd.c"
+        },
+        {
+          "path": ".build/pcsx/plugins/gpulib/gpu.c"
+        },
+        {
+          "path": ".build/pcsx/plugins/gpulib/vout_pl.c"
+        },
+        {
+          "path": ".build/pcsx/plugins/gpulib/prim.c"
+        },
+        {
+          "path": ".build/pcsx/plugins/dfxvideo/gpulib_if.c"
+        },
+        {
+          "path": ".build/pcsx/deps/libchdr/deps/miniz-3.1.2/miniz.c"
+        },
+        {
+          "path": ".build/pcsx/frontend/cspace.c"
+        },
+        {
+          "path": ".build/pcsx/deps/libretro-common/compat/compat_strl.c"
+        },
+        {
+          "path": ".build/pcsx/deps/libretro-common/file/file_path.c"
+        },
+        {
+          "path": ".build/pcsx/deps/libretro-common/file/file_path_io.c"
+        },
+        {
+          "path": ".build/pcsx/deps/libretro-common/string/stdstring.c"
+        },
+        {
+          "path": ".build/pcsx/deps/libretro-common/string/rstrtod.c"
+        },
+        {
+          "path": ".build/pcsx/deps/libretro-common/vfs/vfs_implementation.c"
+        },
+        {
+          "path": ".build/pcsx/deps/libretro-common/compat/compat_posix_string.c"
+        },
+        {
+          "path": ".build/pcsx/deps/libretro-common/compat/fopen_utf8.c"
+        },
+        {
+          "path": ".build/pcsx/deps/libretro-common/encodings/encoding_utf.c"
+        },
+        {
+          "path": ".build/pcsx/deps/libretro-common/file/retro_dirent.c"
+        },
+        {
+          "path": ".build/pcsx/deps/libretro-common/streams/file_stream.c"
+        },
+        {
+          "path": ".build/pcsx/deps/libretro-common/streams/file_stream_transforms.c"
+        },
+        {
+          "path": ".build/pcsx/deps/libretro-common/time/rtime.c"
+        },
+        {
+          "path": ".build/pcsx/frontend/libretro.c"
+        },
+        {
+          "path": ".build/pcsx/frontend/main.c"
+        },
+        {
+          "path": ".build/pcsx/frontend/plugin.c"
+        }
+      ],
+      "dependencies": [
+        {
+          "sdk": "libz.tbd"
+        },
+        {
+          "sdk": "libc++.tbd"
+        }
+      ],
+      "settings": {
+        "base": {
+          "PRODUCT_BUNDLE_IDENTIFIER": "com.krafify.vetaretro.core.pcsx",
+          "GENERATE_INFOPLIST_FILE": "YES",
+          "DEFINES_MODULE": "NO",
+          "SKIP_INSTALL": "YES",
+          "DEAD_CODE_STRIPPING": "NO",
+          "GCC_SYMBOLS_PRIVATE_EXTERN": "NO",
+          "CLANG_ENABLE_MODULES": "NO",
+          "CLANG_CXX_LANGUAGE_STANDARD": "gnu++17",
+          "GCC_C_LANGUAGE_STANDARD": "gnu11",
+          "GCC_OPTIMIZATION_LEVEL": "2",
+          "GCC_WARN_INHIBIT_ALL_WARNINGS": "YES",
+          "OTHER_CFLAGS": [
+            "-fno-strict-aliasing"
+          ],
+          "OTHER_CPLUSPLUSFLAGS": [
+            "-fno-strict-aliasing"
+          ],
+          "HEADER_SEARCH_PATHS": [
+            "$(SRCROOT)/.build/pcsx/include",
+            "$(SRCROOT)/.build/pcsx/deps/libchdr/deps/miniz-3.1.2",
+            "$(SRCROOT)/.build/pcsx/deps/libretro-common/include"
+          ],
+          "GCC_PREPROCESSOR_DEFINITIONS": [
+            "IOS",
+            "NDEBUG",
+            "P_HAVE_MMAP=1",
+            "P_HAVE_POSIX_MEMALIGN=1",
+            "DISABLE_MEM_LUTS=0",
+            "DRC_DISABLE",
+            "GPU_PEOPS",
+            "USE_MINIZ",
+            "USE_LIBRETRO_VFS",
+            "HAVE_LIBRETRO",
+            "NO_FRONTEND",
+            "BUILTIN_GPU=peops"
+          ],
+          "IPHONEOS_DEPLOYMENT_TARGET": "17.4"
+        }
+      }
+    },
+    "DSCore": {
+      "type": "framework",
+      "platform": "iOS",
+      "sources": [
+        {
+          "path": ".build/desmume/desmume/src/libretro-common/rthreads/rthreads.c"
+        },
+        {
+          "path": ".build/desmume/desmume/src/libretro-common/memmap/memalign.c"
+        },
+        {
+          "path": ".build/desmume/desmume/src/libretro-common/features/features_cpu.c"
+        },
+        {
+          "path": ".build/desmume/desmume/src/libretro-common/compat/compat_strl.c"
+        },
+        {
+          "path": ".build/desmume/desmume/src/libretro-common/compat/compat_strcasestr.c"
+        },
+        {
+          "path": ".build/desmume/desmume/src/libretro-common/compat/fopen_utf8.c"
+        },
+        {
+          "path": ".build/desmume/desmume/src/libretro-common/compat/compat_posix_string.c"
+        },
+        {
+          "path": ".build/desmume/desmume/src/libretro-common/file/retro_dirent.c"
+        },
+        {
+          "path": ".build/desmume/desmume/src/libretro-common/file/file_path.c"
+        },
+        {
+          "path": ".build/desmume/desmume/src/libretro-common/string/stdstring.c"
+        },
+        {
+          "path": ".build/desmume/desmume/src/libretro-common/encodings/encoding_utf.c"
+        },
+        {
+          "path": ".build/desmume/desmume/src/libretro-common/streams/file_stream.c"
+        },
+        {
+          "path": ".build/desmume/desmume/src/libretro-common/streams/file_stream_transforms.c"
+        },
+        {
+          "path": ".build/desmume/desmume/src/libretro-common/vfs/vfs_implementation.c"
+        },
+        {
+          "path": ".build/desmume/desmume/src/armcpu.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/arm_instructions.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/bios.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/cp15.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/movie.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/Database.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/ROMReader.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/metaspu/metaspu.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/debug.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/emufile.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/encrypt.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/FIFO.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/firmware.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/GPU.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/mc.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/path.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/readwrite.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/wifi.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/MMU.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/NDSSystem.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/render3D.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/rtc.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/saves.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/slot1.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/slot2.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/SPU.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/matrix.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/gfx3d.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/thumb_instructions.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/colorspacehandler/colorspacehandler.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/guid.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/advanscene.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/datetime.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/emufat.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/xstring.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/decrypt/crc.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/decrypt/decrypt.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/decrypt/header.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/vfat.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/filter/deposterize.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/filter/xbrz.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/addons/slot2_auto.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/addons/slot2_mpcf.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/addons/slot2_paddle.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/addons/slot2_gbagame.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/addons/slot2_none.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/addons/slot2_rumblepak.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/addons/slot2_guitarGrip.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/addons/slot2_expMemory.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/addons/slot2_piano.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/addons/slot2_passme.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/addons/slot1_none.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/addons/slot1_r4.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/addons/slot1comp_mc.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/addons/slot1comp_rom.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/addons/slot1comp_protocol.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/addons/slot1_retail_mcrom.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/addons/slot1_retail_nand.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/addons/slot1_retail_auto.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/cheatSystem.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/texcache.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/rasterize.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/mic.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/driver.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/frontend/libretro/libretro.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/frontend/libretro/scrc32.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/libfat/partition.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/libfat/cache.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/libfat/directory.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/libfat/disc.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/libfat/fatdir.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/libfat/fatfile.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/libfat/filetime.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/libfat/file_allocation_table.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/libfat/libfat.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/libfat/libfat_public_api.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/libfat/lock.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/addons/slot1_retail_mcrom_debug.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/fsnitro.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/task.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/common.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/utils/dlditool.cpp"
+        },
+        {
+          "path": ".build/desmume/desmume/src/version.cpp"
+        }
+      ],
+      "dependencies": [
+        {
+          "sdk": "libz.tbd"
+        },
+        {
+          "sdk": "libc++.tbd"
+        }
+      ],
+      "settings": {
+        "base": {
+          "PRODUCT_BUNDLE_IDENTIFIER": "com.krafify.vetaretro.core.desmume",
+          "GENERATE_INFOPLIST_FILE": "YES",
+          "DEFINES_MODULE": "NO",
+          "SKIP_INSTALL": "YES",
+          "DEAD_CODE_STRIPPING": "NO",
+          "GCC_SYMBOLS_PRIVATE_EXTERN": "NO",
+          "CLANG_ENABLE_MODULES": "NO",
+          "CLANG_CXX_LANGUAGE_STANDARD": "gnu++17",
+          "GCC_C_LANGUAGE_STANDARD": "gnu11",
+          "GCC_OPTIMIZATION_LEVEL": "2",
+          "GCC_WARN_INHIBIT_ALL_WARNINGS": "YES",
+          "OTHER_CFLAGS": [
+            "-fno-strict-aliasing"
+          ],
+          "OTHER_CPLUSPLUSFLAGS": [
+            "-fno-strict-aliasing"
+          ],
+          "HEADER_SEARCH_PATHS": [
+            "$(SRCROOT)/.build/desmume/desmume/src/libretro-common/include",
+            "$(SRCROOT)/.build/desmume/desmume/src",
+            "$(SRCROOT)/.build/desmume/desmume/src/libretro"
+          ],
+          "GCC_PREPROCESSOR_DEFINITIONS": [
+            "APPLE_ATOMICS",
+            "__IOS__",
+            "NDEBUG",
+            "USE_POSIX_MEMALIGN",
+            "__RETRO_ARM__"
+          ],
+          "IPHONEOS_DEPLOYMENT_TARGET": "17.4"
+        }
+      }
+    },
+    "SaturnCore": {
+      "type": "framework",
+      "platform": "iOS",
+      "sources": [
+        {
+          "path": ".build/saturn/mednafen/ss/ss.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/scsp_dsp_jit.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/jitdump.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/db.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/smpc.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/cdb.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/mpeg.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/vdp2.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/vdp2_render.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/scu_dsp_gen.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/scu_dsp_mvi.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/scu_dsp_jmp.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/scu_dsp_misc.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/scu_dsp_jit.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/a64emit.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/x86emit.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/scsp_dsp_jit_x86.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/scu_dsp_jit_x86.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/sh7095_jit_x86.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/sound.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/vdp1.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/vdp1_line.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/vdp1_sprite.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/vdp1_poly.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/ak93c45.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/stvio.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/cart.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/cart/backup.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/cart/cs1ram.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/cart/bootrom.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/cart/extram.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/cart/rom.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/cart/stv.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/cart/stv_5881.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/cart/ar4mp.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/hash/crc.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/ss/smpc_iodevice.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/hw_cpu/m68k/m68k.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/tremor/bitwise.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/tremor/block.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/tremor/codebook.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/tremor/floor0.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/tremor/floor1.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/tremor/framing.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/tremor/info.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/tremor/mapping0.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/tremor/mdct.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/tremor/registry.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/tremor/res012.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/tremor/sharedbook.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/tremor/synthesis.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/tremor/vorbisfile.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/tremor/window.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/cdrom/edc_crc32.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/cdrom/galois.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/cdrom/recover-raw.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/cdrom/l-ec.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/cdrom/lec.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/cdrom/CDUtility.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/cdrom/audioreader.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/cdrom/CDAccess.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/cdrom/CDAccess_CCD.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/cdrom/CDAccess_Image.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/cdrom/cdromif.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/encodings/encoding_deflate.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/encodings/encoding_crc32.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/state.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/cdstream.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/general.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/mempatcher.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/settings.c"
+        },
+        {
+          "path": ".build/saturn/disc.c"
+        },
+        {
+          "path": ".build/saturn/input.c"
+        },
+        {
+          "path": ".build/saturn/libretro.c"
+        },
+        {
+          "path": ".build/saturn/libretro_settings.c"
+        },
+        {
+          "path": ".build/saturn/zip_reader.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/video/Deinterlacer.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/hash/md5.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/hash/sha256.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/formats/mpeg1/rmpeg1_ps.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/formats/mpeg1/rmpeg1_video.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/formats/mp3/rmp3.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/streams/file_stream.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/streams/file_stream_transforms.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/file/file_path.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/file/retro_dirent.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/lists/dir_list.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/lists/string_list.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/vfs/vfs_implementation.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/compat/compat_posix_string.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/compat/compat_strl.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/compat/compat_strcasestr.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/compat/fopen_utf8.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/encodings/encoding_utf.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/memmap/memalign.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/string/stdstring.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/string/rstrtod.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/time/rtime.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/features/features_cpu.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/rthreads/rthreads.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/queues/retro_spsc.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/thread_queue.c"
+        },
+        {
+          "path": ".build/saturn/mednafen/thread_eventcount.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/vfs/vfs_hybrid.c"
+        },
+        {
+          "path": ".build/saturn/libretro-common/file/file_path_io.c"
+        }
+      ],
+      "dependencies": [
+        {
+          "sdk": "libz.tbd"
+        },
+        {
+          "sdk": "libc++.tbd"
+        }
+      ],
+      "settings": {
+        "base": {
+          "PRODUCT_BUNDLE_IDENTIFIER": "com.krafify.vetaretro.core.saturn",
+          "GENERATE_INFOPLIST_FILE": "YES",
+          "DEFINES_MODULE": "NO",
+          "SKIP_INSTALL": "YES",
+          "DEAD_CODE_STRIPPING": "NO",
+          "GCC_SYMBOLS_PRIVATE_EXTERN": "NO",
+          "CLANG_ENABLE_MODULES": "NO",
+          "CLANG_CXX_LANGUAGE_STANDARD": "gnu++17",
+          "GCC_C_LANGUAGE_STANDARD": "gnu11",
+          "GCC_OPTIMIZATION_LEVEL": "2",
+          "GCC_WARN_INHIBIT_ALL_WARNINGS": "YES",
+          "OTHER_CFLAGS": [
+            "-fno-strict-aliasing"
+          ],
+          "OTHER_CPLUSPLUSFLAGS": [
+            "-fno-strict-aliasing"
+          ],
+          "HEADER_SEARCH_PATHS": [
+            "$(SRCROOT)/.build/saturn/.",
+            "$(SRCROOT)/.build/saturn/mednafen",
+            "$(SRCROOT)/.build/saturn/mednafen/include",
+            "$(SRCROOT)/.build/saturn/mednafen/intl",
+            "$(SRCROOT)/.build/saturn/mednafen/hw_sound",
+            "$(SRCROOT)/.build/saturn/mednafen/hw_cpu",
+            "$(SRCROOT)/.build/saturn/mednafen/hw_misc",
+            "$(SRCROOT)/.build/saturn/libretro-common/include"
+          ],
+          "GCC_PREPROCESSOR_DEFINITIONS": [
+            "HAVE_UNISTD_H",
+            "WANT_THREADING",
+            "HAVE_THREADS",
+            "NEED_DEINTERLACER",
+            "WANT_32BPP",
+            "NEED_CD",
+            "NEED_TREMOR",
+            "NDEBUG",
+            "STDC_HEADERS",
+            "__STDC_LIMIT_MACROS",
+            "__LIBRETRO__",
+            "_LOW_ACCURACY_",
+            "__STDC_CONSTANT_MACROS"
+          ],
+          "IPHONEOS_DEPLOYMENT_TARGET": "17.4"
+        }
+      }
+    },
+    "TIACore": {
+      "type": "framework",
+      "platform": "iOS",
+      "sources": [
+        {
+          "path": ".build/tia-public/src/cpu.c"
+        },
+        {
+          "path": ".build/tia-public/src/riot.c"
+        },
+        {
+          "path": ".build/tia-public/src/tia.c"
+        },
+        {
+          "path": ".build/tia-public/src/palette.c"
+        },
+        {
+          "path": ".build/tia-public/src/cart.c"
+        },
+        {
+          "path": ".build/tia-public/src/bus.c"
+        },
+        {
+          "path": ".build/tia-public/src/libretro.c"
+        }
+      ],
+      "settings": {
+        "base": {
+          "PRODUCT_BUNDLE_IDENTIFIER": "com.krafify.vetaretro.core.tia",
+          "GENERATE_INFOPLIST_FILE": "YES",
+          "DEFINES_MODULE": "NO",
+          "SKIP_INSTALL": "YES",
+          "GCC_SYMBOLS_PRIVATE_EXTERN": "NO",
+          "GCC_C_LANGUAGE_STANDARD": "gnu11",
+          "GCC_OPTIMIZATION_LEVEL": "2",
+          "GCC_PREPROCESSOR_DEFINITIONS": [
+            "NDEBUG",
+            "CORE_VERSION=\\\"6ae5bf99-veta176\\\""
+          ],
+          "HEADER_SEARCH_PATHS": [
+            "$(SRCROOT)/.build/tia-public/src"
+          ],
+          "IPHONEOS_DEPLOYMENT_TARGET": "17.4"
+        }
+      }
+    }
+  },
+  "schemes": {
+    "VetaNative": {
+      "build": {
+        "targets": {
+          "VetaNative": "all"
+        }
+      },
+      "test": {
+        "targets": [
+          "VetaNativeTests"
+        ]
+      }
+    }
+  }
+}

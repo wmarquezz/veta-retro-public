@@ -1,0 +1,18 @@
+diff --git a/mupen64plus-core/src/device/rcp/ai/ai_controller.c b/mupen64plus-core/src/device/rcp/ai/ai_controller.c
+index c494f5c..68c78c7 100644
+--- a/mupen64plus-core/src/device/rcp/ai/ai_controller.c
++++ b/mupen64plus-core/src/device/rcp/ai/ai_controller.c
+@@ -193,8 +193,13 @@ void write_ai_regs(void* opaque, uint32_t address, uint32_t value, uint32_t mask
+ 
+     switch (reg)
+     {
++    case AI_DRAM_ADDR_REG:
++        masked_write(&ai->regs[AI_DRAM_ADDR_REG], value, mask);
++        ai->regs[AI_DRAM_ADDR_REG] &= UINT32_C(0x00fffff8);
++        return;
+     case AI_LEN_REG:
+         masked_write(&ai->regs[AI_LEN_REG], value, mask);
++        ai->regs[AI_LEN_REG] &= UINT32_C(0x0003fff8);
+         if (ai->regs[AI_LEN_REG] != 0) {
+             fifo_push(ai);
+         }

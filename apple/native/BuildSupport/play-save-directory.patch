@@ -1,0 +1,63 @@
+diff --git a/Source/PS2VM.cpp b/Source/PS2VM.cpp
+index 5c8ded9..ea72bac 100644
+--- a/Source/PS2VM.cpp
++++ b/Source/PS2VM.cpp
+@@ -80,6 +80,7 @@ CPS2VM::CPS2VM()
+ 		auto absolutePath = CAppConfig::GetInstance().GetBasePath() / path;
+ 		Framework::PathUtils::EnsurePathExists(absolutePath);
+ 		CAppConfig::GetInstance().RegisterPreferencePath(setting, absolutePath);
++		CAppConfig::GetInstance().SetPreferencePath(setting, absolutePath);
+ 
+ 		auto currentPath = CAppConfig::GetInstance().GetPreferencePath(setting);
+ 		if(!fs::exists(currentPath))
+diff --git a/Source/app_shared/AppConfig.cpp b/Source/app_shared/AppConfig.cpp
+index b2fde78..be620a3 100644
+--- a/Source/app_shared/AppConfig.cpp
++++ b/Source/app_shared/AppConfig.cpp
+@@ -12,3 +12,7 @@ Framework::CConfig::PathType CAppConfig::BuildConfigPath()
+ {
+ 	return GetBasePath() / CONFIG_FILENAME;
+ }
++
++static std::unique_ptr<CAppConfig> vetaConfig;
++CAppConfig& CAppConfig::GetInstance() { if(!vetaConfig) vetaConfig=std::make_unique<CAppConfig>(); return *vetaConfig; }
++void CAppConfig::ResetInstance() { vetaConfig.reset(); }
+diff --git a/Source/app_shared/AppConfig.h b/Source/app_shared/AppConfig.h
+index a8cfa55..8b6fdd4 100644
+--- a/Source/app_shared/AppConfig.h
++++ b/Source/app_shared/AppConfig.h
+@@ -7,6 +7,8 @@ class CAppConfig : public Framework::CConfig, public CSingleton<CAppConfig>
+ {
+ public:
+ 	CAppConfig();
++	static CAppConfig& GetInstance();
++	static void ResetInstance();
+ 	virtual ~CAppConfig() = default;
+ 
+ 	//This needs to be implemented by every application/executable
+diff --git a/Source/ui_libretro/main_libretro.cpp b/Source/ui_libretro/main_libretro.cpp
+index 8a07c26..f51191a 100644
+--- a/Source/ui_libretro/main_libretro.cpp
++++ b/Source/ui_libretro/main_libretro.cpp
+@@ -15,7 +15,14 @@
+ #include "MemStream.h"
+ 
+ #include "filesystem_def.h"
+-#include "DefaultAppConfig.h"
++extern retro_environment_t g_environ_cb;
++fs::path CAppConfig::GetBasePath() const
++{
++    const char* save=nullptr;
++    if(!g_environ_cb(RETRO_ENVIRONMENT_GET_SAVE_DIRECTORY,&save) || !save)
++        throw std::runtime_error("VETA: missing PS2 save directory");
++    auto path=fs::path(save); Framework::PathUtils::EnsurePathExists(path); return path;
++}
+ 
+ #include <vector>
+ #include <cstdlib>
+@@ -594,4 +601,5 @@ void retro_deinit()
+ 		m_virtualMachine = nullptr;
+ 	}
+ 	libretro_supports_bitmasks = false;
++	CAppConfig::ResetInstance();
+ }

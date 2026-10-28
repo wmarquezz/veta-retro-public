@@ -1,0 +1,25 @@
+diff --git a/Source/Core/Common/FileUtil.cpp b/Source/Core/Common/FileUtil.cpp
+index 54fb88b..c3e91f0 100644
+--- a/Source/Core/Common/FileUtil.cpp
++++ b/Source/Core/Common/FileUtil.cpp
+@@ -894,15 +894,19 @@ static std::string CreateSysDirectoryPath()
+ 
+ const std::string& GetSysDirectory()
+ {
++#if defined(__LIBRETRO__) && !defined(ANDROID)
++  return s_libretro_sys_directory;
++#else
+   static const std::string sys_directory = CreateSysDirectoryPath();
+   return sys_directory;
++#endif
+ }
+ 
+ #if defined(__LIBRETRO__) && !defined(ANDROID)
+ void SetSysDirectory(const std::string& path)
+ {
+   INFO_LOG_FMT(COMMON, "Setting Sys directory to {}", path);
+-  s_libretro_sys_directory = path;
++  s_libretro_sys_directory = path + DIR_SEP;
+ }
+ #endif
+ 

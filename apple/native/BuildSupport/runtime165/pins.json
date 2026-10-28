@@ -1,0 +1,410 @@
+{
+  "schema": 1,
+  "recipe": "runtime165",
+  "description": "Exact source consolidation of Dolphin zva and N64 state-y; no game or BIOS assets",
+  "engines": {
+    "dolphin-retro": {
+      "repo": "libretro/dolphin",
+      "commit": "3aac3f052f733f8df2f1616843a4d2e14002ed11",
+      "patch": "patches/dolphin-retro-runtime165.patch",
+      "patchSHA256": "75d78d98482df8f20378da7e0ee94a0de5de01eb995f603afbabda720fe38e5c",
+      "files": {
+        "Source/Core/Common/FileUtil.cpp": {
+          "before": "1636b84e653e1edb7a104860868e1f212b1aad96afa075ec51d927748e84840e",
+          "after": "341c6e70e8d0353f73e19891ba6f0e61247517d5a249d5f8877cd7da5425f398"
+        },
+        "Source/Core/Common/Visibility.h": {
+          "before": null,
+          "after": "9887616e2de723edf2d8ce612fbc0b2763dc0b396d17effb09ff8fd10627919b"
+        },
+        "Source/Core/Core/Config/MainSettings.cpp": {
+          "before": "b66a7cd93abb24af463ddaa3199462ef9a1bb10465f925508379f29bbe950e29",
+          "after": "6de4e5b0400721db1a7cd0e872772bee92254eaec0aefe12c893e1b0c1ff4a85"
+        },
+        "Source/Core/Core/Config/MainSettings.h": {
+          "before": "c2b45fb7eb6c44da705c35f0a22a48e0d6f997532cac0c26134c9fd42e98665a",
+          "after": "1df71776954664b2b5027a454104517ee449a962c3f862cc33da7f3b1399d119"
+        },
+        "Source/Core/Core/Core.cpp": {
+          "before": "2423a0f38ebb0573a1ec23020ccdc3f0f51b40aef1285fa62d0288d2fc0a6cdc",
+          "after": "10e78ee4b77b560ccacdbfaf6d9470aa90d33df82c97d3dd20c3256f52474cbb"
+        },
+        "Source/Core/Core/Core.h": {
+          "before": "91f003656055cab118336cbf0b44995885c4fa7d768d05ec9d6336504cc6328c",
+          "after": "13042d6929f22ba3b247db23d522209cd0fc85746153f6a76bd11fbc82228e8e"
+        },
+        "Source/Core/Core/HW/CPU.cpp": {
+          "before": "80c7d104ba9dce85e413563f615fe5388102ddf54a00669cc231cdfff64aaacb",
+          "after": "b4789b0faba99b44d8a5e02c611dbbdfb1e2a33b67efada0b234677e6ee0760a"
+        },
+        "Source/Core/Core/HW/CPU.h": {
+          "before": "22114136f7e385b161c37de1550e74c2761ec96cc0080a9edf821d37adc63d2e",
+          "after": "444c8c495fc342f0625f2c472fb49305995317e2ca402118bbc3eeaa7d253881"
+        },
+        "Source/Core/Core/PowerPC/CachedInterpreter/CachedInterpreter.cpp": {
+          "before": "2a4c67f21aacbd20e08d7686706f4eb4d85c13ff000c456d98767c2fa6042e36",
+          "after": "faf5662055fd3f37e2f4917aae544ede4249e3914a3e6579f051e959b190c9fd"
+        },
+        "Source/Core/Core/PowerPC/CachedInterpreter/CachedInterpreter.h": {
+          "before": "887bad523c0b91683eee2dc6e884fc9727e53a9aa625926e7285b32c3fa00333",
+          "after": "db8609203d6e1b9ee43e0b684d7f817ec3e4cde704005293274eb83f703e06cf"
+        },
+        "Source/Core/Core/PowerPC/CachedInterpreter/CachedInterpreterBlockCache.cpp": {
+          "before": "a807eded141d13899511ec47bde3a38e2304a026f0d5956153200bfd2739a0ad",
+          "after": "edf3c50e57dd8b355d958824d8d21e0f27d3efea8f44e414efbcc68d4d9408e9"
+        },
+        "Source/Core/Core/PowerPC/CachedInterpreter/CachedInterpreterEmitter.cpp": {
+          "before": "4399e37549d4eebe0d2a15f012463fca0b4bb507beac252a6035bdb96387fe31",
+          "after": "6b57750aa4e2ea9a3073c07c1386fd5922b73271e169245c56630d495d26753c"
+        },
+        "Source/Core/Core/PowerPC/CachedInterpreter/CachedInterpreterEmitter.h": {
+          "before": "a225c8f5014845bd6c5443e007d02ef4d1ca56d74e1057a56d5a1575d816b8d6",
+          "after": "edb988461712dad33b36a95ac780051797950ddc7de03cbc2dd29ba607bb875c"
+        },
+        "Source/Core/Core/PowerPC/CachedInterpreter/CachedInterpreter_Disassembler.cpp": {
+          "before": "7fc1eb743d2ff67a17e19297eb0c0b4057ec9a8b3e9346567b51534fc5ea468a",
+          "after": "c8fd117740ce3b803d1a42fb3604010ffeb33d830371777ae4de069a57626cec"
+        },
+        "Source/Core/Core/PowerPC/PPCAnalyst.h": {
+          "before": "18d1f74166cdb272771c858b4fc6685e4d16747e4829b5e855776a9d0d2a4b7e",
+          "after": "abcc07cfbbc77fb55d1c4418edd156aabeb0020605f57f8b87985cb29e25e7cb"
+        },
+        "Source/Core/Core/PowerPC/PowerPC.h": {
+          "before": "5d6ca161ee9ac0375f77046984c007749315459de2ed87fd12486aa9e77fb2e3",
+          "after": "c4045d619663edf1fefcbf29d457eab3bcd5b77e7462d7a463fd4084cd906986"
+        },
+        "Source/Core/DolphinLibretro/Boot.cpp": {
+          "before": "9006d324c2997d3795100ee1f1722653371b8ddedabe442f97d128838a8c18f7",
+          "after": "dd367794173c1f1386c9375c8ad1c7c414336c7d4447a079aea05ece6ce2a6f2"
+        },
+        "Source/Core/DolphinLibretro/Main.cpp": {
+          "before": "d8251f05d2521d9855ee623213a5938f695f7ba384f095000998f32840963efa",
+          "after": "7f5cc90bcdd90477922380b88377a8f189ada06a2776e3b9e57520dd89d2770c"
+        },
+        "Source/Core/DolphinLibretro/Video.h": {
+          "before": "8d565a11e4c0c51b0264387cf6aa113ded6ae0819e6debd8a12b4235bf6e61a6",
+          "after": "6430a1abd15e8be05fa70e4891fc5c624d67494df33fadd1cec372907a5195f1"
+        },
+        "Source/Core/VideoBackends/OGL/OGLGfx.cpp": {
+          "before": "3d20dc9cfdd29d43d5432fb1527f78edbff598ce040f08b53bb3ae17ab9da916",
+          "after": "15472c8e0e73a5e755538128a3e5bc6d05503102a2e7b221fd02972102307ecf"
+        },
+        "Source/Core/VideoBackends/OGL/OGLNativeVertexFormat.cpp": {
+          "before": "046ec9a7309a753d7cb1b78393744aff484110d21acfed1eb06fdabe29c91f72",
+          "after": "c0f5189071e8bfe1b6c82e80faa2745f51eee0966e4c45f091c65423d5aef8f3"
+        },
+        "Source/Core/VideoBackends/OGL/OGLStreamBuffer.cpp": {
+          "before": "fd79890089e0c75c2db2bbae3dcaea18543c6338dae1841f1f4dea0f68d0a187",
+          "after": "6d2eaf26eac390cbce1216ec2858565be0d8813586f119e2819ff5adac0c8213"
+        },
+        "Source/Core/VideoBackends/OGL/OGLVertexManager.h": {
+          "before": "d88667da501eebfb65b026e0f16b601bc99a71cf76229c40942825a69c29187a",
+          "after": "c06c97abfe1cc08e70d9c19ccc5048259491047208cc5c3a8ea8d6e1c6a4ee7e"
+        },
+        "Source/Core/VideoBackends/Software/SWGfx.cpp": {
+          "before": "dac78e8aadb469fe91026e3c1dfd3ced7111043cca9e74555c7b3caccfdd35b0",
+          "after": "7a0d1e7cfda5a5429502a4e13c6a348d318c462896a566b8bcd96298e4471c79"
+        },
+        "Source/Core/VideoBackends/Software/SWOGLWindow.cpp": {
+          "before": "c55796a8baf5edd1d96a57d7c6c2804f383261836b2331d260ac10406003adff",
+          "after": "a245c755331fc6be9189ace0acb23de2596bca29b2a2dd4f941f86374f178e5c"
+        },
+        "Source/Core/VideoCommon/Fifo.cpp": {
+          "before": "402ab69c21a7352634a0957dfa1ab9402ec3c25ccf3c68660114e746afe1cf3f",
+          "after": "4b751136cda0256e7f76a8aeddc36dfa1c1a9529288188ec06bded06b2ec4e3a"
+        },
+        "Source/Core/VideoCommon/Fifo.h": {
+          "before": "95ae2c11b9a0cdee638a1786c03752a8bcda33912740dd68d25656c626cf24ad",
+          "after": "663e7f97b326be9d13d0363701a05c25f35020b27009df4f28bc94063cb89b41"
+        },
+        "Source/Core/VideoCommon/FramebufferManager.cpp": {
+          "before": "62661d7b473c4145e31701bcf57c6d110e4eca1aec48bda84a38afa369c53f7a",
+          "after": "c20977bd5562ba8688161ca2208f9c3529798261fa978e1104521fc819ec5bad"
+        },
+        "Source/Core/VideoCommon/FramebufferManager.h": {
+          "before": "1789f41598c916eef00fa75d45a4ff4643b95bea376375744c841fb4e2e256d1",
+          "after": "e06679d441d9b648b4fd132e78847acd23680a61ceb85d29080c66d4d1fce3e1"
+        },
+        "Source/Core/VideoCommon/FramebufferShaderGen.cpp": {
+          "before": "08f93322d75d1a4920e0d01172a684301b161984297b62ea93fd908771a4a5e9",
+          "after": "29a132aea1b92b317a319318883f03fbeba82a47f776234d92b83bbed4942df5"
+        },
+        "Source/Core/VideoCommon/FramebufferShaderGen.h": {
+          "before": "df714a620b2d6620e450d41ecff1b0313427f7c1ff7620d7e8582abb42f792fd",
+          "after": "7000b485cf44d8f637421c4fc92826f482fd7ed755e72e6bdd82096729b8dc28"
+        }
+      },
+      "submodules": [
+        {
+          "path": "Externals/FFmpeg-bin",
+          "commit": "9bc087fbca36ce5a85eb4fd73f0c73813593e5a2"
+        },
+        {
+          "path": "Externals/Qt",
+          "commit": "306289108d29a4b31a5460f7b55d28fde7b96d1b"
+        },
+        {
+          "path": "Externals/SDL/SDL",
+          "commit": "f87239e71e42da91ca317a12eefb82cfbf3393eb"
+        },
+        {
+          "path": "Externals/SFML/SFML",
+          "commit": "0fa201c969e48ecc253581c5841ce73f44d42f49"
+        },
+        {
+          "path": "Externals/Vulkan-Headers",
+          "commit": "39f924b810e561fd86b2558b6711ca68d4363f68"
+        },
+        {
+          "path": "Externals/VulkanMemoryAllocator",
+          "commit": "3bab6924988e5f19bf36586a496156cf72f70d9f"
+        },
+        {
+          "path": "Externals/bzip2/bzip2",
+          "commit": "6a8690fc8d26c815e798c588f796eabe9d684cf0"
+        },
+        {
+          "path": "Externals/cpp-ipc/cpp-ipc",
+          "commit": "b6cbbc940e25ff898f09a40b107781cef6027b13"
+        },
+        {
+          "path": "Externals/cpp-optparse/cpp-optparse",
+          "commit": "2265d647232249a53a03b411099863ceca35f0d3"
+        },
+        {
+          "path": "Externals/cubeb/cubeb",
+          "commit": "54217bca3f3e0cd53c073690a23dd25d83557909"
+        },
+        {
+          "path": "Externals/cubeb/cubeb/cmake/sanitizers-cmake",
+          "commit": "aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a"
+        },
+        {
+          "path": "Externals/cubeb/cubeb/googletest",
+          "commit": "40412d85124f7c6f3d88454583c4633e5e10fc8c"
+        },
+        {
+          "path": "Externals/curl/curl",
+          "commit": "cfbfb65047e85e6b08af65fe9cdbcf68e9ad496a"
+        },
+        {
+          "path": "Externals/enet/enet",
+          "commit": "2662c0de09e36f2a2030ccc2c528a3e4c9e8138a"
+        },
+        {
+          "path": "Externals/fmt/fmt",
+          "commit": "e424e3f2e607da02742f73db84873b8084fc714c"
+        },
+        {
+          "path": "Externals/glslang/glslang",
+          "commit": "a57276bf558f5cf94d3a9854ebdf5a2236849a5a"
+        },
+        {
+          "path": "Externals/gtest",
+          "commit": "eb2d85edd0bff7a712b6aff147cd9f789f0d7d0b"
+        },
+        {
+          "path": "Externals/hidapi/hidapi-src",
+          "commit": "d6b2a974608dec3b76fb1e36c189f22b9cf3650c"
+        },
+        {
+          "path": "Externals/imgui/imgui",
+          "commit": "45acd5e0e82f4c954432533ae9985ff0e1aad6d5"
+        },
+        {
+          "path": "Externals/implot/implot",
+          "commit": "3da8bd34299965d3b0ab124df743fe3e076fa222"
+        },
+        {
+          "path": "Externals/libadrenotools",
+          "commit": "8fae8ce254dfc1344527e05301e43f37dea2df80"
+        },
+        {
+          "path": "Externals/libadrenotools/lib/linkernsbypass",
+          "commit": "aa3975893d83ef1bc84c321ec60c65fbf1287887"
+        },
+        {
+          "path": "Externals/libspng/libspng",
+          "commit": "fb768002d4288590083a476af628e51c3f1d47cd"
+        },
+        {
+          "path": "Externals/libusb/libusb",
+          "commit": "15a7ebb4d426c5ce196684347d2b7cafad862626"
+        },
+        {
+          "path": "Externals/lz4/lz4",
+          "commit": "5fc0630a0ed55e9755b0fe3990cd021ae1c3edc1"
+        },
+        {
+          "path": "Externals/mGBA/mgba",
+          "commit": "0b40863f64d0940f333fa1c638e75f86f8a26a33"
+        },
+        {
+          "path": "Externals/miniupnpc/miniupnp",
+          "commit": "bf4215a7574f88aa55859db9db00e3ae58cf42d6"
+        },
+        {
+          "path": "Externals/minizip-ng/minizip-ng",
+          "commit": "55db144e03027b43263e5ebcb599bf0878ba58de"
+        },
+        {
+          "path": "Externals/pugixml/pugixml",
+          "commit": "ee86beb30e4973f5feffe3ce63bfa4fbadf72f38"
+        },
+        {
+          "path": "Externals/rcheevos/rcheevos",
+          "commit": "926e4608f8dca7989267c787bbefb3ab1c835ac5"
+        },
+        {
+          "path": "Externals/spirv_cross/SPIRV-Cross",
+          "commit": "ebe2aa0cd80f5eb5cd8a605da604cacf72205f3b"
+        },
+        {
+          "path": "Externals/tinygltf/tinygltf",
+          "commit": "c5641f2c22d117da7971504591a8f6a41ece488b"
+        },
+        {
+          "path": "Externals/watcher/watcher",
+          "commit": "b03bdcfc11549df595b77239cefe2643943a3e2f"
+        },
+        {
+          "path": "Externals/wil",
+          "commit": "7447d38337abf23a5c2286305b743506455aa9cc"
+        },
+        {
+          "path": "Externals/xxhash/xxHash",
+          "commit": "e626a72bc2321cd320e953a0ccf1584cad60f363"
+        },
+        {
+          "path": "Externals/zlib-ng/zlib-ng",
+          "commit": "ce01b1e41da298334f8214389cc9369540a7560f"
+        },
+        {
+          "path": "Externals/zstd/zstd",
+          "commit": "711e17da98510a3567bf47f85a08a76f64811474"
+        }
+      ],
+      "uninitializedGitlinks": [],
+      "extraFlags": [
+        "-DENABLE_LTO=ON"
+      ],
+      "attribution": [
+        {
+          "repo": "Provenance-Emu/iCube",
+          "commit": "e0fa51223d897beaf0aca1671095242232b3595b",
+          "scope": "Conservative engine5 CachedInterpreter import with VETA integration changes; copyright/SPDX retained"
+        }
+      ],
+      "requiredNotices": [
+        "COPYING",
+        "LICENSES/BSD-3-Clause.txt",
+        "LICENSES/CC0-1.0.txt",
+        "LICENSES/GPL-2.0-or-later.txt",
+        "LICENSES/MIT.txt"
+      ],
+      "build": {
+        "framework": "DolphinCore",
+        "target": "dolphin_libretro",
+        "artifact": "dolphin_libretro.dylib",
+        "flags": [
+          "-DCMAKE_SYSTEM_NAME=iOS",
+          "-DCMAKE_OSX_ARCHITECTURES=arm64",
+          "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.4",
+          "-DCMAKE_BUILD_TYPE=Release",
+          "-DCMAKE_SYSTEM_PROCESSOR=aarch64",
+          "-DLIBRETRO=ON",
+          "-DIOS=ON",
+          "-DENABLE_VULKAN=OFF",
+          "-DUSE_MGBA=OFF",
+          "-DENABLE_TESTS=OFF",
+          "-DUSE_SYSTEM_LIBS=OFF",
+          "-DCMAKE_SHARED_LINKER_FLAGS=-framework Foundation"
+        ]
+      },
+      "abi": {
+        "symbolCount": 357,
+        "normalizedSymbolsSHA256": "aa29d85c5ae07f6b5220269f299babe0bc812f7eaef0df7602704304a09c45b6",
+        "dependencies": [
+          "@rpath/DolphinCore.framework/DolphinCore (compatibility version 0.0.0, current version 0.0.0)",
+          "/System/Library/Frameworks/Foundation.framework/Foundation (compatibility version 300.0.0, current version 4201.0.0)",
+          "/usr/lib/libresolv.9.dylib (compatibility version 1.0.0, current version 1.0.0)",
+          "/System/Library/Frameworks/SystemConfiguration.framework/SystemConfiguration (compatibility version 1.0.0, current version 1385.60.3)",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation (compatibility version 150.0.0, current version 4201.0.0)",
+          "/System/Library/Frameworks/CoreServices.framework/CoreServices (compatibility version 1.0.0, current version 1226.0.0)",
+          "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)",
+          "/usr/lib/libcompression.dylib (compatibility version 1.0.0, current version 1.0.0)",
+          "/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 2000.67.0)",
+          "/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)"
+        ],
+        "architecture": "arm64",
+        "minimumOS": "16.4",
+        "platform": "IOS"
+      },
+      "bundleIdentifier": "com.krafify.vetaretro.core.dolphin"
+    },
+    "mupen-next": {
+      "repo": "libretro/mupen64plus-libretro-nx",
+      "commit": "15bada85906593376e8fd697f1b0b3af3a20f512",
+      "patch": "patches/mupen-next-runtime165.patch",
+      "patchSHA256": "fea18dda5530dda0789011a5a0394511e61acc3f4e54e64954cfdee5588c1238",
+      "files": {
+        "libretro/libretro.c": {
+          "before": "3f9c9f9c7b7124369a7a71450e20e8b8738920961d1c57bb786194ad30df7499",
+          "after": "f99b1e65a4ce0ce5d33cf286346bb3bbb86f3efcced16a6a89c91631b6009ac8"
+        },
+        "mupen64plus-core/src/device/rcp/ai/ai_controller.c": {
+          "before": "f077670fc9ffa85093acb3db08489fc21c58ffafa1bb490d288940c24b2ca7c3",
+          "after": "641fe553057368497c0a8656d3960f42c102179dddd8359368835ae1d2a6318e"
+        },
+        "mupen64plus-core/src/main/savestates.c": {
+          "before": "ea9ed3fa0560e37556a0d59e518b6504b3a807cda2efd90678e5d954adf5d4b1",
+          "after": "c55b8c0d4e9f253fcbbce7db3961779dbb4321d834167ca5abba6ba5b16ebcdc"
+        }
+      },
+      "submodules": [],
+      "uninitializedGitlinks": [
+        {
+          "path": "mupen64plus-rsp-paraLLEl/lightning/gnulib",
+          "commit": "e54b645fc6b8422562327443bda575c65d931fbd",
+          "reason": "Upstream has no .gitmodules mapping; directory empty in tested source; device excludes paraLLEl RSP"
+        }
+      ],
+      "extraFlags": [],
+      "attribution": [],
+      "requiredNotices": [
+        "LICENSE"
+      ],
+      "build": {
+        "framework": "N64NextCore",
+        "target": "N64NextCore",
+        "artifact": "N64NextCore.dylib",
+        "flags": [
+          "-DCMAKE_SYSTEM_NAME=iOS",
+          "-DCMAKE_OSX_ARCHITECTURES=arm64",
+          "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.4",
+          "-DCMAKE_BUILD_TYPE=Release"
+        ]
+      },
+      "abi": {
+        "symbolCount": 4943,
+        "normalizedSymbolsSHA256": "4884488e34669f40785c82dd7925b67b7adbdc35166a53272685632c3e722ea3",
+        "dependencies": [
+          "@rpath/N64NextCore.framework/N64NextCore (compatibility version 0.0.0, current version 0.0.0)",
+          "/usr/lib/libz.1.dylib (compatibility version 1.0.0, current version 1.2.12)",
+          "/System/Library/Frameworks/Foundation.framework/Foundation (compatibility version 300.0.0, current version 4201.0.0)",
+          "/System/Library/Frameworks/OpenGLES.framework/OpenGLES (compatibility version 1.0.0, current version 1.0.0)",
+          "/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox (compatibility version 1.0.0, current version 1000.0.0)",
+          "/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 2000.67.0)",
+          "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)"
+        ],
+        "architecture": "arm64",
+        "minimumOS": "16.4",
+        "platform": "IOS"
+      },
+      "bundleIdentifier": "com.krafify.vetaretro.core.mupen-next"
+    }
+  },
+  "recipeInputs": {
+    "mupen-next.json": "622387b86b72c2884013bc4e22173c72733301fb5fb83237d72f09c65b403ea6"
+  }
+}

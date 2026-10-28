@@ -1,0 +1,98 @@
+diff --git a/core/build.h b/core/build.h
+index 6ea5355..39923bb 100755
+--- a/core/build.h
++++ b/core/build.h
+@@ -59,6 +59,9 @@
+ #define FEAT_DSPREC DYNAREC_NONE
+ #endif
+ 
++#if defined(TARGET_IPHONE) && !TARGET_OS_SIMULATOR
++#define FEAT_NO_RWX_PAGES
++#endif
+ #ifdef __SWITCH__
+ #define FEAT_NO_RWX_PAGES
+ #endif
+diff --git a/core/hw/aica/dsp_arm64.cpp b/core/hw/aica/dsp_arm64.cpp
+index 357bd84..5843850 100644
+--- a/core/hw/aica/dsp_arm64.cpp
++++ b/core/hw/aica/dsp_arm64.cpp
+@@ -448,8 +448,12 @@ void recInit()
+ #endif
+ 	verify(rc);
+ #if defined(TARGET_IPHONE) || defined(TARGET_ARM_MAC)
++#ifdef FEAT_NO_RWX_PAGES
++    DynCode = pCodeBuffer + rx_offset;
++#else
+ 	DynCode = pCodeBuffer;
+ #endif
++#endif
+ }
+ 
+ 
+diff --git a/core/linux/posix_vmem.cpp b/core/linux/posix_vmem.cpp
+index 2d42410..baa708f 100644
+--- a/core/linux/posix_vmem.cpp
++++ b/core/linux/posix_vmem.cpp
+@@ -51,6 +51,22 @@ static int ashmem_create_region(const char *name, size_t size)
+ }
+ #endif  // #ifdef __ANDROID__
+ 
++// VETA: frontend-owned prepared RX/RW pairs; registration happens before init.
++#include <mutex>
++#include <vector>
++static bool (*veta_alloc)(size_t,void**,void**);
++static bool (*veta_free)(void*);
++struct VetaJitRegion {void *rx,*rw;size_t size;};
++static std::vector<VetaJitRegion> veta_regions;
++static std::mutex veta_mutex;
++extern "C" __attribute__((visibility("default"))) void veta_set_jit_allocator(
++    bool (*allocate)(size_t,void**,void**),bool (*release)(void*))
++{std::lock_guard<std::mutex> guard(veta_mutex);if(veta_regions.empty()){veta_alloc=allocate;veta_free=release;}}
++static bool veta_is_alias(void *p,size_t size) {
++    std::lock_guard<std::mutex> guard(veta_mutex);
++    for(auto &r:veta_regions)if((uintptr_t)p>=(uintptr_t)r.rw && size<=r.size && (uintptr_t)p-(uintptr_t)r.rw<=r.size-size)return true;
++    return false;
++}
+ namespace virtmem
+ {
+ 
+@@ -73,6 +89,7 @@ bool region_unlock(void *start, size_t len)
+ 
+ bool region_set_exec(void *start, size_t len)
+ {
++    if(veta_is_alias(start,len))return true; // Keep RW alias writable, RX is separate.
+ 	size_t inpage = (uintptr_t)start & PAGE_MASK;
+     int protFlags = PROT_READ | PROT_EXEC;
+ #ifndef TARGET_IPHONE
+@@ -289,6 +306,11 @@ void release_jit_block(void *code_area, size_t size)
+ // Use two addr spaces: need to remap something twice, therefore use allocate_shared_filemem()
+ bool prepare_jit_block(void *code_area, size_t size, void **code_area_rw, ptrdiff_t *rx_offset)
+ {
++    if(veta_alloc){
++        void *rx=nullptr,*rw=nullptr;if(!veta_alloc(size,&rx,&rw))return false;
++        {std::lock_guard<std::mutex> guard(veta_mutex);veta_regions.push_back({rx,rw,size});}
++        *code_area_rw=rw;*rx_offset=(intptr_t)rx-(intptr_t)rw;return true;
++    }
+ 	int fd = allocate_shared_filemem(size);
+ 	if (fd < 0)
+ 		return false;
+@@ -319,6 +341,10 @@ bool prepare_jit_block(void *code_area, size_t size, void **code_area_rw, ptrdif
+ 
+ void release_jit_block(void *code_area1, void *code_area2, size_t size)
+ {
++    {std::lock_guard<std::mutex> guard(veta_mutex);
++    for(auto i=veta_regions.begin();i!=veta_regions.end();++i)
++        if(i->rx==code_area1 || i->rw==code_area1 || i->rx==code_area2 || i->rw==code_area2){veta_free(i->rx);veta_regions.erase(i);return;}}
++
+ 	// keep code_area1 (RX) mapped since it's statically allocated
+ 	munmap(code_area2, size);
+ }
+diff --git a/shell/libretro/libretro.osx.def b/shell/libretro/libretro.osx.def
+index 53a556a..8a0ae8f 100644
+--- a/shell/libretro/libretro.osx.def
++++ b/shell/libretro/libretro.osx.def
+@@ -25,3 +25,4 @@ _retro_unload_game
+ _retro_get_region
+ _retro_get_memory_data
+ _retro_get_memory_size
++_veta_set_jit_allocator

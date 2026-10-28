@@ -1,0 +1,99 @@
+[
+  {
+    "name": "flycast",
+    "repo": "flyinghead/flycast",
+    "commit": "6d81b998169b916ad7d7d6f403f7dc2c18e2aea5",
+    "framework": "DreamcastCore",
+    "target": "flycast_libretro",
+    "artifact": "flycast_libretro.dylib",
+    "cache": "VetaFlycastBuild",
+    "flags": [
+      "-DCMAKE_SYSTEM_NAME=iOS",
+      "-DCMAKE_OSX_ARCHITECTURES=arm64",
+      "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.4",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DIOS=ON",
+      "-DLIBRETRO=ON",
+      "-DUSE_GLES=OFF",
+      "-DUSE_GLES2=OFF",
+      "-DUSE_VULKAN=OFF",
+      "-DUSE_BREAKPAD=OFF",
+      "-DUSE_LUA=OFF",
+      "-DUSE_HOST_LIBZIP=OFF",
+      "-DUSE_OPENMP=OFF",
+      "-DCMAKE_C_FLAGS=-DIOS",
+      "-DCMAKE_CXX_FLAGS=-DIOS"
+    ]
+  },
+  {
+    "name": "azahar",
+    "repo": "azahar-emu/azahar",
+    "commit": "93f8939a10b0f6dd740683d3201c7ff69250580d",
+    "framework": "ThreeDSCore",
+    "target": "azahar_libretro",
+    "artifact": "bin/Release/azahar_libretro.dylib",
+    "cache": "VetaAzaharBuild",
+    "flags": [
+      "-DCMAKE_SYSTEM_NAME=iOS",
+      "-DCMAKE_OSX_ARCHITECTURES=arm64",
+      "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.4",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_SYSTEM_PROCESSOR=arm64",
+      "-DENABLE_LIBRETRO=ON",
+      "-DENABLE_QT=OFF",
+      "-DENABLE_SDL2=OFF",
+      "-DENABLE_TESTS=OFF",
+      "-DENABLE_WEB_SERVICE=OFF",
+      "-DENABLE_SCRIPTING=OFF",
+      "-DENABLE_GDBSTUB=OFF",
+      "-DENABLE_OPENAL=OFF",
+      "-DENABLE_CUBEB=OFF",
+      "-DENABLE_LIBUSB=OFF",
+      "-DENABLE_ROOM=OFF",
+      "-DENABLE_VULKAN=ON",
+      "-DENABLE_OPENGL=OFF",
+      "-DENABLE_LTO=OFF",
+      "-DENABLE_BUILTIN_KEYBLOB=OFF",
+      "-DCITRA_WARNINGS_AS_ERRORS=OFF",
+      "-DIOS=ON"
+    ]
+  },
+  {
+    "name": "dolphin-retro",
+    "repo": "libretro/dolphin",
+    "commit": "3aac3f052f733f8df2f1616843a4d2e14002ed11",
+    "framework": "DolphinCore",
+    "target": "dolphin_libretro",
+    "artifact": "dolphin_libretro.dylib",
+    "cache": "VetaDolphinBuild",
+    "flags": [
+      "-DCMAKE_SYSTEM_NAME=iOS",
+      "-DCMAKE_OSX_ARCHITECTURES=arm64",
+      "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.4",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_SYSTEM_PROCESSOR=aarch64",
+      "-DLIBRETRO=ON",
+      "-DIOS=ON",
+      "-DENABLE_VULKAN=OFF",
+      "-DUSE_MGBA=OFF",
+      "-DENABLE_TESTS=OFF",
+      "-DUSE_SYSTEM_LIBS=OFF",
+      "-DCMAKE_SHARED_LINKER_FLAGS=-framework Foundation"
+    ]
+  },
+  {
+    "name": "mupen-next",
+    "repo": "libretro/mupen64plus-libretro-nx",
+    "commit": "15bada85906593376e8fd697f1b0b3af3a20f512",
+    "framework": "N64NextCore",
+    "target": "N64NextCore",
+    "artifact": "N64NextCore.dylib",
+    "cache": "VetaN64NextBuild",
+    "flags": [
+      "-DCMAKE_SYSTEM_NAME=iOS",
+      "-DCMAKE_OSX_ARCHITECTURES=arm64",
+      "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.4",
+      "-DCMAKE_BUILD_TYPE=Release"
+    ]
+  }
+]

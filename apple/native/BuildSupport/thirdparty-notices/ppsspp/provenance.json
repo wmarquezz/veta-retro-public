@@ -1,0 +1,85 @@
+{
+  "scope": "TTF and upstream PGF replacement fonts; public atlases are generated separately by source_release/build_free_atlases.py",
+  "fonts": [
+    {
+      "family": "Roboto",
+      "licenseURL": "https://raw.githubusercontent.com/googlefonts/roboto-classic/5166f3d07889bf7d3732fb72e09623d7e52f862b/OFL.txt",
+      "licenseSHA256": "061402327a96aadb0bfb694a960ed289ecd38d383e396243831ab81feb109c41",
+      "fontFiles": [
+        {
+          "file": "Roboto_Condensed-Bold.ttf",
+          "sha256": "da69d6f3193e279c892451c17f7e4926aecd4aeaf7300171ddb44c70551260ca"
+        },
+        {
+          "file": "Roboto_Condensed-Italic.ttf",
+          "sha256": "9fe1c2390bbce960ebba517eec37659fdd1c7a59dd256da6274b5b4d88509575"
+        },
+        {
+          "file": "Roboto_Condensed-Light.ttf",
+          "sha256": "3f1a3f85852fafc3a198904f6efc1fce5ae1013775ac40da35bd52ec82d38e41"
+        },
+        {
+          "file": "Roboto_Condensed-Regular.ttf",
+          "sha256": "d8e6f7c5a1356d41dd82b0c00219febd21c791cc5cd1ecf8a0323cbeafe6496c"
+        }
+      ],
+      "packagedViaPPSSPPCommit": "31e94fcf68e55d4794e436236dfcde10c817c0fb"
+    },
+    {
+      "family": "Inconsolata",
+      "licenseURL": "https://raw.githubusercontent.com/cyrealtype/Inconsolata/fc1fc21081558b39a2db43bfd9b65bf9acb50701/OFL.txt",
+      "licenseSHA256": "5d362a6f8690517fd9a5573128a081d8bbbb2f92714cf00556e08fbbe9600426",
+      "fontFiles": [
+        {
+          "file": "Inconsolata-Regular.ttf",
+          "sha256": "e0267abf9d734e2b9f766f8cb7a496b552c57cdfeacfa0efdc5bfd21940ae145"
+        }
+      ],
+      "packagedViaPPSSPPCommit": "31e94fcf68e55d4794e436236dfcde10c817c0fb"
+    }
+  ],
+  "additionalLicenseInputs": [
+    {
+      "name": "NotoSansCJKjp-Regular.otf",
+      "url": "https://raw.githubusercontent.com/notofonts/noto-cjk/f8d157532fbfaeda587e826d4cd5b21a49186f7c/Sans/OTF/Japanese/NotoSansCJKjp-Regular.otf",
+      "sha256": "68a3fc98800b2a27b371f2fb79991daf3633bd89309d4ffaa6946fd587f375b5"
+    },
+    {
+      "name": "NotoCJK-OFL.txt",
+      "url": "https://raw.githubusercontent.com/notofonts/noto-cjk/f8d157532fbfaeda587e826d4cd5b21a49186f7c/Sans/LICENSE",
+      "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2"
+    },
+    {
+      "name": "NotoSans.ttf",
+      "url": "https://raw.githubusercontent.com/notofonts/noto-fonts/ffebf8c1ee449e544955a7e813c54f9b73848eac/hinted/ttf/NotoSans/NotoSans-Regular.ttf",
+      "sha256": "b85c38ecea8a7cfb39c24e395a4007474fa5a4fc864f6ee33309eb4948d232d5"
+    },
+    {
+      "name": "NotoSansThai.ttf",
+      "url": "https://raw.githubusercontent.com/notofonts/noto-fonts/ffebf8c1ee449e544955a7e813c54f9b73848eac/hinted/ttf/NotoSansThai/NotoSansThai-Regular.ttf",
+      "sha256": "404ddfb5ed0aaa6b6ec8a85700d682978992062d67da93903967b56cbd9a4acc"
+    },
+    {
+      "name": "NotoSansHebrew.ttf",
+      "url": "https://raw.githubusercontent.com/notofonts/noto-fonts/ffebf8c1ee449e544955a7e813c54f9b73848eac/hinted/ttf/NotoSansHebrew/NotoSansHebrew-Regular.ttf",
+      "sha256": "a7fa16fffb27bedb060a0866267c29e9859aeb9c21cc33f5b3aaf6eb062eca85"
+    },
+    {
+      "name": "Noto-OFL.txt",
+      "url": "https://raw.githubusercontent.com/notofonts/noto-fonts/ffebf8c1ee449e544955a7e813c54f9b73848eac/LICENSE",
+      "sha256": "0dab92d0544f7b233403f14b84a663bdbfa746982eda629e7f4f9ffe1b036feb"
+    },
+    {
+      "name": "SourceHanSans-OFL.txt",
+      "url": "https://raw.githubusercontent.com/adobe-fonts/source-han-sans/0b993716f6910f0c8e00f957c767ab3cf5cb7602/LICENSE.txt",
+      "sha256": "fcac737e761ec63dbfbdce11030a1780161920d80315edba9c8beff1c2bac5a2"
+    },
+    {
+      "name": "Ume-license.html",
+      "url": "https://deb.debian.org/debian/pool/main/f/fonts-horai-umefont/fonts-horai-umefont_670.orig.tar.xz",
+      "member": "fonts-horai-umefont-670/license.html",
+      "archiveSHA256": "49ecb8f556c2448687d27bb485009ce51b90df26bb4f0c24c9e63b170c647c81",
+      "sha256": "88d5d5a1bf928ff316e3f80d2e665b1a3ab0f46af80ae7d1ec0046b16ea64cdb"
+    }
+  ]
+}

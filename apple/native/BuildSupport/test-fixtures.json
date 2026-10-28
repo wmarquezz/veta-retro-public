@@ -1,0 +1,93 @@
+{
+  "purpose": "Local tests only; not bundled or automatically redistributed. Download URLs may change; validate extracted file hashes.",
+  "fixtures": [
+    {
+      "console": "N64",
+      "file": "castle.n64",
+      "author": "https://github.com/manfriedn64/castlen64",
+      "download": "https://raw.githubusercontent.com/manfriedn64/castlen64/master/castle.n64",
+      "sha256": "ed83d0f697228e1f6c834329d54d2585c061fde11ab9a40e76f6ce6dbe49e38d",
+      "bytes": 16777216
+    },
+    {
+      "console": "Dreamcast",
+      "file": "demon-bazooka.elf",
+      "author": "https://github.com/richstokes/dreamcast-homebrew",
+      "download": "https://github.com/richstokes/dreamcast-homebrew/releases/download/continuous/demon-bazooka.elf",
+      "sha256": "9381bcea708fb80055f1a75af0bce25f5f4d45aa6b13c24bf9f5a98e120baa4b",
+      "bytes": 2626256
+    },
+    {
+      "console": "GameCube",
+      "file": "GTS_GC.dol",
+      "author": "https://github.com/greenwave-1/GTS",
+      "download": "https://github.com/greenwave-1/GTS/releases/download/0.14.3/GTS_GC.dol",
+      "sha256": "c182067c07cb3a5a6a70b2e89b9b365e9d772438d1956525835e9ed59844bf85",
+      "bytes": 1504736
+    },
+    {
+      "console": "GameCube",
+      "file": "sudoku-gc.dol",
+      "author": "https://github.com/Mode8fx/SuDokuL",
+      "download": "https://github.com/Mode8fx/SuDokuL/releases/download/v1.5/SuDokuL-v1.5-gamecube.zip",
+      "sha256": "e5995f4dc27d5fbd4d5e4eb0c1b8161fca5c730d9f294e2eba9c942658e2474d",
+      "bytes": 4973812
+    },
+    {
+      "console": "PS2",
+      "file": "xump-ps2.iso",
+      "author": "https://www.retroguru.com/xump/",
+      "download": "https://www.retroguru.com/xump/xump-v.latest-ps2.zip",
+      "sha256": "97eeacdbcb00e3f23637b34c92c767eb67627ec24bf896f825f6396302225ca1",
+      "bytes": 25051136
+    },
+    {
+      "console": "3DS",
+      "file": "xump-3ds.3dsx",
+      "author": "https://www.retroguru.com/xump/",
+      "download": "https://www.retroguru.com/xump/xump-v.latest-nintendo3ds.zip",
+      "sha256": "25cd5498934b7a4f89ab304c882e3c6bff44ccf7420c25cfd2fd241302e03d15",
+      "bytes": 892116
+    },
+    {
+      "console": "Wii",
+      "file": "xump-wii.dol",
+      "author": "https://www.retroguru.com/xump/",
+      "download": "https://www.retroguru.com/xump/xump-v.latest-wii.zip",
+      "sha256": "abd6a8a7f686bc84c063be6e7425df2bbd0dcf79d253fb25893e507443c0458d",
+      "bytes": 1134336
+    },
+    {
+      "console": "PSP",
+      "file": "XUMP-PSP/EBOOT.PBP",
+      "author": "https://www.retroguru.com/xump/",
+      "download": "https://www.retroguru.com/xump/xump-v.latest-psp.zip",
+      "sha256": "a4c989acf6d89fb5a127b70bb9b40482c97a37ec9a359d77caca6e294e94404f",
+      "bytes": 1391364
+    },
+    {
+      "console": "PSP",
+      "file": "sudoku-psp.pbp",
+      "author": "https://github.com/Mode8fx/SuDokuL",
+      "download": "https://github.com/Mode8fx/SuDokuL/releases/download/v1.5/SuDokuL-v1.5-psp.zip",
+      "sha256": "5807aad5730bcbea049603cda6df94174e8297642425964c0c21aa4147c362c1",
+      "bytes": 6731691
+    },
+    {
+      "console": "3DS",
+      "file": "3dstris.3dsx",
+      "author": "https://github.com/3DStris/3DStris",
+      "download": "https://github.com/3DStris/3DStris/releases/download/v1.6.9/3dstris-1.6.9-f4d8a52.3dsx",
+      "sha256": "09ef94c1eb759bd4cca0c38f932389ea0b6f4aa40a2a97b8b73c924b3f697280",
+      "bytes": 471684
+    }
+  ],
+  "notes": [
+    "Copy extracted files to Documents/EngineFixtures in the simulator data container.",
+    "PSP Xump also requires its DATA directory beside EBOOT.PBP.",
+    "Wii Xump requires xump-wii-sd.raw, a local 16 MB FAT image with /apps/xump/data; test copies it to CoreSaves/User/Load/WiiSD.raw.",
+    "PPSSPP cubevfpu.prx and sound.prx come from the pinned PPSSPP source tests/demos.",
+    "Legacy fixtures for the other thirteen consoles remain documented in earlier validation notes.",
+    "3DStris is the 3DS gameplay/touchscreen fixture and is silent. Xump 3DS checks audio/boot only: gameplay has known graphical corruption, also reproduced with software rasterization and DynCom."
+  ]
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PrivacyPolicyURL</key>
+	<string>https://retro.krafify.com/privacidad</string>
+	<key>PublisherName</key>
+	<string>Winston Márquez Zambrano</string>
+	<key>SourceCodeURL</key>
+	<string>https://github.com/wmarquezz/veta-retro-public/releases/tag/v0.179.0</string>
+	<key>SupportEmail</key>
+	<string>soporte-retro@krafify.com</string>
+	<key>SupportURL</key>
+	<string>https://retro.krafify.com/soporte</string>
+</dict>
+</plist>

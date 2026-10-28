@@ -1,0 +1,108 @@
+--- a/Source/ui_libretro/main_libretro.cpp
++++ b/Source/ui_libretro/main_libretro.cpp
+@@ -31,6 +31,40 @@
+ 
+ static CPS2VM* m_virtualMachine = nullptr;
+ static bool first_run = false;
++
++// EE/IOP run on their own thread, while libretro owns the GS thread.
++// Drain GS work while requesting a pause so the VM cannot deadlock waiting
++// for its frame queue. State files must never race live guest RAM/registers.
++class ScopedVMPause
++{
++public:
++    explicit ScopedVMPause(CPS2VM* vm) : m_vm(vm), m_resume(vm->GetStatus() == CVirtualMachine::RUNNING)
++    {
++        if(m_resume)
++        {
++            m_vm->PauseAsync();
++            while(m_vm->GetStatus() != CVirtualMachine::PAUSED)
++            {
++                FlushGraphics();
++                std::this_thread::yield();
++            }
++        }
++        FlushGraphics();
++    }
++    ~ScopedVMPause()
++    {
++        FlushGraphics();
++        if(m_resume) m_vm->Resume();
++    }
++    void FlushGraphics()
++    {
++        if(auto gs = static_cast<CGSH_OpenGL_Libretro*>(m_vm->GetGSHandler()))
++            gs->FlushMailBox();
++    }
++private:
++    CPS2VM* m_vm;
++    bool m_resume;
++};
+ 
+ bool libretro_supports_bitmasks = false;
+ retro_video_refresh_t g_video_cb;
+@@ -256,6 +290,8 @@
+ bool retro_serialize(void* data, size_t size)
+ {
+ 	CLog::GetInstance().Print(LOG_NAME, "%s\n", __FUNCTION__);
++	if(!m_virtualMachine) return false;
++	ScopedVMPause pause(m_virtualMachine);
+ 
+ 	try
+ 	{
+@@ -265,6 +301,7 @@
+ 		m_virtualMachine->m_ee->SaveState(archive);
+ 		m_virtualMachine->m_iop->SaveState(archive);
+ 		m_virtualMachine->m_ee->m_gs->SaveState(archive);
++		pause.FlushGraphics(); // Complete the queued GS memory readback before compression.
+ 
+ 		archive.Write(stateStream);
+ 		stateStream.Seek(0, Framework::STREAM_SEEK_DIRECTION::STREAM_SEEK_SET);
+@@ -281,6 +318,8 @@
+ bool retro_unserialize(const void* data, size_t size)
+ {
+ 	CLog::GetInstance().Print(LOG_NAME, "%s\n", __FUNCTION__);
++	if(!m_virtualMachine) return false;
++	ScopedVMPause pause(m_virtualMachine);
+ 
+ 	try
+ 	{
+@@ -292,6 +331,7 @@
+ 			m_virtualMachine->m_ee->LoadState(archive);
+ 			m_virtualMachine->m_iop->LoadState(archive);
+ 			m_virtualMachine->m_ee->m_gs->LoadState(archive);
++			if(auto sound = m_virtualMachine->GetSoundHandler()) sound->Reset();
+ 		}
+ 		catch(...)
+ 		{
+@@ -435,7 +475,7 @@
+ 	{
+ 		if(m_virtualMachine)
+ 		{
+-			// m_virtualMachine->Pause();
++			ScopedVMPause pause(m_virtualMachine);
+ 			m_virtualMachine->Reset();
+ 			if(m_bootCommand.type == BootType::CD)
+ 			{
+@@ -473,13 +513,17 @@
+ 	{
+ 		if(!m_virtualMachine->GetGSHandler())
+ 			SetupVideoHandler();
+-		// m_virtualMachine->Pause();
++		ScopedVMPause pause(m_virtualMachine);
+ 		m_virtualMachine->Reset();
+-		m_virtualMachine->m_ee->m_os->BootFromCDROM();
++		if(m_bootCommand.type == BootType::CD)
++			m_virtualMachine->m_ee->m_os->BootFromCDROM();
++		else
++			m_virtualMachine->m_ee->m_os->BootFromFile(m_bootCommand.path);
++		if(auto sound = m_virtualMachine->GetSoundHandler()) sound->Reset();
+ 		m_virtualMachine->Resume();
+ 		CLog::GetInstance().Print(LOG_NAME, "%s\n", "Reset Game");
+-	}
+-	first_run = false;
++		first_run = true;
++	}
+ }
+ 
+ bool retro_load_game(const retro_game_info* info)

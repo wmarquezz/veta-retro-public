@@ -1,0 +1,892 @@
+{
+  "schema": 1,
+  "scope": "Source recipes for offline160; no binaries or device operations. Artifact hashes identify historical outputs, not bit-reproducibility guarantees.",
+  "engines": {
+    "flycast": {
+      "repository": "https://github.com/flyinghead/flycast.git",
+      "revision": "6d81b998169b916ad7d7d6f403f7dc2c18e2aea5",
+      "patches": [
+        {
+          "directory": ".",
+          "patch": "patches/flycast-inherited.patch",
+          "sha256": "437d409ffde3957d01b431c7577e170409232241c35e7cf982f7d84f4ab9e878"
+        },
+        {
+          "directory": ".",
+          "patch": "patches/flycast-no-jit-load.patch",
+          "sha256": "71899381777fb50e524a81043dac756e71e3b152c4710aa5ec4ec0a25c698b5e"
+        }
+      ],
+      "submodules": [
+        {
+          "path": "core/deps/DreamPicoPort-API",
+          "revision": "e06d9f6c59833fc7bb7f2a33c960614489811ef8",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "core/deps/SDL",
+          "revision": "00d4f1c2c4ad2dc95d26b18743541f57b1dca56d",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "core/deps/Spout",
+          "revision": "2110a918e720688f3cb2118302fd153db8745ace",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "core/deps/Syphon",
+          "revision": "53ec412a78b246c84cedcb4a2a5b92852704d61d",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "core/deps/Vulkan-Headers",
+          "revision": "b5c8f996196ba4aa6d8f97e52b5d3b6e70f7e4e2",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "core/deps/VulkanMemoryAllocator",
+          "revision": "1d8f600fd424278486eade7ed3e877c99f0846b1",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "core/deps/asio",
+          "revision": "d3402006e84efb6114ff93e4f2b8508412ed80d5",
+          "initialized_in_reference": true
+        },
+        {
+          "path": "core/deps/breakpad",
+          "revision": "1ab24bcc817ebe629bf77daa53529d02361cb1e9",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "core/deps/discord-rpc",
+          "revision": "c62c34d37cd90b75187a1212e13ce4145bafbdd7",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "core/deps/freetype",
+          "revision": "0a0221a1347e2f1e07c395263540026e9a0aa7c7",
+          "initialized_in_reference": true
+        },
+        {
+          "path": "core/deps/freetype/subprojects/dlg",
+          "revision": "395ccad2c1e0daae535c4d20bb0a3f2424648e17",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "core/deps/gamesdk",
+          "revision": "4ac9952e6a5b3e0846003cb156b4a664178b7549",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "core/deps/glslang",
+          "revision": "fc9889c889561c5882e83819dcaffef5ed45529b",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "core/deps/googletest",
+          "revision": "e39786088138f2749d64e9e90e0f9902daa77c40",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "core/deps/libadrenotools",
+          "revision": "8fae8ce254dfc1344527e05301e43f37dea2df80",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "core/deps/libchdr",
+          "revision": "5f82799f2c8cad1e9cd26d39a0f8d36369a5534b",
+          "initialized_in_reference": true
+        },
+        {
+          "path": "core/deps/libjuice",
+          "revision": "77daa8befd828046169adbb012d8de928bfdcdd4",
+          "initialized_in_reference": true
+        },
+        {
+          "path": "core/deps/luabridge",
+          "revision": "5d21e35633a1f87ed08af115b07d3386096f792b",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "core/deps/oboe",
+          "revision": "a81bb9f87d4105b84b682685d3bfbb5beca371d1",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "core/deps/rcheevos",
+          "revision": "3106e6d3d274b63c59976cb07dda94a292ab45ca",
+          "initialized_in_reference": true
+        },
+        {
+          "path": "core/deps/tinygettext",
+          "revision": "41572a67f96013691685a38f0032f3c97aa34f79",
+          "initialized_in_reference": true
+        },
+        {
+          "path": "core/deps/tinygettext/external/tinycmmc",
+          "revision": "9a51e13802d930feb7261ba8876940659b258cb7",
+          "initialized_in_reference": true
+        },
+        {
+          "path": "core/deps/websocketpp",
+          "revision": "1b11fd301531e6df35a6107c1e8665b1e77a2d8e",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "core/deps/xbyak",
+          "revision": "0d67fd1530016b7c56f3cd74b3fca920f4c3e2b4",
+          "initialized_in_reference": false
+        }
+      ]
+    },
+    "play": {
+      "repository": "https://github.com/jpd002/Play-.git",
+      "revision": "505dac73149fece41b04dd961078ce3011a8bed5",
+      "patches": [
+        {
+          "directory": ".",
+          "patch": "patches/play-inherited.patch",
+          "sha256": "888f26d8f289214fce753dd1c6442dc634c7649d1444c3b68ec1f713f6fc7a16"
+        },
+        {
+          "directory": "deps/CodeGen",
+          "patch": "patches/play-codegen-inherited.patch",
+          "sha256": "d94c40aee43975de39bb722a66a380838598d0f71e95df0e03fbdb829c482b17"
+        },
+        {
+          "directory": ".",
+          "patch": "patches/play-web-bindings.patch",
+          "sha256": "f3ea9560a7b6748a052cb84f3addac028dc30a68dfda31fd96dd02c9635a0f4f"
+        }
+      ],
+      "submodules": [
+        {
+          "path": "deps/AltKit",
+          "revision": "f799f60ef6fa8b9676b4102b7dfa169fb40b6c92",
+          "initialized_in_reference": true
+        },
+        {
+          "path": "deps/CodeGen",
+          "revision": "a5009f7dca062695b8e5aebbd71e67b4ddfa9251",
+          "initialized_in_reference": true
+        },
+        {
+          "path": "deps/Dependencies",
+          "revision": "8a5f6b1dea0b888b5a42b821e79470142bbea4e3",
+          "initialized_in_reference": true
+        },
+        {
+          "path": "deps/Dependencies/SDWebImage",
+          "revision": "0df32ea232aca587d5b67760b7f877079c51966c",
+          "initialized_in_reference": true
+        },
+        {
+          "path": "deps/Dependencies/SDWebImage/Vendors/FLAnimatedImage",
+          "revision": "25307796cfcf66cb5b98774e050e93f64e0f2cde",
+          "initialized_in_reference": true
+        },
+        {
+          "path": "deps/Dependencies/SDWebImage/Vendors/libwebp",
+          "revision": "3d97bb75144147e47db278ec76e5e70c6b2243db",
+          "initialized_in_reference": true
+        },
+        {
+          "path": "deps/Dependencies/ghc_filesystem",
+          "revision": "2a8b380f8d4e77b389c42a194ab9c70d8e3a0f1e",
+          "initialized_in_reference": true
+        },
+        {
+          "path": "deps/Dependencies/xxHash",
+          "revision": "e626a72bc2321cd320e953a0ccf1584cad60f363",
+          "initialized_in_reference": true
+        },
+        {
+          "path": "deps/Dependencies/zlib",
+          "revision": "5a82f71ed1dfc0bec044d9702463dbdf84ea3b71",
+          "initialized_in_reference": true
+        },
+        {
+          "path": "deps/Dependencies/zstd",
+          "revision": "f8745da6ff1ad1e7bab384bd1f9d742439278e99",
+          "initialized_in_reference": true
+        },
+        {
+          "path": "deps/Framework",
+          "revision": "587f278917acc0026bf5fc34b39f995fc26bd015",
+          "initialized_in_reference": true
+        },
+        {
+          "path": "deps/Nuanceur",
+          "revision": "d96578b5a18edc67a268ed4811f0a035c56de7a0",
+          "initialized_in_reference": true
+        },
+        {
+          "path": "deps/Nuanceur/deps/vkrunner",
+          "revision": "1b28778d9593d708aaa9dfa579e61c6cb08146dc",
+          "initialized_in_reference": true
+        },
+        {
+          "path": "deps/libchdr",
+          "revision": "284e38b6e53e0a7270cc234934e45230ed915a25",
+          "initialized_in_reference": true
+        }
+      ],
+      "toolchain": {
+        "repository": "https://github.com/emscripten-core/emsdk.git",
+        "revision": "d7b4130688bfa348392b921ab04015aa15c4f154",
+        "version": "4.0.1",
+        "release": "5ff495a591978fdf8a16f2d172be3616f3150d1e"
+      }
+    },
+    "dukex": {
+      "repository": "https://github.com/MaftyManicEMU/DukeX.git",
+      "revision": "56898d11be3eca4d50961fba4f5e12b27eddb634",
+      "patches": [
+        {
+          "directory": ".",
+          "patch": "../nextgen/dukex_source.patch",
+          "sha256": "b210dd7104fa69cda86e1e770df07ac3ca3e647e14b6e55e76f6e913e031850f"
+        },
+        {
+          "directory": ".",
+          "patch": "patches/dukex-tci.patch",
+          "sha256": "3b509b03b913330a052bfae89d58af2a436a2c24c1838185cbe1d51ba02d723d"
+        },
+        {
+          "directory": ".",
+          "patch": "patches/dukex-image-filter.patch",
+          "sha256": "b6db191df6232e7110838cd1e3cffcf77a1ec519b9ead172afbd0b4c43d641b7"
+        },
+        {
+          "directory": ".",
+          "patch": "patches/dukex-idle-presentation.patch",
+          "sha256": "0c63e135015909e0821bee13ee927844b8e30da1c4a229fb16880cf328697609"
+        },
+        {
+          "directory": ".",
+          "patch": "patches/dukex-ios-blocking-poll.patch",
+          "sha256": "93845c3e5e6cf922851d2254f0c66f547066397b44fd0133b9ed2f71c0044139"
+        }
+      ],
+      "submodules": [
+        {
+          "path": "roms/QemuMacDrivers",
+          "revision": "90c488d5f4a407342247b9ea869df1c2d9c8e266",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "roms/SLOF",
+          "revision": "b7f755248e2dcc56c02634d288e1c0ff7e0ce1c7",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "roms/edk2",
+          "revision": "4dfdca63a93497203f197ec98ba20e2327e4afe4",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "roms/ipxe",
+          "revision": "4bd064de239dab2426b31c9789a1f4d78087dc63",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "roms/openbios",
+          "revision": "c3a19c1e54977a53027d6232050e1e3e39a98a1b",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "roms/opensbi",
+          "revision": "a32a91069119e7a5aa31e6bc51d5e00860be3d80",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "roms/qboot",
+          "revision": "8ca302e86d685fa05b16e2b208888243da319941",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "roms/qemu-palcode",
+          "revision": "99d9b4dcf27d7fbcbadab71bdc88ef6531baf6bf",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "roms/seabios",
+          "revision": "b52ca86e094d19b58e2304417787e96b940e39c6",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "roms/seabios-hppa",
+          "revision": "a04b6f35c0b7437ce968f64106ee6ff5aadee419",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "roms/skiboot",
+          "revision": "785a5e3070a86e18521e62fe202b87209de30fa2",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "roms/u-boot",
+          "revision": "840658b093976390e9537724f802281c9c8439f5",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "roms/u-boot-sam460ex",
+          "revision": "1e5f4a1607cc6713d27ffe48dd9de84e69cfc1c2",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "roms/vbootrom",
+          "revision": "183c9ff8056b7946db1ae49cc23e8980ac413174",
+          "initialized_in_reference": false
+        },
+        {
+          "path": "tests/lcitool/libvirt-ci",
+          "revision": "caed407a0f1dfe3a3293a41c378c382deefbac36",
+          "initialized_in_reference": false
+        }
+      ],
+      "dependencies": {
+        "vcpkg": {
+          "repository": "https://github.com/microsoft/vcpkg.git",
+          "revision": "0c2a9ace1964b818b15f7ae50ba1c42404918a7b",
+          "patch": "../nextgen/dukex_vcpkg.patch",
+          "patch_sha256": "2a1152f42a7216400c867fdafee1228983756127107abdf918b8120f37ca5d5f",
+          "triplet": "../nextgen/dukex_arm64_ios.cmake",
+          "triplet_sha256": "1e74e2f801409a31b5c659d6707d85c2ca269e0195afb3adf1fab94958419f0a",
+          "packages": [
+            "curl",
+            "glib",
+            "libepoxy",
+            "libpcap",
+            "libpng",
+            "libsamplerate",
+            "pixman"
+          ],
+          "installed_versions": [
+            {
+              "package": "curl",
+              "version": "8.23.0"
+            },
+            {
+              "package": "dirent",
+              "version": "1.26"
+            },
+            {
+              "package": "egl-registry",
+              "version": "2025-05-27"
+            },
+            {
+              "package": "gettext-libintl",
+              "version": "0.22.5"
+            },
+            {
+              "package": "glib",
+              "version": "2.90.1"
+            },
+            {
+              "package": "libepoxy",
+              "version": "1.5.10"
+            },
+            {
+              "package": "libffi",
+              "version": "3.8.0"
+            },
+            {
+              "package": "libiconv",
+              "version": "1.19"
+            },
+            {
+              "package": "libpcap",
+              "version": "1.10.7"
+            },
+            {
+              "package": "libpng",
+              "version": "1.6.59"
+            },
+            {
+              "package": "libsamplerate",
+              "version": "0.2.2"
+            },
+            {
+              "package": "openssl",
+              "version": "3.6.5"
+            },
+            {
+              "package": "pcre2",
+              "version": "10.49"
+            },
+            {
+              "package": "pixman",
+              "version": "0.46.4"
+            },
+            {
+              "package": "zlib",
+              "version": "1.3.2"
+            }
+          ]
+        },
+        "vulkan_headers": {
+          "repository": "https://github.com/KhronosGroup/Vulkan-Headers.git",
+          "revision": "29f979ee5aa58b7b005f805ea8df7a855c39ff37"
+        },
+        "python_packages": [
+          "meson==1.11.2",
+          "ninja==1.13.2",
+          "tomli==2.5.0",
+          "PyYAML==6.0.3"
+        ]
+      },
+      "meson_wraps": {
+        "SPIRV-Reflect.wrap": "3f3a6a5e4e2c06d86f8659fff05c12127b16568ebf4ba8dd27b8723b097d0813",
+        "VulkanMemoryAllocator.wrap": "4af84ccb1ee33bba936bb1e62d4aafab9f8f3c08349085e1bf52d4bcae04bca6",
+        "anyhow-1-rs.wrap": "71a7d3ee5587705c0c5d27ffb9139f386356221755d14f7eead06e5f016383f4",
+        "arbitrary-int-1-rs.wrap": "f7afbb76405691789b99d41d5ae2e4b3d793dc1fb9573372a1d50f34236240fb",
+        "attrs-0.2-rs.wrap": "f6a17bc031e97623f3bad29b9242f71d3a11b8992501f00192b803b4f57eb670",
+        "berkeley-softfloat-3.wrap": "f5b245e02a2f9400d7cfcc4a10860ed8c6d088577cf753ce6fe161e475a7d9ff",
+        "berkeley-testfloat-3.wrap": "b4d204e9f59e671c1c636259d8521b9c7f29116cc4b9ff6598e8e635f0359bef",
+        "bilge-0.2-rs.wrap": "85d182e6404eb16887056b6d1ef8e491561539436ef692cb70479daf7db71afe",
+        "bilge-impl-0.2-rs.wrap": "571c4ba805e18587694a3e587182dae061177425da964baddc636ef1d6e8d903",
+        "curl.wrap": "4a44b38bdada2d063ff6bdd8924a5c1820b6fb236f60568e03e822ef3bc19b55",
+        "dtc.wrap": "932ca47fc50a6932207a6fc82e15d07d848e93c4ff9abcd0cc34c15f40a30885",
+        "either-1-rs.wrap": "b88eb965bd13649319233adc12871917a4da434921a72e3f26452c2335c68905",
+        "foreign-0.3-rs.wrap": "930d678ccc0faef9b29369ee1b9f4ef2e5c0ef186a1012ba4946fc872d6dd22f",
+        "genconfig.wrap": "50e5c8cd8f8c9d28b8bffc1c9dc47463d9d3326bf874049f73011da9b3ff590c",
+        "glib-sys-0.21-rs.wrap": "18941548a38e69cc39243a2ef15cc28c2ebce2e673a5af25199f1ce287de93ca",
+        "glslang.wrap": "346252d18634e3095d4e0b98f2120bbb1a233e63303b6e61be511dd5f1095708",
+        "imgui.wrap": "7a27d99c4982e2ad9ce5638d5f7ca8cd209fba689a9cabdb07029f96a38123be",
+        "implot.wrap": "ffcf3a1c610ae1b8f4131a9bcfd688f7dd22ca1cdb5afc3716da227c74b877c0",
+        "itertools-0.11-rs.wrap": "56a556d79240600c2ea526d49629a2097b2628ba6c759231a77386e8b6cba190",
+        "json.wrap": "5529b6f16d3df7ed544d3465462af526a905086c24e9f96d31a248d53efb4701",
+        "keycodemapdb.wrap": "306b37c10ce735432220c08c6832dc67c0a306b88a0023c65937c90c638dba97",
+        "libblkio.wrap": "575ae56cbf38bf357817698b949779dac37a0c09f43ce88a8690cbee06019507",
+        "libc-0.2-rs.wrap": "e4fe58cbce2e8c494f6a8ae454c452d24de97f9fd658c160d687f0ac87f5d1f4",
+        "libvfio-user.wrap": "29b96e29021a38aac3544a1baacf367f905801439af61fe7a112a60894f4f2b4",
+        "nv2a_vsh_cpu.wrap": "8d84c2581da4e746b0f4ed155fbefd0cdc7d7c80562d4806481f7e53b478a446",
+        "proc-macro-error-1-rs.wrap": "911aed6a9a56cd9ded2576c8980e9cf00c09dd083d6c97b3c0eac451c42655e1",
+        "proc-macro-error-attr-1-rs.wrap": "f24f38172d1a497c7d017b66e098b5ca50c416efb47cc85a0a77babfca6a7984",
+        "proc-macro2-1-rs.wrap": "3ffac54c061b6a4f6d18f141a8338724ec91d653173b48928d5f36d3f84517b9",
+        "quote-1-rs.wrap": "122f42d2c9bc55865e95964fddd79b0e47b122df1170554fce49ac0e0d9d1dc9",
+        "sdl3.wrap": "a3fafd54fab33552cada11f743efbdbdcddadf629754f317212474484a95dca2",
+        "slirp.wrap": "aac02c4da0958a7d1066aa369bd79e5faf479988ba0c34f0c3d3f9f7d1ec5280",
+        "syn-2-rs.wrap": "457232f12b621d46669a7887f76fb03501c2ad93e8f33e12bf4c751ddbee201c",
+        "tomlplusplus.wrap": "f9d590e5d2eddabd82bbc9b37dfcda1709929e7f3ae8bca2cda23111bd7039fc",
+        "unicode-ident-1-rs.wrap": "73eed4a58c39cc41c3d536e673f62004402f5459b45cce7677eba1ea7d6eaf88",
+        "volk.wrap": "53851244cf327a87732ae8714aa4e4ab0a179c4a28947037c28db3ca7c46ed6f",
+        "xxhash.wrap": "6fca8f9cdf6784e6caacae643ec833829be957f0cb93ecd1de90b3a720388ec3"
+      }
+    }
+  },
+  "reference_artifacts": {
+    "DreamcastInterpreterCore": {
+      "sha256": "bd1a63f0196051b2a6949c622d5ab876366f6e5cbc5b9679ca056d698cd66164",
+      "bytes": 15225616,
+      "min_ios": "17.4"
+    },
+    "DukeXInterpreterCore": {
+      "sha256": "c0348bf59a5bcb88968eda3344f50e3a7bd4581e8e4bb0a3bdd3f902aa869219",
+      "bytes": 32502480,
+      "min_ios": "17.0"
+    },
+    "Play.js": {
+      "sha256": "5866269fb7eba501ea38c22caac9a6cef41b5dd17defe9ede728f21adf263af3",
+      "bytes": 206594
+    },
+    "Play.wasm": {
+      "sha256": "995fbe756f2c36082b4ebd3331b4d2a44db22606f0dddb1b43b2b54a109a7842",
+      "bytes": 2696445
+    }
+  },
+  "license_notices": [
+    {
+      "engine": "flycast",
+      "source": "LICENSE",
+      "copy": "licenses/flycast/LICENSE",
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+    },
+    {
+      "engine": "dukex",
+      "source": "LICENSE",
+      "copy": "licenses/dukex/LICENSE",
+      "sha256": "139c64b7a9ae62858ff969aae622ecfcf4f1519655bd92d2e70a1a2fb615690e"
+    },
+    {
+      "engine": "dukex",
+      "source": "COPYING",
+      "copy": "licenses/dukex/COPYING",
+      "sha256": "dd3ce02338c3a48abb6ba59b48809f7108a8bd242cb0cc8be90daafa30707c28"
+    },
+    {
+      "engine": "dukex",
+      "source": "COPYING.LIB",
+      "copy": "licenses/dukex/COPYING.LIB",
+      "sha256": "31c90ce76b6f5aab90a205851e71d5c27e31c0aa3d7017a4383b98a6fe3f1faa"
+    },
+    {
+      "engine": "play",
+      "source": "License.txt",
+      "copy": "licenses/play/License.txt",
+      "sha256": "e9089da5950600267bb657503aba6eb59cb679b455c2997d341d83144144daab"
+    },
+    {
+      "engine": "play",
+      "source": "deps/CodeGen/License.txt",
+      "copy": "licenses/play/deps/CodeGen/License.txt",
+      "sha256": "0ed1494d406def5805562b15067536e8e77dd8a164c5931b672a6dc9a18a646d"
+    },
+    {
+      "engine": "play",
+      "source": "deps/Framework/License.txt",
+      "copy": "licenses/play/deps/Framework/License.txt",
+      "sha256": "e9089da5950600267bb657503aba6eb59cb679b455c2997d341d83144144daab"
+    },
+    {
+      "engine": "play",
+      "source": "deps/Nuanceur/License.txt",
+      "copy": "licenses/play/deps/Nuanceur/License.txt",
+      "sha256": "1879544076a493c8c7fb03595d3f1053a24dfc296acf89b511eca84398e19ba0"
+    },
+    {
+      "engine": "play",
+      "source": "deps/libchdr/LICENSE.txt",
+      "copy": "licenses/play/deps/libchdr/LICENSE.txt",
+      "sha256": "e3989a7aee74a91b8cdbdfe204a6b8d03288863ec7533a21c51f1a987ba73539"
+    },
+    {
+      "engine": "play",
+      "source": "deps/libchdr/deps/lzma-24.05/LICENSE",
+      "copy": "licenses/play/deps/libchdr/deps/lzma-24.05/LICENSE",
+      "sha256": "06721414a6decad6d6677feb470f01f47126e154d895d85bc1e17628697715e5"
+    },
+    {
+      "engine": "play",
+      "source": "deps/libchdr/deps/zlib-1.3.1/LICENSE",
+      "copy": "licenses/play/deps/libchdr/deps/zlib-1.3.1/LICENSE",
+      "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243"
+    },
+    {
+      "engine": "play",
+      "source": "deps/libchdr/deps/zstd-1.5.6/LICENSE",
+      "copy": "licenses/play/deps/libchdr/deps/zstd-1.5.6/LICENSE",
+      "sha256": "7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8"
+    },
+    {
+      "engine": "play",
+      "source": "deps/Dependencies/zlib/LICENSE",
+      "copy": "licenses/play/deps/Dependencies/zlib/LICENSE",
+      "sha256": "0f854f426019c475697e17f1b0fa638270f6e700bc756d9bfe50d17268bd3281"
+    },
+    {
+      "engine": "play",
+      "source": "deps/Dependencies/zstd/LICENSE",
+      "copy": "licenses/play/deps/Dependencies/zstd/LICENSE",
+      "sha256": "7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8"
+    },
+    {
+      "engine": "play",
+      "source": "deps/Dependencies/bzip2-1.0.6/LICENSE",
+      "copy": "licenses/play/deps/Dependencies/bzip2-1.0.6/LICENSE",
+      "sha256": "4919cfb14a73cd64fcef67b107613970cf1659a09aa675dba31314f373bc7204"
+    },
+    {
+      "engine": "play",
+      "source": "deps/Dependencies/xxHash/LICENSE",
+      "copy": "licenses/play/deps/Dependencies/xxHash/LICENSE",
+      "sha256": "6ffedbc0f7878612d2b23589f1ff2ab15633e1df7963a5d9fc750ec5500c7e7a"
+    },
+    {
+      "engine": "play",
+      "source": "deps/Dependencies/nlohmann_json/LICENSE.MIT",
+      "copy": "licenses/play/deps/Dependencies/nlohmann_json/LICENSE.MIT",
+      "sha256": "7400586ce89c6a2cc65f6ca46997da5d356a230673d3a211e040b783f23578a1"
+    },
+    {
+      "engine": "play",
+      "source": "deps/Dependencies/ghc_filesystem/LICENSE",
+      "copy": "licenses/play/deps/Dependencies/ghc_filesystem/LICENSE",
+      "sha256": "1b265537c97cfb422ffb52492c96979943f54fab8746a6dd38d8329953d487cc"
+    },
+    {
+      "engine": "flycast",
+      "source": "core/deps/tinygettext/LICENSE.md",
+      "copy": "licenses/flycast/core/deps/tinygettext/LICENSE.md",
+      "sha256": "27cba3bef2da99bdc9c2846449767ad015c5ba539bcb4f10c74be20faf7ada3a"
+    },
+    {
+      "engine": "flycast",
+      "source": "core/deps/tinygettext/external/tinycmmc/LICENSE.md",
+      "copy": "licenses/flycast/core/deps/tinygettext/external/tinycmmc/LICENSE.md",
+      "sha256": "e998149780068b7adc7d3b5559c0415240d8c07760d52b7012aebe5ab7d8a04f"
+    },
+    {
+      "engine": "flycast",
+      "source": "core/deps/picotcp/COPYING",
+      "copy": "licenses/flycast/core/deps/picotcp/COPYING",
+      "sha256": "af5a2bc623f97a8707322a971e78067c8a1fd25c7493328b52a9baafee97e735"
+    },
+    {
+      "engine": "flycast",
+      "source": "core/deps/xxHash/LICENSE",
+      "copy": "licenses/flycast/core/deps/xxHash/LICENSE",
+      "sha256": "6ffedbc0f7878612d2b23589f1ff2ab15633e1df7963a5d9fc750ec5500c7e7a"
+    },
+    {
+      "engine": "flycast",
+      "source": "core/deps/libzip/LICENSE",
+      "copy": "licenses/flycast/core/deps/libzip/LICENSE",
+      "sha256": "01c022eca6d566e2e8792fd0f091a28653b2a608319922bcd4de91c49d1438e1"
+    },
+    {
+      "engine": "flycast",
+      "source": "core/deps/rcheevos/LICENSE",
+      "copy": "licenses/flycast/core/deps/rcheevos/LICENSE",
+      "sha256": "bf820c034966a3b6be050bb85f94ec841a0b972bd5d477e362337d0574b5c219"
+    },
+    {
+      "engine": "flycast",
+      "source": "core/deps/libchdr/LICENSE.txt",
+      "copy": "licenses/flycast/core/deps/libchdr/LICENSE.txt",
+      "sha256": "e3989a7aee74a91b8cdbdfe204a6b8d03288863ec7533a21c51f1a987ba73539"
+    },
+    {
+      "engine": "flycast",
+      "source": "core/deps/libchdr/deps/lzma-24.05/LICENSE",
+      "copy": "licenses/flycast/core/deps/libchdr/deps/lzma-24.05/LICENSE",
+      "sha256": "06721414a6decad6d6677feb470f01f47126e154d895d85bc1e17628697715e5"
+    },
+    {
+      "engine": "flycast",
+      "source": "core/deps/libjuice/LICENSE",
+      "copy": "licenses/flycast/core/deps/libjuice/LICENSE",
+      "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85"
+    },
+    {
+      "engine": "flycast",
+      "source": "core/deps/asio/asio/COPYING",
+      "copy": "licenses/flycast/core/deps/asio/asio/COPYING",
+      "sha256": "5cc69ca9afd3417ed8e58bcd9c0bb730375e9e3e92b5aaf6483b93a2837e0cac"
+    },
+    {
+      "engine": "flycast",
+      "source": "core/deps/freetype/docs/FTL.TXT",
+      "copy": "licenses/flycast/core/deps/freetype/docs/FTL.TXT",
+      "sha256": "5a5ee54c5001bbad1cdc1a57cc3dd4c42199b2da09d39c7ee41fab002d02967f"
+    },
+    {
+      "engine": "flycast",
+      "source": "core/deps/libchdr/deps/zlib-1.3.1/LICENSE",
+      "copy": "licenses/flycast/core/deps/libchdr/deps/zlib-1.3.1/LICENSE",
+      "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243"
+    },
+    {
+      "engine": "flycast",
+      "source": "core/deps/nowide/LICENSE",
+      "copy": "licenses/flycast/core/deps/nowide/LICENSE",
+      "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+    },
+    {
+      "engine": "flycast",
+      "source": "core/deps/miniupnpc/LICENSE",
+      "copy": "licenses/flycast/core/deps/miniupnpc/LICENSE",
+      "sha256": "1e881ecf2862d01e6e5bc2b861e46886d2a6fb01499c0c508a209a7271b13cf2"
+    },
+    {
+      "engine": "flycast",
+      "source": "core/deps/implot/LICENSE",
+      "copy": "licenses/flycast/core/deps/implot/LICENSE",
+      "sha256": "38bd30c2111fe7e3d8fb86d8607491239659eff1df1b1004b9a8349e20a91967"
+    },
+    {
+      "engine": "flycast",
+      "source": "core/deps/libchdr/deps/zstd-1.5.6/LICENSE",
+      "copy": "licenses/flycast/core/deps/libchdr/deps/zstd-1.5.6/LICENSE",
+      "sha256": "7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8"
+    },
+    {
+      "engine": "dukex",
+      "source": "subprojects/implot/LICENSE",
+      "copy": "licenses/dukex/subprojects/implot/LICENSE",
+      "sha256": "38bd30c2111fe7e3d8fb86d8607491239659eff1df1b1004b9a8349e20a91967"
+    },
+    {
+      "engine": "dukex",
+      "source": "subprojects/berkeley-softfloat-3/COPYING.txt",
+      "copy": "licenses/dukex/subprojects/berkeley-softfloat-3/COPYING.txt",
+      "sha256": "145ea96b4a4a04a1a7738d2a2bf9e830f861971e69606187b018d9e8fc0b95c7"
+    },
+    {
+      "engine": "dukex",
+      "source": "subprojects/volk/LICENSE.md",
+      "copy": "licenses/dukex/subprojects/volk/LICENSE.md",
+      "sha256": "04a0693a84f19e53d281ca98bbb0c86ca77251ab13769c6168e6684feb9a1436"
+    },
+    {
+      "engine": "dukex",
+      "source": "subprojects/berkeley-testfloat-3/COPYING.txt",
+      "copy": "licenses/dukex/subprojects/berkeley-testfloat-3/COPYING.txt",
+      "sha256": "862c7f1238c07addea5e7af00ae4a9b6e59150029091c4261c896bcdce02a059"
+    },
+    {
+      "engine": "dukex",
+      "source": "subprojects/imgui/LICENSE.txt",
+      "copy": "licenses/dukex/subprojects/imgui/LICENSE.txt",
+      "sha256": "c80c5789748d955c4a650562baa0d750494e2c7128c2ca66aaebe2e3c4e198bf"
+    },
+    {
+      "engine": "dukex",
+      "source": "subprojects/slirp/COPYRIGHT",
+      "copy": "licenses/dukex/subprojects/slirp/COPYRIGHT",
+      "sha256": "b28aecf4796a6a22054167f0a976de13d9db335669d37afd2dc7ea4c335e1e13"
+    },
+    {
+      "engine": "dukex",
+      "source": "subprojects/glslang/LICENSE.txt",
+      "copy": "licenses/dukex/subprojects/glslang/LICENSE.txt",
+      "sha256": "17e70c676e1521ff3e4686f04a2053d93a7e28a33be8de7ec37ab0ff72feb677"
+    },
+    {
+      "engine": "dukex",
+      "source": "subprojects/SPIRV-Reflect/LICENSE",
+      "copy": "licenses/dukex/subprojects/SPIRV-Reflect/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "engine": "dukex",
+      "source": "subprojects/SDL3-3.4.10/LICENSE.txt",
+      "copy": "licenses/dukex/subprojects/SDL3-3.4.10/LICENSE.txt",
+      "sha256": "1c040b8271b37e5076359f8fd54240e371114112924d2df81ef87c7d6a1dfdfd"
+    },
+    {
+      "engine": "dukex",
+      "source": "subprojects/VulkanMemoryAllocator/LICENSE.txt",
+      "copy": "licenses/dukex/subprojects/VulkanMemoryAllocator/LICENSE.txt",
+      "sha256": "52df2c03d6cfc9ffec13c9d3626c530fc9ce0cbe41d5ea3d10cd46edeb1aeb38"
+    },
+    {
+      "engine": "dukex",
+      "source": "subprojects/xxHash-0.8.3/LICENSE",
+      "copy": "licenses/dukex/subprojects/xxHash-0.8.3/LICENSE",
+      "sha256": "6ffedbc0f7878612d2b23589f1ff2ab15633e1df7963a5d9fc750ec5500c7e7a"
+    },
+    {
+      "engine": "dukex",
+      "source": "subprojects/genconfig/LICENSE.txt",
+      "copy": "licenses/dukex/subprojects/genconfig/LICENSE.txt",
+      "sha256": "8e12b62381d0513a969e4b9f4a397cadb7b78bdd57c6df9e75ae21114bd120a9"
+    },
+    {
+      "engine": "dukex",
+      "source": "subprojects/nv2a_vsh_cpu/LICENSE",
+      "copy": "licenses/dukex/subprojects/nv2a_vsh_cpu/LICENSE",
+      "sha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e"
+    },
+    {
+      "engine": "dukex",
+      "source": "subprojects/tomlplusplus/LICENSE",
+      "copy": "licenses/dukex/subprojects/tomlplusplus/LICENSE",
+      "sha256": "529bc3900a9571e49db285b0df432397e70b881cc3bf48de6667ae74ff4b06d8"
+    },
+    {
+      "engine": "dukex",
+      "source": "vcpkg/libiconv/copyright",
+      "copy": "licenses/dukex/vcpkg/libiconv/copyright",
+      "sha256": "de2ccf3f87fb0a60874817f4202bc3861878dcde3c443753b854d3313e011386"
+    },
+    {
+      "engine": "dukex",
+      "source": "vcpkg/gettext-libintl/copyright",
+      "copy": "licenses/dukex/vcpkg/gettext-libintl/copyright",
+      "sha256": "3fe5361f24b7c49ba12911c08f5a33f9cb18871d95d9fb881f5b8a4793e04288"
+    },
+    {
+      "engine": "dukex",
+      "source": "vcpkg/libpng/copyright",
+      "copy": "licenses/dukex/vcpkg/libpng/copyright",
+      "sha256": "bdb0a645ea18c60507d0368379b1ac5474b92255fcc2d115e07486a7672ba526"
+    },
+    {
+      "engine": "dukex",
+      "source": "vcpkg/pixman/copyright",
+      "copy": "licenses/dukex/vcpkg/pixman/copyright",
+      "sha256": "fac9270f0987b96ff4533fca3548c633e02083cbba4a0172a3b149b2e4019793"
+    },
+    {
+      "engine": "dukex",
+      "source": "vcpkg/libsamplerate/copyright",
+      "copy": "licenses/dukex/vcpkg/libsamplerate/copyright",
+      "sha256": "2c1f76ce2effdddb425018405d5690c0b1ab4e6976e35296b0a6db65c5e1a55d"
+    },
+    {
+      "engine": "dukex",
+      "source": "vcpkg/glib/copyright",
+      "copy": "licenses/dukex/vcpkg/glib/copyright",
+      "sha256": "658c9f1f230e5f6c7c36f20f903f6f4f24f2b31a24dd88e1bae1ebcef3a6fdff"
+    },
+    {
+      "engine": "dukex",
+      "source": "vcpkg/zlib/copyright",
+      "copy": "licenses/dukex/vcpkg/zlib/copyright",
+      "sha256": "e32ff4e00d9d94930537635291da39e7e612703334bf6fde8c7f1686fe8a45a2"
+    },
+    {
+      "engine": "dukex",
+      "source": "vcpkg/curl/copyright",
+      "copy": "licenses/dukex/vcpkg/curl/copyright",
+      "sha256": "9a0c0f323fa5527be79263bcf62b33de111cf30bf67194879b42b988550a9541"
+    },
+    {
+      "engine": "dukex",
+      "source": "vcpkg/egl-registry/copyright",
+      "copy": "licenses/dukex/vcpkg/egl-registry/copyright",
+      "sha256": "5d77554ffc974ce346430a01a30be8176ca5c46fb1b53a7233291195ded592d3"
+    },
+    {
+      "engine": "dukex",
+      "source": "vcpkg/pcre2/copyright",
+      "copy": "licenses/dukex/vcpkg/pcre2/copyright",
+      "sha256": "197d8a73ffee0d6b09adba2f9c677b5f5aede24edf89258a68e48248d010d811"
+    },
+    {
+      "engine": "dukex",
+      "source": "vcpkg/libepoxy/copyright",
+      "copy": "licenses/dukex/vcpkg/libepoxy/copyright",
+      "sha256": "8d5144666f9c4df9bbd69b8900086d5979259152a1060421cdcc0fb9061a1c12"
+    },
+    {
+      "engine": "dukex",
+      "source": "vcpkg/openssl/copyright",
+      "copy": "licenses/dukex/vcpkg/openssl/copyright",
+      "sha256": "7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a"
+    },
+    {
+      "engine": "dukex",
+      "source": "vcpkg/libffi/copyright",
+      "copy": "licenses/dukex/vcpkg/libffi/copyright",
+      "sha256": "17b64dc60f3b6897a60f971e288b973f655c2edcdf08b25f3c3dd5549857881c"
+    },
+    {
+      "engine": "dukex",
+      "source": "vcpkg/libpcap/copyright",
+      "copy": "licenses/dukex/vcpkg/libpcap/copyright",
+      "sha256": "8a54594d257e14a5260ac770f1633516cb51e3fc28c40136ce2697014eda7afd"
+    },
+    {
+      "engine": "play",
+      "source": "emscripten/LICENSE",
+      "copy": "licenses/play/emscripten/LICENSE",
+      "sha256": "620a78084fc7ca97c0b5dea9abf891f3ffcadfdbf305276f099c9c4e12fc1d86"
+    },
+    {
+      "engine": "dukex",
+      "source": "presentation/xBR-LICENSE.txt",
+      "copy": "licenses/dukex/presentation/xBR-LICENSE.txt",
+      "sha256": "572eb602c219b3371e74df019a094262867a17928edbebd5a8decf1ee46d06a4"
+    },
+    {
+      "engine": "dukex",
+      "source": "presentation/FidelityFX-FSR-LICENSE.txt",
+      "copy": "licenses/dukex/presentation/FidelityFX-FSR-LICENSE.txt",
+      "sha256": "db089274ce766da70f5b7d791029c3486f9f9e27c8c79c652689603d3192e802"
+    }
+  ]
+}

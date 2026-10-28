@@ -1,0 +1,253 @@
+diff --git a/Source/BasicBlock.cpp b/Source/BasicBlock.cpp
+index 4c460e6..0cb30ee 100644
+--- a/Source/BasicBlock.cpp
++++ b/Source/BasicBlock.cpp
+@@ -408,7 +408,7 @@ void CBasicBlock::LinkBlock(LINK_SLOT linkSlot, CBasicBlock* otherBlock)
+ 	m_linkBlock[linkSlot] = otherBlock;
+ #endif
+ 	auto patchValue = reinterpret_cast<uintptr_t>(otherBlock->m_function.GetCode());
+-	auto code = reinterpret_cast<uint8*>(m_function.GetCode());
++	auto code = reinterpret_cast<uint8*>(m_function.GetWritableCode());
+ 	m_function.BeginModify();
+ 	*reinterpret_cast<uintptr_t*>(code + m_linkBlockTrampolineOffset[linkSlot]) = patchValue;
+ 	m_function.EndModify();
+@@ -426,7 +426,7 @@ void CBasicBlock::UnlinkBlock(LINK_SLOT linkSlot)
+ 	m_linkBlock[linkSlot] = nullptr;
+ #endif
+ 	auto patchValue = (linkSlot == LINK_SLOT_NEXT) ? reinterpret_cast<uintptr_t>(&NextBlockTrampoline) : reinterpret_cast<uintptr_t>(&BranchBlockTrampoline);
+-	auto code = reinterpret_cast<uint8*>(m_function.GetCode());
++	auto code = reinterpret_cast<uint8*>(m_function.GetWritableCode());
+ 	m_function.BeginModify();
+ 	*reinterpret_cast<uintptr_t*>(code + m_linkBlockTrampolineOffset[linkSlot]) = patchValue;
+ 	m_function.EndModify();
+diff --git a/Source/PS2VM.cpp b/Source/PS2VM.cpp
+index 5c8ded9..ea72bac 100644
+--- a/Source/PS2VM.cpp
++++ b/Source/PS2VM.cpp
+@@ -80,6 +80,7 @@ CPS2VM::CPS2VM()
+ 		auto absolutePath = CAppConfig::GetInstance().GetBasePath() / path;
+ 		Framework::PathUtils::EnsurePathExists(absolutePath);
+ 		CAppConfig::GetInstance().RegisterPreferencePath(setting, absolutePath);
++		CAppConfig::GetInstance().SetPreferencePath(setting, absolutePath);
+ 
+ 		auto currentPath = CAppConfig::GetInstance().GetPreferencePath(setting);
+ 		if(!fs::exists(currentPath))
+diff --git a/Source/app_shared/AppConfig.cpp b/Source/app_shared/AppConfig.cpp
+index b2fde78..be620a3 100644
+--- a/Source/app_shared/AppConfig.cpp
++++ b/Source/app_shared/AppConfig.cpp
+@@ -12,3 +12,7 @@ Framework::CConfig::PathType CAppConfig::BuildConfigPath()
+ {
+ 	return GetBasePath() / CONFIG_FILENAME;
+ }
++
++static std::unique_ptr<CAppConfig> vetaConfig;
++CAppConfig& CAppConfig::GetInstance() { if(!vetaConfig) vetaConfig=std::make_unique<CAppConfig>(); return *vetaConfig; }
++void CAppConfig::ResetInstance() { vetaConfig.reset(); }
+diff --git a/Source/app_shared/AppConfig.h b/Source/app_shared/AppConfig.h
+index a8cfa55..8b6fdd4 100644
+--- a/Source/app_shared/AppConfig.h
++++ b/Source/app_shared/AppConfig.h
+@@ -7,6 +7,8 @@ class CAppConfig : public Framework::CConfig, public CSingleton<CAppConfig>
+ {
+ public:
+ 	CAppConfig();
++	static CAppConfig& GetInstance();
++	static void ResetInstance();
+ 	virtual ~CAppConfig() = default;
+ 
+ 	//This needs to be implemented by every application/executable
+diff --git a/Source/ui_libretro/SH_LibreAudio.cpp b/Source/ui_libretro/SH_LibreAudio.cpp
+index 42067f7..8f73c6d 100644
+--- a/Source/ui_libretro/SH_LibreAudio.cpp
++++ b/Source/ui_libretro/SH_LibreAudio.cpp
+@@ -1,10 +1,9 @@
+ #include "SH_LibreAudio.h"
+ #include "ext/libretro.h"
+-#include <cstring>
++#include <algorithm>
+ #include <mutex>
+ 
+ extern retro_audio_sample_batch_t g_set_audio_sample_batch_cb;
+-std::mutex m_buffer_lock;
+ 
+ CSoundHandler* CSH_LibreAudio::HandlerFactory()
+ {
+@@ -14,18 +13,19 @@ CSoundHandler* CSH_LibreAudio::HandlerFactory()
+ void CSH_LibreAudio::Write(int16* buffer, unsigned int sampleCount, unsigned int sampleRate)
+ {
+ 	std::lock_guard<std::mutex> lock(m_buffer_lock);
+-	m_buffer.resize(sampleCount * sizeof(int16));
+-	memcpy(m_buffer.data(), buffer, sampleCount * sizeof(int16));
++	// The SPU writes several blocks before the frontend consumes a frame.
++	// Preserve all interleaved samples, in sample units rather than bytes.
++	m_buffer.insert(m_buffer.end(), buffer, buffer + sampleCount);
+ }
+ 
+ void CSH_LibreAudio::ProcessBuffer()
+ {
+-	if(!m_buffer.empty())
++	std::lock_guard<std::mutex> lock(m_buffer_lock);
++	if(!m_buffer.empty() && g_set_audio_sample_batch_cb)
+ 	{
+-		std::lock_guard<std::mutex> lock(m_buffer_lock);
+-		if(g_set_audio_sample_batch_cb)
+-			g_set_audio_sample_batch_cb(m_buffer.data(), m_buffer.size() / (2 * sizeof(int16)));
+-		m_buffer.clear();
++		const size_t frames = m_buffer.size() / 2;
++		const size_t consumed = std::min(frames, g_set_audio_sample_batch_cb(m_buffer.data(), frames));
++		m_buffer.erase(m_buffer.begin(), m_buffer.begin() + consumed * 2);
+ 	}
+ }
+ 
+@@ -36,6 +36,8 @@ bool CSH_LibreAudio::HasFreeBuffers()
+ 
+ void CSH_LibreAudio::Reset()
+ {
++	std::lock_guard<std::mutex> lock(m_buffer_lock);
++	m_buffer.clear();
+ }
+ 
+ void CSH_LibreAudio::RecycleBuffers()
+diff --git a/Source/ui_libretro/main_libretro.cpp b/Source/ui_libretro/main_libretro.cpp
+index 8a07c26..425539e 100644
+--- a/Source/ui_libretro/main_libretro.cpp
++++ b/Source/ui_libretro/main_libretro.cpp
+@@ -15,7 +15,14 @@
+ #include "MemStream.h"
+ 
+ #include "filesystem_def.h"
+-#include "DefaultAppConfig.h"
++extern retro_environment_t g_environ_cb;
++fs::path CAppConfig::GetBasePath() const
++{
++    const char* save=nullptr;
++    if(!g_environ_cb(RETRO_ENVIRONMENT_GET_SAVE_DIRECTORY,&save) || !save)
++        throw std::runtime_error("VETA: missing PS2 save directory");
++    auto path=fs::path(save); Framework::PathUtils::EnsurePathExists(path); return path;
++}
+ 
+ #include <vector>
+ #include <cstdlib>
+@@ -25,6 +32,40 @@
+ static CPS2VM* m_virtualMachine = nullptr;
+ static bool first_run = false;
+ 
++// EE/IOP run on their own thread, while libretro owns the GS thread.
++// Drain GS work while requesting a pause so the VM cannot deadlock waiting
++// for its frame queue. State files must never race live guest RAM/registers.
++class ScopedVMPause
++{
++public:
++    explicit ScopedVMPause(CPS2VM* vm) : m_vm(vm), m_resume(vm->GetStatus() == CVirtualMachine::RUNNING)
++    {
++        if(m_resume)
++        {
++            m_vm->PauseAsync();
++            while(m_vm->GetStatus() != CVirtualMachine::PAUSED)
++            {
++                FlushGraphics();
++                std::this_thread::yield();
++            }
++        }
++        FlushGraphics();
++    }
++    ~ScopedVMPause()
++    {
++        FlushGraphics();
++        if(m_resume) m_vm->Resume();
++    }
++    void FlushGraphics()
++    {
++        if(auto gs = static_cast<CGSH_OpenGL_Libretro*>(m_vm->GetGSHandler()))
++            gs->FlushMailBox();
++    }
++private:
++    CPS2VM* m_vm;
++    bool m_resume;
++};
++
+ bool libretro_supports_bitmasks = false;
+ retro_video_refresh_t g_video_cb;
+ retro_environment_t g_environ_cb;
+@@ -249,6 +290,8 @@ size_t retro_serialize_size(void)
+ bool retro_serialize(void* data, size_t size)
+ {
+ 	CLog::GetInstance().Print(LOG_NAME, "%s\n", __FUNCTION__);
++	if(!m_virtualMachine) return false;
++	ScopedVMPause pause(m_virtualMachine);
+ 
+ 	try
+ 	{
+@@ -258,6 +301,7 @@ bool retro_serialize(void* data, size_t size)
+ 		m_virtualMachine->m_ee->SaveState(archive);
+ 		m_virtualMachine->m_iop->SaveState(archive);
+ 		m_virtualMachine->m_ee->m_gs->SaveState(archive);
++		pause.FlushGraphics(); // Complete the queued GS memory readback before compression.
+ 
+ 		archive.Write(stateStream);
+ 		stateStream.Seek(0, Framework::STREAM_SEEK_DIRECTION::STREAM_SEEK_SET);
+@@ -274,6 +318,8 @@ bool retro_serialize(void* data, size_t size)
+ bool retro_unserialize(const void* data, size_t size)
+ {
+ 	CLog::GetInstance().Print(LOG_NAME, "%s\n", __FUNCTION__);
++	if(!m_virtualMachine) return false;
++	ScopedVMPause pause(m_virtualMachine);
+ 
+ 	try
+ 	{
+@@ -285,6 +331,7 @@ bool retro_unserialize(const void* data, size_t size)
+ 			m_virtualMachine->m_ee->LoadState(archive);
+ 			m_virtualMachine->m_iop->LoadState(archive);
+ 			m_virtualMachine->m_ee->m_gs->LoadState(archive);
++			if(auto sound = m_virtualMachine->GetSoundHandler()) sound->Reset();
+ 		}
+ 		catch(...)
+ 		{
+@@ -428,7 +475,7 @@ void retro_run()
+ 	{
+ 		if(m_virtualMachine)
+ 		{
+-			// m_virtualMachine->Pause();
++			ScopedVMPause pause(m_virtualMachine);
+ 			m_virtualMachine->Reset();
+ 			if(m_bootCommand.type == BootType::CD)
+ 			{
+@@ -466,13 +513,17 @@ void retro_reset(void)
+ 	{
+ 		if(!m_virtualMachine->GetGSHandler())
+ 			SetupVideoHandler();
+-		// m_virtualMachine->Pause();
++		ScopedVMPause pause(m_virtualMachine);
+ 		m_virtualMachine->Reset();
+-		m_virtualMachine->m_ee->m_os->BootFromCDROM();
++		if(m_bootCommand.type == BootType::CD)
++			m_virtualMachine->m_ee->m_os->BootFromCDROM();
++		else
++			m_virtualMachine->m_ee->m_os->BootFromFile(m_bootCommand.path);
++		if(auto sound = m_virtualMachine->GetSoundHandler()) sound->Reset();
+ 		m_virtualMachine->Resume();
+ 		CLog::GetInstance().Print(LOG_NAME, "%s\n", "Reset Game");
++		first_run = true;
+ 	}
+-	first_run = false;
+ }
+ 
+ bool retro_load_game(const retro_game_info* info)
+@@ -583,8 +634,9 @@ void retro_deinit()
+ 			while(m_virtualMachine->GetStatus() != CVirtualMachine::PAUSED)
+ 			{
+ 				std::this_thread::yield();
+-				gsHandler->Release();
++				gsHandler->FlushMailBox();
+ 			}
++            gsHandler->Release();
+ 		}
+ 		m_virtualMachine->DestroyPadHandler();
+ 		m_virtualMachine->DestroyGSHandler();
+@@ -594,4 +646,5 @@ void retro_deinit()
+ 		m_virtualMachine = nullptr;
+ 	}
+ 	libretro_supports_bitmasks = false;
++	CAppConfig::ResetInstance();
+ }

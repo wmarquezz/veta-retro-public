@@ -1,0 +1,52 @@
+diff --git a/Source/ui_libretro/SH_LibreAudio.cpp b/Source/ui_libretro/SH_LibreAudio.cpp
+index 42067f7..8f73c6d 100644
+--- a/Source/ui_libretro/SH_LibreAudio.cpp
++++ b/Source/ui_libretro/SH_LibreAudio.cpp
+@@ -1,10 +1,9 @@
+ #include "SH_LibreAudio.h"
+ #include "ext/libretro.h"
+-#include <cstring>
++#include <algorithm>
+ #include <mutex>
+ 
+ extern retro_audio_sample_batch_t g_set_audio_sample_batch_cb;
+-std::mutex m_buffer_lock;
+ 
+ CSoundHandler* CSH_LibreAudio::HandlerFactory()
+ {
+@@ -14,18 +13,19 @@ CSoundHandler* CSH_LibreAudio::HandlerFactory()
+ void CSH_LibreAudio::Write(int16* buffer, unsigned int sampleCount, unsigned int sampleRate)
+ {
+ 	std::lock_guard<std::mutex> lock(m_buffer_lock);
+-	m_buffer.resize(sampleCount * sizeof(int16));
+-	memcpy(m_buffer.data(), buffer, sampleCount * sizeof(int16));
++	// The SPU writes several blocks before the frontend consumes a frame.
++	// Preserve all interleaved samples, in sample units rather than bytes.
++	m_buffer.insert(m_buffer.end(), buffer, buffer + sampleCount);
+ }
+ 
+ void CSH_LibreAudio::ProcessBuffer()
+ {
+-	if(!m_buffer.empty())
++	std::lock_guard<std::mutex> lock(m_buffer_lock);
++	if(!m_buffer.empty() && g_set_audio_sample_batch_cb)
+ 	{
+-		std::lock_guard<std::mutex> lock(m_buffer_lock);
+-		if(g_set_audio_sample_batch_cb)
+-			g_set_audio_sample_batch_cb(m_buffer.data(), m_buffer.size() / (2 * sizeof(int16)));
+-		m_buffer.clear();
++		const size_t frames = m_buffer.size() / 2;
++		const size_t consumed = std::min(frames, g_set_audio_sample_batch_cb(m_buffer.data(), frames));
++		m_buffer.erase(m_buffer.begin(), m_buffer.begin() + consumed * 2);
+ 	}
+ }
+ 
+@@ -36,6 +36,8 @@ bool CSH_LibreAudio::HasFreeBuffers()
+ 
+ void CSH_LibreAudio::Reset()
+ {
++	std::lock_guard<std::mutex> lock(m_buffer_lock);
++	m_buffer.clear();
+ }
+ 
+ void CSH_LibreAudio::RecycleBuffers()

@@ -1,0 +1,48 @@
+--- a/Source/Core/DolphinLibretro/Main.cpp
++++ b/Source/Core/DolphinLibretro/Main.cpp
+@@ -578,9 +578,13 @@
+   if (!was_cpu)
+     Core::DeclareAsCPUThread();
+ 
++  bool state_ok = false;
+   Core::RunOnCPUThread(Core::System::GetInstance(), [&] {
+     PointerWrap p((u8**)&data, size, PointerWrap::Mode::Write);
+     State::DoState(Core::System::GetInstance(), p);
++    state_ok = p.IsWriteMode();
++    if (!state_ok)
++      ERROR_LOG_FMT(CORE, "Libretro state write failed: buffer {} bytes", size);
+   }, true);
+ 
+   if (!was_cpu)
+@@ -589,7 +593,7 @@
+   if (system.IsDualCoreMode())
+     ar->SetPassthrough(false);
+ 
+-  return true;
++  return state_ok;
+ }
+ 
+ bool retro_unserialize(const void* data, size_t size)
+@@ -607,9 +611,13 @@
+   if (!was_cpu)
+     Core::DeclareAsCPUThread();
+ 
++  bool state_ok = false;
+   Core::RunOnCPUThread(Core::System::GetInstance(), [&] {
+     PointerWrap p((u8**)&data, size, PointerWrap::Mode::Read);
+     State::DoState(Core::System::GetInstance(), p);
++    state_ok = p.IsReadMode();
++    if (!state_ok)
++      ERROR_LOG_FMT(CORE, "Libretro state read failed: buffer {} bytes", size);
+   }, true);
+ 
+   if (!was_cpu)
+@@ -618,7 +626,7 @@
+   if (system.IsDualCoreMode())
+     ar->SetPassthrough(false);
+ 
+-  return true;
++  return state_ok;
+ }
+ 
+ unsigned retro_get_region()

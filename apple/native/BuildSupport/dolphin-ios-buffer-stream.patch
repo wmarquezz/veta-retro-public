@@ -1,0 +1,26 @@
+diff --git a/Source/Core/VideoBackends/OGL/OGLStreamBuffer.cpp b/Source/Core/VideoBackends/OGL/OGLStreamBuffer.cpp
+--- a/Source/Core/VideoBackends/OGL/OGLStreamBuffer.cpp
++++ b/Source/Core/VideoBackends/OGL/OGLStreamBuffer.cpp
+@@ -2,6 +2,9 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later
+ 
+ #include "VideoBackends/OGL/OGLStreamBuffer.h"
++#ifdef __APPLE__
++#include <TargetConditionals.h>
++#endif
+ 
+ #include "Common/Align.h"
+ #include "Common/MathUtil.h"
+@@ -346,6 +349,12 @@
+ // Chooses the best streaming method based on the supported extensions and known issues
+ std::unique_ptr<StreamBuffer> StreamBuffer::Create(u32 type, u32 size)
+ {
++#if defined(__APPLE__) && TARGET_OS_IPHONE && !TARGET_OS_SIMULATOR
++  // Apple's Metal-backed GLES driver stalls while replacing an in-flight
++  // UBO with glBufferSubData (observed in ProgramShaderCache::UploadConstants).
++  // Use Dolphin's existing orphaning fallback for iOS streaming buffers.
++  return std::make_unique<BufferData>(type, size);
++#endif
+   // without basevertex support, only streaming methods whith uploads everything to zero works fine:
+   if (!g_ogl_config.bSupportsGLBaseVertex)
+   {

@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "name": "tia",
+  "repo": "warmenhoven/tia",
+  "commit": "6ae5bf998fe7a7842294089db17fc86fd73db1f0",
+  "license": "GPL-2.0-or-later",
+  "archive": "tia-6ae5bf99.tar.gz",
+  "sha256": "4f5336b5a0d6c792f70be9607984b9148a297f343b016ae8016613fa21aa2692",
+  "sourceSelection": [
+    "src",
+    "COPYING",
+    "README.md",
+    "Makefile",
+    "Makefile.common",
+    "link.T",
+    "tia_libretro.info"
+  ],
+  "excludedNonBuildInputs": [
+    "tests/oracle (not linked)",
+    "tests/unit/roms (third-party test binaries, not linked)"
+  ],
+  "sources": [
+    "cpu.c",
+    "riot.c",
+    "tia.c",
+    "palette.c",
+    "cart.c",
+    "bus.c",
+    "libretro.c"
+  ]
+}

@@ -1,0 +1,23 @@
+Play WASM v2 API (in addition to upstream bootElf/bootDiscImage/getFrames/clearStats/ccall/FS)
+
+setInputButton(port,button,pressed) -> bool accepted
+Ports 0..3; slots alone do not establish four-player compatibility.
+Buttons 4 Up,5 Down,6 Left,7 Right,8 Select,9 Start,10 Square,11 Triangle,12 Circle,13 Cross,14 L1,15 L2,16 L3,17 R1,18 R2,19 R3.
+setInputAxis(port,axis,value) -> bool accepted
+Axes0 LX,1 LY,2 RX,3 RY. Signed -32768..32767, neutral0. Negative left/up. Clamps out-of-range values; native 8-bit endpoints0/255, neutral127.
+resetInput() -> neutralizes all native input. First native call activates its port and takes priority over keyboard for that port. Call reset on pause/blur/controller disconnect; setPaused(true) resets automatically.
+
+setPaused(bool), saveState('/work/slot.zip'), loadState('/work/slot.zip') -> operation id (0=rejected).
+pollOperation(id) -> 0 pending,1 success,-1 failed,-2 invalid; successful/failed completion consumes id. Maximum8 outstanding.
+Example:
+async function waitOperation(id){if(!id)throw Error('rejected');for(;;){const s=Module.pollOperation(id);if(s===1)return;if(s<0)throw Error('operation failed '+s);await new Promise(r=>setTimeout(r,16));}}
+Do not synchronously spin; the VM needs the browser thread to process WebGL/disc/audio proxies. Serialize save/load/pause calls at frontend level; a JS timeout does not cancel an already queued VM operation.
+
+Save: await waitOperation(Module.setPaused(true)); await waitOperation(Module.saveState('/work/slot.zip')); read Module.FS.readFile('/work/slot.zip'); persist bytes natively; optionally resume with same API. Load: pause, FS.writeFile('/work/slot.zip',bytes), await load operation, resume. All paths must be bounded /work/ paths, no traversal.
+getStateFormat() -> play-505dac7-vmzip-timing-v1. Keep separate from existing native .vstate; native libretro state omits the timing XML required by VM LoadState. Same upstream pin does not imply bidirectional format compatibility. No conversion was implemented.
+getDataPath() -> actual MEMFS config/data root. Memory cards are HLE directory trees under vfs/mc0 and vfs/mc1, not raw .ps2 images. Restore tree before boot and snapshot while VM paused; persist natively in a separate engine namespace until compatibility is proven. This API itself never accesses device files.
+
+setResolutionFactor(1..4) -> bool. Call before initVm; after init false means rejected. Recreate engine for changed factor. Factor changes internal framebuffer, not the canvas presentation size (upstream640x480). Higher factor performance and TV output unvalidated.
+Audio upstream OpenAL remains unchanged. QA test deliberately substitutes a suspended AudioContext; production must omit that shim and unlock/resume audio from user gesture. No audio activation helper added to C++; browser owns AudioContext state.
+
+Versioned artifacts, patches, notices and validation receipts in this folder. No deinterlace hacks, no source shared-tree edits, no ROM/BIOS assets.

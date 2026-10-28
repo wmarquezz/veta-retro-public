@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "recipe": "build_free_atlases.py",
+  "generatedAtlases": {
+    "font_atlas.zim": "3930f333e16540cb562b674618b1bf5a59836a181a18f109324231470fd0e490",
+    "font_atlas.meta": "df71771d45ca83e6beb77e77d8795caf0c75a7ab8bea5c7244e967b194aca6c3",
+    "asciifont_atlas.zim": "ac030c5476fc5b3af87137396e376c089cb47b986ac0ea2514e09500a37a74c2",
+    "asciifont_atlas.meta": "e9040066fc852a2cbd51a0c17a91e14f4a89a2631d5256ceb36052787a289c6c",
+    "ppge_atlas.zim": "115f0ed8769cf5bb0dbfc442b3d4629aa2343483305ef66586f56ee66bf85280",
+    "ppge_atlas.meta": "273e89b2d3ab8862aac093fd6e20d079c040904e3e636119fad04eceeadeb53c"
+  },
+  "packagedFiles": {
+    "PPSSPP/font_atlas.zim": "3930f333e16540cb562b674618b1bf5a59836a181a18f109324231470fd0e490",
+    "PPSSPP/font_atlas.meta": "df71771d45ca83e6beb77e77d8795caf0c75a7ab8bea5c7244e967b194aca6c3",
+    "PPSSPP/asciifont_atlas.zim": "ac030c5476fc5b3af87137396e376c089cb47b986ac0ea2514e09500a37a74c2",
+    "PPSSPP/asciifont_atlas.meta": "e9040066fc852a2cbd51a0c17a91e14f4a89a2631d5256ceb36052787a289c6c",
+    "PPSSPP/ppge_atlas.zim": "115f0ed8769cf5bb0dbfc442b3d4629aa2343483305ef66586f56ee66bf85280",
+    "PPSSPP/ppge_atlas.meta": "273e89b2d3ab8862aac093fd6e20d079c040904e3e636119fad04eceeadeb53c",
+    "PPSSPP/VETA-Font-Notices/Inconsolata-OFL.txt": "5d362a6f8690517fd9a5573128a081d8bbbb2f92714cf00556e08fbbe9600426",
+    "PPSSPP/VETA-Font-Notices/provenance.json": "2367bf7d523f0b11443838977956d436c9f462c7900bb9a78c7f9655f0d3027e",
+    "PPSSPP/VETA-Font-Notices/pgf-provenance.json": "0b1c944b9179916ae2e3052326e02830e7414eccbafcd64d95cec08f56f935ef",
+    "PPSSPP/VETA-Font-Notices/Roboto-OFL.txt": "061402327a96aadb0bfb694a960ed289ecd38d383e396243831ab81feb109c41",
+    "PPSSPP/VETA-Font-Notices/NotoCJK-OFL.txt": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2",
+    "PPSSPP/VETA-Font-Notices/SourceHanSans-OFL.txt": "fcac737e761ec63dbfbdce11030a1780161920d80315edba9c8beff1c2bac5a2",
+    "PPSSPP/VETA-Font-Notices/Ume-license.html": "88d5d5a1bf928ff316e3f80d2e665b1a3ab0f46af80ae7d1ec0046b16ea64cdb",
+    "PPSSPP/VETA-Font-Notices/Noto-OFL.txt": "0dab92d0544f7b233403f14b84a663bdbfa746982eda629e7f4f9ffe1b036feb",
+    "PPSSPP/flash0/font/jpn0.pgf": "d363cec75fecfafd1511e370e48c748c30199c694b83a4026be34d799b192917",
+    "PPSSPP/flash0/font/kr0.pgf": "6b0b3a8be9e709d6af02223d077675e1530f9879f42656377a9d8d42e2614333",
+    "PPSSPP/flash0/font/ltn0.pgf": "1184f16bc89bad1fea49093806784470281af54f279b57ef0378ce33e6603870",
+    "PPSSPP/flash0/font/ltn1.pgf": "0cb72bdce33780b78596001fdc6842c244aac06e813fddf28e3437e4db45dd5b",
+    "PPSSPP/flash0/font/ltn10.pgf": "ff8fcdebca739eaa81c07caabd78b3e3eafb89cac0e68caf7aaf7a2b25514e85",
+    "PPSSPP/flash0/font/ltn11.pgf": "ebb94efd7d18143d6c6d54ae7aa5cc801d8c56dc7ca613c779cc60dc8b640a16",
+    "PPSSPP/flash0/font/ltn12.pgf": "c71f3dee57b8a105a88791dd041a008adb918b14a3892a1b18ed6a63f721201a",
+    "PPSSPP/flash0/font/ltn13.pgf": "25b0efa79cf1b6656b35356483ad2b1191626550d59b5943ed681e82b945bd73",
+    "PPSSPP/flash0/font/ltn14.pgf": "bc2c9389ac33f120b4be4fd3efc467de12fd886ec147969a4309ea270ccc1da3",
+    "PPSSPP/flash0/font/ltn15.pgf": "4ab43137ebed97d8bbec829b32d4b343f9895e0b14ec1c884c1b44dfa35d5204",
+    "PPSSPP/flash0/font/ltn2.pgf": "ecfdfc8c7f1ee367dda81ff3177af626b5bf64014315ce0c389903c40964b4bf",
+    "PPSSPP/flash0/font/ltn3.pgf": "82bf8f0b60fd7e513560b29c52f6c721ade05910a144704c17f78aba298d9b08",
+    "PPSSPP/flash0/font/ltn4.pgf": "250babd8a242d7eaaa84284c78d5e2273b29e61d0d8c01b65414e3248d7c1164",
+    "PPSSPP/flash0/font/ltn5.pgf": "e30b45662d37516c590ca070c831b44a6883587e223abd28082cb017623474f7",
+    "PPSSPP/flash0/font/ltn6.pgf": "a0fb14123ceb1ef81cb230cbf0688de594d0725de234a2ad710cd9b89391c7e9",
+    "PPSSPP/flash0/font/ltn7.pgf": "9a4d35eeeee93fe8b5434e8dff79dabf7bbd914ad0d6461fb60d36eb178bf2c8",
+    "PPSSPP/flash0/font/ltn8.pgf": "c8620bdd244585bbf993a82903168f6ec8464d4cbcad238d4e0ca5623c1ba3c1",
+    "PPSSPP/flash0/font/ltn9.pgf": "e250f2782e0c72707ce16f73331e2604daa84c488c8b9c959e2296867c1710bf",
+    "PPSSPP/Roboto_Condensed-Bold.ttf": "da69d6f3193e279c892451c17f7e4926aecd4aeaf7300171ddb44c70551260ca",
+    "PPSSPP/Roboto_Condensed-Italic.ttf": "9fe1c2390bbce960ebba517eec37659fdd1c7a59dd256da6274b5b4d88509575",
+    "PPSSPP/Roboto_Condensed-Light.ttf": "3f1a3f85852fafc3a198904f6efc1fce5ae1013775ac40da35bd52ec82d38e41",
+    "PPSSPP/Roboto_Condensed-Regular.ttf": "d8e6f7c5a1356d41dd82b0c00219febd21c791cc5cd1ecf8a0323cbeafe6496c",
+    "PPSSPP/Inconsolata-Regular.ttf": "e0267abf9d734e2b9f766f8cb7a496b552c57cdfeacfa0efdc5bfd21940ae145",
+    "PPSSPP-FONTS-LICENSE.txt": "70f90646665493b4b9dc7199f172b231f286c40383c86a22422ac58d0832382f"
+  },
+  "inputFonts": [
+    {
+      "name": "NotoSansCJKjp-Regular.otf",
+      "url": "https://raw.githubusercontent.com/notofonts/noto-cjk/f8d157532fbfaeda587e826d4cd5b21a49186f7c/Sans/OTF/Japanese/NotoSansCJKjp-Regular.otf",
+      "sha256": "68a3fc98800b2a27b371f2fb79991daf3633bd89309d4ffaa6946fd587f375b5"
+    },
+    {
+      "name": "NotoCJK-OFL.txt",
+      "url": "https://raw.githubusercontent.com/notofonts/noto-cjk/f8d157532fbfaeda587e826d4cd5b21a49186f7c/Sans/LICENSE",
+      "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2"
+    },
+    {
+      "name": "NotoSans.ttf",
+      "url": "https://raw.githubusercontent.com/notofonts/noto-fonts/ffebf8c1ee449e544955a7e813c54f9b73848eac/hinted/ttf/NotoSans/NotoSans-Regular.ttf",
+      "sha256": "b85c38ecea8a7cfb39c24e395a4007474fa5a4fc864f6ee33309eb4948d232d5"
+    },
+    {
+      "name": "NotoSansThai.ttf",
+      "url": "https://raw.githubusercontent.com/notofonts/noto-fonts/ffebf8c1ee449e544955a7e813c54f9b73848eac/hinted/ttf/NotoSansThai/NotoSansThai-Regular.ttf",
+      "sha256": "404ddfb5ed0aaa6b6ec8a85700d682978992062d67da93903967b56cbd9a4acc"
+    },
+    {
+      "name": "NotoSansHebrew.ttf",
+      "url": "https://raw.githubusercontent.com/notofonts/noto-fonts/ffebf8c1ee449e544955a7e813c54f9b73848eac/hinted/ttf/NotoSansHebrew/NotoSansHebrew-Regular.ttf",
+      "sha256": "a7fa16fffb27bedb060a0866267c29e9859aeb9c21cc33f5b3aaf6eb062eca85"
+    },
+    {
+      "name": "Noto-OFL.txt",
+      "url": "https://raw.githubusercontent.com/notofonts/noto-fonts/ffebf8c1ee449e544955a7e813c54f9b73848eac/LICENSE",
+      "sha256": "0dab92d0544f7b233403f14b84a663bdbfa746982eda629e7f4f9ffe1b036feb"
+    },
+    {
+      "name": "SourceHanSans-OFL.txt",
+      "url": "https://raw.githubusercontent.com/adobe-fonts/source-han-sans/0b993716f6910f0c8e00f957c767ab3cf5cb7602/LICENSE.txt",
+      "sha256": "fcac737e761ec63dbfbdce11030a1780161920d80315edba9c8beff1c2bac5a2"
+    },
+    {
+      "name": "Ume-license.html",
+      "url": "https://deb.debian.org/debian/pool/main/f/fonts-horai-umefont/fonts-horai-umefont_670.orig.tar.xz",
+      "member": "fonts-horai-umefont-670/license.html",
+      "archiveSHA256": "49ecb8f556c2448687d27bb485009ce51b90df26bb4f0c24c9e63b170c647c81",
+      "sha256": "88d5d5a1bf928ff316e3f80d2e665b1a3ab0f46af80ae7d1ec0046b16ea64cdb"
+    }
+  ],
+  "validation": "PPSSPP runtime metadata parser, distinct ASCII UVs, representative Latin/CJK/Korean/Thai/Hebrew glyphs, four button icons and visual text sample; not every game or glyph"
+}

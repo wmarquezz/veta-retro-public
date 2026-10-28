@@ -1,0 +1,20 @@
+--- a/ui/xemu.c
++++ b/ui/xemu.c
+@@ -2394,11 +2394,16 @@
+         veta_perf_elapsed(VETA_PERF_bql_wait_ns,stage_start);
+         stage_start=veta_perf_now();
+         qatomic_set(&veta_running, runstate_is_running());
++        bool presentation_paused = runstate_check(RUN_STATE_PAUSED);
+         xemu_main_loop_unlock();
+         veta_perf_elapsed(VETA_PERF_bql_hold_ns,stage_start);
+ #endif
+ #ifdef CONFIG_IOS
+-        if (xemu_ios_vulkan_presenter_enabled()) {
++        if (presentation_paused) {
++            /* Keep event/lifecycle polling alive without refreshing a frozen
++             * surface. No lock is held; poll again after a short blocking sleep. */
++            SDL_Delay(50);
++        } else if (xemu_ios_vulkan_presenter_enabled()) {
+             stage_start=veta_perf_now();
+             ios_refresh_metal_layer_hud();
+             veta_perf_elapsed(VETA_PERF_aux_ns,stage_start);

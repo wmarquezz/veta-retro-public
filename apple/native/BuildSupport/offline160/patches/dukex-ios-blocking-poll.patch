@@ -1,0 +1,11 @@
+--- a/util/qemu-timer.c
++++ b/util/qemu-timer.c
+@@ -343,7 +343,7 @@
+     }
+ #else
+ 
+-#ifdef XBOX
++#if defined(XBOX) && !defined(CONFIG_IOS)
+     /* Timers are facilitated by this function. Busy-wait if the deadline is
+      * near, to avoid missing deadlines due to costly sleeps.
+      */

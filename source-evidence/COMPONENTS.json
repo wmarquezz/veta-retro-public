@@ -1,0 +1,1716 @@
+[
+  {
+    "name": "flycast",
+    "repo": "https://github.com/flyinghead/flycast",
+    "commit": "6d81b998169b916ad7d7d6f403f7dc2c18e2aea5",
+    "destination": "apple/native/.build/engine-sources/flycast",
+    "omitted": [
+      {
+        "path": "core/deps/DreamPicoPort-API",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/SDL",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/Spout",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/Syphon",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/Vulkan-Headers",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/VulkanMemoryAllocator",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/breakpad",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/discord-rpc",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/freetype/subprojects/dlg",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/gamesdk",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/glslang",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/googletest",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/libadrenotools",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/libchdr/deps/zlib-1.3.1/zconf.h",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/luabridge",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/oboe",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/websocketpp",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/xbyak",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      }
+    ],
+    "materializedSymlinks": [
+      {
+        "path": "shell/apple/emulator-ios/AltKit/Sources/CAltKit/include/NSError+ALTServerError.h",
+        "target": "../NSError+ALTServerError.h"
+      }
+    ],
+    "submodules": [
+      "-e06d9f6c59833fc7bb7f2a33c960614489811ef8 core/deps/DreamPicoPort-API",
+      "-00d4f1c2c4ad2dc95d26b18743541f57b1dca56d core/deps/SDL",
+      "-2110a918e720688f3cb2118302fd153db8745ace core/deps/Spout",
+      "-53ec412a78b246c84cedcb4a2a5b92852704d61d core/deps/Syphon",
+      "-b5c8f996196ba4aa6d8f97e52b5d3b6e70f7e4e2 core/deps/Vulkan-Headers",
+      "-1d8f600fd424278486eade7ed3e877c99f0846b1 core/deps/VulkanMemoryAllocator",
+      " d3402006e84efb6114ff93e4f2b8508412ed80d5 core/deps/asio (d340200)",
+      "-1ab24bcc817ebe629bf77daa53529d02361cb1e9 core/deps/breakpad",
+      "-c62c34d37cd90b75187a1212e13ce4145bafbdd7 core/deps/discord-rpc",
+      " 0a0221a1347e2f1e07c395263540026e9a0aa7c7 core/deps/freetype (0a0221a)",
+      "-395ccad2c1e0daae535c4d20bb0a3f2424648e17 core/deps/freetype/subprojects/dlg",
+      "-4ac9952e6a5b3e0846003cb156b4a664178b7549 core/deps/gamesdk",
+      "-fc9889c889561c5882e83819dcaffef5ed45529b core/deps/glslang",
+      "-e39786088138f2749d64e9e90e0f9902daa77c40 core/deps/googletest",
+      "-8fae8ce254dfc1344527e05301e43f37dea2df80 core/deps/libadrenotools",
+      " 5f82799f2c8cad1e9cd26d39a0f8d36369a5534b core/deps/libchdr (heads/master)",
+      " 77daa8befd828046169adbb012d8de928bfdcdd4 core/deps/libjuice (77daa8b)",
+      "-5d21e35633a1f87ed08af115b07d3386096f792b core/deps/luabridge",
+      "-a81bb9f87d4105b84b682685d3bfbb5beca371d1 core/deps/oboe",
+      " 3106e6d3d274b63c59976cb07dda94a292ab45ca core/deps/rcheevos (3106e6d)",
+      " 41572a67f96013691685a38f0032f3c97aa34f79 core/deps/tinygettext (heads/master)",
+      " 9a51e13802d930feb7261ba8876940659b258cb7 core/deps/tinygettext/external/tinycmmc (9a51e13)",
+      "-1b11fd301531e6df35a6107c1e8665b1e77a2d8e core/deps/websocketpp",
+      "-0d67fd1530016b7c56f3cd74b3fca920f4c3e2b4 core/deps/xbyak"
+    ],
+    "fileCount": 7589
+  },
+  {
+    "name": "azahar",
+    "repo": "https://github.com/azahar-emu/azahar",
+    "commit": "93f8939a10b0f6dd740683d3201c7ff69250580d",
+    "destination": "apple/native/.build/engine-sources/azahar",
+    "omitted": [
+      {
+        "path": "externals/dynarmic/externals/zydis/subprojects",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "externals/sdl2/SDL/android-project-ant/src",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "externals/soundtouch/source/SoundTouchDLL/LazarusTest/libSoundTouchDll.so",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "externals/soundtouch/source/csharp-example/NAudio.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "externals/soundtouch/source/csharp-example/SoundTouch.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "externals/vma/bin/VmaSample_Release_vs2022.exe",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      }
+    ],
+    "materializedSymlinks": [
+      {
+        "path": "externals/libusb/libusb/README.md",
+        "target": "README"
+      },
+      {
+        "path": "externals/sdl2/SDL/android-project-ant/AndroidManifest.xml",
+        "target": "../android-project/app/src/main/AndroidManifest.xml"
+      },
+      {
+        "path": "externals/zstd/tests/cli-tests/bin/unzstd",
+        "target": "zstd"
+      },
+      {
+        "path": "externals/zstd/tests/cli-tests/bin/zstdcat",
+        "target": "zstd"
+      }
+    ],
+    "submodules": [
+      " d282515cd6a66b694ac0657eef250c24b7410495 dist/compatibility_list (heads/master)",
+      " 6a85c3100499e886e11c87a5c2109eedacea0a61 externals/boost (heads/master)",
+      " 914aeecfe23b1e16af6ea675a4fb5dbd5a5b8d0a externals/catch2 (914aeec)",
+      " 4a970bc302d671476122cbc6b43cc89fbf4a96ec externals/cpp-jwt (4a970bc)",
+      " 8d92d788421483a43e09acf1cd4a2861cb2b8cab externals/cryptopp (8d92d78)",
+      " 832fcf38e600bf80b4b728a3e0227403088d992c externals/cubeb (832fcf3)",
+      " aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a externals/cubeb/cmake/sanitizers-cmake (aab6948)",
+      " 40412d85124f7c6f3d88454583c4633e5e10fc8c externals/cubeb/googletest (40412d8)",
+      " 8f39e9fc3ad4868e6ff7188c52575087a1a02777 externals/cubeb/src/cubeb-coreaudio-rs (8f39e9f)",
+      " 6bac666467e4a37cf057f0e17e8c9e8a024b060b externals/cubeb/src/cubeb-pulse-rs (6bac666)",
+      " c3ca8febc2457ab5c581604f3236a8a511fc2e45 externals/dds-ktx (c3ca8fe)",
+      " 049826c3f42875c2f9599552f425e76435789cc7 externals/discord-rpc (heads/master)",
+      " 2f8b349c26832cae612aa7082154c0697a9cbc8e externals/dllwalker (heads/master)",
+      " a46601580d5512d324104f985b5f0209dc980ddc externals/dynarmic (heads/master)",
+      " 8bd0f7538b9ed7bedf90e789ffbd9eaeb484b28d externals/dynarmic/externals/biscuit (8bd0f75)",
+      " 76f70b1403dbc0781216f49e20e45b71f7eccdd8 externals/dynarmic/externals/catch (76f70b1)",
+      " 7b273fbb541c7c9058800bc613f4291274b2d26e externals/dynarmic/externals/fmt (7b273fb)",
+      " 5fc4beaf331037649b10625736b41365defb4f50 externals/dynarmic/externals/mcl (0.1.14)",
+      " 94c726ce0338b054eb8cb5ea91de8fe6c19f4392 externals/dynarmic/externals/oaknut (heads/main)",
+      " 054ec5ad67440fcd65e0497e5a27ef31f53fcc7f externals/dynarmic/externals/robin-map (054ec5a)",
+      " 8c0098b69f95d02dea47efcdd42ab5aa2d03c72d externals/dynarmic/externals/xbyak (8c0098b)",
+      " 0b2432ced0884fd152b471d97ecf0258ff4d859f externals/dynarmic/externals/zycore (0b2432c)",
+      " bffbb610cfea643b98e87658b9058382f7522807 externals/dynarmic/externals/zydis (bffbb61)",
+      " 38d4f0285e6157ee840ea82a9b90aba71c8a705d externals/dynarmic/externals/zydis/dependencies/zycore (38d4f02)",
+      " 2662c0de09e36f2a2030ccc2c528a3e4c9e8138a externals/enet (2662c0d)",
+      " 216f00e8ddba6f2c64caf481a04f1ddd78b93e78 externals/faad2/faad2 (216f00e)",
+      " e424e3f2e607da02742f73db84873b8084fc714c externals/fmt (e424e3f)",
+      " fc9889c889561c5882e83819dcaffef5ed45529b externals/glslang (fc9889c)",
+      " 5cc5e2c24642513aaa5b19126aad42d0e4e0923e externals/inih/inih (5cc5e2c)",
+      " 8fae8ce254dfc1344527e05301e43f37dea2df80 externals/libadrenotools (heads/master)",
+      " aa3975893d83ef1bc84c321ec60c65fbf1287887 externals/libadrenotools/lib/linkernsbypass (heads/master)",
+      " 88b8e41b71099fabc57813bc06d8bc1aba050a19 externals/libressl (heads/master)",
+      " 7fc7feeddca391be65c94e6541381467684b814d externals/libretro-common/libretro-common (7fc7fee)",
+      " d52e355daa09f17ce64819122cb067b8a2ee0d4b externals/libusb/libusb (d52e355)",
+      " 6f729fbe658a40dfd993fa8b22bd612bb17cde5c externals/libyuv (6f729fb)",
+      " 0b1d9ccfc2093e5d6620cd9a11d03ee6ff6705f5 externals/lodepng/lodepng (0b1d9cc)",
+      " 5c8004c333ee227549dea21d8d48f775a91fc70f externals/microtar (heads/master)",
+      " f4d8659decbfe5d234f04134b5002b82dc515a44 externals/nihstro (f4d8659)",
+      " 6b1d57ea7ed4882d32a91eeaa6557b0ecb4da152 externals/oaknut (6b1d57e)",
+      " e399840fc6aba5f7bc3f0633e8ff10bba0640906 externals/openal-soft (heads/azahar)",
+      " 5d249570393f7a37e037abf22cd6012a4cc56a71 externals/sdl2/SDL (5d24957)",
+      " 37d49d2aa4c0a62f872720d6e5f2eaf90b2c95fa externals/sirit/sirit (37d49d2)",
+      " 3f17b2af6784bfa2c5aa5dbb8e0e74a607dd8b3b externals/sirit/sirit/externals/SPIRV-Headers (3f17b2a)",
+      " 9ef8458d8561d9471dd20e9619e3be4cfe564796 externals/soundtouch (heads/master)",
+      " aa6cef192b8e693916eb713e7a9ccadf06062ceb externals/spirv-headers (aa6cef1)",
+      " a62abcb402009b9ca5975e6167c09f237f630e0e externals/spirv-tools (a62abcb)",
+      " 3d697a18df504f4677b65129d9ab14c7c597e3eb externals/teakra (heads/master)",
+      " c788c52156f3ef7bc7ab769cb03c110a53ac8fcb externals/vma (c788c52)",
+      " 409c16be502e39fe70dd6fe2d9ad4842ef2c9a53 externals/vulkan-headers (409c16b)",
+      " 0d67fd1530016b7c56f3cd74b3fca920f4c3e2b4 externals/xbyak (0d67fd1)",
+      " e626a72bc2321cd320e953a0ccf1584cad60f363 externals/xxHash (e626a72)",
+      " f8745da6ff1ad1e7bab384bd1f9d742439278e99 externals/zstd (f8745da)"
+    ],
+    "fileCount": 20999
+  },
+  {
+    "name": "dolphin-retro",
+    "repo": "https://github.com/libretro/dolphin",
+    "commit": "3aac3f052f733f8df2f1616843a4d2e14002ed11",
+    "destination": "apple/native/.build/engine-sources/dolphin-retro",
+    "omitted": [
+      {
+        "path": "Externals/FFmpeg-bin/ARM64/lib/avcodec.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/FFmpeg-bin/ARM64/lib/avformat.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/FFmpeg-bin/ARM64/lib/avutil.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/FFmpeg-bin/ARM64/lib/swresample.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/FFmpeg-bin/ARM64/lib/swscale.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/FFmpeg-bin/x64/lib/avcodec.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/FFmpeg-bin/x64/lib/avformat.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/FFmpeg-bin/x64/lib/avutil.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/FFmpeg-bin/x64/lib/swresample.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/FFmpeg-bin/x64/lib/swscale.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/bin/Qt6Core.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/bin/Qt6Cored.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/bin/Qt6Gui.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/bin/Qt6Guid.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/bin/Qt6Svg.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/bin/Qt6SvgWidgets.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/bin/Qt6SvgWidgetsd.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/bin/Qt6Svgd.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/bin/Qt6Widgets.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/bin/Qt6Widgetsd.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/Qt6BundledFreetype.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/Qt6BundledFreetyped.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/Qt6BundledLibpng.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/Qt6BundledLibpngd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/Qt6Core.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/Qt6Cored.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/Qt6DeviceDiscoverySupport.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/Qt6DeviceDiscoverySupportd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/Qt6EntryPoint.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/Qt6EntryPointd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/Qt6ExampleIcons.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/Qt6ExampleIconsd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/Qt6FbSupport.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/Qt6FbSupportd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/Qt6Gui.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/Qt6Guid.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/Qt6Svg.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/Qt6SvgWidgets.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/Qt6SvgWidgetsd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/Qt6Svgd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/Qt6Widgets.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/Qt6Widgetsd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/objects-Debug/ExampleIconsPrivate_resources_1/.qt/rcc/qrc_example_icons_init.cpp.obj",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/lib/objects-RelWithDebInfo/ExampleIconsPrivate_resources_1/.qt/rcc/qrc_example_icons_init.cpp.obj",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/plugins/iconengines/qsvgicon.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/plugins/iconengines/qsvgicond.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/plugins/imageformats/qsvg.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/plugins/imageformats/qsvgd.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/plugins/platforms/qdirect2d.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/plugins/platforms/qdirect2dd.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/plugins/platforms/qwindows.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/plugins/platforms/qwindowsd.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/plugins/styles/qmodernwindowsstyle.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/ARM64/plugins/styles/qmodernwindowsstyled.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/Qt6Core.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/Qt6Cored.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/Qt6Gui.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/Qt6Guid.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/Qt6Svg.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/Qt6SvgWidgets.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/Qt6SvgWidgetsd.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/Qt6Svgd.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/Qt6Widgets.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/Qt6Widgetsd.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/androiddeployqt.exe",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/androiddeployqt6.exe",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/androidtestrunner.exe",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/cmake_automoc_parser.exe",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/moc.exe",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/qlalr.exe",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/qtpaths.exe",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/qtpaths6.exe",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/qvkgen.exe",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/rcc.exe",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/syncqt.exe",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/tracegen.exe",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/tracepointgen.exe",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/uic.exe",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/windeployqt.exe",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/bin/windeployqt6.exe",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/Qt6BundledFreetype.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/Qt6BundledFreetyped.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/Qt6BundledLibpng.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/Qt6BundledLibpngd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/Qt6Core.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/Qt6Cored.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/Qt6DeviceDiscoverySupport.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/Qt6DeviceDiscoverySupportd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/Qt6EntryPoint.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/Qt6EntryPointd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/Qt6ExampleIcons.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/Qt6ExampleIconsd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/Qt6FbSupport.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/Qt6FbSupportd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/Qt6Gui.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/Qt6Guid.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/Qt6Svg.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/Qt6SvgWidgets.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/Qt6SvgWidgetsd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/Qt6Svgd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/Qt6Widgets.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/Qt6Widgetsd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/objects-Debug/ExampleIconsPrivate_resources_1/.qt/rcc/qrc_example_icons_init.cpp.obj",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/lib/objects-RelWithDebInfo/ExampleIconsPrivate_resources_1/.qt/rcc/qrc_example_icons_init.cpp.obj",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/plugins/iconengines/qsvgicon.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/plugins/iconengines/qsvgicond.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/plugins/imageformats/qsvg.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/plugins/imageformats/qsvgd.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/plugins/platforms/qdirect2d.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/plugins/platforms/qdirect2dd.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/plugins/platforms/qwindows.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/plugins/platforms/qwindowsd.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/plugins/styles/qmodernwindowsstyle.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/Qt/Qt6.8.3/x64/plugins/styles/qmodernwindowsstyled.dll",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/VulkanMemoryAllocator/bin/VmaSample_Release_vs2022.exe",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/gettext/msgfmt.exe",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/imgui/imgui/examples/libs/glfw/lib-vc2010-32/glfw3.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/imgui/imgui/examples/libs/glfw/lib-vc2010-64/glfw3.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/tinygltf/tinygltf/examples/raytrace/cornellbox_suzanne.obj",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/tinygltf/tinygltf/tools/windows/premake5.exe",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      }
+    ],
+    "materializedSymlinks": [
+      {
+        "path": "Externals/libusb/libusb/README.md",
+        "target": "README"
+      },
+      {
+        "path": "Externals/miniupnpc/miniupnp/minissdpd/LICENSE",
+        "target": "../LICENSE"
+      },
+      {
+        "path": "Externals/miniupnpc/miniupnp/minissdpd/getifaddr.c",
+        "target": "../miniupnpd/getifaddr.c"
+      },
+      {
+        "path": "Externals/miniupnpc/miniupnp/minissdpd/getifaddr.h",
+        "target": "../miniupnpd/getifaddr.h"
+      },
+      {
+        "path": "Externals/miniupnpc/miniupnp/miniupnpc/LICENSE",
+        "target": "../LICENSE"
+      },
+      {
+        "path": "Externals/miniupnpc/miniupnp/miniupnpd/LICENSE",
+        "target": "../LICENSE"
+      },
+      {
+        "path": "Externals/miniupnpc/miniupnp/miniupnpd/mac/getroute.c",
+        "target": "../bsd/getroute.c"
+      },
+      {
+        "path": "Externals/miniupnpc/miniupnp/miniupnpd/mac/ifacewatcher.c",
+        "target": "../bsd/ifacewatcher.c"
+      },
+      {
+        "path": "Externals/zstd/zstd/tests/cli-tests/bin/unzstd",
+        "target": "zstd"
+      },
+      {
+        "path": "Externals/zstd/zstd/tests/cli-tests/bin/zstdcat",
+        "target": "zstd"
+      }
+    ],
+    "submodules": [
+      " 9bc087fbca36ce5a85eb4fd73f0c73813593e5a2 Externals/FFmpeg-bin (heads/master)",
+      " 306289108d29a4b31a5460f7b55d28fde7b96d1b Externals/Qt (qt6.8.3)",
+      " f87239e71e42da91ca317a12eefb82cfbf3393eb Externals/SDL/SDL (f87239e)",
+      " 0fa201c969e48ecc253581c5841ce73f44d42f49 Externals/SFML/SFML (0fa201c)",
+      " 39f924b810e561fd86b2558b6711ca68d4363f68 Externals/Vulkan-Headers (39f924b)",
+      " 3bab6924988e5f19bf36586a496156cf72f70d9f Externals/VulkanMemoryAllocator (3bab692)",
+      " 6a8690fc8d26c815e798c588f796eabe9d684cf0 Externals/bzip2/bzip2 (6a8690f)",
+      " b6cbbc940e25ff898f09a40b107781cef6027b13 Externals/cpp-ipc/cpp-ipc (b6cbbc9)",
+      " 2265d647232249a53a03b411099863ceca35f0d3 Externals/cpp-optparse/cpp-optparse (heads/main)",
+      " 54217bca3f3e0cd53c073690a23dd25d83557909 Externals/cubeb/cubeb (54217bc)",
+      " aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a Externals/cubeb/cubeb/cmake/sanitizers-cmake (aab6948)",
+      " 40412d85124f7c6f3d88454583c4633e5e10fc8c Externals/cubeb/cubeb/googletest (40412d8)",
+      " cfbfb65047e85e6b08af65fe9cdbcf68e9ad496a Externals/curl/curl (cfbfb65)",
+      " 2662c0de09e36f2a2030ccc2c528a3e4c9e8138a Externals/enet/enet (2662c0d)",
+      " e424e3f2e607da02742f73db84873b8084fc714c Externals/fmt/fmt (e424e3f)",
+      " a57276bf558f5cf94d3a9854ebdf5a2236849a5a Externals/glslang/glslang (a57276b)",
+      " eb2d85edd0bff7a712b6aff147cd9f789f0d7d0b Externals/gtest (eb2d85e)",
+      " d6b2a974608dec3b76fb1e36c189f22b9cf3650c Externals/hidapi/hidapi-src (d6b2a97)",
+      " 45acd5e0e82f4c954432533ae9985ff0e1aad6d5 Externals/imgui/imgui (45acd5e)",
+      " 3da8bd34299965d3b0ab124df743fe3e076fa222 Externals/implot/implot (3da8bd3)",
+      " 8fae8ce254dfc1344527e05301e43f37dea2df80 Externals/libadrenotools (heads/master)",
+      " aa3975893d83ef1bc84c321ec60c65fbf1287887 Externals/libadrenotools/lib/linkernsbypass (heads/master)",
+      " fb768002d4288590083a476af628e51c3f1d47cd Externals/libspng/libspng (fb76800)",
+      " 15a7ebb4d426c5ce196684347d2b7cafad862626 Externals/libusb/libusb (15a7ebb)",
+      " 5fc0630a0ed55e9755b0fe3990cd021ae1c3edc1 Externals/lz4/lz4 (5fc0630)",
+      " 0b40863f64d0940f333fa1c638e75f86f8a26a33 Externals/mGBA/mgba (0b40863)",
+      " bf4215a7574f88aa55859db9db00e3ae58cf42d6 Externals/miniupnpc/miniupnp (bf4215a)",
+      " 55db144e03027b43263e5ebcb599bf0878ba58de Externals/minizip-ng/minizip-ng (55db144)",
+      " ee86beb30e4973f5feffe3ce63bfa4fbadf72f38 Externals/pugixml/pugixml (ee86beb)",
+      " 926e4608f8dca7989267c787bbefb3ab1c835ac5 Externals/rcheevos/rcheevos (926e460)",
+      " ebe2aa0cd80f5eb5cd8a605da604cacf72205f3b Externals/spirv_cross/SPIRV-Cross (ebe2aa0)",
+      " c5641f2c22d117da7971504591a8f6a41ece488b Externals/tinygltf/tinygltf (c5641f2)",
+      " b03bdcfc11549df595b77239cefe2643943a3e2f Externals/watcher/watcher (b03bdcf)",
+      " 7447d38337abf23a5c2286305b743506455aa9cc Externals/wil (7447d38)",
+      " e626a72bc2321cd320e953a0ccf1584cad60f363 Externals/xxhash/xxHash (e626a72)",
+      " ce01b1e41da298334f8214389cc9369540a7560f Externals/zlib-ng/zlib-ng (ce01b1e)",
+      " 711e17da98510a3567bf47f85a08a76f64811474 Externals/zstd/zstd (711e17d)"
+    ],
+    "fileCount": 35669
+  },
+  {
+    "name": "mupen-next",
+    "repo": "https://github.com/libretro/mupen64plus-libretro-nx",
+    "commit": "15bada85906593376e8fd697f1b0b3af3a20f512",
+    "destination": "apple/native/.build/engine-sources/mupen-next",
+    "omitted": [
+      {
+        "path": "GLideN64/projects/msvc/lib/dbg/freetype253MT_D.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/dbg/libpngd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/dbg/zlibd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/msvc12/dbg/freetype253MT_D.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/msvc12/dbg/libpngd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/msvc12/dbg/zlibd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/msvc12/rel/freetype253MT.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/msvc12/rel/libpng.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/msvc12/rel/zlib.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/rel/freetype253MT.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/rel/libpng.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/rel/zlib.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/x64/dbg/freetype253MT_D.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/x64/dbg/libpngd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/x64/dbg/zlibd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/x64/rel/freetype253MT.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/x64/rel/libpng.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/x64/rel/zlib.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/src/GLideNHQ/lib/libdxtn.a",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/src/GLideNHQ/lib/libpng.a",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/src/GLideNHQ/lib/libz.a",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "mupen64plus-rsp-paraLLEl/lightning/gnulib",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      }
+    ],
+    "materializedSymlinks": [],
+    "submodules": [],
+    "fileCount": 2254
+  },
+  {
+    "name": "melonds-frontend",
+    "repo": "https://github.com/JesseTG/melonds-ds",
+    "commit": "f394adbacb5722ee97c1b37c8064da9a25818310",
+    "destination": "apple/native/.build/melonds/source",
+    "omitted": [],
+    "materializedSymlinks": [],
+    "submodules": [],
+    "fileCount": 201
+  },
+  {
+    "name": "melonds-date",
+    "repo": "https://github.com/HowardHinnant/date",
+    "commit": "179a6b921ccd6179b5b04dce812a89f71a51b4df",
+    "destination": "apple/native/.build/melonds/deps/date",
+    "omitted": [],
+    "materializedSymlinks": [],
+    "submodules": [],
+    "fileCount": 140
+  },
+  {
+    "name": "melonds-embed-binaries",
+    "repo": "https://github.com/andoalon/embed-binaries",
+    "commit": "078b62beba97e8192c99bfb16d5e17220cfc7598",
+    "destination": "apple/native/.build/melonds/deps/embed-binaries",
+    "omitted": [],
+    "materializedSymlinks": [],
+    "submodules": [],
+    "fileCount": 9
+  },
+  {
+    "name": "melonds-fmt",
+    "repo": "https://github.com/fmtlib/fmt",
+    "commit": "1be298e1bd68957e4cd352e1f676f00e07dcfb57",
+    "destination": "apple/native/.build/melonds/deps/fmt",
+    "omitted": [],
+    "materializedSymlinks": [],
+    "submodules": [],
+    "fileCount": 142
+  },
+  {
+    "name": "melonds-glm",
+    "repo": "https://github.com/g-truc/glm",
+    "commit": "6f14f4792a0cde5d0cf2c910506724d61cb95834",
+    "destination": "apple/native/.build/melonds/deps/glm",
+    "omitted": [],
+    "materializedSymlinks": [],
+    "submodules": [],
+    "fileCount": 1673
+  },
+  {
+    "name": "melonds-libretro-common",
+    "repo": "https://github.com/libretro/libretro-common",
+    "commit": "fa8a1b572a444fcb552007019f8caf68281108aa",
+    "destination": "apple/native/.build/melonds/deps/libretro-common",
+    "omitted": [],
+    "materializedSymlinks": [],
+    "submodules": [],
+    "fileCount": 609
+  },
+  {
+    "name": "melonds-libslirp",
+    "repo": "https://github.com/JesseTG/libslirp-mirror",
+    "commit": "e61dbd459c8c06607b3a84694489427e8ec60f17",
+    "destination": "apple/native/.build/melonds/deps/libslirp",
+    "omitted": [
+      {
+        "path": "fuzzing/IN_tcp-d",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "fuzzing/IN_tcp-h",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "fuzzing/IN_tcp6-d",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "fuzzing/IN_tcp6-h",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "fuzzing/IN_udp-h",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "fuzzing/IN_udp6-h",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      }
+    ],
+    "materializedSymlinks": [
+      {
+        "path": "fuzzing/IN_icmp6/ndp.pcap",
+        "target": "../IN_ndp/ndp.pcap"
+      },
+      {
+        "path": "fuzzing/IN_ip-header/DNS_freedesktop_1-1-1-1.pcap",
+        "target": "../IN_udp/DNS_freedesktop_1-1-1-1.pcap"
+      },
+      {
+        "path": "fuzzing/IN_ip-header/dhcp.pkt",
+        "target": "../IN_dhcp/dhcp.pkt"
+      },
+      {
+        "path": "fuzzing/IN_ip-header/dhcp_capture.pcap",
+        "target": "../IN_dhcp/dhcp_capture.pcap"
+      },
+      {
+        "path": "fuzzing/IN_ip-header/icmp_capture.pcap",
+        "target": "../IN_icmp/icmp_capture.pcap"
+      },
+      {
+        "path": "fuzzing/IN_ip-header/nc-10.0.2.2-8080.pcap",
+        "target": "../IN_tcp/nc-10.0.2.2-8080.pcap"
+      },
+      {
+        "path": "fuzzing/IN_ip-header/nc-ident.pcap",
+        "target": "../IN_tcp/nc-ident.pcap"
+      },
+      {
+        "path": "fuzzing/IN_ip-header/ping_10-0-2-2.pcap",
+        "target": "../IN_icmp/ping_10-0-2-2.pcap"
+      },
+      {
+        "path": "fuzzing/IN_ip-header/tcp_qemucapt.pcap",
+        "target": "../IN_tcp/tcp_qemucapt.pcap"
+      },
+      {
+        "path": "fuzzing/IN_ip-header/tftp-get-blah.pkt",
+        "target": "../IN_tftp/tftp-get-blah.pkt"
+      },
+      {
+        "path": "fuzzing/IN_ip-header/tftp_capture.pcap",
+        "target": "../IN_tftp/tftp_capture.pcap"
+      },
+      {
+        "path": "fuzzing/IN_ip-header/tftp_get_libslirp-txt.pcap",
+        "target": "../IN_tftp/tftp_get_libslirp-txt.pcap"
+      },
+      {
+        "path": "fuzzing/IN_ip6-header/DNS_freedesktop_1-1-1-1.pcap",
+        "target": "../IN_udp6/DNS_freedesktop_1-1-1-1.pcap"
+      },
+      {
+        "path": "fuzzing/IN_ip6-header/icmp_capture.pcap",
+        "target": "../IN_icmp6/icmp_capture.pcap"
+      },
+      {
+        "path": "fuzzing/IN_ip6-header/ping_10-0-2-2.pcap",
+        "target": "../IN_icmp6/ping_10-0-2-2.pcap"
+      },
+      {
+        "path": "fuzzing/IN_ip6-header/tcp_qemucapt.pcap",
+        "target": "../IN_tcp6/tcp_qemucapt.pcap"
+      },
+      {
+        "path": "fuzzing/IN_ip6-header/tftp_capture.pcap",
+        "target": "../IN_udp6/tftp_capture.pcap"
+      },
+      {
+        "path": "fuzzing/IN_ip6-header/tftp_get_libslirp-txt.pcap",
+        "target": "../IN_udp6/tftp_get_libslirp-txt.pcap"
+      },
+      {
+        "path": "fuzzing/IN_udp/dhcp.pkt",
+        "target": "../IN_dhcp/dhcp.pkt"
+      },
+      {
+        "path": "fuzzing/IN_udp/dhcp_capture.pcap",
+        "target": "../IN_dhcp/dhcp_capture.pcap"
+      },
+      {
+        "path": "fuzzing/IN_udp/tftp-get-blah.pkt",
+        "target": "../IN_tftp/tftp-get-blah.pkt"
+      },
+      {
+        "path": "fuzzing/IN_udp/tftp_capture.pcap",
+        "target": "../IN_tftp/tftp_capture.pcap"
+      },
+      {
+        "path": "fuzzing/IN_udp/tftp_get_libslirp-txt.pcap",
+        "target": "../IN_tftp/tftp_get_libslirp-txt.pcap"
+      },
+      {
+        "path": "fuzzing/IN_udp6/tftp_capture.pcap",
+        "target": "../IN_tftp6/tftp_capture.pcap"
+      },
+      {
+        "path": "fuzzing/IN_udp6/tftp_get_libslirp-txt.pcap",
+        "target": "../IN_tftp6/tftp_get_libslirp-txt.pcap"
+      }
+    ],
+    "submodules": [],
+    "fileCount": 143
+  },
+  {
+    "name": "melonds-melonds",
+    "repo": "https://github.com/JesseTG/melonDS",
+    "commit": "16f127dbb587a73371827ce79689c5d237c4b59b",
+    "destination": "apple/native/.build/melonds/deps/melonds",
+    "omitted": [],
+    "materializedSymlinks": [],
+    "submodules": [],
+    "fileCount": 778
+  },
+  {
+    "name": "melonds-pntr",
+    "repo": "https://github.com/robloach/pntr",
+    "commit": "a47fe167703b0ac3bfad00785b20b0dce6712509",
+    "destination": "apple/native/.build/melonds/deps/pntr",
+    "omitted": [],
+    "materializedSymlinks": [],
+    "submodules": [],
+    "fileCount": 57
+  },
+  {
+    "name": "melonds-span-lite",
+    "repo": "https://github.com/martinmoene/span-lite",
+    "commit": "f63fe2974943b5f555b928b10d910e457fbb93d4",
+    "destination": "apple/native/.build/melonds/deps/span-lite",
+    "omitted": [],
+    "materializedSymlinks": [],
+    "submodules": [],
+    "fileCount": 34
+  },
+  {
+    "name": "melonds-yamc",
+    "repo": "https://github.com/yohhoy/yamc",
+    "commit": "4e015a7e8eb0d61c34e6928676c8c78881a72d73",
+    "destination": "apple/native/.build/melonds/deps/yamc",
+    "omitted": [],
+    "materializedSymlinks": [],
+    "submodules": [],
+    "fileCount": 44
+  },
+  {
+    "name": "melonds-zlib",
+    "repo": "https://github.com/madler/zlib",
+    "commit": "da607da739fa6047df13e66a2af6b8bec7c2a498",
+    "destination": "apple/native/.build/melonds/deps/zlib",
+    "omitted": [],
+    "materializedSymlinks": [],
+    "submodules": [],
+    "fileCount": 262
+  },
+  {
+    "name": "MoltenVK",
+    "repo": "https://github.com/KhronosGroup/MoltenVK",
+    "commit": "db66022459ffb663aa2b50f6b018bc2e124f5edf",
+    "destination": "third-party/MoltenVK",
+    "omitted": [
+      {
+        "path": "Demos/Cube/include/cube",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Demos/Cube/include/volk",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "MoltenVK/include/MoltenVK",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "MoltenVK/include/vk_video",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "MoltenVK/include/vulkan",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "MoltenVKShaderConverter/SPIRV-Cross",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "MoltenVKShaderConverter/SPIRV-Tools",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "MoltenVKShaderConverter/Tools",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      }
+    ],
+    "materializedSymlinks": [
+      {
+        "path": "MoltenVKShaderConverter/include/MoltenVKShaderConverter/SPIRVConversion.h",
+        "target": "../../MoltenVKShaderConverter/SPIRVConversion.h"
+      },
+      {
+        "path": "MoltenVKShaderConverter/include/MoltenVKShaderConverter/SPIRVToMSLConverter.h",
+        "target": "../../MoltenVKShaderConverter/SPIRVToMSLConverter.h"
+      }
+    ],
+    "submodules": [],
+    "fileCount": 265
+  },
+  {
+    "name": "MoltenVK-cereal",
+    "repo": "https://github.com/USCiLab/cereal",
+    "commit": "a56bad8bbb770ee266e930c95d37fff2a5be7fea",
+    "destination": "third-party/MoltenVK/External/cereal",
+    "omitted": [],
+    "materializedSymlinks": [],
+    "submodules": [],
+    "fileCount": 210
+  },
+  {
+    "name": "MoltenVK-SPIRV-Cross",
+    "repo": "https://github.com/KhronosGroup/SPIRV-Cross",
+    "commit": "6c09849fe88c48eaed08413aa022aaa136a3a057",
+    "destination": "third-party/MoltenVK/External/SPIRV-Cross",
+    "omitted": [
+      {
+        "path": "reference/opt/shaders-hlsl/asm/lib/export-calls-export.asm.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "reference/opt/shaders-hlsl/asm/lib/global-array.asm.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "reference/opt/shaders-hlsl/asm/lib/multi-export.asm.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "reference/opt/shaders/asm/lib/global-array.asm.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "reference/opt/shaders/asm/lib/multi-export.asm.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "reference/shaders-hlsl/asm/lib/export-calls-export.asm.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "reference/shaders-hlsl/asm/lib/global-array.asm.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "reference/shaders-hlsl/asm/lib/multi-export.asm.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "reference/shaders/asm/lib/global-array.asm.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "reference/shaders/asm/lib/multi-export.asm.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "shaders-hlsl/asm/lib/export-calls-export.asm.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "shaders-hlsl/asm/lib/global-array.asm.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "shaders-hlsl/asm/lib/multi-export.asm.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "shaders/asm/lib/global-array.asm.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "shaders/asm/lib/multi-export.asm.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      }
+    ],
+    "materializedSymlinks": [],
+    "submodules": [],
+    "fileCount": 4757
+  },
+  {
+    "name": "MoltenVK-SPIRV-Tools",
+    "repo": "https://github.com/KhronosGroup/SPIRV-Tools",
+    "commit": "0d6fd73ca73830ccab5fa1f00ed5ed40124e2c55",
+    "destination": "third-party/MoltenVK/External/SPIRV-Tools",
+    "omitted": [],
+    "materializedSymlinks": [],
+    "submodules": [],
+    "fileCount": 1743
+  },
+  {
+    "name": "MoltenVK-Vulkan-Headers",
+    "repo": "https://github.com/KhronosGroup/Vulkan-Headers",
+    "commit": "e3b1eec08173d6b825cd3ac88c885a63b621504a",
+    "destination": "third-party/MoltenVK/External/Vulkan-Headers",
+    "omitted": [],
+    "materializedSymlinks": [],
+    "submodules": [],
+    "fileCount": 89
+  },
+  {
+    "name": "MoltenVK-Vulkan-Tools",
+    "repo": "https://github.com/KhronosGroup/Vulkan-Tools",
+    "commit": "8c66b352925cb771f793a4d3220b1321ae0febf1",
+    "destination": "third-party/MoltenVK/External/Vulkan-Tools",
+    "omitted": [],
+    "materializedSymlinks": [],
+    "submodules": [],
+    "fileCount": 133
+  },
+  {
+    "name": "MoltenVK-Volk",
+    "repo": "https://github.com/zeux/volk",
+    "commit": "776893306c5d3b22b6185b5d4a258b81d94572bf",
+    "destination": "third-party/MoltenVK/External/Volk",
+    "omitted": [],
+    "materializedSymlinks": [],
+    "submodules": [],
+    "fileCount": 21
+  },
+  {
+    "name": "MoltenVK-SPIRV-Headers",
+    "repo": "https://github.com/KhronosGroup/SPIRV-Headers",
+    "commit": "29981f65241605e08b0ede4cfeb999fe3b723c6a",
+    "destination": "third-party/MoltenVK/External/SPIRV-Tools/external/spirv-headers",
+    "omitted": [],
+    "materializedSymlinks": [],
+    "submodules": [],
+    "fileCount": 120
+  },
+  {
+    "name": "public-dolphin-retro",
+    "repo": "https://github.com/libretro/dolphin",
+    "commit": "3aac3f052f733f8df2f1616843a4d2e14002ed11",
+    "destination": "apple/native/.build/public-engine-sources/dolphin-retro",
+    "omitted": [
+      {
+        "path": "Externals/FFmpeg-bin",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/Qt",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/SDL/SDL",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/SFML/SFML",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/Vulkan-Headers",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/VulkanMemoryAllocator",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/bzip2/bzip2",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/cpp-ipc/cpp-ipc",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/cpp-optparse/cpp-optparse",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/cubeb/cubeb",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/curl/curl",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/enet/enet",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/fmt/fmt",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/gettext/msgfmt.exe",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "Externals/glslang/glslang",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/gtest",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/hidapi/hidapi-src",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/imgui/imgui",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/implot/implot",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/libadrenotools",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/libspng/libspng",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/libusb/libusb",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/lz4/lz4",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/mGBA/mgba",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/miniupnpc/miniupnp",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/minizip-ng/minizip-ng",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/pugixml/pugixml",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/rcheevos/rcheevos",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/spirv_cross/SPIRV-Cross",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/tinygltf/tinygltf",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/watcher/watcher",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/wil",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/xxhash/xxHash",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/zlib-ng/zlib-ng",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "Externals/zstd/zstd",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      }
+    ],
+    "materializedSymlinks": [],
+    "submodules": [
+      "-9bc087fbca36ce5a85eb4fd73f0c73813593e5a2 Externals/FFmpeg-bin",
+      "-306289108d29a4b31a5460f7b55d28fde7b96d1b Externals/Qt",
+      "-f87239e71e42da91ca317a12eefb82cfbf3393eb Externals/SDL/SDL",
+      "-0fa201c969e48ecc253581c5841ce73f44d42f49 Externals/SFML/SFML",
+      "-39f924b810e561fd86b2558b6711ca68d4363f68 Externals/Vulkan-Headers",
+      "-3bab6924988e5f19bf36586a496156cf72f70d9f Externals/VulkanMemoryAllocator",
+      "-6a8690fc8d26c815e798c588f796eabe9d684cf0 Externals/bzip2/bzip2",
+      "-b6cbbc940e25ff898f09a40b107781cef6027b13 Externals/cpp-ipc/cpp-ipc",
+      "-2265d647232249a53a03b411099863ceca35f0d3 Externals/cpp-optparse/cpp-optparse",
+      "-54217bca3f3e0cd53c073690a23dd25d83557909 Externals/cubeb/cubeb",
+      "-cfbfb65047e85e6b08af65fe9cdbcf68e9ad496a Externals/curl/curl",
+      "-2662c0de09e36f2a2030ccc2c528a3e4c9e8138a Externals/enet/enet",
+      "-e424e3f2e607da02742f73db84873b8084fc714c Externals/fmt/fmt",
+      "-a57276bf558f5cf94d3a9854ebdf5a2236849a5a Externals/glslang/glslang",
+      "-eb2d85edd0bff7a712b6aff147cd9f789f0d7d0b Externals/gtest",
+      "-d6b2a974608dec3b76fb1e36c189f22b9cf3650c Externals/hidapi/hidapi-src",
+      "-45acd5e0e82f4c954432533ae9985ff0e1aad6d5 Externals/imgui/imgui",
+      "-3da8bd34299965d3b0ab124df743fe3e076fa222 Externals/implot/implot",
+      "-8fae8ce254dfc1344527e05301e43f37dea2df80 Externals/libadrenotools",
+      "-fb768002d4288590083a476af628e51c3f1d47cd Externals/libspng/libspng",
+      "-15a7ebb4d426c5ce196684347d2b7cafad862626 Externals/libusb/libusb",
+      "-5fc0630a0ed55e9755b0fe3990cd021ae1c3edc1 Externals/lz4/lz4",
+      "-0b40863f64d0940f333fa1c638e75f86f8a26a33 Externals/mGBA/mgba",
+      "-bf4215a7574f88aa55859db9db00e3ae58cf42d6 Externals/miniupnpc/miniupnp",
+      "-55db144e03027b43263e5ebcb599bf0878ba58de Externals/minizip-ng/minizip-ng",
+      "-ee86beb30e4973f5feffe3ce63bfa4fbadf72f38 Externals/pugixml/pugixml",
+      "-926e4608f8dca7989267c787bbefb3ab1c835ac5 Externals/rcheevos/rcheevos",
+      "-ebe2aa0cd80f5eb5cd8a605da604cacf72205f3b Externals/spirv_cross/SPIRV-Cross",
+      "-c5641f2c22d117da7971504591a8f6a41ece488b Externals/tinygltf/tinygltf",
+      "-b03bdcfc11549df595b77239cefe2643943a3e2f Externals/watcher/watcher",
+      "-7447d38337abf23a5c2286305b743506455aa9cc Externals/wil",
+      "-e626a72bc2321cd320e953a0ccf1584cad60f363 Externals/xxhash/xxHash",
+      "-ce01b1e41da298334f8214389cc9369540a7560f Externals/zlib-ng/zlib-ng",
+      "-711e17da98510a3567bf47f85a08a76f64811474 Externals/zstd/zstd"
+    ],
+    "fileCount": 6698
+  },
+  {
+    "name": "public-mupen-next",
+    "repo": "https://github.com/libretro/mupen64plus-libretro-nx",
+    "commit": "15bada85906593376e8fd697f1b0b3af3a20f512",
+    "destination": "apple/native/.build/public-engine-sources/mupen-next",
+    "omitted": [
+      {
+        "path": "GLideN64/projects/msvc/lib/dbg/freetype253MT_D.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/dbg/libpngd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/dbg/zlibd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/msvc12/dbg/freetype253MT_D.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/msvc12/dbg/libpngd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/msvc12/dbg/zlibd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/msvc12/rel/freetype253MT.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/msvc12/rel/libpng.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/msvc12/rel/zlib.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/rel/freetype253MT.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/rel/libpng.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/rel/zlib.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/x64/dbg/freetype253MT_D.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/x64/dbg/libpngd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/x64/dbg/zlibd.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/x64/rel/freetype253MT.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/x64/rel/libpng.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/projects/msvc/lib/x64/rel/zlib.lib",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/src/GLideNHQ/lib/libdxtn.a",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/src/GLideNHQ/lib/libpng.a",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "GLideN64/src/GLideNHQ/lib/libz.a",
+        "reason": "prebuilt artifact; source build uses the supplied source trees"
+      },
+      {
+        "path": "mupen64plus-rsp-paraLLEl/lightning/gnulib",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      }
+    ],
+    "materializedSymlinks": [],
+    "submodules": [],
+    "fileCount": 2254
+  },
+  {
+    "name": "public-flycast-interpreter",
+    "repo": "https://github.com/flyinghead/flycast",
+    "commit": "6d81b998169b916ad7d7d6f403f7dc2c18e2aea5",
+    "destination": "apple/native/.build/public-engine-sources/flycast-interpreter",
+    "omitted": [
+      {
+        "path": "core/deps/DreamPicoPort-API",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/SDL",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/Spout",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/Syphon",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/Vulkan-Headers",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/VulkanMemoryAllocator",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/breakpad",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/discord-rpc",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/freetype/subprojects/dlg",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/gamesdk",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/glslang",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/googletest",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/libadrenotools",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/libchdr/deps/zlib-1.3.1/zconf.h",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/luabridge",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/oboe",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/websocketpp",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      },
+      {
+        "path": "core/deps/xbyak",
+        "reason": "not a regular tracked file (gitlink or removed source)"
+      }
+    ],
+    "materializedSymlinks": [
+      {
+        "path": "shell/apple/emulator-ios/AltKit/Sources/CAltKit/include/NSError+ALTServerError.h",
+        "target": "../NSError+ALTServerError.h"
+      }
+    ],
+    "submodules": [
+      "-e06d9f6c59833fc7bb7f2a33c960614489811ef8 core/deps/DreamPicoPort-API",
+      "-00d4f1c2c4ad2dc95d26b18743541f57b1dca56d core/deps/SDL",
+      "-2110a918e720688f3cb2118302fd153db8745ace core/deps/Spout",
+      "-53ec412a78b246c84cedcb4a2a5b92852704d61d core/deps/Syphon",
+      "-b5c8f996196ba4aa6d8f97e52b5d3b6e70f7e4e2 core/deps/Vulkan-Headers",
+      "-1d8f600fd424278486eade7ed3e877c99f0846b1 core/deps/VulkanMemoryAllocator",
+      " d3402006e84efb6114ff93e4f2b8508412ed80d5 core/deps/asio (d340200)",
+      "-1ab24bcc817ebe629bf77daa53529d02361cb1e9 core/deps/breakpad",
+      "-c62c34d37cd90b75187a1212e13ce4145bafbdd7 core/deps/discord-rpc",
+      " 0a0221a1347e2f1e07c395263540026e9a0aa7c7 core/deps/freetype (0a0221a)",
+      "-395ccad2c1e0daae535c4d20bb0a3f2424648e17 core/deps/freetype/subprojects/dlg",
+      "-4ac9952e6a5b3e0846003cb156b4a664178b7549 core/deps/gamesdk",
+      "-fc9889c889561c5882e83819dcaffef5ed45529b core/deps/glslang",
+      "-e39786088138f2749d64e9e90e0f9902daa77c40 core/deps/googletest",
+      "-8fae8ce254dfc1344527e05301e43f37dea2df80 core/deps/libadrenotools",
+      " 5f82799f2c8cad1e9cd26d39a0f8d36369a5534b core/deps/libchdr (heads/master)",
+      " 77daa8befd828046169adbb012d8de928bfdcdd4 core/deps/libjuice (77daa8b)",
+      "-5d21e35633a1f87ed08af115b07d3386096f792b core/deps/luabridge",
+      "-a81bb9f87d4105b84b682685d3bfbb5beca371d1 core/deps/oboe",
+      " 3106e6d3d274b63c59976cb07dda94a292ab45ca core/deps/rcheevos (3106e6d)",
+      " 41572a67f96013691685a38f0032f3c97aa34f79 core/deps/tinygettext (heads/master)",
+      " 9a51e13802d930feb7261ba8876940659b258cb7 core/deps/tinygettext/external/tinycmmc (9a51e13)",
+      "-1b11fd301531e6df35a6107c1e8665b1e77a2d8e core/deps/websocketpp",
+      "-0d67fd1530016b7c56f3cd74b3fca920f4c3e2b4 core/deps/xbyak"
+    ],
+    "fileCount": 7589
+  }
+]

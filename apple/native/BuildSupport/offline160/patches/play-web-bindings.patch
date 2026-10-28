@@ -1,0 +1,258 @@
+diff --git a/Source/ui_js/Main.cpp b/Source/ui_js/Main.cpp
+index 999e24c..be961cf 100644
+--- a/Source/ui_js/Main.cpp
++++ b/Source/ui_js/Main.cpp
+@@ -7,12 +7,21 @@
+ #include "InputProviderEmscripten.h"
+ #include "ui_shared/StatsManager.h"
+ #include "DefaultAppConfig.h"
++#include "PS2VM_Preferences.h"
++#include "gs/GSH_OpenGL/GSH_OpenGL.h"
++#include "VetaWebInput.h"
++#include <chrono>
++#include <future>
++#include <map>
+ 
+ CPs2VmJs* g_virtualMachine = nullptr;
+ CGSHandler::NewFrameEvent::Connection g_gsNewFrameConnection;
+ EMSCRIPTEN_WEBGL_CONTEXT_HANDLE g_context = 0;
+ std::shared_ptr<CInputProviderEmscripten> g_inputProvider;
+ CSH_OpenAL* g_soundHandler = nullptr;
++CVetaWebInput* g_vetaPad = nullptr;
++static std::map<uint32, std::future<bool>> g_operations;
++static uint32 g_nextOperation = 0;
+ 
+ int main(int argc, const char** argv)
+ {
+@@ -40,6 +49,7 @@ EM_BOOL keyboardCallback(int eventType, const EmscriptenKeyboardEvent* keyEvent,
+ 
+ extern "C" void initVm()
+ {
++	if(g_virtualMachine) return;
+ 	EmscriptenWebGLContextAttributes attr;
+ 	emscripten_webgl_init_context_attributes(&attr);
+ 	attr.majorVersion = 2;
+@@ -64,7 +74,8 @@ extern "C" void initVm()
+ 	}
+ 
+ 	{
+-		g_virtualMachine->CreatePadHandler(CPH_GenericInput::GetFactoryFunction());
++		g_virtualMachine->CreatePadHandler([]() { return new CVetaWebInput(); });
++		g_vetaPad = static_cast<CVetaWebInput*>(g_virtualMachine->GetPadHandler());
+ 		auto padHandler = static_cast<CPH_GenericInput*>(g_virtualMachine->GetPadHandler());
+ 		auto& bindingManager = padHandler->GetBindingManager();
+ 
+@@ -139,6 +150,91 @@ void clearStats()
+ 	CStatsManager::GetInstance().ClearStats();
+ }
+ 
++// VM operations are queued to the emulation thread. The browser polls futures
++// without blocking, so WebGL/audio/disc proxies can keep servicing VM requests.
++static bool operationAvailable()
++{
++    return g_virtualMachine && g_operations.size() < 8;
++}
++
++static uint32 trackOperation(std::future<bool> future)
++{
++    do { ++g_nextOperation; } while(!g_nextOperation || g_operations.count(g_nextOperation));
++    g_operations.emplace(g_nextOperation, std::move(future));
++    return g_nextOperation;
++}
++
++static bool validStatePath(const std::string& path)
++{
++    return path.size() > 6 && path.size() < 256 && path.compare(0, 6, "/work/") == 0
++        && path.find("..") == std::string::npos && path.find('\\') == std::string::npos
++        && path.find('\0') == std::string::npos;
++}
++
++uint32 saveState(std::string path)
++{
++    if(!operationAvailable() || !validStatePath(path)) return 0;
++    return trackOperation(g_virtualMachine->SaveState(path));
++}
++
++uint32 loadState(std::string path)
++{
++    if(!operationAvailable() || !validStatePath(path)) return 0;
++    return trackOperation(g_virtualMachine->LoadState(path));
++}
++
++uint32 setPaused(bool paused)
++{
++    if(!operationAvailable()) return 0;
++    if(paused && g_vetaPad) g_vetaPad->ResetAll();
++    return trackOperation(g_virtualMachine->SetPausedAsync(paused));
++}
++
++// 0 pending, 1 successful, -1 failed, -2 unknown. Completion consumes the ID.
++int pollOperation(uint32 id)
++{
++    auto found = g_operations.find(id);
++    if(found == g_operations.end()) return -2;
++    if(found->second.wait_for(std::chrono::seconds(0)) != std::future_status::ready) return 0;
++    bool result = false;
++    try { result = found->second.get(); } catch(...) {}
++    g_operations.erase(found);
++    return result ? 1 : -1;
++}
++
++bool setInputButton(uint32 port, uint32 button, bool pressed)
++{
++    return g_vetaPad && g_vetaPad->SetButton(port, button, pressed);
++}
++
++bool setInputAxis(uint32 port, uint32 axis, int value)
++{
++    return g_vetaPad && g_vetaPad->SetAxis(port, axis, value);
++}
++
++void resetInput()
++{
++    if(g_vetaPad) g_vetaPad->ResetAll();
++}
++
++// Preferences are fixed before initVm; recreate the WebView to change quality.
++bool setResolutionFactor(int factor)
++{
++    if(g_virtualMachine || factor < 1 || factor > 4) return false;
++    CGSH_OpenGL::RegisterPreferences();
++    return CAppConfig::GetInstance().SetPreferenceInteger(PREF_CGSH_OPENGL_RESOLUTION_FACTOR, factor);
++}
++
++std::string getDataPath()
++{
++    return CAppConfig::GetInstance().GetBasePath().string();
++}
++
++std::string getStateFormat()
++{
++    return "play-505dac7-vmzip-timing-v1";
++}
++
+ EMSCRIPTEN_BINDINGS(Play)
+ {
+ 	using namespace emscripten;
+@@ -147,4 +243,14 @@ EMSCRIPTEN_BINDINGS(Play)
+ 	function("bootDiscImage", &bootDiscImage);
+ 	function("getFrames", &getFrames);
+ 	function("clearStats", &clearStats);
++    function("saveState", &saveState);
++    function("loadState", &loadState);
++    function("setPaused", &setPaused);
++    function("pollOperation", &pollOperation);
++    function("setInputButton", &setInputButton);
++    function("setInputAxis", &setInputAxis);
++    function("resetInput", &resetInput);
++    function("setResolutionFactor", &setResolutionFactor);
++    function("getDataPath", &getDataPath);
++    function("getStateFormat", &getStateFormat);
+ }
+diff --git a/Source/ui_js/Ps2VmJs.cpp b/Source/ui_js/Ps2VmJs.cpp
+index b779dbe..538765d 100644
+--- a/Source/ui_js/Ps2VmJs.cpp
++++ b/Source/ui_js/Ps2VmJs.cpp
+@@ -81,4 +81,20 @@ void CPs2VmJs::BootDiscImage(std::string path)
+ 		printf("Starting...\r\n");
+ 		ResumeImpl();
+ 	});
+-}
+\ No newline at end of file
++}
++std::future<bool> CPs2VmJs::SetPausedAsync(bool paused)
++{
++    auto promise = std::make_shared<std::promise<bool>>();
++    auto future = promise->get_future();
++    if(paused) PauseAsync();
++    m_mailBox.SendCall([this, promise, paused]() {
++        try {
++            if(!paused) {
++                ResumeImpl();
++                OnRunningStateChange();
++            }
++            promise->set_value(true);
++        } catch(...) { promise->set_value(false); }
++    });
++    return future;
++}
+diff --git a/Source/ui_js/Ps2VmJs.h b/Source/ui_js/Ps2VmJs.h
+index 4484d5d..b178ab6 100644
+--- a/Source/ui_js/Ps2VmJs.h
++++ b/Source/ui_js/Ps2VmJs.h
+@@ -9,4 +9,5 @@ public:
+ 
+ 	void BootElf(std::string);
+ 	void BootDiscImage(std::string);
++	std::future<bool> SetPausedAsync(bool);
+ };
+diff --git a/Source/ui_js/VetaWebInput.h b/Source/ui_js/VetaWebInput.h
+new file mode 100644
+--- /dev/null
++++ b/Source/ui_js/VetaWebInput.h
+@@ -0,0 +1,65 @@
++#pragma once
++
++#include "input/PH_GenericInput.h"
++#include <algorithm>
++#include <array>
++#include <atomic>
++
++// Native overlay input is stored atomically; only the VM thread calls pad
++// interfaces. Existing keyboard bindings remain available before native input.
++class CVetaWebInput : public CPH_GenericInput
++{
++public:
++    static constexpr uint32 PORTS = CInputBindingManager::MAX_PADS;
++    static constexpr uint32 BUTTONS = PS2::CControllerInfo::MAX_BUTTONS;
++
++    CVetaWebInput()
++    {
++        for(auto& enabled : m_enabled) enabled.store(false);
++        ResetAll();
++    }
++
++    bool SetButton(uint32 port, uint32 button, bool pressed)
++    {
++        if(port >= PORTS || button < 4 || button >= BUTTONS) return false;
++        m_values[port][button].store(pressed ? 1 : 0, std::memory_order_relaxed);
++        m_enabled[port].store(true, std::memory_order_release);
++        return true;
++    }
++
++    bool SetAxis(uint32 port, uint32 axis, int value)
++    {
++        if(port >= PORTS || axis >= 4) return false;
++        value = std::clamp(value, -32768, 32767);
++        const uint32 converted = value < 0 ? 127 + value * 127 / 32768 : 127 + value * 128 / 32767;
++        m_values[port][axis].store(converted, std::memory_order_relaxed);
++        m_enabled[port].store(true, std::memory_order_release);
++        return true;
++    }
++
++    void ResetAll()
++    {
++        for(auto& port : m_values)
++            for(uint32 button = 0; button < BUTTONS; ++button)
++                port[button].store(button < 4 ? 127 : 0, std::memory_order_relaxed);
++    }
++
++    void Update(uint8* ram) override
++    {
++        CPH_GenericInput::Update(ram);
++        for(auto* interface : m_interfaces)
++            for(uint32 port = 0; port < PORTS; ++port)
++                if(m_enabled[port].load(std::memory_order_acquire))
++                    for(uint32 index = 0; index < BUTTONS; ++index)
++                    {
++                        const auto button = static_cast<PS2::CControllerInfo::BUTTON>(index);
++                        const auto value = m_values[port][index].load(std::memory_order_relaxed);
++                        if(index < 4) interface->SetAxisState(port, button, static_cast<uint8>(value), ram);
++                        else interface->SetButtonState(port, button, value != 0, ram);
++                    }
++    }
++
++private:
++    std::array<std::array<std::atomic<uint32>, BUTTONS>, PORTS> m_values;
++    std::array<std::atomic<bool>, PORTS> m_enabled;
++};

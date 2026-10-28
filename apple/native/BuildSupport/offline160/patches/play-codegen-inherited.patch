@@ -1,0 +1,82 @@
+diff --git a/include/MemoryFunction.h b/include/MemoryFunction.h
+index fca4a0f..f622557 100644
+--- a/include/MemoryFunction.h
++++ b/include/MemoryFunction.h
+@@ -24,6 +24,7 @@ public:
+ 	void operator()(void*);
+ 
+ 	void* GetCode() const;
++    void* GetWritableCode() const {return m_writable ? m_writable : m_code;}
+ 	size_t GetSize() const;
+ 
+ 	void BeginModify();
+@@ -36,6 +37,7 @@ private:
+ 	void Reset();
+ 
+ 	void* m_code;
++    void* m_writable = nullptr;
+ 	size_t m_size;
+ #if defined(__EMSCRIPTEN__)
+ 	emscripten::val m_wasmModule;
+diff --git a/src/MemoryFunction.cpp b/src/MemoryFunction.cpp
+index 73a3dab..7d2b8a0 100644
+--- a/src/MemoryFunction.cpp
++++ b/src/MemoryFunction.cpp
+@@ -9,6 +9,13 @@
+ // clang-format off
+ 
+ #define BLOCK_ALIGN 0x10
++// VETA callback registration is optional; only the development lab supplies it.
++#include <stdexcept>
++static bool (*veta_alloc)(size_t,void**,void**);
++static bool (*veta_free)(void*);
++extern "C" __attribute__((visibility("default"))) void veta_set_jit_allocator(
++    bool (*allocate)(size_t,void**,void**),bool (*release)(void*))
++{veta_alloc=allocate;veta_free=release;}
+ 
+ #ifdef _WIN32
+ 	#define MEMFUNC_USE_WIN32
+@@ -90,6 +97,11 @@ CMemoryFunction::CMemoryFunction()
+ CMemoryFunction::CMemoryFunction(const void* code, size_t size)
+ : m_code(nullptr)
+ {
++if(veta_alloc) {
++        void *rx=nullptr,*rw=nullptr;
++        if(!veta_alloc(size,&rx,&rw))throw std::runtime_error("Prepared JIT pool exhausted");
++        m_code=rx;m_writable=rw;m_size=size;memcpy(rw,code,size);ClearCache();return;
++    }
+ #if defined(MEMFUNC_USE_WIN32)
+ 	m_size = size;
+ 	m_code = framework_aligned_alloc(size, BLOCK_ALIGN);
+@@ -157,6 +169,7 @@ void CMemoryFunction::ClearCache()
+ 
+ void CMemoryFunction::Reset()
+ {
++    if(m_writable){veta_free(m_code);m_code=nullptr;m_writable=nullptr;m_size=0;return;}
+ 	if(m_code != nullptr)
+ 	{
+ #if defined(MEMFUNC_USE_WIN32)
+@@ -185,6 +198,7 @@ CMemoryFunction& CMemoryFunction::operator =(CMemoryFunction&& rhs)
+ {
+ 	Reset();
+ 	std::swap(m_code, rhs.m_code);
++    std::swap(m_writable, rhs.m_writable);
+ 	std::swap(m_size, rhs.m_size);
+ #if defined(MEMFUNC_USE_WASM)
+ 	std::swap(m_wasmModule, rhs.m_wasmModule);
+@@ -211,6 +225,7 @@ size_t CMemoryFunction::GetSize() const
+ 
+ void CMemoryFunction::BeginModify()
+ {
++    if(m_writable)return;
+ #if defined(MEMFUNC_USE_MACHVM) && defined(MEMFUNC_MACHVM_STRICT_PROTECTION)
+ 	kern_return_t result = vm_protect(mach_task_self(), reinterpret_cast<vm_address_t>(m_code), m_size, 0, VM_PROT_READ | VM_PROT_WRITE);
+ 	assert(result == 0);
+@@ -221,6 +236,7 @@ void CMemoryFunction::BeginModify()
+ 
+ void CMemoryFunction::EndModify()
+ {
++    if(m_writable){ClearCache();return;}
+ #if defined(MEMFUNC_USE_MACHVM) && defined(MEMFUNC_MACHVM_STRICT_PROTECTION)
+ 	kern_return_t result = vm_protect(mach_task_self(), reinterpret_cast<vm_address_t>(m_code), m_size, 0, VM_PROT_READ | VM_PROT_EXECUTE);
+ 	assert(result == 0);

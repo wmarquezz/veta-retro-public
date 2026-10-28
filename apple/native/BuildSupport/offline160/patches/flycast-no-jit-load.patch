@@ -1,0 +1,13 @@
+diff --git a/shell/libretro/libretro.cpp b/shell/libretro/libretro.cpp
+index c5f781a..6751f86 100644
+--- a/shell/libretro/libretro.cpp
++++ b/shell/libretro/libretro.cpp
+@@ -2212,7 +2212,7 @@ static bool set_dx11_hw_render()
+ // Loading/unloading games
+ bool retro_load_game(const struct retro_game_info *game)
+ {
+-#if defined(IOS)
++#if defined(IOS) && !defined(TARGET_NO_REC)
+ 	bool can_jit;
+ 	if (environ_cb(RETRO_ENVIRONMENT_GET_JIT_CAPABLE, &can_jit) && !can_jit) {
+ 		// jit is required both for performance and for audio. trying to run

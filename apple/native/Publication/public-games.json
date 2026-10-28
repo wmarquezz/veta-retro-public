@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "maximumGames": 4,
+  "games": [
+    {
+      "id": "akanoid-gb",
+      "title": "A_KANOID",
+      "license": "MIT",
+      "author": "Toxa",
+      "source": "https://github.com/untoxa/a_kanoid/tree/4599607358485355200a1923f7757049eca640bb",
+      "verifiedUpstreamOn": "2026-10-27",
+      "files": {
+        "akanoid-gb.gb": "eb1656792c6683b8dd2b29884fb1550f9aa10a49c5d95bb4ee1143dc1d3c682f",
+        "LICENSE.txt": "86299a4390a678ce8dd073c24f9e820834601b5ec696b85334fcdd468401f5b1",
+        "AUTHOR-README.txt": "012cf8aca5a792bc30d91ec164fdb29b5e1aea8047adaebc0613c39e6859177e",
+        "source-and-game.zip": "56c3dbf57a4259b21afd80d3d9e66ce2ccd21a817b35ef3a7c2a024e80668109"
+      },
+      "catalogEntry": {
+        "id": "akanoid-gb",
+        "title": "A_KANOID",
+        "console": "gb",
+        "author": "Toxa",
+        "summary": "Rompebloques",
+        "source": "https://github.com/untoxa/a_kanoid",
+        "license": "MIT",
+        "bundled": "akanoid-gb",
+        "filename": "akanoid-gb.gb"
+      }
+    },
+    {
+      "id": "space-game",
+      "title": "Space Game",
+      "license": "MIT",
+      "author": "EllAyling",
+      "source": "https://github.com/EllAyling/Game-Boy-Advance-Space-Game/tree/783533de95f00dfe595cc8e43c24bbca11a2e34b",
+      "verifiedUpstreamOn": "2026-10-27",
+      "files": {
+        "space-game.gba": "94ae15b137055a9702f66063a503354819a3f0f278c5f49089905141e05279a3",
+        "LICENSE.txt": "83e4dd21429a91fb7cea67a476032a9641425e5355df2e0f589a738b6ec9fd2c",
+        "AUTHOR-README.txt": "dccb52745a6cdd705802c0eabf74a8d4c42693eba6baf959583c059f5138dac0",
+        "source-and-game.zip": "95bd42f2064326c734bc30710f666336bcb5ca7715a7c4ff4c25156561c8b191"
+      },
+      "catalogEntry": {
+        "id": "space-game",
+        "title": "Space Game",
+        "console": "gba",
+        "author": "EllAyling",
+        "summary": "Acción espacial",
+        "source": "https://github.com/EllAyling/Game-Boy-Advance-Space-Game",
+        "license": "MIT",
+        "bundled": "space-game",
+        "filename": "space-game.gba"
+      }
+    }
+  ],
+  "engineResourceDirectories": [
+    "DolphinSys",
+    "Fonts",
+    "PPSSPP"
+  ],
+  "engineNoticeFiles": [
+    "VETA-LICENSE.txt",
+    "BSNES-LICENSE.txt",
+    "EngineLicenses.txt",
+    "FCEUmm-COPYING.txt",
+    "FidelityFX-FSR-LICENSE.txt",
+    "JGenesis-LICENSE.txt",
+    "MelonDS-LICENSE.txt",
+    "MoltenVKLicense.txt",
+    "mGBA-LICENSE.txt",
+    "xBR-LICENSE.txt",
+    "PPSSPP-FONTS-LICENSE.txt"
+  ],
+  "scope": "Public native candidate only. Engine rights, artwork and final store review remain separate. No personal library changes."
+}

@@ -1,0 +1,33 @@
+ffc0  cd ef      reset:   mov x,#$ef
+ffc2  bd                  mov sp,x            ; stack at $01EF
+ffc3  e8 00               mov a,#0
+ffc5  c6         clear:   mov (x),a           ; clear $EF..$01
+ffc6  1d                  dec x
+ffc7  d0 fc               bne clear
+ffc9  c6                  mov (x),a           ; and $00 (x is 0 from here on)
+ffca  8f aa f4            mov $f4,#$aa        ; ready: $AA $BB
+ffcd  8f bb f5            mov $f5,#$bb
+ffd0  78 cc f4   kick:    cmp $f4,#$cc        ; wait for the CPU's $CC
+ffd3  d0 fb               bne kick
+ffd5  ba f6      command: movw ya,$f6         ; the address
+ffd7  da 00               movw $00,ya         ; kept at $00-$01
+ffd9  fa f4 f4            mov $f4,$f4         ; echo the command
+ffdc  e4 f5               mov a,$f5
+ffde  f0 1b               beq jump
+ffe0  8d 00               mov y,#0            ; counter and index
+ffe2  7e f4      first:   cmp y,$f4           ; wait for the first byte's counter (0)
+ffe4  d0 fc               bne first
+ffe6  e4 f5      data:    mov a,$f5           ; a byte
+ffe8  cb f4               mov $f4,y           ; echo its counter (the CPU sends the next while it's stored)
+ffea  d7 00               mov [$00]+y,a
+ffec  fc                  inc y
+ffed  f0 08               beq page            ; every 256 bytes
+ffef  7e f4      next:    cmp y,$f4           ; the next counter?
+fff1  f0 f3               beq data
+fff3  10 fa               bpl next            ; not yet (the CPU still shows the last one)
+fff5  2f de               bra command         ; ahead of it: the block's end, a command
+fff7  ab 01      page:    inc $01             ; the next 256-byte page
+fff9  2f f4               bra next
+fffb  1f 00 00   jump:    jmp [$0000+x]       ; to the address at $00-$01
+fffe  c0 ff               reset vector: $FFC0
+; 62 bytes of code, 0 unused

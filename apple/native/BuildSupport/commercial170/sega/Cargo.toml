@@ -1,0 +1,23 @@
+[package]
+name = "veta-jgenesis-libretro"
+version = "0.170.0"
+edition = "2021"
+license = "GPL-3.0-or-later"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+bincode = "=2.0.1"
+genesis-core = { path = "../../../.build/jgenesis-commercial/backend/genesis-core" }
+genesis-config = { path = "../../../.build/jgenesis-commercial/config/genesis-config" }
+smsgg-core = { path = "../../../.build/jgenesis-commercial/backend/smsgg-core" }
+smsgg-config = { path = "../../../.build/jgenesis-commercial/config/smsgg-config" }
+jgenesis-common = { path = "../../../.build/jgenesis-commercial/common/jgenesis-common" }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+
+[workspace]

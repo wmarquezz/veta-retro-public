@@ -1,0 +1,221 @@
+{
+  "scope": "Upstream replacement-font provenance; compatibility names do not identify commercial firmware",
+  "files": [
+    {
+      "file": "flash0/font/jpn0.pgf",
+      "sha256": "d363cec75fecfafd1511e370e48c748c30199c694b83a4026be34d799b192917",
+      "packagedCommit": "31e94fcf68e55d4794e436236dfcde10c817c0fb",
+      "preCamouflageCommit": "4595fcd83b796a683ab3abb5f86c42de51e4ea8c",
+      "preCamouflageSHA256": "55d4454f5002c2aeb35b5845c3cfe320f6a2c42d376efde717794a1a65c2d8d5",
+      "originalHeaderStrings": [
+        "Source Han Sans",
+        "Regular"
+      ],
+      "provenanceURL": "https://github.com/hrydgard/ppsspp/commit/dc34bea8d4dee77629da3cbaedc83fc8c05af159"
+    },
+    {
+      "file": "flash0/font/kr0.pgf",
+      "sha256": "6b0b3a8be9e709d6af02223d077675e1530f9879f42656377a9d8d42e2614333",
+      "packagedCommit": "31e94fcf68e55d4794e436236dfcde10c817c0fb",
+      "preCamouflageCommit": "4595fcd83b796a683ab3abb5f86c42de51e4ea8c",
+      "preCamouflageSHA256": "3cbede6c4147e05e9a1dcb24d34c4967119238b6111bb259e97c5e74e46de787",
+      "originalHeaderStrings": [
+        "Source Han Sans",
+        "Regular"
+      ],
+      "provenanceURL": "https://github.com/hrydgard/ppsspp/commit/dc34bea8d4dee77629da3cbaedc83fc8c05af159"
+    },
+    {
+      "file": "flash0/font/ltn0.pgf",
+      "sha256": "1184f16bc89bad1fea49093806784470281af54f279b57ef0378ce33e6603870",
+      "packagedCommit": "31e94fcf68e55d4794e436236dfcde10c817c0fb",
+      "preCamouflageCommit": "4595fcd83b796a683ab3abb5f86c42de51e4ea8c",
+      "preCamouflageSHA256": "b496d93c68194b086a66617936b800f21423f2b095a22f723fca7b47e0ba3b9c",
+      "originalHeaderStrings": [
+        "Ume Hy Gothic",
+        "Regular"
+      ],
+      "provenanceURL": "https://github.com/hrydgard/ppsspp/commit/dc34bea8d4dee77629da3cbaedc83fc8c05af159"
+    },
+    {
+      "file": "flash0/font/ltn1.pgf",
+      "sha256": "0cb72bdce33780b78596001fdc6842c244aac06e813fddf28e3437e4db45dd5b",
+      "packagedCommit": "31e94fcf68e55d4794e436236dfcde10c817c0fb",
+      "preCamouflageCommit": "4595fcd83b796a683ab3abb5f86c42de51e4ea8c",
+      "preCamouflageSHA256": "e0208dc5f6f6d1c987f8b18eb1a9a51fb1c5625b4d282832f9e300222849da63",
+      "originalHeaderStrings": [
+        "Ume P Mincho",
+        "Regular"
+      ],
+      "provenanceURL": "https://github.com/hrydgard/ppsspp/commit/dc34bea8d4dee77629da3cbaedc83fc8c05af159"
+    },
+    {
+      "file": "flash0/font/ltn10.pgf",
+      "sha256": "ff8fcdebca739eaa81c07caabd78b3e3eafb89cac0e68caf7aaf7a2b25514e85",
+      "packagedCommit": "31e94fcf68e55d4794e436236dfcde10c817c0fb",
+      "preCamouflageCommit": "4595fcd83b796a683ab3abb5f86c42de51e4ea8c",
+      "preCamouflageSHA256": "7e9fdb33f0090762b074ec837a7c78c4eb2ec8721c28af9f4d8850b2b2b6fb99",
+      "originalHeaderStrings": [
+        "Ume Hy Gothic",
+        "Regular"
+      ],
+      "provenanceURL": "https://github.com/hrydgard/ppsspp/commit/dc34bea8d4dee77629da3cbaedc83fc8c05af159"
+    },
+    {
+      "file": "flash0/font/ltn11.pgf",
+      "sha256": "ebb94efd7d18143d6c6d54ae7aa5cc801d8c56dc7ca613c779cc60dc8b640a16",
+      "packagedCommit": "31e94fcf68e55d4794e436236dfcde10c817c0fb",
+      "preCamouflageCommit": "4595fcd83b796a683ab3abb5f86c42de51e4ea8c",
+      "preCamouflageSHA256": "efa2f7bb60ccebd6399caa48c988945f639351b9f563429667be6bce17c50c4d",
+      "originalHeaderStrings": [
+        "Ume P Mincho",
+        "Regular"
+      ],
+      "provenanceURL": "https://github.com/hrydgard/ppsspp/commit/dc34bea8d4dee77629da3cbaedc83fc8c05af159"
+    },
+    {
+      "file": "flash0/font/ltn12.pgf",
+      "sha256": "c71f3dee57b8a105a88791dd041a008adb918b14a3892a1b18ed6a63f721201a",
+      "packagedCommit": "31e94fcf68e55d4794e436236dfcde10c817c0fb",
+      "preCamouflageCommit": "4595fcd83b796a683ab3abb5f86c42de51e4ea8c",
+      "preCamouflageSHA256": "5a8ba0844769b3385ca393f18d9c20ac626afed006663005714f27fae9853b7b",
+      "originalHeaderStrings": [
+        "Ume Hy Gothic",
+        "Regular"
+      ],
+      "provenanceURL": "https://github.com/hrydgard/ppsspp/commit/dc34bea8d4dee77629da3cbaedc83fc8c05af159"
+    },
+    {
+      "file": "flash0/font/ltn13.pgf",
+      "sha256": "25b0efa79cf1b6656b35356483ad2b1191626550d59b5943ed681e82b945bd73",
+      "packagedCommit": "31e94fcf68e55d4794e436236dfcde10c817c0fb",
+      "preCamouflageCommit": "4595fcd83b796a683ab3abb5f86c42de51e4ea8c",
+      "preCamouflageSHA256": "78fc49f8a6cb71d6582babe8a5dc24504ab02b111a6363b7c41e710a6fc8b254",
+      "originalHeaderStrings": [
+        "Ume P Mincho",
+        "Regular"
+      ],
+      "provenanceURL": "https://github.com/hrydgard/ppsspp/commit/dc34bea8d4dee77629da3cbaedc83fc8c05af159"
+    },
+    {
+      "file": "flash0/font/ltn14.pgf",
+      "sha256": "bc2c9389ac33f120b4be4fd3efc467de12fd886ec147969a4309ea270ccc1da3",
+      "packagedCommit": "31e94fcf68e55d4794e436236dfcde10c817c0fb",
+      "preCamouflageCommit": "4595fcd83b796a683ab3abb5f86c42de51e4ea8c",
+      "preCamouflageSHA256": "e881bfce6405f017f6e189bb73b22c52654e90d0f37e692e89371de660a863c9",
+      "originalHeaderStrings": [
+        "Ume Hy Gothic",
+        "Regular"
+      ],
+      "provenanceURL": "https://github.com/hrydgard/ppsspp/commit/dc34bea8d4dee77629da3cbaedc83fc8c05af159"
+    },
+    {
+      "file": "flash0/font/ltn15.pgf",
+      "sha256": "4ab43137ebed97d8bbec829b32d4b343f9895e0b14ec1c884c1b44dfa35d5204",
+      "packagedCommit": "31e94fcf68e55d4794e436236dfcde10c817c0fb",
+      "preCamouflageCommit": "4595fcd83b796a683ab3abb5f86c42de51e4ea8c",
+      "preCamouflageSHA256": "24d770ee71c3dfaa153955871d341e508a517f5ac0208626c13ae6e5635ae016",
+      "originalHeaderStrings": [
+        "Ume P Mincho",
+        "Regular"
+      ],
+      "provenanceURL": "https://github.com/hrydgard/ppsspp/commit/dc34bea8d4dee77629da3cbaedc83fc8c05af159"
+    },
+    {
+      "file": "flash0/font/ltn2.pgf",
+      "sha256": "ecfdfc8c7f1ee367dda81ff3177af626b5bf64014315ce0c389903c40964b4bf",
+      "packagedCommit": "31e94fcf68e55d4794e436236dfcde10c817c0fb",
+      "preCamouflageCommit": "4595fcd83b796a683ab3abb5f86c42de51e4ea8c",
+      "preCamouflageSHA256": "64d71054a2bf82e14343b357009339f4b10bca4f16a54b439d8cf15679986165",
+      "originalHeaderStrings": [
+        "Ume Hy Gothic",
+        "Regular"
+      ],
+      "provenanceURL": "https://github.com/hrydgard/ppsspp/commit/dc34bea8d4dee77629da3cbaedc83fc8c05af159"
+    },
+    {
+      "file": "flash0/font/ltn3.pgf",
+      "sha256": "82bf8f0b60fd7e513560b29c52f6c721ade05910a144704c17f78aba298d9b08",
+      "packagedCommit": "31e94fcf68e55d4794e436236dfcde10c817c0fb",
+      "preCamouflageCommit": "4595fcd83b796a683ab3abb5f86c42de51e4ea8c",
+      "preCamouflageSHA256": "99c0b3ed0e720b69364377ae8168f137ed644781c57a8d5eebdb9124244224a3",
+      "originalHeaderStrings": [
+        "Ume P Mincho",
+        "Regular"
+      ],
+      "provenanceURL": "https://github.com/hrydgard/ppsspp/commit/dc34bea8d4dee77629da3cbaedc83fc8c05af159"
+    },
+    {
+      "file": "flash0/font/ltn4.pgf",
+      "sha256": "250babd8a242d7eaaa84284c78d5e2273b29e61d0d8c01b65414e3248d7c1164",
+      "packagedCommit": "31e94fcf68e55d4794e436236dfcde10c817c0fb",
+      "preCamouflageCommit": "4595fcd83b796a683ab3abb5f86c42de51e4ea8c",
+      "preCamouflageSHA256": "2ea31544bd466b837c08b57758f4a5149c774c5f2a6f9474ede3672f66b1d4ae",
+      "originalHeaderStrings": [
+        "Ume Hy Gothic",
+        "Regular"
+      ],
+      "provenanceURL": "https://github.com/hrydgard/ppsspp/commit/dc34bea8d4dee77629da3cbaedc83fc8c05af159"
+    },
+    {
+      "file": "flash0/font/ltn5.pgf",
+      "sha256": "e30b45662d37516c590ca070c831b44a6883587e223abd28082cb017623474f7",
+      "packagedCommit": "31e94fcf68e55d4794e436236dfcde10c817c0fb",
+      "preCamouflageCommit": "4595fcd83b796a683ab3abb5f86c42de51e4ea8c",
+      "preCamouflageSHA256": "bcb9ae29ca5b76b60dd755cd5ac197b7c7276cf6b13809c0a1b9561f757b3d24",
+      "originalHeaderStrings": [
+        "Ume P Mincho",
+        "Regular"
+      ],
+      "provenanceURL": "https://github.com/hrydgard/ppsspp/commit/dc34bea8d4dee77629da3cbaedc83fc8c05af159"
+    },
+    {
+      "file": "flash0/font/ltn6.pgf",
+      "sha256": "a0fb14123ceb1ef81cb230cbf0688de594d0725de234a2ad710cd9b89391c7e9",
+      "packagedCommit": "31e94fcf68e55d4794e436236dfcde10c817c0fb",
+      "preCamouflageCommit": "4595fcd83b796a683ab3abb5f86c42de51e4ea8c",
+      "preCamouflageSHA256": "3ca71b8d7108c68727dcd30f0a59d322ff94a3d0515ed40c6d554bedcfe82951",
+      "originalHeaderStrings": [
+        "Ume Hy Gothic",
+        "Regular"
+      ],
+      "provenanceURL": "https://github.com/hrydgard/ppsspp/commit/dc34bea8d4dee77629da3cbaedc83fc8c05af159"
+    },
+    {
+      "file": "flash0/font/ltn7.pgf",
+      "sha256": "9a4d35eeeee93fe8b5434e8dff79dabf7bbd914ad0d6461fb60d36eb178bf2c8",
+      "packagedCommit": "31e94fcf68e55d4794e436236dfcde10c817c0fb",
+      "preCamouflageCommit": "4595fcd83b796a683ab3abb5f86c42de51e4ea8c",
+      "preCamouflageSHA256": "0b4e52dd08d7906f6129f1fd36a9d4f783f6f831011193ccbde2c16a7b6475f1",
+      "originalHeaderStrings": [
+        "Ume P Mincho",
+        "Regular"
+      ],
+      "provenanceURL": "https://github.com/hrydgard/ppsspp/commit/dc34bea8d4dee77629da3cbaedc83fc8c05af159"
+    },
+    {
+      "file": "flash0/font/ltn8.pgf",
+      "sha256": "c8620bdd244585bbf993a82903168f6ec8464d4cbcad238d4e0ca5623c1ba3c1",
+      "packagedCommit": "31e94fcf68e55d4794e436236dfcde10c817c0fb",
+      "preCamouflageCommit": "4595fcd83b796a683ab3abb5f86c42de51e4ea8c",
+      "preCamouflageSHA256": "45e57df9359fc18cc6afb3dac9226f9e6fb44fd779dc1685606c5a7bff930716",
+      "originalHeaderStrings": [
+        "Ume Hy Gothic",
+        "Regular"
+      ],
+      "provenanceURL": "https://github.com/hrydgard/ppsspp/commit/dc34bea8d4dee77629da3cbaedc83fc8c05af159"
+    },
+    {
+      "file": "flash0/font/ltn9.pgf",
+      "sha256": "e250f2782e0c72707ce16f73331e2604daa84c488c8b9c959e2296867c1710bf",
+      "packagedCommit": "31e94fcf68e55d4794e436236dfcde10c817c0fb",
+      "preCamouflageCommit": "4595fcd83b796a683ab3abb5f86c42de51e4ea8c",
+      "preCamouflageSHA256": "236100fdc101f544f67f88a13ab99c7a109de16366c08ee42840803ad0ba3be3",
+      "originalHeaderStrings": [
+        "Ume P Mincho",
+        "Regular"
+      ],
+      "provenanceURL": "https://github.com/hrydgard/ppsspp/commit/dc34bea8d4dee77629da3cbaedc83fc8c05af159"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "repo": "https://github.com/StackBlender/snes-spc700-boot-rom",
+  "commit": "6f3f92686b6477654fdc76289516281e91e8d509",
+  "license": "GPL-3.0-or-later",
+  "files": {
+    "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "listing.txt": "000dc78c23af4688cdf7fda2f9206ad8db3ce608dc5a5ee45549bd03b216ee17",
+    "spc700_boot_rom.h": "167f346894859ac837bd4b2cfa9094a4d8bd07b39568c4ce98250b69c9ae3cf6",
+    "README.md": "d4348f6bc1e2abce2bcb37258b7d4e7960bd02b5fbb4bc32fb2f4d9608f49c0d",
+    "docs/testing.md": "fed6b52ce3a804408005e222bed0fbd763bdeb9f68936ac204ef521cd18b94fe",
+    "docs/protocol.md": "84f563ab5742a88588246160a29a425487de24fcb4d114c3dff8a6f7fa4995b5",
+    "src/assemble.py": "95be0a96f434be03cf9e61efef619e38d83153a50b900debe29924c0cdcd14aa"
+  }
+}

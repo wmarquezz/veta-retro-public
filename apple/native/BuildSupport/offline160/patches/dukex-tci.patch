@@ -1,0 +1,106 @@
+--- a/tcg/region.c
++++ b/tcg/region.c
+@@ -705,7 +705,7 @@
+         error_free_or_abort(errp);
+     }
+ 
+-#ifdef CONFIG_IOS
++#if defined(CONFIG_IOS) && !defined(CONFIG_TCG_INTERPRETER)
+     if (xemu_ios_universal_jit_is_enabled()) {
+         void *buf_rw;
+         void *buf_rx;
+--- a/tcg/ios-jit.c
++++ b/tcg/ios-jit.c
+@@ -19,6 +19,7 @@
+ #include <libkern/OSCacheControl.h>
+ #endif
+ 
++#ifndef CONFIG_TCG_INTERPRETER
+ static bool universal_jit_enabled;
+ static bool universal_jit_alias_backed;
+ 
+@@ -440,3 +441,15 @@
+ #endif
+     return true;
+ }
++
++#else /* TCI uses ordinary writable bytecode, never executable JIT pages. */
++void xemu_ios_universal_jit_set_enabled(bool enabled) { (void)enabled; }
++void xemu_ios_universal_jit_set_alias_backed(bool enabled) { (void)enabled; }
++bool xemu_ios_universal_jit_is_enabled(void) { return false; }
++void *xemu_ios_universal_jit_prepare_region(void *addr, size_t size)
++{ (void)addr; (void)size; return NULL; }
++bool xemu_ios_universal_jit_copy_code(void *dst, const void *src, size_t size)
++{ (void)dst; (void)src; (void)size; return false; }
++bool xemu_ios_universal_jit_probe_split(void *rw_addr, void *rx_addr)
++{ (void)rw_addr; (void)rx_addr; return false; }
++#endif /* CONFIG_TCG_INTERPRETER */
+--- a/accel/tcg/cpu-exec.c
++++ b/accel/tcg/cpu-exec.c
+@@ -805,7 +805,7 @@
+     uintptr_t jmp_rw = jmp_rx - tcg_splitwx_diff;
+ 
+     tb->jmp_target_addr[n] = addr;
+-#ifdef CONFIG_IOS
++#if defined(CONFIG_IOS) && !defined(CONFIG_TCG_INTERPRETER)
+     if (xemu_ios_universal_jit_is_enabled() &&
+         !xemu_ios_universal_jit_copy_code(
+             (void *)tcg_splitwx_to_rx(&tb->jmp_target_addr[n]),
+@@ -815,7 +815,7 @@
+     }
+ #endif
+     tb_target_set_jmp_target(c_tb, n, jmp_rx, jmp_rw);
+-#ifdef CONFIG_IOS
++#if defined(CONFIG_IOS) && !defined(CONFIG_TCG_INTERPRETER)
+     if (xemu_ios_universal_jit_is_enabled() &&
+         !xemu_ios_universal_jit_copy_code((void *)jmp_rx, (void *)jmp_rw, 4)) {
+         error_report("Universal.js failed to copy TCG branch patch into RX memory");
+--- a/accel/tcg/translate-all.c
++++ b/accel/tcg/translate-all.c
+@@ -426,7 +426,7 @@
+     }
+     tb->tc.size = gen_code_size;
+ 
+-#ifdef CONFIG_IOS
++#if defined(CONFIG_IOS) && !defined(CONFIG_TCG_INTERPRETER)
+     if (xemu_ios_universal_jit_is_enabled() &&
+         !xemu_ios_universal_jit_copy_code((void *)tcg_splitwx_to_rx(gen_code_buf),
+                                           gen_code_buf,
+--- a/tcg/tci/tcg-target.c.inc
++++ b/tcg/tci/tcg-target.c.inc
+@@ -42,6 +42,15 @@
+     return C_NotImplemented;
+ }
+ 
++/* This backend uses TCGOutOp dispatch for every supported operation.
++ * Match the unreachable legacy dispatcher used by the aarch64 backend. */
++static void tcg_out_op(TCGContext *s, TCGOpcode opc, TCGType type,
++                       const TCGArg args[TCG_MAX_OP_ARGS],
++                       const int const_args[TCG_MAX_OP_ARGS])
++{
++    g_assert_not_reached();
++}
++
+ static const int tcg_target_reg_alloc_order[] = {
+     TCG_REG_R4,
+     TCG_REG_R5,
+--- a/ui/xemu.c
++++ b/ui/xemu.c
+@@ -2109,6 +2109,17 @@
+ static int veta_initialized;
+ static int veta_running;
+ __attribute__((visibility("default"))) int xemu_veta_bridge_abi(void) { return 3; }
++
++/* Explicit capability: only the TCI build may bypass the host JIT gate. */
++__attribute__((visibility("default"))) int xemu_veta_execution_mode(void)
++{
++#ifdef CONFIG_TCG_INTERPRETER
++    return 1;
++#else
++    return 0;
++#endif
++}
++
+ /* Worker-thread entry: the BQL serializes snapshot I/O with the machine.
+  * Use unique names so a failed file/manifest write never replaces an old slot. */
+ __attribute__((visibility("default"))) int xemu_veta_snapshot(

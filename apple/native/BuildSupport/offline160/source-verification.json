@@ -1,0 +1,35 @@
+{
+  "validation": "Pinned source/patch comparison; no build or physical tests run",
+  "engines": [
+    {
+      "engine": "flycast",
+      "base_and_patch_check": "PASS",
+      "patched_files_identical": 5,
+      "initialized_submodule_revisions_checked": 7,
+      "build_run": false
+    },
+    {
+      "engine": "play",
+      "base_and_patch_check": "PASS",
+      "patched_files_identical": 12,
+      "initialized_submodule_revisions_checked": 14,
+      "build_run": false
+    },
+    {
+      "engine": "dukex",
+      "base_and_patch_check": "PASS",
+      "patched_files_identical": 43,
+      "initialized_submodule_revisions_checked": 0,
+      "build_run": false
+    }
+  ],
+  "recipe_checks": "6 host checks PASS",
+  "shell_examples": "bash syntax PASS; not executed",
+  "localization": "811 keys across 8 languages PASS",
+  "notices": {
+    "count": 65,
+    "sha256": "4d86accd010ec1301de988be1c3aa2115cb1b770725703aaadccb07a24eb5382"
+  },
+  "xbox_presentation": "Recorded optional FSR/xBR patch replayed; original TCI CPU/state code unchanged",
+  "xbox_ios_wait": "Idle presentation and standard blocking poll pinned. Device evidence: zf baseline, zh diagnostic comparison, zi final without loop probe. See session160 for bounded CPU/NV2A results and thermal/audio limits."
+}

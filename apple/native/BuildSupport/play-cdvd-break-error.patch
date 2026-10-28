@@ -1,0 +1,97 @@
+--- a/Source/iop/Iop_Cdvdfsv.cpp
++++ b/Source/iop/Iop_Cdvdfsv.cpp
+@@ -11,6 +11,8 @@
+ #define LOG_NAME "iop_cdvdfsv"
+ 
+ #define STATE_FILENAME ("iop_cdvdfsv/state.xml")
++
++#define STATE_LASTERROR ("LastError")
+ 
+ #define STATE_PENDINGCOMMAND ("PendingCommand")
+ #define STATE_PENDINGREADSECTOR ("PendingReadSector")
+@@ -152,6 +154,7 @@
+ {
+ 	auto registerFile = CRegisterStateFile(*archive.BeginReadFile(STATE_FILENAME));
+ 
++	m_lastError = registerFile.GetRegister32(STATE_LASTERROR);
+ 	m_pendingCommand = static_cast<COMMAND>(registerFile.GetRegister32(STATE_PENDINGCOMMAND));
+ 	m_pendingReadSector = registerFile.GetRegister32(STATE_PENDINGREADSECTOR);
+ 	m_pendingReadCount = registerFile.GetRegister32(STATE_PENDINGREADCOUNT);
+@@ -166,6 +169,7 @@
+ {
+ 	auto registerFile = std::make_unique<CRegisterStateFile>(STATE_FILENAME);
+ 
++	registerFile->SetRegister32(STATE_LASTERROR, m_lastError);
+ 	registerFile->SetRegister32(STATE_PENDINGCOMMAND, m_pendingCommand);
+ 	registerFile->SetRegister32(STATE_PENDINGREADSECTOR, m_pendingReadSector);
+ 	registerFile->SetRegister32(STATE_PENDINGREADCOUNT, m_pendingReadCount);
+@@ -190,6 +194,7 @@
+ 	case 0:
+ 	{
+ 		//Init
++		m_lastError = 0;
+ 		assert(argsSize >= 4);
+ 		uint32 mode = args[0x00];
+ 		if(retSize != 0)
+@@ -232,7 +237,7 @@
+ 	case 0x04:
+ 		assert(retSize >= 4);
+ 		CLog::GetInstance().Print(LOG_NAME, "GetError();\r\n");
+-		ret[0x00] = 0x00;
++		ret[0x00] = m_lastError;
+ 		break;
+ 
+ 	case 0x05:
+@@ -257,6 +262,17 @@
+ 		//Break
+ 		{
+ 			CLog::GetInstance().Print(LOG_NAME, "Break();\r\n");
++			// CdBreak completes with SCECdErABRT, even when no read is pending.
++			// The EE library may wait for this error after CdSync returns.
++			m_lastError = 1;
++			m_streaming = false;
++			if(m_pendingCommand != COMMAND_NONE)
++			{
++				// Complete the pending RPC without executing its transfer.
++				m_pendingCommand = COMMAND_NONE;
++				m_pendingCommandDelay = 0;
++				m_sifMan.SendCallReply(MODULE_ID_4, nullptr);
++			}
+ 			ret[0x00] = 1;
+ 		}
+ 		break;
+@@ -295,6 +311,13 @@
+ 
+ bool CCdvdfsv::Invoke595(uint32 method, uint32* args, uint32 argsSize, uint32* ret, uint32 retSize, uint8* ram)
+ {
++	// A new drive operation clears the previous command's error. Queries
++	// (including DiskReady and stream status) must leave it observable.
++	if(method == 0x01 || method == 0x04 || method == 0x05 || method == 0x08 ||
++	   method == 0x0D || method == 0x0F)
++	{
++		m_lastError = 0;
++	}
+ 	switch(method)
+ 	{
+ 	case 0x01:
+@@ -482,6 +505,10 @@
+ 	                          sector, count, dstAddr, cmd, mode);
+ 
+ 	assert(m_pendingCommand == COMMAND_NONE);
++	if(cmd == 1 || cmd == 2 || cmd == 3 || cmd == 4 || cmd == 9)
++	{
++		m_lastError = 0;
++	}
+ 
+ 	switch(cmd)
+ 	{
+--- a/Source/iop/Iop_Cdvdfsv.h
++++ b/Source/iop/Iop_Cdvdfsv.h
+@@ -91,6 +91,7 @@
+ 		CSifModuleAdapter m_module597;
+ 		CSifModuleAdapter m_module59A;
+ 		CSifModuleAdapter m_module59C;
++		uint32 m_lastError = 0;
+ 	};
+ 
+ 	typedef std::shared_ptr<CCdvdfsv> CdvdfsvPtr;

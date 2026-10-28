@@ -7,7 +7,7 @@
     "SNES": "user reports own photos",
     "otherControllers": "Internet; URLs and permissions not provided"
   },
-  "logo": "CRT logo supplied by user; initial answer grouped it with ChatGPT designs, individual photo origin not established",
+  "logo": "Current187: V and integrated controller image supplied by user on 2026-10-28 for app, website and icons. Original file preserved byte-for-byte; resizing only. This records supplied provenance, not independent rights clearance.",
   "svgInspection": [
     {
       "asset": "atari2600/horizontal/skin.svg",
@@ -245,5 +245,9 @@
     "AI generation does not grant rights in third-party inputs, trademarks or designs."
   ],
   "distributionRightsCleared": false,
-  "source": "https://openai.com/policies/row-terms-of-use/"
+  "source": "https://openai.com/policies/row-terms-of-use/",
+  "logoHistory": [
+    "CRT logo supplied by user; initial answer grouped it with ChatGPT designs, individual photo origin not established"
+  ],
+  "logoMasterSHA256": "0eea30d12571da78f51f6943523a660599b58e2d469bdf1a8777bcbf436b6e04"
 }

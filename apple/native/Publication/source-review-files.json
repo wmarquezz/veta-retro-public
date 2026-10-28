@@ -535,11 +535,14 @@
     "apple/native/Tests/play_audio_test.cpp",
     "apple/native/make-icon.swift",
     "apple/native/prepare.py",
+    "branding/v-control187/README.md",
+    "branding/v-control187/master.png",
     "docs/EDICION-PUBLICA-179.md",
     "docs/EDICION-SKINS-185.md",
     "docs/PORTADAS-LOCALES-186.md",
     "docs/SELECTOR-SKINS-184.md",
     "docs/SKINS-ESTUDIO-180.md",
-    "docs/SKINS-JUGABLES-183.md"
+    "docs/SKINS-JUGABLES-183.md",
+    "scripts/prepare-retro-brand.py"
   ]
 }

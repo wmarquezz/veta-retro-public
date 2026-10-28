@@ -1,3 +1,9 @@
+## Marca187 · V con control integrado
+
+![VETA Retro](apple/native/Sources/Assets.xcassets/VetaLogo.imageset/VetaLogo.png)
+
+Nueva identidad aportada por el usuario, aplicada a app y web. Maestro y procedencia: branding/v-control187. Fuentes completas en la release v0.187.0.
+
 ## Portadas locales186
 
 Imagen opcional en la misma carpeta y con el mismo nombre de la ROM.

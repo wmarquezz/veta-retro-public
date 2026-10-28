@@ -202,38 +202,126 @@ struct ControllerSkinDocument:FileDocument {
     init(configuration:ReadConfiguration)throws {guard let data=configuration.file.regularFileContents,data.count<=ControllerSkinLayout.byteLimit else{throw ControllerSkinError.invalid};self.data=data}
     func fileWrapper(configuration:WriteConfiguration)throws->FileWrapper {FileWrapper(regularFileWithContents:data)}
 }
+// A read-only preview uses the same selection and drawing path as gameplay.
+@MainActor struct ConsoleSkinPreview:UIViewRepresentable {
+    let console:GameConsole
+    let orientation:ControllerSkinOrientation
+    var palette:ControllerSkinPalette? = nil
+    var revision:Int = 0
+    func makeUIView(context:Context)->ConsoleSkinPreviewCanvas {ConsoleSkinPreviewCanvas()}
+    func updateUIView(_ view:ConsoleSkinPreviewCanvas,context:Context) {view.apply(console:console,orientation:orientation,palette:palette)}
+}
+@MainActor final class ConsoleSkinPreviewCanvas:UIView {
+    let deck=TouchDeck()
+    private var canvas=CGSize(width:400,height:320)
+    override init(frame:CGRect) {super.init(frame:frame);isUserInteractionEnabled=false;clipsToBounds=true;addSubview(deck)}
+    required init?(coder:NSCoder){fatalError()}
+    func apply(console:GameConsole,orientation:ControllerSkinOrientation,palette:ControllerSkinPalette?) {
+        if let palette {
+            var style=ControlStyle(console:console,defaults:nil);style.skin=palette.rawValue
+            deck.style=style;deck.landscape=orientation == .landscape
+            deck.customLayout=palette == .studio ? StudioSkins.variant(console:console,orientation:orientation)?.layout:ControllerSkinLayout.makeDefault(console:console,orientation:orientation,palette:palette)
+            deck.customArtwork=palette == .studio ? StudioSkins.image(console:console,orientation:orientation):nil
+        } else {deck.applySkin(console:console,landscape:orientation == .landscape)}
+        canvas=deck.customLayout?.canvas ?? ControllerSkinLayout.makeDefault(console:console,orientation:orientation,palette:ControllerSkinPalette(rawValue:deck.style.skin) ?? .studio).canvas
+        backgroundColor=UIColor(white:0.06,alpha:1);setNeedsLayout()
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews();deck.transform = .identity;deck.bounds=CGRect(origin:.zero,size:canvas)
+        deck.center=CGPoint(x:bounds.midX,y:bounds.midY)
+        let scale=min(bounds.width/canvas.width,bounds.height/canvas.height)
+        deck.transform=CGAffineTransform(scaleX:scale,y:scale)
+    }
+}
+@MainActor enum ActiveConsoleSkin {
+    static func name(console:GameConsole,orientation:ControllerSkinOrientation,library:PersonalSkinLibrary = .shared)->String {
+        if let id=library.selectedID(console:console,orientation:orientation),library.selected(console:console,orientation:orientation) != nil,let skin=try? library.load(id) {return skin.name}
+        return L10n.text(ControllerSkinStore(defaults:library.defaults).palette(console:console,orientation:orientation).rawValue)
+    }
+}
+@MainActor struct SkinsByConsoleView:View {
+    @ObservedObject private var library=PersonalSkinLibrary.shared
+    @State private var revision=0
+    var body:some View {
+        ScrollView {
+            LazyVStack(alignment:.leading,spacing:18) {
+                Text("Los skins incluidos ya están cargados. Mira el diseño activo de cada consola y toca para cambiarlo.").font(.subheadline).foregroundStyle(.secondary)
+                ForEach(GameConsole.chronological) {console in
+                    NavigationLink {ControllerSkinSettingsView(console:console)} label:{
+                        VStack(alignment:.leading,spacing:12) {
+                            HStack {Text(console.name).font(.headline);Spacer();Image(systemName:"chevron.right").font(.subheadline)}
+                            HStack(alignment:.top,spacing:12) {
+                                ForEach(ControllerSkinOrientation.allCases,id:\.self) {orientation in
+                                    VStack(alignment:.leading,spacing:6) {
+                                        ConsoleSkinPreview(console:console,orientation:orientation,revision:revision+library.revision).frame(height:100).clipShape(RoundedRectangle(cornerRadius:10)).accessibilityHidden(true)
+                                        Text(LocalizedStringKey(orientation.title)).font(.caption).foregroundStyle(.secondary)
+                                        Text(ActiveConsoleSkin.name(console:console,orientation:orientation)).font(.subheadline.weight(.semibold))
+                                    }.frame(maxWidth:.infinity,alignment:.leading)
+                                }
+                            }
+                        }.padding(14).background(Color.secondary.opacity(0.10),in:RoundedRectangle(cornerRadius:18))
+                    }.buttonStyle(.plain).accessibilityIdentifier("skins-console-"+console.rawValue)
+                }
+            }.padding()
+        }.navigationTitle("Mis skins por consola").navigationBarTitleDisplayMode(.inline)
+            .onAppear{revision+=1}
+    }
+}
 struct ControllerSkinSettingsView:View {
     let console:GameConsole
+    @ObservedObject private var library=PersonalSkinLibrary.shared
     @State private var orientation:ControllerSkinOrientation = .portrait
-    @State private var palette:ControllerSkinPalette = .veta
+    @State private var palette:ControllerSkinPalette = .studio
+    @State private var revision=0
     @State private var editing=false
     @State private var editingStudio:PersonalSkin?
     @State private var automaticConfirmation=false
     private let store=ControllerSkinStore(defaults:.standard)
+    private var personalActive:Bool {library.selected(console:console,orientation:orientation) != nil}
     var body:some View {
         Form {
             Section {
+                Picker("Orientación",selection:$orientation){ForEach(ControllerSkinOrientation.allCases,id:\.self){Text(LocalizedStringKey($0.title)).tag($0)}}.pickerStyle(.segmented)
+                    .accessibilityIdentifier("skin-orientation")
+                ConsoleSkinPreview(console:console,orientation:orientation,revision:revision+library.revision)
+                    .frame(height:orientation == .portrait ? 220:150).clipShape(RoundedRectangle(cornerRadius:12)).accessibilityHidden(true)
+                Label(L10n.format("Activo: %@",ActiveConsoleSkin.name(console:console,orientation:orientation)),systemImage:"checkmark.circle.fill")
+                    .foregroundStyle(.primary).accessibilityIdentifier("active-skin-name")
+            } header:{Text(console.name)} footer:{Text("Esta es la apariencia que usarás al jugar en la orientación elegida.")}
+            Section("Skins incluidos") {
+                ForEach(ControllerSkinPalette.allCases,id:\.self) {choice in
+                    Button {
+                        store.setPalette(choice,console:console,orientation:orientation)
+                        library.useOriginal(console:console,orientation:orientation);reload()
+                    } label:{
+                        HStack(spacing:12) {
+                            ConsoleSkinPreview(console:console,orientation:orientation,palette:choice).frame(width:110,height:76).clipShape(RoundedRectangle(cornerRadius:8)).accessibilityHidden(true)
+                            Text(LocalizedStringKey(choice.rawValue)).foregroundStyle(.primary)
+                            Spacer()
+                            if !personalActive && palette == choice {Image(systemName:"checkmark.circle.fill").foregroundStyle(.tint)}
+                        }.frame(minHeight:76)
+                    }.buttonStyle(.plain).accessibilityIdentifier("included-skin-"+choice.rawValue)
+                        .accessibilityValue(!personalActive && palette == choice ? L10n.text("Seleccionado"):L10n.text("Disponible"))
+                }
+            }
+            Section {
                 NavigationLink("Mis skins personalizados") {PersonalSkinCollectionView(console:console)}
                     .accessibilityIdentifier("personal-skins")
-            }
-            Section {Picker("Orientación",selection:$orientation){ForEach(ControllerSkinOrientation.allCases,id:\.self){Text(LocalizedStringKey($0.title)).tag($0)}}.pickerStyle(.segmented)}
-            Section("Skin") {
-                Picker("Estilo",selection:$palette){ForEach(ControllerSkinPalette.allCases,id:\.self){Text(LocalizedStringKey($0.rawValue)).tag($0)}}
                 Button("Editar posiciones de los controles"){
-                    if palette == .studio,let skin=StudioSkins.skin(console:console) {var copy=skin;copy.id=UUID().uuidString;editingStudio=copy}
+                    if let id=library.selectedID(console:console,orientation:orientation),personalActive,let skin=try? library.load(id) {editingStudio=skin}
+                    else if palette == .studio,let skin=StudioSkins.skin(console:console) {var copy=skin;copy.id=UUID().uuidString;editingStudio=copy}
                     else {editing=true}
                 }.accessibilityIdentifier("skin-edit-positions")
-                Button("Usar posiciones automáticas"){automaticConfirmation=true}
+                Button("Usar posiciones automáticas"){automaticConfirmation=true}.disabled(personalActive || palette == .studio)
             }
             Section {Text("Cada orientación conserva su propio estilo y distribución. Los diseños VETA JSON incluyen posiciones, no imágenes ni skins de otras apps.").font(.footnote);Text("Un diseño personalizado reemplaza los ajustes generales de tamaño, separación y altura. Las posiciones automáticas vuelven a usar esos ajustes.").font(.footnote)}
-        }.navigationTitle("Skins y controles")
+        }.navigationTitle("Skins y controles").navigationBarTitleDisplayMode(.inline)
         .onAppear{reload()}.onChange(of:orientation){_ in reload()}
-        .onChange(of:palette){value in store.setPalette(value,console:console,orientation:orientation)}
-        .confirmationDialog("¿Usar posiciones automáticas en esta orientación?",isPresented:$automaticConfirmation,titleVisibility:.visible){Button("Usar posiciones automáticas",role:.destructive){store.reset(console:console,orientation:orientation)}}
+        .confirmationDialog("¿Usar posiciones automáticas en esta orientación?",isPresented:$automaticConfirmation,titleVisibility:.visible){Button("Usar posiciones automáticas",role:.destructive){store.reset(console:console,orientation:orientation);reload()}}
         .sheet(isPresented:$editing,onDismiss:{reload()}) {NavigationStack {ControllerSkinEditorView(console:console,orientation:orientation,store:store)}}
         .sheet(item:$editingStudio,onDismiss:{reload()}) {skin in NavigationStack {PersonalSkinEditorView(console:console,skin:skin,initialOrientation:orientation)}}
     }
-    private func reload(){palette=store.palette(console:console,orientation:orientation)}
+    private func reload(){palette=store.palette(console:console,orientation:orientation);revision+=1}
 }
 struct ControllerSkinEditorView:View {
     let console:GameConsole

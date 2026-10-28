@@ -976,3 +976,8 @@
 "VETA es un proyecto independiente y no representa a los fabricantes de las consolas. Consulta las licencias de los motores y del contenido en Créditos." = "VETA is an independent project and does not represent console manufacturers. See Credits for engine and content licenses.";
 
 "Estudio" = "Studio";
+"Mis skins por consola" = "My skins by console";
+"Los skins incluidos ya están cargados. Mira el diseño activo de cada consola y toca para cambiarlo." = "The included skins are already installed. See each console’s active design and tap to change it.";
+"Activo: %@" = "Active: %@";
+"Esta es la apariencia que usarás al jugar en la orientación elegida." = "This is the appearance used when playing in the selected orientation.";
+"Skins incluidos" = "Included skins";

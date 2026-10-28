@@ -57,7 +57,7 @@ struct PersonalSkinDocument:FileDocument {
             if let error {Section {Text(error).foregroundStyle(.red).accessibilityIdentifier("personal-skin-error")}}
         }.navigationTitle("Mis skins personalizados")
             .onAppear{reload()}.onChange(of:library.revision){_ in reload()}
-            .sheet(item:$editing,onDismiss:{reload()}) {skin in NavigationStack {PersonalSkinEditorView(console:console,skin:skin)}}
+            .sheet(item:$editing,onDismiss:{reload()}) {skin in NavigationStack {PersonalSkinEditorView(console:console,skin:skin,initialOrientation:orientation)}}
             .alert("¿Eliminar este skin?",isPresented:$confirmingDelete) {
                 Button("Eliminar",role:.destructive) {guard let skin=deleting else{return};perform{try library.delete(skin)};deleting=nil}
                 Button("Cancelar",role:.cancel){deleting=nil}

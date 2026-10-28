@@ -400,11 +400,7 @@ struct LibraryView:View {
                     NavigationLink("Este dispositivo") {DeviceReadinessView()}.accessibilityIdentifier("device-readiness")
                     NavigationLink("Funciones de esta versión") {FeatureAccessView()}.accessibilityIdentifier("feature-access")
                     NavigationLink("Mandos y jugadores") {ControllerSettingsView(console:selectedLibraryConsole ?? .nes)}
-                    NavigationLink("Mis skins personalizados") {
-                        List(GameConsole.chronological) {console in
-                            NavigationLink(console.name) {PersonalSkinCollectionView(console:console)}
-                        }.navigationTitle("Consolas")
-                    }.accessibilityIdentifier("personal-skins-main")
+                    NavigationLink("Mis skins por consola") {SkinsByConsoleView()}.accessibilityIdentifier("personal-skins-main")
                     NavigationLink("Jugar juntos") {PlayTogetherView(console:selectedLibraryConsole ?? .nes)}
                     NavigationLink("TV y pantalla completa") {ExternalDisplaySettingsView()}
                 }.listRowBackground(VetaTheme.panel)

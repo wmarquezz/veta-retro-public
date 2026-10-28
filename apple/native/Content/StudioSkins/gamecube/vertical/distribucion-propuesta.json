@@ -1,0 +1,86 @@
+{
+  "console": "gamecube",
+  "controls": [
+    {
+      "id": "A",
+      "x": 0.735,
+      "y": 0.3375,
+      "width": 0.145,
+      "height": 0.18125
+    },
+    {
+      "id": "B",
+      "x": 0.61,
+      "y": 0.50625,
+      "width": 0.11,
+      "height": 0.1375
+    },
+    {
+      "id": "L",
+      "x": 0.06,
+      "y": 0.01875,
+      "width": 0.18,
+      "height": 0.1375
+    },
+    {
+      "id": "R",
+      "x": 0.76,
+      "y": 0.01875,
+      "width": 0.18,
+      "height": 0.1375
+    },
+    {
+      "id": "START",
+      "x": 0.42,
+      "y": 0.85625,
+      "width": 0.15,
+      "height": 0.1375
+    },
+    {
+      "id": "X",
+      "x": 0.88,
+      "y": 0.3125,
+      "width": 0.11,
+      "height": 0.19375
+    },
+    {
+      "id": "Y",
+      "x": 0.72,
+      "y": 0.18125,
+      "width": 0.16,
+      "height": 0.1375
+    },
+    {
+      "id": "Z",
+      "x": 0.615,
+      "y": 0.01875,
+      "width": 0.11,
+      "height": 0.1375
+    },
+    {
+      "id": "dpad",
+      "x": 0.1025,
+      "y": 0.609375,
+      "width": 0.195,
+      "height": 0.24375
+    },
+    {
+      "id": "stick0",
+      "x": 0.09,
+      "y": 0.1875,
+      "width": 0.225,
+      "height": 0.28125
+    },
+    {
+      "id": "stick1",
+      "x": 0.705,
+      "y": 0.659375,
+      "width": 0.17,
+      "height": 0.2125
+    }
+  ],
+  "format": "veta-controller-layout",
+  "orientation": "portrait",
+  "palette": "Clásica",
+  "version": 1
+}

@@ -1,0 +1,147 @@
+{
+  "status": "propuesta-no-instalada",
+  "format": "veta-skin-design-study",
+  "version": 1,
+  "console": "ds",
+  "orientation": "portrait",
+  "logicalCanvas": [
+    400,
+    188
+  ],
+  "fullCanvas": [
+    400,
+    866
+  ],
+  "deckRect": [
+    0,
+    644,
+    400,
+    188
+  ],
+  "screens": [
+    {
+      "id": "top",
+      "rectPoints": [
+        0,
+        44,
+        400,
+        300.0
+      ],
+      "native": [
+        256,
+        192
+      ],
+      "touch": false
+    },
+    {
+      "id": "bottom",
+      "rectPoints": [
+        0,
+        344.0,
+        400,
+        300.0
+      ],
+      "native": [
+        256,
+        192
+      ],
+      "touch": true
+    }
+  ],
+  "controls": [
+    {
+      "id": "A",
+      "label": "A",
+      "rect": [
+        332,
+        96,
+        44,
+        44
+      ]
+    },
+    {
+      "id": "B",
+      "label": "B",
+      "rect": [
+        286,
+        142,
+        44,
+        44
+      ]
+    },
+    {
+      "id": "L",
+      "label": "L",
+      "rect": [
+        24,
+        4,
+        72,
+        44
+      ]
+    },
+    {
+      "id": "R",
+      "label": "R",
+      "rect": [
+        304,
+        4,
+        72,
+        44
+      ]
+    },
+    {
+      "id": "SELECT",
+      "label": "SELECT",
+      "rect": [
+        140,
+        74,
+        60,
+        44
+      ]
+    },
+    {
+      "id": "START",
+      "label": "START",
+      "rect": [
+        140,
+        130,
+        60,
+        44
+      ]
+    },
+    {
+      "id": "X",
+      "label": "X",
+      "rect": [
+        286,
+        50,
+        44,
+        44
+      ]
+    },
+    {
+      "id": "Y",
+      "label": "Y",
+      "rect": [
+        240,
+        96,
+        44,
+        44
+      ]
+    },
+    {
+      "id": "dpad",
+      "label": "dpad",
+      "rect": [
+        26,
+        66,
+        96,
+        96
+      ]
+    }
+  ],
+  "screenGeometryInferred": true,
+  "imageOpacity": 1,
+  "landscapeRuntimeOpacityFromSource": 1,
+  "notes": "La opacidad del runtime se aplica una sola vez. El SVG/PNG no cambia los motores ni implementa un importador. Validar mapping, pulsado, multitouch y áreas seguras."
+}

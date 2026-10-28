@@ -1,0 +1,119 @@
+{
+  "status": "propuesta-no-instalada",
+  "format": "veta-skin-design-study",
+  "version": 1,
+  "console": "gba",
+  "orientation": "landscape",
+  "logicalCanvas": [
+    844,
+    320
+  ],
+  "fullCanvas": [
+    844,
+    390
+  ],
+  "deckRect": [
+    0,
+    35,
+    844,
+    320
+  ],
+  "screens": [
+    {
+      "id": "main",
+      "rectPoints": [
+        182,
+        35,
+        480,
+        320
+      ],
+      "touch": false
+    }
+  ],
+  "controls": [
+    {
+      "id": "A",
+      "label": "A",
+      "rect": [
+        760,
+        164,
+        72,
+        72
+      ]
+    },
+    {
+      "id": "A+B",
+      "label": "A+B",
+      "rect": [
+        776,
+        272,
+        60,
+        44
+      ]
+    },
+    {
+      "id": "B",
+      "label": "B",
+      "rect": [
+        682,
+        240,
+        72,
+        72
+      ]
+    },
+    {
+      "id": "L",
+      "label": "L",
+      "rect": [
+        12,
+        4,
+        112.00000000000001,
+        44
+      ]
+    },
+    {
+      "id": "R",
+      "label": "R",
+      "rect": [
+        720,
+        4,
+        112.00000000000001,
+        44
+      ]
+    },
+    {
+      "id": "SELECT",
+      "label": "SELECT",
+      "rect": [
+        340,
+        274,
+        72,
+        44
+      ]
+    },
+    {
+      "id": "START",
+      "label": "START",
+      "rect": [
+        431.99999999999994,
+        274,
+        72,
+        44
+      ]
+    },
+    {
+      "id": "dpad",
+      "label": "dpad",
+      "rect": [
+        16,
+        168,
+        144,
+        144
+      ]
+    }
+  ],
+  "screenGeometryInferred": false,
+  "imageOpacity": 1,
+  "landscapeRuntimeOpacityFromSource": 0.62,
+  "notes": "La opacidad del runtime se aplica una sola vez. El SVG/PNG no cambia los motores ni implementa un importador. Validar mapping, pulsado, multitouch y áreas seguras."
+}

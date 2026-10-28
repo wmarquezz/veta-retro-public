@@ -37,7 +37,7 @@ import UIKit
         XCTAssertEqual(store.palette(console:.nes,orientation:.landscape),.night)
         XCTAssertNil(store.layout(console:.nes,orientation:.landscape))
         XCTAssertNil(store.layout(console:.gb,orientation:.portrait))
-        XCTAssertEqual(store.palette(console:.gb,orientation:.portrait),.classic)
+        XCTAssertEqual(store.palette(console:.gb,orientation:.portrait),.studio)
         store.setPalette(.transparent,console:.nes,orientation:.portrait)
         XCTAssertEqual(store.layout(console:.nes,orientation:.portrait)?.palette,.transparent)
         store.reset(console:.nes,orientation:.portrait)

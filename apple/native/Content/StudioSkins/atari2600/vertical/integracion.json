@@ -1,0 +1,79 @@
+{
+  "status": "propuesta-no-instalada",
+  "format": "veta-skin-design-study",
+  "version": 1,
+  "console": "atari2600",
+  "orientation": "portrait",
+  "logicalCanvas": [
+    400,
+    276
+  ],
+  "fullCanvas": [
+    400,
+    866
+  ],
+  "deckRect": [
+    0,
+    556,
+    400,
+    276
+  ],
+  "screens": [
+    {
+      "id": "main",
+      "rectPoints": [
+        0,
+        128,
+        400,
+        300
+      ],
+      "touch": false
+    }
+  ],
+  "controls": [
+    {
+      "id": "A",
+      "label": "FIRE",
+      "rect": [
+        322,
+        88.92,
+        54,
+        54
+      ]
+    },
+    {
+      "id": "SELECT",
+      "label": "SELECT",
+      "rect": [
+        124,
+        207,
+        60,
+        43.99999999999999
+      ]
+    },
+    {
+      "id": "START",
+      "label": "RESET",
+      "rect": [
+        192,
+        207,
+        60,
+        43.99999999999999
+      ]
+    },
+    {
+      "id": "dpad",
+      "label": "dpad",
+      "rect": [
+        28.000000000000004,
+        51.92,
+        128,
+        128
+      ]
+    }
+  ],
+  "screenGeometryInferred": false,
+  "imageOpacity": 1,
+  "landscapeRuntimeOpacityFromSource": 1,
+  "notes": "La opacidad del runtime se aplica una sola vez. El SVG/PNG no cambia los motores ni implementa un importador. Validar mapping, pulsado, multitouch y áreas seguras."
+}

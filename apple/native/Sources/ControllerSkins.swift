@@ -8,7 +8,7 @@ enum ControllerSkinOrientation:String,Codable,CaseIterable {case portrait,landsc
     var title:String {self == .portrait ? "Vertical":"Horizontal"}
     var canvas:CGSize {self == .portrait ? CGSize(width:400,height:320):CGSize(width:844,height:320)}
 }
-enum ControllerSkinPalette:String,Codable,CaseIterable {case classic="Clásica",veta="VETA",night="Noche",transparent="Transparente"}
+enum ControllerSkinPalette:String,Codable,CaseIterable {case studio="Estudio",classic="Clásica",veta="VETA",night="Noche",transparent="Transparente"}
 enum ControllerSkinError:Error,LocalizedError {
     case invalid,wrongConsole,wrongOrientation,overlap,tooSmall
     var errorDescription:String? {let key:String = switch self {
@@ -35,9 +35,11 @@ struct ControllerSkinLayout:Codable,Equatable {
     var controls:[ControllerSkinControl]
     // Version 1 retains its implicit canvas, including existing 3DS exports.
     // Version 2 changes only the new 3DS portrait canvas, with the same schema.
+    // Version 4 explicitly selects the compact DS portrait canvas; v1 is unchanged.
     var usesLandscapeOverlay:Bool {version == 3 && orientation == .landscape}
     var usesCompactThreeDSCanvas:Bool {version == 2 && console == GameConsole.threeDS.rawValue && orientation == .portrait}
-    var canvas:CGSize {usesCompactThreeDSCanvas ? CGSize(width:400,height:240):Self.referenceSize(console:GameConsole(rawValue:console) ?? .nes,orientation:orientation)}
+    var usesCompactDSCanvas:Bool {version == 4 && console == GameConsole.ds.rawValue && orientation == .portrait}
+    var canvas:CGSize {usesCompactDSCanvas ? CGSize(width:400,height:188):usesCompactThreeDSCanvas ? CGSize(width:400,height:240):Self.referenceSize(console:GameConsole(rawValue:console) ?? .nes,orientation:orientation)}
     static func referenceSize(console:GameConsole,orientation:ControllerSkinOrientation)->CGSize {
         orientation == .portrait ? CGSize(width:400,height:max(276,console.minimumDeck)):orientation.canvas
     }
@@ -51,7 +53,7 @@ struct ControllerSkinLayout:Codable,Equatable {
         return Self(version:overlay ? 3:compact ? 2:1,console:console.rawValue,orientation:orientation,palette:palette,controls:zones.keys.sorted().map {ControllerSkinControl(id:$0,rect:zones[$0]!,canvas:size)})
     }
     func validated(console expected:GameConsole,orientation expectedOrientation:ControllerSkinOrientation)throws {
-        guard format == "veta-controller-layout",version == 1 || usesCompactThreeDSCanvas || usesLandscapeOverlay,controls.count<=32 else {throw ControllerSkinError.invalid}
+        guard format == "veta-controller-layout",version == 1 || usesCompactThreeDSCanvas || usesLandscapeOverlay || usesCompactDSCanvas,controls.count<=32 else {throw ControllerSkinError.invalid}
         guard console == expected.rawValue else {throw ControllerSkinError.wrongConsole}
         guard orientation == expectedOrientation else {throw ControllerSkinError.wrongOrientation}
         let allowed=Set(TouchDeck.baseZones(style:ControlStyle(console:expected,defaults:nil),size:canvas,landscape:orientation == .landscape).keys)
@@ -176,7 +178,7 @@ struct ControllerSkinStore {
     let defaults:UserDefaults
     private func key(_ console:GameConsole,_ orientation:ControllerSkinOrientation)->String {console.preferencePrefix+"controllerLayout.v1."+orientation.rawValue}
     func palette(console:GameConsole,orientation:ControllerSkinOrientation)->ControllerSkinPalette {
-        ControllerSkinPalette(rawValue:defaults.string(forKey:console.preferencePrefix+"skin."+orientation.rawValue) ?? defaults.string(forKey:console.preferencePrefix+"skin") ?? "") ?? (console == .nes ? .veta:.classic)
+        ControllerSkinPalette(rawValue:defaults.string(forKey:console.preferencePrefix+"skin."+orientation.rawValue) ?? defaults.string(forKey:console.preferencePrefix+"skin") ?? "") ?? .studio
     }
     func layout(console:GameConsole,orientation:ControllerSkinOrientation)->ControllerSkinLayout? {
         guard let data=defaults.data(forKey:key(console,orientation)) else{return nil}
@@ -205,6 +207,7 @@ struct ControllerSkinSettingsView:View {
     @State private var orientation:ControllerSkinOrientation = .portrait
     @State private var palette:ControllerSkinPalette = .veta
     @State private var editing=false
+    @State private var editingStudio:PersonalSkin?
     @State private var automaticConfirmation=false
     private let store=ControllerSkinStore(defaults:.standard)
     var body:some View {
@@ -216,7 +219,10 @@ struct ControllerSkinSettingsView:View {
             Section {Picker("Orientación",selection:$orientation){ForEach(ControllerSkinOrientation.allCases,id:\.self){Text(LocalizedStringKey($0.title)).tag($0)}}.pickerStyle(.segmented)}
             Section("Skin") {
                 Picker("Estilo",selection:$palette){ForEach(ControllerSkinPalette.allCases,id:\.self){Text(LocalizedStringKey($0.rawValue)).tag($0)}}
-                Button("Editar posiciones de los controles"){editing=true}.accessibilityIdentifier("skin-edit-positions")
+                Button("Editar posiciones de los controles"){
+                    if palette == .studio,let skin=StudioSkins.skin(console:console) {var copy=skin;copy.id=UUID().uuidString;editingStudio=copy}
+                    else {editing=true}
+                }.accessibilityIdentifier("skin-edit-positions")
                 Button("Usar posiciones automáticas"){automaticConfirmation=true}
             }
             Section {Text("Cada orientación conserva su propio estilo y distribución. Los diseños VETA JSON incluyen posiciones, no imágenes ni skins de otras apps.").font(.footnote);Text("Un diseño personalizado reemplaza los ajustes generales de tamaño, separación y altura. Las posiciones automáticas vuelven a usar esos ajustes.").font(.footnote)}
@@ -225,6 +231,7 @@ struct ControllerSkinSettingsView:View {
         .onChange(of:palette){value in store.setPalette(value,console:console,orientation:orientation)}
         .confirmationDialog("¿Usar posiciones automáticas en esta orientación?",isPresented:$automaticConfirmation,titleVisibility:.visible){Button("Usar posiciones automáticas",role:.destructive){store.reset(console:console,orientation:orientation)}}
         .sheet(isPresented:$editing,onDismiss:{reload()}) {NavigationStack {ControllerSkinEditorView(console:console,orientation:orientation,store:store)}}
+        .sheet(item:$editingStudio,onDismiss:{reload()}) {skin in NavigationStack {PersonalSkinEditorView(console:console,skin:skin,initialOrientation:orientation)}}
     }
     private func reload(){palette=store.palette(console:console,orientation:orientation)}
 }

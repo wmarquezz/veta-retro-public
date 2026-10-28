@@ -1,0 +1,439 @@
+{
+  "archiveSHA256": "ae41c5d79b23af72f28dcb6ee0a7101f5b46f1082be1aff6ed943865a01c8d35",
+  "variants": [
+    {
+      "adjustments": {},
+      "console": "atari2600",
+      "orientation": "portrait",
+      "imageSHA256": "0dc71d4f28612f29556c3a8188c01b19359c907204c0e84cabe152d92d9b77a3",
+      "logicalCanvas": [
+        400,
+        276
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "atari2600",
+      "orientation": "landscape",
+      "imageSHA256": "e85e9151d1d7958bfb41f7d7da36c2e11c250cd3d498ac29d7e005942cb1e296",
+      "logicalCanvas": [
+        844,
+        320
+      ]
+    },
+    {
+      "adjustments": {
+        "B": [
+          2,
+          0
+        ],
+        "X": [
+          -2,
+          0
+        ]
+      },
+      "console": "dreamcast",
+      "orientation": "portrait",
+      "imageSHA256": "a58cfa455ca75e7870fb70f292302acb885138f9e30b3648d973db07deb0c3d4",
+      "logicalCanvas": [
+        400,
+        320
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "dreamcast",
+      "orientation": "landscape",
+      "imageSHA256": "9806c35a18c4ebce853540993a41164b67885507ef44b09a6bbb2a996ab059e0",
+      "logicalCanvas": [
+        844,
+        320
+      ]
+    },
+    {
+      "adjustments": {
+        "A": [
+          2,
+          0
+        ],
+        "Y": [
+          -2,
+          0
+        ],
+        "X": [
+          0,
+          2
+        ]
+      },
+      "console": "ds",
+      "orientation": "portrait",
+      "imageSHA256": "8703bb8aa7f989898e39d1df536240abd601b4cb9ad9892f1b08ba9df1dc6d82",
+      "logicalCanvas": [
+        400,
+        188
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "ds",
+      "orientation": "landscape",
+      "imageSHA256": "e72d693be6dd2497c3a2fe0038c93708e6460d6bd8ebf94420b3ca5d8b15cddd",
+      "logicalCanvas": [
+        844,
+        320
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "gameGear",
+      "orientation": "portrait",
+      "imageSHA256": "e343b5820e9cdf740cd4f1d4670d696892a3976574a22a15ad17a56433ac8dfa",
+      "logicalCanvas": [
+        400,
+        276
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "gameGear",
+      "orientation": "landscape",
+      "imageSHA256": "4b66e98c1eb270be92e2463774813c1da52713eaf3e5b5cdc2bc2db714042ee6",
+      "logicalCanvas": [
+        844,
+        320
+      ]
+    },
+    {
+      "adjustments": {
+        "A": [
+          -4,
+          0
+        ],
+        "Y": [
+          -4,
+          0
+        ]
+      },
+      "console": "gamecube",
+      "orientation": "portrait",
+      "imageSHA256": "2e2fac46db86cc7b31aedcf3ae5c1b9bafd15b94ce160a3f0ff688243969aa52",
+      "logicalCanvas": [
+        400,
+        320
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "gamecube",
+      "orientation": "landscape",
+      "imageSHA256": "2fac818bf036918d7d2ee4b8051aec9b6b3ed6de2e2adfdcd8af410d5cc53394",
+      "logicalCanvas": [
+        844,
+        320
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "gb",
+      "orientation": "portrait",
+      "imageSHA256": "bbfe1430583788911dec8782b127d8ac209a0f3ed62e412b13d33e563adade00",
+      "logicalCanvas": [
+        400,
+        276
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "gb",
+      "orientation": "landscape",
+      "imageSHA256": "20e1ceb4dbca47111535b11f7f3098bac31d2d02b4ed02b5cf7ec0af0be3c5ef",
+      "logicalCanvas": [
+        844,
+        320
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "gba",
+      "orientation": "portrait",
+      "imageSHA256": "dc60ea1609f968b74b498271bb35cc9f1839c75594a8a258dc0a2b319aee9d09",
+      "logicalCanvas": [
+        400,
+        276
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "gba",
+      "orientation": "landscape",
+      "imageSHA256": "d5a6a5e66dc8b6636a0951be7521130a093614a8e8c67f0f342f96a7f4f9f324",
+      "logicalCanvas": [
+        844,
+        320
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "gbc",
+      "orientation": "portrait",
+      "imageSHA256": "26920f341c1cb802188f36e09eff9decb07bf2d8b27accc027fb361502011eb9",
+      "logicalCanvas": [
+        400,
+        276
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "gbc",
+      "orientation": "landscape",
+      "imageSHA256": "a39f42484ce4aac04b6679985ad61ac690bf9779d1c9ffe3be38bd0dfab58d65",
+      "logicalCanvas": [
+        844,
+        320
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "masterSystem",
+      "orientation": "portrait",
+      "imageSHA256": "76e1da437c3e65a415b487505c10334def731353ed88c1817252f02ac6fcfa78",
+      "logicalCanvas": [
+        400,
+        276
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "masterSystem",
+      "orientation": "landscape",
+      "imageSHA256": "0156317e2582e9a5132a858ca4c154f148db64bc0d4ff1e8a02b5a287a32b3ed",
+      "logicalCanvas": [
+        844,
+        320
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "megaDrive",
+      "orientation": "portrait",
+      "imageSHA256": "5706b9549b9641365034bffc6448b1cb6735654332294cbe1681cac673684476",
+      "logicalCanvas": [
+        400,
+        276
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "megaDrive",
+      "orientation": "landscape",
+      "imageSHA256": "8252474edbd8d1037c6b788484b5b2d1978b6d0e1029419f19de2f4946746553",
+      "logicalCanvas": [
+        844,
+        320
+      ]
+    },
+    {
+      "adjustments": {
+        "C←": [
+          -2,
+          0
+        ],
+        "C→": [
+          2,
+          0
+        ],
+        "C↑": [
+          0,
+          2
+        ]
+      },
+      "console": "n64",
+      "orientation": "portrait",
+      "imageSHA256": "5aff770ab0d16933e8374fefcb0c6a1b136a53cefed9ab89d88f594fb404d5ae",
+      "logicalCanvas": [
+        400,
+        320
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "n64",
+      "orientation": "landscape",
+      "imageSHA256": "6b939e5886a64af5de198beeccdcd368a73c10912427bfebf133d84b3d3a8cf7",
+      "logicalCanvas": [
+        844,
+        320
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "nes",
+      "orientation": "portrait",
+      "imageSHA256": "84f1af39488a164ef06ba1121b6861da0e94f28256554924fd54595c8ca3ec66",
+      "logicalCanvas": [
+        400,
+        276
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "nes",
+      "orientation": "landscape",
+      "imageSHA256": "6a00d5b68262fdfd2daff3732d3a58153e6fb6a4c90b660452af900717e01038",
+      "logicalCanvas": [
+        844,
+        320
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "pcEngine",
+      "orientation": "portrait",
+      "imageSHA256": "27d7fff214cebd59d5eec373bcec4df4bcef07a7ee16ba3b8f6ae6ea637badc7",
+      "logicalCanvas": [
+        400,
+        276
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "pcEngine",
+      "orientation": "landscape",
+      "imageSHA256": "03c69a5c23344eccea72c382f593cd76a552b321b5fd02312dd212a33b8037b7",
+      "logicalCanvas": [
+        844,
+        320
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "ps1",
+      "orientation": "portrait",
+      "imageSHA256": "2f25b82e792d26df06d2536941fc1978f1182feaa547cec5004f32dd8ff80e20",
+      "logicalCanvas": [
+        400,
+        276
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "ps1",
+      "orientation": "landscape",
+      "imageSHA256": "c31fec29438827b6882ed971efc78e25ed179c82db58505255bd3b075dc16494",
+      "logicalCanvas": [
+        844,
+        320
+      ]
+    },
+    {
+      "adjustments": {
+        "A": [
+          2,
+          0
+        ],
+        "Y": [
+          -2,
+          0
+        ]
+      },
+      "console": "psp",
+      "orientation": "portrait",
+      "imageSHA256": "829f2153e1f315c1bd7056b6bc661a50d8cc5e64e26c88a95ecca6c7ca7c7306",
+      "logicalCanvas": [
+        400,
+        320
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "psp",
+      "orientation": "landscape",
+      "imageSHA256": "08b8bd06761557ca8c77f91638c67f2c2176dfec050a00fafc2ec35e9f680cb4",
+      "logicalCanvas": [
+        844,
+        320
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "saturn",
+      "orientation": "portrait",
+      "imageSHA256": "5afb1dbe827f603958a1ccecacfb59166b5ef6a375b3d664139c85cd08c8604c",
+      "logicalCanvas": [
+        400,
+        276
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "saturn",
+      "orientation": "landscape",
+      "imageSHA256": "07250af5d74060a3308325df8be25800663ad39527ad0ee8a5ec54c0cd895fc0",
+      "logicalCanvas": [
+        844,
+        320
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "snes",
+      "orientation": "portrait",
+      "imageSHA256": "e9ad5b00726c28a68b7095dfb401ea7aefa2d068f42663064f7b5aeb2fe92084",
+      "logicalCanvas": [
+        400,
+        276
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "snes",
+      "orientation": "landscape",
+      "imageSHA256": "18017e5c7b2963baac0c0563217a247ba52e23c6304ee1669462213cfc114108",
+      "logicalCanvas": [
+        844,
+        320
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "threeDS",
+      "orientation": "portrait",
+      "imageSHA256": "a9617ee93692cf1ca028a1e1c2dd224ab8e2087365615bfd74b0b3528891683e",
+      "logicalCanvas": [
+        400,
+        240
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "threeDS",
+      "orientation": "landscape",
+      "imageSHA256": "4ac7be1b355a413183a6860081dbe3a3c6bd604da5c5f8fe01df48c2efa49e7d",
+      "logicalCanvas": [
+        844,
+        320
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "wii",
+      "orientation": "portrait",
+      "imageSHA256": "c08492d0857ebbc8d76377a5321300d67e10bf612b268db6498d9f352e45faa3",
+      "logicalCanvas": [
+        400,
+        320
+      ]
+    },
+    {
+      "adjustments": {},
+      "console": "wii",
+      "orientation": "landscape",
+      "imageSHA256": "eb95c5fc44b1acd819562290243c0628fc8d376d1519229fc08079a0f899da34",
+      "logicalCanvas": [
+        844,
+        320
+      ]
+    }
+  ],
+  "scope": "User-supplied control art only; no reference photographs or executable ZIP scripts. DS portrait uses explicit layout version4 (400x188)."
+}

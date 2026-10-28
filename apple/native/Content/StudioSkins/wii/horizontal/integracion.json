@@ -1,0 +1,169 @@
+{
+  "status": "propuesta-no-instalada",
+  "format": "veta-skin-design-study",
+  "version": 1,
+  "console": "wii",
+  "orientation": "landscape",
+  "logicalCanvas": [
+    844,
+    320
+  ],
+  "fullCanvas": [
+    844,
+    390
+  ],
+  "deckRect": [
+    0,
+    35,
+    844,
+    320
+  ],
+  "screens": [
+    {
+      "id": "main",
+      "rectPoints": [
+        208.66666666666669,
+        35,
+        426.66666666666663,
+        320
+      ],
+      "touch": false
+    }
+  ],
+  "controls": [
+    {
+      "id": "+",
+      "label": "+",
+      "rect": [
+        470,
+        274,
+        48,
+        44
+      ]
+    },
+    {
+      "id": "1",
+      "label": "1",
+      "rect": [
+        704,
+        124,
+        56.00000000000001,
+        56
+      ]
+    },
+    {
+      "id": "2",
+      "label": "2",
+      "rect": [
+        768,
+        124,
+        56.00000000000001,
+        56
+      ]
+    },
+    {
+      "id": "A",
+      "label": "A",
+      "rect": [
+        704,
+        64,
+        56.00000000000001,
+        56
+      ]
+    },
+    {
+      "id": "B",
+      "label": "B",
+      "rect": [
+        768,
+        64,
+        56.00000000000001,
+        56
+      ]
+    },
+    {
+      "id": "C",
+      "label": "C",
+      "rect": [
+        12,
+        4,
+        100,
+        44
+      ]
+    },
+    {
+      "id": "HOME",
+      "label": "⌂",
+      "rect": [
+        386,
+        274,
+        72,
+        44
+      ]
+    },
+    {
+      "id": "SHAKE",
+      "label": "↝",
+      "rect": [
+        120,
+        4,
+        52,
+        44
+      ]
+    },
+    {
+      "id": "Z",
+      "label": "Z",
+      "rect": [
+        732,
+        4,
+        100,
+        44
+      ]
+    },
+    {
+      "id": "dpad",
+      "label": "dpad",
+      "rect": [
+        16,
+        60,
+        88,
+        88
+      ]
+    },
+    {
+      "id": "stick0",
+      "label": "stick0",
+      "rect": [
+        16,
+        220,
+        92,
+        92
+      ]
+    },
+    {
+      "id": "stick1",
+      "label": "stick1",
+      "rect": [
+        701,
+        232,
+        80,
+        80
+      ]
+    },
+    {
+      "id": "−",
+      "label": "−",
+      "rect": [
+        326,
+        274,
+        48,
+        44
+      ]
+    }
+  ],
+  "screenGeometryInferred": false,
+  "imageOpacity": 1,
+  "landscapeRuntimeOpacityFromSource": 0.62,
+  "notes": "La opacidad del runtime se aplica una sola vez. El SVG/PNG no cambia los motores ni implementa un importador. Validar mapping, pulsado, multitouch y áreas seguras."
+}

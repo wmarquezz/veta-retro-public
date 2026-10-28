@@ -402,7 +402,7 @@ private final class RemoteControllerViewController: UIViewController {
         let safe = view.safeAreaLayoutGuide.layoutFrame
         let landscape = safe.width > safe.height
         deck.applySkin(console: console, landscape: landscape)
-        let layout = ConsoleLayout(safe: safe, aspect: console.aspect, minimumDeck: console.minimumDeck, overlayLandscape: deck.usesLandscapeOverlay)
+        let layout = ConsoleLayout(safe: safe, aspect: console.aspect, minimumDeck: console.minimumDeck, overlayLandscape: deck.usesLandscapeOverlay, compactDS: deck.customLayout?.usesCompactDSCanvas == true)
         deck.frame = layout.deck
         shell.frame = view.bounds; shell.style = deck.style; shell.screenRect = layout.screen
         shell.portraitSkinTop = landscape ? nil : layout.toolbar.minY; shell.setNeedsDisplay()

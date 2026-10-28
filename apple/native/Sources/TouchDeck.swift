@@ -99,6 +99,11 @@ final class TouchDeck: UIView {
         self.landscape=landscape;style=value
         var nextLayout=store.layout(console:console,orientation:orientation)
         var nextArtwork:UIImage?
+        if value.skin == ControllerSkinPalette.studio.rawValue,
+           let variant=StudioSkins.variant(console:console,orientation:orientation),
+           let image=StudioSkins.image(console:console,orientation:orientation) {
+            nextLayout=variant.layout;nextArtwork=image
+        }
         if let personal=personalLibrary ?? (defaults === UserDefaults.standard ? PersonalSkinLibrary.shared:nil) {
             if let id=personal.selectedID(console:console,orientation:orientation),
                let variant=personal.selected(console:console,orientation:orientation),
@@ -478,6 +483,8 @@ final class TouchDeck: UIView {
     override func draw(_ rect:CGRect) {
         guard let ctx=UIGraphicsGetCurrentContext(),let pad=zones["dpad"] else{return}
         if let artwork=customArtwork,let layout=customLayout,layoutIssue == nil {
+            ctx.saveGState();ctx.setAlpha(style.opacity * (usesLandscapeOverlay ? 0.62:1))
+            defer {ctx.restoreGState()}
             PersonalSkinGeometry.draw(artwork,layout:layout,size:bounds.size)
             for (name,zone) in zones {
                 let mask=style.console.buttonMask(name)
@@ -650,7 +657,7 @@ final class GameViewController: UIViewController {
         // Legacy saved layouts retain their canvas; new 3DS edits and the
         // automatic skin both keep the compact 240-point controller.
         let compact3DS=session.game.console == .threeDS && (deck.customLayout == nil || deck.customLayout?.usesCompactThreeDSCanvas == true)
-        let layout=ConsoleLayout(safe:safe,aspect:aspect,minimumDeck:session.game.console.minimumDeck,compactDualScreen:compact3DS,overlayLandscape:deck.usesLandscapeOverlay)
+        let layout=ConsoleLayout(safe:safe,aspect:aspect,minimumDeck:session.game.console.minimumDeck,compactDualScreen:compact3DS,overlayLandscape:deck.usesLandscapeOverlay,compactDS:deck.customLayout?.usesCompactDSCanvas == true)
         deck.frame=layout.deck
         shell.frame=view.bounds;shell.style=deck.style;shell.screenRect=layout.screen;shell.portraitSkinTop=landscape ? nil:layout.toolbar.minY;shell.setNeedsDisplay()
         bar.frame=CGRect(x:layout.toolbar.minX+20,y:layout.toolbar.minY,width:185,height:44)

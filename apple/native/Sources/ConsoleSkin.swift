@@ -1,13 +1,13 @@
 import UIKit
 
 // One layout keeps the native Metal image and touch regions separate, including
-// iPad and compact landscape. No web view or raster controller assets are used.
+// iPad and compact landscape. Artwork and hit targets share the controller frame.
 struct ConsoleLayout {
     let body:CGRect
     let screen:CGRect
     let deck:CGRect
     let toolbar:CGRect
-    init(safe:CGRect,aspect:CGFloat = 4/3,minimumDeck:CGFloat = 210,compactDualScreen:Bool = false,overlayLandscape:Bool = false) {
+    init(safe:CGRect,aspect:CGFloat = 4/3,minimumDeck:CGFloat = 210,compactDualScreen:Bool = false,overlayLandscape:Bool = false,compactDS:Bool = false) {
         if safe.width > safe.height {
             body=safe
             if overlayLandscape {
@@ -22,11 +22,13 @@ struct ConsoleLayout {
             screen=CGRect(x:safe.midX-height*aspect/2,y:safe.minY+48+(safe.height-56-height)/2,width:height*aspect,height:height)
             deck=CGRect(x:safe.minX,y:safe.minY+48,width:safe.width,height:safe.height-48)
         } else {
-            let minimum=compactDualScreen ? CGFloat(240):minimumDeck
+            let compactHeight:CGFloat = compactDS ? 188:240
+            let compact=compactDualScreen || compactDS
+            let minimum=compact ? compactHeight:minimumDeck
             let width=min(800,safe.width),imageWidth=min(safe.width,max(1,safe.height-minimum-44)*aspect),height=imageWidth/aspect
             // A black display above one compact, bottom-anchored controller.
             // The toolbar belongs to the controller, not above the game.
-            let deckHeight=compactDualScreen ? min(240,max(1,safe.height-height-44)):min(320,max(minimumDeck,width*0.69),safe.height-height-44)
+            let deckHeight=compact ? min(compactHeight,max(1,safe.height-height-44)):min(320,max(minimumDeck,width*0.69),safe.height-height-44)
             deck=CGRect(x:safe.midX-width/2,y:safe.maxY-deckHeight,width:width,height:deckHeight)
             toolbar=CGRect(x:deck.minX,y:deck.minY-44,width:width,height:44)
             body=CGRect(x:deck.minX,y:toolbar.minY,width:width,height:deckHeight+44)

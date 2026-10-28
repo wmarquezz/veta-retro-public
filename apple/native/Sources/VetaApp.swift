@@ -524,7 +524,7 @@ struct GameContainer:View {
     @StateObject private var session:Emulation
     @AppStorage("native.skin") private var skin="VETA"
     @State private var revision=0
-    init(game:Game,library:Library,plan:GameLaunchPlan? = nil) {_session=StateObject(wrappedValue:Emulation(game:game,library:library,plan:plan));_skin=AppStorage(wrappedValue:game.console == .nes ? "VETA":"Clásica",game.console.preferencePrefix+"skin")}
+    init(game:Game,library:Library,plan:GameLaunchPlan? = nil) {_session=StateObject(wrappedValue:Emulation(game:game,library:library,plan:plan));_skin=AppStorage(wrappedValue:"Estudio",game.console.preferencePrefix+"skin")}
     var body:some View {
         GameSurface(session:session,skin:skin,revision:revision).tint(VetaTheme.mint).ignoresSafeArea().statusBarHidden(true).id("game")
             .overlay(alignment:.topTrailing) {if session.fastForward {Button("2× · Volver a 1×"){session.setFastForward(false)}.buttonStyle(VetaButton(primary:true)).padding(.top,60).padding(.trailing,20).accessibilityIdentifier("gameplay-normal-speed")}}
@@ -542,7 +542,7 @@ struct GameContainer:View {
 struct PauseView:View {
     @ObservedObject var session:Emulation
     let leave:()->Void
-    init(session:Emulation,leave:@escaping ()->Void) {self.session=session;self.leave=leave;_skin=AppStorage(wrappedValue:session.game.console == .nes ? "VETA":"Clásica",session.game.console.preferencePrefix+"skin")}
+    init(session:Emulation,leave:@escaping ()->Void) {self.session=session;self.leave=leave;_skin=AppStorage(wrappedValue:"Estudio",session.game.console.preferencePrefix+"skin")}
     @State private var confirm=""
     @State private var showConfirmation=false
     @State private var showControls=false
@@ -672,12 +672,14 @@ private final class SkinPreviewView:UIView {
     required init?(coder:NSCoder) {fatalError()}
     func apply(_ skin:String,console:GameConsole) {
         var style=ControlStyle(console:console,defaults:nil);style.skin=skin;style.size=1;style.height=0;style.spacing=1;style.opacity=1
+        deck.customLayout=skin == "Estudio" ? StudioSkins.variant(console:console,orientation:.portrait)?.layout:nil
+        deck.customArtwork=skin == "Estudio" ? StudioSkins.image(console:console,orientation:.portrait):nil
         deck.style=style;catalog.style=style;let hasControls=console.playable || console.isStandaloneEngine;deck.isHidden = !hasControls;catalog.isHidden=hasControls;backgroundColor=style.background
     }
     override func layoutSubviews() {
-        super.layoutSubviews();catalog.frame=bounds;deck.bounds=CGRect(x:0,y:0,width:400,height:276)
+        super.layoutSubviews();catalog.frame=bounds;let canvas=deck.customLayout?.canvas ?? CGSize(width:400,height:276);deck.bounds=CGRect(origin:.zero,size:canvas)
         deck.center=CGPoint(x:bounds.midX,y:bounds.midY)
-        let scale=min(bounds.width/400,bounds.height/276)
+        let scale=min(bounds.width/canvas.width,bounds.height/canvas.height)
         deck.transform=CGAffineTransform(scaleX:scale,y:scale)
     }
 }
@@ -691,12 +693,12 @@ private struct SkinGallery:View {
                 Text("Elige tu mando").font(VetaTheme.heading(32))
                 Text("Una carcasa distinta para cada forma de jugar.").foregroundStyle(VetaTheme.muted)
                 LazyVGrid(columns:[GridItem(.flexible()),GridItem(.flexible())],spacing:16) {
-                    ForEach(["Clásica","VETA","Noche","Transparente"],id:\.self) {name in
+                    ForEach(ControllerSkinPalette.allCases.map(\.rawValue),id:\.self) {name in
                         Button {skin=name;dismiss()} label:{
                             VStack(alignment:.leading,spacing:10) {
                                 SkinPreview(skin:name,console:console).aspectRatio(400/276,contentMode:.fit).accessibilityHidden(true)
                                 HStack {Text(LocalizedStringKey(name)).font(.subheadline.bold());Spacer();if skin == name {Image(systemName:"checkmark.circle.fill").foregroundStyle(VetaTheme.mint)}}
-                                Text(name == "Clásica" ? L10n.format("Carcasa de %@",console.shortName):L10n.text(name == "VETA" ? "Petróleo y menta":name == "Noche" ? "Oscura y contorneada":"Ligera y translúcida")).font(.caption).foregroundStyle(VetaTheme.muted)
+                                Text(name == "Estudio" ? L10n.format("Carcasa de %@",console.shortName):name == "Clásica" ? L10n.format("Carcasa de %@",console.shortName):L10n.text(name == "VETA" ? "Petróleo y menta":name == "Noche" ? "Oscura y contorneada":"Ligera y translúcida")).font(.caption).foregroundStyle(VetaTheme.muted)
                             }.padding(10).background(VetaTheme.panel,in:RoundedRectangle(cornerRadius:16))
                                 .overlay(RoundedRectangle(cornerRadius:16).stroke(skin == name ? VetaTheme.mint:VetaTheme.border,lineWidth:skin == name ? 2:1))
                         }.buttonStyle(.plain) .accessibilityLabel(Text(LocalizedStringKey(name))).accessibilityIdentifier("skin-option-"+name)
@@ -710,6 +712,6 @@ private struct SkinGallery:View {
 private struct ConsoleSkinPicker:View {
     let console:GameConsole
     @AppStorage private var skin:String
-    init(console:GameConsole) {self.console=console;_skin=AppStorage(wrappedValue:console == .nes ? "VETA":"Clásica",console.preferencePrefix+"skin")}
+    init(console:GameConsole) {self.console=console;_skin=AppStorage(wrappedValue:"Estudio",console.preferencePrefix+"skin")}
     var body:some View {NavigationStack {ControllerSkinSettingsView(console:console)}}
 }

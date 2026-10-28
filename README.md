@@ -1,9 +1,9 @@
 # VETA Retro — fuentes de la edición pública
 
-Fuentes de la edición pública 0.179.0, preparadas el 28-10-2026. Contribuciones originales bajo
+Fuentes de la edición pública 0.180.0, preparadas el 28-10-2026. Contribuciones originales bajo
 GPL-3.0-or-later; se conservan las licencias individuales de terceros.
 Repositorio: https://github.com/wmarquezz/veta-retro-public
-Paquete completo: https://github.com/wmarquezz/veta-retro-public/releases/tag/v0.179.0
+Paquete completo: https://github.com/wmarquezz/veta-retro-public/releases/tag/v0.180.0
 No es una aprobación de App Store.
 
 ## Contenido y alcance
@@ -45,10 +45,8 @@ forman parte del proyecto exportado.
 ## Descarga de las fuentes completas
 
 Este repositorio permite revisar el frontend y las recetas. Para reconstruir,
-descarga y descomprime **VETA-Retro-public-sources-179-c.tar.gz** desde la entrega
-v0.179.0 enlazada arriba. Ese archivo incluye también los árboles de terceros,
-los recursos, las dependencias vendorizadas y SOURCE-MANIFEST.json. Los archivos
-de motores y recursos pesados se distribuyen allí, no como submódulos incompletos.
+descarga **VETA-Retro-public-sources-180.tar.gz** desde la entrega v0.180.0.
+El archivo incluye motores, dependencias, recursos y SOURCE-MANIFEST.json.
 
 ## Reconstrucción
 

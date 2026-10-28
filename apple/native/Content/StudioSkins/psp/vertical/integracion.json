@@ -1,0 +1,139 @@
+{
+  "status": "propuesta-no-instalada",
+  "format": "veta-skin-design-study",
+  "version": 1,
+  "console": "psp",
+  "orientation": "portrait",
+  "logicalCanvas": [
+    400,
+    320
+  ],
+  "fullCanvas": [
+    400,
+    866
+  ],
+  "deckRect": [
+    0,
+    512,
+    400,
+    320
+  ],
+  "screens": [
+    {
+      "id": "main",
+      "rectPoints": [
+        0,
+        142.66666666666666,
+        400,
+        226.66666666666669
+      ],
+      "touch": false
+    }
+  ],
+  "controls": [
+    {
+      "id": "A",
+      "label": "○",
+      "rect": [
+        338,
+        101,
+        44,
+        44
+      ]
+    },
+    {
+      "id": "B",
+      "label": "×",
+      "rect": [
+        292,
+        147,
+        44,
+        44
+      ]
+    },
+    {
+      "id": "L",
+      "label": "L",
+      "rect": [
+        24,
+        6,
+        72,
+        44
+      ]
+    },
+    {
+      "id": "R",
+      "label": "R",
+      "rect": [
+        304,
+        6,
+        72,
+        44
+      ]
+    },
+    {
+      "id": "SELECT",
+      "label": "SELECT",
+      "rect": [
+        24,
+        274,
+        60,
+        44
+      ]
+    },
+    {
+      "id": "START",
+      "label": "START",
+      "rect": [
+        316,
+        274,
+        60,
+        44
+      ]
+    },
+    {
+      "id": "X",
+      "label": "△",
+      "rect": [
+        292,
+        55,
+        44,
+        44
+      ]
+    },
+    {
+      "id": "Y",
+      "label": "□",
+      "rect": [
+        246,
+        101,
+        44,
+        44
+      ]
+    },
+    {
+      "id": "dpad",
+      "label": "dpad",
+      "rect": [
+        39.3,
+        54,
+        77.4,
+        77.4
+      ]
+    },
+    {
+      "id": "stick0",
+      "label": "stick0",
+      "rect": [
+        37.5,
+        189,
+        81,
+        81
+      ]
+    }
+  ],
+  "screenGeometryInferred": false,
+  "imageOpacity": 1,
+  "landscapeRuntimeOpacityFromSource": 1,
+  "notes": "La opacidad del runtime se aplica una sola vez. El SVG/PNG no cambia los motores ni implementa un importador. Validar mapping, pulsado, multitouch y áreas seguras."
+}

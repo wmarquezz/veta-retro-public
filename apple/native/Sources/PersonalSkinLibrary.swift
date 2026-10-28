@@ -2,6 +2,25 @@ import Foundation
 import UIKit
 import Combine
 
+/// Reviewed built-in artwork. Personal selections and their files remain separate.
+@MainActor enum StudioSkins {
+    private static var cache:[GameConsole:PersonalSkin]=[:]
+    private static let images:NSCache<NSString,UIImage> = {let value=NSCache<NSString,UIImage>();value.totalCostLimit=48*1024*1024;value.countLimit=8;return value}()
+    static func skin(console:GameConsole)->PersonalSkin? {
+        if let skin=cache[console] {return skin}
+        guard let url=Bundle.main.url(forResource:"studio-"+console.rawValue,withExtension:"vetaskin"),
+              let data=try? Data(contentsOf:url),let skin=try? PersonalSkin.decode(data,console:console) else{return nil}
+        cache[console]=skin;return skin
+    }
+    static func variant(console:GameConsole,orientation:ControllerSkinOrientation)->PersonalSkinVariant? {skin(console:console)?.variant(orientation)}
+    static func image(console:GameConsole,orientation:ControllerSkinOrientation)->UIImage? {
+        let key=(console.rawValue+"/"+orientation.rawValue) as NSString
+        if let image=images.object(forKey:key) {return image}
+        guard let variant=variant(console:console,orientation:orientation),let image=try? PersonalSkinImage.decoded(variant.imagePNG) else{return nil}
+        images.setObject(image,forKey:key,cost:image.cgImage.map{$0.bytesPerRow*$0.height} ?? variant.imagePNG.count);return image
+    }
+}
+
 /// Local installation-owned collection. Imported records get a new identity;
 /// a peer's appearance message cannot replace this selection or these files.
 @MainActor final class PersonalSkinLibrary:ObservableObject {
@@ -73,6 +92,7 @@ import Combine
         cache.removeValue(forKey:skin.id);images.removeAllObjects();revision+=1
     }
     static func generated(console:GameConsole,orientation:ControllerSkinOrientation,palette:ControllerSkinPalette)throws->PersonalSkinVariant {
+        if palette == .studio,let variant=StudioSkins.variant(console:console,orientation:orientation) {return variant}
         let layout=ControllerSkinLayout.makeDefault(console:console,orientation:orientation,palette:palette)
         let deck=TouchDeck(frame:CGRect(origin:.zero,size:layout.canvas));var style=ControlStyle(console:console,defaults:nil);style.skin=palette.rawValue
         deck.style=style;deck.landscape=orientation == .landscape;deck.customLayout=layout;deck.layoutIfNeeded()

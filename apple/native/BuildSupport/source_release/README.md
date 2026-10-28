@@ -1,9 +1,9 @@
 # VETA Retro — fuentes de la edición pública
 
-Fuentes de la edición pública 0.179.0, preparadas el 28-10-2026. Contribuciones originales bajo
+Fuentes de la edición pública 0.180.0, preparadas el 28-10-2026. Contribuciones originales bajo
 GPL-3.0-or-later; se conservan las licencias individuales de terceros.
 Repositorio: https://github.com/wmarquezz/veta-retro-public
-Paquete completo: https://github.com/wmarquezz/veta-retro-public/releases/tag/v0.179.0
+Paquete completo: https://github.com/wmarquezz/veta-retro-public/releases/tag/v0.180.0
 No es una aprobación de App Store.
 
 ## Contenido y alcance

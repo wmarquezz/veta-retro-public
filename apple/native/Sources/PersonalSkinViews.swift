@@ -30,7 +30,7 @@ struct PersonalSkinDocument:FileDocument {
             Section {
                 Picker("Orientación",selection:$orientation) {ForEach(ControllerSkinOrientation.allCases,id:\.self){Text(LocalizedStringKey($0.title)).tag($0)}}.pickerStyle(.segmented)
                 Button("Crear desde plantilla") {perform {
-                    let palette:ControllerSkinPalette=console == .nes ? .veta:.classic
+                    let palette:ControllerSkinPalette = .studio
                     editing=PersonalSkin(name:L10n.text("Mi skin"),console:console.rawValue,variants:try ControllerSkinOrientation.allCases.map{try PersonalSkinLibrary.generated(console:console,orientation:$0,palette:palette)})
                 }}.accessibilityIdentifier("personal-skin-create")
                 Button("Importar skin compartido") {importing=true}
@@ -108,9 +108,9 @@ struct PersonalSkinHelpView:View {
     @State private var document=PersonalSkinDocument(data:Data())
     @State private var testing=false
     @State private var replaceTemplate=false
-    init(console:GameConsole,skin:PersonalSkin) {
+    init(console:GameConsole,skin:PersonalSkin,initialOrientation:ControllerSkinOrientation = .portrait) {
         self.console=console;_draft=State(initialValue:skin);_savedDraft=State(initialValue:skin)
-        let first=skin.variant(.portrait) ?? skin.variants[0]
+        let first=skin.variant(initialOrientation) ?? skin.variants[0]
         _orientation=State(initialValue:first.layout.orientation);_palette=State(initialValue:first.layout.palette)
         _artwork=State(initialValue:try? PersonalSkinImage.decoded(first.imagePNG))
     }

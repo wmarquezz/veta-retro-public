@@ -1,0 +1,157 @@
+{
+  "status": "propuesta-no-instalada",
+  "format": "veta-skin-design-study",
+  "version": 1,
+  "console": "threeDS",
+  "orientation": "portrait",
+  "logicalCanvas": [
+    400,
+    240
+  ],
+  "fullCanvas": [
+    400,
+    866
+  ],
+  "deckRect": [
+    0,
+    592,
+    400,
+    240
+  ],
+  "screens": [
+    {
+      "id": "top",
+      "rectPoints": [
+        0,
+        56,
+        400,
+        240
+      ],
+      "native": [
+        400,
+        240
+      ],
+      "touch": false
+    },
+    {
+      "id": "bottom",
+      "rectPoints": [
+        40,
+        296,
+        320,
+        240
+      ],
+      "native": [
+        320,
+        240
+      ],
+      "touch": true
+    }
+  ],
+  "controls": [
+    {
+      "id": "A",
+      "label": "A",
+      "rect": [
+        332,
+        111,
+        57.99999999999999,
+        57.99999999999999
+      ]
+    },
+    {
+      "id": "B",
+      "label": "B",
+      "rect": [
+        272,
+        171,
+        57.99999999999999,
+        57.99999999999999
+      ]
+    },
+    {
+      "id": "L",
+      "label": "L",
+      "rect": [
+        20,
+        2,
+        112.00000000000001,
+        44
+      ]
+    },
+    {
+      "id": "R",
+      "label": "R",
+      "rect": [
+        268,
+        2,
+        112.00000000000001,
+        44
+      ]
+    },
+    {
+      "id": "SELECT",
+      "label": "SELECT",
+      "rect": [
+        132,
+        144,
+        56.00000000000001,
+        44
+      ]
+    },
+    {
+      "id": "START",
+      "label": "START",
+      "rect": [
+        132,
+        192,
+        56.00000000000001,
+        44
+      ]
+    },
+    {
+      "id": "X",
+      "label": "X",
+      "rect": [
+        272,
+        51,
+        57.99999999999999,
+        57.99999999999999
+      ]
+    },
+    {
+      "id": "Y",
+      "label": "Y",
+      "rect": [
+        212,
+        111,
+        57.99999999999999,
+        57.99999999999999
+      ]
+    },
+    {
+      "id": "dpad",
+      "label": "dpad",
+      "rect": [
+        30,
+        148,
+        84,
+        84
+      ]
+    },
+    {
+      "id": "stick0",
+      "label": "stick0",
+      "rect": [
+        26,
+        48,
+        92,
+        92
+      ]
+    }
+  ],
+  "screenGeometryInferred": true,
+  "imageOpacity": 1,
+  "landscapeRuntimeOpacityFromSource": 1,
+  "notes": "La opacidad del runtime se aplica una sola vez. El SVG/PNG no cambia los motores ni implementa un importador. Validar mapping, pulsado, multitouch y áreas seguras."
+}

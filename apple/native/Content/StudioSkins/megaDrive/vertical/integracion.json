@@ -1,0 +1,129 @@
+{
+  "status": "propuesta-no-instalada",
+  "format": "veta-skin-design-study",
+  "version": 1,
+  "console": "megaDrive",
+  "orientation": "portrait",
+  "logicalCanvas": [
+    400,
+    276
+  ],
+  "fullCanvas": [
+    400,
+    866
+  ],
+  "deckRect": [
+    0,
+    556,
+    400,
+    276
+  ],
+  "screens": [
+    {
+      "id": "main",
+      "rectPoints": [
+        0,
+        128,
+        400,
+        300
+      ],
+      "touch": false
+    }
+  ],
+  "controls": [
+    {
+      "id": "A",
+      "label": "A",
+      "rect": [
+        238,
+        165.92000000000002,
+        44,
+        43.99999999999999
+      ]
+    },
+    {
+      "id": "B",
+      "label": "B",
+      "rect": [
+        286,
+        165.92000000000002,
+        44,
+        43.99999999999999
+      ]
+    },
+    {
+      "id": "C",
+      "label": "C",
+      "rect": [
+        334,
+        165.92000000000002,
+        44,
+        43.99999999999999
+      ]
+    },
+    {
+      "id": "SELECT",
+      "label": "MODE",
+      "rect": [
+        124,
+        230,
+        60,
+        43.99999999999999
+      ]
+    },
+    {
+      "id": "START",
+      "label": "START",
+      "rect": [
+        192,
+        230,
+        60,
+        43.99999999999999
+      ]
+    },
+    {
+      "id": "X",
+      "label": "X",
+      "rect": [
+        238,
+        115.92,
+        44,
+        43.99999999999999
+      ]
+    },
+    {
+      "id": "Y",
+      "label": "Y",
+      "rect": [
+        286,
+        115.92,
+        44,
+        43.99999999999999
+      ]
+    },
+    {
+      "id": "Z",
+      "label": "Z",
+      "rect": [
+        334,
+        115.92,
+        44,
+        43.99999999999999
+      ]
+    },
+    {
+      "id": "dpad",
+      "label": "dpad",
+      "rect": [
+        28.000000000000004,
+        51.92,
+        128,
+        128
+      ]
+    }
+  ],
+  "screenGeometryInferred": false,
+  "imageOpacity": 1,
+  "landscapeRuntimeOpacityFromSource": 1,
+  "notes": "La opacidad del runtime se aplica una sola vez. El SVG/PNG no cambia los motores ni implementa un importador. Validar mapping, pulsado, multitouch y áreas seguras."
+}

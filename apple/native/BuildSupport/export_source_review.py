@@ -28,7 +28,7 @@ def payloads():
     result = {}
     for name in entries:
         rel = Path(name)
-        if rel.is_absolute() or '..' in rel.parts or not (name.startswith('apple/native/') or name == 'docs/EDICION-PUBLICA-179.md'):
+        if rel.is_absolute() or '..' in rel.parts or not (name.startswith('apple/native/') or name in {'docs/EDICION-PUBLICA-179.md', 'docs/SKINS-ESTUDIO-180.md'}):
             raise ValueError('Unsafe source path')
         source = ROOT / rel
         if any(p.is_symlink() for p in [source, *source.parents]) or not source.is_file():

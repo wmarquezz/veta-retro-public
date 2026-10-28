@@ -40,7 +40,7 @@ final class NativeGameViewController:UIViewController {
         super.viewDidLayoutSubviews()
         let safe=view.safeAreaLayoutGuide.layoutFrame
         deck.applySkin(console:session.game.console,landscape:safe.width>safe.height)
-        let layout=ConsoleLayout(safe:safe,aspect:session.game.console.aspect,minimumDeck:session.game.console.minimumDeck,overlayLandscape:deck.usesLandscapeOverlay)
+        let layout=ConsoleLayout(safe:safe,aspect:session.game.console.aspect,minimumDeck:session.game.console.minimumDeck,overlayLandscape:deck.usesLandscapeOverlay,compactDS:deck.customLayout?.usesCompactDSCanvas == true)
         deck.frame=layout.deck;localPicture.frame=layout.screen
         shell.frame=view.bounds;shell.style=deck.style;shell.screenRect=layout.screen;shell.portraitSkinTop=deck.landscape ? nil:layout.toolbar.minY;shell.setNeedsDisplay()
         label.frame=CGRect(x:layout.toolbar.minX+20,y:layout.toolbar.minY,width:210,height:44)

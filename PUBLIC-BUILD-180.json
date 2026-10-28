@@ -1,0 +1,30 @@
+{
+  "version": "0.180.0",
+  "build": "180",
+  "configuration": "Release public target; development signing for USB",
+  "bundleIdentifier": "com.krafify.vetaretro",
+  "mainExecutableSHA256": "c4e00c98440eabc8c448d353c55a6d9e40feaf5000496fb83953d046088f3af1",
+  "unchangedEngineSectionsComparedWith179": [
+    "BSNESCore",
+    "DSCore",
+    "DolphinCore",
+    "DreamcastCore",
+    "DreamcastInterpreterCore",
+    "JGenesisCore",
+    "MelonDSCore",
+    "MoltenVK",
+    "N64NextCore",
+    "PCECore",
+    "PSPCore",
+    "PlayStationCore",
+    "SaturnCore",
+    "TIACore",
+    "ThreeDSCore"
+  ],
+  "bundledSkins": 19,
+  "skinVariants": 38,
+  "PS2Included": false,
+  "JITVPNHelpersIncluded": false,
+  "appleApprovalClaimed": false,
+  "bytes": 185788321
+}

@@ -1,0 +1,101 @@
+{
+  "status": "propuesta-no-instalada",
+  "format": "veta-skin-design-study",
+  "version": 1,
+  "console": "nes",
+  "orientation": "landscape",
+  "logicalCanvas": [
+    844,
+    320
+  ],
+  "fullCanvas": [
+    844,
+    390
+  ],
+  "deckRect": [
+    0,
+    35,
+    844,
+    320
+  ],
+  "screens": [
+    {
+      "id": "main",
+      "rectPoints": [
+        208.66666666666669,
+        35,
+        426.66666666666663,
+        320
+      ],
+      "touch": false
+    }
+  ],
+  "controls": [
+    {
+      "id": "A",
+      "label": "A",
+      "rect": [
+        758,
+        162,
+        72,
+        72
+      ]
+    },
+    {
+      "id": "A+B",
+      "label": "A+B",
+      "rect": [
+        764,
+        267,
+        66,
+        44
+      ]
+    },
+    {
+      "id": "B",
+      "label": "B",
+      "rect": [
+        668,
+        162,
+        72,
+        72
+      ]
+    },
+    {
+      "id": "SELECT",
+      "label": "SELECT",
+      "rect": [
+        22,
+        266,
+        76,
+        44
+      ]
+    },
+    {
+      "id": "START",
+      "label": "START",
+      "rect": [
+        110,
+        266,
+        76,
+        44
+      ]
+    },
+    {
+      "id": "dpad",
+      "label": "dpad",
+      "rect": [
+        32,
+        100,
+        136,
+        136
+      ]
+    }
+  ],
+  "screenGeometryInferred": false,
+  "imageOpacity": 1,
+  "landscapeRuntimeOpacityFromSource": 0.62,
+  "notes": "La opacidad del runtime se aplica una sola vez. El SVG/PNG no cambia los motores ni implementa un importador. Validar mapping, pulsado, multitouch y áreas seguras.",
+  "designRevision": 2,
+  "referenceImage": "../../../referencias/nes-control-usuario.png"
+}

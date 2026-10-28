@@ -21,6 +21,9 @@ struct PersonalSkinDocument:FileDocument {
     @State private var confirmingDelete=false
     @State private var importing=false
     @State private var error:String?
+    init(console:GameConsole,initialOrientation:ControllerSkinOrientation = .portrait) {
+        self.console=console;_orientation=State(initialValue:initialOrientation)
+    }
     var body:some View {
         Form {
             Section {
@@ -40,17 +43,29 @@ struct PersonalSkinDocument:FileDocument {
             Section("Mis skins personalizados") {
                 if skins.isEmpty {Text("Aún no tienes skins propios para esta consola.").foregroundStyle(.secondary)}
                 ForEach(skins) {skin in
-                    HStack(alignment:.top,spacing:12) {
-                        Button {editing=skin} label:{
-                            VStack(alignment:.leading,spacing:8) {
+                    VStack(alignment:.leading,spacing:8) {
+                        Button {perform {try library.select(skin,orientation:orientation)}} label:{
+                            HStack(spacing:12) {
                                 if let image=try? library.image(id:skin.id,orientation:orientation) {
-                                    Image(uiImage:image).resizable().scaledToFit().frame(maxHeight:130).background(Color.black.opacity(0.9)).clipShape(RoundedRectangle(cornerRadius:8))
+                                    Image(uiImage:image).resizable().scaledToFit().frame(width:110,height:76).background(Color.black.opacity(0.9)).clipShape(RoundedRectangle(cornerRadius:8))
                                 }
                                 Text(skin.name).font(.headline).foregroundStyle(.primary)
-                                Text(LocalizedStringKey(library.selectedID(console:console,orientation:orientation)==skin.id ? "En uso":"Editar y aplicar")).font(.caption).foregroundStyle(.secondary)
-                            }.frame(maxWidth:.infinity,alignment:.leading)
-                        }.buttonStyle(.plain).accessibilityLabel(skin.name)
-                        Button {deleting=skin;confirmingDelete=true} label:{Image(systemName:"trash").frame(minWidth:44,minHeight:44)}.buttonStyle(.borderless).foregroundStyle(.red).accessibilityLabel(L10n.format("Eliminar %@",skin.name))
+                                Spacer()
+                                Image(systemName:library.selectedID(console:console,orientation:orientation)==skin.id ? "checkmark.circle.fill":"circle")
+                                    .font(.title2).foregroundStyle(library.selectedID(console:console,orientation:orientation)==skin.id ? Color.accentColor:Color.secondary)
+                            }.frame(maxWidth:.infinity,minHeight:76,alignment:.leading)
+                                .padding(8)
+                                .background(library.selectedID(console:console,orientation:orientation)==skin.id ? Color.accentColor.opacity(0.12):Color.clear,in:RoundedRectangle(cornerRadius:12))
+                                .contentShape(Rectangle())
+                        }.buttonStyle(.plain).disabled(skin.variant(orientation)==nil)
+                            .accessibilityIdentifier("personal-skin-select-"+skin.id)
+                            .accessibilityAddTraits(library.selectedID(console:console,orientation:orientation)==skin.id ? .isSelected:[])
+                            .accessibilityValue(L10n.text(library.selectedID(console:console,orientation:orientation)==skin.id ? "Seleccionado":"Disponible"))
+                        HStack {
+                            Button("Editar posiciones de los controles"){editing=skin}.buttonStyle(.borderless).frame(minHeight:44)
+                            Spacer()
+                            Button {deleting=skin;confirmingDelete=true} label:{Image(systemName:"trash").frame(minWidth:44,minHeight:44)}.buttonStyle(.borderless).foregroundStyle(.red).accessibilityLabel(L10n.format("Eliminar %@",skin.name))
+                        }
                     }
                 }
             }

@@ -178,7 +178,11 @@ struct ControllerSkinStore {
     let defaults:UserDefaults
     private func key(_ console:GameConsole,_ orientation:ControllerSkinOrientation)->String {console.preferencePrefix+"controllerLayout.v1."+orientation.rawValue}
     func palette(console:GameConsole,orientation:ControllerSkinOrientation)->ControllerSkinPalette {
-        ControllerSkinPalette(rawValue:defaults.string(forKey:console.preferencePrefix+"skin."+orientation.rawValue) ?? defaults.string(forKey:console.preferencePrefix+"skin") ?? "") ?? .studio
+        if let value=defaults.string(forKey:console.preferencePrefix+"skin."+orientation.rawValue),let palette=ControllerSkinPalette(rawValue:value) {return palette}
+        // A legacy common preference applies to portrait only. An explicit choice
+        // in either orientation always wins and is never reset on launch.
+        if orientation == .landscape {return .transparent}
+        return ControllerSkinPalette(rawValue:defaults.string(forKey:console.preferencePrefix+"skin") ?? "") ?? .studio
     }
     func layout(console:GameConsole,orientation:ControllerSkinOrientation)->ControllerSkinLayout? {
         guard let data=defaults.data(forKey:key(console,orientation)) else{return nil}
@@ -298,14 +302,19 @@ struct ControllerSkinSettingsView:View {
                             ConsoleSkinPreview(console:console,orientation:orientation,palette:choice).frame(width:110,height:76).clipShape(RoundedRectangle(cornerRadius:8)).accessibilityHidden(true)
                             Text(LocalizedStringKey(choice.rawValue)).foregroundStyle(.primary)
                             Spacer()
-                            if !personalActive && palette == choice {Image(systemName:"checkmark.circle.fill").foregroundStyle(.tint)}
-                        }.frame(minHeight:76)
+                            Image(systemName:!personalActive && palette == choice ? "checkmark.circle.fill":"circle")
+                                .font(.title2).foregroundStyle(!personalActive && palette == choice ? Color.accentColor:Color.secondary)
+                        }.frame(maxWidth:.infinity,minHeight:76,alignment:.leading)
+                            .padding(.vertical,4).padding(.horizontal,8)
+                            .background(!personalActive && palette == choice ? Color.accentColor.opacity(0.12):Color.clear,in:RoundedRectangle(cornerRadius:12))
+                            .contentShape(Rectangle())
                     }.buttonStyle(.plain).accessibilityIdentifier("included-skin-"+choice.rawValue)
+                        .accessibilityAddTraits(!personalActive && palette == choice ? .isSelected:[])
                         .accessibilityValue(!personalActive && palette == choice ? L10n.text("Seleccionado"):L10n.text("Disponible"))
                 }
             }
             Section {
-                NavigationLink("Mis skins personalizados") {PersonalSkinCollectionView(console:console)}
+                NavigationLink("Mis skins personalizados") {PersonalSkinCollectionView(console:console,initialOrientation:orientation)}
                     .accessibilityIdentifier("personal-skins")
                 Button("Editar posiciones de los controles"){
                     if let id=library.selectedID(console:console,orientation:orientation),personalActive,let skin=try? library.load(id) {editingStudio=skin}

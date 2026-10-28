@@ -9,9 +9,29 @@ import Foundation
   defer{defaults.removePersistentDomain(forName:suite)}
   check(GameConsole.allCases.count==19,"public console count")
   for console in GameConsole.allCases {
+   let store=ControllerSkinStore(defaults:defaults)
+   check(store.palette(console:console,orientation:.landscape) == .transparent,"transparent horizontal default \(console)")
+   check(store.palette(console:console,orientation:.portrait) == .studio,"portrait default retained \(console)")
+   defaults.set("Noche",forKey:console.preferencePrefix+"skin")
+   check(store.palette(console:console,orientation:.landscape) == .transparent,"legacy preference does not override horizontal \(console)")
+   check(store.palette(console:console,orientation:.portrait) == .night,"legacy portrait retained \(console)")
+   store.setPalette(.classic,console:console,orientation:.landscape)
+   check(store.palette(console:console,orientation:.landscape) == .classic,"explicit horizontal choice retained \(console)")
+   check(store.palette(console:console,orientation:.portrait) == .night,"horizontal does not change portrait \(console)")
+   defaults.removeObject(forKey:console.preferencePrefix+"skin.landscape")
+   defaults.removeObject(forKey:console.preferencePrefix+"skin")
+   for size in [CGSize(width:667,height:354),CGSize(width:734,height:359)] {
+    let deck=TouchDeck(frame:CGRect(origin:.zero,size:size));deck.applySkin(console:console,landscape:true,defaults:defaults);deck.layoutIfNeeded()
+    check(deck.style.skin=="Transparente" && deck.customArtwork==nil,"transparent default applied \(console)")
+    do {try ControllerSkinGeometry.validate(deck.zones,size:size,orientation:.landscape,overlay:true)}catch{failures.append("transparent layout \(console): \(error)")}
+   }
+  }
+
+  for console in GameConsole.allCases {
    guard let skin=StudioSkins.skin(console:console) else {failures.append("missing/invalid \(console)");continue}
    check(try PersonalSkin.decode(skin.encoded())==skin,"roundtrip \(console)")
    for orientation in ControllerSkinOrientation.allCases {
+    ControllerSkinStore(defaults:defaults).setPalette(.studio,console:console,orientation:orientation)
     let variant=skin.variant(orientation)!,art=StudioSkins.image(console:console,orientation:orientation)!,landscape=orientation == .landscape
     var sizes=[variant.layout.canvas]
     if landscape {sizes += [CGSize(width:667,height:354),CGSize(width:734,height:359),CGSize(width:746,height:356),CGSize(width:1000,height:700)]}
@@ -102,6 +122,7 @@ import Foundation
    };try data.write(to:root.appendingPathComponent("overview-\(o).png"))
   }
   // Existing choices stay selected; new art never overwrites a user's saved package.
+  defaults.removeObject(forKey:GameConsole.nes.preferencePrefix+"skin.portrait")
   defaults.set("Noche",forKey:GameConsole.nes.preferencePrefix+"skin")
   let deck=TouchDeck(frame:CGRect(x:0,y:0,width:400,height:276));deck.applySkin(console:.nes,landscape:false,defaults:defaults);deck.layoutIfNeeded()
   check(deck.customArtwork == nil && deck.style.skin=="Noche","legacy style preserved")

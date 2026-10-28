@@ -1,8 +1,8 @@
 {
-  "version": "0.183.0",
-  "archive": "VETA-Retro-public-sources-183.tar.gz",
-  "sha256": "242a22dbcfcff210eb064b879c7891f88c593f3551c5a93cdac18e4184d21b0a",
-  "bytes": 453569087,
-  "files": 103789,
-  "download": "https://github.com/wmarquezz/veta-retro-public/releases/download/v0.183.0/VETA-Retro-public-sources-183.tar.gz"
+  "version": "0.184.0",
+  "archive": "VETA-Retro-public-sources-184.tar.gz",
+  "sha256": "0fab32c6e9dfc9d079d34bc7eb1bea1685e842a8d1afcc6d6f4c2e66bc220a65",
+  "bytes": 453571933,
+  "files": 103790,
+  "download": "https://github.com/wmarquezz/veta-retro-public/releases/download/v0.184.0/VETA-Retro-public-sources-184.tar.gz"
 }

@@ -1,3 +1,9 @@
+## Selector de skins184
+
+Transparente horizontal por defecto. Filas completas seleccionables con marca visible,
+incluidos y personales; selecciones vertical/horizontal independientes.
+Ver docs/SELECTOR-SKINS-184.md. Fuentes completas en la release v0.184.0.
+
 ## Controles ampliados183
 
 Los19skins Estudio se actualizan en vertical y horizontal, con controles visibles

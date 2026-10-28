@@ -90,10 +90,10 @@ struct PersonalSkinHelpView:View {
         Form {
             step("1.circle","Crear desde plantilla","Ponle un nombre y elige Vertical u Horizontal. Cada consola puede tener un diseño distinto en cada orientación.")
             step("2.circle","Cargar imagen del control","Elige una imagen desde Archivos. Usa PNG con la proporción indicada; en horizontal, deja transparente el centro. Puedes exportar la plantilla para rediseñarla.")
-            step("3.circle","Ajustar zonas táctiles","Mueve y ajusta los recuadros sobre los botones de tu imagen: esas zonas reciben los toques.")
+            step("3.circle","Posición y tamaño","Mueve y agranda los controles: su dibujo y su zona táctil cambian juntos. Toca Guardar arriba para aplicarlo al juego.")
             step("4.circle","Probar controles","Gira el teléfono a la orientación elegida y prueba los botones sin abrir un juego.")
-            step("5.circle","Guardar y usar en esta orientación","Guardar conserva el diseño. Guardar y usar lo activa sólo en la orientación elegida; repite para la otra.")
-            step("6.circle","Compartir skin","Exporta el archivo .vetaskin. En el otro iPhone, elige la misma consola, toca Importar skin compartido y después guarda y aplica.")
+            step("5.circle","Guardar","Toca Guardar arriba: guarda y aplica el diseño en la orientación que estás editando. La otra orientación conserva su selección.")
+            step("6.circle","Compartir skin","Exporta el archivo .vetaskin. En el otro iPhone, elige la misma consola, toca Importar skin compartido y después toca Guardar.")
             Section("Usar diseño original") {
                 Text("Vuelve al control original sin borrar tu skin. La papelera elimina el diseño completo tras confirmarlo; tus partidas se conservan.")
             }
@@ -124,14 +124,16 @@ struct PersonalSkinHelpView:View {
     @State private var testing=false
     @State private var replaceTemplate=false
     init(console:GameConsole,skin:PersonalSkin,initialOrientation:ControllerSkinOrientation = .portrait) {
-        self.console=console;_draft=State(initialValue:skin);_savedDraft=State(initialValue:skin)
-        let first=skin.variant(initialOrientation) ?? skin.variants[0]
+        self.console=console
+        var editable=skin;editable.variants=skin.variants.map{(try? $0.editable()) ?? $0}
+        _draft=State(initialValue:editable);_savedDraft=State(initialValue:editable)
+        let first=editable.variant(initialOrientation) ?? editable.variants[0]
         _orientation=State(initialValue:first.layout.orientation);_palette=State(initialValue:first.layout.palette)
-        _artwork=State(initialValue:try? PersonalSkinImage.decoded(first.imagePNG))
+        _artwork=State(initialValue:try? first.renderedImage())
     }
     private var layout:ControllerSkinLayout {draft.variant(orientation)?.layout ?? .makeDefault(console:console,orientation:orientation,palette:palette)}
     private var layoutBinding:Binding<ControllerSkinLayout> {Binding(get:{layout},set:{value in
-        guard var v=draft.variant(orientation) else{return};v.layout=value;draft.set(v);error=nil
+        guard var v=draft.variant(orientation) else{return};v.layout=value;draft.set(v);refreshArtwork();error=nil
     })}
     var body:some View {
         ScrollView {
@@ -142,13 +144,13 @@ struct PersonalSkinHelpView:View {
                     .aspectRatio(layout.canvas.width/layout.canvas.height,contentMode:.fit)
                     .background(Color.black.opacity(0.9)).clipShape(RoundedRectangle(cornerRadius:12))
                     .accessibilityIdentifier("personal-skin-preview")
-                Text("Las zonas marcadas reciben los toques. Ajústalas para que coincidan con los botones de tu imagen.").font(.footnote)
+                Text("Mueve y cambia el tamaño de los controles. El dibujo y la zona táctil se ajustan juntos y se aplican al juego al guardar.").font(.footnote)
                 Text("Si las zonas no caben en la pantalla, VETA usa el diseño original.").font(.caption).foregroundStyle(.secondary)
                 if draft.variant(orientation) == nil {Text("Esta orientación usa el diseño original hasta que añadas una imagen o plantilla.").font(.footnote)}
                 GroupBox {
                     VStack(alignment:.leading,spacing:12) {
                         Button("Cargar imagen del control") {importingLayout=false;fileImport=true}.accessibilityIdentifier("personal-skin-image")
-                        Text("Usa el PNG del control, sin la pantalla del juego. En horizontal, deja transparente el centro.").font(.footnote).foregroundStyle(.secondary)
+                        Text("Usa el PNG de la plantilla, con los botones en las mismas posiciones y sin la pantalla del juego. En horizontal, deja transparente el centro. Los fondos planos o transparentes permiten mover los recortes con mejor resultado.").font(.footnote).foregroundStyle(.secondary)
                         Text(L10n.format("Proporción de la plantilla: %@ × %@",String(Int(layout.canvas.width)),String(Int(layout.canvas.height)))).font(.caption)
                         Picker("Estilo de la plantilla",selection:$palette) {ForEach(ControllerSkinPalette.allCases,id:\.self){Text(LocalizedStringKey($0.rawValue)).tag($0)}}
                         Button("Generar plantilla") {replaceTemplate=true}
@@ -160,7 +162,7 @@ struct PersonalSkinHelpView:View {
                     }.frame(maxWidth:.infinity,alignment:.leading)
                 }
                 if draft.variant(orientation) != nil {
-                    GroupBox("Ajustar zonas táctiles") {
+                    GroupBox("Posición y tamaño de los controles") {
                         VStack(alignment:.leading,spacing:12) {
                             Picker("Control",selection:Binding(get:{selected ?? layout.controls.first?.id ?? ""},set:{selected=$0})) {ForEach(layout.controls,id:\.id){Text($0.id).tag($0.id)}}
                             HStack {nudge("arrow.left",x:-4,y:0);nudge("arrow.up",x:0,y:-4);nudge("arrow.down",x:0,y:4);nudge("arrow.right",x:4,y:0)}
@@ -173,17 +175,17 @@ struct PersonalSkinHelpView:View {
                 }
                 if let error {Text(error).foregroundStyle(.red).accessibilityIdentifier("personal-skin-error")}
                 if let notice {Text(notice).foregroundStyle(.secondary).accessibilityIdentifier("personal-skin-success")}
-                Button("Guardar y usar en esta orientación") {perform {
-                    let library=PersonalSkinLibrary.shared;try library.save(draft);savedDraft=draft;try library.select(draft,orientation:orientation)
-                    notice=L10n.text("Skin guardado y aplicado en este iPhone.")
-                }}.buttonStyle(.borderedProminent).frame(minHeight:44).disabled(draft.variant(orientation)==nil).accessibilityIdentifier("personal-skin-apply")
                 Button("Compartir skin") {perform {document=PersonalSkinDocument(data:try draft.encoded());exporting=true}}
                 Text("La otra orientación conserva su selección. Tu colección también está disponible al usar este iPhone como mando.").font(.footnote).foregroundStyle(.secondary)
             }.padding()
         }.navigationTitle("Editar skin personal")
             .toolbar {
                 ToolbarItem(placement:.cancellationAction){Button("Cerrar"){if draft != savedDraft {discardChanges=true}else{dismiss()}}}
-                ToolbarItem(placement:.confirmationAction){Button("Guardar"){perform{try PersonalSkinLibrary.shared.save(draft);savedDraft=draft;notice=L10n.text("Skin guardado.")}}.accessibilityIdentifier("personal-skin-save")}
+                ToolbarItem(placement:.confirmationAction){Button("Guardar"){perform{
+                    let library=PersonalSkinLibrary.shared
+                    try library.save(draft);try library.select(draft,orientation:orientation)
+                    savedDraft=draft;dismiss()
+                }}.disabled(draft.variant(orientation)==nil).accessibilityIdentifier("personal-skin-save")}
             }
             .interactiveDismissDisabled(draft != savedDraft)
             .alert("¿Descartar los cambios sin guardar?",isPresented:$discardChanges) {
@@ -204,11 +206,11 @@ struct PersonalSkinHelpView:View {
                     let imported=try ControllerSkinLayout.read(url,console:console,orientation:orientation)
                     guard var v=draft.variant(orientation) else{throw PersonalSkinError.invalid}
                     try PersonalSkinImage.validateProportion(PersonalSkinImage.dimensions(v.imagePNG,pngOnly:true),canvas:imported.canvas)
-                    v.layout=imported;draft.set(v)
+                    v.layout=imported;draft.set(v);refreshArtwork()
                 } else {
                     let data=try PersonalSkinImage.read(url,limit:PersonalSkinImage.inputLimit)
                     let png=try PersonalSkinImage.normalized(data,canvas:layout.canvas)
-                    draft.set(PersonalSkinVariant(layout:layout,imagePNG:png));refreshArtwork()
+                    draft.set(try PersonalSkinVariant(layout:layout,imagePNG:png).editable());refreshArtwork()
                 }
             }}
             .fileExporter(isPresented:$exporting,document:document,contentType:.vetaSkin,defaultFilename:"VETA-\(console.rawValue)-skin") {result in if case .failure(let e)=result{error=e.localizedDescription}}
@@ -218,7 +220,7 @@ struct PersonalSkinHelpView:View {
     @State private var share:ShareItem?
     private var selectedID:String {selected ?? layout.controls.first?.id ?? ""}
     private var selectedRect:CGRect {layout.controls.first{$0.id==selectedID}?.rect(in:layout.canvas) ?? .zero}
-    private func refreshArtwork(){artwork=draft.variant(orientation).flatMap{try? PersonalSkinImage.decoded($0.imagePNG)}}
+    private func refreshArtwork(){artwork=draft.variant(orientation).flatMap{try? $0.renderedImage()}}
     private func perform(_ action:()throws->Void){do{try action();error=nil}catch{self.error=error.localizedDescription;notice=nil}}
     private func nudge(_ symbol:String,x:CGFloat,y:CGFloat)->some View {
         Button {perform{var v=layout;try v.move(selectedID,to:CGPoint(x:selectedRect.midX+x,y:selectedRect.midY+y));layoutBinding.wrappedValue=v}} label:{Image(systemName:symbol).frame(minWidth:44,minHeight:44)}.buttonStyle(.bordered).accessibilityLabel(LocalizedStringKey(["arrow.left":"Mover a la izquierda","arrow.up":"Mover arriba","arrow.down":"Mover abajo","arrow.right":"Mover a la derecha"][symbol]!))

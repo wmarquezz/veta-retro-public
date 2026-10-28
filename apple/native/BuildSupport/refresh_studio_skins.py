@@ -144,3 +144,6 @@ for console,variants in packages.items():
 manifest['scope']='Retained SVG control shapes and palettes, enlarged input and visible controls together. Landscape has transparent empty space and opaque controls; game viewport unchanged. Original sources and personal packages preserved.'
 (SOURCE/'MANIFEST.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
 print('Rebuilt',len(packages),'skins /',len(records),'orientations')
+
+# Editable layers must be refreshed whenever the source art is rebuilt.
+subprocess.run([__import__("sys").executable,str(ROOT/"BuildSupport/layer_studio_skins.py")],check=True)

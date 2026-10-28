@@ -1,3 +1,8 @@
+## Edición de skins185
+
+Guardar arriba guarda y aplica. Imagen y zonas táctiles se mueven y redimensionan juntas.
+Ver docs/EDICION-SKINS-185.md. Fuentes completas en la release v0.185.0.
+
 ## Selector de skins184
 
 Transparente horizontal por defecto. Filas completas seleccionables con marca visible,

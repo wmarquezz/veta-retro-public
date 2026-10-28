@@ -19,6 +19,16 @@ import Combine
         guard let variant=variant(console:console,orientation:orientation),let image=try? PersonalSkinImage.decoded(variant.imagePNG) else{return nil}
         images.setObject(image,forKey:key,cost:image.cgImage.map{$0.bytesPerRow*$0.height} ?? variant.imagePNG.count);return image
     }
+    static func image(console:GameConsole,orientation:ControllerSkinOrientation,layout:ControllerSkinLayout)->UIImage? {
+        guard var v=variant(console:console,orientation:orientation),layout.canvas==v.layout.canvas else{return nil}
+        if layout==v.layout{return image(console:console,orientation:orientation)}
+        let key=("edited/"+((try? layout.encoded().base64EncodedString()) ?? "")) as NSString
+        if let image=images.object(forKey:key){return image}
+        v.layout=layout
+        guard let image=try? v.renderedImage() else{return nil}
+        images.setObject(image,forKey:key,cost:image.cgImage.map{$0.bytesPerRow*$0.height} ?? 0);return image
+    }
+
 }
 
 /// Local installation-owned collection. Imported records get a new identity;
@@ -75,7 +85,7 @@ import Combine
         let key=id+"/"+orientation.rawValue
         if let image=images.object(forKey:key as NSString){return image}
         guard let v=try load(id).variant(orientation) else{return nil}
-        let image=try PersonalSkinImage.decoded(v.imagePNG)
+        let image=try v.editable().renderedImage()
         let cost=image.cgImage.map{$0.bytesPerRow*$0.height} ?? v.imagePNG.count
         images.setObject(image,forKey:key as NSString,cost:cost);return image
     }
@@ -102,6 +112,6 @@ import Combine
             if orientation == .portrait && palette != .transparent {style.background.setFill();context.fill(deck.bounds)}
             deck.draw(deck.bounds)
         }
-        let variant=PersonalSkinVariant(layout:layout,imagePNG:data);try variant.validated(console:console);return variant
+        let variant=PersonalSkinVariant(layout:layout,imagePNG:data,procedural:true);try variant.validated(console:console);return variant
     }
 }

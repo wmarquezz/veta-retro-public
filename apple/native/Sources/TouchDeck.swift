@@ -102,7 +102,8 @@ final class TouchDeck: UIView {
         if value.skin == ControllerSkinPalette.studio.rawValue,
            let variant=StudioSkins.variant(console:console,orientation:orientation),
            let image=StudioSkins.image(console:console,orientation:orientation) {
-            nextLayout=variant.layout;nextArtwork=image
+            if let edited=nextLayout,let updated=StudioSkins.image(console:console,orientation:orientation,layout:edited) {nextArtwork=updated}
+            else {nextLayout=variant.layout;nextArtwork=image}
         }
         if let personal=personalLibrary ?? (defaults === UserDefaults.standard ? PersonalSkinLibrary.shared:nil) {
             if let id=personal.selectedID(console:console,orientation:orientation),

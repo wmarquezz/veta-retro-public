@@ -355,6 +355,8 @@ struct ControllerSkinEditorView:View {
                 SkinEditorCanvas(layout:$draft,selected:$selected,error:$error).aspectRatio(draft.canvas.width/draft.canvas.height,contentMode:.fit).accessibilityIdentifier("skin-layout-preview")
                 Picker("Control",selection:Binding(get:{selected ?? draft.controls.first?.id ?? ""},set:{selected=$0})) {ForEach(draft.controls,id:\.id){Text(LocalizedStringKey($0.id)).tag($0.id)}}
                 HStack {nudge("arrow.left",x:-4,y:0);nudge("arrow.up",x:0,y:-4);nudge("arrow.down",x:0,y:4);nudge("arrow.right",x:4,y:0)}
+                HStack {Text("Ancho");Spacer();resizeButton("minus",width:-4,height:0);Text("\(Int(selectedRect.width))").monospacedDigit();resizeButton("plus",width:4,height:0)}
+                HStack {Text("Alto");Spacer();resizeButton("minus",width:0,height:-4);Text("\(Int(selectedRect.height))").monospacedDigit();resizeButton("plus",width:0,height:4)}
                 if let error {Text(error).foregroundStyle(.red).font(.footnote).accessibilityIdentifier("skin-layout-error")}
                 Text("Las áreas táctiles miden al menos 44 puntos en el lienzo de referencia. Si una ventana más pequeña no permite este diseño, VETA usa la distribución estándar.").font(.footnote)
                 HStack {Button("Importar diseño JSON"){importing=true};Spacer();Button("Exportar diseño JSON"){do {document=ControllerSkinDocument(data:try draft.encoded());exporting=true}catch{self.error=error.localizedDescription}}}
@@ -365,6 +367,16 @@ struct ControllerSkinEditorView:View {
         .confirmationDialog("¿Restablecer las posiciones de esta orientación?",isPresented:$resetConfirmation,titleVisibility:.visible){Button("Restablecer posiciones",role:.destructive){draft = .makeDefault(console:console,orientation:orientation,palette:draft.palette);error=nil}}
         .fileImporter(isPresented:$importing,allowedContentTypes:[.json]) {result in do {draft=try ControllerSkinLayout.read(result.get(),console:console,orientation:orientation);selected=nil;error=nil}catch{self.error=error.localizedDescription}}
         .fileExporter(isPresented:$exporting,document:document,contentType:.json,defaultFilename:"VETA-\(console.rawValue)-\(orientation.rawValue)"){result in if case .failure(let failure)=result {error=failure.localizedDescription}}
+    }
+    private var selectedID:String {selected ?? draft.controls.first?.id ?? ""}
+    private var selectedRect:CGRect {draft.controls.first{$0.id==selectedID}?.rect(in:draft.canvas) ?? .zero}
+    private func resizeButton(_ symbol:String,width:CGFloat,height:CGFloat)->some View {
+        Button {do {
+            var next=draft;guard let index=next.controls.firstIndex(where:{$0.id==selectedID}) else{return}
+            let r=selectedRect,w=max(44,r.width+width),h=max(44,r.height+height)
+            next.controls[index]=ControllerSkinControl(id:selectedID,rect:CGRect(x:max(0,min(next.canvas.width-w,r.midX-w/2)),y:max(0,min(next.canvas.height-h,r.midY-h/2)),width:w,height:h),canvas:next.canvas)
+            try next.validated(console:console,orientation:orientation);draft=next;error=nil
+        }catch{self.error=error.localizedDescription}} label:{Image(systemName:symbol).frame(minWidth:44,minHeight:44)}.buttonStyle(.bordered).accessibilityLabel(L10n.text(width != 0 ? (width>0 ? "Aumentar ancho":"Reducir ancho"):(height>0 ? "Aumentar alto":"Reducir alto")))
     }
     private func nudge(_ symbol:String,x:CGFloat,y:CGFloat)->some View {
         Button {let id=selected ?? draft.controls.first?.id ?? "";guard let item=draft.controls.first(where:{$0.id==id}) else{return};let r=item.rect(in:draft.canvas);do {try draft.move(id,to:CGPoint(x:r.midX+x,y:r.midY+y));selected=id;error=nil}catch{self.error=error.localizedDescription}} label:{Image(systemName:symbol).frame(minWidth:44,minHeight:44)}.buttonStyle(.bordered).accessibilityLabel(LocalizedStringKey(["arrow.left":"Mover a la izquierda","arrow.up":"Mover arriba","arrow.down":"Mover abajo","arrow.right":"Mover a la derecha"][symbol]!))

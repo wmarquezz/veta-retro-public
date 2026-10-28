@@ -19,11 +19,95 @@ enum PersonalSkinError:Error,LocalizedError {
 struct PersonalSkinVariant:Codable,Equatable {
     var layout:ControllerSkinLayout
     var imagePNG:Data
+    // Immutable source layers. Editing the layout never repeatedly resamples art.
+    var artwork:PersonalSkinArtwork? = nil
+    var procedural:Bool? = nil
     func validated(console:GameConsole)throws {
         try layout.validated(console:console,orientation:layout.orientation)
         let dimensions=try PersonalSkinImage.dimensions(imagePNG,pngOnly:true)
         try PersonalSkinImage.validateProportion(dimensions,canvas:layout.canvas)
         _ = try PersonalSkinImage.decoded(imagePNG)
+        if let artwork {try artwork.validated(for:layout,console:console)}
+        guard !(procedural == true && artwork != nil) else{throw PersonalSkinError.invalid}
+    }
+}
+/// Background and individual control sprites share one reference canvas.
+/// Bundled skins supply clean layers; a flat imported PNG is split once, locally.
+struct PersonalSkinArtwork:Codable,Equatable {
+    var layout:ControllerSkinLayout
+    var backgroundPNG:Data
+    var controlsPNG:[String:Data]
+    func validated(for target:ControllerSkinLayout,console:GameConsole)throws {
+        try layout.validated(console:console,orientation:target.orientation)
+        guard layout.canvas == target.canvas,Set(controlsPNG.keys)==Set(target.controls.map(\.id)) else{throw PersonalSkinError.invalid}
+        try PersonalSkinImage.validateProportion(PersonalSkinImage.dimensions(backgroundPNG,pngOnly:true),canvas:layout.canvas)
+        var pixels=0.0
+        for c in layout.controls {
+            guard let data=controlsPNG[c.id] else{throw PersonalSkinError.invalid}
+            let size=try PersonalSkinImage.dimensions(data,pngOnly:true)
+            pixels+=size.width*size.height
+            guard pixels<=16_000_000 else{throw PersonalSkinError.image}
+            try PersonalSkinImage.validateProportion(size,canvas:c.rect(in:layout.canvas).size)
+        }
+    }
+    @MainActor static func split(_ image:UIImage,layout:ControllerSkinLayout)throws->Self {
+        let format=UIGraphicsImageRendererFormat();format.scale=3;format.opaque=false
+        var sprites:[String:Data]=[:]
+        for c in layout.controls {
+            let rect=c.rect(in:layout.canvas)
+            sprites[c.id]=UIGraphicsImageRenderer(size:rect.size,format:format).pngData{_ in
+                image.draw(in:CGRect(origin:CGPoint(x:-rect.minX,y:-rect.minY),size:layout.canvas))
+            }
+        }
+        // A flattened import has no hidden background. Remove old controls using
+        // the surrounding edge colour (transparent art stays transparent).
+        let background=UIGraphicsImageRenderer(size:layout.canvas,format:format).pngData{context in
+            image.draw(in:CGRect(origin:.zero,size:layout.canvas))
+            for c in layout.controls {
+                let rect=c.rect(in:layout.canvas)
+                let sampleFormat=UIGraphicsImageRendererFormat();sampleFormat.scale=1;sampleFormat.preferredRange = .standard
+                let sample=UIGraphicsImageRenderer(size:CGSize(width:1,height:1),format:sampleFormat).image{_ in
+                    image.draw(in:CGRect(x:-max(0,rect.minX-1),y:-max(0,rect.minY-1),width:layout.canvas.width,height:layout.canvas.height))
+                }
+                context.cgContext.clear(rect)
+                sample.draw(in:rect)
+            }
+        }
+        return Self(layout:layout,backgroundPNG:background,controlsPNG:sprites)
+    }
+}
+extension PersonalSkinVariant {
+    @MainActor func editable()throws->Self {
+        if artwork != nil || procedural == true{return self}
+        var copy=self
+        if let console=GameConsole(rawValue:layout.console),
+           let base=StudioSkins.variant(console:console,orientation:layout.orientation),base.imagePNG==imagePNG,base.artwork != nil {
+            // Recover edits saved by older versions: their PNG is still the
+            // original Estudio image, while their layout already contains edits.
+            copy.artwork=base.artwork
+        } else if let console=GameConsole(rawValue:layout.console),layout.palette != .studio,
+                  let base=try? PersonalSkinLibrary.generated(console:console,orientation:layout.orientation,palette:layout.palette),base.imagePNG==imagePNG {
+            copy.procedural=true
+        } else {copy.artwork=try PersonalSkinArtwork.split(PersonalSkinImage.decoded(imagePNG),layout:layout)}
+        return copy
+    }
+    @MainActor func renderedImage()throws->UIImage {
+        let format=UIGraphicsImageRendererFormat();format.scale=3;format.opaque=false
+        if procedural == true,let console=GameConsole(rawValue:layout.console) {
+            let deck=TouchDeck(frame:CGRect(origin:.zero,size:layout.canvas));var style=ControlStyle(console:console,defaults:nil);style.skin=layout.palette.rawValue
+            deck.style=style;deck.landscape=layout.orientation == .landscape;deck.customLayout=layout;deck.layoutIfNeeded()
+            return UIGraphicsImageRenderer(size:layout.canvas,format:format).image{context in
+                if layout.orientation == .portrait && layout.palette != .transparent {style.background.setFill();context.fill(deck.bounds)}
+                deck.draw(deck.bounds)
+            }
+        }
+        guard let artwork else{return try PersonalSkinImage.decoded(imagePNG)}
+        let background=try PersonalSkinImage.decoded(artwork.backgroundPNG)
+        let sprites=try artwork.controlsPNG.mapValues{try PersonalSkinImage.decoded($0)}
+        return UIGraphicsImageRenderer(size:layout.canvas,format:format).image{_ in
+            background.draw(in:CGRect(origin:.zero,size:layout.canvas))
+            for c in layout.controls {sprites[c.id]?.draw(in:c.rect(in:layout.canvas))}
+        }
     }
 }
 struct PersonalSkin:Codable,Equatable,Identifiable {

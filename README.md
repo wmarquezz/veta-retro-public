@@ -1,3 +1,7 @@
+## Temperatura190 · aviso y pausa voluntaria
+
+Aviso de temperatura alta/crítica de iOS, minimizar y Pausar juego. [Validación](docs/AVISO-TEMPERATURA-190.md). [Obtener las fuentes completas190: base189 + actualización190](SOURCE-UPDATE-190.md).
+
 ## Apoyar VETA189 · invitación en biblioteca
 
 Acceso junto a Ajustes; se oculta después de un aporte verificado y se recuerda localmente. Ajustes conserva el acceso. [Alcance y validación](docs/APOYAR-VETA-189.md). Fuentes completas en v0.189.0.

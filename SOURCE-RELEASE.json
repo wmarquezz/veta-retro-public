@@ -1,8 +1,22 @@
 {
-  "version": "0.189.0",
-  "archive": "VETA-Retro-public-sources-189.tar.gz",
-  "sha256": "37586bf1744d5c362979e97d2841f0bd32afaa0e7b1c36aa5401dd82f6954a72",
-  "bytes": 457189148,
-  "files": 103810,
-  "download": "https://github.com/wmarquezz/veta-retro-public/releases/download/v0.189.0/VETA-Retro-public-sources-189.tar.gz"
+  "version": "0.190.0",
+  "format": "base-plus-overlay",
+  "fullSourceFiles": 103815,
+  "base": {
+    "version": "0.189.0",
+    "archive": "VETA-Retro-public-sources-189.tar.gz",
+    "sha256": "37586bf1744d5c362979e97d2841f0bd32afaa0e7b1c36aa5401dd82f6954a72",
+    "bytes": 457189148,
+    "files": 103810,
+    "download": "https://github.com/wmarquezz/veta-retro-public/releases/download/v0.189.0/VETA-Retro-public-sources-189.tar.gz"
+  },
+  "update": {
+    "archive": "VETA-Retro-source-update-190.tar.gz",
+    "sha256": "75dc3b5abf003fe8ecb083a0e541b1a1c8486cb0ca14bf07c342f3a3f4a3b994",
+    "bytes": 5807155,
+    "files": 20,
+    "download": "https://github.com/wmarquezz/veta-retro-public/releases/download/v0.190.0/VETA-Retro-source-update-190.tar.gz"
+  },
+  "instructions": "SOURCE-UPDATE-190.md",
+  "completeSourceRequiresBothArchives": true
 }

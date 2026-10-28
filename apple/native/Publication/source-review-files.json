@@ -553,6 +553,10 @@
     "docs/SELECTOR-SKINS-184.md",
     "docs/SKINS-ESTUDIO-180.md",
     "docs/SKINS-JUGABLES-183.md",
-    "scripts/prepare-retro-brand.py"
+    "scripts/prepare-retro-brand.py",
+    "apple/native/Sources/ThermalNoticeState.swift",
+    "apple/native/Sources/ThermalGameNotice.swift",
+    "apple/native/Tests/ThermalNoticeTests.swift",
+    "docs/AVISO-TEMPERATURA-190.md"
   ]
 }

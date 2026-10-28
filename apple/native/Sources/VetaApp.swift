@@ -532,6 +532,7 @@ struct GameContainer:View {
         GameSurface(session:session,skin:skin,revision:revision).tint(VetaTheme.mint).ignoresSafeArea().statusBarHidden(true).id("game")
             .overlay(alignment:.topTrailing) {if session.fastForward {Button("2× · Volver a 1×"){session.setFastForward(false)}.buttonStyle(VetaButton(primary:true)).padding(.top,60).padding(.trailing,20).accessibilityIdentifier("gameplay-normal-speed")}}
             .overlay(alignment:.bottom) {if !session.ready {Button("Volver a la biblioteca"){dismiss()}.padding(30)}}
+            .gameplayThermalNotice(topInset:session.fastForward ? 112:56,pause:{session.openMenu()})
             .sheet(isPresented:$session.showMenu,onDismiss:{revision+=1;session.resume()}) {
                 PauseView(session:session,leave:{session.close();session.showMenu=false;dismiss()})
                     .interactiveDismissDisabled()

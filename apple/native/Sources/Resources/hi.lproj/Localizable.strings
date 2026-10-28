@@ -1008,3 +1008,12 @@
 "Gracias también por jugar. Tus juegos, partidas y controles funcionan igual aunque no aportes." = "खेलने के लिए भी धन्यवाद। बिना योगदान के भी गेम, सेव और नियंत्रण समान रूप से काम करते हैं।";
 "Las funciones de esta versión son gratuitas. Los aportes de Apoyar VETA son voluntarios y no desbloquean funciones adicionales." = "इस संस्करण की सुविधाएँ मुफ़्त हैं। VETA को योगदान स्वैच्छिक है और अतिरिक्त सुविधाएँ नहीं खोलता।";
 "Los aportes voluntarios se procesan mediante compras de Apple. VETA verifica y finaliza la transacción en el dispositivo; no recibe tus datos de tarjeta ni envía tus juegos o partidas para realizar el aporte." = "स्वैच्छिक योगदान Apple की इन-ऐप खरीद से होते हैं। VETA डिवाइस पर लेनदेन सत्यापित और पूरा करता है; कार्ड विवरण नहीं लेता और गेम या सेव नहीं भेजता।";
+
+/* Thermal guidance190 */
+"Temperatura alta" = "तापमान अधिक है";
+"Temperatura muy alta" = "तापमान बहुत अधिक है";
+"Te recomendamos pausar y dejar enfriar el dispositivo unos minutos." = "हम सलाह देते हैं कि खेल रोकें और डिवाइस को कुछ मिनट ठंडा होने दें।";
+"Pausa el juego y deja enfriar el dispositivo antes de continuar." = "खेल रोकें और आगे खेलने से पहले डिवाइस को ठंडा होने दें।";
+"Pausar juego" = "खेल रोकें";
+"Minimizar aviso de temperatura" = "तापमान सूचना छोटी करें";
+"Mostrar recomendación de descanso" = "आराम की सलाह दिखाएँ";

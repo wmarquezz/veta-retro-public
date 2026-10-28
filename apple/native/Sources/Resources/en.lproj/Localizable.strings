@@ -1008,3 +1008,12 @@
 "Gracias también por jugar. Tus juegos, partidas y controles funcionan igual aunque no aportes." = "Thanks for playing, too. Your games, saves and controls work the same without contributing.";
 "Las funciones de esta versión son gratuitas. Los aportes de Apoyar VETA son voluntarios y no desbloquean funciones adicionales." = "This version's features are free. Support VETA contributions are optional and don't unlock additional features.";
 "Los aportes voluntarios se procesan mediante compras de Apple. VETA verifica y finaliza la transacción en el dispositivo; no recibe tus datos de tarjeta ni envía tus juegos o partidas para realizar el aporte." = "Optional contributions use Apple in-app purchases. VETA verifies and finishes the transaction on your device; it doesn't receive your card details or send your games or saves to make a contribution.";
+
+/* Thermal guidance190 */
+"Temperatura alta" = "High temperature";
+"Temperatura muy alta" = "Very high temperature";
+"Te recomendamos pausar y dejar enfriar el dispositivo unos minutos." = "We recommend pausing and letting your device cool down for a few minutes.";
+"Pausa el juego y deja enfriar el dispositivo antes de continuar." = "Pause the game and let your device cool down before continuing.";
+"Pausar juego" = "Pause game";
+"Minimizar aviso de temperatura" = "Minimize temperature notice";
+"Mostrar recomendación de descanso" = "Show break recommendation";

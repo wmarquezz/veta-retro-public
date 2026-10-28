@@ -44,3 +44,13 @@ instalar por USB. No es una descarga de App Store ni un Archive de distribución
 aprobado. No se realiza una nueva certificación de todos los juegos, rendimiento,
 TV o multijugador. Los resultados finales de paquete, respaldo, instalación y
 publicación se registran en el informe de entrega179; no se deducen de esta nota.
+
+## Verificación de instalación · 28-10-2026
+
+Public179-c (0.179.0/build179) instalada y abierta en iPhone15Pro como única
+VETA, con contenedor nuevo y biblioteca vacía. La edición personal se retiró
+únicamente después del respaldo completo y doble verificación de sus archivos.
+El paquete público contiene los dos juegos MIT del catálogo; se añaden desde
+Juegos gratis. Inventario y procesos finales confirman la ausencia de la app
+personal y de su proveedor JIT/VPN. No se inició una nueva matriz de juegos.
+Esta verificación no sustituye la firma de distribución ni la revisión de Apple.

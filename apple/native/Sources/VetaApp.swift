@@ -149,7 +149,7 @@ struct LibraryView:View {
             }.background(VetaBackdrop()).toolbar(.hidden,for:.navigationBar)
         }.tint(VetaTheme.mint).foregroundStyle(VetaTheme.ink)
         .sheet(item:$importFolder) {folder in
-            GameFilePicker(directory:folder.url,allowsDirectories:selectedLibraryConsole?.isStandaloneEngine == true) {urls in importFolder=nil;finishImport(urls)}
+            GameFilePicker(directory:folder.url,allowsDirectories:true) {urls in importFolder=nil;finishImport(urls)}
         }
         .fullScreenCover(item:$activeLaunch,onDismiss:{query=""}) {launch in
             let game=launch.game
@@ -207,6 +207,7 @@ struct LibraryView:View {
             ConsoleTimeline(
                 consoles:GameConsole.chronological.filter {console in library.consoles.contains(console) || library.games.contains(where:{$0.console == console})},
                 counts:Dictionary(grouping:library.games,by: \.console).mapValues(\.count),selection:$consoleFilter)
+            Text("Portada opcional: Juego.nes + Juego.png. Importa su carpeta o selecciona ambos archivos. Las subcarpetas se importan por separado.").font(VetaTheme.body(12)).foregroundStyle(VetaTheme.muted)
             Text(L10n.gameCount(filtered.count)).font(VetaTheme.body(12)).foregroundStyle(VetaTheme.muted)
         }
     }
@@ -230,8 +231,8 @@ struct LibraryView:View {
         }
         #endif
         perform {
-            try library.importURLs(urls,console:selectedLibraryConsole)
-            importMessage="Importación completada. Los juegos duplicados se conservan una sola vez."
+            let result=try library.importURLs(urls,console:selectedLibraryConsole,artwork:artwork)
+            importMessage=result.message
         }
     }
     private var addButton:some View {Button(action:openImporter) {Label("Agregar juegos",systemImage:"plus")}.buttonStyle(VetaButton(primary:true)).accessibilityIdentifier("toolbar-import").disabled(importingExperimental)}

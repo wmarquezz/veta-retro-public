@@ -431,6 +431,7 @@
     "apple/native/Sources/HardwareVulkan.h",
     "apple/native/Sources/HardwareVulkan.mm",
     "apple/native/Sources/Library.swift",
+    "apple/native/Sources/LocalCoverImport.swift",
     "apple/native/Sources/Localization.swift",
     "apple/native/Sources/MetalScreen.swift",
     "apple/native/Sources/NESBridge.c",
@@ -515,6 +516,7 @@
     "apple/native/Tests/GameLaunchPlanTests.swift",
     "apple/native/Tests/GameplayToolsTests.swift",
     "apple/native/Tests/LandscapeLayoutTests.swift",
+    "apple/native/Tests/LocalCoverImportTests.swift",
     "apple/native/Tests/NativeSurfaceRoutingTests.swift",
     "apple/native/Tests/NativeTests.swift",
     "apple/native/Tests/NextGenTests.swift",
@@ -535,6 +537,7 @@
     "apple/native/prepare.py",
     "docs/EDICION-PUBLICA-179.md",
     "docs/EDICION-SKINS-185.md",
+    "docs/PORTADAS-LOCALES-186.md",
     "docs/SELECTOR-SKINS-184.md",
     "docs/SKINS-ESTUDIO-180.md",
     "docs/SKINS-JUGABLES-183.md"

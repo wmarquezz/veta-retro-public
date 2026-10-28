@@ -1742,8 +1742,8 @@
           "SWIFT_OPTIMIZATION_LEVEL": "-O",
           "GCC_OPTIMIZATION_LEVEL": "2",
           "CLANG_CXX_LANGUAGE_STANDARD": "gnu++17",
-          "CURRENT_PROJECT_VERSION": "185",
-          "MARKETING_VERSION": "0.185.0",
+          "CURRENT_PROJECT_VERSION": "186",
+          "MARKETING_VERSION": "0.186.0",
           "IPHONEOS_DEPLOYMENT_TARGET": "17.4",
           "SWIFT_ACTIVE_COMPILATION_CONDITIONS": [
             "$(inherited)",

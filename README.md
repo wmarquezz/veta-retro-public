@@ -1,3 +1,8 @@
+## Portadas locales186
+
+Imagen opcional en la misma carpeta y con el mismo nombre de la ROM.
+Ver docs/PORTADAS-LOCALES-186.md. Fuentes completas en la release v0.186.0.
+
 ## Edición de skins185
 
 Guardar arriba guarda y aplica. Imagen y zonas táctiles se mueven y redimensionan juntas.

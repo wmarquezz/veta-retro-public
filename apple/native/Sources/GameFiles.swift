@@ -77,7 +77,7 @@ struct GameFilePicker:UIViewControllerRepresentable {
     let completion:([URL])->Void
     func makeCoordinator()->Coordinator {Coordinator(completion:completion)}
     func makeUIViewController(context:Context)->UIDocumentPickerViewController {
-        let picker=UIDocumentPickerViewController(forOpeningContentTypes:allowsDirectories ? [.data,.folder]:[.data],asCopy:!allowsDirectories)
+        let picker=UIDocumentPickerViewController(forOpeningContentTypes:allowsDirectories ? [.data,.folder]:[.data],asCopy:false)
         picker.directoryURL=directory
         picker.allowsMultipleSelection=true
         picker.shouldShowFileExtensions=true

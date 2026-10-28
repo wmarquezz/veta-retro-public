@@ -276,16 +276,15 @@ struct StateFile: Codable {
         guard let url = Bundle.main.url(forResource: name, withExtension: demoExtension(name), subdirectory: "Content/\(name)") else { throw VetaError.message("No se encontró el juego de muestra.") }
         _ = try add(data: Data(contentsOf: url), name: Self.demoNames[name] ?? name,console:try GameConsole.detect(Data(contentsOf:url),extension:url.pathExtension))
     }
-    func importURL(_ url: URL,console preferred:GameConsole? = nil) throws {
+    @discardableResult func importURL(_ url: URL,console preferred:GameConsole? = nil) throws -> Game? {
         let access = url.startAccessingSecurityScopedResource(); defer { if access { url.stopAccessingSecurityScopedResource() } }
-        if NativeGameFile.extensions.contains(url.pathExtension.lowercased()) {_ = try importNativeFile(url,console:preferred);return}
+        if NativeGameFile.extensions.contains(url.pathExtension.lowercased()) {return try importNativeFile(url,console:preferred)}
         let size = try url.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0
         guard size < 256*1024*1024 else { throw VetaError.message("El archivo supera los 256 MB. Importa las ROMs por separado.") }
         let data = try Data(contentsOf: url)
         if !["vetanes","vetaretro"].contains(url.pathExtension.lowercased()) {
             let console=try GameConsole.detect(data,extension:url.pathExtension,preferred:preferred)
-            _ = try add(data:data,name:url.deletingPathExtension().lastPathComponent,console:console)
-            return
+            return try add(data:data,name:url.deletingPathExtension().lastPathComponent,console:console)
         }
         let backup = try JSONDecoder().decode(NativeBackup.self, from: data)
         guard ((backup.format == "veta-native-nes" && backup.version == 1) || (backup.format == "veta-native" && [2,3,4,5,6].contains(backup.version))), backup.entries.count <= 500 else { throw VetaError.message("Selecciona un respaldo nativo .vetaretro o .vetanes válido.") }
@@ -348,6 +347,7 @@ struct StateFile: Codable {
                 throw error
             }
         }
+        return nil
     }
     private func restoreBackupEntry(_ entry:NativeBackup.Entry)throws {
         var game:Game

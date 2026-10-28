@@ -1,0 +1,28 @@
+{
+  "version": "0.186.0",
+  "build": "186",
+  "mainExecutableSHA256": "47cfcda87ab5799da44ee804b6f0cbedb4ec59ab1e20c7c73f9cf1d7e266f091",
+  "unchangedEngineSectionsComparedWith185": [
+    "BSNESCore",
+    "DSCore",
+    "DolphinCore",
+    "DreamcastCore",
+    "DreamcastInterpreterCore",
+    "JGenesisCore",
+    "MelonDSCore",
+    "MoltenVK",
+    "N64NextCore",
+    "PCECore",
+    "PSPCore",
+    "PlayStationCore",
+    "SaturnCore",
+    "TIACore",
+    "ThreeDSCore"
+  ],
+  "bundledSkins": 19,
+  "bundledSkinsUnchanged": true,
+  "PS2Included": false,
+  "JITVPNHelpersIncluded": false,
+  "bytes": 192191210,
+  "signing": "Development USB, not App Store approval"
+}

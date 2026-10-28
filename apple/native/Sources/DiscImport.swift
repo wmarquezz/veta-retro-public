@@ -89,19 +89,22 @@ enum DiscFiles {
     }
 }
 extension Library {
-    func importURLs(_ urls:[URL],console preferred:GameConsole?)throws {
+    @discardableResult func importURLs(_ selections:[URL],console preferred:GameConsole?,artwork:ArtworkStore? = nil)throws -> LocalCoverImport.Summary {
+        let scoped=selections.filter{$0.startAccessingSecurityScopedResource()};defer{scoped.forEach{$0.stopAccessingSecurityScopedResource()}}
         if let preferred, !GameConsole.allCases.contains(preferred) {throw VetaError.message("Consola desconocida.")}
         #if VETA_JIT_DEVELOPMENT
-        if let console=preferred,console.isStandaloneEngine {for url in urls {_ = try importExperimental(url,console:console)};return}
+        if let console=preferred,console.isStandaloneEngine {for url in selections {_ = try importExperimental(url,console:console)};return .init(games:selections.count)}
         #endif
-        let scoped=urls.filter{$0.startAccessingSecurityScopedResource()};defer{scoped.forEach{$0.stopAccessingSecurityScopedResource()}}
+        let files=try LocalCoverImport.files(selections),covers=LocalCoverImport.Session(files:files)
+        let urls=files.filter{!LocalCoverImport.isImage($0)}
+        var processed=0
         var consumed=Set<URL>()
         for cue in urls where cue.pathExtension.lowercased()=="cue" {
             guard (try cue.resourceValues(forKeys:[.fileSizeKey]).fileSize ?? Int.max)<=1024*1024 else{throw VetaError.message("El descriptor CUE es demasiado grande.")}
             let cueBytes=try Data(contentsOf:cue),names=try DiscFiles.names(in:cueBytes)
             var sources:[String:URL]=[:]
             for name in names {
-                let matches=urls.filter{$0.lastPathComponent.caseInsensitiveCompare(name) == .orderedSame}
+                let matches=urls.filter{LocalCoverImport.parent($0)==LocalCoverImport.parent(cue) && $0.lastPathComponent.caseInsensitiveCompare(name) == .orderedSame}
                 guard matches.count<=1 else{throw VetaError.message("Hay varias pistas llamadas \(name). Importa un disco a la vez.")}
                 let track=matches.first ?? cue.deletingLastPathComponent().appendingPathComponent(name)
                 guard FileManager.default.fileExists(atPath:track.path) else{throw VetaError.message("Falta \(name). Selecciona el CUE junto con todas sus pistas BIN o WAV.")}
@@ -131,8 +134,13 @@ extension Library {
                 games.append(game)
                 do{try persist()}catch{games.removeAll{$0.id==id};try? FileManager.default.removeItem(at:destination);throw error}
             }
+            if let game=games.first(where:{$0.id==id}) {processed+=1;if let artwork {covers.attach(to:game,from:cue,store:artwork)}}
             consumed.insert(cue);consumed.formUnion(sources.values)
         }
-        for url in urls where !consumed.contains(url) {try importURL(url,console:preferred)}
+        for url in urls where !consumed.contains(url) {
+            if let game=try importURL(url,console:preferred) {processed+=1;if let artwork {covers.attach(to:game,from:url,store:artwork)}}
+        }
+        var summary=covers.summary;summary.games=processed;summary.backups=urls.filter{["vetanes","vetaretro"].contains($0.pathExtension.lowercased())}.count
+        return summary
     }
 }

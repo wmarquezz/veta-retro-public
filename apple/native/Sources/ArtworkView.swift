@@ -36,6 +36,9 @@ struct ArtworkView:View {
                         }.frame(maxWidth:.infinity,alignment:.leading)
                     }.padding(.vertical,8)
                 }.listRowBackground(VetaTheme.panel)
+                Section {
+                    Text("También puedes importar la ROM y una imagen con el mismo nombre: Juego.nes y Juego.png. Selecciona ambos archivos o su carpeta en Agregar juegos. Si ya hay una portada, se conserva; para reemplazarla, elige otra aquí.").font(.footnote)
+                }.listRowBackground(VetaTheme.panel)
                 Section("Cambiar portada") {
                     if ArtworkDistributionPolicy.allowsRemoteCovers {
                         Button {Task {await artwork.search(game)}} label:{Label("Buscar portada en Internet",systemImage:"arrow.down.circle")}.disabled(artwork.searching.contains(game.id) || loading).accessibilityIdentifier("cover-search")

@@ -483,7 +483,7 @@ final class TouchDeck: UIView {
     override func draw(_ rect:CGRect) {
         guard let ctx=UIGraphicsGetCurrentContext(),let pad=zones["dpad"] else{return}
         if let artwork=customArtwork,let layout=customLayout,layoutIssue == nil {
-            ctx.saveGState();ctx.setAlpha(style.opacity * (usesLandscapeOverlay ? 0.62:1))
+            ctx.saveGState();ctx.setAlpha(style.opacity)
             defer {ctx.restoreGState()}
             PersonalSkinGeometry.draw(artwork,layout:layout,size:bounds.size)
             for (name,zone) in zones {
@@ -536,7 +536,7 @@ final class TouchDeck: UIView {
                 }
             }
         }
-        ctx.saveGState();ctx.setAlpha(style.opacity * (usesLandscapeOverlay ? 0.62:1))
+        ctx.saveGState();ctx.setAlpha(style.opacity)
         let unit=pad.width/3
         let cross=UIBezierPath()
         let pts:[CGPoint]=[(1,0),(2,0),(2,1),(3,1),(3,2),(2,2),(2,3),(1,3),(1,2),(0,2),(0,1),(1,1)].map{CGPoint(x:pad.minX+CGFloat($0.0)*unit,y:pad.minY+CGFloat($0.1)*unit)}

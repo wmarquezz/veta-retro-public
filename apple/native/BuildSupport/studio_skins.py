@@ -46,3 +46,6 @@ with zipfile.ZipFile(a.archive) as z:
   (out/('studio-'+console+'.vetaskin')).write_text(json.dumps(skin,ensure_ascii=False,separators=(',',':')))
 (source/'MANIFEST.json').write_text(json.dumps({'archiveSHA256':hashlib.sha256(a.archive.read_bytes()).hexdigest(),'variants':records,'scope':'User-supplied control art only; no reference photographs or executable ZIP scripts. DS portrait uses explicit layout version4 (400x188).'},ensure_ascii=False,indent=2))
 print('Packaged',len(consoles),'skins /',len(records),'variants')
+
+# Apply the current playable geometry after importing the retained original artwork.
+subprocess.run([__import__('sys').executable,str(root/'BuildSupport/refresh_studio_skins.py')],check=True)

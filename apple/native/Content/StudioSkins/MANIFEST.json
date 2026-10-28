@@ -2,438 +2,386 @@
   "archiveSHA256": "ae41c5d79b23af72f28dcb6ee0a7101f5b46f1082be1aff6ed943865a01c8d35",
   "variants": [
     {
-      "adjustments": {},
+      "console": "atari2600",
+      "orientation": "landscape",
+      "logicalCanvas": [
+        844,
+        320
+      ],
+      "imageSHA256": "c2671719575f517614efa4f4dfe82b85e5257d3e71765b804ebb1d189830f79d",
+      "revision": 183
+    },
+    {
       "console": "atari2600",
       "orientation": "portrait",
-      "imageSHA256": "0dc71d4f28612f29556c3a8188c01b19359c907204c0e84cabe152d92d9b77a3",
       "logicalCanvas": [
         400,
         276
-      ]
+      ],
+      "imageSHA256": "a3614ea9abafccc6dea54004b758d8b2bb5abefcec147e84f3fad692d8247784",
+      "revision": 183
     },
     {
-      "adjustments": {},
-      "console": "atari2600",
+      "console": "dreamcast",
       "orientation": "landscape",
-      "imageSHA256": "e85e9151d1d7958bfb41f7d7da36c2e11c250cd3d498ac29d7e005942cb1e296",
       "logicalCanvas": [
         844,
         320
-      ]
+      ],
+      "imageSHA256": "0705e657199a5fcda46a9b1585509c44a72a208feb2664264c05993a4040b7a6",
+      "revision": 183
     },
     {
-      "adjustments": {
-        "B": [
-          2,
-          0
-        ],
-        "X": [
-          -2,
-          0
-        ]
-      },
       "console": "dreamcast",
       "orientation": "portrait",
-      "imageSHA256": "a58cfa455ca75e7870fb70f292302acb885138f9e30b3648d973db07deb0c3d4",
       "logicalCanvas": [
         400,
         320
-      ]
+      ],
+      "imageSHA256": "14c220862f9b42d30f08ecbb1f659f3a86d2d0939e54d2e5ad3c73a42232a3d3",
+      "revision": 183
     },
     {
-      "adjustments": {},
-      "console": "dreamcast",
+      "console": "ds",
       "orientation": "landscape",
-      "imageSHA256": "9806c35a18c4ebce853540993a41164b67885507ef44b09a6bbb2a996ab059e0",
       "logicalCanvas": [
         844,
         320
-      ]
+      ],
+      "imageSHA256": "0b2104cc757f7940114f6aec9d256d366f342f511e8aa451902f85afb800d8eb",
+      "revision": 183
     },
     {
-      "adjustments": {
-        "A": [
-          2,
-          0
-        ],
-        "Y": [
-          -2,
-          0
-        ],
-        "X": [
-          0,
-          2
-        ]
-      },
       "console": "ds",
       "orientation": "portrait",
-      "imageSHA256": "8703bb8aa7f989898e39d1df536240abd601b4cb9ad9892f1b08ba9df1dc6d82",
       "logicalCanvas": [
         400,
         188
-      ]
+      ],
+      "imageSHA256": "0b2a2754691c1e42dbf92cfbb0caf0558ce5231bf7701c9f0cc0683c9730c19a",
+      "revision": 183
     },
     {
-      "adjustments": {},
-      "console": "ds",
-      "orientation": "landscape",
-      "imageSHA256": "e72d693be6dd2497c3a2fe0038c93708e6460d6bd8ebf94420b3ca5d8b15cddd",
-      "logicalCanvas": [
-        844,
-        320
-      ]
-    },
-    {
-      "adjustments": {},
-      "console": "gameGear",
-      "orientation": "portrait",
-      "imageSHA256": "e343b5820e9cdf740cd4f1d4670d696892a3976574a22a15ad17a56433ac8dfa",
-      "logicalCanvas": [
-        400,
-        276
-      ]
-    },
-    {
-      "adjustments": {},
       "console": "gameGear",
       "orientation": "landscape",
-      "imageSHA256": "4b66e98c1eb270be92e2463774813c1da52713eaf3e5b5cdc2bc2db714042ee6",
       "logicalCanvas": [
         844,
         320
-      ]
+      ],
+      "imageSHA256": "0ad6ec283c6e591ce666a9a1d15e4c3415dfcc29f03b3d415c391d1363d4e478",
+      "revision": 183
     },
     {
-      "adjustments": {
-        "A": [
-          -4,
-          0
-        ],
-        "Y": [
-          -4,
-          0
-        ]
-      },
-      "console": "gamecube",
+      "console": "gameGear",
       "orientation": "portrait",
-      "imageSHA256": "2e2fac46db86cc7b31aedcf3ae5c1b9bafd15b94ce160a3f0ff688243969aa52",
       "logicalCanvas": [
         400,
-        320
-      ]
+        276
+      ],
+      "imageSHA256": "d3d83390d671babeecdc4f7425f14275a20aa2be752a2af32beb08e06d4ff967",
+      "revision": 183
     },
     {
-      "adjustments": {},
       "console": "gamecube",
       "orientation": "landscape",
-      "imageSHA256": "2fac818bf036918d7d2ee4b8051aec9b6b3ed6de2e2adfdcd8af410d5cc53394",
       "logicalCanvas": [
         844,
         320
-      ]
+      ],
+      "imageSHA256": "96afb54933172b492317566cce0520cadf6662d023f6dfc13356098bd0593db3",
+      "revision": 183
     },
     {
-      "adjustments": {},
+      "console": "gamecube",
+      "orientation": "portrait",
+      "logicalCanvas": [
+        400,
+        320
+      ],
+      "imageSHA256": "3414944df1d1eb89de635b8a03cf32dd776a59c791707069b790df6b359098cb",
+      "revision": 183
+    },
+    {
+      "console": "gb",
+      "orientation": "landscape",
+      "logicalCanvas": [
+        844,
+        320
+      ],
+      "imageSHA256": "3df2e6c6a8d42b3a16355f47215ea50278a65d508406ed64944b32997a687602",
+      "revision": 183
+    },
+    {
       "console": "gb",
       "orientation": "portrait",
-      "imageSHA256": "bbfe1430583788911dec8782b127d8ac209a0f3ed62e412b13d33e563adade00",
       "logicalCanvas": [
         400,
         276
-      ]
+      ],
+      "imageSHA256": "84df54d6bd897b7132d543e8760b7a72b863fc444c32d94b3cc0a95d7076f1c5",
+      "revision": 183
     },
     {
-      "adjustments": {},
-      "console": "gb",
-      "orientation": "landscape",
-      "imageSHA256": "20e1ceb4dbca47111535b11f7f3098bac31d2d02b4ed02b5cf7ec0af0be3c5ef",
-      "logicalCanvas": [
-        844,
-        320
-      ]
-    },
-    {
-      "adjustments": {},
-      "console": "gba",
-      "orientation": "portrait",
-      "imageSHA256": "dc60ea1609f968b74b498271bb35cc9f1839c75594a8a258dc0a2b319aee9d09",
-      "logicalCanvas": [
-        400,
-        276
-      ]
-    },
-    {
-      "adjustments": {},
       "console": "gba",
       "orientation": "landscape",
-      "imageSHA256": "d5a6a5e66dc8b6636a0951be7521130a093614a8e8c67f0f342f96a7f4f9f324",
       "logicalCanvas": [
         844,
         320
-      ]
+      ],
+      "imageSHA256": "ed0e1d731bfc26c068e0ca62e3cd4f85b9f98ec087f669773ee5dd1dcc4c7a73",
+      "revision": 183
     },
     {
-      "adjustments": {},
+      "console": "gba",
+      "orientation": "portrait",
+      "logicalCanvas": [
+        400,
+        276
+      ],
+      "imageSHA256": "8ca4bcf3491e18907596d22e0cfcae9528c55bd57d9cc7cae020d2a35757fbc2",
+      "revision": 183
+    },
+    {
+      "console": "gbc",
+      "orientation": "landscape",
+      "logicalCanvas": [
+        844,
+        320
+      ],
+      "imageSHA256": "012b0c4bdf20639494eee27bf054bf7ad35cd4906197598fa7d79b3e4430509f",
+      "revision": 183
+    },
+    {
       "console": "gbc",
       "orientation": "portrait",
-      "imageSHA256": "26920f341c1cb802188f36e09eff9decb07bf2d8b27accc027fb361502011eb9",
       "logicalCanvas": [
         400,
         276
-      ]
+      ],
+      "imageSHA256": "96394503a996aea1741e3013011b24a0404eebbf9c23dfdd6aac34e7259e41ce",
+      "revision": 183
     },
     {
-      "adjustments": {},
-      "console": "gbc",
-      "orientation": "landscape",
-      "imageSHA256": "a39f42484ce4aac04b6679985ad61ac690bf9779d1c9ffe3be38bd0dfab58d65",
-      "logicalCanvas": [
-        844,
-        320
-      ]
-    },
-    {
-      "adjustments": {},
-      "console": "masterSystem",
-      "orientation": "portrait",
-      "imageSHA256": "76e1da437c3e65a415b487505c10334def731353ed88c1817252f02ac6fcfa78",
-      "logicalCanvas": [
-        400,
-        276
-      ]
-    },
-    {
-      "adjustments": {},
       "console": "masterSystem",
       "orientation": "landscape",
-      "imageSHA256": "0156317e2582e9a5132a858ca4c154f148db64bc0d4ff1e8a02b5a287a32b3ed",
       "logicalCanvas": [
         844,
         320
-      ]
+      ],
+      "imageSHA256": "b32c614a60159144bbf08c0c2c0d63ab6f8ae039c286409216ee5d351b9acac2",
+      "revision": 183
     },
     {
-      "adjustments": {},
+      "console": "masterSystem",
+      "orientation": "portrait",
+      "logicalCanvas": [
+        400,
+        276
+      ],
+      "imageSHA256": "8a5b349966aff38958b1138865e76f4813478de2988656e5a5bfae7b105f98c2",
+      "revision": 183
+    },
+    {
+      "console": "megaDrive",
+      "orientation": "landscape",
+      "logicalCanvas": [
+        844,
+        320
+      ],
+      "imageSHA256": "7688b54e572c2fc25d71944cdde32755b2fb592f8c58b7f33eeda5ce83114d4e",
+      "revision": 183
+    },
+    {
       "console": "megaDrive",
       "orientation": "portrait",
-      "imageSHA256": "5706b9549b9641365034bffc6448b1cb6735654332294cbe1681cac673684476",
       "logicalCanvas": [
         400,
         276
-      ]
+      ],
+      "imageSHA256": "cebfa6519659b1a212f49c7ed5feb799c15b1e3caf2985531a802bc8e4581a4a",
+      "revision": 183
     },
     {
-      "adjustments": {},
-      "console": "megaDrive",
-      "orientation": "landscape",
-      "imageSHA256": "8252474edbd8d1037c6b788484b5b2d1978b6d0e1029419f19de2f4946746553",
-      "logicalCanvas": [
-        844,
-        320
-      ]
-    },
-    {
-      "adjustments": {
-        "C←": [
-          -2,
-          0
-        ],
-        "C→": [
-          2,
-          0
-        ],
-        "C↑": [
-          0,
-          2
-        ]
-      },
-      "console": "n64",
-      "orientation": "portrait",
-      "imageSHA256": "5aff770ab0d16933e8374fefcb0c6a1b136a53cefed9ab89d88f594fb404d5ae",
-      "logicalCanvas": [
-        400,
-        320
-      ]
-    },
-    {
-      "adjustments": {},
       "console": "n64",
       "orientation": "landscape",
-      "imageSHA256": "6b939e5886a64af5de198beeccdcd368a73c10912427bfebf133d84b3d3a8cf7",
       "logicalCanvas": [
         844,
         320
-      ]
+      ],
+      "imageSHA256": "33ab9ac8b1f31815aca976bb5d79294d55fc5eb42966a40462808c9af4387bcf",
+      "revision": 183
     },
     {
-      "adjustments": {},
+      "console": "n64",
+      "orientation": "portrait",
+      "logicalCanvas": [
+        400,
+        320
+      ],
+      "imageSHA256": "028e1b9ca1e413d3f7a3572d539139cc1390d04531574df45d73ab7188c91991",
+      "revision": 183
+    },
+    {
+      "console": "nes",
+      "orientation": "landscape",
+      "logicalCanvas": [
+        844,
+        320
+      ],
+      "imageSHA256": "5837e5834a2cd21b701f20f6a61c3f82fc22d23a955a375f5fa12d98bcab1bf1",
+      "revision": 183
+    },
+    {
       "console": "nes",
       "orientation": "portrait",
-      "imageSHA256": "84f1af39488a164ef06ba1121b6861da0e94f28256554924fd54595c8ca3ec66",
       "logicalCanvas": [
         400,
         276
-      ]
+      ],
+      "imageSHA256": "279b86782fdbaa3cad14cd93a0d4c4adf9c1390064fc1a0cf9d8d53c53f95c38",
+      "revision": 183
     },
     {
-      "adjustments": {},
-      "console": "nes",
-      "orientation": "landscape",
-      "imageSHA256": "6a00d5b68262fdfd2daff3732d3a58153e6fb6a4c90b660452af900717e01038",
-      "logicalCanvas": [
-        844,
-        320
-      ]
-    },
-    {
-      "adjustments": {},
-      "console": "pcEngine",
-      "orientation": "portrait",
-      "imageSHA256": "27d7fff214cebd59d5eec373bcec4df4bcef07a7ee16ba3b8f6ae6ea637badc7",
-      "logicalCanvas": [
-        400,
-        276
-      ]
-    },
-    {
-      "adjustments": {},
       "console": "pcEngine",
       "orientation": "landscape",
-      "imageSHA256": "03c69a5c23344eccea72c382f593cd76a552b321b5fd02312dd212a33b8037b7",
       "logicalCanvas": [
         844,
         320
-      ]
+      ],
+      "imageSHA256": "5c79eb374ce4dcfbd15a1d3b54fe1522d751a6f599b7de8abc080dbd08b3822f",
+      "revision": 183
     },
     {
-      "adjustments": {},
+      "console": "pcEngine",
+      "orientation": "portrait",
+      "logicalCanvas": [
+        400,
+        276
+      ],
+      "imageSHA256": "222a6c61dd027c907a89a6cc83e97dc8b0d0f36f708f832f8db5db82575fb85e",
+      "revision": 183
+    },
+    {
+      "console": "ps1",
+      "orientation": "landscape",
+      "logicalCanvas": [
+        844,
+        320
+      ],
+      "imageSHA256": "6a8ff4af941fba8a6ed22a34ff19c42b5d815f8052f6f8dddce707bfd2cc5e92",
+      "revision": 183
+    },
+    {
       "console": "ps1",
       "orientation": "portrait",
-      "imageSHA256": "2f25b82e792d26df06d2536941fc1978f1182feaa547cec5004f32dd8ff80e20",
       "logicalCanvas": [
         400,
         276
-      ]
+      ],
+      "imageSHA256": "2854307afb172aa1509bd505211a4a0afc44f16a83d5e8cdde9d2dcecb23d866",
+      "revision": 183
     },
     {
-      "adjustments": {},
-      "console": "ps1",
-      "orientation": "landscape",
-      "imageSHA256": "c31fec29438827b6882ed971efc78e25ed179c82db58505255bd3b075dc16494",
-      "logicalCanvas": [
-        844,
-        320
-      ]
-    },
-    {
-      "adjustments": {
-        "A": [
-          2,
-          0
-        ],
-        "Y": [
-          -2,
-          0
-        ]
-      },
-      "console": "psp",
-      "orientation": "portrait",
-      "imageSHA256": "829f2153e1f315c1bd7056b6bc661a50d8cc5e64e26c88a95ecca6c7ca7c7306",
-      "logicalCanvas": [
-        400,
-        320
-      ]
-    },
-    {
-      "adjustments": {},
       "console": "psp",
       "orientation": "landscape",
-      "imageSHA256": "08b8bd06761557ca8c77f91638c67f2c2176dfec050a00fafc2ec35e9f680cb4",
       "logicalCanvas": [
         844,
         320
-      ]
+      ],
+      "imageSHA256": "a8d9eb50f299a6171e020c27ca048e65da666dd459dadbfbd83fccda16421e56",
+      "revision": 183
     },
     {
-      "adjustments": {},
+      "console": "psp",
+      "orientation": "portrait",
+      "logicalCanvas": [
+        400,
+        320
+      ],
+      "imageSHA256": "ba78184f3449088308efa9071c046aaf425a3903ce1204f31368d495dc7c7cc2",
+      "revision": 183
+    },
+    {
+      "console": "saturn",
+      "orientation": "landscape",
+      "logicalCanvas": [
+        844,
+        320
+      ],
+      "imageSHA256": "b7072dd4645c8f922cc9a991cf7a32bfc2d22c4dcaedab73d5dbeb2c7b7f7520",
+      "revision": 183
+    },
+    {
       "console": "saturn",
       "orientation": "portrait",
-      "imageSHA256": "5afb1dbe827f603958a1ccecacfb59166b5ef6a375b3d664139c85cd08c8604c",
       "logicalCanvas": [
         400,
         276
-      ]
+      ],
+      "imageSHA256": "eabd00bb78fdc4d493b6d70cff5d446dd08ae6b2e08c5da1d96efc7d9135b180",
+      "revision": 183
     },
     {
-      "adjustments": {},
-      "console": "saturn",
+      "console": "snes",
       "orientation": "landscape",
-      "imageSHA256": "07250af5d74060a3308325df8be25800663ad39527ad0ee8a5ec54c0cd895fc0",
       "logicalCanvas": [
         844,
         320
-      ]
+      ],
+      "imageSHA256": "4fb6713137585d53ce8f1e66b24452bc33b5388962a91cd57185f27b0d4cd6d6",
+      "revision": 183
     },
     {
-      "adjustments": {},
       "console": "snes",
       "orientation": "portrait",
-      "imageSHA256": "e9ad5b00726c28a68b7095dfb401ea7aefa2d068f42663064f7b5aeb2fe92084",
       "logicalCanvas": [
         400,
         276
-      ]
+      ],
+      "imageSHA256": "b57799d3e87591cff614455f29f05305a6b00a4cd0992efb924f45e3bbffc7ad",
+      "revision": 183
     },
     {
-      "adjustments": {},
-      "console": "snes",
+      "console": "threeDS",
       "orientation": "landscape",
-      "imageSHA256": "18017e5c7b2963baac0c0563217a247ba52e23c6304ee1669462213cfc114108",
       "logicalCanvas": [
         844,
         320
-      ]
+      ],
+      "imageSHA256": "0304a623abc26ddb0b38a1ad9489f7357dbf62e26e48faa8631f3b81bbaf7838",
+      "revision": 183
     },
     {
-      "adjustments": {},
       "console": "threeDS",
       "orientation": "portrait",
-      "imageSHA256": "a9617ee93692cf1ca028a1e1c2dd224ab8e2087365615bfd74b0b3528891683e",
       "logicalCanvas": [
         400,
         240
-      ]
+      ],
+      "imageSHA256": "af733a0f96d5dcc688103bdc7e7bd3d1c860d486fd013f93118bf015f5870d5c",
+      "revision": 183
     },
     {
-      "adjustments": {},
-      "console": "threeDS",
+      "console": "wii",
       "orientation": "landscape",
-      "imageSHA256": "4ac7be1b355a413183a6860081dbe3a3c6bd604da5c5f8fe01df48c2efa49e7d",
       "logicalCanvas": [
         844,
         320
-      ]
+      ],
+      "imageSHA256": "1c98138a58058eb82cdbf0ab94fd0b6b9b21bcac458b7802fbaf731e9baced71",
+      "revision": 183
     },
     {
-      "adjustments": {},
       "console": "wii",
       "orientation": "portrait",
-      "imageSHA256": "c08492d0857ebbc8d76377a5321300d67e10bf612b268db6498d9f352e45faa3",
       "logicalCanvas": [
         400,
         320
-      ]
-    },
-    {
-      "adjustments": {},
-      "console": "wii",
-      "orientation": "landscape",
-      "imageSHA256": "eb95c5fc44b1acd819562290243c0628fc8d376d1519229fc08079a0f899da34",
-      "logicalCanvas": [
-        844,
-        320
-      ]
+      ],
+      "imageSHA256": "c8fe8b40e021b8429a156b0ddcfd597f3fdf954b679c17263acc271ef5a226d5",
+      "revision": 183
     }
   ],
-  "scope": "User-supplied control art only; no reference photographs or executable ZIP scripts. DS portrait uses explicit layout version4 (400x188)."
+  "scope": "Retained SVG control shapes and palettes, enlarged input and visible controls together. Landscape has transparent empty space and opaque controls; game viewport unchanged. Original sources and personal packages preserved.",
+  "revision": 183
 }

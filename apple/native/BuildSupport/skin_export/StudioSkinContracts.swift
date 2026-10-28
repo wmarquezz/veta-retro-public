@@ -14,7 +14,7 @@ import Foundation
    for orientation in ControllerSkinOrientation.allCases {
     let variant=skin.variant(orientation)!,art=StudioSkins.image(console:console,orientation:orientation)!,landscape=orientation == .landscape
     var sizes=[variant.layout.canvas]
-    if landscape {sizes += [CGSize(width:734,height:359),CGSize(width:746,height:356),CGSize(width:1000,height:700)]}
+    if landscape {sizes += [CGSize(width:667,height:354),CGSize(width:734,height:359),CGSize(width:746,height:356),CGSize(width:1000,height:700)]}
     else {sizes += [CGFloat(375),393,414,768].map {w in ConsoleLayout(safe:CGRect(x:0,y:0,width:w,height:w>500 ? 1000:759),aspect:console.aspect,minimumDeck:console.minimumDeck,compactDualScreen:variant.layout.usesCompactThreeDSCanvas,compactDS:variant.layout.usesCompactDSCanvas).deck.size}}
     for (i,size) in sizes.enumerated() {
      let tag="\(console.rawValue)/\(orientation)/\(size)"
@@ -43,10 +43,42 @@ import Foundation
      var releases=0;deck.onInput={if $0==0{releases+=1}}
      for _ in 0..<3 {deck.applySkin(console:console,landscape:landscape,defaults:defaults);deck.layoutIfNeeded()}
      check(releases==0,"held input stable \(tag)")
+     if console == .nes && !landscape {
+      check(deck.zones["dpad"]!.width >= min(135,size.width*0.35),"NES enlarged dpad \(tag)")
+      check(deck.zones["A"]!.width >= 70 && deck.zones["B"]!.width >= 70,"NES enlarged face keys \(tag)")
+     }
+     if landscape {
+      func composed(_ color:UIColor)->UIImage {
+       UIGraphicsImageRenderer(size:size,format:pixelFormat).image{context in color.setFill();context.fill(CGRect(origin:.zero,size:size));deck.draw(deck.bounds)}
+      }
+      let red=composed(.red).cgImage!,blue=composed(.blue).cgImage!
+      let redPixels=CFDataGetBytePtr(red.dataProvider!.data!)!,bluePixels=CFDataGetBytePtr(blue.dataProvider!.data!)!
+      for (id,zone) in deck.zones where id != "dpad" && !id.hasPrefix("stick") {
+       let offset=Int(zone.midY)*red.bytesPerRow+Int(zone.midX)*4
+       check((0..<3).allSatisfy{abs(Int(redPixels[offset+$0])-Int(bluePixels[offset+$0]))<4},"opaque button over game \(tag)/\(id)")
+      }
+      let center=Int(size.height/2)*red.bytesPerRow+Int(size.width/2)*4
+      check((0..<3).contains{abs(Int(redPixels[center+$0])-Int(bluePixels[center+$0]))>200},"clear game center \(tag)")
+     }
      if i==0 || i==1 {
       let f=UIGraphicsImageRendererFormat();f.scale=2;f.opaque=false;f.preferredRange = .standard
       let data=UIGraphicsImageRenderer(size:size,format:f).pngData{_ in deck.draw(deck.bounds)}
       try data.write(to:root.appendingPathComponent("\(console.rawValue)-\(orientation)-\(i).png"))
+      let safe=landscape ? CGRect(x:0,y:0,width:size.width,height:size.height):CGRect(x:0,y:0,width:size.width,height:759)
+      let layout=ConsoleLayout(safe:safe,aspect:console.aspect,minimumDeck:console.minimumDeck,compactDualScreen:variant.layout.usesCompactThreeDSCanvas,overlayLandscape:landscape,compactDS:variant.layout.usesCompactDSCanvas)
+      let scene=UIGraphicsImageRenderer(size:safe.size,format:f).pngData{context in
+       UIColor.black.setFill();context.fill(safe)
+       context.cgContext.saveGState();context.cgContext.clip(to:layout.screen)
+       for y in stride(from:layout.screen.minY,through:layout.screen.maxY,by:32) {
+        for x in stride(from:layout.screen.minX,through:layout.screen.maxX,by:32) {
+         UIColor(hex:(Int(x/32)+Int(y/32))%2==0 ? 0x56899e:0x254c68).setFill();context.fill(CGRect(x:x,y:y,width:32,height:32))
+        }
+       }
+       context.cgContext.restoreGState()
+       context.cgContext.saveGState();context.cgContext.translateBy(x:layout.deck.minX,y:layout.deck.minY)
+       let composedDeck=TouchDeck(frame:CGRect(origin:.zero,size:layout.deck.size));composedDeck.applySkin(console:console,landscape:landscape,defaults:defaults);composedDeck.layoutIfNeeded();composedDeck.draw(composedDeck.bounds)
+       context.cgContext.restoreGState()
+      };try scene.write(to:root.appendingPathComponent("scene-\(console.rawValue)-\(orientation)-\(i).png"))
      }
      _ = art
     }

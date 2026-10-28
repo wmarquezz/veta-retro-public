@@ -1,3 +1,13 @@
+## Controles ampliados183
+
+Los19skins Estudio se actualizan en vertical y horizontal, con controles visibles
+más grandes, hitmaps alineados y sin transparencia forzada sobre el juego.
+El tamaño de la imagen y los15frameworks de motores se conservan. Ver
+[detalle y validación](docs/SKINS-JUGABLES-183.md).
+
+Fuentes completas de esta versión en **VETA-Retro-public-sources-183.tar.gz**,
+release v0.183.0. Las notas de entregas anteriores se conservan debajo.
+
 ## Avisos y fuentes182
 
 La entrega182 incorpora los avisos completos de dependencias a los créditos,

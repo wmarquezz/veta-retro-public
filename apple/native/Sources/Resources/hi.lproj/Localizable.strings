@@ -1017,3 +1017,34 @@
 "Pausar juego" = "खेल रोकें";
 "Minimizar aviso de temperatura" = "तापमान सूचना छोटी करें";
 "Mostrar recomendación de descanso" = "आराम की सलाह दिखाएँ";
+
+/* Cloud import191 */
+"Archivos del iPhone" = "iPhone की फ़ाइलें";
+"Carpeta en la nube" = "क्लाउड फ़ोल्डर";
+"Archivos en la nube" = "क्लाउड फ़ाइलें";
+"Cómo conectar Drive, OneDrive o Dropbox" = "Drive, OneDrive या Dropbox कैसे जोड़ें";
+"Importar desde la nube" = "क्लाउड से आयात करें";
+"Google Drive, OneDrive y Dropbox" = "Google Drive, OneDrive और Dropbox";
+"Preparando tus juegos…" = "आपके गेम तैयार हो रहे हैं…";
+"Agregando a tu biblioteca…" = "आपकी लाइब्रेरी में जोड़ रहे हैं…";
+"Cancelando…" = "रद्द कर रहे हैं…";
+"Si los archivos están en la nube, espera mientras se descargan. Mantén VETA abierta." = "क्लाउड फ़ाइलों के डाउनलोड होने तक प्रतीक्षा करें। VETA खुला रखें।";
+"1. Instala la app del servicio e inicia sesión allí." = "1. सेवा का ऐप इंस्टॉल करें और उसमें साइन इन करें।";
+"2. Abre Archivos → Explorar → ⋯ → Editar y activa el servicio en Ubicaciones." = "2. Files → Browse → ⋯ → Edit खोलें और Locations में सेवा सक्रिय करें।";
+"3. En VETA, toca Agregar juegos → Carpeta en la nube. Busca la carpeta de una consola y toca Abrir." = "3. VETA में Add games → Cloud folder चुनें। कंसोल का फ़ोल्डर ढूँढें और Open दबाएँ।";
+"Si no permite elegir una carpeta" = "यदि फ़ोल्डर नहीं चुन सकते";
+"Usa Archivos en la nube, entra a la carpeta y selecciona varios juegos con sus portadas. Algunos servicios no permiten seleccionar carpetas desde otras apps." = "Cloud files से फ़ोल्डर खोलकर गेम और कवर चुनें। कुछ सेवाएँ अन्य ऐप से फ़ोल्डर चुनने नहीं देतीं।";
+"Juegos y portadas" = "गेम और कवर";
+"La importación desde la nube incluye subcarpetas. Para la portada, usa el mismo nombre: Juego.nes y Juego.png. Selecciona todas las pistas de los discos CUE/BIN o su carpeta." = "क्लाउड आयात में सबफ़ोल्डर भी आते हैं। कवर का नाम समान रखें: Game.nes और Game.png। CUE/BIN की सभी ट्रैक या उनका फ़ोल्डर चुनें।";
+"Se copian los formatos compatibles a VETA. Los originales y las partidas existentes se conservan. Una vez importados, puedes jugar sin conexión; no es una sincronización automática." = "समर्थित फ़ाइलें VETA में कॉपी होती हैं। मूल फ़ाइलें और सेव सुरक्षित रहते हैं। आयात के बाद ऑफ़लाइन खेल सकते हैं; यह अपने-आप सिंक नहीं करता।";
+"Necesitas espacio libre en el iPhone e Internet para los archivos que todavía no se han descargado." = "iPhone में खाली जगह और अभी तक डाउनलोड न हुई फ़ाइलों के लिए इंटरनेट चाहिए।";
+"Importación cancelada. Tus originales y tu biblioteca se conservan." = "आयात रद्द हुआ। मूल फ़ाइलें और लाइब्रेरी सुरक्षित हैं।";
+"Puedes volver a intentarlo. Los juegos ya agregados y sus partidas se conservan." = "आप फिर कोशिश कर सकते हैं। जोड़े गए गेम और उनके सेव सुरक्षित हैं।";
+
+/* Provider folder limitations191 */
+"Desde Drive, OneDrive o Dropbox" = "Drive, OneDrive या Dropbox से";
+"Carpeta de iCloud o del iPhone" = "iCloud या iPhone फ़ोल्डर";
+"3. En VETA, toca Agregar juegos → Desde Drive, OneDrive o Dropbox. Entra a la carpeta de tu consola, selecciona los juegos y sus portadas y toca Abrir." = "3. VETA में Add games → From Drive, OneDrive or Dropbox चुनें। कंसोल फ़ोल्डर में गेम और कवर चुनकर Open दबाएँ।";
+"Carpetas completas" = "पूरे फ़ोल्डर";
+"Drive y OneDrive permiten seleccionar archivos, pero no carpetas completas. Para iCloud Drive o En mi iPhone, usa Carpeta de iCloud o del iPhone: incluye sus subcarpetas. La disponibilidad depende del proveedor." = "Drive और OneDrive में फ़ाइलें चुन सकते हैं, पूरे फ़ोल्डर नहीं। iCloud Drive या On My iPhone के लिए iCloud or iPhone folder चुनें; सबफ़ोल्डर भी शामिल हैं। उपलब्धता प्रदाता पर निर्भर है।";
+"Para la portada, usa el mismo nombre: Juego.nes y Juego.png. Selecciona también todas las pistas de los discos CUE/BIN." = "कवर का नाम समान रखें: Game.nes और Game.png। CUE/BIN डिस्क के सभी ट्रैक भी चुनें।";

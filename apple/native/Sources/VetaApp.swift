@@ -73,7 +73,10 @@ struct LibraryView:View {
     init(library:Library) {self.library=library;_artwork=StateObject(wrappedValue:ArtworkStore(root:library.root))}
     @State private var query=""
     @State private var filter="Biblioteca"
-    @State private var importFolder:ShareItem?
+    @State private var importFolder:GameImportLocation?
+    @State private var importOptions=false
+    @State private var cloudHelp=false
+    @StateObject private var cloudImport=CloudImportModel()
     @State private var settings=false
     @State private var showCatalog=false
     @State private var confirmConsole:GameConsole?
@@ -145,8 +148,19 @@ struct LibraryView:View {
             }.background(VetaBackdrop()).toolbar(.hidden,for:.navigationBar)
         }.tint(VetaTheme.mint).foregroundStyle(VetaTheme.ink)
         .sheet(item:$importFolder) {folder in
-            GameFilePicker(directory:folder.url,allowsDirectories:true) {urls in importFolder=nil;finishImport(urls)}
+            GameFilePicker(directory:folder.directory,allowsDirectories:!folder.cloud,directoriesOnly:folder.folderOnly) {urls in
+                importFolder=nil
+                if folder.cloud {finishCloudImport(urls)} else {finishImport(urls)}
+            }
         }
+        .confirmationDialog("Agregar juegos",isPresented:$importOptions,titleVisibility:.visible) {
+            Button("Archivos del iPhone") {openLocalImporter()}
+            Button("Desde Drive, OneDrive o Dropbox") {importFolder=GameImportLocation(cloud:true)}
+            Button("Carpeta de iCloud o del iPhone") {importFolder=GameImportLocation(cloud:true,folderOnly:true)}
+            Button("Cómo conectar Drive, OneDrive o Dropbox") {cloudHelp=true}
+            Button("Cancelar",role:.cancel) {}
+        }
+        .sheet(isPresented:$cloudHelp) {CloudImportHelpView()}
         .fullScreenCover(item:$activeLaunch,onDismiss:{query=""}) {launch in
             let game=launch.game
             #if VETA_JIT_DEVELOPMENT
@@ -160,6 +174,7 @@ struct LibraryView:View {
             #endif
         }
         .overlay {if importingExperimental {ProgressView("Copiando juego…").padding(24).background(VetaTheme.panel,in:RoundedRectangle(cornerRadius:12))}}
+        .overlay {if cloudImport.busy {CloudImportProgressView(model:cloudImport)}}
         .sheet(item:$guideGame) {game in GameGuidesView(game:game,library:library)}
         .sheet(item:$profileGame) {game in GameProfileSettings(game:game,library:library)}
         .sheet(item:$artworkGame) {game in ArtworkView(game:game,artwork:artwork,fallback:artURL(game))}
@@ -207,8 +222,27 @@ struct LibraryView:View {
             Text(L10n.gameCount(filtered.count)).font(VetaTheme.body(12)).foregroundStyle(VetaTheme.muted)
         }
     }
-    private func openImporter() {
-        perform {importFolder=ShareItem(url:try GameFiles.prepareFolder(names:library.consoles.map(\.name)))}
+    private func openImporter() {if !cloudImport.busy {importOptions=true}}
+    private func openLocalImporter() {
+        perform {importFolder=GameImportLocation(directory:try GameFiles.prepareFolder(names:library.consoles.map(\.name)))}
+    }
+    private func finishCloudImport(_ urls:[URL]) {
+        guard !urls.isEmpty,!cloudImport.busy else{return}
+        let console=selectedLibraryConsole
+        Task { @MainActor in
+            defer {cloudImport.finish()}
+            do {
+                let snapshot=try await cloudImport.prepare(urls)
+                defer {snapshot.remove()}
+                await Task.yield()
+                let result=try library.importURLs(snapshot.files,console:console,artwork:artwork)
+                importMessage=result.message
+            } catch is CancellationError {
+                importMessage="Importación cancelada. Tus originales y tu biblioteca se conservan."
+            } catch {
+                library.error=L10n.text(error.localizedDescription)+"\n"+L10n.text("Puedes volver a intentarlo. Los juegos ya agregados y sus partidas se conservan.")
+            }
+        }
     }
     private func finishImport(_ urls:[URL]) {
         // UIKit may dismiss the picker before delivering its selection.

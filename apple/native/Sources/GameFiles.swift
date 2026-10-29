@@ -72,14 +72,15 @@ enum GameFiles {
 }
 
 struct GameFilePicker:UIViewControllerRepresentable {
-    let directory:URL
+    let directory:URL?
     var allowsDirectories=false
+    var directoriesOnly=false
     let completion:([URL])->Void
     func makeCoordinator()->Coordinator {Coordinator(completion:completion)}
     func makeUIViewController(context:Context)->UIDocumentPickerViewController {
-        let picker=UIDocumentPickerViewController(forOpeningContentTypes:allowsDirectories ? [.data,.folder]:[.data],asCopy:false)
+        let picker=UIDocumentPickerViewController(forOpeningContentTypes:directoriesOnly ? [.folder] : (allowsDirectories ? [.data,.folder]:[.data]),asCopy:false)
         picker.directoryURL=directory
-        picker.allowsMultipleSelection=true
+        picker.allowsMultipleSelection = !directoriesOnly
         picker.shouldShowFileExtensions=true
         picker.delegate=context.coordinator
         return picker

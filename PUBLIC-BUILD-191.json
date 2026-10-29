@@ -1,0 +1,25 @@
+{
+  "version": "0.191.0",
+  "build": "191",
+  "mainExecutableSHA256": "53ec8686bb07c730df5369c306695795d21414bba7883468ca16535e8a654bf3",
+  "unchangedEngineSectionsComparedWith190": [
+    "BSNESCore",
+    "DSCore",
+    "DolphinCore",
+    "DreamcastCore",
+    "DreamcastInterpreterCore",
+    "JGenesisCore",
+    "MelonDSCore",
+    "MoltenVK",
+    "N64NextCore",
+    "PCECore",
+    "PSPCore",
+    "PlayStationCore",
+    "SaturnCore",
+    "TIACore",
+    "ThreeDSCore"
+  ],
+  "bundledSkins": 19,
+  "bundledSkinsUnchanged": true,
+  "signing": "Development USB, not App Store approval"
+}

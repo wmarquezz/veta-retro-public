@@ -1017,3 +1017,34 @@
 "Pausar juego" = "Spiel pausieren";
 "Minimizar aviso de temperatura" = "Temperaturhinweis minimieren";
 "Mostrar recomendación de descanso" = "Pausenempfehlung anzeigen";
+
+/* Cloud import191 */
+"Archivos del iPhone" = "Dateien auf dem iPhone";
+"Carpeta en la nube" = "Cloud-Ordner";
+"Archivos en la nube" = "Cloud-Dateien";
+"Cómo conectar Drive, OneDrive o Dropbox" = "Drive, OneDrive oder Dropbox verbinden";
+"Importar desde la nube" = "Aus der Cloud importieren";
+"Google Drive, OneDrive y Dropbox" = "Google Drive, OneDrive und Dropbox";
+"Preparando tus juegos…" = "Deine Spiele werden vorbereitet…";
+"Agregando a tu biblioteca…" = "Wird zur Bibliothek hinzugefügt…";
+"Cancelando…" = "Wird abgebrochen…";
+"Si los archivos están en la nube, espera mientras se descargan. Mantén VETA abierta." = "Warte, bis die Cloud-Dateien heruntergeladen sind. Lass VETA geöffnet.";
+"1. Instala la app del servicio e inicia sesión allí." = "1. Installiere die App des Dienstes und melde dich dort an.";
+"2. Abre Archivos → Explorar → ⋯ → Editar y activa el servicio en Ubicaciones." = "2. Öffne Dateien → Durchsuchen → ⋯ → Bearbeiten und aktiviere den Dienst unter Speicherorte.";
+"3. En VETA, toca Agregar juegos → Carpeta en la nube. Busca la carpeta de una consola y toca Abrir." = "3. Tippe in VETA auf Spiele hinzufügen → Cloud-Ordner. Wähle einen Konsolenordner und tippe auf Öffnen.";
+"Si no permite elegir una carpeta" = "Wenn keine Ordnerauswahl möglich ist";
+"Usa Archivos en la nube, entra a la carpeta y selecciona varios juegos con sus portadas. Algunos servicios no permiten seleccionar carpetas desde otras apps." = "Öffne unter Cloud-Dateien den Ordner und wähle Spiele samt Covern. Manche Dienste erlauben anderen Apps keine Ordnerauswahl.";
+"Juegos y portadas" = "Spiele und Cover";
+"La importación desde la nube incluye subcarpetas. Para la portada, usa el mismo nombre: Juego.nes y Juego.png. Selecciona todas las pistas de los discos CUE/BIN o su carpeta." = "Der Cloud-Import umfasst Unterordner. Verwende denselben Namen: Game.nes und Game.png. Wähle alle CUE/BIN-Tracks oder deren Ordner.";
+"Se copian los formatos compatibles a VETA. Los originales y las partidas existentes se conservan. Una vez importados, puedes jugar sin conexión; no es una sincronización automática." = "Unterstützte Dateien werden in VETA kopiert. Originale und Spielstände bleiben erhalten. Danach kannst du offline spielen; es ist keine automatische Synchronisierung.";
+"Necesitas espacio libre en el iPhone e Internet para los archivos que todavía no se han descargado." = "Du brauchst freien Speicher auf dem iPhone und Internet für noch nicht geladene Dateien.";
+"Importación cancelada. Tus originales y tu biblioteca se conservan." = "Import abgebrochen. Originale und Bibliothek bleiben erhalten.";
+"Puedes volver a intentarlo. Los juegos ya agregados y sus partidas se conservan." = "Du kannst es erneut versuchen. Bereits hinzugefügte Spiele und Spielstände bleiben erhalten.";
+
+/* Provider folder limitations191 */
+"Desde Drive, OneDrive o Dropbox" = "Aus Drive, OneDrive oder Dropbox";
+"Carpeta de iCloud o del iPhone" = "iCloud- oder iPhone-Ordner";
+"3. En VETA, toca Agregar juegos → Desde Drive, OneDrive o Dropbox. Entra a la carpeta de tu consola, selecciona los juegos y sus portadas y toca Abrir." = "3. Tippe in VETA auf Spiele hinzufügen → Aus Drive, OneDrive oder Dropbox. Öffne den Konsolenordner, wähle Spiele und Cover und tippe auf Öffnen.";
+"Carpetas completas" = "Ganze Ordner";
+"Drive y OneDrive permiten seleccionar archivos, pero no carpetas completas. Para iCloud Drive o En mi iPhone, usa Carpeta de iCloud o del iPhone: incluye sus subcarpetas. La disponibilidad depende del proveedor." = "Drive und OneDrive erlauben Dateien, aber keine ganzen Ordner. Nutze für iCloud Drive oder Auf meinem iPhone die Option iCloud- oder iPhone-Ordner, einschließlich Unterordnern. Die Verfügbarkeit hängt vom Anbieter ab.";
+"Para la portada, usa el mismo nombre: Juego.nes y Juego.png. Selecciona también todas las pistas de los discos CUE/BIN." = "Verwende denselben Namen für das Cover: Game.nes und Game.png. Wähle auch alle CUE/BIN-Tracks.";

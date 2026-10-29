@@ -1,3 +1,7 @@
+## Importación desde la nube191
+
+Selección de carpetas o archivos desde proveedores de Archivos. [Uso y alcance de pruebas](docs/IMPORTACION-NUBE-191.md). [Fuentes completas191](SOURCE-UPDATE-191.md).
+
 ## Temperatura190 · aviso y pausa voluntaria
 
 Aviso de temperatura alta/crítica de iOS, minimizar y Pausar juego. [Validación](docs/AVISO-TEMPERATURA-190.md). [Obtener las fuentes completas190: base189 + actualización190](SOURCE-UPDATE-190.md).

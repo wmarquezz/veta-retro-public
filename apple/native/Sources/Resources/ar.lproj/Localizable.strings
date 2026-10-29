@@ -1017,3 +1017,34 @@
 "Pausar juego" = "إيقاف اللعب مؤقتًا";
 "Minimizar aviso de temperatura" = "تصغير تنبيه الحرارة";
 "Mostrar recomendación de descanso" = "عرض توصية الاستراحة";
+
+/* Cloud import191 */
+"Archivos del iPhone" = "ملفات iPhone";
+"Carpeta en la nube" = "مجلد سحابي";
+"Archivos en la nube" = "ملفات سحابية";
+"Cómo conectar Drive, OneDrive o Dropbox" = "كيفية ربط Drive أو OneDrive أو Dropbox";
+"Importar desde la nube" = "استيراد من السحابة";
+"Google Drive, OneDrive y Dropbox" = "Google Drive وOneDrive وDropbox";
+"Preparando tus juegos…" = "جارٍ تجهيز ألعابك…";
+"Agregando a tu biblioteca…" = "جارٍ الإضافة إلى مكتبتك…";
+"Cancelando…" = "جارٍ الإلغاء…";
+"Si los archivos están en la nube, espera mientras se descargan. Mantén VETA abierta." = "انتظر تنزيل الملفات الموجودة في السحابة. أبقِ VETA مفتوحًا.";
+"1. Instala la app del servicio e inicia sesión allí." = "1. ثبّت تطبيق الخدمة وسجّل الدخول فيه.";
+"2. Abre Archivos → Explorar → ⋯ → Editar y activa el servicio en Ubicaciones." = "2. افتح الملفات ← تصفح ← ⋯ ← تحرير، وفعّل الخدمة ضمن المواقع.";
+"3. En VETA, toca Agregar juegos → Carpeta en la nube. Busca la carpeta de una consola y toca Abrir." = "3. في VETA، اضغط إضافة ألعاب ← مجلد سحابي. اختر مجلد جهاز ألعاب واضغط فتح.";
+"Si no permite elegir una carpeta" = "إذا تعذّر اختيار مجلد";
+"Usa Archivos en la nube, entra a la carpeta y selecciona varios juegos con sus portadas. Algunos servicios no permiten seleccionar carpetas desde otras apps." = "استخدم ملفات سحابية، وافتح المجلد وحدّد الألعاب وأغلفتها. بعض الخدمات لا تتيح اختيار المجلدات من تطبيقات أخرى.";
+"Juegos y portadas" = "الألعاب والأغلفة";
+"La importación desde la nube incluye subcarpetas. Para la portada, usa el mismo nombre: Juego.nes y Juego.png. Selecciona todas las pistas de los discos CUE/BIN o su carpeta." = "يشمل الاستيراد المجلدات الفرعية. استخدم الاسم نفسه للغلاف: Game.nes وGame.png. حدّد جميع مسارات CUE/BIN أو مجلدها.";
+"Se copian los formatos compatibles a VETA. Los originales y las partidas existentes se conservan. Una vez importados, puedes jugar sin conexión; no es una sincronización automática." = "تُنسخ الصيغ المدعومة إلى VETA مع الحفاظ على الأصل وملفات الحفظ. يمكنك اللعب دون اتصال بعد الاستيراد؛ ليست مزامنة تلقائية.";
+"Necesitas espacio libre en el iPhone e Internet para los archivos que todavía no se han descargado." = "تحتاج مساحة على iPhone وإنترنت للملفات التي لم تُنزّل بعد.";
+"Importación cancelada. Tus originales y tu biblioteca se conservan." = "أُلغي الاستيراد. ملفاتك الأصلية ومكتبتك محفوظة.";
+"Puedes volver a intentarlo. Los juegos ya agregados y sus partidas se conservan." = "يمكنك المحاولة مجددًا. الألعاب المضافة وملفات حفظها محفوظة.";
+
+/* Provider folder limitations191 */
+"Desde Drive, OneDrive o Dropbox" = "من Drive أو OneDrive أو Dropbox";
+"Carpeta de iCloud o del iPhone" = "مجلد iCloud أو iPhone";
+"3. En VETA, toca Agregar juegos → Desde Drive, OneDrive o Dropbox. Entra a la carpeta de tu consola, selecciona los juegos y sus portadas y toca Abrir." = "3. في VETA اختر إضافة ألعاب ثم من Drive أو OneDrive أو Dropbox. افتح مجلد الجهاز وحدّد الألعاب والأغلفة ثم فتح.";
+"Carpetas completas" = "مجلدات كاملة";
+"Drive y OneDrive permiten seleccionar archivos, pero no carpetas completas. Para iCloud Drive o En mi iPhone, usa Carpeta de iCloud o del iPhone: incluye sus subcarpetas. La disponibilidad depende del proveedor." = "يتيح Drive وOneDrive اختيار الملفات لا المجلدات كاملة. استخدم مجلد iCloud أو iPhone لتضمين المجلدات الفرعية. يعتمد التوفر على المزوّد.";
+"Para la portada, usa el mismo nombre: Juego.nes y Juego.png. Selecciona también todas las pistas de los discos CUE/BIN." = "استخدم الاسم نفسه للغلاف: Game.nes وGame.png. حدّد أيضًا كل مسارات أقراص CUE/BIN.";

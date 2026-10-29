@@ -10,7 +10,9 @@
       "SWIFT_VERSION": "5.0",
       "TARGETED_DEVICE_FAMILY": "1,2",
       "IPHONEOS_DEPLOYMENT_TARGET": "16.4",
-      "ENABLE_USER_SCRIPT_SANDBOXING": "YES"
+      "ENABLE_USER_SCRIPT_SANDBOXING": "YES",
+      "MARKETING_VERSION": "0.191.0",
+      "CURRENT_PROJECT_VERSION": "191"
     }
   },
   "targets": {
@@ -1656,8 +1658,8 @@
         "path": "Info.plist",
         "properties": {
           "CFBundleDisplayName": "VETA-Retro",
-          "CFBundleShortVersionString": "0.190.0",
-          "CFBundleVersion": "190",
+          "CFBundleShortVersionString": "0.191.0",
+          "CFBundleVersion": "191",
           "UIAppFonts": [
             "Content/Fonts/BarlowCondensed-Bold.ttf",
             "Content/Fonts/Manrope.ttf"
@@ -1742,8 +1744,8 @@
           "SWIFT_OPTIMIZATION_LEVEL": "-O",
           "GCC_OPTIMIZATION_LEVEL": "2",
           "CLANG_CXX_LANGUAGE_STANDARD": "gnu++17",
-          "CURRENT_PROJECT_VERSION": "190",
-          "MARKETING_VERSION": "0.190.0",
+          "CURRENT_PROJECT_VERSION": "191",
+          "MARKETING_VERSION": "0.191.0",
           "IPHONEOS_DEPLOYMENT_TARGET": "17.4",
           "SWIFT_ACTIVE_COMPILATION_CONDITIONS": [
             "$(inherited)",

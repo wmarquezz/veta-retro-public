@@ -24,6 +24,38 @@ import UIKit
         let data=UIGraphicsImageRenderer(size:CGSize(width:200,height:300),format:f).pngData{c in color.setFill();c.fill(CGRect(x:0,y:0,width:200,height:300))}
         let path=(folder ?? input).appendingPathComponent(name);try data.write(to:path);return path
     }
+    func testCoordinatedCloudSnapshotImportsNestedGamesAndCovers()throws {
+        let folder=input.appendingPathComponent("NES");try FileManager.default.createDirectory(at:folder,withIntermediateDirectories:true)
+        _ = try rom("Cloud A.nes",folder:folder,marker:5)
+        _ = try picture("Cloud A.png",folder:folder)
+        _ = try rom("Cloud B.nes",folder:folder,marker:6)
+        let preparation=CloudImportPreparation(extensions:LocalCoverImport.gameExtensions.union(LocalCoverImport.imageExtensions))
+        let snapshot=try preparation.prepare([input],temporaryRoot:root){_,_,_ in}
+        let first=try library.importURLs(snapshot.files,console:.nes,artwork:store)
+        XCTAssertEqual(first.games,2);XCTAssertEqual(first.covers,1);XCTAssertEqual(library.games.count,2)
+        let game=try XCTUnwrap(library.games.first);let save=Data([9,8,7]);try save.write(to:library.file(game,"battery.sav"))
+        _ = try library.importURLs(snapshot.files,console:.nes,artwork:store)
+        XCTAssertEqual(library.games.count,2);XCTAssertEqual(try Data(contentsOf:library.file(game,"battery.sav")),save)
+        snapshot.remove();try FileManager.default.removeItem(at:input)
+        for game in library.games {XCTAssertTrue(FileManager.default.fileExists(atPath:library.romURL(game).path))}
+        XCTAssertEqual(try Data(contentsOf:library.file(game,"battery.sav")),save)
+    }
+    func testIsolatedProviderURLsImportCoverAndDiscTracks()throws {
+        let other=input.appendingPathComponent("provider-item-2"),third=input.appendingPathComponent("provider-item-3")
+        try FileManager.default.createDirectory(at:other,withIntermediateDirectories:true)
+        try FileManager.default.createDirectory(at:third,withIntermediateDirectories:true)
+        let source=try rom("Cloud.nes"),image=try picture("Cloud.png",folder:other)
+        let op=CloudImportPreparation(extensions:LocalCoverImport.gameExtensions.union(LocalCoverImport.imageExtensions))
+        let snapshot=try op.prepare([source,image],temporaryRoot:root,combineExplicitFiles:true){_,_,_ in};defer{snapshot.remove()}
+        let result=try library.importURLs(snapshot.files,console:.nes,artwork:store)
+        XCTAssertEqual(result.covers,1);XCTAssertEqual(result.games,1)
+        let cue=input.appendingPathComponent("Race.cue"),bin=other.appendingPathComponent("track.bin"),cover=try picture("Race.png",folder:third)
+        try Data("FILE \"track.bin\" BINARY\n  TRACK 01 MODE2/2352\n    INDEX 01 00:00:00\n".utf8).write(to:cue)
+        try Data(repeating:0,count:2352*2).write(to:bin)
+        let disc=try op.prepare([cue,bin,cover],temporaryRoot:root,combineExplicitFiles:true){_,_,_ in};defer{disc.remove()}
+        let imported=try library.importURLs(disc.files,console:.ps1,artwork:store)
+        XCTAssertEqual(imported.covers,1);XCTAssertEqual(imported.games,1)
+    }
     func testOptionalSiblingAndOfflinePersistence()throws {
         let source=try rom(),bytes=try Data(contentsOf:source)
         let first=try library.importURLs([source],console:.nes,artwork:store)

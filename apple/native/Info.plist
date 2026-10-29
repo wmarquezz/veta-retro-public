@@ -30,9 +30,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.190.0</string>
+	<string>0.191.0</string>
 	<key>CFBundleVersion</key>
-	<string>190</string>
+	<string>191</string>
 	<key>LSSupportsOpeningDocumentsInPlace</key>
 	<true/>
 	<key>NSBonjourServices</key>

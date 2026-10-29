@@ -1017,3 +1017,34 @@
 "Pausar juego" = "暂停游戏";
 "Minimizar aviso de temperatura" = "收起温度提醒";
 "Mostrar recomendación de descanso" = "显示休息建议";
+
+/* Cloud import191 */
+"Archivos del iPhone" = "iPhone 文件";
+"Carpeta en la nube" = "云端文件夹";
+"Archivos en la nube" = "云端文件";
+"Cómo conectar Drive, OneDrive o Dropbox" = "如何连接 Drive、OneDrive 或 Dropbox";
+"Importar desde la nube" = "从云端导入";
+"Google Drive, OneDrive y Dropbox" = "Google Drive、OneDrive 和 Dropbox";
+"Preparando tus juegos…" = "正在准备游戏…";
+"Agregando a tu biblioteca…" = "正在添加到游戏库…";
+"Cancelando…" = "正在取消…";
+"Si los archivos están en la nube, espera mientras se descargan. Mantén VETA abierta." = "如果文件在云端，请等待下载完成。保持 VETA 打开。";
+"1. Instala la app del servicio e inicia sesión allí." = "1. 安装云服务的应用并登录。";
+"2. Abre Archivos → Explorar → ⋯ → Editar y activa el servicio en Ubicaciones." = "2. 打开“文件”→“浏览”→ ⋯ →“编辑”，在“位置”中启用服务。";
+"3. En VETA, toca Agregar juegos → Carpeta en la nube. Busca la carpeta de una consola y toca Abrir." = "3. 在 VETA 中点按“添加游戏”→“云端文件夹”，找到主机文件夹并点按“打开”。";
+"Si no permite elegir una carpeta" = "如果无法选择文件夹";
+"Usa Archivos en la nube, entra a la carpeta y selecciona varios juegos con sus portadas. Algunos servicios no permiten seleccionar carpetas desde otras apps." = "使用“云端文件”，进入文件夹并选择游戏及封面。部分服务不允许其他应用选择文件夹。";
+"Juegos y portadas" = "游戏与封面";
+"La importación desde la nube incluye subcarpetas. Para la portada, usa el mismo nombre: Juego.nes y Juego.png. Selecciona todas las pistas de los discos CUE/BIN o su carpeta." = "云端导入包含子文件夹。封面使用相同名称，例如 Game.nes 和 Game.png。选择 CUE/BIN 光盘的全部轨道或其文件夹。";
+"Se copian los formatos compatibles a VETA. Los originales y las partidas existentes se conservan. Una vez importados, puedes jugar sin conexión; no es una sincronización automática." = "支持的文件会复制到 VETA，原始文件和存档保持不变。导入后可离线游玩；这不是自动同步。";
+"Necesitas espacio libre en el iPhone e Internet para los archivos que todavía no se han descargado." = "iPhone 需要足够空间；未下载的文件需要互联网连接。";
+"Importación cancelada. Tus originales y tu biblioteca se conservan." = "导入已取消，原始文件和游戏库保持不变。";
+"Puedes volver a intentarlo. Los juegos ya agregados y sus partidas se conservan." = "可以重试，已添加的游戏和存档保持不变。";
+
+/* Provider folder limitations191 */
+"Desde Drive, OneDrive o Dropbox" = "从 Drive、OneDrive 或 Dropbox";
+"Carpeta de iCloud o del iPhone" = "iCloud 或 iPhone 文件夹";
+"3. En VETA, toca Agregar juegos → Desde Drive, OneDrive o Dropbox. Entra a la carpeta de tu consola, selecciona los juegos y sus portadas y toca Abrir." = "3. 在 VETA 中点按添加游戏 → 从 Drive、OneDrive 或 Dropbox。进入主机文件夹，选择游戏和封面，然后点按打开。";
+"Carpetas completas" = "整个文件夹";
+"Drive y OneDrive permiten seleccionar archivos, pero no carpetas completas. Para iCloud Drive o En mi iPhone, usa Carpeta de iCloud o del iPhone: incluye sus subcarpetas. La disponibilidad depende del proveedor." = "Drive 和 OneDrive 支持选择文件，不支持整个文件夹。iCloud Drive 或我的 iPhone 请使用 iCloud 或 iPhone 文件夹，包含子文件夹。可用性取决于提供商。";
+"Para la portada, usa el mismo nombre: Juego.nes y Juego.png. Selecciona también todas las pistas de los discos CUE/BIN." = "封面使用相同名称：Game.nes 和 Game.png。也请选择 CUE/BIN 光盘的全部轨道。";

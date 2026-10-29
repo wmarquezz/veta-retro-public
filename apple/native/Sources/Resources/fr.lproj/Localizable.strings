@@ -1017,3 +1017,34 @@
 "Pausar juego" = "Mettre en pause";
 "Minimizar aviso de temperatura" = "Réduire l’avis de température";
 "Mostrar recomendación de descanso" = "Afficher le conseil de pause";
+
+/* Cloud import191 */
+"Archivos del iPhone" = "Fichiers sur l’iPhone";
+"Carpeta en la nube" = "Dossier dans le cloud";
+"Archivos en la nube" = "Fichiers dans le cloud";
+"Cómo conectar Drive, OneDrive o Dropbox" = "Connecter Drive, OneDrive ou Dropbox";
+"Importar desde la nube" = "Importer depuis le cloud";
+"Google Drive, OneDrive y Dropbox" = "Google Drive, OneDrive et Dropbox";
+"Preparando tus juegos…" = "Préparation de vos jeux…";
+"Agregando a tu biblioteca…" = "Ajout à votre bibliothèque…";
+"Cancelando…" = "Annulation…";
+"Si los archivos están en la nube, espera mientras se descargan. Mantén VETA abierta." = "Attendez le téléchargement des fichiers du cloud. Gardez VETA ouvert.";
+"1. Instala la app del servicio e inicia sesión allí." = "1. Installez l’app du service et connectez-vous.";
+"2. Abre Archivos → Explorar → ⋯ → Editar y activa el servicio en Ubicaciones." = "2. Ouvrez Fichiers → Explorer → ⋯ → Modifier et activez le service dans Emplacements.";
+"3. En VETA, toca Agregar juegos → Carpeta en la nube. Busca la carpeta de una consola y toca Abrir." = "3. Dans VETA, touchez Ajouter des jeux → Dossier dans le cloud. Choisissez le dossier d’une console puis Ouvrir.";
+"Si no permite elegir una carpeta" = "Si la sélection de dossier est indisponible";
+"Usa Archivos en la nube, entra a la carpeta y selecciona varios juegos con sus portadas. Algunos servicios no permiten seleccionar carpetas desde otras apps." = "Utilisez Fichiers dans le cloud pour choisir les jeux et leurs jaquettes. Certains services ne permettent pas de sélectionner des dossiers depuis une autre app.";
+"Juegos y portadas" = "Jeux et jaquettes";
+"La importación desde la nube incluye subcarpetas. Para la portada, usa el mismo nombre: Juego.nes y Juego.png. Selecciona todas las pistas de los discos CUE/BIN o su carpeta." = "L’importation inclut les sous-dossiers. Nommez la jaquette comme le jeu : Game.nes et Game.png. Sélectionnez toutes les pistes CUE/BIN ou leur dossier.";
+"Se copian los formatos compatibles a VETA. Los originales y las partidas existentes se conservan. Una vez importados, puedes jugar sin conexión; no es una sincronización automática." = "Les formats compatibles sont copiés dans VETA. Originaux et sauvegardes sont conservés. Vous pouvez ensuite jouer hors ligne ; ce n’est pas une synchronisation automatique.";
+"Necesitas espacio libre en el iPhone e Internet para los archivos que todavía no se han descargado." = "Prévoyez de l’espace sur l’iPhone et Internet pour les fichiers non téléchargés.";
+"Importación cancelada. Tus originales y tu biblioteca se conservan." = "Importation annulée. Vos originaux et votre bibliothèque sont conservés.";
+"Puedes volver a intentarlo. Los juegos ya agregados y sus partidas se conservan." = "Vous pouvez réessayer. Les jeux déjà ajoutés et leurs sauvegardes sont conservés.";
+
+/* Provider folder limitations191 */
+"Desde Drive, OneDrive o Dropbox" = "Depuis Drive, OneDrive ou Dropbox";
+"Carpeta de iCloud o del iPhone" = "Dossier iCloud ou iPhone";
+"3. En VETA, toca Agregar juegos → Desde Drive, OneDrive o Dropbox. Entra a la carpeta de tu consola, selecciona los juegos y sus portadas y toca Abrir." = "3. Dans VETA, touchez Ajouter des jeux → Depuis Drive, OneDrive ou Dropbox. Ouvrez le dossier de la console, sélectionnez jeux et jaquettes puis Ouvrir.";
+"Carpetas completas" = "Dossiers complets";
+"Drive y OneDrive permiten seleccionar archivos, pero no carpetas completas. Para iCloud Drive o En mi iPhone, usa Carpeta de iCloud o del iPhone: incluye sus subcarpetas. La disponibilidad depende del proveedor." = "Drive et OneDrive permettent de choisir des fichiers, pas des dossiers entiers. Pour iCloud Drive ou Sur mon iPhone, utilisez Dossier iCloud ou iPhone : les sous-dossiers sont inclus. Cela dépend du fournisseur.";
+"Para la portada, usa el mismo nombre: Juego.nes y Juego.png. Selecciona también todas las pistas de los discos CUE/BIN." = "Nommez la jaquette comme le jeu : Game.nes et Game.png. Sélectionnez aussi toutes les pistes CUE/BIN.";

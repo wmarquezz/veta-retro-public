@@ -557,6 +557,10 @@
     "apple/native/Sources/ThermalNoticeState.swift",
     "apple/native/Sources/ThermalGameNotice.swift",
     "apple/native/Tests/ThermalNoticeTests.swift",
-    "docs/AVISO-TEMPERATURA-190.md"
+    "docs/AVISO-TEMPERATURA-190.md",
+    "apple/native/Sources/CloudImportPreparation.swift",
+    "apple/native/Sources/CloudImportView.swift",
+    "apple/native/Tests/CloudImportPreparationTests.swift",
+    "docs/IMPORTACION-NUBE-191.md"
   ]
 }

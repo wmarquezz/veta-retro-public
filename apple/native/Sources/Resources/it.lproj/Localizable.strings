@@ -558,6 +558,7 @@
 "La BIOS %@ no es válida." = "Il BIOS %@ non è valido.";
 "La BIOS %@ no tiene el tamaño requerido en System/dc." = "Il BIOS %@ in System/dc non ha le dimensioni richieste.";
 "La ROM Game Boy está incompleta." = "La ROM del Game Boy è incompleta.";
+"La ROM Mega Drive está incompleta o usa un formato no compatible." = "La ROM Mega Drive è incompleta o utilizza un formato non supportato.";
 "La ROM NES está incompleta." = "La ROM del NES è incompleta.";
 "La ROM Nintendo DS está incompleta." = "La ROM del Nintendo DS è incompleta.";
 "La ROM supera los 64 MB." = "La ROM supera i 64 MB.";

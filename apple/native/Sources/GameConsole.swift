@@ -142,7 +142,7 @@ enum GameConsole:String,Codable,CaseIterable,Identifiable {
         case "sfc","smc":return .snes
         case "gb","gbc":guard data.count>0x143 else{throw VetaError.message("La ROM Game Boy está incompleta.")};return data[0x143]&0x80 != 0 ? .gbc:.gb
         case "gba":return .gba
-        case "md","gen":return .megaDrive
+        case "md","gen","smd":return .megaDrive
         case "sms":return .masterSystem
         case "gg":return .gameGear
         case "a26":return .atari2600
@@ -152,7 +152,7 @@ enum GameConsole:String,Codable,CaseIterable,Identifiable {
         case "cue":throw VetaError.message("Selecciona el CUE junto con todas sus pistas BIN.")
         case "chd","pbp","m3u":throw VetaError.message("Esta versión admite PlayStation en CUE + BIN o PS-X EXE. Este formato todavía no está habilitado.")
         case "bin":
-            if data.count>0x104,Data(data[0x100..<0x104])==Data("SEGA".utf8){return .megaDrive}
+            if MegaDriveROM.isCartridge(data){return .megaDrive}
             if let preferred,[Self.ps1,.atari2600,.megaDrive].contains(preferred){return preferred}
             throw VetaError.message("Este .bin es ambiguo. Selecciona primero su consola en la biblioteca.")
         default:throw VetaError.message("Selecciona una ROM de las consolas con motor incluido. Los archivos ZIP deben descomprimirse primero.")

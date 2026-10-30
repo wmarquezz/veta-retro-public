@@ -140,7 +140,10 @@ extension Library {
             consumed.insert(cue);consumed.formUnion(sources.values)
         }
         for url in urls where !consumed.contains(url) {
-            if let game=try importURL(url,console:preferred) {processed+=1;if let artwork {covers.attach(to:game,from:url,store:artwork);if let archive=expanded.origins[url] {covers.attach(to:game,from:archive,store:artwork)}}}
+            do {
+                if let game=try importURL(url,console:preferred) {processed+=1;if let artwork {covers.attach(to:game,from:url,store:artwork);if let archive=expanded.origins[url] {covers.attach(to:game,from:archive,store:artwork)}}}
+            } catch is CancellationError { throw CancellationError() }
+            catch { throw ZIPGameImport.ArchiveError(name: (expanded.origins[url] ?? url).lastPathComponent, underlying: error) }
         }
         var summary=covers.summary;summary.games=processed;summary.backups=urls.filter{["vetanes","vetaretro"].contains($0.pathExtension.lowercased())}.count
         return summary

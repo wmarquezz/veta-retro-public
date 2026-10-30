@@ -5,6 +5,12 @@ import zlib
 /// Encrypted, split and nested archives are rejected; no external file is overwritten.
 enum ZIPGameImport {
     static let supported = LocalCoverImport.gameExtensions.union(NativeGameFile.extensions).union(LocalCoverImport.imageExtensions).subtracting(["zip","vetanes","vetaretro"])
+    /// Keep the failing archive visible when importing several games at once.
+    struct ArchiveError: LocalizedError {
+        let name: String
+        let underlying: Error
+        var errorDescription: String? { name + "\n" + underlying.localizedDescription }
+    }
     static let limit = 32 * 1024 * 1024 * 1024
     struct Expansion {
         let files: [URL]
@@ -31,19 +37,22 @@ enum ZIPGameImport {
             var result: [URL] = [], origins: [URL: URL] = [:], total = 0
             for file in files {
                 guard file.pathExtension.lowercased() == "zip" else { result.append(file); continue }
-                let folder = root.appendingPathComponent(UUID().uuidString)
-                let extracted = try extract(file, into: folder, total: &total, checkCancellation: checkCancellation)
-                var tracks=Set<URL>()
-                for cue in extracted where cue.pathExtension.lowercased()=="cue" {
-                    let names=try DiscFiles.names(in:Data(contentsOf:cue))
-                    for name in names {if let match=extracted.first(where:{LocalCoverImport.parent($0)==LocalCoverImport.parent(cue) && $0.lastPathComponent.caseInsensitiveCompare(name) == .orderedSame}) {tracks.insert(match)}}
-                }
-                let games = extracted.filter { !LocalCoverImport.isImage($0) && !tracks.contains($0) && $0.pathExtension.lowercased() != "wav" }
-                guard !games.isEmpty else { throw VetaError.message("El ZIP no contiene archivos de juego compatibles con esta versión de VETA.") }
-                result += extracted
-                // A single-game archive may use a different internal ROM filename.
-                // Its external cover belongs to that game, never to every game in a collection.
-                if games.count == 1 { origins[games[0]] = file }
+                do {
+                    let folder = root.appendingPathComponent(UUID().uuidString)
+                    let extracted = try extract(file, into: folder, total: &total, checkCancellation: checkCancellation)
+                    var tracks=Set<URL>()
+                    for cue in extracted where cue.pathExtension.lowercased()=="cue" {
+                        let names=try DiscFiles.names(in:Data(contentsOf:cue))
+                        for name in names {if let match=extracted.first(where:{LocalCoverImport.parent($0)==LocalCoverImport.parent(cue) && $0.lastPathComponent.caseInsensitiveCompare(name) == .orderedSame}) {tracks.insert(match)}}
+                    }
+                    let games = extracted.filter { !LocalCoverImport.isImage($0) && !tracks.contains($0) && $0.pathExtension.lowercased() != "wav" }
+                    guard !games.isEmpty else { throw VetaError.message("El ZIP no contiene archivos de juego compatibles con esta versión de VETA.") }
+                    result += extracted
+                    // A single-game archive may use a different internal ROM filename.
+                    // Its external cover belongs to that game, never to every game in a collection.
+                    if games.count == 1 { origins[games[0]] = file }
+                } catch is CancellationError { throw CancellationError() }
+                catch { throw ArchiveError(name: file.lastPathComponent, underlying: error) }
             }
             return Expansion(files: result, origins: origins, directory: root)
         } catch { try? FileManager.default.removeItem(at: root); throw error }

@@ -558,6 +558,7 @@
 "La BIOS %@ no es válida." = "BIOS %@ 无效。";
 "La BIOS %@ no tiene el tamaño requerido en System/dc." = "System/dc 中的 BIOS %@ 大小不符合要求。";
 "La ROM Game Boy está incompleta." = "Game Boy ROM 不完整。";
+"La ROM Mega Drive está incompleta o usa un formato no compatible." = "Mega Drive ROM 不完整或使用了不支持的格式。";
 "La ROM NES está incompleta." = "NES ROM 不完整。";
 "La ROM Nintendo DS está incompleta." = "Nintendo DS ROM 不完整。";
 "La ROM supera los 64 MB." = "ROM 超过 64 MB。";

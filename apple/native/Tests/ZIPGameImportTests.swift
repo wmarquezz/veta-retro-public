@@ -35,6 +35,20 @@ import zlib
         XCTAssertEqual(again.covers,0);XCTAssertEqual(library.games.count,1);XCTAssertEqual(try Data(contentsOf:save),Data([7,8,9]))
         XCTAssertEqual(try Data(contentsOf:zip),Data(base64Encoded:"UEsDBBQAAAAIAOS9XF0LFWlvOAAAAACAAAATAAAAaW5zaWRlL09yaWdpbmFsLnNmY+3KMREAMAgAsZeC1ErHAnMvmVMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8Kk5vlcLUEsBAhQDFAAAAAgA5L1cXQsVaW84AAAAAIAAABMAAAAAAAAAAAAAAIABAAAAAGluc2lkZS9PcmlnaW5hbC5zZmNQSwUGAAAAAAEAAQBBAAAAaQAAAAAA")!)
     }
+    func testBatchFailureNamesArchiveAndRemovesPartialExtraction() throws {
+        let good = try write(stored("Game.bin"), "First.zip")
+        let bad = try write(stored("Unsupported.txt"), "Second.zip")
+        let temporary = root.appendingPathComponent("temporary")
+        try FileManager.default.createDirectory(at: temporary, withIntermediateDirectories: true)
+        XCTAssertThrowsError(try ZIPGameImport.expand([good, bad], temporaryRoot: temporary)) { error in
+            let failure = error as? ZIPGameImport.ArchiveError
+            XCTAssertEqual(failure?.name, "Second.zip")
+            XCTAssertTrue(error.localizedDescription.contains("Second.zip"))
+        }
+        XCTAssertTrue(try FileManager.default.contentsOfDirectory(atPath: temporary.path).isEmpty)
+        XCTAssertTrue(FileManager.default.fileExists(atPath: good.path))
+        XCTAssertTrue(FileManager.default.fileExists(atPath: bad.path))
+    }
     func testStoredAndCleanup() throws {
         let zip=try write(stored("Game.sfc"),"Game.zip"), expansion=try ZIPGameImport.expand([zip])
         XCTAssertEqual(expansion.files.count,1);XCTAssertEqual(try Data(contentsOf:expansion.files[0]),Data([1,2,3]))

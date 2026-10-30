@@ -558,6 +558,7 @@
 "La BIOS %@ no es válida." = "ملف BIOS %@ غير صالح.";
 "La BIOS %@ no tiene el tamaño requerido en System/dc." = "حجم BIOS %@ في System/dc لا يطابق الحجم المطلوب.";
 "La ROM Game Boy está incompleta." = "ملف ROM لجهاز Game Boy غير مكتمل.";
+"La ROM Mega Drive está incompleta o usa un formato no compatible." = "ملف ROM الخاص بـ Mega Drive غير مكتمل أو يستخدم تنسيقًا غير مدعوم.";
 "La ROM NES está incompleta." = "ملف ROM لجهاز NES غير مكتمل.";
 "La ROM Nintendo DS está incompleta." = "ملف ROM لجهاز Nintendo DS غير مكتمل.";
 "La ROM supera los 64 MB." = "يتجاوز ROM حجم 64 ميغابايت.";

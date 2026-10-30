@@ -216,7 +216,7 @@ struct StateFile: Codable {
         if [.megaDrive,.masterSystem,.gameGear,.atari2600,.pcEngine,.ps1].contains(console) {
             switch console {
             case .megaDrive:
-                guard data.count>=512,data.count<=32*1024*1024,Data(data[0x100..<0x104])==Data("SEGA".utf8) else{throw VetaError.message("Selecciona una ROM Mega Drive .md/.gen/.bin sin comprimir.")}
+                guard MegaDriveROM.isCartridge(data) else { throw MegaDriveROM.invalid }
             case .masterSystem,.gameGear:
                 guard data.count>=8192,data.count<=4*1024*1024,[0x1ff0,0x3ff0,0x7ff0].contains(where:{data.count >= $0+8 && Data(data[$0..<$0+8])==Data("TMR SEGA".utf8)}) else{throw VetaError.message("Cabecera Sega de 8 bits inválida.")}
             case .atari2600:
@@ -287,8 +287,9 @@ struct StateFile: Codable {
         guard size < 256*1024*1024 else { throw VetaError.message("El archivo supera los 256 MB. Importa las ROMs por separado.") }
         let data = try Data(contentsOf: url)
         if !["vetanes","vetaretro"].contains(url.pathExtension.lowercased()) {
-            let console=try GameConsole.detect(data,extension:url.pathExtension,preferred:preferred)
-            return try add(data:data,name:url.deletingPathExtension().lastPathComponent,console:console)
+            let normalized = try MegaDriveROM.normalize(data, extension: url.pathExtension)
+            let console=try GameConsole.detect(normalized,extension:url.pathExtension,preferred:preferred)
+            return try add(data:normalized,name:url.deletingPathExtension().lastPathComponent,console:console)
         }
         let backup = try JSONDecoder().decode(NativeBackup.self, from: data)
         guard ((backup.format == "veta-native-nes" && backup.version == 1) || (backup.format == "veta-native" && [2,3,4,5,6].contains(backup.version))), backup.entries.count <= 500 else { throw VetaError.message("Selecciona un respaldo nativo .vetaretro o .vetanes válido.") }

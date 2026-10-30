@@ -18,13 +18,18 @@ enum ZIPGameImport {
         let directory: URL
         func importFiles() throws -> [URL] {
             var result=files
+            // Index once: repeated path standardization for every game/image pair
+            // accumulated gigabytes of temporary Foundation objects on large imports.
+            let images=Dictionary(grouping:files.filter{LocalCoverImport.isImage($0)},by:LocalCoverImport.CoverKey.init)
             for (game,archive) in origins {
-                let stem=LocalCoverImport.stem(game),parent=LocalCoverImport.parent(game)
-                if files.contains(where:{LocalCoverImport.isImage($0) && LocalCoverImport.parent($0)==parent && LocalCoverImport.stem($0)==stem}) {continue}
-                let candidates=files.filter{LocalCoverImport.isImage($0) && LocalCoverImport.parent($0)==LocalCoverImport.parent(archive) && LocalCoverImport.stem($0)==LocalCoverImport.stem(archive)}.sorted{$0.lastPathComponent<$1.lastPathComponent}
-                guard let cover=candidates.first else{continue}
-                let target=game.deletingPathExtension().appendingPathExtension(cover.pathExtension)
-                try FileManager.default.copyItem(at:cover,to:target);result.append(target)
+                let paired:URL? = try autoreleasepool {
+                    if images[LocalCoverImport.CoverKey(game)] != nil { return nil }
+                    guard let cover=images[LocalCoverImport.CoverKey(archive)]?.sorted(by:{$0.lastPathComponent<$1.lastPathComponent}).first else { return nil }
+                    let target=game.deletingPathExtension().appendingPathExtension(cover.pathExtension)
+                    try FileManager.default.copyItem(at:cover,to:target)
+                    return target
+                }
+                if let paired { result.append(paired) }
             }
             return result
         }
@@ -39,7 +44,7 @@ enum ZIPGameImport {
                 guard file.pathExtension.lowercased() == "zip" else { result.append(file); continue }
                 do {
                     let folder = root.appendingPathComponent(UUID().uuidString)
-                    let extracted = try extract(file, into: folder, total: &total, checkCancellation: checkCancellation)
+                    let extracted = try autoreleasepool { try extract(file, into: folder, total: &total, checkCancellation: checkCancellation) }
                     var tracks=Set<URL>()
                     for cue in extracted where cue.pathExtension.lowercased()=="cue" {
                         let names=try DiscFiles.names(in:Data(contentsOf:cue))

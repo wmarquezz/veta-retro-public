@@ -24,8 +24,8 @@
       "bytes": 1983
     },
     "RELEASE-1.0.0-rc.3.md": {
-      "sha256": "eec22f30550c92882eee7cff9a24fddce39cb3741047af3b4c18d0d52fe5b147",
-      "bytes": 2008
+      "sha256": "9ba6997108890d5c9829d24855219ec851740e66aeab7d42e883f279c3bed7cb",
+      "bytes": 2344
     },
     "SOURCE-UPDATE-190.md": {
       "sha256": "09d10838e3873bcd3c48e785eed33a90b59a352857618b252da1cf3f8c5f340f",
@@ -369048,8 +369048,8 @@
       "bytes": 5817
     },
     "apple/native/Sources/CloudImportPreparation.swift": {
-      "sha256": "0dd50193a1cc3ec68f96f5a1de91be9bccf8e897faf9c6201b96f78fcf0fbdc3",
-      "bytes": 8658
+      "sha256": "8c61a83e49e1a166df9a5fd62c84655b1f4f9f1fc19d491a653141e307e2da16",
+      "bytes": 8752
     },
     "apple/native/Sources/CloudImportView.swift": {
       "sha256": "7b2729e318e8410c0b1485ac4869fe5e1c3e7d08143e4209b4fd8891a9c315ba",
@@ -369120,8 +369120,8 @@
       "bytes": 21017
     },
     "apple/native/Sources/DiscImport.swift": {
-      "sha256": "4450cebb66ef6ec84beb33374ca9eeedbdfba92fd77103ec552d2bc025c1940d",
-      "bytes": 11660
+      "sha256": "93857a11eacf7d22e10a20e4730713b4af844d61171fcae6e17ed9eb0902e952",
+      "bytes": 11716
     },
     "apple/native/Sources/Discovery.swift": {
       "sha256": "0f921f1cef9686aa0e8f16a5823da42ce726f96f30a8c21c6ec2c503d2b2c476",
@@ -369216,8 +369216,8 @@
       "bytes": 2002
     },
     "apple/native/Sources/LocalCoverImport.swift": {
-      "sha256": "62cf7cfba3cc9388570ae7e383668a35dd2caa865bec48bddf84770da0827001",
-      "bytes": 5000
+      "sha256": "d3d07715f037dd91cc619861b99b1d3fd389499f2bf3ce7bbbd29d6179cf8c45",
+      "bytes": 5249
     },
     "apple/native/Sources/Localization.swift": {
       "sha256": "f213cc432a6e096b447b5a4869c70c62bf82f668176cf042ec193518476033b0",
@@ -369544,8 +369544,8 @@
       "bytes": 19589
     },
     "apple/native/Sources/ZIPGameImport.swift": {
-      "sha256": "10054310694c8de78705491e8425ebfcfa3ed7eafa3c47c9d82baacbac623e68",
-      "bytes": 13206
+      "sha256": "bb287c5b70faae9939850504d43a57807dacdd31b3a07c7c603068b56d2f1668",
+      "bytes": 13356
     },
     "apple/native/Testing/SaveFixtures/Thwaite-AUTHOR.txt": {
       "sha256": "6b59326820c23783e6cee8872ceda07735dd4adedf1d49577005e4f395201080",
@@ -369712,8 +369712,8 @@
       "bytes": 21695
     },
     "apple/native/Tests/ZIPGameImportTests.swift": {
-      "sha256": "cff94590a6f0fb02e4f4b8c1d341557768d45d67c10e647a01c4c5783f6a716a",
-      "bytes": 16812
+      "sha256": "23a8da1fc34255f3607b4437992795e64a5cc75ae80d90bafbf42cbe113c14fd",
+      "bytes": 17327
     },
     "apple/native/Tests/play_audio_test.cpp": {
       "sha256": "0b646745f1ccb296e76e63ef1beae73688e281362285a7883b9fe23fe6a1568b",

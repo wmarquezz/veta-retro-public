@@ -49,6 +49,14 @@ import zlib
         XCTAssertTrue(FileManager.default.fileExists(atPath: good.path))
         XCTAssertTrue(FileManager.default.fileExists(atPath: bad.path))
     }
+    func testFilesPreparationPreservesArchiveErrorInsteadOfBlamingNetwork() throws {
+        let zip=try write(stored("Unsupported.txt"),"Broken Game.zip")
+        let job=CloudImportPreparation(extensions:LocalCoverImport.gameExtensions)
+        XCTAssertThrowsError(try job.prepare([zip],temporaryRoot:root){_,_,_ in}) { error in
+            XCTAssertEqual((error as? ZIPGameImport.ArchiveError)?.name,"Broken Game.zip")
+            XCTAssertFalse(error.localizedDescription.contains("Internet"))
+        }
+    }
     func testStoredAndCleanup() throws {
         let zip=try write(stored("Game.sfc"),"Game.zip"), expansion=try ZIPGameImport.expand([zip])
         XCTAssertEqual(expansion.files.count,1);XCTAssertEqual(try Data(contentsOf:expansion.files[0]),Data([1,2,3]))

@@ -107,7 +107,7 @@ final class CloudImportPreparation: @unchecked Sendable {
                     try fm.createDirectory(at: folder, withIntermediateDirectories: true); parents[parent] = folder
                 }
                 let target = folder.appendingPathComponent(source.lastPathComponent)
-                try read(source) { available in
+                try autoreleasepool { try read(source) { available in
                     let before = try available.resourceValues(forKeys: [.isRegularFileKey, .isSymbolicLinkKey, .fileSizeKey, .contentModificationDateKey])
                     guard before.isRegularFile == true, before.isSymbolicLink != true else { throw Failure.link }
                     let size = Int64(before.fileSize ?? 0)
@@ -128,7 +128,7 @@ final class CloudImportPreparation: @unchecked Sendable {
                     let after = try available.resourceValues(forKeys: [.fileSizeKey, .contentModificationDateKey])
                     guard bytes == size, before.fileSize == after.fileSize,
                           before.contentModificationDate == after.contentModificationDate else { throw Failure.changed }
-                }
+                } }
                 files.append(target); progress(source.lastPathComponent, index + 1, sources.count)
             }
             let expanded=try ZIPGameImport.expand(files,temporaryRoot:root,checkCancellation:check)
@@ -138,6 +138,7 @@ final class CloudImportPreparation: @unchecked Sendable {
         } catch is CancellationError { throw CancellationError() }
         catch let error as Failure { throw error }
         catch let error as VetaError { throw error }
+        catch let error as ZIPGameImport.ArchiveError { throw error }
         catch { throw Failure.unavailable(sources.last?.lastPathComponent ?? selections.first?.lastPathComponent ?? "") }
     }
 }

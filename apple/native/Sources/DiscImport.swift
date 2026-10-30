@@ -141,7 +141,9 @@ extension Library {
         }
         for url in urls where !consumed.contains(url) {
             do {
+                try autoreleasepool {
                 if let game=try importURL(url,console:preferred) {processed+=1;if let artwork {covers.attach(to:game,from:url,store:artwork);if let archive=expanded.origins[url] {covers.attach(to:game,from:archive,store:artwork)}}}
+                }
             } catch is CancellationError { throw CancellationError() }
             catch { throw ZIPGameImport.ArchiveError(name: (expanded.origins[url] ?? url).lastPathComponent, underlying: error) }
         }

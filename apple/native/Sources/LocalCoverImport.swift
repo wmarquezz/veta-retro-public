@@ -7,6 +7,11 @@ enum LocalCoverImport {
     static func isImage(_ url:URL)->Bool {imageExtensions.contains(url.pathExtension.lowercased())}
     static func stem(_ url:URL)->String {url.deletingPathExtension().lastPathComponent.precomposedStringWithCanonicalMapping.lowercased()}
     static func parent(_ url:URL)->URL {url.deletingLastPathComponent().standardizedFileURL}
+    struct CoverKey: Hashable {
+        let directory: URL
+        let name: String
+        init(_ url: URL) { directory=parent(url); name=stem(url) }
+    }
     /// One selected console folder, not a recursive scan of the user's storage.
     static func files(_ selections:[URL])throws->[URL] {
         var files:[URL]=[],seen=Set<URL>()
@@ -41,23 +46,23 @@ enum LocalCoverImport {
         }
     }
     @MainActor final class Session {
-        private let selected:[URL]
-        private var directories:[URL:[URL]]=[:]
+        private let selected:[CoverKey:[URL]]
+        private var directories:[URL:[String:[URL]]]=[:]
         private(set) var summary=Summary()
-        init(files:[URL]) {selected=files.filter{isImage($0)}}
+        init(files:[URL]) {selected=Dictionary(grouping:files.filter{isImage($0)},by:CoverKey.init)}
         func attach(to game:Game,from rom:URL,store:ArtworkStore) {
             summary.games+=1
             // Even an unreadable old cover is retained for manual recovery.
             guard !FileManager.default.fileExists(atPath:store.url(game).path) else{return}
-            let directory=parent(rom)
+            let key=CoverKey(rom),directory=key.directory
             if directories[directory]==nil {
                 // This succeeds for VETA's Documents or a folder granted by Files.
                 // A file-only grant may not expose siblings: the user can select
                 // the image together with the ROM instead.
-                directories[directory]=(try? FileManager.default.contentsOfDirectory(at:directory,includingPropertiesForKeys:nil,options:.skipsHiddenFiles)) ?? []
+                let images=((try? FileManager.default.contentsOfDirectory(at:directory,includingPropertiesForKeys:nil,options:.skipsHiddenFiles)) ?? []).filter{isImage($0)}
+                directories[directory]=Dictionary(grouping:images,by:stem)
             }
-            let candidates=Set(selected.filter{parent($0)==directory}+(directories[directory] ?? []).filter{isImage($0)})
-                .filter{stem($0)==stem(rom)}.sorted {
+            let candidates=Set((selected[key] ?? [])+(directories[directory]?[key.name] ?? [])).sorted {
                     let a=imageExtensions.firstIndex(of:$0.pathExtension.lowercased())!,b=imageExtensions.firstIndex(of:$1.pathExtension.lowercased())!
                     return a==b ? $0.lastPathComponent<$1.lastPathComponent:a<b
                 }

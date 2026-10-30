@@ -109,7 +109,7 @@ struct KrafifySharedAccessView: View {
                     SecureField("Contraseña del enlace", text: $form.password).textContentType(.password).privacySensitive().accessibilityIdentifier("shared-link-password").disabled(busy)
                     Text("Usa la contraseña que te entregó el propietario. No es la de Google ni la de Apple.").font(.footnote)
                     Toggle("Recordar acceso en este iPhone", isOn: $form.remember).disabled(busy).accessibilityIdentifier("shared-link-remember")
-                    Text("El enlace y la contraseña se guardan en el llavero seguro de este iPhone. Si cambia la contraseña, tendrás que ingresar la nueva.").font(.footnote)
+                    Text("Si activas Recordar acceso, el enlace y la contraseña se guardan en el llavero de este iPhone. Si cambia la contraseña, tendrás que ingresar la nueva.").font(.footnote)
                     if form.hasSavedAccess {
                         Button("Olvidar acceso guardado", role: .destructive) {
                             do { try form.forget(); error = nil } catch { self.error = error.localizedDescription }

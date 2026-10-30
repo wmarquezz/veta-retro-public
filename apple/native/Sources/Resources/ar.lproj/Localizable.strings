@@ -357,6 +357,7 @@
 "En uso" = "قيد الاستخدام";
 "Enlace compartido" = "رابط مشترك";
 "Enlace de la guía" = "رابط الدليل";
+"Enlace de un portal compatible con VETA y su contraseña." = "رابط من بوابة متوافقة مع VETA وكلمة المرور الخاصة به.";
 "Equilibrada · 720p" = "متوازنة · 720p";
 "Eres anfitrión. Abre un juego de %@." = "أنت المضيف. افتح لعبة %@.";
 "Eres jugador %lld · %@" = "أنت اللاعب %lld · %@";
@@ -402,6 +403,7 @@
 "Este motor no ofrece varias plazas locales." = "هذا المحرك لا يدعم عدة خانات محلية.";
 "Este motor no permite pausar: el juego continúa mientras el menú está abierto. Los controles quedan desactivados hasta volver al juego." = "لا يدعم هذا المحرك الإيقاف المؤقت: تستمر اللعبة أثناء فتح القائمة. تتعطل أدوات التحكم حتى تعود إلى اللعبة.";
 "Este motor tiene un solo jugador local; no ofrece una segunda plaza para invitados." = "هذا المحرك يدعم لاعبًا محليًا واحدًا؛ ولا توجد خانة ثانية للضيوف.";
+"Este selector AirPlay puede conectar solo el audio; no sustituye Duplicar pantalla." = "قد يوصل محدد AirPlay هذا الصوت فقط؛ ولا يحل محل انعكاس الشاشة.";
 "Este teléfono funciona como mando. El vídeo y el sonido permanecen en el anfitrión." = "يعمل هذا الهاتف كوحدة تحكم. يبقى الفيديو والصوت على الجهاز المضيف.";
 "Este túnel no dirige tu navegación de Internet a un servidor VPN ni cambia tus servidores DNS. La extensión VPN no guarda el contenido de los paquetes." = "لا يوجّه هذا النفق تصفحك للإنترنت إلى خادم VPN ولا يغيّر خوادم DNS لديك. لا يحتفظ امتداد VPN بمحتوى الحزم.";
 "Estilo" = "النمط";
@@ -675,6 +677,7 @@
 "Mis skins personalizados" = "أشكالي المخصصة";
 "Mis skins por consola" = "تصاميمي حسب الجهاز";
 "Modo de juego" = "وضع اللعب";
+"Modo sin conexión. La velocidad depende del juego y del dispositivo." = "وضع عدم الاتصال. تعتمد السرعة على اللعبة والجهاز.";
 "Modo sin conexión. La velocidad depende del juego y puede ser menor. Máximo rendimiento está disponible en Ajustes." = "وضع عدم الاتصال. تعتمد السرعة على اللعبة وقد تكون أقل. يتوفر وضع الأداء الأقصى في الإعدادات.";
 "Mostrar recomendación de descanso" = "عرض توصية الاستراحة";
 "Mostrar vista previa" = "إظهار المعاينة";
@@ -985,6 +988,7 @@
 "Separación %lld %%" = "التباعد %lld %%";
 "Sesión nativa" = "جلسة أصلية";
 "Si activas JIT, VETA guarda el emparejamiento en este dispositivo y utiliza una VPN local para comunicarse con iOS. No es un servicio VPN para navegar por Internet." = "إذا فعّلت JIT، تحفظ VETA الاقتران على هذا الجهاز وتستخدم VPN محلية للتواصل مع iOS. ليست خدمة VPN لتصفح الإنترنت.";
+"Si activas Recordar acceso, el enlace y la contraseña se guardan en el llavero de este iPhone. Si cambia la contraseña, tendrás que ingresar la nueva." = "إذا فعّلت تذكر الوصول، فسيُحفظ الرابط وكلمة المرور في سلسلة مفاتيح هذا الـ iPhone. إذا تغيرت كلمة المرور، فستحتاج إلى إدخال الجديدة.";
 "Si el enlace pide contraseña, escríbela en la página del proveedor. Selecciona allí los juegos y toca Descargar; después, Importar descargas." = "إذا طلب الرابط كلمة مرور، أدخلها في صفحة المزود. اختر الألعاب واضغط تنزيل، ثم استيراد التنزيلات.";
 "Si eliges Recordar acceso, el enlace y la contraseña se guardan en el llavero de este iPhone. Puedes eliminarlos con Olvidar acceso." = "عند اختيار تذكّر الوصول، يُحفظ الرابط وكلمة المرور في سلسلة مفاتيح هذا iPhone. يمكنك حذفهما عبر نسيان الوصول.";
 "Si las zonas no caben en la pantalla, VETA usa el diseño original." = "إذا لم تتسع الشاشة للمناطق، تستخدم VETA التصميم الأصلي.";

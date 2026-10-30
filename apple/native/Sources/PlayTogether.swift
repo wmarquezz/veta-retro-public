@@ -137,7 +137,7 @@ struct RemoteInputGate {
     private var lastVideo: TimeInterval = 0
     private var lastReceivedVideo: UInt64 = 0
     private var videoSequence: UInt64 = 0
-    var onlineConfigured: Bool { Bundle.main.object(forInfoDictionaryKey: "VETAGameCenterEnabled") as? Bool == true }
+    var onlineConfigured: Bool { FeatureAccess.onlineMultiplayerEnabled }
     private override init() { super.init() }
     private func makeSession() {
         let session = MCSession(peer: peer, securityIdentity: nil, encryptionPreference: .required)
@@ -488,9 +488,10 @@ struct PlayTogetherView: View {
                     Button("Crear sala cercana") { room.hostNearby(console: console) }.buttonStyle(.borderedProminent).disabled(console.maximumPlayers < 2 || room.isJoining || room.isHosting)
                     Button("Usar este iPhone como mando") { room.browseNearby() }.buttonStyle(.bordered).disabled(room.isJoining || room.isHosting)
                     ForEach(room.nearby, id: \.self) { peer in Button(L10n.format("Unirse a %@",peer.displayName)) { room.join(peer) }.disabled(room.isJoining).accessibilityIdentifier("nearby-join") }
-                    Button("Buscar partida por Game Center") { room.startOnline(console: console) }.buttonStyle(.bordered).disabled(console.maximumPlayers < 2 || room.isJoining || room.isHosting)
+                    if room.onlineConfigured {
+                        Button("Buscar partida por Game Center") { room.startOnline(console: console) }.buttonStyle(.bordered).disabled(console.maximumPlayers < 2 || room.isJoining || room.isHosting)
+                    }
                     if console.maximumPlayers < 2 { Text(L10n.format("%@ tiene una sola plaza local en este motor. Puedes usar este teléfono para unirte a una sala de otra consola.",console.name)).font(.caption) }
-                    if !room.onlineConfigured { Text("Internet estará disponible al configurar Game Center para VETA. Esta instalación permite preparar las salas cercanas.").font(.caption) }
                     Text("El anfitrión ejecuta el juego y conserva las partidas. Cada invitado recibe una plaza libre. La consola y el juego deben admitir varios jugadores. Ambos iPhone necesitan VETA; Android todavía no tiene cliente.").font(.footnote)
                 }
                 Button("Cerrar conexión", role: .destructive) { room.stop() }

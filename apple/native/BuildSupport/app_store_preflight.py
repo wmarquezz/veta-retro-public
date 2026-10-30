@@ -35,7 +35,7 @@ def check(app,metadata):
  for p in manifests:
   data=plistlib.loads(p.read_bytes())
   for entry in data.get('NSPrivacyAccessedAPITypes',[]):reasons.setdefault(entry['NSPrivacyAccessedAPIType'],set()).update(entry['NSPrivacyAccessedAPITypeReasons'])
- for category,required in {'UserDefaults':{'CA92.1'},'FileTimestamp':{'C617.1','3B52.1'},'SystemBootTime':{'35F9.1'}}.items():
+ for category,required in {'UserDefaults':{'CA92.1'},'FileTimestamp':{'C617.1','3B52.1'},'SystemBootTime':{'35F9.1'},'DiskSpace':{'E174.1'}}.items():
   require(required<=reasons.get('NSPrivacyAccessedAPICategory'+category,set()),'Declared host API reasons: '+category)
  # Public APIs scan is a triage, not a substitute for reviewing all SDKs and dynamic lookups.
  scanned=[]

@@ -200,7 +200,7 @@ struct ExternalDisplaySettingsView: View {
             Section("AirPlay") {
                 Text("Para enviar imagen y sonido, abre el Centro de control del iPhone y toca Duplicar pantalla (dos rectángulos). Después selecciona tu TV.").font(.footnote)
                 AirPlayRouteButton().frame(height: 44)
-                Text("El selector AirPlay de abajo puede conectar solo el audio; no sustituye Duplicar pantalla.").font(.footnote)
+                Text("Este selector AirPlay puede conectar solo el audio; no sustituye Duplicar pantalla.").font(.footnote)
                 Text("La TV debe admitir AirPlay o usar un receptor compatible. La transmisión inalámbrica puede añadir retraso. El sonido sigue la salida de audio de iOS.").font(.footnote)
             }
             Section { Text("Los controles permanecen en el teléfono. La imagen conserva la proporción de la consola, con bandas cuando corresponda.").font(.footnote) }

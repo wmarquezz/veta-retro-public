@@ -570,6 +570,7 @@
     "apple/native/Tests/VideoPresentationTests.swift",
     "apple/native/Tests/ZIPGameImportTests.swift",
     "apple/native/Tests/play_audio_test.cpp",
+    "apple/native/UITests/ReleaseReviewUITests.swift",
     "apple/native/VetaNative.xcodeproj/xcshareddata/xcschemes/VetaSupportPreview.xcscheme",
     "apple/native/make-icon.swift",
     "apple/native/prepare.py",

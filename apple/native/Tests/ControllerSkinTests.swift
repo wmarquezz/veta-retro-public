@@ -29,12 +29,13 @@ import UIKit
         }
     }
     func testPreferencesAreScopedByConsoleAndOrientationAndRespectLegacy()throws {
+        // Legacy global style applies to portrait; landscape defaults to Transparent (public 184).
         defaults.set("Noche",forKey:"native.skin")
         XCTAssertEqual(store.palette(console:.nes,orientation:.portrait),.night)
-        XCTAssertEqual(store.palette(console:.nes,orientation:.landscape),.night)
+        XCTAssertEqual(store.palette(console:.nes,orientation:.landscape),.transparent)
         try store.save(example(),console:.nes)
         XCTAssertEqual(store.palette(console:.nes,orientation:.portrait),.veta)
-        XCTAssertEqual(store.palette(console:.nes,orientation:.landscape),.night)
+        XCTAssertEqual(store.palette(console:.nes,orientation:.landscape),.transparent)
         XCTAssertNil(store.layout(console:.nes,orientation:.landscape))
         XCTAssertNil(store.layout(console:.gb,orientation:.portrait))
         XCTAssertEqual(store.palette(console:.gb,orientation:.portrait),.studio)

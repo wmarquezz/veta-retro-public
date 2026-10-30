@@ -357,6 +357,7 @@
 "En uso" = "使用中";
 "Enlace compartido" = "共享链接";
 "Enlace de la guía" = "攻略链接";
+"Enlace de un portal compatible con VETA y su contraseña." = "与 VETA 兼容的门户链接及其密码。";
 "Equilibrada · 720p" = "均衡 · 720p";
 "Eres anfitrión. Abre un juego de %@." = "你是主机。请打开一个 %@ 游戏。";
 "Eres jugador %lld · %@" = "你是玩家 %lld · %@";
@@ -402,6 +403,7 @@
 "Este motor no ofrece varias plazas locales." = "此引擎不支持多位本地玩家。";
 "Este motor no permite pausar: el juego continúa mientras el menú está abierto. Los controles quedan desactivados hasta volver al juego." = "此模拟器核心不支持暂停：菜单打开时游戏仍会继续运行。返回游戏前，控制器输入将被禁用。";
 "Este motor tiene un solo jugador local; no ofrece una segunda plaza para invitados." = "此引擎仅支持一位本地玩家，没有访客位置。";
+"Este selector AirPlay puede conectar solo el audio; no sustituye Duplicar pantalla." = "此 AirPlay 选择器可能只连接音频，不能替代屏幕镜像。";
 "Este teléfono funciona como mando. El vídeo y el sonido permanecen en el anfitrión." = "此手机用作控制器。视频和声音保留在主机上。";
 "Este túnel no dirige tu navegación de Internet a un servidor VPN ni cambia tus servidores DNS. La extensión VPN no guarda el contenido de los paquetes." = "此隧道不会将你的互联网浏览流量转发到 VPN 服务器，也不会更改 DNS 服务器。VPN 扩展不会存储数据包内容。";
 "Estilo" = "样式";
@@ -675,6 +677,7 @@
 "Mis skins personalizados" = "我的自定义皮肤";
 "Mis skins por consola" = "按主机查看皮肤";
 "Modo de juego" = "游戏模式";
+"Modo sin conexión. La velocidad depende del juego y del dispositivo." = "离线模式。运行速度取决于游戏和设备。";
 "Modo sin conexión. La velocidad depende del juego y puede ser menor. Máximo rendimiento está disponible en Ajustes." = "离线模式。运行速度取决于游戏，可能较慢。可在设置中选择“最高性能”。";
 "Mostrar recomendación de descanso" = "显示休息建议";
 "Mostrar vista previa" = "显示预览";
@@ -985,6 +988,7 @@
 "Separación %lld %%" = "间距 %lld %%";
 "Sesión nativa" = "原生会话";
 "Si activas JIT, VETA guarda el emparejamiento en este dispositivo y utiliza una VPN local para comunicarse con iOS. No es un servicio VPN para navegar por Internet." = "启用 JIT 后，VETA 将配对信息保存在此设备上，并使用本地 VPN 与 iOS 通信。这不是用于浏览互联网的 VPN 服务。";
+"Si activas Recordar acceso, el enlace y la contraseña se guardan en el llavero de este iPhone. Si cambia la contraseña, tendrás que ingresar la nueva." = "如果启用“记住访问凭据”，链接和密码将保存在此 iPhone 的钥匙串中。密码更改后，你需要输入新密码。";
 "Si el enlace pide contraseña, escríbela en la página del proveedor. Selecciona allí los juegos y toca Descargar; después, Importar descargas." = "若链接需要密码，请在服务提供商页面输入。在那里选择游戏并轻点“下载”，然后选择“导入已下载的文件”。";
 "Si eliges Recordar acceso, el enlace y la contraseña se guardan en el llavero de este iPhone. Puedes eliminarlos con Olvidar acceso." = "选择“记住访问凭据”后，链接和密码会保存在此 iPhone 的钥匙串中。可通过“忘记访问凭据”删除。";
 "Si las zonas no caben en la pantalla, VETA usa el diseño original." = "如果区域无法适应屏幕，VETA 将使用原始设计。";

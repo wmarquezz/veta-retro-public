@@ -18,7 +18,12 @@ struct FeatureDefinition: Identifiable {
 enum FeatureAccess {
     /// Product planning only. This is not a StoreKit entitlement or receipt.
     static let developmentUnlocked = true
-    static let catalog: [FeatureDefinition] = [
+    static var onlineMultiplayerEnabled: Bool {
+        Bundle.main.object(forInfoDictionaryKey: "VETAGameCenterEnabled") as? Bool == true
+    }
+    static var catalog: [FeatureDefinition] { catalog(onlineEnabled: onlineMultiplayerEnabled) }
+    static func catalog(onlineEnabled: Bool) -> [FeatureDefinition] { definitions.filter { onlineEnabled || $0.id != "onlineMultiplayer" } }
+    private static let definitions: [FeatureDefinition] = [
         .init(id: "library", title: "Biblioteca y juegos", classification: .free),
         .init(id: "engines", title: "Motores de emulación", classification: .free),
         .init(id: "states", title: "Partidas guardadas", classification: .free),

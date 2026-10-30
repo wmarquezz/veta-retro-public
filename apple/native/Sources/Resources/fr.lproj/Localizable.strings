@@ -357,6 +357,7 @@
 "En uso" = "Utilisé";
 "Enlace compartido" = "Lien partagé";
 "Enlace de la guía" = "Lien du guide";
+"Enlace de un portal compatible con VETA y su contraseña." = "Lien d’un portail compatible avec VETA et son mot de passe.";
 "Equilibrada · 720p" = "Équilibrée · 720p";
 "Eres anfitrión. Abre un juego de %@." = "Vous hébergez. Ouvrez un jeu %@.";
 "Eres jugador %lld · %@" = "Vous êtes le joueur %lld · %@";
@@ -402,6 +403,7 @@
 "Este motor no ofrece varias plazas locales." = "Ce moteur ne propose pas plusieurs places locales.";
 "Este motor no permite pausar: el juego continúa mientras el menú está abierto. Los controles quedan desactivados hasta volver al juego." = "Ce moteur ne permet pas la pause : le jeu continue lorsque le menu est ouvert. Les commandes sont désactivées jusqu’au retour au jeu.";
 "Este motor tiene un solo jugador local; no ofrece una segunda plaza para invitados." = "Ce moteur accepte un seul joueur local ; aucune seconde place pour les invités.";
+"Este selector AirPlay puede conectar solo el audio; no sustituye Duplicar pantalla." = "Ce sélecteur AirPlay peut ne transmettre que le son ; il ne remplace pas la recopie de l’écran.";
 "Este teléfono funciona como mando. El vídeo y el sonido permanecen en el anfitrión." = "Ce téléphone sert de manette. L’image et le son restent sur l’hôte.";
 "Este túnel no dirige tu navegación de Internet a un servidor VPN ni cambia tus servidores DNS. La extensión VPN no guarda el contenido de los paquetes." = "Ce tunnel ne dirige pas votre navigation Internet vers un serveur VPN et ne modifie pas vos serveurs DNS. L’extension VPN ne conserve pas le contenu des paquets.";
 "Estilo" = "Style";
@@ -675,6 +677,7 @@
 "Mis skins personalizados" = "Mes skins personnalisés";
 "Mis skins por consola" = "Mes skins par console";
 "Modo de juego" = "Mode de jeu";
+"Modo sin conexión. La velocidad depende del juego y del dispositivo." = "Mode hors ligne. La vitesse dépend du jeu et de l’appareil.";
 "Modo sin conexión. La velocidad depende del juego y puede ser menor. Máximo rendimiento está disponible en Ajustes." = "Mode hors ligne. La vitesse dépend du jeu et peut être plus faible. Le mode Performances maximales est disponible dans les réglages.";
 "Mostrar recomendación de descanso" = "Afficher le conseil de pause";
 "Mostrar vista previa" = "Afficher l’aperçu";
@@ -985,6 +988,7 @@
 "Separación %lld %%" = "Espacement %lld %%";
 "Sesión nativa" = "Session native";
 "Si activas JIT, VETA guarda el emparejamiento en este dispositivo y utiliza una VPN local para comunicarse con iOS. No es un servicio VPN para navegar por Internet." = "Si vous activez JIT, VETA conserve le jumelage sur cet appareil et utilise un VPN local pour communiquer avec iOS. Ce n’est pas un VPN pour naviguer sur Internet.";
+"Si activas Recordar acceso, el enlace y la contraseña se guardan en el llavero de este iPhone. Si cambia la contraseña, tendrás que ingresar la nueva." = "Si vous activez Mémoriser l’accès, le lien et le mot de passe sont enregistrés dans le trousseau de cet iPhone. Si le mot de passe change, vous devrez saisir le nouveau.";
 "Si el enlace pide contraseña, escríbela en la página del proveedor. Selecciona allí los juegos y toca Descargar; después, Importar descargas." = "Si le lien demande un mot de passe, saisissez-le sur la page du fournisseur. Sélectionnez les jeux, touchez Télécharger, puis Importer les téléchargements.";
 "Si eliges Recordar acceso, el enlace y la contraseña se guardan en el llavero de este iPhone. Puedes eliminarlos con Olvidar acceso." = "Si vous choisissez Mémoriser l’accès, le lien et le mot de passe sont enregistrés dans le trousseau de cet iPhone. Supprimez-les avec Oublier l’accès.";
 "Si las zonas no caben en la pantalla, VETA usa el diseño original." = "Si les zones ne tiennent pas à l’écran, VETA utilise le design d’origine.";

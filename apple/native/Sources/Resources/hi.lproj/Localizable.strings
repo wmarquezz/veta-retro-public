@@ -357,6 +357,7 @@
 "En uso" = "उपयोग में";
 "Enlace compartido" = "साझा लिंक";
 "Enlace de la guía" = "गाइड का लिंक";
+"Enlace de un portal compatible con VETA y su contraseña." = "VETA के साथ संगत पोर्टल का लिंक और उसका पासवर्ड।";
 "Equilibrada · 720p" = "संतुलित · 720p";
 "Eres anfitrión. Abre un juego de %@." = "आप होस्ट हैं। %@ का गेम खोलें।";
 "Eres jugador %lld · %@" = "आप खिलाड़ी %lld हैं · %@";
@@ -402,6 +403,7 @@
 "Este motor no ofrece varias plazas locales." = "यह इंजन कई स्थानीय खिलाड़ियों का समर्थन नहीं करता।";
 "Este motor no permite pausar: el juego continúa mientras el menú está abierto. Los controles quedan desactivados hasta volver al juego." = "यह इंजन पॉज़ नहीं कर सकता: मेन्यू खुला रहने पर भी खेल चलता रहता है। खेल में वापस जाने तक नियंत्रण बंद रहते हैं।";
 "Este motor tiene un solo jugador local; no ofrece una segunda plaza para invitados." = "इस इंजन में एक स्थानीय खिलाड़ी है; मेहमानों के लिए दूसरी जगह नहीं है।";
+"Este selector AirPlay puede conectar solo el audio; no sustituye Duplicar pantalla." = "यह AirPlay चयनकर्ता केवल ऑडियो कनेक्ट कर सकता है; यह स्क्रीन मिररिंग की जगह नहीं लेता।";
 "Este teléfono funciona como mando. El vídeo y el sonido permanecen en el anfitrión." = "यह फ़ोन कंट्रोलर की तरह काम करता है। वीडियो और ध्वनि होस्ट पर रहते हैं।";
 "Este túnel no dirige tu navegación de Internet a un servidor VPN ni cambia tus servidores DNS. La extensión VPN no guarda el contenido de los paquetes." = "यह टनल आपकी इंटरनेट ब्राउज़िंग को VPN सर्वर पर नहीं भेजता और आपके DNS सर्वर नहीं बदलता। VPN एक्सटेंशन पैकेट की सामग्री सहेजता नहीं है।";
 "Estilo" = "शैली";
@@ -675,6 +677,7 @@
 "Mis skins personalizados" = "मेरी कस्टम स्किन";
 "Mis skins por consola" = "कंसोल के अनुसार मेरी स्किन";
 "Modo de juego" = "खेलने का मोड";
+"Modo sin conexión. La velocidad depende del juego y del dispositivo." = "ऑफ़लाइन मोड। गति गेम और डिवाइस पर निर्भर करती है।";
 "Modo sin conexión. La velocidad depende del juego y puede ser menor. Máximo rendimiento está disponible en Ajustes." = "ऑफ़लाइन मोड। गति गेम पर निर्भर करती है और कम हो सकती है। सेटिंग्स में अधिकतम प्रदर्शन विकल्प उपलब्ध है।";
 "Mostrar recomendación de descanso" = "आराम की सलाह दिखाएँ";
 "Mostrar vista previa" = "पूर्वावलोकन दिखाएँ";
@@ -985,6 +988,7 @@
 "Separación %lld %%" = "अंतर %lld %%";
 "Sesión nativa" = "मूल सत्र";
 "Si activas JIT, VETA guarda el emparejamiento en este dispositivo y utiliza una VPN local para comunicarse con iOS. No es un servicio VPN para navegar por Internet." = "JIT चालू करने पर VETA इस डिवाइस में पेयरिंग रखता है और iOS से संवाद के लिए स्थानीय VPN इस्तेमाल करता है। यह इंटरनेट ब्राउज़िंग की VPN सेवा नहीं है।";
+"Si activas Recordar acceso, el enlace y la contraseña se guardan en el llavero de este iPhone. Si cambia la contraseña, tendrás que ingresar la nueva." = "यदि आप एक्सेस याद रखें चालू करते हैं, तो लिंक और पासवर्ड इस iPhone के कीचेन में सहेजे जाते हैं। पासवर्ड बदलने पर आपको नया पासवर्ड दर्ज करना होगा।";
 "Si el enlace pide contraseña, escríbela en la página del proveedor. Selecciona allí los juegos y toca Descargar; después, Importar descargas." = "लिंक पासवर्ड माँगे तो प्रदाता के पेज पर भरें। वहाँ गेम चुनकर डाउनलोड करें, फिर डाउनलोड की गई फ़ाइलें आयात करें पर टैप करें।";
 "Si eliges Recordar acceso, el enlace y la contraseña se guardan en el llavero de este iPhone. Puedes eliminarlos con Olvidar acceso." = "ऐक्सेस याद रखें चुनने पर लिंक और पासवर्ड इस iPhone की कीचेन में सहेजे जाते हैं। ऐक्सेस भूलें से उन्हें हटा सकते हैं।";
 "Si las zonas no caben en la pantalla, VETA usa el diseño original." = "यदि क्षेत्र स्क्रीन पर नहीं समाते, तो VETA मूल डिज़ाइन उपयोग करता है।";

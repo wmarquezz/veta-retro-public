@@ -7,6 +7,24 @@ import XCTest
 
 /// Policy and file-format tests; these fixtures do not assert device performance.
 @MainActor final class GameLaunchPlanTests: XCTestCase {
+    func testPublicModeIgnoresRetainedMaximumPerformancePreference() {
+        var snapshot = facts(jit: true)
+        snapshot.experimentalBuild = false
+        for console in GameLaunchPlan.localInterpreterConsoles {
+            let plan = GameLaunchPlan.resolve(console: console, snapshot: snapshot, preference: .maximumPerformance)
+            XCTAssertEqual(plan.mode, .interpreter)
+            XCTAssertFalse(plan.requiresJIT)
+            XCTAssertTrue(DeviceReadiness(snapshot: snapshot).assess(console: console, plan: plan).canAttemptLaunch)
+        }
+    }
+    #if !VETA_JIT_DEVELOPMENT
+    func testPublicEditionRejectsPS2AndDoesNotSuggestMissingSettings() {
+        let snapshot = facts(jit: true)
+        XCTAssertFalse(DeviceReadiness(snapshot: snapshot).assess(console: .ps2).canAttemptLaunch)
+        XCTAssertFalse(GameConsole.allCases.contains(.ps2))
+        XCTAssertFalse(GameLaunchPlan(console: .wii, mode: .interpreter).notice?.contains("Ajustes") ?? true)
+    }
+    #endif
     private func facts(jit: Bool = false) -> DeviceReadiness.Snapshot {
         .init(metalAvailable: true, physicalMemory: 8 * 1024 * 1024 * 1024, processorCount: 6,
               osVersion: .init(majorVersion: 17, minorVersion: 4, patchVersion: 0), simulator: false,
@@ -26,7 +44,7 @@ import XCTest
         for console in GameLaunchPlan.localInterpreterConsoles {
             let ready = GameLaunchPlan.resolve(console: console, snapshot: facts(jit: true), preference: .automatic)
             XCTAssertEqual(ready.mode, .jit)
-            XCTAssertTrue(ready.usesSharedPreparation)
+            XCTAssertEqual(ready.usesSharedPreparation, console.usesSharedJITPool)
             XCTAssertEqual(GameLaunchPlan.resolve(console: console, snapshot: facts(jit: true), preference: .maximumPerformance).mode, .jit)
             let pending = GameLaunchPlan.resolve(console: console, snapshot: facts(), preference: .maximumPerformance)
             XCTAssertEqual(pending.mode, .jit)
@@ -66,6 +84,7 @@ import XCTest
         XCTAssertEqual(plan.mode, .interpreter)
         XCTAssertFalse(plan.requiresJIT)
     }
+    #if VETA_JIT_DEVELOPMENT
     func testPS2AutomaticRequiresNativeJITEvenWhenWebAssetsAreIncluded() {
         for jit in [false, true] {
             var snapshot = facts(jit: jit)
@@ -82,6 +101,9 @@ import XCTest
             }
         }
     }
+    #endif
+
+    #if VETA_JIT_DEVELOPMENT
     func testPS2ExplicitOfflineQARequiresItsWebAssets() {
         var snapshot = facts()
         snapshot.includedWebAssemblyConsoles = [.ps2]
@@ -96,6 +118,8 @@ import XCTest
         XCTAssertEqual(GameLaunchPlan.resolve(console: .ps2, snapshot: snapshot, preference: .automatic, interpreterOverride: true).mode, .jit)
         XCTAssertEqual(DeviceReadiness(snapshot: snapshot).assess(console: .ps2, plan: .init(console: .ps2, mode: .webAssembly)).status, .unavailable)
     }
+    #endif
+
     #if VETA_JIT_DEVELOPMENT
     func testPS2CaptureKeepsOnlyTheExactOfflineQAOverride() {
         let old = ProcessInfo.processInfo.environment["VETA_OFFLINE160_CONSOLE"]
@@ -227,6 +251,7 @@ import XCTest
             "states/auto.state":try webState(gameID:game.id),"states/quick.previous.state":try webState(gameID:game.id)]
         return WebEngineArchive(version:1,engine:WebEngineArchive.engineID,gameID:game.id,files:entries.mapValues{.init(digest:sha256($0),bytes:$0)})
     }
+    #if VETA_JIT_DEVELOPMENT
     func testPS2WebBackupRoundTripAndExistingNamespaceWins()throws {
         let root=FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
         let library=Library(root:root.appendingPathComponent("source"))
@@ -253,6 +278,8 @@ import XCTest
         let oldLibrary=Library(root:root.appendingPathComponent("legacy"));try oldLibrary.importURL(oldURL)
         XCTAssertNil(try oldLibrary.archiveWebEngineStorage(game))
     }
+    #endif
+
     func testPS2WebArchiveRejectsTraversalIdentityDigestsAndStateABI()throws {
         let game=Game(id:String(repeating:"a",count:64),name:"PS2",console:.ps2),archive=try webArchive(game)
         func changed(_ files:[String:WebEngineArchive.File])->WebEngineArchive {.init(version:1,engine:archive.engine,gameID:game.id,files:files)}

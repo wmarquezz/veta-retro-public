@@ -2,6 +2,18 @@ import XCTest
 @testable import VetaNative
 
 final class SettingsLocalizationTests: XCTestCase {
+    func testOnlineFeaturesAreOfferedOnlyWhenConfigured() {
+        XCTAssertFalse(FeatureAccess.catalog(onlineEnabled: false).contains { $0.id == "onlineMultiplayer" })
+        XCTAssertTrue(FeatureAccess.catalog(onlineEnabled: true).contains { $0.id == "onlineMultiplayer" })
+        XCTAssertTrue(FeatureAccess.catalog(onlineEnabled: false).contains { $0.id == "localMultiplayer" })
+    }
+    func testImportDiskSpaceUseIsDeclaredInPrivacyManifest() throws {
+        let url = try XCTUnwrap(Bundle.main.url(forResource: "PrivacyInfo", withExtension: "xcprivacy"))
+        let manifest = try XCTUnwrap(PropertyListSerialization.propertyList(from: Data(contentsOf: url), format: nil) as? [String: Any])
+        let apis = try XCTUnwrap(manifest["NSPrivacyAccessedAPITypes"] as? [[String: Any]])
+        let disk = try XCTUnwrap(apis.first { $0["NSPrivacyAccessedAPIType"] as? String == "NSPrivacyAccessedAPICategoryDiskSpace" })
+        XCTAssertTrue((disk["NSPrivacyAccessedAPITypeReasons"] as? [String] ?? []).contains("E174.1"))
+    }
     func testDynamicSettingsChoicesExistInEveryCatalog() {
         let keys = FeatureAccess.catalog.map(\.title)
             + FeatureClassification.allCases.map(\.title)

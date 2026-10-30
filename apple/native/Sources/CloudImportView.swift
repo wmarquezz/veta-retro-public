@@ -24,7 +24,7 @@ struct GameImportOptionsView: View {
                     if !providers.isEmpty {
                         option(.cloud, title: "Conectar mi nube", detail: providers.map(\.title).joined(separator: ", "), icon: "cloud", id: "import-source-cloud")
                     }
-                    option(.shared, title: "Abrir enlace compartido", detail: "Carpetas y archivos que te compartieron.", icon: "link", id: "import-source-shared")
+                    option(.shared, title: "Abrir enlace compartido", detail: "Enlace de un portal compatible con VETA y su contraseña.", icon: "link", id: "import-source-shared")
                 } footer: {
                     Text("Portada opcional: Juego.zip + Juego.png. Selecciona ambos archivos o importa su carpeta.")
                 }

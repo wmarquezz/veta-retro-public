@@ -238,7 +238,8 @@ struct ControllerSkinDocument:FileDocument {
     }
 }
 @MainActor enum ActiveConsoleSkin {
-    static func name(console:GameConsole,orientation:ControllerSkinOrientation,library:PersonalSkinLibrary = .shared)->String {
+    static func name(console:GameConsole,orientation:ControllerSkinOrientation,library:PersonalSkinLibrary? = nil)->String {
+        let library = library ?? .shared
         if let id=library.selectedID(console:console,orientation:orientation),library.selected(console:console,orientation:orientation) != nil,let skin=try? library.load(id) {return skin.name}
         return L10n.text(ControllerSkinStore(defaults:library.defaults).palette(console:console,orientation:orientation).rawValue)
     }

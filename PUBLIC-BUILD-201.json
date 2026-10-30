@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "build": 201,
+  "appStoreApproved": false,
+  "engineChanges": false,
+  "sourceManifestFiles": 103845,
+  "scope": "public app coherence review; see RELEASE-1.0.0-rc.2.md"
+}

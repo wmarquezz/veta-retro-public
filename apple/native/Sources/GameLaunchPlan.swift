@@ -21,7 +21,14 @@ struct GameLaunchPlan: Equatable {
     var usesSharedPreparation: Bool { requiresJIT && console.usesSharedJITPool }
     var stateNamespace: String? { isInterpreter ? "offline-\(console.rawValue)-v1" : nil }
     func stateCoreID(for game: Game) -> String { isInterpreter ? game.coreID + "-interpreter-v1" : game.coreID }
-    var notice: String? { isInterpreter ? "Modo sin conexión. La velocidad depende del juego y puede ser menor. Máximo rendimiento está disponible en Ajustes." : nil }
+    var notice: String? {
+        guard isInterpreter else { return nil }
+        #if VETA_JIT_DEVELOPMENT
+        return "Modo sin conexión. La velocidad depende del juego y puede ser menor. Máximo rendimiento está disponible en Ajustes."
+        #else
+        return "Modo sin conexión. La velocidad depende del juego y del dispositivo."
+        #endif
+    }
 
     /// Decide once per launch, using the current process capability. Automatic
     /// never starts the helper just to replace an available local engine.
@@ -33,6 +40,9 @@ struct GameLaunchPlan: Equatable {
 
     static func resolve(console: GameConsole, snapshot: DeviceReadiness.Snapshot,
                         preference: Preference = .current, interpreterOverride: Bool = false) -> Self {
+        // A saved preference from a personal/JIT build must not disable the
+        // public build's local engines when the setting no longer exists.
+        let preference = snapshot.experimentalBuild ? preference : .automatic
         // PS2 uses the existing native JIT route. Keep WebAssembly available
         // only for the explicit offline QA override; never migrate its saves.
         if console == .ps2, snapshot.includedWebAssemblyConsoles.contains(.ps2),

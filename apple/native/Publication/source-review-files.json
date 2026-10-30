@@ -530,6 +530,7 @@
     "apple/native/Sources/ZIPGameImport.swift",
     "apple/native/Testing/SaveFixtures/Thwaite-AUTHOR.txt",
     "apple/native/Testing/SaveFixtures/Thwaite-LICENSE.txt",
+    "apple/native/Testing/SaveFixtures/Thwaite-source-and-game.zip",
     "apple/native/Testing/SaveFixtures/thwaite.nes",
     "apple/native/Testing/VetaSupport.storekit",
     "apple/native/Tests/ArtworkTests.swift",

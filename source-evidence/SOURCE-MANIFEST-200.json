@@ -16,8 +16,8 @@
       "bytes": 8200
     },
     "RELEASE-1.0.0-rc.1.md": {
-      "sha256": "e33b6bf0a9f17023ddcdbd3554ac9af90f560ff2811963baf15ff6b6030ce2c8",
-      "bytes": 2199
+      "sha256": "ca51142197c67c84415bdaadc3e5d7ef1298138f7fd877d9841ffd135e8be6bc",
+      "bytes": 2489
     },
     "SOURCE-UPDATE-190.md": {
       "sha256": "09d10838e3873bcd3c48e785eed33a90b59a352857618b252da1cf3f8c5f340f",
@@ -368988,8 +368988,8 @@
       "bytes": 100865
     },
     "apple/native/Publication/source-review-files.json": {
-      "sha256": "69208e512b6ddfc39d3b6e3b60f06fcda7bc96e90e2c42ec798657c4f27b9372",
-      "bytes": 37898
+      "sha256": "c5cde0f1147e9406779fde45c0c31f4a82a9e7c6115277617b195426e1126ef9",
+      "bytes": 37967
     },
     "apple/native/Publication/submission.json": {
       "sha256": "ae0e7d3ee3c8dc3b83e4edcda398bf313148b62a15c45fcff697bfb64302e3c5",
@@ -415370,6 +415370,10 @@
     "vendor/native/tia-6ae5bf99.tar.gz": {
       "sha256": "4f5336b5a0d6c792f70be9607984b9148a297f343b016ae8016613fa21aa2692",
       "bytes": 146100
+    },
+    "apple/native/Testing/SaveFixtures/Thwaite-source-and-game.zip": {
+      "sha256": "a782f6f22bac791fd30eef16933ee59d61fb83b68e3247d87b1df603c894ecd9",
+      "bytes": 128405
     }
   }
 }

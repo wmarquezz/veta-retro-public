@@ -15,3 +15,5 @@ Extrae VETA-Retro-1.0.0-rc.1-sources.tar.gz y entra en veta-public-source. Ejecu
 ## Alcance y límites
 
 19 consolas, sin PS2 ni extensiones JIT/VPN en esta edición pública. Dos juegos de ejemplo MIT; no incluye la biblioteca personal. GPL-3.0-or-later para contribuciones propias; terceros conservan sus licencias. Fuentes y avisos no equivalen a una autorización de App Store: DIST-01 y ART-01 siguen documentados en el expediente de derechos. No se realizó una reconstrucción integral de todos los motores desde cero en esta entrega. Google Drive sigue en Testing privado; OneDrive/Dropbox directos no están habilitados para el público. Los aportes aún requieren acuerdos, pruebas y revisión de Apple.
+
+La muestra Thwaite de las pruebas de guardado es GPLv3 y se acompaña de su archivo original de fuentes, herramientas y juego en Testing/SaveFixtures. Su ROM coincide por contenido con la del archivo original. Es un recurso de pruebas, no uno de los dos juegos MIT del catálogo público.

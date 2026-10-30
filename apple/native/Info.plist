@@ -30,9 +30,21 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.191.0</string>
+	<string>1.0.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>VETA cloud accounts</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.krafify.vetaretro.cloud</string>
+				<string>com.googleusercontent.apps.448517014955-tcc6fu1pkl43ilvq9e8piq5tbdkm2dvo</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
-	<string>191</string>
+	<string>200</string>
 	<key>LSSupportsOpeningDocumentsInPlace</key>
 	<true/>
 	<key>NSBonjourServices</key>
@@ -107,5 +119,29 @@
 			</dict>
 		</dict>
 	</array>
+	<key>VetaCloudAccounts</key>
+	<dict>
+		<key>dropbox</key>
+		<dict>
+			<key>clientID</key>
+			<string></string>
+			<key>redirectURI</key>
+			<string>com.krafify.vetaretro.cloud://oauth/dropbox</string>
+		</dict>
+		<key>google</key>
+		<dict>
+			<key>clientID</key>
+			<string>448517014955-tcc6fu1pkl43ilvq9e8piq5tbdkm2dvo.apps.googleusercontent.com</string>
+			<key>redirectURI</key>
+			<string>com.googleusercontent.apps.448517014955-tcc6fu1pkl43ilvq9e8piq5tbdkm2dvo:/oauthredirect</string>
+		</dict>
+		<key>onedrive</key>
+		<dict>
+			<key>clientID</key>
+			<string></string>
+			<key>redirectURI</key>
+			<string>com.krafify.vetaretro.cloud://oauth/onedrive</string>
+		</dict>
+	</dict>
 </dict>
 </plist>

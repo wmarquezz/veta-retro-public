@@ -131,10 +131,13 @@ final class CloudImportPreparation: @unchecked Sendable {
                 }
                 files.append(target); progress(source.lastPathComponent, index + 1, sources.count)
             }
+            let expanded=try ZIPGameImport.expand(files,temporaryRoot:root,checkCancellation:check)
+            let ready=try expanded.importFiles()
             try check(); keep = true
-            return Snapshot(root: root, files: files)
+            return Snapshot(root: root, files: ready)
         } catch is CancellationError { throw CancellationError() }
         catch let error as Failure { throw error }
+        catch let error as VetaError { throw error }
         catch { throw Failure.unavailable(sources.last?.lastPathComponent ?? selections.first?.lastPathComponent ?? "") }
     }
 }

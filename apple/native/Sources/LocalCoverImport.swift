@@ -3,7 +3,7 @@ import Foundation
 /// Local user-selected files only. No network, fuzzy title matching or ROM changes.
 enum LocalCoverImport {
     static let imageExtensions=["png","jpg","jpeg","heic","webp"]
-    static let gameExtensions:Set<String> = ["nes","sfc","smc","gb","gbc","gba","md","gen","sms","gg","a26","pce","nds","exe","bin","cue","wav","vetanes","vetaretro"]
+    static let gameExtensions:Set<String> = ["zip","nes","sfc","smc","gb","gbc","gba","md","gen","sms","gg","a26","pce","nds","exe","bin","cue","wav","vetanes","vetaretro"]
     static func isImage(_ url:URL)->Bool {imageExtensions.contains(url.pathExtension.lowercased())}
     static func stem(_ url:URL)->String {url.deletingPathExtension().lastPathComponent.precomposedStringWithCanonicalMapping.lowercased()}
     static func parent(_ url:URL)->URL {url.deletingLastPathComponent().standardizedFileURL}

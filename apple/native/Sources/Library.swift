@@ -113,7 +113,11 @@ struct StateFile: Codable {
 @MainActor final class Library: ObservableObject {
     @Published var games: [Game] = []
     @Published var error: String?
-    @Published var consoles:Set<GameConsole> = [.nes]
+    @Published var consoles:Set<GameConsole> = Set(GameConsole.allCases)
+    var populatedConsoles: [GameConsole] {
+        let present = Set(games.map(\.console))
+        return GameConsole.chronological.filter { present.contains($0) }
+    }
     let root: URL
     init(root: URL? = nil) {
         self.root = root ?? FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0].appendingPathComponent("VetaNative", isDirectory: true)
@@ -122,7 +126,7 @@ struct StateFile: Codable {
             let selection=self.root.appendingPathComponent("consoles.json")
             if FileManager.default.fileExists(atPath:selection.path) {
                 let saved=try JSONDecoder().decode(Set<GameConsole>.self,from:Data(contentsOf:selection))
-                consoles=saved.intersection(GameConsole.allCases)
+                consoles=Set(GameConsole.allCases)
                 if consoles != saved {try JSONEncoder().encode(consoles).write(to:selection,options:.atomic)}
             }
             let index = self.root.appendingPathComponent("library.json")

@@ -11,8 +11,8 @@
       "TARGETED_DEVICE_FAMILY": "1,2",
       "IPHONEOS_DEPLOYMENT_TARGET": "16.4",
       "ENABLE_USER_SCRIPT_SANDBOXING": "YES",
-      "MARKETING_VERSION": "0.191.0",
-      "CURRENT_PROJECT_VERSION": "191"
+      "MARKETING_VERSION": "1.0.0",
+      "CURRENT_PROJECT_VERSION": "200"
     }
   },
   "targets": {
@@ -1658,8 +1658,8 @@
         "path": "Info.plist",
         "properties": {
           "CFBundleDisplayName": "VETA-Retro",
-          "CFBundleShortVersionString": "0.191.0",
-          "CFBundleVersion": "191",
+          "CFBundleShortVersionString": "1.0.0",
+          "CFBundleVersion": "200",
           "UIAppFonts": [
             "Content/Fonts/BarlowCondensed-Bold.ttf",
             "Content/Fonts/Manrope.ttf"
@@ -1723,6 +1723,29 @@
                 ]
               }
             }
+          ],
+          "VetaCloudAccounts": {
+            "google": {
+              "clientID": "448517014955-tcc6fu1pkl43ilvq9e8piq5tbdkm2dvo.apps.googleusercontent.com",
+              "redirectURI": "com.googleusercontent.apps.448517014955-tcc6fu1pkl43ilvq9e8piq5tbdkm2dvo:/oauthredirect"
+            },
+            "onedrive": {
+              "clientID": "",
+              "redirectURI": "com.krafify.vetaretro.cloud://oauth/onedrive"
+            },
+            "dropbox": {
+              "clientID": "",
+              "redirectURI": "com.krafify.vetaretro.cloud://oauth/dropbox"
+            }
+          },
+          "CFBundleURLTypes": [
+            {
+              "CFBundleURLName": "VETA cloud accounts",
+              "CFBundleURLSchemes": [
+                "com.krafify.vetaretro.cloud",
+                "com.googleusercontent.apps.448517014955-tcc6fu1pkl43ilvq9e8piq5tbdkm2dvo"
+              ]
+            }
           ]
         }
       },
@@ -1744,8 +1767,8 @@
           "SWIFT_OPTIMIZATION_LEVEL": "-O",
           "GCC_OPTIMIZATION_LEVEL": "2",
           "CLANG_CXX_LANGUAGE_STANDARD": "gnu++17",
-          "CURRENT_PROJECT_VERSION": "191",
-          "MARKETING_VERSION": "0.191.0",
+          "CURRENT_PROJECT_VERSION": "200",
+          "MARKETING_VERSION": "1.0.0",
           "IPHONEOS_DEPLOYMENT_TARGET": "17.4",
           "SWIFT_ACTIVE_COMPILATION_CONDITIONS": [
             "$(inherited)",

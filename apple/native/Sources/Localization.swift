@@ -98,6 +98,16 @@ enum L10n {
         let selected = language ?? .current
         return String(format: text(key, language: selected), locale: selected.locale, arguments: arguments)
     }
+    /// Display names only: stable control IDs and imported user names are never rewritten.
+    static func controlName(_ id: String, language: AppLanguage? = nil) -> String {
+        switch id {
+        case "dpad": return text("Cruceta", language: language)
+        case "stick0": return text("Palanca izquierda", language: language)
+        case "stick1": return text("Palanca derecha", language: language)
+        case "SHAKE": return text("Agitar", language: language)
+        default: return id // Physical button legends (A/B/START/SELECT/HOME) remain recognizable.
+        }
+    }
     static func gameCount(_ count: Int, language: AppLanguage? = nil) -> String {
         format(count == 1 ? "%lld juego" : "%lld juegos", count, language: language)
     }

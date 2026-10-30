@@ -164,7 +164,7 @@ struct PersonalSkinHelpView:View {
                 if draft.variant(orientation) != nil {
                     GroupBox("Posición y tamaño de los controles") {
                         VStack(alignment:.leading,spacing:12) {
-                            Picker("Control",selection:Binding(get:{selected ?? layout.controls.first?.id ?? ""},set:{selected=$0})) {ForEach(layout.controls,id:\.id){Text($0.id).tag($0.id)}}
+                            Picker("Control",selection:Binding(get:{selected ?? layout.controls.first?.id ?? ""},set:{selected=$0})) {ForEach(layout.controls,id:\.id){Text(L10n.controlName($0.id)).tag($0.id)}}
                             HStack {nudge("arrow.left",x:-4,y:0);nudge("arrow.up",x:0,y:-4);nudge("arrow.down",x:0,y:4);nudge("arrow.right",x:4,y:0)}
                             HStack {Text("Ancho");Spacer();resizeButton("minus",width:-4,height:0);Text("\(Int(selectedRect.width))").monospacedDigit();resizeButton("plus",width:4,height:0)}
                             HStack {Text("Alto");Spacer();resizeButton("minus",width:0,height:-4);Text("\(Int(selectedRect.height))").monospacedDigit();resizeButton("plus",width:0,height:4)}

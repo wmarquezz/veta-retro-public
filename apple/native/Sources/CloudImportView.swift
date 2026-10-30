@@ -7,6 +7,52 @@ struct GameImportLocation: Identifiable {
     var folderOnly = false
 }
 
+enum GameImportChoice { case files, folder, cloud, shared }
+
+struct GameImportOptionsView: View {
+    @Environment(\.dismiss) private var dismiss
+    let choose: (GameImportChoice) -> Void
+    private var providers: [DirectCloudProvider] {
+        DirectCloudProvider.allCases.filter { $0.configuration() != nil }
+    }
+    var body: some View {
+        NavigationStack {
+            List {
+                Section {
+                    option(.files, title: "Elegir archivos", detail: "iPhone, iCloud Drive y servicios disponibles en Archivos.", icon: "doc.badge.plus", id: "import-source-files")
+                    option(.folder, title: "Importar una carpeta", detail: "iPhone o iCloud Drive. Incluye sus subcarpetas.", icon: "folder.badge.plus", id: "import-source-folder")
+                    if !providers.isEmpty {
+                        option(.cloud, title: "Conectar mi nube", detail: providers.map(\.title).joined(separator: ", "), icon: "cloud", id: "import-source-cloud")
+                    }
+                    option(.shared, title: "Abrir enlace compartido", detail: "Carpetas y archivos que te compartieron.", icon: "link", id: "import-source-shared")
+                } footer: {
+                    Text("Portada opcional: Juego.zip + Juego.png. Selecciona ambos archivos o importa su carpeta.")
+                }
+                Section {
+                    NavigationLink { CloudImportHelpView(embedded: true) } label: {
+                        Label("Cómo agregar juegos", systemImage: "questionmark.circle").frame(minHeight:44)
+                    }.accessibilityIdentifier("import-source-help")
+                }
+            }
+            .navigationTitle("Agregar juegos").navigationBarTitleDisplayMode(.inline)
+            .toolbar { ToolbarItem(placement:.cancellationAction) { Button("Cerrar") {dismiss()} } }
+        }.tint(VetaTheme.mint)
+    }
+    private func option(_ choice: GameImportChoice, title: String, detail: String, icon: String, id: String) -> some View {
+        Button { choose(choice) } label: {
+            HStack(spacing: 14) {
+                Image(systemName:icon).font(.system(size:24)).frame(width:30).foregroundStyle(VetaTheme.mint).accessibilityHidden(true)
+                VStack(alignment:.leading,spacing:5) {
+                    Text(LocalizedStringKey(title)).font(.headline).foregroundStyle(Color.primary)
+                    Text(LocalizedStringKey(detail)).font(.subheadline).foregroundStyle(Color.secondary)
+                }.fixedSize(horizontal:false,vertical:true)
+                Spacer(minLength:0)
+                Image(systemName:"chevron.right").font(.system(size:14)).foregroundStyle(Color.secondary).accessibilityHidden(true)
+            }.frame(minHeight:56).padding(.vertical,6).contentShape(Rectangle())
+        }.accessibilityIdentifier(id)
+    }
+}
+
 @MainActor final class CloudImportModel: ObservableObject {
     @Published var busy = false
     @Published var saving = false
@@ -49,7 +95,7 @@ struct CloudImportProgressView: View {
                 } else { ProgressView() }
                 Text(model.name).font(.subheadline).lineLimit(2).truncationMode(.middle)
                 Text("Si los archivos están en la nube, espera mientras se descargan. Mantén VETA abierta.")
-                    .font(.footnote).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                    .font(.footnote).foregroundStyle(Color.secondary).multilineTextAlignment(.center)
                 if !model.saving {
                     Button("Cancelar") { model.cancel() }.frame(minHeight: 44).disabled(model.cancelling)
                         .accessibilityIdentifier("cancel-cloud-import")
@@ -61,24 +107,30 @@ struct CloudImportProgressView: View {
 
 struct CloudImportHelpView: View {
     @Environment(\.dismiss) private var dismiss
+    var embedded = false
     var body: some View {
-        NavigationStack {
+        if embedded { content } else { NavigationStack { content } }
+    }
+    private var content: some View {
             List {
+                Section("Conectar mi nube") {
+                    Text("Conecta tu cuenta y elige una carpeta. VETA descarga tus juegos y portadas directamente, sin pasar por Archivos.")
+                }
                 Section("Google Drive, OneDrive y Dropbox") {
                     Text("1. Instala la app del servicio e inicia sesión allí.")
                     Text("2. Abre Archivos → Explorar → ⋯ → Editar y activa el servicio en Ubicaciones.")
-                    Text("3. En VETA, toca Agregar juegos → Desde Drive, OneDrive o Dropbox. Entra a la carpeta de tu consola, selecciona los juegos y sus portadas y toca Abrir.")
+                    Text("3. En VETA, toca Agregar juegos → Elegir archivos. En Explorar, elige tu servicio, selecciona juegos y portadas y toca Abrir.")
                 }
                 Section("Carpetas completas") {
-                    Text("Drive y OneDrive permiten seleccionar archivos, pero no carpetas completas. Para iCloud Drive o En mi iPhone, usa Carpeta de iCloud o del iPhone: incluye sus subcarpetas. La disponibilidad depende del proveedor.")
+                    Text("Usa Importar una carpeta para iPhone o iCloud Drive. Para otros servicios, usa Elegir archivos o Conectar mi nube si está disponible.")
                 }
                 Section("Juegos y portadas") {
-                    Text("Para la portada, usa el mismo nombre: Juego.nes y Juego.png. Selecciona también todas las pistas de los discos CUE/BIN.")
+                    Text("VETA descomprime los ZIP automáticamente. Para discos CUE/BIN, incluye todas sus pistas.")
                     Text("Se copian los formatos compatibles a VETA. Los originales y las partidas existentes se conservan. Una vez importados, puedes jugar sin conexión; no es una sincronización automática.")
                     Text("Necesitas espacio libre en el iPhone e Internet para los archivos que todavía no se han descargado.")
                 }
-            }.navigationTitle("Importar desde la nube").navigationBarTitleDisplayMode(.inline)
-                .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Listo") { dismiss() } } }
-        }.tint(VetaTheme.mint)
+            }.navigationTitle("Cómo agregar juegos").navigationBarTitleDisplayMode(.inline)
+                .toolbar { if !embedded { ToolbarItem(placement: .confirmationAction) { Button("Listo") { dismiss() } } } }
+        .tint(VetaTheme.mint)
     }
 }

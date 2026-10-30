@@ -33,6 +33,13 @@ struct NativeSaveStore {
         guard Self.slots.contains(slot) else { throw VetaError.message("Ranura de guardado inválida.") }
         return directory.appendingPathComponent(slot + ".vstate")
     }
+    func nextManualSlot() throws -> String {
+        // Occupied includes corrupt/legacy files: a new save never overwrites them.
+        for slot in Self.manualSlots {
+            if !FileManager.default.fileExists(atPath: try url(slot).path) { return slot }
+        }
+        throw VetaError.message("Tus ocho espacios manuales están ocupados. En Mis partidas puedes eliminar uno o elegir cuál reemplazar.")
+    }
     func read(_ slot: String) throws -> Data {
         let file = try url(slot)
         let attributes = try file.resourceValues(forKeys: [.fileSizeKey, .isSymbolicLinkKey])
@@ -147,7 +154,56 @@ struct SaveGalleryView: View {
             List {
                 Section { Text("Cada partida conserva juego, motor y perfil. Al cargar, VETA conserva una copia de la sesión actual para recuperarse si el motor rechaza el estado.").font(.footnote) }
                 if let error { Text(L10n.text(error)).foregroundStyle(.red) }
-                ForEach(slots) { slot in
+                Section("Guardados manuales") {
+                    Text("Estos puntos se conservan hasta que tú los reemplaces o elimines. El autoguardado no los modifica.").font(.footnote)
+                    ForEach(slots.filter { NativeSaveStore.manualSlots.contains($0.id) }) { slot in saveRow(slot) }
+                }
+                Section("Último autoguardado") {
+                    Text("Se actualiza al pausar, salir o cambiar de app. Al abrir el juego se retoma este punto automáticamente.").font(.footnote)
+                    ForEach(slots.filter { $0.id == "auto" }) { slot in saveRow(slot) }
+                }
+                Section {
+                    DisclosureGroup("Guardados rápidos anteriores y recuperación") {
+                        ForEach(slots.filter { !NativeSaveStore.manualSlots.contains($0.id) && $0.id != "auto" && ($0.state != nil || $0.issue != nil) }) { slot in saveRow(slot) }
+                    }
+                }
+            }
+            .vetaForm().tint(VetaTheme.mint)
+            .disabled(busy).interactiveDismissDisabled(busy)
+            .overlay { if busy { ProgressView().padding().background(.regularMaterial, in: RoundedRectangle(cornerRadius: 12)) } }
+            .navigationTitle("Mis partidas").navigationBarTitleDisplayMode(.inline)
+            .toolbar { Button("Listo") { dismiss() }.disabled(busy) }
+            .onAppear { open(); reload() }
+            .alert("Nombre de la partida", isPresented: Binding(get: { renaming != nil }, set: { if !$0 { renaming = nil } })) {
+                TextField("Nombre", text: $saveName)
+                Button("Guardar") {
+                    if let slot = renaming { run { try store.rename(slot.id, name: saveName) } }
+                    renaming = nil
+                }
+                Button("Cancelar", role: .cancel) { renaming = nil }
+            } message: { Text("Déjalo vacío para recuperar el nombre original.") }
+            .confirmationDialog("¿Cargar esta partida?", isPresented: Binding(get: { loading != nil }, set: { if !$0 { loading = nil } }), titleVisibility: .visible) {
+                if let slot = loading { Button("Cargar partida") { perform { try await load(slot.id); dismiss() }; loading = nil } }
+            } message: { Text("La sesión actual se conservará en «Antes de cargar».") }
+            .alert("¿Eliminar esta partida?", isPresented: Binding(get: { pending != nil }, set: { if !$0 { pending = nil } })) {
+                if let slot = pending {
+                    Button("Eliminar partida", role: .destructive) {
+                        run { try store.delete(slot.id); deletedSlot = slot.id }
+                        pending = nil
+                    }.accessibilityIdentifier("confirm-delete-save")
+                }
+                Button("Cancelar", role: .cancel) { pending = nil }
+            } message: {
+                if let slot = pending {
+                    Text(L10n.format("Se eliminará «%@» de «%@». Las demás partidas y el guardado dentro del juego se conservan. Esta acción no se puede deshacer.", slot.displayTitle, gameName))
+                }
+            }
+            .confirmationDialog("¿Reemplazar esta partida?", isPresented: Binding(get: { replacing != nil }, set: { if !$0 { replacing = nil } }), titleVisibility: .visible) {
+                if let slot = replacing { Button("Reemplazar", role: .destructive) { perform { try await save(slot.id) }; replacing = nil } }
+            }
+        }
+    }
+    @ViewBuilder private func saveRow(_ slot: SaveSlot) -> some View {
                     VStack(alignment: .leading, spacing: 8) {
                         if let data = slot.state?.thumbnail, let image = UIImage(data: data) {
                             Image(uiImage: image).resizable().scaledToFit()
@@ -200,42 +256,6 @@ struct SaveGalleryView: View {
                             }
                         }
                     }.padding(.vertical, 4).accessibilityIdentifier("save-slot-\(slot.id)").listRowBackground(VetaTheme.panel)
-                }
-            }
-            .vetaForm().tint(VetaTheme.mint)
-            .disabled(busy).interactiveDismissDisabled(busy)
-            .overlay { if busy { ProgressView().padding().background(.regularMaterial, in: RoundedRectangle(cornerRadius: 12)) } }
-            .navigationTitle("Mis partidas").navigationBarTitleDisplayMode(.inline)
-            .toolbar { Button("Listo") { dismiss() }.disabled(busy) }
-            .onAppear { open(); reload() }
-            .alert("Nombre de la partida", isPresented: Binding(get: { renaming != nil }, set: { if !$0 { renaming = nil } })) {
-                TextField("Nombre", text: $saveName)
-                Button("Guardar") {
-                    if let slot = renaming { run { try store.rename(slot.id, name: saveName) } }
-                    renaming = nil
-                }
-                Button("Cancelar", role: .cancel) { renaming = nil }
-            } message: { Text("Déjalo vacío para recuperar el nombre original.") }
-            .confirmationDialog("¿Cargar esta partida?", isPresented: Binding(get: { loading != nil }, set: { if !$0 { loading = nil } }), titleVisibility: .visible) {
-                if let slot = loading { Button("Cargar partida") { perform { try await load(slot.id); dismiss() }; loading = nil } }
-            } message: { Text("La sesión actual se conservará en «Antes de cargar».") }
-            .alert("¿Eliminar esta partida?", isPresented: Binding(get: { pending != nil }, set: { if !$0 { pending = nil } })) {
-                if let slot = pending {
-                    Button("Eliminar partida", role: .destructive) {
-                        run { try store.delete(slot.id); deletedSlot = slot.id }
-                        pending = nil
-                    }.accessibilityIdentifier("confirm-delete-save")
-                }
-                Button("Cancelar", role: .cancel) { pending = nil }
-            } message: {
-                if let slot = pending {
-                    Text(L10n.format("Se eliminará «%@» de «%@». Las demás partidas y el guardado dentro del juego se conservan. Esta acción no se puede deshacer.", slot.displayTitle, gameName))
-                }
-            }
-            .confirmationDialog("¿Reemplazar esta partida?", isPresented: Binding(get: { replacing != nil }, set: { if !$0 { replacing = nil } }), titleVisibility: .visible) {
-                if let slot = replacing { Button("Reemplazar", role: .destructive) { perform { try await save(slot.id) }; replacing = nil } }
-            }
-        }
     }
     private func reload() {
         let all = store.list().filter { allowedSlots.contains($0.id) }

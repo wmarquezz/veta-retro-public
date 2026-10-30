@@ -37,6 +37,17 @@ struct PrivacyDetailsView:View {
                     Text("PNG, JPEG, HEIC y otras imágenes compatibles, hasta 30 MB. Se guarda una copia optimizada, sin recortar la portada.")
                 }
             }
+            Section("Conectar mi nube") {
+                Text("Conectar una cuenta es opcional. VETA no recibe tu contraseña.")
+                Text("Permiso de lectura: VETA explora tus carpetas y descarga tu selección. No modifica archivos en la nube.")
+                Text("Los tokens se guardan en el llavero de este iPhone. No enviamos tus juegos ni tus datos de nube a Krafify.")
+                Text("Desconectar conserva tus juegos. También puedes revocar el permiso desde tu proveedor.")
+                CloudPrivacyLinks()
+            }
+            Section("Abrir enlace compartido") {
+                Text("Si eliges Recordar acceso, el enlace y la contraseña se guardan en el llavero de este iPhone. Puedes eliminarlos con Olvidar acceso.")
+                Text("VETA comprueba el acceso al volver a conectar. Si cambia la contraseña del enlace, tendrás que ingresar la nueva. Los juegos ya importados se conservan.")
+            }
             Section("Juegos gratis") {
                 Text("Al descargar un juego o abrir una guía, el sitio del autor o proveedor recibe la conexión. Sus condiciones de privacidad se aplican en ese sitio.")
             }
@@ -60,12 +71,25 @@ struct PrivacyDetailsView:View {
     }
 }
 
+struct CloudPrivacyLinks: View {
+    var body: some View {
+        Link("Privacidad de VETA", destination: URL(string: "https://retro.krafify.com/privacidad#nube")!)
+        Link("Uso y licencias de VETA", destination: URL(string: "https://retro.krafify.com/uso")!)
+        Link("Google Drive · Privacidad", destination: URL(string: "https://policies.google.com/privacy")!)
+        Link("Google Drive · Condiciones", destination: URL(string: "https://policies.google.com/terms")!)
+        Link("OneDrive · Privacidad", destination: URL(string: "https://privacy.microsoft.com/privacystatement")!)
+        Link("OneDrive · Condiciones", destination: URL(string: "https://www.microsoft.com/servicesagreement")!)
+        Link("Dropbox · Privacidad", destination: URL(string: "https://www.dropbox.com/privacy")!)
+        Link("Dropbox · Condiciones", destination: URL(string: "https://www.dropbox.com/terms")!)
+    }
+}
+
 struct PublicationSupportView:View {
     private let info=PublicationInfo()
     var body:some View {
         Form {
             Section {
-                NavigationLink("Cómo crear y usar un skin") {PersonalSkinHelpView()}
+                NavigationLink("Cómo crear y usar un skin") {PersonalSkinHelpView()}.accessibilityIdentifier("skin-help")
                 Text("Para pedir ayuda, indica la versión de VETA, el modelo de iPhone, la consola y los pasos del problema. No envíes juegos, BIOS, contraseñas ni archivos de emparejamiento.")
                 Text("VETA Retro · \(Bundle.main.object(forInfoDictionaryKey:"CFBundleShortVersionString") as? String ?? "") (\(Bundle.main.object(forInfoDictionaryKey:"CFBundleVersion") as? String ?? ""))").textSelection(.enabled)
             }

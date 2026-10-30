@@ -53,7 +53,7 @@ struct DiscoverGame:Codable,Identifiable {
                 let receipt="\(game.title) — \(game.author)\n\(game.license)\nFuente: \(game.source.absoluteString)\nDescarga: \(game.download?.absoluteString ?? "Incluida con fuentes y licencia")\n\(game.note ?? "")\n"
                 try receipt.write(to:target.appendingPathExtension("origen.txt"),atomically:true,encoding:.utf8)
                 if target.pathExtension.lowercased() == "zip" {
-                    message=L10n.format("Guardado en VETA-Retro / %@ / %@. En Archivos toca el ZIP para descomprimirlo y luego usa Agregar juegos. Conserva los archivos de datos que acompañan al juego.",game.console.name,target.lastPathComponent)
+                    message=L10n.format("Guardado en VETA-Retro / %@ / %@. Usa Agregar juegos → Elegir archivos para importar el ZIP.",game.console.name,target.lastPathComponent)
                 } else if game.console.playable && ["nes","gb","gbc","gba","sfc","smc","md","gen","sms","gg","a26","nds","z64","n64","v64","3dsx","exe"].contains(target.pathExtension.lowercased()) {
                     do {
                         let known=Set(library.games.map(\.id))

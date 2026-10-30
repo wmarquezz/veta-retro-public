@@ -37,7 +37,7 @@ import UIKit
         XCTAssertEqual(try Data(contentsOf: store.url(console: true)), before)
     }
     func testRealNESProfileAppliedOnceAndDoesNotLeakToNextLoad() throws {
-        let fixture = try XCTUnwrap(Bundle.main.url(forResource: "thwaite", withExtension: "nes", subdirectory: "Content/thwaite"))
+        let fixture = try XCTUnwrap(Bundle(for: ProfileSaveTests.self).url(forResource: "thwaite", withExtension: "nes"))
         XCTAssertFalse(veta_option_set("dolphin_cpu_core", "4"))
         XCTAssertFalse(veta_option_set("fceumm_region", "invalid"))
         try CoreProfile(values: [CoreOptionID.nesRegion.rawValue: "PAL"]).installForNextLoad()
@@ -119,7 +119,7 @@ import UIKit
     }
     func testBackupPreservesSlotsProtectionAndResolvedProfile() throws {
         let library = Library(root: temp.appendingPathComponent("original"))
-        let fixture = try XCTUnwrap(Bundle.main.url(forResource: "thwaite", withExtension: "nes", subdirectory: "Content/thwaite"))
+        let fixture = try XCTUnwrap(Bundle(for: ProfileSaveTests.self).url(forResource: "thwaite", withExtension: "nes"))
         let game = try library.add(data: Data(contentsOf: fixture), name: "Fixture")
         let profile = CoreProfile(values: [CoreOptionID.nesRegion.rawValue: "PAL"])
         try GameProfileStore(library: library, game: game).write(profile, console: true)
@@ -148,7 +148,7 @@ import UIKit
     }
     func testRejectedCorePayloadRecoversCurrentNESState() throws {
         let library = Library(root: temp.appendingPathComponent("rollback"))
-        let fixture = try XCTUnwrap(Bundle.main.url(forResource: "thwaite", withExtension: "nes", subdirectory: "Content/thwaite"))
+        let fixture = try XCTUnwrap(Bundle(for: ProfileSaveTests.self).url(forResource: "thwaite", withExtension: "nes"))
         let game = try library.add(data: Data(contentsOf: fixture), name: "Rollback fixture")
         let screen = MetalScreen()
         try XCTSkipUnless(screen.ready, "Metal is required for the real Emulation integration")
@@ -179,7 +179,7 @@ import UIKit
     func testRecoveryCopyFailureResumesUntouchedSession() throws {
         try XCTSkipUnless(UIApplication.shared.applicationState == .active,"Active test host required")
         let library=Library(root:temp.appendingPathComponent("recovery-write-failure"))
-        let fixture=try XCTUnwrap(Bundle.main.url(forResource:"thwaite",withExtension:"nes",subdirectory:"Content/thwaite"))
+        let fixture=try XCTUnwrap(Bundle(for:ProfileSaveTests.self).url(forResource:"thwaite",withExtension:"nes"))
         let game=try library.add(data:Data(contentsOf:fixture),name:"Recovery write fixture")
         let screen=MetalScreen();try XCTSkipUnless(screen.ready,"Metal required")
         let emulation=Emulation(game:game,library:library)
@@ -240,7 +240,7 @@ import UIKit
         XCTAssertThrowsError(try restored.validateEngineArchive(EngineSaveArchive(engine:.melonDS,states:["quick":newState],ram:nil,rtc:nil,coreSaves:nil),game:current))
     }
     func testBackupPublishFailureCanRetryAndPreservesExistingGames() throws {
-        let fixture=try XCTUnwrap(Bundle.main.url(forResource:"thwaite",withExtension:"nes",subdirectory:"Content/thwaite"))
+        let fixture=try XCTUnwrap(Bundle(for:ProfileSaveTests.self).url(forResource:"thwaite",withExtension:"nes"))
         let rom=try Data(contentsOf:fixture)
         let source=Library(root:temp.appendingPathComponent("backup-source"))
         let game=try source.add(data:rom,name:"Backup game")

@@ -95,7 +95,9 @@ extension Library {
         #if VETA_JIT_DEVELOPMENT
         if let console=preferred,console.isStandaloneEngine {for url in selections {_ = try importExperimental(url,console:console)};return .init(games:selections.count)}
         #endif
-        let files=try LocalCoverImport.files(selections),covers=LocalCoverImport.Session(files:files)
+        let originalFiles=try LocalCoverImport.files(selections)
+        let expanded=try ZIPGameImport.expand(originalFiles);defer{expanded.remove()}
+        let files=expanded.files,covers=LocalCoverImport.Session(files:files+originalFiles)
         let urls=files.filter{!LocalCoverImport.isImage($0)}
         var processed=0
         var consumed=Set<URL>()
@@ -134,11 +136,11 @@ extension Library {
                 games.append(game)
                 do{try persist()}catch{games.removeAll{$0.id==id};try? FileManager.default.removeItem(at:destination);throw error}
             }
-            if let game=games.first(where:{$0.id==id}) {processed+=1;if let artwork {covers.attach(to:game,from:cue,store:artwork)}}
+            if let game=games.first(where:{$0.id==id}) {processed+=1;if let artwork {covers.attach(to:game,from:cue,store:artwork);if let archive=expanded.origins[cue] {covers.attach(to:game,from:archive,store:artwork)}}}
             consumed.insert(cue);consumed.formUnion(sources.values)
         }
         for url in urls where !consumed.contains(url) {
-            if let game=try importURL(url,console:preferred) {processed+=1;if let artwork {covers.attach(to:game,from:url,store:artwork)}}
+            if let game=try importURL(url,console:preferred) {processed+=1;if let artwork {covers.attach(to:game,from:url,store:artwork);if let archive=expanded.origins[url] {covers.attach(to:game,from:archive,store:artwork)}}}
         }
         var summary=covers.summary;summary.games=processed;summary.backups=urls.filter{["vetanes","vetaretro"].contains($0.pathExtension.lowercased())}.count
         return summary

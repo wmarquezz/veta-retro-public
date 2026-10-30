@@ -75,11 +75,11 @@ struct LibraryView:View {
     @State private var filter="Biblioteca"
     @State private var importFolder:GameImportLocation?
     @State private var importOptions=false
-    @State private var cloudHelp=false
+    @State private var importChoice:GameImportChoice?
+    @State private var directCloud=false
+    @State private var sharedCloud=false
     @StateObject private var cloudImport=CloudImportModel()
     @State private var settings=false
-    @State private var showCatalog=false
-    @State private var confirmConsole:GameConsole?
     @State private var previewConsole:GameConsole?
     @State private var consoleFilter:GameConsole?
     @State private var consoleGames:GameConsole?
@@ -153,14 +153,22 @@ struct LibraryView:View {
                 if folder.cloud {finishCloudImport(urls)} else {finishImport(urls)}
             }
         }
-        .confirmationDialog("Agregar juegos",isPresented:$importOptions,titleVisibility:.visible) {
-            Button("Archivos del iPhone") {openLocalImporter()}
-            Button("Desde Drive, OneDrive o Dropbox") {importFolder=GameImportLocation(cloud:true)}
-            Button("Carpeta de iCloud o del iPhone") {importFolder=GameImportLocation(cloud:true,folderOnly:true)}
-            Button("Cómo conectar Drive, OneDrive o Dropbox") {cloudHelp=true}
-            Button("Cancelar",role:.cancel) {}
+        .sheet(isPresented:$importOptions,onDismiss:applyImportChoice) {
+            GameImportOptionsView { choice in
+                importChoice=choice
+                importOptions=false
+            }
         }
-        .sheet(isPresented:$cloudHelp) {CloudImportHelpView()}
+        .sheet(isPresented:$sharedCloud) {
+            KrafifySharedAccessView { snapshot in
+                try library.importURLs(snapshot.files,console:selectedLibraryConsole,artwork:artwork).message
+            }
+        }
+        .sheet(isPresented:$directCloud) {
+            DirectCloudView { snapshot in
+                try library.importURLs(snapshot.files,console:selectedLibraryConsole,artwork:artwork).message
+            }
+        }
         .fullScreenCover(item:$activeLaunch,onDismiss:{query=""}) {launch in
             let game=launch.game
             #if VETA_JIT_DEVELOPMENT
@@ -183,7 +191,6 @@ struct LibraryView:View {
         .onChange(of:artwork.enabled) {enabled in if enabled {artwork.schedule(library.games)}}
         .sheet(isPresented:$settings) {settingsView}
         .sheet(isPresented:$showFreeGames) {NavigationStack {ScrollView {DiscoveryView(library:library).padding()}.background(VetaTheme.background).tint(VetaTheme.mint).navigationTitle("Juegos por consola").toolbar {Button("Listo"){showFreeGames=false}}}}
-        .sheet(isPresented:$showCatalog) {consoleCatalog}
         .sheet(item:$previewConsole) {console in ConsoleSkinPicker(console:console)}
         .alert("¿Eliminar juego de VETA?",isPresented:Binding(get:{deletionGame != nil},set:{if !$0 {deletionGame=nil}}),presenting:deletionGame) {game in
             Button("Eliminar juego",role:.destructive) {
@@ -193,6 +200,10 @@ struct LibraryView:View {
             Button("Cancelar",role:.cancel){deletionGame=nil}
         } message:{game in
             Text(L10n.format("Se eliminarán «%@», su portada y sus partidas guardadas de VETA. Esta acción no se puede deshacer. Los archivos originales en Archivos y los demás juegos se conservarán.",game.name))
+        }
+        .onChange(of:library.populatedConsoles) { _, available in
+            if let consoleFilter, !available.contains(consoleFilter) { self.consoleFilter=nil }
+            if let consoleGames, !available.contains(consoleGames) { self.consoleGames=nil }
         }
         .alert("VETA Retro",isPresented:Binding(get:{library.error != nil},set:{if !$0 {library.error=nil}})) {Button("Aceptar"){library.error=nil}} message:{Text(L10n.text(library.error ?? ""))}
         .alert("Biblioteca",isPresented:Binding(get:{importMessage != nil},set:{if !$0 {importMessage=nil}})) {Button("Listo"){importMessage=nil}} message:{Text(L10n.text(importMessage ?? ""))}
@@ -216,15 +227,22 @@ struct LibraryView:View {
             }
 
             ConsoleTimeline(
-                consoles:GameConsole.chronological.filter {console in library.consoles.contains(console) || library.games.contains(where:{$0.console == console})},
+                consoles:library.populatedConsoles,
                 counts:Dictionary(grouping:library.games,by: \.console).mapValues(\.count),selection:$consoleFilter)
-            Text("Portada opcional: Juego.nes + Juego.png. Importa su carpeta o selecciona ambos archivos. Las subcarpetas se importan por separado.").font(VetaTheme.body(12)).foregroundStyle(VetaTheme.muted)
+            Text("Portada opcional: Juego.zip + Juego.png. Selecciona ambos archivos o importa su carpeta.").font(VetaTheme.body(12)).foregroundStyle(VetaTheme.muted)
             Text(L10n.gameCount(filtered.count)).font(VetaTheme.body(12)).foregroundStyle(VetaTheme.muted)
         }
     }
     private func openImporter() {if !cloudImport.busy {importOptions=true}}
-    private func openLocalImporter() {
-        perform {importFolder=GameImportLocation(directory:try GameFiles.prepareFolder(names:library.consoles.map(\.name)))}
+    private func applyImportChoice() {
+        guard let choice=importChoice else{return}
+        importChoice=nil
+        switch choice {
+        case .files: importFolder=GameImportLocation(cloud:true)
+        case .folder: importFolder=GameImportLocation(cloud:true,folderOnly:true)
+        case .cloud: directCloud=true
+        case .shared: sharedCloud=true
+        }
     }
     private func finishCloudImport(_ urls:[URL]) {
         guard !urls.isEmpty,!cloudImport.busy else{return}
@@ -347,10 +365,11 @@ struct LibraryView:View {
     }
     private var consoleHero:some View {
         LazyVStack(alignment:.leading,spacing:20) {
-            HStack {Text("Tus consolas").font(VetaTheme.heading(36));Spacer();Button {showCatalog=true} label:{Label("Agregar",systemImage:"plus")}.buttonStyle(VetaButton(primary:true)).accessibilityIdentifier("add-consoles")}
-            Text("Una colección a través del tiempo").font(VetaTheme.body()).foregroundStyle(VetaTheme.muted)
+            HStack {Text("Tus consolas").font(VetaTheme.heading(36));Spacer();addButton}
+            Text("Todas las consolas compatibles están disponibles. Aquí aparecen sólo las que tienen juegos.").font(VetaTheme.body()).foregroundStyle(VetaTheme.muted)
+            if library.populatedConsoles.isEmpty { Text("Agrega tu primer juego y su consola aparecerá aquí automáticamente.").font(VetaTheme.body()).foregroundStyle(VetaTheme.muted) }
             LazyVStack(spacing:0) {
-                ForEach(GameConsole.chronological.filter {library.consoles.contains($0)}) {console in
+                ForEach(library.populatedConsoles) {console in
                     HStack(spacing:8) {
                         Button {consoleGames=console;query=""} label:{
                             HStack(spacing:10) {
@@ -387,28 +406,6 @@ struct LibraryView:View {
 
         }
     }
-    private var consoleCatalog:some View {
-        NavigationStack {
-            List {
-                Section {Text("Selecciona una consola y confirma para crear su carpeta, añadir su modelo 3D y elegir su skin. Los años corresponden al primer lanzamiento.").font(.footnote)}
-                ForEach(GameConsole.chronological) {console in
-                    Button {confirmConsole=console} label:{
-                        HStack(spacing:14) {
-                            Text(String(console.year)).font(VetaTheme.heading(23)).foregroundStyle(VetaTheme.mint).frame(width:54)
-                            VStack(alignment:.leading,spacing:4) {Text(console.name).font(VetaTheme.body().bold());Text(LocalizedStringKey(console.availability)).font(.caption).foregroundStyle(console.playable ? VetaTheme.mint:VetaTheme.muted)}
-                            Spacer();Image(systemName:library.consoles.contains(console) ? "checkmark.circle.fill":"plus.circle")
-                        }.padding(.vertical,5)
-                    }.disabled(library.consoles.contains(console)).accessibilityIdentifier("add-console-\(console.rawValue)").listRowBackground(VetaTheme.panel)
-                }
-            }.vetaForm().navigationTitle("Agregar consolas").toolbar {Button("Listo"){showCatalog=false}}
-            .alert(L10n.format("¿Agregar %@?",confirmConsole?.name ?? ""),isPresented:Binding(get:{confirmConsole != nil},set:{if !$0 {confirmConsole=nil}})) {
-                if let console=confirmConsole {
-                    Button(L10n.format("Agregar %@",console.name)) {perform {try library.enable(console);confirmConsole=nil;showCatalog=false}}
-                    Button("Cancelar",role:.cancel){confirmConsole=nil}
-                }
-            } message:{Text(L10n.format("Se creará VETA-Retro/%@. %@",confirmConsole?.name ?? "",L10n.text(confirmConsole?.detail ?? "")))}
-        }.tint(VetaTheme.mint)
-    }
     private var freeGames:some View {DiscoveryView(library:library)}
     private var freeGameChoices:some View {DiscoveryView(library:library)}
 
@@ -423,7 +420,7 @@ struct LibraryView:View {
                     #if VETA_JIT_DEVELOPMENT
                     Text("Al confirmar una consola se crea su carpeta en Archivos → En mi iPhone (o iPad) → VETA-Retro. Agrega cartuchos NES, SNES, GB, GBC, GBA, Mega Drive, Master System, Game Gear, Atari 2600, PC Engine y DS. Para PlayStation y Saturn selecciona el CUE junto con todas sus pistas BIN o WAV. También puedes importar N64 (Z64/V64/N64), PSP (ISO/CSO/PBP/PRX), 3DS (3DSX/CCI/3DS/CXI), Dreamcast (CDI/CHD/ELF), GameCube/Wii (ISO/GCM/RVZ/WBFS/DOL) y PS2 (ISO/ELF), según la disponibilidad indicada en cada consola.").font(.caption).foregroundStyle(VetaTheme.muted)
                     #else
-                    Text("Al confirmar una consola se crea su carpeta en Archivos → En mi iPhone (o iPad) → VETA-Retro. Agrega cartuchos NES, SNES, GB, GBC, GBA, Mega Drive, Master System, Game Gear, Atari 2600, PC Engine y DS. Para PlayStation y Saturn selecciona el CUE junto con todas sus pistas BIN o WAV. También puedes importar N64 (Z64/V64/N64), PSP (ISO/CSO/PBP/PRX), 3DS (3DSX/CCI/3DS/CXI), Dreamcast (CDI/CHD/ELF), GameCube/Wii (ISO/GCM/RVZ/WBFS/DOL), según la disponibilidad indicada en cada consola.").font(.caption).foregroundStyle(VetaTheme.muted)
+                    Text("Todas las consolas compatibles están disponibles. Importa desde Agregar juegos; cada consola aparece en tu biblioteca cuando tiene juegos. También puedes usar sus carpetas en Archivos → En mi iPhone → VETA-Retro.").font(.caption).foregroundStyle(VetaTheme.muted)
                     #endif
                 }.listRowBackground(VetaTheme.panel)
                 Section("Experiencia") {
@@ -458,7 +455,7 @@ struct LibraryView:View {
                     Text("Solo se consultan catálogos e imágenes de Libretro Thumbnails. Tus juegos y partidas no se envían.").font(.caption).foregroundStyle(VetaTheme.muted)
                     Link("Libretro Thumbnails",destination:URL(string:"https://github.com/libretro-thumbnails/libretro-thumbnails")!)
                     } else {
-                        Text("Importa sólo juegos, BIOS e imágenes que tengas derecho a usar. Una descarga gratuita no concede por sí sola permiso para redistribuirla.").font(.caption).foregroundStyle(VetaTheme.muted)
+                        Text("Para añadir una portada, importa el juego y una imagen con el mismo nombre: Juego.zip y Juego.png. También puedes elegirla desde Cambiar portada. VETA guarda una copia en el iPhone.").font(.caption).foregroundStyle(VetaTheme.muted)
                     }
                 }.listRowBackground(VetaTheme.panel)
                 Section {
@@ -472,7 +469,7 @@ struct LibraryView:View {
                     NavigationLink("Uso de juegos y licencias") {GameRightsView()}
                 }.listRowBackground(VetaTheme.panel)
                 Section("Esta versión") {
-                    Text("VETA Retro · \(Bundle.main.object(forInfoDictionaryKey:"CFBundleVersion") as? String ?? "121")")
+                    Text(verbatim: "VETA Retro · \(Bundle.main.object(forInfoDictionaryKey:"CFBundleShortVersionString") as? String ?? "") (\(Bundle.main.object(forInfoDictionaryKey:"CFBundleVersion") as? String ?? ""))")
                     #if VETA_JIT_DEVELOPMENT
                     Text(L10n.format("Motores incluidos: %@. Automático aprovecha JIT activo; Máximo rendimiento puede solicitar su preparación.",GameConsole.chronological.filter(\.playable).map(\.name).joined(separator:", "))).font(.footnote).foregroundStyle(VetaTheme.muted)
                     #else
@@ -603,14 +600,17 @@ struct PauseView:View {
                     Text(session.game.name).foregroundStyle(.secondary)
                     if let notice=session.plan.notice {Text(L10n.text(notice)).font(.footnote).foregroundStyle(.secondary).accessibilityIdentifier("offline-execution-notice")}
                 }.listRowBackground(VetaTheme.panel)
-                Section("Tu partida") {
-                    Button("Guía del juego") {showGuides=true}
-                    Button("Galería de partidas") {showStates=true}.accessibilityIdentifier("state-gallery")
-                    Button("Guardar partida") {if session.hasQuickSave {confirm="save";showConfirmation=true} else {run {try session.save()}}}.accessibilityIdentifier("save-state")
-                    Button("Cargar partida") {confirm="load";showConfirmation=true}.disabled(!session.hasQuickSave).accessibilityIdentifier("load-state")
+                Section("Guardados manuales") {
+                    Button("Guardar nuevo punto") {run {try session.saveNewManual()}}.accessibilityIdentifier("save-state")
+                    Button("Elegir o gestionar guardados") {showStates=true}.accessibilityIdentifier("state-gallery")
+                    Text("Guarda hasta ocho puntos con imagen y fecha. Puedes volver a cualquiera; sólo se reemplazan si tú lo eliges.").font(.caption).foregroundStyle(.secondary)
                     if !session.status.isEmpty {Text(L10n.text(session.status)).font(.caption).foregroundStyle(.secondary).accessibilityIdentifier("save-status")}
-                    Text("Al pausar o salir se crea también un guardado automático.").font(.caption).foregroundStyle(.secondary)
                 }.listRowBackground(VetaTheme.panel)
+                Section("Último autoguardado") {
+                    Text("Se actualiza al pausar, salir o cambiar de app. Al abrir el juego se retoma este punto automáticamente.").font(.caption).foregroundStyle(.secondary)
+                    Text("El autoguardado nunca reemplaza tus guardados manuales. Si el iPhone se apaga de golpe o la app falla, se conserva el último guardado completado.").font(.caption).foregroundStyle(.secondary)
+                }.listRowBackground(VetaTheme.panel)
+                Section("Tu partida") { Button("Guía del juego") {showGuides=true} }.listRowBackground(VetaTheme.panel)
                 GameplayToolsSection(emulation:session,shareScreenshot:{screenshot=GameplayScreenshotShare(url:$0)},showCheats:{showCheats=true})
                 Section("Tu mando") {
                     NavigationLink {ControllerSkinSettingsView(console:session.game.console)} label:{HStack {Text("Skin");Spacer();Text(LocalizedStringKey(skin)).foregroundStyle(.secondary)}}.accessibilityIdentifier("skin-picker")
@@ -678,10 +678,10 @@ struct ControlsSettings:View {
                 }.listRowBackground(VetaTheme.panel)
                 Section {NavigationLink("Diseñar controles"){ControllerSkinSettingsView(console:console)}}.listRowBackground(VetaTheme.panel)
                 Section("Distribución") {
-                    Text("Tamaño \(Int(size*100)) %");Slider(value:$size,in:0.85...1.2)
-                    Text("Separación \(Int(spacing*100)) %");Slider(value:$spacing,in:0.8...1.2)
+                    Text(L10n.format("Tamaño %lld %%",Int(size*100)));Slider(value:$size,in:0.85...1.2)
+                    Text(L10n.format("Separación %lld %%",Int(spacing*100)));Slider(value:$spacing,in:0.8...1.2)
                     Text("Altura");Slider(value:$height,in:-0.12...0.12)
-                    Text("Opacidad \(Int(opacity*100)) %");Slider(value:$opacity,in:0.4...1)
+                    Text(L10n.format("Opacidad %lld %%",Int(opacity*100)));Slider(value:$opacity,in:0.4...1)
                     Button("Original"){size=1;spacing=1;height=0;opacity=1}
                     Button("Cómodo"){size=1.15;spacing=1.1;height=0.03;opacity=1}
                     Button("Discreto"){size=1;spacing=1;height=0;opacity=0.6}

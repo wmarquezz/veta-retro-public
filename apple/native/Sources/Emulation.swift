@@ -581,6 +581,11 @@ final class NativeAudio {
         guard data.withUnsafeMutableBytes({ veta_save_state($0.baseAddress, count) }) else { throw VetaError.message("No se pudo obtener el estado.") }
         return data
     }
+    func saveNewManual() throws {
+        let slot = try saveStore.nextManualSlot()
+        try save(slot)
+        status = L10n.format("Guardado manual creado: %@", L10n.text(NativeSaveStore.title(slot)))
+    }
     func save(_ slot: String = "quick") throws {
         let data = try captureState()
         let encoded = try StateFile.encode(data, rom: game.id, core: plan.stateCoreID(for: game), optionsFingerprint: activeOptionsFingerprint, thumbnail: NativeSaveStore.thumbnail(), optionsSnapshot: activeProfile.values)

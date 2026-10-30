@@ -20,6 +20,17 @@ struct ControllerInputState: Equatable {
     }
 }
 
+enum ControllerDisplayPolicy {
+    static func fullscreen(ports: [Int], maximumPlayers: Int, enabled: Bool, phoneIsControl: Bool) -> Bool {
+        enabled && !phoneIsControl && maximumPlayers > 0 && ports.contains(0)
+    }
+    static func frame(safe: CGRect, aspect: CGFloat) -> CGRect {
+        guard aspect.isFinite, aspect > 0 else { return safe }
+        let width = min(safe.width, safe.height * aspect), height = width / aspect
+        return CGRect(x:safe.midX-width/2,y:safe.midY-height/2,width:width,height:height)
+    }
+}
+
 /// Allocation survives enumeration changes; a disconnect frees only its own port.
 struct PlayerSlots {
     private(set) var owners: [String: Int] = [:]
@@ -154,6 +165,21 @@ struct PlayerSlots {
     func resetMapping(_ device: Device, console: GameConsole) {
         UserDefaults.standard.removeObject(forKey: mappingKey(device, console: console)); objectWillChange.send()
     }
+    static func input(pad: GCExtendedGamepad, console: GameConsole, mapping: [String]) -> ControllerInputState {
+        var result = ControllerInputState()
+        let buttons = [pad.buttonA, pad.buttonB, pad.buttonX, pad.buttonY, pad.leftShoulder, pad.rightShoulder, pad.leftTrigger, pad.rightTrigger, pad.buttonOptions, pad.buttonMenu, pad.leftThumbstickButton, pad.rightThumbstickButton]
+        for (button, action) in zip(buttons, mapping) where button?.isPressed == true { result.mask |= console.buttonMask(action) }
+        let dpad = [(pad.dpad.up.isPressed || (console.analogSticks == 0 && pad.leftThumbstick.yAxis.value > 0.5), 4), (pad.dpad.down.isPressed || (console.analogSticks == 0 && pad.leftThumbstick.yAxis.value < -0.5), 5), (pad.dpad.left.isPressed || (console.analogSticks == 0 && pad.leftThumbstick.xAxis.value < -0.5), 6), (pad.dpad.right.isPressed || (console.analogSticks == 0 && pad.leftThumbstick.xAxis.value > 0.5), 7)]
+        for (down, bit) in dpad where down { result.mask |= UInt16(1 << bit) }
+        for (i, stick) in [pad.leftThumbstick, pad.rightThumbstick].enumerated() where i < console.analogSticks {
+            result.axes[i] = ControllerInputState.axis(CGPoint(x: CGFloat(stick.xAxis.value), y: -CGFloat(stick.yAxis.value)))
+        }
+        if console == .n64 {
+            let x = pad.rightThumbstick.xAxis.value, y = pad.rightThumbstick.yAxis.value
+            for (pressed, action) in [(x < -0.5,"C←"),(x > 0.5,"C→"),(y > 0.5,"C↑"),(y < -0.5,"C↓")] where pressed { result.mask |= console.buttonMask(action) }
+        }
+        return result
+    }
     func inputs(console: GameConsole, touchMask: UInt16, touchAnalog: [CGPoint], running: Bool) -> [ControllerInputState] {
         var result = Array(repeating: ControllerInputState(), count: 4)
         guard running else { return result }
@@ -161,14 +187,10 @@ struct PlayerSlots {
         for i in 0..<min(2, touchAnalog.count) { result[0].axes[i] = touchAnalog[i] }
         for device in devices {
             guard device.port < maximumPlayers, let pad = device.controller.extendedGamepad else { continue }
-            let buttons = [pad.buttonA, pad.buttonB, pad.buttonX, pad.buttonY, pad.leftShoulder, pad.rightShoulder, pad.leftTrigger, pad.rightTrigger, pad.buttonOptions, pad.buttonMenu, pad.leftThumbstickButton, pad.rightThumbstickButton]
-            for (button, action) in zip(buttons, mapping(device, console: console)) where button?.isPressed == true { result[device.port].mask |= console.buttonMask(action) }
-            let dpad = [(pad.dpad.up.isPressed || (console.analogSticks == 0 && pad.leftThumbstick.yAxis.value > 0.5), 4), (pad.dpad.down.isPressed || (console.analogSticks == 0 && pad.leftThumbstick.yAxis.value < -0.5), 5), (pad.dpad.left.isPressed || (console.analogSticks == 0 && pad.leftThumbstick.xAxis.value < -0.5), 6), (pad.dpad.right.isPressed || (console.analogSticks == 0 && pad.leftThumbstick.xAxis.value > 0.5), 7)]
-            for (down, bit) in dpad where down { result[device.port].mask |= UInt16(1 << bit) }
-            for (i, stick) in [pad.leftThumbstick, pad.rightThumbstick].enumerated() where i < console.analogSticks {
-                let axis = ControllerInputState.axis(CGPoint(x: CGFloat(stick.xAxis.value), y: -CGFloat(stick.yAxis.value)))
-                if axis != .zero { result[device.port].axes[i] = axis }
-            }
+            let physical = Self.input(pad: pad, console: console, mapping: mapping(device, console: console))
+            result[device.port].mask |= physical.mask
+            for i in 0..<2 where physical.axes[i] != .zero { result[device.port].axes[i] = physical.axes[i] }
+
         }
         let now = ProcessInfo.processInfo.systemUptime
         for (peer, entry) in remoteInputs where now - entry.1 < 0.75 {
@@ -218,6 +240,9 @@ struct ControllerSettingsView: View {
         Form {
             Section {
                 Text("Conecta un mando desde Ajustes → Bluetooth. La disponibilidad de jugadores depende de la consola y del juego.")
+                Text("Con un mando para el jugador 1, la imagen se amplía y los controles táctiles se ocultan. Al desconectarlo, vuelven a aparecer.").font(.footnote)
+                if [.ds,.threeDS,.wii].contains(console) { Text("Algunos juegos todavía necesitan tocar la pantalla o usar funciones especiales de la consola.").font(.footnote) }
+                if console == .n64 { Text("Nintendo 64: el stick derecho controla los cuatro botones C.").font(.footnote) }
                 Text(L10n.format("Pantalla táctil: jugador 1 · Hasta %lld jugadores en este motor",hub.maximumPlayers))
                 if supportsRumble {
                     Toggle("Vibración del mando", isOn: $hub.controllerRumble)
@@ -232,7 +257,7 @@ struct ControllerSettingsView: View {
                     }
                     ForEach(Array(ControllerHub.physicalButtons.enumerated()), id: \.offset) { index, label in
                         Picker(label, selection: Binding(get: { hub.mapping(device, console: console)[index] }, set: { hub.remap(device, console: console, index: index, action: $0) })) {
-                            ForEach(["—", "A", "B", "C", "X", "Y", "Z", "L", "R", "L2", "R2", "L3", "R3", "C↑", "C↓", "C←", "C→", "START", "SELECT", "1", "2", "−", "+", "HOME", "SHAKE"].filter { $0 == "—" || console.buttonMask($0) != 0 }, id: \.self) { Text($0).tag($0) }
+                            ForEach(["—", "A", "B", "C", "X", "Y", "Z", "L", "R", "L2", "R2", "L3", "R3", "C↑", "C↓", "C←", "C→", "START", "SELECT", "1", "2", "−", "+", "HOME", "SHAKE"].filter { $0 == "—" || console.buttonMask($0) != 0 }, id: \.self) { Text(L10n.controlName($0)).tag($0) }
                         }
                     }
                     Button("Restablecer botones") { hub.resetMapping(device, console: console) }

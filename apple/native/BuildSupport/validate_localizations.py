@@ -10,11 +10,15 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 LANGUAGES = ('es', 'en', 'zh-Hans', 'hi', 'ar', 'fr', 'de', 'it')
 # Proper names, product labels and license identifiers deliberately remain literal.
 INVARIANT = {
+    'A_KANOID · Toxa. Space Game · EllAyling. MIT.', 'PPSSPP · Roboto, Noto, Source Han Sans, Ume',
+    'VETA Retro · GPL-3.0-or-later', 'bsnes-mercury · GPL v3',
+    'jgenesis · Tia · Beetle PCE Fast · PCSX ReARMed · DeSmuME · Beetle Saturn',
+    'jgenesis · Stella 2014 · Beetle PCE Fast · PCSX ReARMed · DeSmuME · Beetle Saturn',
     'VETA', 'VETA Retro', 'RETRO', 'Saturn', 'Metal', 'FCEUmm', 'Libretro Thumbnails',
     'FCEUmm · ac0d00a · GNU GPL v2', 'mGBA · 0.10.5 · MPL 2.0',
     'Genesis Plus GX · Stella 2014 · Beetle PCE Fast · PCSX ReARMed · DeSmuME · Beetle Saturn',
 }
-CALL = re.compile(r'(?:Text|Label|Button|Section|Toggle|Picker|Menu|TextField|ProgressView|NavigationLink|Link|navigationTitle|accessibilityLabel|accessibilityHint|alert|confirmationDialog|LabeledContent|L10n\.(?:text|format))\(\s*"((?:\\.|[^"\\])*)"')
+CALL = re.compile(r'(?<![A-Za-z0-9_])(?:Text|Label|Button|Section|GroupBox|Toggle|Picker|Menu|TextField|ProgressView|NavigationLink|Link|navigationTitle|accessibilityLabel|accessibilityHint|alert|confirmationDialog|LabeledContent|L10n\.(?:text|format))\(\s*"((?:\\.|[^"\\])*)"')
 
 def rows():
     result = {}
@@ -39,17 +43,26 @@ INTERPOLATION = re.compile(r'\\\([^)]*\)')
 
 MESSAGE = re.compile(r'(?:\b(?:error|failure|message|status)|messages\[[^\]]+\])\s*=\s*"((?:\\.|[^"\\])*)"')
 
+# Research-only screens are not shipped in the public release. Do not confuse
+# protocol reason codes or status lines with user-facing UI translations.
+RESEARCH_ONLY = {'Commercial170QA.swift', 'Veta165QA.swift', 'WebJIT165Probe.swift', 'PS2Native165QA.swift', 'PS2Retail165QA.swift'}
+PROTOCOL_VALUES = {'method', 'route', 'framing', 'headers', 'range', 'duplicate', 'upload'}
+
 def required_keys():
     keys = set()
     for source in (ROOT/'Sources').glob('*.swift'):
+        if source.name in RESEARCH_ONLY: continue
         content = source.read_text()
         for match in list(ERROR.finditer(content)) + list(MESSAGE.finditer(content)):
-            if match[1]:
+            if match[1] and match[1] not in PROTOCOL_VALUES and not match[1].startswith("QA "):
                 keys.add(INTERPOLATION.sub('%@', match[1]))
         if source.name in ('DreamcastWebServer.swift', 'DreamcastWebLaunchPolicy.swift'):
             keys.update(INTERPOLATION.sub('%@', match[1]) for match in DREAMCAST_FAILURE.finditer(content) if match[1])
         if source.name == 'DreamcastWebVMUStore.swift':
             keys.update(INTERPOLATION.sub('%@', match[1]) for match in DREAMCAST_RETURN.finditer(content) if match[1])
+        if source.name == 'PersonalSkinViews.swift':
+            for match in re.finditer(r'step\("[^"\n]+",\s*"([^"\n]+)",\s*"([^"\n]+)"', content):
+                keys.update(match.groups())
         if source.name == 'Localization.swift':
             keys.update(re.findall(r'\.init\(key: "([^"\n]+)"', content))
         for match in CALL.finditer(content):

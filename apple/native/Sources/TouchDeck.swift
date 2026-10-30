@@ -671,12 +671,11 @@ final class GameViewController: UIViewController {
         screen.frame=layout.screen;deck.frame=layout.deck
         let phoneIsControl = ExternalDisplayHub.shared.connected && ExternalDisplayHub.shared.enabled && ExternalDisplayHub.shared.hidePhonePicture
         screen.alpha = phoneIsControl ? 0 : 1
-        let fullScreen = !phoneIsControl && !ControllerHub.shared.devices.isEmpty && (UserDefaults.standard.object(forKey:"native.fullscreenWithController") as? Bool ?? true)
+        let fullScreen = ControllerDisplayPolicy.fullscreen(ports:ControllerHub.shared.devices.map(\.port),maximumPlayers:ControllerHub.shared.maximumPlayers,enabled:UserDefaults.standard.object(forKey:"native.fullscreenWithController") as? Bool ?? true,phoneIsControl:phoneIsControl)
         if deck.isHidden != fullScreen { deck.releaseAll() }
         deck.isHidden = fullScreen; shell.isHidden = fullScreen || deck.usesLandscapeOverlay; bar.isHidden = fullScreen || deck.usesLandscapeOverlay
         if fullScreen {
-            let width = min(safe.width, safe.height * aspect), height = width / aspect
-            screen.frame = CGRect(x:safe.midX-width/2,y:safe.midY-height/2,width:width,height:height)
+            screen.frame = ControllerDisplayPolicy.frame(safe:safe,aspect:aspect)
             menu.frame = CGRect(x:safe.maxX-92,y:safe.minY+8,width:80,height:44)
             view.backgroundColor = .black
         } else { view.backgroundColor = deck.usesLandscapeOverlay ? .black:deck.style.background }

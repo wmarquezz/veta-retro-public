@@ -75,14 +75,15 @@ actor DirectCloudArtworkLoader {
 struct DirectCloudThumbnail: View {
     let entry: DirectCloudEntry?
     let loader: DirectCloudArtworkLoader?
+    var height: CGFloat = 140
     @State private var image: UIImage?
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 12).fill(VetaTheme.panel)
             if let image { Image(uiImage: image).resizable().scaledToFit().padding(4) }
-            else { Image(systemName: "gamecontroller.fill").font(.system(size: 32)).foregroundStyle(VetaTheme.mint) }
+            else { Image(systemName: "gamecontroller.fill").font(.system(size: height < 80 ? 24 : 32)).foregroundStyle(VetaTheme.mint) }
         }
-        .frame(height: 140).clipped().accessibilityHidden(true)
+        .frame(height: height).clipped().accessibilityHidden(true)
         .task(id: entry) {
             image = nil
             if let entry, let loader { image = try? await loader.image(entry) }

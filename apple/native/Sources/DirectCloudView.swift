@@ -49,6 +49,7 @@ import SwiftUI
     private var operation: Task<Void, Never>?
     private let auth = DirectCloudAuthenticator()
     private var config: DirectCloudConfiguration?
+    var isCatalogRoot: Bool { catalog != nil && path.count == catalogDepth }
     var currentName: String { path.last?.name ?? sharedRoot?.name ?? provider?.title ?? (portalConnected ? L10n.text("Carpetas compartidas") : "") }
     var currentID: String { path.last?.id ?? sharedRoot?.id ?? provider?.rootID ?? "root" }
     var supported: Set<String> { LocalCoverImport.gameExtensions.union(NativeGameFile.extensions).union(LocalCoverImport.imageExtensions) }
@@ -215,6 +216,21 @@ struct DirectCloudView: View {
             .buttonStyle(VetaButton(primary: true)).disabled(model.selected.isEmpty)
         Button(LocalizedStringKey(model.catalog == nil ? "Importar esta carpeta" : "Importar disponibles")) { model.plan(all: true) }.frame(minHeight: 44).disabled(model.selectableIDs.isEmpty)
     }
+    private var catalogHeading: some View {
+        Label(model.isCatalogRoot ? (model.catalog?.title ?? model.currentName) : model.currentName,
+              systemImage: model.catalog == nil ? "folder" : "books.vertical")
+            .font(.headline).textSelection(.enabled)
+    }
+    private var catalogSelectionActions: some View {
+        HStack(spacing: 12) {
+            Button(LocalizedStringKey(model.selected == model.selectableIDs && !model.selected.isEmpty ? "Deseleccionar todo" : "Seleccionar todo")) {
+                let ids = model.selectableIDs
+                model.selected = model.selected == ids ? [] : ids
+            }.frame(minHeight: 44).disabled(model.busy || model.selectableIDs.isEmpty)
+            Button { model.refresh() } label: { Image(systemName: "arrow.clockwise").frame(minWidth: 44, minHeight: 44) }
+                .accessibilityLabel("Actualizar carpeta").disabled(model.busy)
+        }
+    }
     var body: some View {
         NavigationStack {
             List {
@@ -246,19 +262,21 @@ struct DirectCloudView: View {
                     Section("Privacidad y condiciones") { CloudPrivacyLinks() }
                 } else {
                     Section {
-                        VStack(alignment: .leading, spacing: 10) {
-                            Label(model.catalog?.title ?? model.currentName, systemImage: model.catalog == nil ? "folder" : "books.vertical").font(.headline).textSelection(.enabled)
-                            if model.catalog != nil && model.search.isEmpty {
-                                Text("Catálogo detectado. Los juegos que ya tienes no se volverán a importar.").font(.footnote).foregroundStyle(.secondary)
+                        VStack(alignment: .leading, spacing: 8) {
+                            if verticalSizeClass == .compact && !dynamicTypeSize.isAccessibilitySize {
+                                HStack(spacing: 16) {
+                                    catalogHeading.lineLimit(1)
+                                    Spacer(minLength: 0)
+                                    catalogSelectionActions
+                                }
+                            } else {
+                                VStack(alignment: .leading, spacing: 4) {
+                                    catalogHeading
+                                    catalogSelectionActions
+                                }
                             }
-                            HStack {
-                                Button(LocalizedStringKey(model.selected == model.selectableIDs && !model.selected.isEmpty ? "Deseleccionar todo" : "Seleccionar todo")) {
-                                    let ids = model.selectableIDs
-                                    model.selected = model.selected == ids ? [] : ids
-                                }.frame(minHeight: 44).disabled(model.busy || model.selectableIDs.isEmpty)
-                                Spacer()
-                                Button { model.refresh() } label: { Image(systemName: "arrow.clockwise").frame(minWidth: 44, minHeight: 44) }
-                                    .accessibilityLabel("Actualizar carpeta").disabled(model.busy)
+                            if model.isCatalogRoot && model.search.isEmpty {
+                                Text("Catálogo detectado. Los juegos que ya tienes no se volverán a importar.").font(.footnote).foregroundStyle(.secondary)
                             }
                         }
                     }
@@ -287,31 +305,43 @@ struct DirectCloudView: View {
                     if !index.games.isEmpty || index.folders.isEmpty {
                     Section("Juegos") {
                         if index.games.isEmpty && !model.busy { Text(LocalizedStringKey(model.search.isEmpty ? "No hay juegos en esta carpeta." : "No hay juegos que coincidan con la búsqueda.")).foregroundStyle(.secondary) }
-                        let columns = dynamicTypeSize.isAccessibilitySize ? 1 : (verticalSizeClass == .compact ? 3 : 2)
-                        ForEach(Array(stride(from: 0, to: index.games.count, by: columns)), id: \.self) { offset in
-                            HStack(alignment: .top, spacing: 12) {
-                                ForEach(Array(index.games[offset..<min(offset + columns, index.games.count)])) { item in
-
-                                VStack(spacing: 4) {
-                                    Button { model.toggle(item) } label: {
-                                        VStack(alignment: .leading, spacing: 8) {
-                                            DirectCloudThumbnail(entry: index.covers[item.id], loader: model.artworkLoader)
-                                                .overlay(alignment: .topTrailing) { Image(systemName: !model.canSelect(item) ? "checkmark.seal.fill" : (model.selected.contains(item.id) ? "checkmark.circle.fill" : "circle")).font(.title2).foregroundStyle(model.selected.contains(item.id) ? VetaTheme.orange : VetaTheme.mint).padding(8).background(.black.opacity(0.7), in: Circle()) }
-                                            Text(item.catalogTitle ?? (item.name as NSString).deletingPathExtension).font(.subheadline.weight(.semibold)).foregroundStyle(Color.primary).lineLimit(3).multilineTextAlignment(.leading)
-                                            if !model.canSelect(item) { Text("Ya instalado").font(.caption.weight(.semibold)).foregroundStyle(VetaTheme.mint) }
-                                            if let size = item.size { Text(ByteCountFormatter.string(fromByteCount: size, countStyle: .file)).font(.caption).foregroundStyle(.secondary) }
-                                        }.frame(maxWidth: .infinity, alignment: .leading).contentShape(Rectangle())
-                                    }.buttonStyle(.plain).accessibilityLabel(Text(L10n.format("Seleccionar %@", item.catalogTitle ?? item.name)))
-                                        .accessibilityValue(!model.canSelect(item) ? Text("Ya instalado") : (model.selected.contains(item.id) ? Text("Seleccionado") : Text("Sin seleccionar")))
-                                        .disabled(!model.canSelect(item))
-                                        .accessibilityIdentifier("catalog-game-" + (item.catalogGameID ?? item.id))
-                                    if let cover = index.covers[item.id] {
-                                        Button { preview = cover } label: { Label("Ver portada", systemImage: "arrow.up.left.and.arrow.down.right").font(.caption).frame(maxWidth: .infinity, minHeight: 44) }.buttonStyle(.borderless)
+                        ForEach(index.games) { item in
+                            HStack(spacing: 12) {
+                                if let cover = index.covers[item.id] {
+                                    Button { preview = cover } label: {
+                                        DirectCloudThumbnail(entry: cover, loader: model.artworkLoader, height: 52)
+                                            .frame(width: 52)
                                     }
-                                }.frame(maxWidth: .infinity).disabled(model.busy)
+                                    .buttonStyle(.borderless)
+                                    .accessibilityLabel(Text(L10n.text("Ver portada") + ": " + (item.catalogTitle ?? item.name)))
+                                    .accessibilityIdentifier("catalog-cover-" + (item.catalogGameID ?? item.id))
+                                } else {
+                                    DirectCloudThumbnail(entry: nil, loader: nil, height: 52).frame(width: 52)
                                 }
-                                if index.games.count - offset < columns { Spacer().frame(maxWidth: .infinity) }
-                            }
+                                Button { model.toggle(item) } label: {
+                                    HStack(spacing: 8) {
+                                        VStack(alignment: .leading, spacing: 4) {
+                                            Text(item.catalogTitle ?? (item.name as NSString).deletingPathExtension)
+                                                .font(.subheadline.weight(.semibold)).foregroundStyle(Color.primary)
+                                                .lineLimit(dynamicTypeSize.isAccessibilitySize ? nil : 2)
+                                                .multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true)
+                                            if !model.canSelect(item) {
+                                                Text("Ya instalado").font(.caption.weight(.semibold)).foregroundStyle(VetaTheme.mint)
+                                            } else if let size = item.size {
+                                                Text(ByteCountFormatter.string(fromByteCount: size, countStyle: .file)).font(.caption).foregroundStyle(.secondary)
+                                            }
+                                        }
+                                        Spacer(minLength: 0)
+                                        Image(systemName: !model.canSelect(item) ? "checkmark.seal.fill" : (model.selected.contains(item.id) ? "checkmark.circle.fill" : "circle"))
+                                            .font(.title2).foregroundStyle(model.selected.contains(item.id) ? VetaTheme.orange : VetaTheme.mint)
+                                            .accessibilityHidden(true)
+                                    }.frame(maxWidth: .infinity, minHeight: 52, alignment: .leading).contentShape(Rectangle())
+                                }.buttonStyle(.borderless)
+                                    .accessibilityLabel(Text(L10n.format("Seleccionar %@", item.catalogTitle ?? item.name)))
+                                    .accessibilityValue(!model.canSelect(item) ? Text("Ya instalado") : (model.selected.contains(item.id) ? Text("Seleccionado") : Text("Sin seleccionar")))
+                                    .disabled(!model.canSelect(item))
+                                    .accessibilityIdentifier("catalog-game-" + (item.catalogGameID ?? item.id))
+                            }.disabled(model.busy)
                         }
                     }
                     }
@@ -355,9 +385,20 @@ struct DirectCloudView: View {
             .navigationTitle(model.portalConnected ? "Enlace compartido" : "Conectar mi nube").navigationBarTitleDisplayMode(.inline)
             .safeAreaInset(edge: .bottom) {
                 if model.isConnected && !model.busy {
-                    ViewThatFits(in: .horizontal) {
-                        HStack(spacing: 16) { importButtons }
-                        VStack(spacing: 8) { importButtons }
+                    Group {
+                        if dynamicTypeSize.isAccessibilitySize {
+                            Menu {
+                                Button("Importar selección") { model.plan(all: false) }.disabled(model.selected.isEmpty)
+                                Button(LocalizedStringKey(model.catalog == nil ? "Importar esta carpeta" : "Importar disponibles")) { model.plan(all: true) }.disabled(model.selectableIDs.isEmpty)
+                            } label: {
+                                Label("Importar", systemImage: "square.and.arrow.down").font(.headline).frame(minHeight: 44)
+                            }
+                        } else {
+                            ViewThatFits(in: .horizontal) {
+                                HStack(spacing: 16) { importButtons }
+                                VStack(spacing: 8) { importButtons }
+                            }
+                        }
                     }.frame(maxWidth: .infinity).padding(.horizontal, 16).padding(.vertical, 8).background(VetaTheme.panel)
                 }
             }

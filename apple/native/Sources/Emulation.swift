@@ -301,9 +301,7 @@ final class NativeAudio {
         catch { self.error = error.localizedDescription; return }
         do {
             try FileManager.default.createDirectory(at:library.stateDirectory(game,plan:plan),withIntermediateDirectories:true)
-            activeProfile = try GameProfileStore(library: library, game: game).resolved()
-            // Preserve existing iNES header/name region detection when Auto is inherited.
-            if activeProfile.values[CoreOptionID.nesRegion.rawValue] == "Auto" { activeProfile.values[CoreOptionID.nesRegion.rawValue] = region }
+            activeProfile = try GameProfileStore(library: library, game: game).resolved().forLaunch(game: game, nesRegion: region)
             try activeProfile.installForNextLoad()
         } catch { self.error = error.localizedDescription; return }
 #if DEBUG

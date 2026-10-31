@@ -63,6 +63,21 @@ struct CoreProfile: Codable, Equatable {
         // and cannot contain separators. Bump this schema for ABI-affecting changes.
         sha256(Data((["veta-options-1"] + values.keys.sorted().map { "\($0)=\(values[$0]!)" }).joined(separator: "\n").utf8))
     }
+    func forLaunch(game: Game, nesRegion: String = "Auto") -> Self {
+        var result = self
+        if game.console == .nes, result.values[CoreOptionID.nesRegion.rawValue] == "Auto" {
+            result.values[CoreOptionID.nesRegion.rawValue] = nesRegion
+        }
+        // SMS cartridges do not encode PAL timing reliably. Use an explicit
+        // European release tag only; mixed/world releases keep the core default.
+        if game.console == .masterSystem,
+           result.values[CoreOptionID.segaRegion.rawValue] == "auto",
+           game.name.range(of: #"\((?:Europe|PAL|France|Germany|Italy|Spain|Sweden|Australia)\)"#,
+                           options: [.regularExpression, .caseInsensitive]) != nil {
+            result.values[CoreOptionID.segaRegion.rawValue] = "pal"
+        }
+        return result
+    }
     func installForNextLoad() throws {
         veta_options_clear()
         for key in values.keys.sorted() {

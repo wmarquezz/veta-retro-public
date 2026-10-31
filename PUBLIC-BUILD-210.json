@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "build": 210,
+  "appStoreApproved": false,
+  "engineChanges": true,
+  "sourceManifestFiles": 103877,
+  "scope": "Master System PAL launch profile, mGBA recovery after rejection, SNES chip HLE activation; see RELEASE-1.0.0-rc.11.md"
+}

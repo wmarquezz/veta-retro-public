@@ -27,6 +27,8 @@ for name, version, digest in [('mgba','0.10.5','9475c26e9fa2f4b30c07ab6636e4b0a5
             if not member.name: continue
             assert not member.name.startswith('/') and '..' not in Path(member.name).parts and not member.issym() and not member.islnk()
             archive.extract(member,destination)
+from BuildSupport.patch_mgba_lifecycle import apply as patch_mgba_lifecycle
+patch_mgba_lifecycle(base/'.build/mgba')
 resources=base/'Content'
 for game in ['thwaite','croom','akanoid-gb','sushi-gb','gluf-gbc','space-game','gold-rush','sushi-sms','sushi-gg','berta','akanoid-gg','gluf-sms']:
     dest=resources/game

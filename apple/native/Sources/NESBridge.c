@@ -228,6 +228,9 @@ static bool environment(unsigned cmd,void *data) {
             return true;
         }
         if(!strcmp(v->key,"veta_jgenesis_system")){v->value=activeConsole==6 ? "sms":activeConsole==7 ? "gg":"md";return true;}
+        // bsnes gates chip HLE behind this master option. Keep other accuracy
+        // overrides at their defaults; no external DSP/CX4 firmware is required.
+        if(!strcmp(v->key,"bsnes_violate_accuracy")){v->value="enabled";return true;}
         if(!strcmp(v->key,"bsnes_chip_hle")){v->value="HLE";return true;}
         for(unsigned i=0;i<activeOptionCount;i++)if(!strcmp(v->key,activeOptions[i].key)){v->value=activeOptions[i].value;return true;}
         if(!strcmp(v->key,"melonds_network_mode")) v->value="disabled";

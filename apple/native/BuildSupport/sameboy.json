@@ -1,0 +1,7 @@
+{
+  "repo": "LIJI32/SameBoy",
+  "commit": "1506d8046b411bd61c10cfd23c7c5c694d16535d",
+  "archive": "sameboy-1506d804.tar.gz",
+  "sha256": "774885efe1d5c157f2ea695430583ee65f2f9dbfb193095c59ea89b159b84687",
+  "license": "MIT (core and BootROMs; iOS UI and HexFiend excluded from build)"
+}

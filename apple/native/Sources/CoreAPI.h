@@ -52,3 +52,5 @@ static const VetaCoreAPI mgbaAPI={.get_system_info=mgba_retro_get_system_info,.i
 #endif
 const VetaCoreAPI *veta_external_core(unsigned console);
 const VetaCoreAPI *veta_external_core_mode(unsigned console,bool interpreter);
+
+const VetaCoreAPI *veta_external_core_for_path(unsigned console,bool interpreter,const char *path);

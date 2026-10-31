@@ -1,6 +1,6 @@
-# VETA Retro 1.0.0 · candidata 11
+# VETA Retro 1.0.0 · candidata 12
 
-Paquete completo de fuentes de la compilación 210. [Notas y numeración](RELEASE-1.0.0-rc.11.md). No requiere los archivos de versiones previas. Las referencias numéricas anteriores de la receta son históricas.
+Paquete completo de fuentes de la compilación 211. [Notas y numeración](RELEASE-1.0.0-rc.12.md). No requiere los archivos de versiones previas. Las referencias numéricas anteriores de la receta son históricas.
 
 ## Importación desde la nube191
 
@@ -149,3 +149,7 @@ mediante hashes y publicar ambos con una URL estable. La app enlaza esta entrega
 La instalación por USB usa firma de desarrollo del target público; no es una descarga de App Store.
 El resultado de auditoría de licencias y sus excepciones pendientes está en
 `apple/native/Publication/rights/LICENSE-MATRIX-176.md`; conservarlo al revisar.
+
+## Requisito de reconstrucción añadido en 211
+
+Instala RGBDS (validado con 1.0.4) para ensamblar el arranque libre de SameBoy. Las tres fuentes nuevas están fijadas por commit y SHA-256 en BuildSupport/{sameboy,gearsystem,supergrafx}.json; la receta rebuild_public.py las compila para dispositivo y simulador. No se suministra BIOS comercial.

@@ -47,3 +47,16 @@ A, X, Y registers and flags aren't specified (no game tested relied on them).
 - SNESdev wiki, "S-SMP": https://snes.nesdev.org/wiki/S-SMP
 - Wikibooks, "Super NES Programming/Loading SPC700 programs":
   https://en.wikibooks.org/wiki/Super_NES_Programming/Loading_SPC700_programs
+
+## VETA transfer-timing correction (2026-10-31)
+
+The receive loop now falls through after a matching counter and branches back
+after storing a byte. This preserves the 25-cycle ready-byte loop and polls
+the counter two cycles later than the previous layout. Earlier polling could
+miss the CPU response and incur an extra wait iteration for each byte. On a
+Super High Impact startup in the Mac core, the accumulated delay moved
+initialization outside VBlank and the game deliberately restarted.
+
+Command mode is latched before acknowledging the command. The source ROM of
+the game is unchanged. The firmware remains 64 bytes and is rebuilt from the
+modified GPL source; original proprietary firmware is not included.

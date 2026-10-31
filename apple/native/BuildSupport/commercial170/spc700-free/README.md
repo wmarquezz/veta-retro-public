@@ -58,3 +58,7 @@ the original. In ares, give the Super Famicom system pak an `ipl.rom` with these
 
 GNU General Public License, version 3 or (at your option) any later version; see
 [LICENSE](LICENSE). For other terms, contact [StackBlender](https://stackblender.com).
+
+## VETA modifications · 2026-10-31
+
+The upstream description below/above records upstream authorship and methodology. VETA modified the receive-loop timing and latched the command mode before acknowledgement to avoid a VBlank initialization timeout in Super High Impact. This local revision was checked with protocol traces and comparative runtime behavior; the original console firmware is not shipped. See `UPSTREAM.json` for the upstream commit and separate local modification hashes. Copyright and GPL notices are retained.

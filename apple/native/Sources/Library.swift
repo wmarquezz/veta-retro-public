@@ -20,7 +20,7 @@ struct Game: Codable, Identifiable, Equatable {
     var videoPresentation:VideoPresentation? = nil
     var dsEngine:DSGameEngine = .desmume
     var coreIndex:UInt32 {console == .ds && dsEngine == .melonDS ? 20:console.coreIndex}
-    var coreID:String {console == .ds && dsEngine == .melonDS ? "melonds-ds-f394adba-16f127db-v2":console.coreID}
+    var coreID:String {if let compatible = CartridgeCompatibility.coreID(id: id, console: console) { return compatible }; return console == .ds && dsEngine == .melonDS ? "melonds-ds-f394adba-16f127db-v2":console.coreID}
     enum CodingKeys:String,CodingKey {case id,name,favorite,lastPlayed,importedAt,region,console,contentName,dsEngine,guide,videoPresentation}
     init(id:String,name:String,console:GameConsole = .nes) {self.id=id;self.name=name;self.console=console}
     init(from decoder:Decoder)throws {
@@ -218,7 +218,7 @@ struct StateFile: Codable {
             case .megaDrive:
                 guard MegaDriveROM.isCartridge(data) else { throw MegaDriveROM.invalid }
             case .masterSystem,.gameGear:
-                guard data.count>=8192,data.count<=4*1024*1024,[0x1ff0,0x3ff0,0x7ff0].contains(where:{data.count >= $0+8 && Data(data[$0..<$0+8])==Data("TMR SEGA".utf8)}) else{throw VetaError.message("Cabecera Sega de 8 bits inválida.")}
+                guard CartridgeCompatibility.isKnownHeaderlessGameGear(data, console: console) || (data.count>=8192 && data.count<=4*1024*1024 && [0x1ff0,0x3ff0,0x7ff0].contains(where:{data.count >= $0+8 && Data(data[$0..<$0+8])==Data("TMR SEGA".utf8)})) else{throw VetaError.message("Cabecera Sega de 8 bits inválida.")}
             case .atari2600:
                 // Stella accepts the original DPC cartridge size (Pitfall II),
                 // including its optional 256-byte data area.
@@ -280,6 +280,7 @@ struct StateFile: Codable {
     }
     @discardableResult func add(data: Data, name: String, console:GameConsole = .nes) throws -> Game {
         guard GameConsole.allCases.contains(console) else {throw VetaError.message("Consola desconocida.")}
+        let data = console == .nes ? NESROM.normalize(data) : data
         try Self.validateROM(data,console:console)
         let id = sha256(data)
         if let existing = games.first(where: { $0.id == id }) { return existing }
@@ -335,7 +336,7 @@ struct StateFile: Codable {
                     guard entry.game.contentName==nil else{throw VetaError.message("Faltan archivos del juego en el respaldo.")}
                     try Self.validateROM(entry.rom,console:entry.game.console)
                 }
-                guard entry.game.id == sha256(entry.rom) || (entry.game.console == .threeDS && ThreeDSImportNormalization.matchesOriginalIdentity(entry.rom,id:entry.game.id)) else { throw VetaError.message("El respaldo contiene una ROM dañada.") }
+                guard entry.game.id == sha256(entry.rom) || (entry.game.console == .threeDS && ThreeDSImportNormalization.matchesOriginalIdentity(entry.rom,id:entry.game.id)) || (entry.game.console == .n64 && N64ImportNormalization.matchesOriginalIdentity(entry.rom,id:entry.game.id)) else { throw VetaError.message("El respaldo contiene una ROM dañada.") }
             }
             if let cheats=entry.nesCheats {
                 guard entry.game.console == .nes else {throw VetaError.message("Los trucos de este respaldo no corresponden a NES.")}
@@ -392,7 +393,7 @@ struct StateFile: Codable {
             let staging=FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString,isDirectory:true)
             try FileManager.default.createDirectory(at:staging,withIntermediateDirectories:true);defer{try? FileManager.default.removeItem(at:staging)}
             let url=staging.appendingPathComponent(name)
-            let importBytes = entry.game.console == .threeDS ? (ThreeDSImportNormalization.originalContent(entry.rom,id:entry.game.id) ?? entry.rom):entry.rom
+            let importBytes = entry.game.console == .threeDS ? (ThreeDSImportNormalization.originalContent(entry.rom,id:entry.game.id) ?? entry.rom) : entry.game.console == .n64 ? (N64ImportNormalization.originalContent(entry.rom,id:entry.game.id) ?? entry.rom) : entry.rom
             try importBytes.write(to:url);game=try importNativeFile(url,console:entry.game.console)
         } else {game = try add(data: entry.rom, name: entry.game.name,console:entry.game.console)}
         game.dsEngine=entry.game.dsEngine

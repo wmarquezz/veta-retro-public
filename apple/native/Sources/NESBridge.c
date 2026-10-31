@@ -448,9 +448,10 @@ bool veta_load_system_mode(const char *path,const char *dir,const char *system,c
     const char *extension=strrchr(path,'.');
     gameCubeExecutable=console==17 && extension && (!strcmp(extension,".dol") || !strcmp(extension,".elf"));
     #ifdef VETA_JIT_LAB
-    const VetaCoreAPI *selected=veta_external_core_mode(console,interpreterExecution);
+    const VetaCoreAPI *selected=veta_external_core_for_path(console,interpreterExecution,path);
 #else
-    const VetaCoreAPI *selected=console==0 ? &nesAPI:console>=2 && console<=4 ? &mgbaAPI:veta_external_core_mode(console,interpreterExecution);
+    const VetaCoreAPI *selected=console==0 ? &nesAPI : veta_external_core_for_path(console,interpreterExecution,path);
+    if(!selected && console>=2 && console<=4)selected=&mgbaAPI;
 #endif
     if(!selected)return false;core=selected;
     pixelFormat=RETRO_PIXEL_FORMAT_0RGB1555;width=256;height=240;snprintf(directory,sizeof(directory),"%s",dir);snprintf(systemDirectory,sizeof(systemDirectory),"%s",system);snprintf(region,sizeof(region),"%s",reg);

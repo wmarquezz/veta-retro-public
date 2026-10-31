@@ -11,23 +11,23 @@ ffd0  78 cc f4   kick:    cmp $f4,#$cc        ; wait for the CPU's $CC
 ffd3  d0 fb               bne kick
 ffd5  ba f6      command: movw ya,$f6         ; the address
 ffd7  da 00               movw $00,ya         ; kept at $00-$01
-ffd9  fa f4 f4            mov $f4,$f4         ; echo the command
-ffdc  e4 f5               mov a,$f5
+ffd9  e4 f5               mov a,$f5           ; latch mode before acknowledgement
+ffdb  fa f4 f4            mov $f4,$f4         ; acknowledge command
 ffde  f0 1b               beq jump
-ffe0  8d 00               mov y,#0            ; counter and index
-ffe2  7e f4      first:   cmp y,$f4           ; wait for the first byte's counter (0)
-ffe4  d0 fc               bne first
-ffe6  e4 f5      data:    mov a,$f5           ; a byte
-ffe8  cb f4               mov $f4,y           ; echo its counter (the CPU sends the next while it's stored)
-ffea  d7 00               mov [$00]+y,a
-ffec  fc                  inc y
-ffed  f0 08               beq page            ; every 256 bytes
-ffef  7e f4      next:    cmp y,$f4           ; the next counter?
-fff1  f0 f3               beq data
-fff3  10 fa               bpl next            ; not yet (the CPU still shows the last one)
-fff5  2f de               bra command         ; ahead of it: the block's end, a command
-fff7  ab 01      page:    inc $01             ; the next 256-byte page
-fff9  2f f4               bra next
+ffe0  eb f4      first:   mov y,$f4           ; first counter must be zero
+ffe2  d0 fc               bne first
+ffe4  7e f4      next:    cmp y,$f4
+ffe6  d0 0b               bne waiting
+ffe8  e4 f5      data:    mov a,$f5
+ffea  cb f4               mov $f4,y
+ffec  d7 00               mov [$00]+y,a
+ffee  fc                  inc y
+ffef  d0 f3               bne next
+fff1  ab 01               inc $01
+fff3  10 ef      waiting: bpl next
+fff5  7e f4               cmp y,$f4           ; distinguish next byte from command
+fff7  10 eb               bpl next
+fff9  2f da               bra command
 fffb  1f 00 00   jump:    jmp [$0000+x]       ; to the address at $00-$01
 fffe  c0 ff               reset vector: $FFC0
 ; 62 bytes of code, 0 unused

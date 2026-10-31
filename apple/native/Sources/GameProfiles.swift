@@ -68,12 +68,15 @@ struct CoreProfile: Codable, Equatable {
         if game.console == .nes, result.values[CoreOptionID.nesRegion.rawValue] == "Auto" {
             result.values[CoreOptionID.nesRegion.rawValue] = nesRegion
         }
-        // SMS cartridges do not encode PAL timing reliably. Use an explicit
-        // European release tag only; mixed/world releases keep the core default.
-        if game.console == .masterSystem,
-           result.values[CoreOptionID.segaRegion.rawValue] == "auto",
-           game.name.range(of: #"\((?:Europe|PAL|France|Germany|Italy|Spain|Sweden|Australia)\)"#,
-                           options: [.regularExpression, .caseInsensitive]) != nil {
+        // SMS region tags are useful when timing is absent from the cartridge.
+        // This exact Genesis dump has an ambiguous region header. Identify its
+        // normalized content, not the ZIP/member filename; explicit choices win.
+        let namedSMSPAL = game.console == .masterSystem &&
+            game.name.range(of: #"\((?:Europe|PAL|France|Germany|Italy|Spain|Sweden|Australia)\)"#,
+                            options: [.regularExpression, .caseInsensitive]) != nil
+        let knownGenesisPAL = game.console == .megaDrive &&
+            game.id == "8c254d82237eba38a22d8d434ddd99b9187e408c6eb0393579f864f8c5e882ba"
+        if result.values[CoreOptionID.segaRegion.rawValue] == "auto", namedSMSPAL || knownGenesisPAL {
             result.values[CoreOptionID.segaRegion.rawValue] = "pal"
         }
         return result

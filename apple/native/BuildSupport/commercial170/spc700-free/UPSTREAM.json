@@ -10,5 +10,16 @@
     "docs/testing.md": "fed6b52ce3a804408005e222bed0fbd763bdeb9f68936ac204ef521cd18b94fe",
     "docs/protocol.md": "84f563ab5742a88588246160a29a425487de24fcb4d114c3dff8a6f7fa4995b5",
     "src/assemble.py": "95be0a96f434be03cf9e61efef619e38d83153a50b900debe29924c0cdcd14aa"
+  },
+  "localModifications": {
+    "date": "2026-10-31",
+    "description": "VETA: preserve transfer polling timing to avoid Super High Impact VBlank startup reset; latch command mode before acknowledgement. Original source license retained.",
+    "files": {
+      "src/assemble.py": "38c8c33db9639c38b3082559ad66f234b89f301c00f12b939a107f54163e4121",
+      "spc700_boot_rom.h": "127618b32cf34460938c9c204047ba5393349440cdc9d28f0003d4519c2af038",
+      "listing.txt": "17a0b5f90db8fe6088502457b901252663c2cb564812dd2cd97a2bf4f39c9c17",
+      "docs/protocol.md": "964b002c8962d9f0ed3d65599bbdcd451d7b7c681f985f41096e387bb92933ec",
+      "README.md": "9567b9123116fe8c8b1d1ae1d2d6923b2f4661737e9208351215cc39565f30cd"
+    }
   }
 }

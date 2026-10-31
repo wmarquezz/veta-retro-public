@@ -1,14 +1,14 @@
 {
   "version": "1.0.0",
-  "build": 210,
+  "build": 211,
   "channel": "release-candidate",
-  "tag": "v1.0.0-rc.11",
+  "tag": "v1.0.0-rc.12",
   "format": "standalone-complete-source",
-  "fullSourceFiles": 103878,
-  "archive": "VETA-Retro-1.0.0-rc.11-sources.tar.gz",
-  "sha256": "633d47bae209180204b80e795d4899bfa57a79dbdde47c599222848a78e18e23",
-  "bytes": 459989053,
-  "download": "https://github.com/wmarquezz/veta-retro-public/releases/download/v1.0.0-rc.11/VETA-Retro-1.0.0-rc.11-sources.tar.gz",
-  "instructions": "RELEASE-1.0.0-rc.11.md",
+  "fullSourceFiles": 103895,
+  "archive": "VETA-Retro-1.0.0-rc.12-sources.tar.gz",
+  "sha256": "3cc6d33eeaa7083373345ed08f770ed8100a13acb0297af000652a604a9f24f8",
+  "bytes": 476900965,
+  "download": "https://github.com/wmarquezz/veta-retro-public/releases/download/v1.0.0-rc.12/VETA-Retro-1.0.0-rc.12-sources.tar.gz",
+  "instructions": "RELEASE-1.0.0-rc.12.md",
   "completeSourceRequiresPreviousArchives": false
 }

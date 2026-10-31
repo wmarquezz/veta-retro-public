@@ -4,7 +4,10 @@ import re, shutil
 
 def apply(root: Path):
     free = Path(__file__).resolve().parent/'spc700-free'
-    shutil.copy2(free/'spc700_boot_rom.h', root/'target-libretro/veta-spc700.h')
+    header = root/'target-libretro/veta-spc700.h'
+    changed = not header.exists() or header.read_bytes() != (free/'spc700_boot_rom.h').read_bytes()
+    shutil.copy2(free/'spc700_boot_rom.h', header)
+    if changed: (root/'target-libretro/libretro.cpp').touch()
     shutil.copy2(free/'LICENSE', root/'target-libretro/veta-spc700-LICENSE')
     path = root/'target-libretro/libretro.cpp'
     text = path.read_text()

@@ -12,7 +12,7 @@
       "IPHONEOS_DEPLOYMENT_TARGET": "16.4",
       "ENABLE_USER_SCRIPT_SANDBOXING": "YES",
       "MARKETING_VERSION": "1.0.0",
-      "CURRENT_PROJECT_VERSION": "210"
+      "CURRENT_PROJECT_VERSION": "211"
     }
   },
   "targets": {
@@ -1652,6 +1652,24 @@
           "embed": true,
           "link": false,
           "codeSign": true
+        },
+        {
+          "framework": ".build/supergrafx/SuperGrafxCore.xcframework",
+          "embed": true,
+          "link": false,
+          "codeSign": true
+        },
+        {
+          "framework": ".build/gearsystem/GearsystemCore.xcframework",
+          "embed": true,
+          "link": false,
+          "codeSign": true
+        },
+        {
+          "framework": ".build/sameboy/SameBoyCore.xcframework",
+          "embed": true,
+          "link": false,
+          "codeSign": true
         }
       ],
       "info": {
@@ -1659,7 +1677,7 @@
         "properties": {
           "CFBundleDisplayName": "VETA-Retro",
           "CFBundleShortVersionString": "1.0.0",
-          "CFBundleVersion": "210",
+          "CFBundleVersion": "211",
           "UIAppFonts": [
             "Content/Fonts/BarlowCondensed-Bold.ttf",
             "Content/Fonts/Manrope.ttf"
@@ -1767,7 +1785,7 @@
           "SWIFT_OPTIMIZATION_LEVEL": "-O",
           "GCC_OPTIMIZATION_LEVEL": "2",
           "CLANG_CXX_LANGUAGE_STANDARD": "gnu++17",
-          "CURRENT_PROJECT_VERSION": "210",
+          "CURRENT_PROJECT_VERSION": "211",
           "MARKETING_VERSION": "1.0.0",
           "IPHONEOS_DEPLOYMENT_TARGET": "17.4",
           "SWIFT_ACTIVE_COMPILATION_CONDITIONS": [
@@ -3537,8 +3555,7 @@
           ],
           "HEADER_SEARCH_PATHS": [
             "$(SRCROOT)/.build/tia-public/src"
-          ],
-          "IPHONEOS_DEPLOYMENT_TARGET": "17.4"
+          ]
         }
       }
     }

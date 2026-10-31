@@ -29,6 +29,8 @@ for name, version, digest in [('mgba','0.10.5','9475c26e9fa2f4b30c07ab6636e4b0a5
             archive.extract(member,destination)
 from BuildSupport.patch_mgba_lifecycle import apply as patch_mgba_lifecycle
 patch_mgba_lifecycle(base/'.build/mgba')
+from BuildSupport.patch_mgba_rocket import apply as patch_mgba_rocket
+patch_mgba_rocket(base/'.build/mgba')
 resources=base/'Content'
 for game in ['thwaite','croom','akanoid-gb','sushi-gb','gluf-gbc','space-game','gold-rush','sushi-sms','sushi-gg','berta','akanoid-gg','gluf-sms']:
     dest=resources/game
@@ -125,6 +127,9 @@ shutil.copytree(base/'.build/engine-sources/dolphin-retro/Data/Sys',dolphinAsset
 subprocess.run(['python3',str(base/'BuildSupport/write_extra_credits.py')],check=True)
 from BuildSupport.commercial170.integration import apply as apply_commercial_cores
 apply_commercial_cores(project,base)
+from BuildSupport.cartridge_compatibility import apply as apply_cartridge_cores, notices as cartridge_notices
+apply_cartridge_cores(project,base)
+cartridge_notices(base)
 from BuildSupport.public_games import apply as apply_public_games
 apply_public_games(project,base)
 (base/'project.json').write_text(json.dumps(project,indent=2)+'\n')

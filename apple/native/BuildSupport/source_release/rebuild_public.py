@@ -23,6 +23,10 @@ unpack('fceumm-ac0d00a.tar.gz',BASE/'.build/fceumm',0,'6d9664deb1223c079ffa982e6
 from patch_nes_lifecycle import apply as patch_nes_lifecycle
 patch_nes_lifecycle(BASE/'.build/fceumm')
 unpack('mgba-0.10.5.tar.gz',BASE/'.build/mgba',1,'9475c26e9fa2f4b30c07ab6636e4b0a5b62e4baee2109ede7b2fecc52edae366')
+from patch_mgba_lifecycle import apply as patch_mgba_lifecycle
+from patch_mgba_rocket import apply as patch_mgba_rocket
+patch_mgba_lifecycle(BASE/'.build/mgba')
+patch_mgba_rocket(BASE/'.build/mgba')
 for core in json.loads((BASE/'BuildSupport/extra-cores.json').read_text()):
  if core['name'] in ('genesis','stella'):continue
  unpack(core['archive'],BASE/'.build'/core['name'],1,core['sha256'])
@@ -51,5 +55,9 @@ run([sys.executable,BASE/'BuildSupport/source_release/build_device_cores.py'])
 for sdk in ['iphoneos','iphonesimulator']:
  run([sys.executable,BASE/'BuildSupport/commercial170/build.py','--sdk',sdk])
 run([sys.executable,BASE/'BuildSupport/commercial170/integration.py'])
+for key in ['supergrafx','gearsystem','sameboy']:
+ for sdk in ['iphoneos','iphonesimulator']:
+  run([sys.executable,BASE/'BuildSupport'/('build_'+key+'.py'),'--sdk',sdk])
+run([sys.executable,BASE/'BuildSupport/cartridge_compatibility.py'])
 subprocess.run(['xcodegen','generate','--spec','project.json'],cwd=BASE,check=True)
 print('Project prepared. Build VetaNative with your own signing configuration; see README.md.')

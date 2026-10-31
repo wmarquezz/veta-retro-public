@@ -1,4 +1,5 @@
 import Foundation
+import CryptoKit
 
 /// Normalize legacy Super Magic Drive dumps once, before hashing or storage.
 /// The source file is never modified; BIN/GEN/MD and SMD copies share one game ID.
@@ -19,7 +20,7 @@ enum MegaDriveROM {
     }
     static func normalize(_ data: Data, extension ext: String) throws -> Data {
         guard ["smd", "md", "gen", "bin"].contains(ext.lowercased()) else { return data }
-        if isCartridge(data) { return data }
+        if isCartridge(data) { return repairKnownLayout(data) }
         let copierHeader = data.count >= 512 && data[8] == 0xaa && data[9] == 0xbb && data[10] == 6
         guard ext.lowercased() == "smd" || copierHeader else { return data }
         guard data.count > 512, data.count <= maximum + 512,
@@ -38,7 +39,16 @@ enum MegaDriveROM {
             }
         }
         guard isCartridge(decoded) else { throw invalid }
-        return decoded
+        return repairKnownLayout(decoded)
+    }
+    static func repairKnownLayout(_ data: Data) -> Data {
+        guard data.count == 4 * 1024 * 1024 else { return data }
+        let candidate = Data(data.prefix(2 * 1024 * 1024)) + Data(data.suffix(1024 * 1024))
+        let hash = Insecure.SHA1.hash(data: candidate).map { String(format: "%02x", $0) }.joined()
+        // Exact verified retail content; never discard bytes on size/name alone.
+        if hash == "427e225dde3eaa7f12e94e50f894f35806ad5544" { return candidate }
+        let sourceHash = SHA256.hash(data:data).map { String(format:"%02x",$0) }.joined()
+        return sourceHash == "bdaba6977eadad02539de2bc495e4f73e1e4ed9e20ccd863842a0ea71341971f" ? candidate : data
     }
     static var invalid: VetaError {
         .message("La ROM Mega Drive está incompleta o usa un formato no compatible.")

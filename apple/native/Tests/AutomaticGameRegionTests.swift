@@ -24,6 +24,14 @@ final class AutomaticGameRegionTests:XCTestCase {
    XCTAssertEqual(profile.forLaunch(game:Game(id:"test",name:"Example (Europe)",console:console)),profile)
   }
  }
+ func testEuropeanMegaDriveUsesPALAndExplicitSettingWins() throws {
+  let profile=try CoreProfile.resolved(console:.megaDrive,consoleProfile:.init(),gameProfile:.init())
+  let game=Game(id:"8c254d82237eba38a22d8d434ddd99b9187e408c6eb0393579f864f8c5e882ba",name:"Unknown filename",console:.megaDrive)
+  XCTAssertEqual(profile.forLaunch(game:game).values[CoreOptionID.segaRegion.rawValue],"pal")
+  let explicit=CoreProfile(values:[CoreOptionID.segaRegion.rawValue:"ntsc-u"])
+  XCTAssertEqual(explicit.forLaunch(game:game),explicit)
+  XCTAssertEqual(profile.forLaunch(game:Game(id:"test",name:"Example (USA, Europe)",console:.megaDrive)),profile)
+ }
  func testNESHeaderDecisionAndExplicitOverrideArePreserved() throws {
   let profile=try CoreProfile.resolved(console:.nes,consoleProfile:.init(),gameProfile:.init())
   XCTAssertEqual(profile.forLaunch(game:Game(id:"test",name:"Example"),nesRegion:"PAL").values[CoreOptionID.nesRegion.rawValue],"PAL")

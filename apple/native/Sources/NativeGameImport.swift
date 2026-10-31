@@ -130,11 +130,15 @@ extension Library {
         try output.synchronize();let id=digest.finalize().map{String(format:"%02x",$0)}.joined()
         // Keep source identity stable for cloud deduplication and existing saves.
         let normalized = console == .threeDS ? try ThreeDSImportNormalization.apply(toStagedCopy:copy):false
+        let normalizedN64 = console == .n64 ? try N64ImportNormalization.apply(toStagedCopy:copy,originalID:id):false
         if let existing=games.first(where:{$0.id==id}) {
             // Reimport can repair the old internal copy without changing its
             // record, cover or saves. Never overwrite a different user file.
             let current=romURL(existing)
-            if normalized, existing.console == .threeDS,
+            if normalizedN64, existing.console == .n64,
+               try ThreeDSImportNormalization.digest(of:current) == id {
+                _ = try fm.replaceItemAt(current,withItemAt:copy)
+            } else if normalized, existing.console == .threeDS,
                try ThreeDSImportNormalization.patch(for:current) != nil,
                try ThreeDSImportNormalization.digest(of:current) == id {
                 _ = try fm.replaceItemAt(current,withItemAt:copy)

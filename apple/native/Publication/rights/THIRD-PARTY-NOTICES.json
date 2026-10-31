@@ -1,123 +1,153 @@
 {
   "schema": 1,
   "scope": "upstream notice superset, not link graph or legal clearance",
-  "uniqueTexts": 304,
-  "sourceNoticeFiles": 667,
-  "outputSHA256": "69fec8588f60deeb52f3a677cd6759112d88a326b9d9c0c23389743debdbc178",
+  "uniqueTexts": 312,
+  "sourceNoticeFiles": 678,
+  "outputSHA256": "8133323e50db2013bda4cff8318c3f1384d6e7b2f28cfd99219911c3fd1a0b75",
   "notices": [
     {
-      "sha256": "fe3eea6c599e23a00c08c5f5cb2320c30adc8f8687db5fcec9b79a662c53ff6b",
-      "bytes": 35120,
+      "sha256": "00c153054a45ffa0cdf87f6eedb01e4110ffba40bb3ff20f5d173ddbc112e0a0",
+      "bytes": 1096,
       "origins": [
-        "apple/native/.build/bsnes-commercial/LICENSE",
-        "apple/native/COPYING"
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/cinema/gb/mooneye-gb/LICENSE",
+        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/cinema/gb/mooneye-gb/LICENSE"
       ]
     },
     {
-      "sha256": "3a5edce5b7d6b2d28b23af94dbc894138d463f56bdd5517069ed752d951b5214",
-      "bytes": 3107,
+      "sha256": "01c022eca6d566e2e8792fd0f091a28653b2a608319922bcd4de91c49d1438e1",
+      "bytes": 1454,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/.ci/license-header.rb"
+        "apple/native/.build/engine-sources/flycast/core/deps/libzip/LICENSE",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/libzip/LICENSE"
       ]
     },
     {
-      "sha256": "c82445ab7080ec1891017466196787b38725f9431aa7de68b7cb3d9a230c6a39",
-      "bytes": 448,
+      "sha256": "01c266bced4a434da0051174d6bee16a4c82cf634e2679b6155d40d75012390f",
+      "bytes": 126,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/.github/workflows/license-header.yml"
+        "cargo-vendor/aho-corasick-1.1.5/COPYING",
+        "cargo-vendor/byteorder-1.5.0/COPYING",
+        "cargo-vendor/memchr-2.8.3/COPYING"
       ]
     },
     {
-      "sha256": "52b66866c785f554207a4685d3d6f5f067938050f61c4cdc0a05b4bf20c6e037",
-      "bytes": 36597,
+      "sha256": "025436edff4cfcdde17a5811fdea78892d8482efd1abdec5a17872d07a4f2112",
+      "bytes": 1062,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/LICENSE.txt"
+        "cargo-vendor/flate2-1.1.10/LICENSE-MIT"
       ]
     },
     {
-      "sha256": "6949417b17d6a63ec378d7d27a95b1dade2f477c97eadcccf7bfd6194af024a1",
-      "bytes": 18216,
+      "sha256": "04a0693a84f19e53d281ca98bbb0c86ca77251ab13769c6168e6684feb9a1436",
+      "bytes": 1066,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/dist/qt_themes/qdarkstyle/LICENSE.md"
+        "apple/native/BuildSupport/offline160/licenses/dukex/subprojects/volk/LICENSE.md",
+        "third-party/MoltenVK/External/Volk/LICENSE.md"
       ]
     },
     {
-      "sha256": "8abb75a74659870347ceca80e8f551ae26be6d71b26634404f3e8082ca55bef1",
-      "bytes": 19175,
+      "sha256": "0622b0794d0fecde47d743f1bb70a03e6fdf082be8e71f39de672ed995d96ff9",
+      "bytes": 1341,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/dist/qt_themes/qdarkstyle_midnight_blue/LICENSE.rst"
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/libspng/libspng/LICENSE"
       ]
     },
     {
-      "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566",
-      "bytes": 1338,
+      "sha256": "06721414a6decad6d6677feb470f01f47126e154d895d85bc1e17628697715e5",
+      "bytes": 261,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/boost/LICENSE_1_0.txt",
-        "apple/native/.build/engine-sources/azahar/externals/catch2/LICENSE.txt",
-        "apple/native/.build/engine-sources/azahar/externals/dynarmic/externals/catch/LICENSE.txt",
-        "apple/native/.build/engine-sources/flycast/core/deps/asio/asio/LICENSE_1_0.txt",
-        "apple/native/.build/engine-sources/flycast/core/deps/nowide/LICENSE",
-        "apple/native/.build/melonds/deps/span-lite/LICENSE.txt",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/asio/asio/LICENSE_1_0.txt",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/nowide/LICENSE",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/freetype/subprojects/dlg/LICENSE"
+        "apple/native/.build/engine-sources/flycast/core/deps/libchdr/deps/lzma-24.05/LICENSE",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/libchdr/deps/lzma-24.05/LICENSE",
+        "vendor/native/pce-4eee99c4.tar.gz!/beetle-pce-fast-libretro-4eee99c451f85ebe66d1591de88b892015b23059/deps/lzma-19.00/LICENSE",
+        "vendor/native/pcsx-c8816799.tar.gz!/pcsx_rearmed-c8816799b50388e61cfe237fe2cdbb7d8175f20a/deps/libchdr/deps/lzma-26.02/LICENSE",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/libchdr/deps/lzma-24.05/LICENSE"
       ]
     },
     {
-      "sha256": "b94e67785852db5abe84b362aa4d950d98a02e1969caa2321df71672bf433631",
-      "bytes": 1074,
+      "sha256": "070dbc7dda03a29296f2d58bdb9b7331af90f2abc9f31df22875d1eabaf29852",
+      "bytes": 1062,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/cpp-jwt/LICENSE"
+        "cargo-vendor/powerfmt-0.2.1/LICENSE-MIT"
       ]
     },
     {
-      "sha256": "5bb6b564ac9bb3663c0d76d18dea5a3bcd863476870a95dd3806068d65c3c4f0",
-      "bytes": 4080,
+      "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+      "bytes": 10280,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/cryptopp/LICENSE"
+        "third-party/MoltenVK/External/Vulkan-Tools/LICENSES/Apache-2.0.txt"
       ]
     },
     {
-      "sha256": "44c6b5ae5ec3fe2fbc608b00e6f4896f4d2d5c7e525fcbaa3eaa3cf2f3d5a983",
-      "bytes": 732,
+      "sha256": "07580f2a3b35709ce703d523f447b242f6dfec7582a8c0df102c7fa2849375f8",
+      "bytes": 1431,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/cubeb/LICENSE",
-        "apple/native/.build/engine-sources/azahar/externals/cubeb/src/cubeb-pulse-rs/LICENSE",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/cubeb/cubeb/LICENSE"
+        "apple/native/.build/engine-sources/azahar/externals/dynarmic/externals/fmt/LICENSE",
+        "apple/native/.build/engine-sources/azahar/externals/fmt/LICENSE",
+        "apple/native/.build/engine-sources/azahar/externals/openal-soft/fmt-11.0.2/LICENSE",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/fmt/fmt/LICENSE",
+        "apple/native/.build/melonds/deps/fmt/doc/LICENSE-exception"
       ]
     },
     {
-      "sha256": "4b67e7ae8c91e68e1a929eb1cbaa4c773c6d19aa91aaa12c390cf9560d1c9799",
-      "bytes": 1154,
+      "sha256": "082d31fbdecbda9720686a2b76cee810dcd2630f2d16bc4cc9accd411b6a76fd",
+      "bytes": 11385,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/cubeb/cmake/sanitizers-cmake/LICENSE",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/cubeb/cubeb/cmake/sanitizers-cmake/LICENSE"
+        "cargo-vendor/ext-trait-1.0.1/LICENSE-APACHE",
+        "cargo-vendor/never-say-never-6.6.666/LICENSE-APACHE"
       ]
     },
     {
-      "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138",
-      "bytes": 1475,
+      "sha256": "0d0b3772af2fa45628a548a3b34583707ebcc68bb6f83ec48ca273aab4a510f1",
+      "bytes": 1079,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/cubeb/googletest/LICENSE",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/cpp-ipc/cpp-ipc/3rdparty/gtest/LICENSE",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/cubeb/cubeb/googletest/LICENSE",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/gtest/LICENSE",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/rapidjson/thirdparty/gtest/googlemock/LICENSE",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/rapidjson/thirdparty/gtest/googletest/LICENSE"
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/pugixml/pugixml/LICENSE.md"
       ]
     },
     {
-      "sha256": "6e6f56aff5bbf3cbc60747e152fb1a719bd0716aaf6d711c554f57d92e96297c",
-      "bytes": 731,
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "bytes": 10174,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/cubeb/src/cubeb-coreaudio-rs/LICENSE"
+        "cargo-vendor/num-conv-0.2.2/LICENSE-Apache",
+        "cargo-vendor/pin-project-lite-0.2.17/LICENSE-APACHE",
+        "cargo-vendor/time-0.3.55/LICENSE-Apache",
+        "cargo-vendor/time-core-0.1.9/LICENSE-Apache"
       ]
     },
     {
-      "sha256": "70c7fbd0f0df984c63a1ae6497b961745eb06672b8108d77c82af3498bf59d20",
-      "bytes": 1322,
+      "sha256": "0ed1494d406def5805562b15067536e8e77dd8a164c5931b672a6dc9a18a646d",
+      "bytes": 1336,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/dds-ktx/LICENSE"
+        "apple/native/BuildSupport/offline160/licenses/play/deps/CodeGen/License.txt"
+      ]
+    },
+    {
+      "sha256": "0efb4db8000c609bd2f06e61fcbc59af05519d122f5b3597b7c493224946c61d",
+      "bytes": 18730,
+      "origins": [
+        "vendor/native/pcsx-c8816799.tar.gz!/pcsx_rearmed-c8816799b50388e61cfe237fe2cdbb7d8175f20a/COPYING"
+      ]
+    },
+    {
+      "sha256": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f",
+      "bytes": 1081,
+      "origins": [
+        "cargo-vendor/aho-corasick-1.1.5/LICENSE-MIT",
+        "cargo-vendor/byteorder-1.5.0/LICENSE-MIT",
+        "cargo-vendor/memchr-2.8.3/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "1070640aab24327354da44507627d1db6c67482a6facc8375a758796a05e3dff",
+      "bytes": 1337,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/udis86/LICENSE"
+      ]
+    },
+    {
+      "sha256": "11f2c685ba565a31aef1219f63a7a8845602c97bff70016b9e3278dfe51a2ec5",
+      "bytes": 1102,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/dynarmic/externals/robin-map/LICENSE"
       ]
     },
     {
@@ -135,10 +165,39 @@
       ]
     },
     {
-      "sha256": "9449028d45cc170c57a915677441f943a93b8b6862849f5373c771f38e798363",
-      "bytes": 1304,
+      "sha256": "123a331b5dbf04c30097fa43b8f858bc85df671fe776de498d01f3d6b7c1f69e",
+      "bytes": 1066,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/dllwalker/LICENSE.txt"
+        "cargo-vendor/libc-0.2.191/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "12680bd1abee94f7f06279d5a1021b4b98e2e4bca22b77163efdababde965c65",
+      "bytes": 1065,
+      "origins": [
+        "apple/native/.build/melonds/deps/embed-binaries/LICENSE"
+      ]
+    },
+    {
+      "sha256": "129fbd972915047e54d88f6f1884a13bf6d79c18eeb40646193d7241c9270ae5",
+      "bytes": 1356,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/SDL/SDL/test/LICENSE.txt"
+      ]
+    },
+    {
+      "sha256": "13a3b6d268be629a2a3f7078639e688c9bbc564c7f0c99063db3ad4952512f98",
+      "bytes": 1376,
+      "origins": [
+        "apple/native/.build/engine-sources/mupen-next/GLideN64/licenses/Glow/LICENSE",
+        "apple/native/.build/public-engine-sources/mupen-next/GLideN64/licenses/Glow/LICENSE"
+      ]
+    },
+    {
+      "sha256": "145ea96b4a4a04a1a7738d2a2bf9e830f861971e69606187b018d9e8fc0b95c7",
+      "bytes": 1738,
+      "origins": [
+        "apple/native/BuildSupport/offline160/licenses/dukex/subprojects/berkeley-softfloat-3/COPYING.txt"
       ]
     },
     {
@@ -149,74 +208,634 @@
       ]
     },
     {
-      "sha256": "fab5d630b6474d7729a9cd8bff584e3c5d685259815228a12477015852a42596",
-      "bytes": 1057,
+      "sha256": "155420c6403d4e0fca34105e3c03fdd6939b64c393c7ec6f95f5b72c5474eab0",
+      "bytes": 11349,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/dynarmic/externals/biscuit/LICENSE.md"
+        "cargo-vendor/powerfmt-0.2.1/LICENSE-Apache"
       ]
     },
     {
-      "sha256": "07580f2a3b35709ce703d523f447b242f6dfec7582a8c0df102c7fa2849375f8",
-      "bytes": 1431,
+      "sha256": "17e70c676e1521ff3e4686f04a2053d93a7e28a33be8de7ec37ab0ff72feb677",
+      "bytes": 54615,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/dynarmic/externals/fmt/LICENSE",
-        "apple/native/.build/engine-sources/azahar/externals/fmt/LICENSE",
-        "apple/native/.build/engine-sources/azahar/externals/openal-soft/fmt-11.0.2/LICENSE",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/fmt/fmt/LICENSE",
-        "apple/native/.build/melonds/deps/fmt/doc/LICENSE-exception"
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/glslang/glslang/LICENSE.txt",
+        "apple/native/BuildSupport/offline160/licenses/dukex/subprojects/glslang/LICENSE.txt"
       ]
     },
     {
-      "sha256": "63343a4ec1a8ae9a0183dafe2663c1ea5a95eb583c1447ec2e93c9c9f02817ee",
-      "bytes": 1066,
+      "sha256": "1879544076a493c8c7fb03595d3f1053a24dfc296acf89b511eca84398e19ba0",
+      "bytes": 1314,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/dynarmic/externals/mcl/LICENSE"
+        "apple/native/BuildSupport/offline160/licenses/play/deps/Nuanceur/License.txt"
       ]
     },
     {
-      "sha256": "8b689195ab4141a20f92a525d1f268893a1e44d51adf2fb5b4caec8769a33dbd",
+      "sha256": "1b265537c97cfb422ffb52492c96979943f54fab8746a6dd38d8329953d487cc",
+      "bytes": 1086,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/armips/ext/filesystem/LICENSE"
+      ]
+    },
+    {
+      "sha256": "1c040b8271b37e5076359f8fd54240e371114112924d2df81ef87c7d6a1dfdfd",
+      "bytes": 884,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/SDL/SDL/LICENSE.txt",
+        "apple/native/BuildSupport/offline160/licenses/dukex/subprojects/SDL3-3.4.10/LICENSE.txt"
+      ]
+    },
+    {
+      "sha256": "1c41c0e19caa2c20b0adfeb8219b606b21b7c63914aa3ae74ae3e091d7ce09ca",
+      "bytes": 899,
+      "origins": [
+        "cargo-vendor/macro_rules_attribute-0.1.3/LICENSE-ZLIB",
+        "cargo-vendor/macro_rules_attribute-proc_macro-0.1.3/LICENSE-ZLIB"
+      ]
+    },
+    {
+      "sha256": "1ca3502222d967f3be5751c55f6b7ee735b5383909c3b501495f54b216dbf227",
       "bytes": 1084,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/dynarmic/externals/oaknut/LICENSE",
-        "apple/native/.build/engine-sources/azahar/externals/oaknut/LICENSE"
+        "apple/native/.build/engine-sources/azahar/externals/vulkan-headers/LICENSES/MIT.txt",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/Vulkan-Headers/LICENSES/MIT.txt",
+        "third-party/MoltenVK/External/Vulkan-Headers/LICENSES/MIT.txt"
       ]
     },
     {
-      "sha256": "11f2c685ba565a31aef1219f63a7a8845602c97bff70016b9e3278dfe51a2ec5",
-      "bytes": 1102,
+      "sha256": "1e881ecf2862d01e6e5bc2b861e46886d2a6fb01499c0c508a209a7271b13cf2",
+      "bytes": 10,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/dynarmic/externals/robin-map/LICENSE"
+        "apple/native/.build/engine-sources/flycast/core/deps/miniupnpc/LICENSE",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/miniupnpc/LICENSE"
       ]
     },
     {
-      "sha256": "7e411d5c5d38501a504843f58afb6824439c828872b35d2ff1e892e73fd1a30d",
-      "bytes": 1501,
+      "sha256": "1edd93c649f2ed5edb5a6afe9a616d8aa508dcf156f9cfbea6dc40e806488ece",
+      "bytes": 561,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/dynarmic/externals/xbyak/COPYRIGHT",
-        "apple/native/.build/engine-sources/azahar/externals/xbyak/COPYRIGHT"
+        "apple/native/.build/melonds/deps/melonds/src/frontend/qt_sdl/InputConfig/resources/LICENSE.md"
       ]
     },
     {
-      "sha256": "7991ec4481a82c51d196f7440fda34c578aab51f8b9c7023935c6e03b57638bd",
-      "bytes": 1122,
+      "sha256": "209fbbe0ad52d9235e37badf9cadfe4dbdc87203179c0899e738b39ade42177b",
+      "bytes": 1117,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/dynarmic/externals/zycore/LICENSE",
-        "apple/native/.build/engine-sources/azahar/externals/dynarmic/externals/zydis/dependencies/zycore/LICENSE"
+        "cargo-vendor/rand-0.10.3/LICENSE-MIT"
       ]
     },
     {
-      "sha256": "e5e99718209e94baaf3e9cbf6f64aa3329c9e73c63b1ab47e10f29d81974e6f3",
-      "bytes": 1122,
+      "sha256": "231c837c45eb53f108fb48929e488965bc4fcc14e9ea21d35f50e6b99d98685b",
+      "bytes": 1062,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/dynarmic/externals/zydis/LICENSE"
+        "cargo-vendor/deranged-0.5.9/LICENSE-MIT"
       ]
     },
     {
-      "sha256": "a29cd246638974da7c6edf423a0a69d4a6f7d759940b7cfa9a2bc3442ac3834c",
-      "bytes": 1060,
+      "sha256": "235ac8c3e43c67ced4a89fad8af65dc9f92a7627e5ce3e0016627b7505ead0ae",
+      "bytes": 1047,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/enet/LICENSE",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/enet/enet/LICENSE"
+        "apple/native/.build/engine-sources/azahar/externals/microtar/LICENSE"
+      ]
+    },
+    {
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "bytes": 1023,
+      "origins": [
+        "cargo-vendor/once_cell-1.21.4/LICENSE-MIT",
+        "cargo-vendor/paste-1.0.15/LICENSE-MIT",
+        "cargo-vendor/pin-project-lite-0.2.17/LICENSE-MIT",
+        "cargo-vendor/proc-macro2-1.0.107/LICENSE-MIT",
+        "cargo-vendor/quote-1.0.47/LICENSE-MIT",
+        "cargo-vendor/rustversion-1.0.23/LICENSE-MIT",
+        "cargo-vendor/serde-1.0.229/LICENSE-MIT",
+        "cargo-vendor/serde_core-1.0.229/LICENSE-MIT",
+        "cargo-vendor/serde_derive-1.0.229/LICENSE-MIT",
+        "cargo-vendor/syn-1.0.109/LICENSE-MIT",
+        "cargo-vendor/syn-2.0.119/LICENSE-MIT",
+        "cargo-vendor/syn-3.0.9/LICENSE-MIT",
+        "cargo-vendor/thiserror-2.0.21/LICENSE-MIT",
+        "cargo-vendor/thiserror-impl-2.0.21/LICENSE-MIT",
+        "cargo-vendor/unicode-ident-1.0.27/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "249fdb6694467dd615b259f7ddde07be3f8ae5a72cecebb0e24f6629af4215fe",
+      "bytes": 11349,
+      "origins": [
+        "cargo-vendor/serde_spanned-1.1.2/LICENSE-APACHE",
+        "cargo-vendor/toml-1.1.8+spec-1.1.0/LICENSE-APACHE",
+        "cargo-vendor/toml_datetime-1.1.2+spec-1.1.0/LICENSE-APACHE",
+        "cargo-vendor/toml_parser-1.1.5+spec-1.1.0/LICENSE-APACHE",
+        "cargo-vendor/toml_writer-1.1.3+spec-1.1.0/LICENSE-APACHE"
+      ]
+    },
+    {
+      "sha256": "2537228d9a1b44a5dc595241349cae7090b326c8de165aaf89bfddef4a00d0fc",
+      "bytes": 1057,
+      "origins": [
+        "cargo-vendor/time-0.3.55/LICENSE-MIT",
+        "cargo-vendor/time-core-0.1.9/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "2618c32cea85fc3e6f721c5c66b8f1a26e15f9c7f74b444a1ba77efc8b160306",
+      "bytes": 6077,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/Common/UI/Notice.cpp"
+      ]
+    },
+    {
+      "sha256": "27506f579df456adae7c4cab1264c99c895177fa1c7aa9743ab1f3bf77a66ff5",
+      "bytes": 1506,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/nihstro/license.txt"
+      ]
+    },
+    {
+      "sha256": "275c491d6d1160553c32fd6127061d7f9606c3ea25abfad6ca3f6ed088785427",
+      "bytes": 10874,
+      "origins": [
+        "cargo-vendor/futures-core-0.3.34/LICENSE-APACHE",
+        "cargo-vendor/futures-task-0.3.34/LICENSE-APACHE",
+        "cargo-vendor/futures-util-0.3.34/LICENSE-APACHE"
+      ]
+    },
+    {
+      "sha256": "27995d58ad5c1145c1a8cd86244ce844886958a35eb2b78c6b772748669999ac",
+      "bytes": 1054,
+      "origins": [
+        "cargo-vendor/autocfg-1.5.1/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "27cba3bef2da99bdc9c2846449767ad015c5ba539bcb4f10c74be20faf7ada3a",
+      "bytes": 1470,
+      "origins": [
+        "apple/native/.build/engine-sources/flycast/core/deps/tinygettext/LICENSE.md",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/tinygettext/LICENSE.md",
+        "apple/native/BuildSupport/offline160/licenses/flycast/core/deps/tinygettext/LICENSE.md"
+      ]
+    },
+    {
+      "sha256": "27ebda9d51f0a56b7e281ccd8230a27236dcb51c05f64b07869ecf6e965d68b0",
+      "bytes": 1162,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/wil/LICENSE"
+      ]
+    },
+    {
+      "sha256": "2949fcf758d3c9bcb05f8393ca42cadfa15be04eb4ae4b3327c4ad7957511e1b",
+      "bytes": 635,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/lz4/lz4/LICENSE"
+      ]
+    },
+    {
+      "sha256": "29e3d9c8af52aa066b05be4ed348b2184052e99b793779c38baca2c6e00240c5",
+      "bytes": 1054,
+      "origins": [
+        "apple/native/.build/engine-sources/mupen-next/mupen64plus-video-paraLLEl/parallel-rdp/LICENSE",
+        "apple/native/.build/public-engine-sources/mupen-next/mupen64plus-video-paraLLEl/parallel-rdp/LICENSE"
+      ]
+    },
+    {
+      "sha256": "2a9993525c6c65ac944dfea5fbf24a093d61cfaf69039cab1ff471c6aed821cb",
+      "bytes": 730,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/curl/curl/LICENSES/ISC.txt"
+      ]
+    },
+    {
+      "sha256": "2ae461f8c8b78ed77c14e9c3b7e353ba277e44cb3dbfb5a6d380f76f2ae081a2",
+      "bytes": 1112,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/tinygltf/tinygltf/LICENSE"
+      ]
+    },
+    {
+      "sha256": "2b2cc1180c7e6988328ad2033b04b80117419db9c4c584918bbb3cfec7e9364f",
+      "bytes": 1506,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/libyuv/LICENSE"
+      ]
+    },
+    {
+      "sha256": "2e06d5375e3ec10363d38f4ba0680d311ff4f2024ee7f9ddb1c7a2e2bb8a5585",
+      "bytes": 3940,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ffmpeg/LICENSE.md"
+      ]
+    },
+    {
+      "sha256": "30eb1bef29b46f8ba7ab8b416035dbd93cb034a45481dd97815b944284582cd2",
+      "bytes": 1534,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/sdl2/SDL/src/hidapi/LICENSE-bsd.txt",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/SDL/SDL/src/hidapi/LICENSE-bsd.txt",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/hidapi/hidapi-src/LICENSE-bsd.txt"
+      ]
+    },
+    {
+      "sha256": "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652",
+      "bytes": 1022,
+      "origins": [
+        "cargo-vendor/rustc-hash-2.1.3/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "319daefe38ebeead3df178e5937898a52d67c0c795f54f1c0bb10ac3b9cffb63",
+      "bytes": 26940,
+      "origins": [
+        "apple/native/.build/melonds/deps/melonds/src/blip-buf/license.txt",
+        "vendor/native/fceumm-ac0d00a.tar.gz!/src/ntsc/license.txt",
+        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/res/licenses/blip_buf.txt",
+        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/src/third-party/blip_buf/license.txt"
+      ]
+    },
+    {
+      "sha256": "321429c853d59b621414832581e93ff38586c348aa2de43c7e571b33423d670a",
+      "bytes": 33093,
+      "origins": [
+        "apple/native/.build/engine-sources/flycast/core/deps/xbrz/License.txt",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/xbrz/License.txt"
+      ]
+    },
+    {
+      "sha256": "347d42725025ea59455cb3270e12fe48e28589009d48d32e1d1825511fd1380d",
+      "bytes": 3119,
+      "origins": [
+        "vendor/native/sameboy-1506d804.tar.gz!/Cocoa/License.html"
+      ]
+    },
+    {
+      "sha256": "3488679340a49ecc34d342c4009d2dabf76f4a21f12aec2ca99b15805d656544",
+      "bytes": 1074,
+      "origins": [
+        "cargo-vendor/crc-3.4.0/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "35242e7a83f69875e6edeff02291e688c97caafe2f8902e4e19b49d3e78b4cab",
+      "bytes": 9724,
+      "origins": [
+        "cargo-vendor/rand-0.10.3/LICENSE-APACHE"
+      ]
+    },
+    {
+      "sha256": "35dea6a17ed48dfac1e6ad8491332af7acee340681ffc61a631ec9a1656476ad",
+      "bytes": 2827,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/LicenseRef-KhronosSpecCopyright-WithNormativeWording-v10.txt"
+      ]
+    },
+    {
+      "sha256": "36266a8fd073568394cb81cdb2b124f7fdae2c64c1a7ed09db34b4d22efa2951",
+      "bytes": 1359,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/src/third-party/zlib/contrib/dotzlib/LICENSE_1_0.txt",
+        "apple/native/.build/engine-sources/flycast/core/deps/libchdr/deps/zlib-1.3.1/contrib/dotzlib/LICENSE_1_0.txt",
+        "apple/native/.build/melonds/deps/zlib/contrib/dotzlib/LICENSE_1_0.txt",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/libchdr/deps/zlib-1.3.1/contrib/dotzlib/LICENSE_1_0.txt",
+        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/src/third-party/zlib/contrib/dotzlib/LICENSE_1_0.txt",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/libchdr/deps/zlib-1.3.1/contrib/dotzlib/LICENSE_1_0.txt"
+      ]
+    },
+    {
+      "sha256": "36c2e3fcb292f375ebae50eb992b800d5aa3960d3b6df4142e01b1061821650c",
+      "bytes": 1160,
+      "origins": [
+        "vendor/native/sameboy-1506d804.tar.gz!/.github/actions/LICENSE"
+      ]
+    },
+    {
+      "sha256": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397",
+      "bytes": 1057,
+      "origins": [
+        "cargo-vendor/cc-1.10.0/LICENSE-MIT",
+        "cargo-vendor/cfg-if-1.0.5/LICENSE-MIT",
+        "cargo-vendor/find-msvc-tools-0.1.15/LICENSE-MIT",
+        "cargo-vendor/jobserver-0.1.35/LICENSE-MIT",
+        "cargo-vendor/js-sys-0.3.106/LICENSE-MIT",
+        "cargo-vendor/pkg-config-0.3.34/LICENSE-MIT",
+        "cargo-vendor/wasm-bindgen-0.2.129/LICENSE-MIT",
+        "cargo-vendor/wasm-bindgen-macro-0.2.129/LICENSE-MIT",
+        "cargo-vendor/wasm-bindgen-macro-support-0.2.129/LICENSE-MIT",
+        "cargo-vendor/wasm-bindgen-shared-0.2.129/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "37b975b5273734ea157fb1e363d06191036f289eca7767f736967816bedd156f",
+      "bytes": 909,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/sdl2/SDL/Xcode/SDL/pkg-support/resources/License.txt"
+      ]
+    },
+    {
+      "sha256": "388e98b08de12ba8a9d4575883c8b0386c747cea188ed459380fc58d60da15c9",
+      "bytes": 11385,
+      "origins": [
+        "cargo-vendor/macro_rules_attribute-0.1.3/LICENSE-APACHE",
+        "cargo-vendor/macro_rules_attribute-proc_macro-0.1.3/LICENSE-APACHE"
+      ]
+    },
+    {
+      "sha256": "38bd30c2111fe7e3d8fb86d8607491239659eff1df1b1004b9a8349e20a91967",
+      "bytes": 1068,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/implot/LICENSE",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/implot/implot/LICENSE",
+        "apple/native/.build/engine-sources/flycast/core/deps/implot/LICENSE",
+        "apple/native/.build/public-engine-sources/dolphin-retro/Externals/implot/LICENSE",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/implot/LICENSE"
+      ]
+    },
+    {
+      "sha256": "394faaedb93c1da8ecbd61322518834908fee64381117e01a611bf9fac20baa6",
+      "bytes": 2175,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/rapidjson/contrib/natvis/LICENSE"
+      ]
+    },
+    {
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149,
+      "origins": [
+        "apple/native/.build/jgenesis-commercial/LICENSE",
+        "apple/native/.build/melonds/source/LICENSE",
+        "apple/native/BuildSupport/commercial170/spc700-free/LICENSE"
+      ]
+    },
+    {
+      "sha256": "3a5edce5b7d6b2d28b23af94dbc894138d463f56bdd5517069ed752d951b5214",
+      "bytes": 3107,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/.ci/license-header.rb"
+      ]
+    },
+    {
+      "sha256": "3c92a19e541755a97e51b4c963aa4335bbf93b64574dfbc36a5636c2899f3ab9",
+      "bytes": 1054,
+      "origins": [
+        "cargo-vendor/multiversion-0.9.2/LICENSE-MIT",
+        "cargo-vendor/multiversion-macros-0.9.2/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "3cf06aba3588c41c514f6946bb2d757b413ff6491647d474800f55edca75dcb4",
+      "bytes": 1459,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/curl/curl/LICENSES/BSD-3-Clause.txt"
+      ]
+    },
+    {
+      "sha256": "3dcbbf07bd9ebb0b6fd117826d5c3fd35bdbfd4b31bb9ebebb4e74aef6959b32",
+      "bytes": 364,
+      "origins": [
+        "apple/native/.build/engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/LICENSE",
+        "apple/native/.build/public-engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/LICENSE"
+      ]
+    },
+    {
+      "sha256": "3ed00dd93c75655599456c83cba2f69c6824fd53f24fc24206ba27b65057709d",
+      "bytes": 1110,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/cityhash/COPYING"
+      ]
+    },
+    {
+      "sha256": "3f46b895fbd843c7abe5b49fa0b699a5093fc8b345940a7c587948c57cc8f270",
+      "bytes": 1070,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/src/external/jnipp/LICENSE"
+      ]
+    },
+    {
+      "sha256": "3ffde8c8cdebf3c361b971bed7476006ede9c5ec8a6250137c7dc55383ed9e5b",
+      "bytes": 1112,
+      "origins": [
+        "cargo-vendor/lending-iterator-0.1.7/LICENSE-MIT",
+        "cargo-vendor/nougat-0.2.4/LICENSE-MIT",
+        "cargo-vendor/polonius-the-crab-0.2.1/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "42639b2e5507163d35069be166e37a784f48a5f17e3577c16eb48fab215247cd",
+      "bytes": 1480,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/LICENSES/BSD-3-Clause.txt",
+        "apple/native/.build/public-engine-sources/dolphin-retro/LICENSES/BSD-3-Clause.txt"
+      ]
+    },
+    {
+      "sha256": "4294d027a5205eea79a5241b2c1423d556efaa3139df8cea5ac313fb5ffb07bf",
+      "bytes": 1167,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/tinygltf/tinygltf/examples/validator/LICENSE.json-schema-validator.MIT"
+      ]
+    },
+    {
+      "sha256": "4455bf75a91154108304cb283e0fea9948c14f13e20d60887cf2552449dea3b1",
+      "bytes": 1092,
+      "origins": [
+        "cargo-vendor/shlex-2.0.1/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "44b0a56e80b41a1b0a6bd1292515e806539fd97b30be54c2719e6c763190ab57",
+      "bytes": 10343,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/spirv_cross/SPIRV-Cross/LICENSES/Apache-2.0.txt",
+        "third-party/MoltenVK/External/SPIRV-Cross/LICENSES/Apache-2.0.txt",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/SPIRV-Cross/LICENSES/Apache-2.0.txt"
+      ]
+    },
+    {
+      "sha256": "44c6b5ae5ec3fe2fbc608b00e6f4896f4d2d5c7e525fcbaa3eaa3cf2f3d5a983",
+      "bytes": 732,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/cubeb/LICENSE",
+        "apple/native/.build/engine-sources/azahar/externals/cubeb/src/cubeb-pulse-rs/LICENSE",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/cubeb/cubeb/LICENSE"
+      ]
+    },
+    {
+      "sha256": "46cde7dc11e64c78d650b4851b88f6704b4665ff60f22a1caf68ceb15e217e5b",
+      "bytes": 1327,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/Qt/Qt6.8.3/ARM64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/COPYING-CMAKE-SCRIPTS",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/Qt/Qt6.8.3/ARM64/lib/cmake/Qt6/3rdparty/kwin/COPYING-CMAKE-SCRIPTS",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/Qt/Qt6.8.3/x64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/COPYING-CMAKE-SCRIPTS",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/Qt/Qt6.8.3/x64/lib/cmake/Qt6/3rdparty/kwin/COPYING-CMAKE-SCRIPTS"
+      ]
+    },
+    {
+      "sha256": "470355a7eed93fcc4281ec2e0f82ca3b94e7af1e4d83629f91de8cfac34d750e",
+      "bytes": 10846,
+      "origins": [
+        "cargo-vendor/crc-3.4.0/LICENSE-APACHE"
+      ]
+    },
+    {
+      "sha256": "484f7e56d0e3178613b2f12d478a46fc2f2a6646c7ea14a7329bb805ccc2a82b",
+      "bytes": 899,
+      "origins": [
+        "cargo-vendor/ext-trait-1.0.1/LICENSE-ZLIB",
+        "cargo-vendor/never-say-never-6.6.666/LICENSE-ZLIB"
+      ]
+    },
+    {
+      "sha256": "48b79daf8988912a6c2dadffdbbba99f514817dddf11cebf3605a5f0dbfafa94",
+      "bytes": 1068,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/naett-lib/LICENSE"
+      ]
+    },
+    {
+      "sha256": "4b67e7ae8c91e68e1a929eb1cbaa4c773c6d19aa91aaa12c390cf9560d1c9799",
+      "bytes": 1154,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/cubeb/cmake/sanitizers-cmake/LICENSE",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/cubeb/cubeb/cmake/sanitizers-cmake/LICENSE"
+      ]
+    },
+    {
+      "sha256": "4da95ec4ecb65b738d470b7d762894ad9c97da93e6cbfb18b570fc2c96f4b871",
+      "bytes": 1071,
+      "origins": [
+        "cargo-vendor/arrayvec-0.7.8/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "4f6ef9d0e844bf432d6a0abb2623f5a61175ae40f7f0e3665490311d89e3af87",
+      "bytes": 321,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/lz4/lz4/contrib/debian/copyright"
+      ]
+    },
+    {
+      "sha256": "5059bc9c2f37b7e7a557685ae9330ecfd798537bdfde94de63a9c721c92a8856",
+      "bytes": 13091,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/sdl2/SDL/Xcode-iOS/Demos/data/bitmapfont/license.txt"
+      ]
+    },
+    {
+      "sha256": "5221a36a801b981fbdfda7b87db64cff231a3b88223a066c325411b539df796f",
+      "bytes": 1475,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/snappy/COPYING"
+      ]
+    },
+    {
+      "sha256": "523a42c25d245dde9c015f882cec7f4555aad883382a6cf19b4b7d9b2cd5419b",
+      "bytes": 1130,
+      "origins": [
+        "cargo-vendor/getrandom-0.4.3/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "52b66866c785f554207a4685d3d6f5f067938050f61c4cdc0a05b4bf20c6e037",
+      "bytes": 36597,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/LICENSE.txt"
+      ]
+    },
+    {
+      "sha256": "52bdad87d7aefe3eab35cb02426aa748510f9398a1e2d520d93bcbb18f10dd11",
+      "bytes": 1527,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/miniupnpc/miniupnp/LICENSE",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/miniupnpc/miniupnp/minissdpd/LICENSE",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/miniupnpc/miniupnp/miniupnpc/LICENSE",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/miniupnpc/miniupnp/miniupnpd/LICENSE"
+      ]
+    },
+    {
+      "sha256": "52df2c03d6cfc9ffec13c9d3626c530fc9ce0cbe41d5ea3d10cd46edeb1aeb38",
+      "bytes": 1099,
+      "origins": [
+        "apple/native/BuildSupport/offline160/licenses/dukex/subprojects/VulkanMemoryAllocator/LICENSE.txt"
+      ]
+    },
+    {
+      "sha256": "553fffcd9b1cb158bc3e9edc35da85ca5c3b3d7d2e61c883ebcfa8a65814b583",
+      "bytes": 566,
+      "origins": [
+        "cargo-vendor/shlex-2.0.1/LICENSE-APACHE"
+      ]
+    },
+    {
+      "sha256": "5585fe141cc7bb08c953f3859db608852968d0bbc625b9b6d95c0bd6349bacb6",
+      "bytes": 1336,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/picojson/LICENSE",
+        "apple/native/.build/public-engine-sources/dolphin-retro/Externals/picojson/LICENSE"
+      ]
+    },
+    {
+      "sha256": "567675401b124cc8ed1095665474a4f04ce1ed44134ee7eec46a691e387a1397",
+      "bytes": 1211,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/Unlicense.txt"
+      ]
+    },
+    {
+      "sha256": "56e17fd90cc5ff1d930db979bfbfcffeb7f311a57068f435e14e4f0548b3a4fc",
+      "bytes": 5472,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/COPYING.adoc"
+      ]
+    },
+    {
+      "sha256": "572eb602c219b3371e74df019a094262867a17928edbebd5a8decf1ee46d06a4",
+      "bytes": 1406,
+      "origins": [
+        "apple/native/BuildSupport/offline160/licenses/dukex/presentation/xBR-LICENSE.txt"
+      ]
+    },
+    {
+      "sha256": "58604a126af6a671ea390ee3d5b3e42228aa59b2858fb7af1d5b20b31739ccbb",
+      "bytes": 1542,
+      "origins": [
+        "third-party/MoltenVK/External/cereal/LICENSE"
+      ]
+    },
+    {
+      "sha256": "5ae033045108dac293940c2292d311ce8b58de976dff2269c22280b8df6cfd27",
+      "bytes": 18114,
+      "origins": [
+        "apple/native/.build/engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/lightning/COPYING.DOC",
+        "apple/native/.build/public-engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/lightning/COPYING.DOC",
+        "vendor/native/pcsx-c8816799.tar.gz!/pcsx_rearmed-c8816799b50388e61cfe237fe2cdbb7d8175f20a/deps/lightning/COPYING.DOC"
+      ]
+    },
+    {
+      "sha256": "5bb6b564ac9bb3663c0d76d18dea5a3bcd863476870a95dd3806068d65c3c4f0",
+      "bytes": 4080,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/cryptopp/LICENSE"
+      ]
+    },
+    {
+      "sha256": "5c63613f008f16a9c0025c096bbd736cecf720494d121b5c5203e0ec6e5955b1",
+      "bytes": 6500,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/libressl/COPYING"
+      ]
+    },
+    {
+      "sha256": "5cc69ca9afd3417ed8e58bcd9c0bb730375e9e3e92b5aaf6483b93a2837e0cac",
+      "bytes": 224,
+      "origins": [
+        "apple/native/.build/engine-sources/flycast/core/deps/asio/asio/COPYING",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/asio/asio/COPYING"
+      ]
+    },
+    {
+      "sha256": "5d246dd2537307b80fed9ba5fdddf5d0fe7a8f023393a071182b9daed56b40fe",
+      "bytes": 1052,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/libdeflate/COPYING"
       ]
     },
     {
@@ -228,37 +847,362 @@
       ]
     },
     {
-      "sha256": "d3baf3a54943cf12a994c85867a18dec84f810901b2f2878ddfd77efcc3c150f",
-      "bytes": 18272,
+      "sha256": "5df07007198989c622f5d41de8d703e7bef3d0e79d62e24332ee739a452af62a",
+      "bytes": 26436,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/faad2/faad2/COPYING"
+        "apple/native/.build/engine-sources/azahar/externals/libusb/libusb/COPYING",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/libusb/libusb/COPYING"
       ]
     },
     {
-      "sha256": "adb783e734e906d1f46db5df29991dbde84bdb0ceab502ac2febb44fe3c2b5f4",
-      "bytes": 54705,
+      "sha256": "5e0df8c845c742e76f2f64d2d9ce1b7e74a2422fddbc577ae6a56319083de0bf",
+      "bytes": 11386,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/glslang/LICENSE.txt",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/glslang/LICENSE.txt"
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/rapidjson/thirdparty/gtest/googlemock/scripts/generator/LICENSE"
       ]
     },
     {
-      "sha256": "e6ead88c5894007be86546cfd24d6c0b9fafcbf832fc27d8330eb7d46cedc84a",
-      "bytes": 1731,
+      "sha256": "5ef8fcfb6cccec8fcae043c834099a60c8b7406408db576e026d2b7e67dc5cf5",
+      "bytes": 1073,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/glslang/license-checker.cfg",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/glslang/license-checker.cfg"
+        "cargo-vendor/crc-catalog-2.5.0/LICENSES/MIT.txt"
       ]
     },
     {
-      "sha256": "9ae3b39e83e9158e44b67733baa3bb2d84e80efdcfb14a5820210a42c7abdf7f",
-      "bytes": 1510,
+      "sha256": "603fb27ef3266ea516872eefd9ae587746b8c34614a35c0fb24e4e9e0c17e137",
+      "bytes": 1112,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/inih/inih/LICENSE.txt",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/res/licenses/inih.txt",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/src/third-party/inih/LICENSE.txt",
-        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/res/licenses/inih.txt",
-        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/src/third-party/inih/LICENSE.txt"
+        "cargo-vendor/macro_rules_attribute-0.1.3/LICENSE-MIT",
+        "cargo-vendor/macro_rules_attribute-proc_macro-0.1.3/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "bytes": 9723,
+      "origins": [
+        "cargo-vendor/libc-0.2.191/LICENSE-APACHE",
+        "cargo-vendor/paste-1.0.15/LICENSE-APACHE",
+        "cargo-vendor/proc-macro2-1.0.107/LICENSE-APACHE",
+        "cargo-vendor/quote-1.0.47/LICENSE-APACHE",
+        "cargo-vendor/rustversion-1.0.23/LICENSE-APACHE",
+        "cargo-vendor/serde-1.0.229/LICENSE-APACHE",
+        "cargo-vendor/serde_core-1.0.229/LICENSE-APACHE",
+        "cargo-vendor/serde_derive-1.0.229/LICENSE-APACHE",
+        "cargo-vendor/syn-2.0.119/LICENSE-APACHE",
+        "cargo-vendor/syn-3.0.9/LICENSE-APACHE",
+        "cargo-vendor/thiserror-2.0.21/LICENSE-APACHE",
+        "cargo-vendor/thiserror-impl-2.0.21/LICENSE-APACHE",
+        "cargo-vendor/unicode-ident-1.0.27/LICENSE-APACHE"
+      ]
+    },
+    {
+      "sha256": "62d2d642c7d054d4fb4c9b42faad617d6c88fcd91e317f8035aa9f277cc159c3",
+      "bytes": 2865,
+      "origins": [
+        "apple/native/.build/engine-sources/flycast/core/deps/glm/copying.txt",
+        "apple/native/.build/melonds/deps/glm/copying.txt",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/glm/copying.txt"
+      ]
+    },
+    {
+      "sha256": "62fe33d7821eb6bd356680a76cd37addfd560ca9f623122e19f7efd59d1d9be9",
+      "bytes": 1339,
+      "origins": [
+        "vendor/native/sameboy-1506d804.tar.gz!/HexFiend/License.txt"
+      ]
+    },
+    {
+      "sha256": "631caf35cb7a21e2fa4e36617551d72566cc272619003857fe79b82399e8e8fa",
+      "bytes": 1036,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/LicenseRef-Khronos-Free-Use-License-for-Software-and-Documentation.txt"
+      ]
+    },
+    {
+      "sha256": "63343a4ec1a8ae9a0183dafe2663c1ea5a95eb583c1447ec2e93c9c9f02817ee",
+      "bytes": 1066,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/dynarmic/externals/mcl/LICENSE"
+      ]
+    },
+    {
+      "sha256": "64056328b3e7bc104e24ef96accc1a7abead156f0c02d1b87c97e3f3a28030de",
+      "bytes": 1669,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/openal-soft/LICENSE-pffft"
+      ]
+    },
+    {
+      "sha256": "642e7003561473f4f1f3dd09e053ee2a6ecfb0563e961a3392e914295f9d350c",
+      "bytes": 921,
+      "origins": [
+        "third-party/MoltenVK/External/cereal/include/cereal/external/LICENSE"
+      ]
+    },
+    {
+      "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+      "bytes": 1071,
+      "origins": [
+        "cargo-vendor/log-0.4.34/LICENSE-MIT",
+        "cargo-vendor/num-0.4.3/LICENSE-MIT",
+        "cargo-vendor/num-bigint-0.4.8/LICENSE-MIT",
+        "cargo-vendor/num-complex-0.4.6/LICENSE-MIT",
+        "cargo-vendor/num-derive-0.4.2/LICENSE-MIT",
+        "cargo-vendor/num-integer-0.1.47/LICENSE-MIT",
+        "cargo-vendor/num-iter-0.1.46/LICENSE-MIT",
+        "cargo-vendor/num-rational-0.4.2/LICENSE-MIT",
+        "cargo-vendor/num-traits-0.2.19/LICENSE-MIT",
+        "cargo-vendor/regex-1.13.1/LICENSE-MIT",
+        "cargo-vendor/regex-automata-0.4.18/LICENSE-MIT",
+        "cargo-vendor/regex-syntax-0.8.11/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "65f94e99ddaf4f5d1782a6dae23f35d4293a9a01444a13135a6887017d353cee",
+      "bytes": 1059,
+      "origins": [
+        "cargo-vendor/bumpalo-3.20.3/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "6652c868f35dfe5e8ef636810a4e576b9d663f3a17fb0f5613ad73583e1b88fd",
+      "bytes": 1094,
+      "origins": [
+        "cargo-vendor/futures-core-0.3.34/LICENSE-MIT",
+        "cargo-vendor/futures-task-0.3.34/LICENSE-MIT",
+        "cargo-vendor/futures-util-0.3.34/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "675181c03fc1302a1c8554c00f7be9bb420c5dbc9dcc2013433cec144413de03",
+      "bytes": 877,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/minizip-ng/minizip-ng/LICENSE"
+      ]
+    },
+    {
+      "sha256": "6949417b17d6a63ec378d7d27a95b1dade2f477c97eadcccf7bfd6194af024a1",
+      "bytes": 18216,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/dist/qt_themes/qdarkstyle/LICENSE.md"
+      ]
+    },
+    {
+      "sha256": "695114256e306a5e1ca407bc6e2a11877b112328dbe990253b52f59726e01b4b",
+      "bytes": 494,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/COPYING",
+        "apple/native/.build/public-engine-sources/dolphin-retro/COPYING"
+      ]
+    },
+    {
+      "sha256": "6a573fb2f9082662978cf21fb153096df0a1981deaea7dbc10a11046fe005d9f",
+      "bytes": 6916,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/CC0-1.0.txt"
+      ]
+    },
+    {
+      "sha256": "6a6115fc4a7239a135f2dce8d33f94cb8a936b8f608ac0f6699fbac278b0dd5b",
+      "bytes": 1076,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/tinygltf/tinygltf/examples/validator/LICENSE.jsonhpp.MIT"
+      ]
+    },
+    {
+      "sha256": "6d7c9e9d7d12c8d3753bdb24417b84819ba4d6c2f025c37948113d86dc81eef9",
+      "bytes": 1087,
+      "origins": [
+        "third-party/MoltenVK/External/SPIRV-Tools/external/spirv-headers/LICENSES/MIT.txt"
+      ]
+    },
+    {
+      "sha256": "6df43f6f4b5d4587f3d8d71e45532c688fd168afa5fe89d571cb32fa09c4ef51",
+      "bytes": 10282,
+      "origins": [
+        "cargo-vendor/rand_core-0.10.1/LICENSE-APACHE"
+      ]
+    },
+    {
+      "sha256": "6e6f56aff5bbf3cbc60747e152fb1a719bd0716aaf6d711c554f57d92e96297c",
+      "bytes": 731,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/cubeb/src/cubeb-coreaudio-rs/LICENSE"
+      ]
+    },
+    {
+      "sha256": "6ef1eec0b0aa9f4258eaa768afc3950359cc2db2d6088861721bbaa9e65370fc",
+      "bytes": 1064,
+      "origins": [
+        "cargo-vendor/text_io-0.1.13/LICENSE.MIT"
+      ]
+    },
+    {
+      "sha256": "6efb0476a1cc085077ed49357026d8c173bf33017278ef440f222fb9cbcb66e6",
+      "bytes": 1062,
+      "origins": [
+        "cargo-vendor/serde_spanned-1.1.2/LICENSE-MIT",
+        "cargo-vendor/toml-1.1.8+spec-1.1.0/LICENSE-MIT",
+        "cargo-vendor/toml_datetime-1.1.2+spec-1.1.0/LICENSE-MIT",
+        "cargo-vendor/toml_parser-1.1.5+spec-1.1.0/LICENSE-MIT",
+        "cargo-vendor/toml_writer-1.1.3+spec-1.1.0/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "6fcb099a677ac6198ddf9ae8f3a368fe1880eb62ecf4bc56d8914969edb1c563",
+      "bytes": 876,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/SFML/SFML/license.md"
+      ]
+    },
+    {
+      "sha256": "6ffedbc0f7878612d2b23589f1ff2ab15633e1df7963a5d9fc750ec5500c7e7a",
+      "bytes": 1389,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/xxHash/LICENSE",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/xxhash/xxHash/LICENSE",
+        "apple/native/.build/engine-sources/flycast/core/deps/xxHash/LICENSE",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/xxHash/LICENSE"
+      ]
+    },
+    {
+      "sha256": "7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8",
+      "bytes": 1549,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/zstd/LICENSE",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/zstd/zstd/LICENSE",
+        "apple/native/.build/engine-sources/flycast/core/deps/libchdr/deps/zstd-1.5.6/LICENSE",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/libchdr/deps/zstd-1.5.6/LICENSE",
+        "cargo-vendor/zstd-sys-2.1.2+zstd.1.5.7/zstd/LICENSE",
+        "vendor/native/pce-4eee99c4.tar.gz!/beetle-pce-fast-libretro-4eee99c451f85ebe66d1591de88b892015b23059/deps/zstd/LICENSE",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/libchdr/deps/zstd-1.5.6/LICENSE",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/zstd/LICENSE"
+      ]
+    },
+    {
+      "sha256": "70c7fbd0f0df984c63a1ae6497b961745eb06672b8108d77c82af3498bf59d20",
+      "bytes": 1322,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/dds-ktx/LICENSE"
+      ]
+    },
+    {
+      "sha256": "71778de2e263e60e18d6e0112e65fc7229e90e4dc0d2b8e06640e442125a6dbe",
+      "bytes": 1164,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/src/third-party/libpng/contrib/pngminus/LICENSE.txt",
+        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/src/third-party/libpng/contrib/pngminus/LICENSE.txt"
+      ]
+    },
+    {
+      "sha256": "7365cc8878a1d7ce155a58c4ca09c3d7a6be413efa5334a80ea842912b669349",
+      "bytes": 1049,
+      "origins": [
+        "cargo-vendor/equivalent-1.0.3/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "73b9dc2e79c7308998dd30296e073aefaefb944a68fb89aa412c23c0edcabcaa",
+      "bytes": 1082,
+      "origins": [
+        "cargo-vendor/cpufeatures-0.3.1/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "746eed65fd054168c734ad6862eb53ef598a3eb539f239d7e7d7b1c0f321e492",
+      "bytes": 2005,
+      "origins": [
+        "vendor/native/gearsystem-d18766b3.tar.gz!/platforms/linux/debian/copyright"
+      ]
+    },
+    {
+      "sha256": "7480ae23b082c05ad9823896163d78f3a96f1beadce51f29c96cf898545c27e5",
+      "bytes": 1527,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/miniupnp/LICENSE"
+      ]
+    },
+    {
+      "sha256": "74aeda891b7216355084e184f4b908fc166862c12a80d20cda72c2d2a34f8ea8",
+      "bytes": 1614,
+      "origins": [
+        "apple/native/.build/engine-sources/mupen-next/GLideN64/licenses/readerwriterqueue/LICENSE.md",
+        "apple/native/.build/public-engine-sources/mupen-next/GLideN64/licenses/readerwriterqueue/LICENSE.md"
+      ]
+    },
+    {
+      "sha256": "74db5baf44a41b1000312c673544b3374e4198af5605c7f9080a402cec42cfa3",
+      "bytes": 2847,
+      "origins": [
+        "cargo-vendor/regex-syntax-0.8.11/src/unicode_tables/LICENSE-UNICODE"
+      ]
+    },
+    {
+      "sha256": "7574ee25dc96588606528d19bb883f84f7640ed459eb320e89ed882cf4625b68",
+      "bytes": 46807,
+      "origins": [
+        "source-evidence/NOTICE-INDEX.json"
+      ]
+    },
+    {
+      "sha256": "791ff46884cdf62188f17cabf0f099b462e92ec68986033bab243b26573b7573",
+      "bytes": 1079,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/armips/LICENSE.txt"
+      ]
+    },
+    {
+      "sha256": "794bf3b2ecf5cf0c740ac6c524d66ce6284c4b1de1f983d21a242b8abbeb9720",
+      "bytes": 2804,
+      "origins": [
+        "third-party/MoltenVK/External/cereal/include/cereal/external/rapidxml/license.txt"
+      ]
+    },
+    {
+      "sha256": "797832eda5ff4360a10fee3be94a3250995e76423b79675c9c44204c37ca492d",
+      "bytes": 4292,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/OFL-1.1-RFN.txt"
+      ]
+    },
+    {
+      "sha256": "7991ec4481a82c51d196f7440fda34c578aab51f8b9c7023935c6e03b57638bd",
+      "bytes": 1122,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/dynarmic/externals/zycore/LICENSE",
+        "apple/native/.build/engine-sources/azahar/externals/dynarmic/externals/zydis/dependencies/zycore/LICENSE"
+      ]
+    },
+    {
+      "sha256": "7cbdf16d66376d39046abb11a26e5f5823fb631bfc48d4309f5c227957e66d45",
+      "bytes": 19533,
+      "origins": [
+        "apple/native/.build/engine-sources/mupen-next/GLideN64/LICENSE",
+        "apple/native/.build/public-engine-sources/mupen-next/GLideN64/LICENSE"
+      ]
+    },
+    {
+      "sha256": "7d3b087c34f35d4d538e3bcddd1ff8f66e92f9ef336881999482800ddf840913",
+      "bytes": 530,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/sdl2/SDL/src/hidapi/LICENSE.txt",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/SDL/SDL/src/hidapi/LICENSE.txt",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/hidapi/hidapi-src/LICENSE.txt"
+      ]
+    },
+    {
+      "sha256": "7e12e5df4bae12cb21581ba157ced20e1986a0508dd10d0e8a4ab9a4cf94e85c",
+      "bytes": 1211,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/res/shaders/gbc-lcd.shader/license.txt"
+      ]
+    },
+    {
+      "sha256": "7e411d5c5d38501a504843f58afb6824439c828872b35d2ff1e892e73fd1a30d",
+      "bytes": 1501,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/dynarmic/externals/xbyak/COPYRIGHT",
+        "apple/native/.build/engine-sources/azahar/externals/xbyak/COPYRIGHT"
       ]
     },
     {
@@ -274,238 +1218,10 @@
       ]
     },
     {
-      "sha256": "5c63613f008f16a9c0025c096bbd736cecf720494d121b5c5203e0ec6e5955b1",
-      "bytes": 6500,
+      "sha256": "8173d5c29b4f956d532781d2b86e4e30f83e6b7878dce18c919451d6ba707c90",
+      "bytes": 10850,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/libressl/COPYING"
-      ]
-    },
-    {
-      "sha256": "5df07007198989c622f5d41de8d703e7bef3d0e79d62e24332ee739a452af62a",
-      "bytes": 26436,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/libusb/libusb/COPYING",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/libusb/libusb/COPYING"
-      ]
-    },
-    {
-      "sha256": "2b2cc1180c7e6988328ad2033b04b80117419db9c4c584918bbb3cfec7e9364f",
-      "bytes": 1506,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/libyuv/LICENSE"
-      ]
-    },
-    {
-      "sha256": "bdafa318b8e637d600ca1b60545e894881977a16a16b74809c95e805701621e3",
-      "bytes": 886,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/lodepng/lodepng/LICENSE",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/tinygltf/tinygltf/examples/common/LICENSE.lodepng"
-      ]
-    },
-    {
-      "sha256": "235ac8c3e43c67ced4a89fad8af65dc9f92a7627e5ce3e0016627b7505ead0ae",
-      "bytes": 1047,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/microtar/LICENSE"
-      ]
-    },
-    {
-      "sha256": "27506f579df456adae7c4cab1264c99c895177fa1c7aa9743ab1f3bf77a66ff5",
-      "bytes": 1506,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/nihstro/license.txt"
-      ]
-    },
-    {
-      "sha256": "d808ce217e5b611854da622b57ec29fe545584c48bc5352fae72a4b6e5074a15",
-      "bytes": 23330,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/openal-soft/COPYING"
-      ]
-    },
-    {
-      "sha256": "64056328b3e7bc104e24ef96accc1a7abead156f0c02d1b87c97e3f3a28030de",
-      "bytes": 1669,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/openal-soft/LICENSE-pffft"
-      ]
-    },
-    {
-      "sha256": "97f35b302b361680ec1e891e95d2d52097bb95abff361434916d99dc1305f127",
-      "bytes": 884,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/sdl2/SDL/LICENSE.txt"
-      ]
-    },
-    {
-      "sha256": "5059bc9c2f37b7e7a557685ae9330ecfd798537bdfde94de63a9c721c92a8856",
-      "bytes": 13091,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/sdl2/SDL/Xcode-iOS/Demos/data/bitmapfont/license.txt"
-      ]
-    },
-    {
-      "sha256": "37b975b5273734ea157fb1e363d06191036f289eca7767f736967816bedd156f",
-      "bytes": 909,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/sdl2/SDL/Xcode/SDL/pkg-support/resources/License.txt"
-      ]
-    },
-    {
-      "sha256": "30eb1bef29b46f8ba7ab8b416035dbd93cb034a45481dd97815b944284582cd2",
-      "bytes": 1534,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/sdl2/SDL/src/hidapi/LICENSE-bsd.txt",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/SDL/SDL/src/hidapi/LICENSE-bsd.txt",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/hidapi/hidapi-src/LICENSE-bsd.txt"
-      ]
-    },
-    {
-      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
-      "bytes": 35147,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/sdl2/SDL/src/hidapi/LICENSE-gpl3.txt",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/SDL/SDL/src/hidapi/LICENSE-gpl3.txt",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/hidapi/hidapi-src/LICENSE-gpl3.txt",
-        "apple/native/.build/engine-sources/flycast/core/deps/picotcp/LICENSE.GPLv3",
-        "apple/native/.build/melonds/deps/melonds/LICENSE",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/picotcp/LICENSE.GPLv3",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/aemu_postoffice/LICENSE",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ffmpeg/COPYING.GPLv3"
-      ]
-    },
-    {
-      "sha256": "fb5436aa63d1b71a8dfbf74ecaf1a5b4e1ec4df7f80074d11fec99284f69ca5f",
-      "bytes": 264,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/sdl2/SDL/src/hidapi/LICENSE-orig.txt",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/SDL/SDL/src/hidapi/LICENSE-orig.txt",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/hidapi/hidapi-src/LICENSE-orig.txt"
-      ]
-    },
-    {
-      "sha256": "7d3b087c34f35d4d538e3bcddd1ff8f66e92f9ef336881999482800ddf840913",
-      "bytes": 530,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/sdl2/SDL/src/hidapi/LICENSE.txt",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/SDL/SDL/src/hidapi/LICENSE.txt",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/hidapi/hidapi-src/LICENSE.txt"
-      ]
-    },
-    {
-      "sha256": "f7d74004cc75778cae46c5f0139f244d67c07ef64cf51937e8272352197dcb18",
-      "bytes": 1480,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/sdl2/SDL/src/video/yuv2rgb/LICENSE",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/SDL/SDL/src/video/yuv2rgb/LICENSE"
-      ]
-    },
-    {
-      "sha256": "d5a549e4a7b88cb696d0db15b21830061131ed361257ab399a33ca08ce0b33d5",
-      "bytes": 210,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/sdl2/SDL/test/COPYING",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/SDL/SDL/test/COPYING"
-      ]
-    },
-    {
-      "sha256": "dae65ccf728227eff8e10194437078a5628047b9f55d796039688e7ca8e3aa4e",
-      "bytes": 947,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/sdl2/SDL/visualtest/COPYING.txt"
-      ]
-    },
-    {
-      "sha256": "85037eeef55658177becb552477576a41bbc933705534b529c4c4818bb490480",
-      "bytes": 1492,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/sirit/sirit/LICENSE.txt"
-      ]
-    },
-    {
-      "sha256": "ff04ae7e6a468587fe59434fee2e67c0e2a749b592c794b764ff80f30b94a084",
-      "bytes": 4812,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/sirit/sirit/externals/SPIRV-Headers/LICENSE",
-        "apple/native/.build/engine-sources/azahar/externals/spirv-headers/LICENSE"
-      ]
-    },
-    {
-      "sha256": "84c6d82dc7de80f5b73f231edfd3ddc5b53513908117452bfa37ea36bb4b7e0a",
-      "bytes": 24389,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/soundtouch/COPYING.TXT"
-      ]
-    },
-    {
-      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
-      "bytes": 11358,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/spirv-tools/LICENSE",
-        "apple/native/.build/engine-sources/azahar/externals/spirv-tools/utils/vscode/src/lsp/LICENSE",
-        "apple/native/.build/engine-sources/azahar/externals/vulkan-headers/LICENSES/Apache-2.0.txt",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/MoltenVK/LICENSE",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/Vulkan-Headers/LICENSES/Apache-2.0.txt",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/mbedtls/LICENSE",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/spirv_cross/SPIRV-Cross/LICENSE",
-        "apple/native/.build/public-engine-sources/dolphin-retro/Externals/MoltenVK/LICENSE",
-        "apple/native/.build/public-engine-sources/dolphin-retro/Externals/mbedtls/LICENSE",
-        "cargo-vendor/bitreader-0.3.11/LICENSE-APACHE",
-        "cargo-vendor/claxon-0.4.3/license",
-        "cargo-vendor/multiversion-0.9.2/LICENSE-APACHE",
-        "cargo-vendor/multiversion-macros-0.9.2/LICENSE-APACHE",
-        "cargo-vendor/tinyvec-1.13.3/LICENSE-APACHE.md",
-        "third-party/MoltenVK/External/SPIRV-Cross/LICENSE",
-        "third-party/MoltenVK/External/SPIRV-Tools/LICENSE",
-        "third-party/MoltenVK/External/SPIRV-Tools/utils/vscode/src/lsp/LICENSE",
-        "third-party/MoltenVK/External/Vulkan-Headers/LICENSES/Apache-2.0.txt",
-        "third-party/MoltenVK/External/Vulkan-Tools/LICENSE.txt",
-        "third-party/MoltenVK/LICENSE",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSE",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/SPIRV-Cross/LICENSE"
-      ]
-    },
-    {
-      "sha256": "84ac887a2ae105eacfb5aeb1921502ef91e0bd230bb2e6de3e8507f79177adf5",
-      "bytes": 1067,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/teakra/LICENSE",
-        "apple/native/.build/melonds/deps/melonds/src/teakra/LICENSE"
-      ]
-    },
-    {
-      "sha256": "8d70e4cf2a9941f6454da71cd60e38484dd3e34810c824760d550e982af6d97a",
-      "bytes": 1099,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/vma/LICENSE.txt"
-      ]
-    },
-    {
-      "sha256": "ac24e5ea920e4318e4d02c4086ae51f53cfb03feed06c18df1019e7ada1ec7bc",
-      "bytes": 458,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/vulkan-headers/LICENSE.md",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/Vulkan-Headers/LICENSE.md"
-      ]
-    },
-    {
-      "sha256": "1ca3502222d967f3be5751c55f6b7ee735b5383909c3b501495f54b216dbf227",
-      "bytes": 1084,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/vulkan-headers/LICENSES/MIT.txt",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/Vulkan-Headers/LICENSES/MIT.txt",
-        "third-party/MoltenVK/External/Vulkan-Headers/LICENSES/MIT.txt"
-      ]
-    },
-    {
-      "sha256": "6ffedbc0f7878612d2b23589f1ff2ab15633e1df7963a5d9fc750ec5500c7e7a",
-      "bytes": 1389,
-      "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/xxHash/LICENSE",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/xxhash/xxHash/LICENSE",
-        "apple/native/.build/engine-sources/flycast/core/deps/xxHash/LICENSE",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/xxHash/LICENSE"
+        "apple/native/.build/jgenesis-commercial/frontend/egui-wgpu-fork/LICENSE-APACHE"
       ]
     },
     {
@@ -540,126 +1256,89 @@
       ]
     },
     {
-      "sha256": "f9c375a1be4a41f7b70301dd83c91cb89e41567478859b77eef375a52d782505",
-      "bytes": 18091,
+      "sha256": "837402bd25fad9b704265801ca3f92566a98157c1f9a7acd6f446299ba1c305a",
+      "bytes": 1057,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/zstd/COPYING",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/zstd/zstd/COPYING",
-        "apple/native/.build/engine-sources/flycast/core/deps/libchdr/deps/zstd-1.5.6/COPYING",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/libchdr/deps/zstd-1.5.6/COPYING",
-        "cargo-vendor/zstd-sys-2.1.2+zstd.1.5.7/zstd/COPYING",
-        "vendor/native/pce-4eee99c4.tar.gz!/beetle-pce-fast-libretro-4eee99c451f85ebe66d1591de88b892015b23059/deps/zstd/COPYING",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/libchdr/deps/zstd-1.5.6/COPYING",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/zstd/COPYING"
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/rapidjson/bin/jsonschema/LICENSE"
       ]
     },
     {
-      "sha256": "7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8",
-      "bytes": 1549,
+      "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243",
+      "bytes": 1002,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/externals/zstd/LICENSE",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/zstd/zstd/LICENSE",
-        "apple/native/.build/engine-sources/flycast/core/deps/libchdr/deps/zstd-1.5.6/LICENSE",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/libchdr/deps/zstd-1.5.6/LICENSE",
-        "cargo-vendor/zstd-sys-2.1.2+zstd.1.5.7/zstd/LICENSE",
-        "vendor/native/pce-4eee99c4.tar.gz!/beetle-pce-fast-libretro-4eee99c451f85ebe66d1591de88b892015b23059/deps/zstd/LICENSE",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/libchdr/deps/zstd-1.5.6/LICENSE",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/zstd/LICENSE"
+        "apple/native/.build/engine-sources/flycast/core/deps/libchdr/deps/zlib-1.3.1/LICENSE",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/libchdr/deps/zlib-1.3.1/LICENSE",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/libchdr/deps/zlib-1.3.1/LICENSE",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/zlib/LICENSE"
       ]
     },
     {
-      "sha256": "ab15fd526bd8dd18a9e77ebc139656bf4d33e97fc7238cd11bf60e2b9b8666c6",
-      "bytes": 17987,
+      "sha256": "84ac887a2ae105eacfb5aeb1921502ef91e0bd230bb2e6de3e8507f79177adf5",
+      "bytes": 1067,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/misc/licenses/gplv2.txt",
-        "apple/native/.build/engine-sources/mupen-next/GLideN64/licenses/GlideHQ/gpl-2.0.txt",
-        "apple/native/.build/melonds/deps/melonds/src/dolphin/license_dolphin.txt",
-        "apple/native/.build/public-engine-sources/mupen-next/GLideN64/licenses/GlideHQ/gpl-2.0.txt"
+        "apple/native/.build/engine-sources/azahar/externals/teakra/LICENSE",
+        "apple/native/.build/melonds/deps/melonds/src/teakra/LICENSE"
       ]
     },
     {
-      "sha256": "b892df015d615340b15989687a20c34f9c86b9421efc470f8862d12e3f3e8de0",
-      "bytes": 551,
+      "sha256": "84b34dd7608f7fb9b17bd588a6bf392bf7de504e2716f024a77d89f1b145a151",
+      "bytes": 851,
       "origins": [
-        "apple/native/.build/engine-sources/azahar/src/android/app/src/main/java/org/citra/citra_emu/model/License.kt"
+        "cargo-vendor/bytemuck-1.25.2/LICENSE-ZLIB",
+        "cargo-vendor/bytemuck_derive-1.12.1/LICENSE-ZLIB",
+        "cargo-vendor/tinyvec-1.13.3/LICENSE-ZLIB.md"
       ]
     },
     {
-      "sha256": "695114256e306a5e1ca407bc6e2a11877b112328dbe990253b52f59726e01b4b",
-      "bytes": 494,
+      "sha256": "84c6d82dc7de80f5b73f231edfd3ddc5b53513908117452bfa37ea36bb4b7e0a",
+      "bytes": 24389,
       "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/COPYING",
-        "apple/native/.build/public-engine-sources/dolphin-retro/COPYING"
+        "apple/native/.build/engine-sources/azahar/externals/soundtouch/COPYING.TXT"
       ]
     },
     {
-      "sha256": "b896e32fb2cdb3fc8b3b6fd854706fca4ac55619fbb6d5eb2429cb05ee338966",
-      "bytes": 1913,
+      "sha256": "85037eeef55658177becb552477576a41bbc933705534b529c4c4818bb490480",
+      "bytes": 1492,
       "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/FatFs/LICENSE.txt",
-        "apple/native/.build/melonds/deps/melonds/src/fatfs/LICENSE.txt",
-        "apple/native/.build/public-engine-sources/dolphin-retro/Externals/FatFs/LICENSE.txt"
+        "apple/native/.build/engine-sources/azahar/externals/sirit/sirit/LICENSE.txt"
       ]
     },
     {
-      "sha256": "46cde7dc11e64c78d650b4851b88f6704b4665ff60f22a1caf68ceb15e217e5b",
-      "bytes": 1327,
+      "sha256": "8583712ee2b062ff3d4d6d3e16f19ff0f92bc3a0a4beeec11a81ef00146fbd4f",
+      "bytes": 1055,
       "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/Qt/Qt6.8.3/ARM64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/COPYING-CMAKE-SCRIPTS",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/Qt/Qt6.8.3/ARM64/lib/cmake/Qt6/3rdparty/kwin/COPYING-CMAKE-SCRIPTS",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/Qt/Qt6.8.3/x64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/COPYING-CMAKE-SCRIPTS",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/Qt/Qt6.8.3/x64/lib/cmake/Qt6/3rdparty/kwin/COPYING-CMAKE-SCRIPTS"
+        "cargo-vendor/bitreader-0.3.11/LICENSE-MIT"
       ]
     },
     {
-      "sha256": "1c040b8271b37e5076359f8fd54240e371114112924d2df81ef87c7d6a1dfdfd",
-      "bytes": 884,
+      "sha256": "862c7f1238c07addea5e7af00ae4a9b6e59150029091c4261c896bcdce02a059",
+      "bytes": 1738,
       "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/SDL/SDL/LICENSE.txt",
-        "apple/native/BuildSupport/offline160/licenses/dukex/subprojects/SDL3-3.4.10/LICENSE.txt"
+        "apple/native/BuildSupport/offline160/licenses/dukex/subprojects/berkeley-testfloat-3/COPYING.txt"
       ]
     },
     {
-      "sha256": "129fbd972915047e54d88f6f1884a13bf6d79c18eeb40646193d7241c9270ae5",
-      "bytes": 1356,
+      "sha256": "86c148320eb0acc26607ed347e0fde9f49a236d0ec5291d36dc6a7e0e1d26b9f",
+      "bytes": 1296,
       "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/SDL/SDL/test/LICENSE.txt"
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/res/licenses/mingw-std-threads.txt",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/src/third-party/discord-rpc/include/mingw-std-threads/LICENSE",
+        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/res/licenses/mingw-std-threads.txt",
+        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/src/third-party/discord-rpc/include/mingw-std-threads/LICENSE"
       ]
     },
     {
-      "sha256": "6fcb099a677ac6198ddf9ae8f3a368fe1880eb62ecf4bc56d8914969edb1c563",
-      "bytes": 876,
+      "sha256": "875b2c940181c315fa99ce5292326b985a43cdc4e878b38995066d6b495ff151",
+      "bytes": 1495,
       "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/SFML/SFML/license.md"
+        "vendor/native/sameboy-1506d804.tar.gz!/LICENSE"
       ]
     },
     {
-      "sha256": "d077528956532ae91d04a40c1c17cc6839e8327661ce958b12e94857b0dee4ed",
-      "bytes": 908,
+      "sha256": "886ea6db16060f5396d35effdb1f646cb26e2d3ed8a76f1994f76e7f2ead3384",
+      "bytes": 1070,
       "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/SFML/license.txt",
-        "apple/native/.build/public-engine-sources/dolphin-retro/Externals/SFML/license.txt"
-      ]
-    },
-    {
-      "sha256": "f56ab0392925231e34dd008a7670bb5c5ead490203bc9e125de3106fef642a27",
-      "bytes": 1099,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/VulkanMemoryAllocator/LICENSE.txt"
-      ]
-    },
-    {
-      "sha256": "c6dbbf828498be844a89eaa3b84adbab3199e342eb5cb2ed2f0d4ba7ec0f38a3",
-      "bytes": 1896,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/bzip2/bzip2/LICENSE"
-      ]
-    },
-    {
-      "sha256": "f9ed9e332236c47042fcefdceae341418a8a67bc67bda0f4fd620296f69c44d6",
-      "bytes": 1174,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/cpp-ipc/cpp-ipc/LICENSE"
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/watcher/watcher/license"
       ]
     },
     {
@@ -670,38 +1349,32 @@
       ]
     },
     {
-      "sha256": "d638447635afa6837615553bcebbba60bc80a0e62ed9b158b4ed969e8bb72421",
-      "bytes": 1082,
+      "sha256": "8abb75a74659870347ceca80e8f551ae26be6d71b26634404f3e8082ca55bef1",
+      "bytes": 19175,
       "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/cpp-optparse/cpp-optparse/LICENSE"
+        "apple/native/.build/engine-sources/azahar/dist/qt_themes/qdarkstyle_midnight_blue/LICENSE.rst"
       ]
     },
     {
-      "sha256": "e18f1989333b70044b2adfb7dc2f905d0119dbdcac3bc9f4bc9d540e3a29de5b",
-      "bytes": 1088,
+      "sha256": "8b58c446121a109ccf32edc094bba3010a3d85e4ee3702950db55e4d3e87736c",
+      "bytes": 1311,
       "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/curl/curl/COPYING"
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/lz4/lz4/lib/LICENSE"
       ]
     },
     {
-      "sha256": "3cf06aba3588c41c514f6946bb2d757b413ff6491647d474800f55edca75dcb4",
-      "bytes": 1459,
+      "sha256": "8b689195ab4141a20f92a525d1f268893a1e44d51adf2fb5b4caec8769a33dbd",
+      "bytes": 1084,
       "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/curl/curl/LICENSES/BSD-3-Clause.txt"
+        "apple/native/.build/engine-sources/azahar/externals/dynarmic/externals/oaknut/LICENSE",
+        "apple/native/.build/engine-sources/azahar/externals/oaknut/LICENSE"
       ]
     },
     {
-      "sha256": "c82a5eb55679a3fd483d992c2428e66ee4b9b05b5b78b4ac916692368955b526",
-      "bytes": 1771,
+      "sha256": "8b6e9feec03e7c9a5facb26855cecd31662bf989b636bcfe79521bdf8ac863f0",
+      "bytes": 1076,
       "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/curl/curl/LICENSES/BSD-4-Clause-UC.txt"
-      ]
-    },
-    {
-      "sha256": "2a9993525c6c65ac944dfea5fbf24a093d61cfaf69039cab1ff471c6aed821cb",
-      "bytes": 730,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/curl/curl/LICENSES/ISC.txt"
+        "cargo-vendor/rand_core-0.10.1/LICENSE-MIT"
       ]
     },
     {
@@ -712,11 +1385,175 @@
       ]
     },
     {
-      "sha256": "f68d76b9c1c2271422e55134ea94cf71f2ac3fc3ed6a7ec6b83a1a0538753214",
-      "bytes": 874,
+      "sha256": "8ce0830173fdac609dfb4ea603fdc002c2f4af0dc9b1a005653f5da9cf534b18",
+      "bytes": 1055,
       "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/ed25519/license.txt",
-        "apple/native/.build/public-engine-sources/dolphin-retro/Externals/ed25519/license.txt"
+        "cargo-vendor/slab-0.4.12/LICENSE"
+      ]
+    },
+    {
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "bytes": 35147,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/sdl2/SDL/src/hidapi/LICENSE-gpl3.txt",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/SDL/SDL/src/hidapi/LICENSE-gpl3.txt",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/hidapi/hidapi-src/LICENSE-gpl3.txt",
+        "apple/native/.build/engine-sources/flycast/core/deps/picotcp/LICENSE.GPLv3",
+        "apple/native/.build/melonds/deps/melonds/LICENSE",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/picotcp/LICENSE.GPLv3",
+        "vendor/native/gearsystem-d18766b3.tar.gz!/LICENSE",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/aemu_postoffice/LICENSE",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ffmpeg/COPYING.GPLv3"
+      ]
+    },
+    {
+      "sha256": "8d70e4cf2a9941f6454da71cd60e38484dd3e34810c824760d550e982af6d97a",
+      "bytes": 1099,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/vma/LICENSE.txt"
+      ]
+    },
+    {
+      "sha256": "8d7d5231c3a39495f8bf543629915664f3127d48b52f7e68502c22e01f4f5819",
+      "bytes": 22619,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/tools/debian/copyright",
+        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/tools/debian/copyright"
+      ]
+    },
+    {
+      "sha256": "8e12b62381d0513a969e4b9f4a397cadb7b78bdd57c6df9e75ae21114bd120a9",
+      "bytes": 1058,
+      "origins": [
+        "apple/native/BuildSupport/offline160/licenses/dukex/subprojects/genconfig/LICENSE.txt"
+      ]
+    },
+    {
+      "sha256": "8f25018489d6fe0dec34a352314c38dc146247b7de65735790f4398a92afa84b",
+      "bytes": 1108,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/spirv_cross/SPIRV-Cross/LICENSES/MIT.txt",
+        "third-party/MoltenVK/External/SPIRV-Cross/LICENSES/MIT.txt",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/MIT.txt",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/SPIRV-Cross/LICENSES/MIT.txt"
+      ]
+    },
+    {
+      "sha256": "90d7e062634054e6866d3c81e6a2b3058a840e6af733e98e80bdfe1a7dec6912",
+      "bytes": 1076,
+      "origins": [
+        "cargo-vendor/bincode-2.0.1/LICENSE.md",
+        "cargo-vendor/bincode_derive-2.0.1/LICENSE.md"
+      ]
+    },
+    {
+      "sha256": "90eb64f0279b0d9432accfa6023ff803bc4965212383697eee27a0f426d5f8d5",
+      "bytes": 569,
+      "origins": [
+        "cargo-vendor/rand-0.10.3/COPYRIGHT"
+      ]
+    },
+    {
+      "sha256": "91515553fda3d86e82454bab0eb876a2cb9a31c0dcb8be640870fed624e53697",
+      "bytes": 1083,
+      "origins": [
+        "apple/native/.build/engine-sources/mupen-next/GLideN64/licenses/GLSL-FXAA/LICENSE.md",
+        "apple/native/.build/public-engine-sources/mupen-next/GLideN64/licenses/GLSL-FXAA/LICENSE.md"
+      ]
+    },
+    {
+      "sha256": "92b81db30f7ab6d693e0af5661a40d273ca1947e891123ed823924192c10cbc7",
+      "bytes": 478,
+      "origins": [
+        "cargo-vendor/rand_core-0.10.1/COPYRIGHT"
+      ]
+    },
+    {
+      "sha256": "92d4e63101d2e8ae00f9ea88ddd2593ffc732f3c97531fd2607d6ba00a60e647",
+      "bytes": 35557,
+      "origins": [
+        "vendor/native/gearsystem-d18766b3.tar.gz!/platforms/shared/desktop/license.h"
+      ]
+    },
+    {
+      "sha256": "9449028d45cc170c57a915677441f943a93b8b6862849f5373c771f38e798363",
+      "bytes": 1304,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/dllwalker/LICENSE.txt"
+      ]
+    },
+    {
+      "sha256": "95ad366d23fadf701d355bc45fb8b82ae2d700239471d35d41286ac3b08ff903",
+      "bytes": 495,
+      "origins": [
+        "third-party/MoltenVK/External/Vulkan-Headers/LICENSE.md"
+      ]
+    },
+    {
+      "sha256": "95bd3988beee069fa2848f648dab43cc6e0b2add2ad6bcb17360caf749802bcc",
+      "bytes": 9722,
+      "origins": [
+        "cargo-vendor/rustc-hash-2.1.3/LICENSE-APACHE"
+      ]
+    },
+    {
+      "sha256": "95ca92f5f8ea5231f1580b3a2a799e8260af3114b900e1def5355a7f44bcf60c",
+      "bytes": 1092,
+      "origins": [
+        "apple/native/.build/jgenesis-commercial/frontend/egui-wgpu-fork/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138",
+      "bytes": 1475,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/cubeb/googletest/LICENSE",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/cpp-ipc/cpp-ipc/3rdparty/gtest/LICENSE",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/cubeb/cubeb/googletest/LICENSE",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/gtest/LICENSE",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/rapidjson/thirdparty/gtest/googlemock/LICENSE",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/rapidjson/thirdparty/gtest/googletest/LICENSE"
+      ]
+    },
+    {
+      "sha256": "97f35b302b361680ec1e891e95d2d52097bb95abff361434916d99dc1305f127",
+      "bytes": 884,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/sdl2/SDL/LICENSE.txt"
+      ]
+    },
+    {
+      "sha256": "98295fe4fb291c433b705d40710cd44aaa09e7944943afb8a4ec02e9a4f59289",
+      "bytes": 1065,
+      "origins": [
+        "apple/native/.build/engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/LICENSE.MIT",
+        "apple/native/.build/public-engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/LICENSE.MIT"
+      ]
+    },
+    {
+      "sha256": "9ae3b39e83e9158e44b67733baa3bb2d84e80efdcfb14a5820210a42c7abdf7f",
+      "bytes": 1510,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/inih/inih/LICENSE.txt",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/res/licenses/inih.txt",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/src/third-party/inih/LICENSE.txt",
+        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/res/licenses/inih.txt",
+        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/src/third-party/inih/LICENSE.txt"
+      ]
+    },
+    {
+      "sha256": "9bc9f672f477b34b7d1023a416616c00432c1e42db07f4a7143210144a87ef83",
+      "bytes": 1686,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/glslang/glslang/license-checker.cfg"
+      ]
+    },
+    {
+      "sha256": "9ccf26cfe845e0eb8bb58053e47366e7ab6b697ae010f7650978d4b71b7d1fc1",
+      "bytes": 7637,
+      "origins": [
+        "apple/native/.build/engine-sources/mupen-next/GLideN64/licenses/gles2n64/LICENSE",
+        "apple/native/.build/public-engine-sources/mupen-next/GLideN64/licenses/gles2n64/LICENSE"
       ]
     },
     {
@@ -728,115 +1565,18 @@
       ]
     },
     {
-      "sha256": "17e70c676e1521ff3e4686f04a2053d93a7e28a33be8de7ec37ab0ff72feb677",
-      "bytes": 54615,
+      "sha256": "9df9ba60a11af705f2e451b53762686e615d86f76b169cf075c3237730dbd7e2",
+      "bytes": 1110,
       "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/glslang/glslang/LICENSE.txt",
-        "apple/native/BuildSupport/offline160/licenses/dukex/subprojects/glslang/LICENSE.txt"
+        "cargo-vendor/bytemuck-1.25.2/LICENSE-MIT",
+        "cargo-vendor/bytemuck_derive-1.12.1/LICENSE-MIT"
       ]
     },
     {
-      "sha256": "9bc9f672f477b34b7d1023a416616c00432c1e42db07f4a7143210144a87ef83",
-      "bytes": 1686,
+      "sha256": "9f2e250993c6206fac643824e05e5a0d7d3e0895d9e09a5ce4b12bc2610afc11",
+      "bytes": 18326,
       "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/glslang/glslang/license-checker.cfg"
-      ]
-    },
-    {
-      "sha256": "c80c5789748d955c4a650562baa0d750494e2c7128c2ca66aaebe2e3c4e198bf",
-      "bytes": 1083,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/imgui/imgui/LICENSE.txt",
-        "apple/native/BuildSupport/offline160/licenses/dukex/subprojects/imgui/LICENSE.txt"
-      ]
-    },
-    {
-      "sha256": "da2fb2c802537710cdebe8881b55356d07b88a6dbd7e4b912ac3091f8e6b5f6a",
-      "bytes": 934,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/imgui/imgui/examples/libs/glfw/COPYING.txt"
-      ]
-    },
-    {
-      "sha256": "38bd30c2111fe7e3d8fb86d8607491239659eff1df1b1004b9a8349e20a91967",
-      "bytes": 1068,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/implot/LICENSE",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/implot/implot/LICENSE",
-        "apple/native/.build/engine-sources/flycast/core/deps/implot/LICENSE",
-        "apple/native/.build/public-engine-sources/dolphin-retro/Externals/implot/LICENSE",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/implot/LICENSE"
-      ]
-    },
-    {
-      "sha256": "bcb02973ef6e87ea73d331b3a80df7748407f17efdb784b61b47e0e610d3bb5c",
-      "bytes": 2775,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/liblzma/COPYING",
-        "apple/native/.build/public-engine-sources/dolphin-retro/Externals/liblzma/COPYING"
-      ]
-    },
-    {
-      "sha256": "0622b0794d0fecde47d743f1bb70a03e6fdf082be8e71f39de672ed995d96ff9",
-      "bytes": 1341,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/libspng/libspng/LICENSE"
-      ]
-    },
-    {
-      "sha256": "2949fcf758d3c9bcb05f8393ca42cadfa15be04eb4ae4b3327c4ad7957511e1b",
-      "bytes": 635,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/lz4/lz4/LICENSE"
-      ]
-    },
-    {
-      "sha256": "4f6ef9d0e844bf432d6a0abb2623f5a61175ae40f7f0e3665490311d89e3af87",
-      "bytes": 321,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/lz4/lz4/contrib/debian/copyright"
-      ]
-    },
-    {
-      "sha256": "d011d1e02cb32b71c1ce2922ab41a2e2ad30f4ecf8de22c078d53618205abc05",
-      "bytes": 1292,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/lz4/lz4/contrib/djgpp/LICENSE"
-      ]
-    },
-    {
-      "sha256": "8b58c446121a109ccf32edc094bba3010a3d85e4ee3702950db55e4d3e87736c",
-      "bytes": 1311,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/lz4/lz4/lib/LICENSE"
-      ]
-    },
-    {
-      "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
-      "bytes": 16726,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/LICENSE",
-        "apple/native/.build/engine-sources/flycast/core/deps/libjuice/LICENSE",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/libjuice/LICENSE",
-        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/LICENSE"
-      ]
-    },
-    {
-      "sha256": "00c153054a45ffa0cdf87f6eedb01e4110ffba40bb3ff20f5d173ddbc112e0a0",
-      "bytes": 1096,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/cinema/gb/mooneye-gb/LICENSE",
-        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/cinema/gb/mooneye-gb/LICENSE"
-      ]
-    },
-    {
-      "sha256": "86c148320eb0acc26607ed347e0fde9f49a236d0ec5291d36dc6a7e0e1d26b9f",
-      "bytes": 1296,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/res/licenses/mingw-std-threads.txt",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/src/third-party/discord-rpc/include/mingw-std-threads/LICENSE",
-        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/res/licenses/mingw-std-threads.txt",
-        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/src/third-party/discord-rpc/include/mingw-std-threads/LICENSE"
+        "vendor/native/desmume-95b4d798.tar.gz!/desmume-95b4d798731caa809125b6c3c11d17cc332ff6ef/license.txt"
       ]
     },
     {
@@ -851,202 +1591,6 @@
       ]
     },
     {
-      "sha256": "7e12e5df4bae12cb21581ba157ced20e1986a0508dd10d0e8a4ab9a4cf94e85c",
-      "bytes": 1211,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/res/shaders/gbc-lcd.shader/license.txt"
-      ]
-    },
-    {
-      "sha256": "bf5e22b9dce8464064ae17a48ea1133c3369ac9e1d80ef9e320e5219aa14ea9b",
-      "bytes": 5345,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/src/third-party/libpng/LICENSE",
-        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/src/third-party/libpng/LICENSE"
-      ]
-    },
-    {
-      "sha256": "d6cb0e9e560f51085556949a84af12b79a00f10ab8b66c752537faf7cd665572",
-      "bytes": 18097,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/src/third-party/libpng/contrib/gregbook/COPYING",
-        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/src/third-party/libpng/contrib/gregbook/COPYING"
-      ]
-    },
-    {
-      "sha256": "b6a03c1803eb58ffb1f1278d5c7d4096c4c116e66dce8a7553e8c77d163c3438",
-      "bytes": 2373,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/src/third-party/libpng/contrib/gregbook/LICENSE",
-        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/src/third-party/libpng/contrib/gregbook/LICENSE"
-      ]
-    },
-    {
-      "sha256": "71778de2e263e60e18d6e0112e65fc7229e90e4dc0d2b8e06640e442125a6dbe",
-      "bytes": 1164,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/src/third-party/libpng/contrib/pngminus/LICENSE.txt",
-        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/src/third-party/libpng/contrib/pngminus/LICENSE.txt"
-      ]
-    },
-    {
-      "sha256": "36266a8fd073568394cb81cdb2b124f7fdae2c64c1a7ed09db34b4d22efa2951",
-      "bytes": 1359,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/src/third-party/zlib/contrib/dotzlib/LICENSE_1_0.txt",
-        "apple/native/.build/engine-sources/flycast/core/deps/libchdr/deps/zlib-1.3.1/contrib/dotzlib/LICENSE_1_0.txt",
-        "apple/native/.build/melonds/deps/zlib/contrib/dotzlib/LICENSE_1_0.txt",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/libchdr/deps/zlib-1.3.1/contrib/dotzlib/LICENSE_1_0.txt",
-        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/src/third-party/zlib/contrib/dotzlib/LICENSE_1_0.txt",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/libchdr/deps/zlib-1.3.1/contrib/dotzlib/LICENSE_1_0.txt"
-      ]
-    },
-    {
-      "sha256": "8d7d5231c3a39495f8bf543629915664f3127d48b52f7e68502c22e01f4f5819",
-      "bytes": 22619,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/tools/debian/copyright",
-        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/tools/debian/copyright"
-      ]
-    },
-    {
-      "sha256": "52bdad87d7aefe3eab35cb02426aa748510f9398a1e2d520d93bcbb18f10dd11",
-      "bytes": 1527,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/miniupnpc/miniupnp/LICENSE",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/miniupnpc/miniupnp/minissdpd/LICENSE",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/miniupnpc/miniupnp/miniupnpc/LICENSE",
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/miniupnpc/miniupnp/miniupnpd/LICENSE"
-      ]
-    },
-    {
-      "sha256": "675181c03fc1302a1c8554c00f7be9bb420c5dbc9dcc2013433cec144413de03",
-      "bytes": 877,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/minizip-ng/minizip-ng/LICENSE"
-      ]
-    },
-    {
-      "sha256": "5585fe141cc7bb08c953f3859db608852968d0bbc625b9b6d95c0bd6349bacb6",
-      "bytes": 1336,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/picojson/LICENSE",
-        "apple/native/.build/public-engine-sources/dolphin-retro/Externals/picojson/LICENSE"
-      ]
-    },
-    {
-      "sha256": "0d0b3772af2fa45628a548a3b34583707ebcc68bb6f83ec48ca273aab4a510f1",
-      "bytes": 1079,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/pugixml/pugixml/LICENSE.md"
-      ]
-    },
-    {
-      "sha256": "bf820c034966a3b6be050bb85f94ec841a0b972bd5d477e362337d0574b5c219",
-      "bytes": 1078,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/rcheevos/rcheevos/LICENSE",
-        "apple/native/.build/engine-sources/flycast/core/deps/rcheevos/LICENSE",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/rcheevos/LICENSE",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/rcheevos/LICENSE"
-      ]
-    },
-    {
-      "sha256": "44b0a56e80b41a1b0a6bd1292515e806539fd97b30be54c2719e6c763190ab57",
-      "bytes": 10343,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/spirv_cross/SPIRV-Cross/LICENSES/Apache-2.0.txt",
-        "third-party/MoltenVK/External/SPIRV-Cross/LICENSES/Apache-2.0.txt",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/SPIRV-Cross/LICENSES/Apache-2.0.txt"
-      ]
-    },
-    {
-      "sha256": "b89aeb7c2a164a0576786dd2a8b57f2fb628b23981f0a06bd77e2f99a9befa0f",
-      "bytes": 16814,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/spirv_cross/SPIRV-Cross/LICENSES/CC-BY-4.0.txt",
-        "third-party/MoltenVK/External/SPIRV-Cross/LICENSES/CC-BY-4.0.txt",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/CC-BY-4.0.txt",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/SPIRV-Cross/LICENSES/CC-BY-4.0.txt"
-      ]
-    },
-    {
-      "sha256": "fbeaca472f4f70e276dd1106ca5097435967a22ad6c1d8200aef7ad9f70aaf3f",
-      "bytes": 1305,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/spirv_cross/SPIRV-Cross/LICENSES/LicenseRef-KhronosFreeUse.txt",
-        "third-party/MoltenVK/External/SPIRV-Cross/LICENSES/LicenseRef-KhronosFreeUse.txt",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/SPIRV-Cross/LICENSES/LicenseRef-KhronosFreeUse.txt"
-      ]
-    },
-    {
-      "sha256": "8f25018489d6fe0dec34a352314c38dc146247b7de65735790f4398a92afa84b",
-      "bytes": 1108,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/spirv_cross/SPIRV-Cross/LICENSES/MIT.txt",
-        "third-party/MoltenVK/External/SPIRV-Cross/LICENSES/MIT.txt",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/MIT.txt",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/SPIRV-Cross/LICENSES/MIT.txt"
-      ]
-    },
-    {
-      "sha256": "2ae461f8c8b78ed77c14e9c3b7e353ba277e44cb3dbfb5a6d380f76f2ae081a2",
-      "bytes": 1112,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/tinygltf/tinygltf/LICENSE"
-      ]
-    },
-    {
-      "sha256": "b332d6f507142c66a0e904838b6437e6273734589c22a16b57392b89bfdccb2a",
-      "bytes": 820,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/tinygltf/tinygltf/examples/common/nativefiledialog/LICENSE"
-      ]
-    },
-    {
-      "sha256": "4294d027a5205eea79a5241b2c1423d556efaa3139df8cea5ac313fb5ffb07bf",
-      "bytes": 1167,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/tinygltf/tinygltf/examples/validator/LICENSE.json-schema-validator.MIT"
-      ]
-    },
-    {
-      "sha256": "6a6115fc4a7239a135f2dce8d33f94cb8a936b8f608ac0f6699fbac278b0dd5b",
-      "bytes": 1076,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/tinygltf/tinygltf/examples/validator/LICENSE.jsonhpp.MIT"
-      ]
-    },
-    {
-      "sha256": "886ea6db16060f5396d35effdb1f646cb26e2d3ed8a76f1994f76e7f2ead3384",
-      "bytes": 1070,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/watcher/watcher/license"
-      ]
-    },
-    {
-      "sha256": "27ebda9d51f0a56b7e281ccd8230a27236dcb51c05f64b07869ecf6e965d68b0",
-      "bytes": 1162,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/wil/LICENSE"
-      ]
-    },
-    {
-      "sha256": "d3c80be055d94d798eaa786116e84fa0b010bc11420b5d2060d978ea77845436",
-      "bytes": 867,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/Externals/zlib-ng/zlib-ng/LICENSE.md"
-      ]
-    },
-    {
-      "sha256": "42639b2e5507163d35069be166e37a784f48a5f17e3577c16eb48fab215247cd",
-      "bytes": 1480,
-      "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/LICENSES/BSD-3-Clause.txt",
-        "apple/native/.build/public-engine-sources/dolphin-retro/LICENSES/BSD-3-Clause.txt"
-      ]
-    },
-    {
       "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
       "bytes": 7048,
       "origins": [
@@ -1057,432 +1601,18 @@
       ]
     },
     {
-      "sha256": "aaf135472f81c5b4a0dca9367e5bb5e9750032b5bebe5442b36e4c0a47430df3",
-      "bytes": 17337,
+      "sha256": "a29cd246638974da7c6edf423a0a69d4a6f7d759940b7cfa9a2bc3442ac3834c",
+      "bytes": 1060,
       "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/LICENSES/GPL-2.0-or-later.txt",
-        "apple/native/.build/public-engine-sources/dolphin-retro/LICENSES/GPL-2.0-or-later.txt"
+        "apple/native/.build/engine-sources/azahar/externals/enet/LICENSE",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/enet/enet/LICENSE"
       ]
     },
     {
-      "sha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0",
-      "bytes": 1078,
+      "sha256": "a4c1d4736327f3f8d0b610d74a9e9ba0cf703f5828c5c4bc723dc65fbdaccdd1",
+      "bytes": 562,
       "origins": [
-        "apple/native/.build/engine-sources/dolphin-retro/LICENSES/MIT.txt",
-        "apple/native/.build/public-engine-sources/dolphin-retro/LICENSES/MIT.txt"
-      ]
-    },
-    {
-      "sha256": "5cc69ca9afd3417ed8e58bcd9c0bb730375e9e3e92b5aaf6483b93a2837e0cac",
-      "bytes": 224,
-      "origins": [
-        "apple/native/.build/engine-sources/flycast/core/deps/asio/asio/COPYING",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/asio/asio/COPYING"
-      ]
-    },
-    {
-      "sha256": "bd36c8b474855fa294c2ec5c184544478ef3720aad37d65a6296a4f264fd2d3b",
-      "bytes": 2149,
-      "origins": [
-        "apple/native/.build/engine-sources/flycast/core/deps/freetype/LICENSE.TXT",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/freetype/LICENSE.TXT",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/freetype/LICENSE.TXT"
-      ]
-    },
-    {
-      "sha256": "62d2d642c7d054d4fb4c9b42faad617d6c88fcd91e317f8035aa9f277cc159c3",
-      "bytes": 2865,
-      "origins": [
-        "apple/native/.build/engine-sources/flycast/core/deps/glm/copying.txt",
-        "apple/native/.build/melonds/deps/glm/copying.txt",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/glm/copying.txt"
-      ]
-    },
-    {
-      "sha256": "e3989a7aee74a91b8cdbdfe204a6b8d03288863ec7533a21c51f1a987ba73539",
-      "bytes": 1493,
-      "origins": [
-        "apple/native/.build/engine-sources/flycast/core/deps/libchdr/LICENSE.txt",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/libchdr/LICENSE.txt",
-        "apple/native/BuildSupport/offline160/licenses/flycast/core/deps/libchdr/LICENSE.txt",
-        "apple/native/BuildSupport/offline160/licenses/play/deps/libchdr/LICENSE.txt",
-        "vendor/native/pce-4eee99c4.tar.gz!/beetle-pce-fast-libretro-4eee99c451f85ebe66d1591de88b892015b23059/deps/libchdr/LICENSE.txt",
-        "vendor/native/pcsx-c8816799.tar.gz!/pcsx_rearmed-c8816799b50388e61cfe237fe2cdbb7d8175f20a/deps/libchdr/LICENSE.txt",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/libchdr/LICENSE.txt"
-      ]
-    },
-    {
-      "sha256": "06721414a6decad6d6677feb470f01f47126e154d895d85bc1e17628697715e5",
-      "bytes": 261,
-      "origins": [
-        "apple/native/.build/engine-sources/flycast/core/deps/libchdr/deps/lzma-24.05/LICENSE",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/libchdr/deps/lzma-24.05/LICENSE",
-        "vendor/native/pce-4eee99c4.tar.gz!/beetle-pce-fast-libretro-4eee99c451f85ebe66d1591de88b892015b23059/deps/lzma-19.00/LICENSE",
-        "vendor/native/pcsx-c8816799.tar.gz!/pcsx_rearmed-c8816799b50388e61cfe237fe2cdbb7d8175f20a/deps/libchdr/deps/lzma-26.02/LICENSE",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/libchdr/deps/lzma-24.05/LICENSE"
-      ]
-    },
-    {
-      "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243",
-      "bytes": 1002,
-      "origins": [
-        "apple/native/.build/engine-sources/flycast/core/deps/libchdr/deps/zlib-1.3.1/LICENSE",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/libchdr/deps/zlib-1.3.1/LICENSE",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/libchdr/deps/zlib-1.3.1/LICENSE",
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/zlib/LICENSE"
-      ]
-    },
-    {
-      "sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d",
-      "bytes": 16706,
-      "origins": [
-        "apple/native/.build/engine-sources/flycast/core/deps/libunwind/libunwind/LICENSE.TXT",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/libunwind/libunwind/LICENSE.TXT"
-      ]
-    },
-    {
-      "sha256": "01c022eca6d566e2e8792fd0f091a28653b2a608319922bcd4de91c49d1438e1",
-      "bytes": 1454,
-      "origins": [
-        "apple/native/.build/engine-sources/flycast/core/deps/libzip/LICENSE",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/libzip/LICENSE"
-      ]
-    },
-    {
-      "sha256": "1e881ecf2862d01e6e5bc2b861e46886d2a6fb01499c0c508a209a7271b13cf2",
-      "bytes": 10,
-      "origins": [
-        "apple/native/.build/engine-sources/flycast/core/deps/miniupnpc/LICENSE",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/miniupnpc/LICENSE"
-      ]
-    },
-    {
-      "sha256": "af5a2bc623f97a8707322a971e78067c8a1fd25c7493328b52a9baafee97e735",
-      "bytes": 288,
-      "origins": [
-        "apple/native/.build/engine-sources/flycast/core/deps/picotcp/COPYING",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/picotcp/COPYING"
-      ]
-    },
-    {
-      "sha256": "27cba3bef2da99bdc9c2846449767ad015c5ba539bcb4f10c74be20faf7ada3a",
-      "bytes": 1470,
-      "origins": [
-        "apple/native/.build/engine-sources/flycast/core/deps/tinygettext/LICENSE.md",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/tinygettext/LICENSE.md",
-        "apple/native/BuildSupport/offline160/licenses/flycast/core/deps/tinygettext/LICENSE.md"
-      ]
-    },
-    {
-      "sha256": "e998149780068b7adc7d3b5559c0415240d8c07760d52b7012aebe5ab7d8a04f",
-      "bytes": 876,
-      "origins": [
-        "apple/native/.build/engine-sources/flycast/core/deps/tinygettext/external/tinycmmc/LICENSE.md",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/tinygettext/external/tinycmmc/LICENSE.md",
-        "apple/native/BuildSupport/offline160/licenses/flycast/core/deps/tinygettext/external/tinycmmc/LICENSE.md"
-      ]
-    },
-    {
-      "sha256": "321429c853d59b621414832581e93ff38586c348aa2de43c7e571b33423d670a",
-      "bytes": 33093,
-      "origins": [
-        "apple/native/.build/engine-sources/flycast/core/deps/xbrz/License.txt",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/xbrz/License.txt"
-      ]
-    },
-    {
-      "sha256": "ebd1cb387d2a0dc5cda74796ca1334df4494e81a6b5e01164434453ea96469c1",
-      "bytes": 1065,
-      "origins": [
-        "apple/native/.build/engine-sources/flycast/shell/apple/emulator-ios/emulator/iCade-iOS/LICENSE",
-        "apple/native/.build/public-engine-sources/flycast-interpreter/shell/apple/emulator-ios/emulator/iCade-iOS/LICENSE"
-      ]
-    },
-    {
-      "sha256": "7cbdf16d66376d39046abb11a26e5f5823fb631bfc48d4309f5c227957e66d45",
-      "bytes": 19533,
-      "origins": [
-        "apple/native/.build/engine-sources/mupen-next/GLideN64/LICENSE",
-        "apple/native/.build/public-engine-sources/mupen-next/GLideN64/LICENSE"
-      ]
-    },
-    {
-      "sha256": "91515553fda3d86e82454bab0eb876a2cb9a31c0dcb8be640870fed624e53697",
-      "bytes": 1083,
-      "origins": [
-        "apple/native/.build/engine-sources/mupen-next/GLideN64/licenses/GLSL-FXAA/LICENSE.md",
-        "apple/native/.build/public-engine-sources/mupen-next/GLideN64/licenses/GLSL-FXAA/LICENSE.md"
-      ]
-    },
-    {
-      "sha256": "13a3b6d268be629a2a3f7078639e688c9bbc564c7f0c99063db3ad4952512f98",
-      "bytes": 1376,
-      "origins": [
-        "apple/native/.build/engine-sources/mupen-next/GLideN64/licenses/Glow/LICENSE",
-        "apple/native/.build/public-engine-sources/mupen-next/GLideN64/licenses/Glow/LICENSE"
-      ]
-    },
-    {
-      "sha256": "9ccf26cfe845e0eb8bb58053e47366e7ab6b697ae010f7650978d4b71b7d1fc1",
-      "bytes": 7637,
-      "origins": [
-        "apple/native/.build/engine-sources/mupen-next/GLideN64/licenses/gles2n64/LICENSE",
-        "apple/native/.build/public-engine-sources/mupen-next/GLideN64/licenses/gles2n64/LICENSE"
-      ]
-    },
-    {
-      "sha256": "74aeda891b7216355084e184f4b908fc166862c12a80d20cda72c2d2a34f8ea8",
-      "bytes": 1614,
-      "origins": [
-        "apple/native/.build/engine-sources/mupen-next/GLideN64/licenses/readerwriterqueue/LICENSE.md",
-        "apple/native/.build/public-engine-sources/mupen-next/GLideN64/licenses/readerwriterqueue/LICENSE.md"
-      ]
-    },
-    {
-      "sha256": "3dcbbf07bd9ebb0b6fd117826d5c3fd35bdbfd4b31bb9ebebb4e74aef6959b32",
-      "bytes": 364,
-      "origins": [
-        "apple/native/.build/engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/LICENSE",
-        "apple/native/.build/public-engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/LICENSE"
-      ]
-    },
-    {
-      "sha256": "a853c2ffec17057872340eee242ae4d96cbf2b520ae27d903e1b2fef1a5f9d1c",
-      "bytes": 7639,
-      "origins": [
-        "apple/native/.build/engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/LICENSE.LESSER",
-        "apple/native/.build/engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/lightning/COPYING.LESSER",
-        "apple/native/.build/public-engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/LICENSE.LESSER",
-        "apple/native/.build/public-engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/lightning/COPYING.LESSER",
-        "vendor/native/pcsx-c8816799.tar.gz!/pcsx_rearmed-c8816799b50388e61cfe237fe2cdbb7d8175f20a/deps/lightning/COPYING.LESSER"
-      ]
-    },
-    {
-      "sha256": "98295fe4fb291c433b705d40710cd44aaa09e7944943afb8a4ec02e9a4f59289",
-      "bytes": 1065,
-      "origins": [
-        "apple/native/.build/engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/LICENSE.MIT",
-        "apple/native/.build/public-engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/LICENSE.MIT"
-      ]
-    },
-    {
-      "sha256": "fc82ca8b6fdb18d4e3e85cfd8ab58d1bcd3f1b29abe782895abd91d64763f8e7",
-      "bytes": 35068,
-      "origins": [
-        "apple/native/.build/engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/lightning/COPYING",
-        "apple/native/.build/public-engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/lightning/COPYING",
-        "vendor/native/pcsx-c8816799.tar.gz!/pcsx_rearmed-c8816799b50388e61cfe237fe2cdbb7d8175f20a/deps/lightning/COPYING"
-      ]
-    },
-    {
-      "sha256": "5ae033045108dac293940c2292d311ce8b58de976dff2269c22280b8df6cfd27",
-      "bytes": 18114,
-      "origins": [
-        "apple/native/.build/engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/lightning/COPYING.DOC",
-        "apple/native/.build/public-engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/lightning/COPYING.DOC",
-        "vendor/native/pcsx-c8816799.tar.gz!/pcsx_rearmed-c8816799b50388e61cfe237fe2cdbb7d8175f20a/deps/lightning/COPYING.DOC"
-      ]
-    },
-    {
-      "sha256": "29e3d9c8af52aa066b05be4ed348b2184052e99b793779c38baca2c6e00240c5",
-      "bytes": 1054,
-      "origins": [
-        "apple/native/.build/engine-sources/mupen-next/mupen64plus-video-paraLLEl/parallel-rdp/LICENSE",
-        "apple/native/.build/public-engine-sources/mupen-next/mupen64plus-video-paraLLEl/parallel-rdp/LICENSE"
-      ]
-    },
-    {
-      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
-      "bytes": 35149,
-      "origins": [
-        "apple/native/.build/jgenesis-commercial/LICENSE",
-        "apple/native/.build/melonds/source/LICENSE",
-        "apple/native/BuildSupport/commercial170/spc700-free/LICENSE"
-      ]
-    },
-    {
-      "sha256": "8173d5c29b4f956d532781d2b86e4e30f83e6b7878dce18c919451d6ba707c90",
-      "bytes": 10850,
-      "origins": [
-        "apple/native/.build/jgenesis-commercial/frontend/egui-wgpu-fork/LICENSE-APACHE"
-      ]
-    },
-    {
-      "sha256": "95ca92f5f8ea5231f1580b3a2a799e8260af3114b900e1def5355a7f44bcf60c",
-      "bytes": 1092,
-      "origins": [
-        "apple/native/.build/jgenesis-commercial/frontend/egui-wgpu-fork/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "c90f6c00fb961170560299cbda28ca2d45804913aa8b2a9f36dbb8e0028d6930",
-      "bytes": 1637,
-      "origins": [
-        "apple/native/.build/melonds/deps/date/LICENSE.txt"
-      ]
-    },
-    {
-      "sha256": "12680bd1abee94f7f06279d5a1021b4b98e2e4bca22b77163efdababde965c65",
-      "bytes": 1065,
-      "origins": [
-        "apple/native/.build/melonds/deps/embed-binaries/LICENSE"
-      ]
-    },
-    {
-      "sha256": "a65fcc5a1095fc33cc37e4fff69366e49d7e92f613558a2b95ed1b70e33758b4",
-      "bytes": 1094,
-      "origins": [
-        "apple/native/.build/melonds/deps/fmt/LICENSE"
-      ]
-    },
-    {
-      "sha256": "b28aecf4796a6a22054167f0a976de13d9db335669d37afd2dc7ea4c335e1e13",
-      "bytes": 2960,
-      "origins": [
-        "apple/native/.build/melonds/deps/libslirp/COPYRIGHT",
-        "apple/native/.build/melonds/deps/melonds/src/net/libslirp/COPYRIGHT"
-      ]
-    },
-    {
-      "sha256": "319daefe38ebeead3df178e5937898a52d67c0c795f54f1c0bb10ac3b9cffb63",
-      "bytes": 26940,
-      "origins": [
-        "apple/native/.build/melonds/deps/melonds/src/blip-buf/license.txt",
-        "vendor/native/fceumm-ac0d00a.tar.gz!/src/ntsc/license.txt",
-        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/res/licenses/blip_buf.txt",
-        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/src/third-party/blip_buf/license.txt"
-      ]
-    },
-    {
-      "sha256": "1edd93c649f2ed5edb5a6afe9a616d8aa508dcf156f9cfbea6dc40e806488ece",
-      "bytes": 561,
-      "origins": [
-        "apple/native/.build/melonds/deps/melonds/src/frontend/qt_sdl/InputConfig/resources/LICENSE.md"
-      ]
-    },
-    {
-      "sha256": "ae3f7492114b3e1e8fb3c115ae4a1454a66888c42928fbd72776412fdadbde53",
-      "bytes": 900,
-      "origins": [
-        "apple/native/.build/melonds/deps/pntr/LICENSE.md"
-      ]
-    },
-    {
-      "sha256": "df70b74967209c811812d4305f666ab6cabf5d4c21bb96ad2046642145544b66",
-      "bytes": 1068,
-      "origins": [
-        "apple/native/.build/melonds/deps/yamc/LICENSE"
-      ]
-    },
-    {
-      "sha256": "e32ff4e00d9d94930537635291da39e7e612703334bf6fde8c7f1686fe8a45a2",
-      "bytes": 1002,
-      "origins": [
-        "apple/native/.build/melonds/deps/zlib/LICENSE"
-      ]
-    },
-    {
-      "sha256": "fc686023047ce5ce3a18a9b8a777156f0e475929d3de06bac279f3c025d2b2ca",
-      "bytes": 3509,
-      "origins": [
-        "apple/native/.build/melonds/deps/zlib/contrib/minizip/LICENSE.Info-Zip"
-      ]
-    },
-    {
-      "sha256": "db089274ce766da70f5b7d791029c3486f9f9e27c8c79c652689603d3192e802",
-      "bytes": 1094,
-      "origins": [
-        "apple/native/BuildSupport/offline160/licenses/dukex/presentation/FidelityFX-FSR-LICENSE.txt"
-      ]
-    },
-    {
-      "sha256": "572eb602c219b3371e74df019a094262867a17928edbebd5a8decf1ee46d06a4",
-      "bytes": 1406,
-      "origins": [
-        "apple/native/BuildSupport/offline160/licenses/dukex/presentation/xBR-LICENSE.txt"
-      ]
-    },
-    {
-      "sha256": "52df2c03d6cfc9ffec13c9d3626c530fc9ce0cbe41d5ea3d10cd46edeb1aeb38",
-      "bytes": 1099,
-      "origins": [
-        "apple/native/BuildSupport/offline160/licenses/dukex/subprojects/VulkanMemoryAllocator/LICENSE.txt"
-      ]
-    },
-    {
-      "sha256": "145ea96b4a4a04a1a7738d2a2bf9e830f861971e69606187b018d9e8fc0b95c7",
-      "bytes": 1738,
-      "origins": [
-        "apple/native/BuildSupport/offline160/licenses/dukex/subprojects/berkeley-softfloat-3/COPYING.txt"
-      ]
-    },
-    {
-      "sha256": "862c7f1238c07addea5e7af00ae4a9b6e59150029091c4261c896bcdce02a059",
-      "bytes": 1738,
-      "origins": [
-        "apple/native/BuildSupport/offline160/licenses/dukex/subprojects/berkeley-testfloat-3/COPYING.txt"
-      ]
-    },
-    {
-      "sha256": "8e12b62381d0513a969e4b9f4a397cadb7b78bdd57c6df9e75ae21114bd120a9",
-      "bytes": 1058,
-      "origins": [
-        "apple/native/BuildSupport/offline160/licenses/dukex/subprojects/genconfig/LICENSE.txt"
-      ]
-    },
-    {
-      "sha256": "04a0693a84f19e53d281ca98bbb0c86ca77251ab13769c6168e6684feb9a1436",
-      "bytes": 1066,
-      "origins": [
-        "apple/native/BuildSupport/offline160/licenses/dukex/subprojects/volk/LICENSE.md",
-        "third-party/MoltenVK/External/Volk/LICENSE.md"
-      ]
-    },
-    {
-      "sha256": "e9089da5950600267bb657503aba6eb59cb679b455c2997d341d83144144daab",
-      "bytes": 1336,
-      "origins": [
-        "apple/native/BuildSupport/offline160/licenses/play/License.txt",
-        "apple/native/BuildSupport/offline160/licenses/play/deps/Framework/License.txt"
-      ]
-    },
-    {
-      "sha256": "0ed1494d406def5805562b15067536e8e77dd8a164c5931b672a6dc9a18a646d",
-      "bytes": 1336,
-      "origins": [
-        "apple/native/BuildSupport/offline160/licenses/play/deps/CodeGen/License.txt"
-      ]
-    },
-    {
-      "sha256": "1879544076a493c8c7fb03595d3f1053a24dfc296acf89b511eca84398e19ba0",
-      "bytes": 1314,
-      "origins": [
-        "apple/native/BuildSupport/offline160/licenses/play/deps/Nuanceur/License.txt"
-      ]
-    },
-    {
-      "sha256": "bca3c56dd76cd327ae04f715f3ec0a0f12e0471f16f81d5f4308d0fe2cf469dc",
-      "bytes": 2280,
-      "origins": [
-        "apple/native/LICENSE.md"
-      ]
-    },
-    {
-      "sha256": "01c266bced4a434da0051174d6bee16a4c82cf634e2679b6155d40d75012390f",
-      "bytes": 126,
-      "origins": [
-        "cargo-vendor/aho-corasick-1.1.5/COPYING",
-        "cargo-vendor/byteorder-1.5.0/COPYING",
-        "cargo-vendor/memchr-2.8.3/COPYING"
-      ]
-    },
-    {
-      "sha256": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f",
-      "bytes": 1081,
-      "origins": [
-        "cargo-vendor/aho-corasick-1.1.5/LICENSE-MIT",
-        "cargo-vendor/byteorder-1.5.0/LICENSE-MIT",
-        "cargo-vendor/memchr-2.8.3/LICENSE-MIT"
+        "cargo-vendor/text_io-0.1.13/LICENSE.Apache-2.0"
       ]
     },
     {
@@ -1523,246 +1653,31 @@
       ]
     },
     {
-      "sha256": "4da95ec4ecb65b738d470b7d762894ad9c97da93e6cbfb18b570fc2c96f4b871",
-      "bytes": 1071,
-      "origins": [
-        "cargo-vendor/arrayvec-0.7.8/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "27995d58ad5c1145c1a8cd86244ce844886958a35eb2b78c6b772748669999ac",
-      "bytes": 1054,
-      "origins": [
-        "cargo-vendor/autocfg-1.5.1/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "90d7e062634054e6866d3c81e6a2b3058a840e6af733e98e80bdfe1a7dec6912",
-      "bytes": 1076,
-      "origins": [
-        "cargo-vendor/bincode-2.0.1/LICENSE.md",
-        "cargo-vendor/bincode_derive-2.0.1/LICENSE.md"
-      ]
-    },
-    {
-      "sha256": "8583712ee2b062ff3d4d6d3e16f19ff0f92bc3a0a4beeec11a81ef00146fbd4f",
-      "bytes": 1055,
-      "origins": [
-        "cargo-vendor/bitreader-0.3.11/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "65f94e99ddaf4f5d1782a6dae23f35d4293a9a01444a13135a6887017d353cee",
-      "bytes": 1059,
-      "origins": [
-        "cargo-vendor/bumpalo-3.20.3/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "e3ba223bb1423f0aad8c3dfce0fe3148db48926d41e6fbc3afbbf5ff9e1c89cb",
-      "bytes": 10398,
-      "origins": [
-        "cargo-vendor/bytemuck-1.25.2/LICENSE-APACHE",
-        "cargo-vendor/bytemuck_derive-1.12.1/LICENSE-APACHE"
-      ]
-    },
-    {
-      "sha256": "9df9ba60a11af705f2e451b53762686e615d86f76b169cf075c3237730dbd7e2",
-      "bytes": 1110,
-      "origins": [
-        "cargo-vendor/bytemuck-1.25.2/LICENSE-MIT",
-        "cargo-vendor/bytemuck_derive-1.12.1/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "84b34dd7608f7fb9b17bd588a6bf392bf7de504e2716f024a77d89f1b145a151",
-      "bytes": 851,
-      "origins": [
-        "cargo-vendor/bytemuck-1.25.2/LICENSE-ZLIB",
-        "cargo-vendor/bytemuck_derive-1.12.1/LICENSE-ZLIB",
-        "cargo-vendor/tinyvec-1.13.3/LICENSE-ZLIB.md"
-      ]
-    },
-    {
-      "sha256": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397",
-      "bytes": 1057,
-      "origins": [
-        "cargo-vendor/cc-1.10.0/LICENSE-MIT",
-        "cargo-vendor/cfg-if-1.0.5/LICENSE-MIT",
-        "cargo-vendor/find-msvc-tools-0.1.15/LICENSE-MIT",
-        "cargo-vendor/jobserver-0.1.35/LICENSE-MIT",
-        "cargo-vendor/js-sys-0.3.106/LICENSE-MIT",
-        "cargo-vendor/pkg-config-0.3.34/LICENSE-MIT",
-        "cargo-vendor/wasm-bindgen-0.2.129/LICENSE-MIT",
-        "cargo-vendor/wasm-bindgen-macro-0.2.129/LICENSE-MIT",
-        "cargo-vendor/wasm-bindgen-macro-support-0.2.129/LICENSE-MIT",
-        "cargo-vendor/wasm-bindgen-shared-0.2.129/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5",
-      "bytes": 10849,
-      "origins": [
-        "cargo-vendor/chacha20-0.10.2/LICENSE-APACHE",
-        "cargo-vendor/cpufeatures-0.3.1/LICENSE-APACHE"
-      ]
-    },
-    {
-      "sha256": "b8c6939380a400f53e11923d50fcc4dd2fa1ba8339fd9d04cda38a0251b6c9b0",
-      "bytes": 1082,
-      "origins": [
-        "cargo-vendor/chacha20-0.10.2/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "73b9dc2e79c7308998dd30296e073aefaefb944a68fb89aa412c23c0edcabcaa",
-      "bytes": 1082,
-      "origins": [
-        "cargo-vendor/cpufeatures-0.3.1/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "470355a7eed93fcc4281ec2e0f82ca3b94e7af1e4d83629f91de8cfac34d750e",
-      "bytes": 10846,
-      "origins": [
-        "cargo-vendor/crc-3.4.0/LICENSE-APACHE"
-      ]
-    },
-    {
-      "sha256": "3488679340a49ecc34d342c4009d2dabf76f4a21f12aec2ca99b15805d656544",
-      "bytes": 1074,
-      "origins": [
-        "cargo-vendor/crc-3.4.0/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "d3cdb764b98283ee7c3a3cea8d374e2a2957322374378d1f3263f4d512741fc3",
-      "bytes": 11346,
-      "origins": [
-        "cargo-vendor/crc-catalog-2.5.0/LICENSES/Apache-2.0.txt"
-      ]
-    },
-    {
-      "sha256": "5ef8fcfb6cccec8fcae043c834099a60c8b7406408db576e026d2b7e67dc5cf5",
-      "bytes": 1073,
-      "origins": [
-        "cargo-vendor/crc-catalog-2.5.0/LICENSES/MIT.txt"
-      ]
-    },
-    {
-      "sha256": "edd65bdd88957a205c47d53fa499eed8865a70320f0f03f6391668cb304ea376",
-      "bytes": 11349,
-      "origins": [
-        "cargo-vendor/deranged-0.5.9/LICENSE-Apache"
-      ]
-    },
-    {
-      "sha256": "231c837c45eb53f108fb48929e488965bc4fcc14e9ea21d35f50e6b99d98685b",
-      "bytes": 1062,
-      "origins": [
-        "cargo-vendor/deranged-0.5.9/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "7365cc8878a1d7ce155a58c4ca09c3d7a6be413efa5334a80ea842912b669349",
-      "bytes": 1049,
-      "origins": [
-        "cargo-vendor/equivalent-1.0.3/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "082d31fbdecbda9720686a2b76cee810dcd2630f2d16bc4cc9accd411b6a76fd",
-      "bytes": 11385,
-      "origins": [
-        "cargo-vendor/ext-trait-1.0.1/LICENSE-APACHE",
-        "cargo-vendor/never-say-never-6.6.666/LICENSE-APACHE"
-      ]
-    },
-    {
-      "sha256": "e8d3901c28744304957435401f88b9114a73ad95f35bf569e20c4feeb7e2db35",
-      "bytes": 1112,
-      "origins": [
-        "cargo-vendor/ext-trait-1.0.1/LICENSE-MIT",
-        "cargo-vendor/never-say-never-6.6.666/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "484f7e56d0e3178613b2f12d478a46fc2f2a6646c7ea14a7329bb805ccc2a82b",
-      "bytes": 899,
-      "origins": [
-        "cargo-vendor/ext-trait-1.0.1/LICENSE-ZLIB",
-        "cargo-vendor/never-say-never-6.6.666/LICENSE-ZLIB"
-      ]
-    },
-    {
-      "sha256": "025436edff4cfcdde17a5811fdea78892d8482efd1abdec5a17872d07a4f2112",
-      "bytes": 1062,
-      "origins": [
-        "cargo-vendor/flate2-1.1.10/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "275c491d6d1160553c32fd6127061d7f9606c3ea25abfad6ca3f6ed088785427",
-      "bytes": 10874,
-      "origins": [
-        "cargo-vendor/futures-core-0.3.34/LICENSE-APACHE",
-        "cargo-vendor/futures-task-0.3.34/LICENSE-APACHE",
-        "cargo-vendor/futures-util-0.3.34/LICENSE-APACHE"
-      ]
-    },
-    {
-      "sha256": "6652c868f35dfe5e8ef636810a4e576b9d663f3a17fb0f5613ad73583e1b88fd",
+      "sha256": "a65fcc5a1095fc33cc37e4fff69366e49d7e92f613558a2b95ed1b70e33758b4",
       "bytes": 1094,
       "origins": [
-        "cargo-vendor/futures-core-0.3.34/LICENSE-MIT",
-        "cargo-vendor/futures-task-0.3.34/LICENSE-MIT",
-        "cargo-vendor/futures-util-0.3.34/LICENSE-MIT"
+        "apple/native/.build/melonds/deps/fmt/LICENSE"
       ]
     },
     {
-      "sha256": "aaff376532ea30a0cd5330b9502ad4a4c8bf769c539c87ffe78819d188a18ebf",
-      "bytes": 10849,
+      "sha256": "a6996dcf0c334281f734560926e079b2dbbd5b78e81c0ca00a413ec01e1cd2fb",
+      "bytes": 18010,
       "origins": [
-        "cargo-vendor/getrandom-0.4.3/LICENSE-APACHE"
+        "vendor/native/fceumm-ac0d00a.tar.gz!/Copying",
+        "vendor/native/pce-4eee99c4.tar.gz!/beetle-pce-fast-libretro-4eee99c451f85ebe66d1591de88b892015b23059/COPYING",
+        "vendor/native/saturn-d0d84178.tar.gz!/beetle-saturn-libretro-d0d841784845da0278a9a49554cc4cc01597ee2c/COPYING",
+        "vendor/native/supergrafx-9c11dcd2.tar.gz!/COPYING"
       ]
     },
     {
-      "sha256": "523a42c25d245dde9c015f882cec7f4555aad883382a6cf19b4b7d9b2cd5419b",
-      "bytes": 1130,
+      "sha256": "a853c2ffec17057872340eee242ae4d96cbf2b520ae27d903e1b2fef1a5f9d1c",
+      "bytes": 7639,
       "origins": [
-        "cargo-vendor/getrandom-0.4.3/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "ff8f68cb076caf8cefe7a6430d4ac086ce6af2ca8ce2c4e5a2004d4552ef52a2",
-      "bytes": 1060,
-      "origins": [
-        "cargo-vendor/hashbrown-0.17.1/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "ecc269ef87fd38a1d98e30bfac9ba964a9dbd9315c3770fed98d4d7cb5882055",
-      "bytes": 1049,
-      "origins": [
-        "cargo-vendor/indexmap-2.14.2/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "f0f2b1f498ed9a6af37f46b3b2cf656f08b6067bc79ce1e52ce97531a5b77672",
-      "bytes": 11385,
-      "origins": [
-        "cargo-vendor/lending-iterator-0.1.7/LICENSE-APACHE",
-        "cargo-vendor/nougat-0.2.4/LICENSE-APACHE",
-        "cargo-vendor/polonius-the-crab-0.2.1/LICENSE-APACHE"
-      ]
-    },
-    {
-      "sha256": "3ffde8c8cdebf3c361b971bed7476006ede9c5ec8a6250137c7dc55383ed9e5b",
-      "bytes": 1112,
-      "origins": [
-        "cargo-vendor/lending-iterator-0.1.7/LICENSE-MIT",
-        "cargo-vendor/nougat-0.2.4/LICENSE-MIT",
-        "cargo-vendor/polonius-the-crab-0.2.1/LICENSE-MIT"
+        "apple/native/.build/engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/LICENSE.LESSER",
+        "apple/native/.build/engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/lightning/COPYING.LESSER",
+        "apple/native/.build/public-engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/LICENSE.LESSER",
+        "apple/native/.build/public-engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/lightning/COPYING.LESSER",
+        "vendor/native/pcsx-c8816799.tar.gz!/pcsx_rearmed-c8816799b50388e61cfe237fe2cdbb7d8175f20a/deps/lightning/COPYING.LESSER"
       ]
     },
     {
@@ -1775,301 +1690,43 @@
       ]
     },
     {
-      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
-      "bytes": 9723,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5",
+      "bytes": 10849,
       "origins": [
-        "cargo-vendor/libc-0.2.191/LICENSE-APACHE",
-        "cargo-vendor/paste-1.0.15/LICENSE-APACHE",
-        "cargo-vendor/proc-macro2-1.0.107/LICENSE-APACHE",
-        "cargo-vendor/quote-1.0.47/LICENSE-APACHE",
-        "cargo-vendor/rustversion-1.0.23/LICENSE-APACHE",
-        "cargo-vendor/serde-1.0.229/LICENSE-APACHE",
-        "cargo-vendor/serde_core-1.0.229/LICENSE-APACHE",
-        "cargo-vendor/serde_derive-1.0.229/LICENSE-APACHE",
-        "cargo-vendor/syn-2.0.119/LICENSE-APACHE",
-        "cargo-vendor/syn-3.0.9/LICENSE-APACHE",
-        "cargo-vendor/thiserror-2.0.21/LICENSE-APACHE",
-        "cargo-vendor/thiserror-impl-2.0.21/LICENSE-APACHE",
-        "cargo-vendor/unicode-ident-1.0.27/LICENSE-APACHE"
+        "cargo-vendor/chacha20-0.10.2/LICENSE-APACHE",
+        "cargo-vendor/cpufeatures-0.3.1/LICENSE-APACHE"
       ]
     },
     {
-      "sha256": "123a331b5dbf04c30097fa43b8f858bc85df671fe776de498d01f3d6b7c1f69e",
-      "bytes": 1066,
+      "sha256": "a9a5c0646d67d9cc2596fab2ee1cac35bdcd4057d9dea7745425bd3cfcab40f0",
+      "bytes": 1086,
       "origins": [
-        "cargo-vendor/libc-0.2.191/LICENSE-MIT"
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/gason/LICENSE"
       ]
     },
     {
-      "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
-      "bytes": 1071,
+      "sha256": "aaf135472f81c5b4a0dca9367e5bb5e9750032b5bebe5442b36e4c0a47430df3",
+      "bytes": 17337,
       "origins": [
-        "cargo-vendor/log-0.4.34/LICENSE-MIT",
-        "cargo-vendor/num-0.4.3/LICENSE-MIT",
-        "cargo-vendor/num-bigint-0.4.8/LICENSE-MIT",
-        "cargo-vendor/num-complex-0.4.6/LICENSE-MIT",
-        "cargo-vendor/num-derive-0.4.2/LICENSE-MIT",
-        "cargo-vendor/num-integer-0.1.47/LICENSE-MIT",
-        "cargo-vendor/num-iter-0.1.46/LICENSE-MIT",
-        "cargo-vendor/num-rational-0.4.2/LICENSE-MIT",
-        "cargo-vendor/num-traits-0.2.19/LICENSE-MIT",
-        "cargo-vendor/regex-1.13.1/LICENSE-MIT",
-        "cargo-vendor/regex-automata-0.4.18/LICENSE-MIT",
-        "cargo-vendor/regex-syntax-0.8.11/LICENSE-MIT"
+        "apple/native/.build/engine-sources/dolphin-retro/LICENSES/GPL-2.0-or-later.txt",
+        "apple/native/.build/public-engine-sources/dolphin-retro/LICENSES/GPL-2.0-or-later.txt"
       ]
     },
     {
-      "sha256": "ad9f07faa5f6f671df93523293cf8c1ce24f14886fa101013c21536c7890c59b",
-      "bytes": 1084,
+      "sha256": "aaff376532ea30a0cd5330b9502ad4a4c8bf769c539c87ffe78819d188a18ebf",
+      "bytes": 10849,
       "origins": [
-        "cargo-vendor/lzma-rs-perf-exp-0.2.1/LICENSE"
+        "cargo-vendor/getrandom-0.4.3/LICENSE-APACHE"
       ]
     },
     {
-      "sha256": "388e98b08de12ba8a9d4575883c8b0386c747cea188ed459380fc58d60da15c9",
-      "bytes": 11385,
+      "sha256": "ab15fd526bd8dd18a9e77ebc139656bf4d33e97fc7238cd11bf60e2b9b8666c6",
+      "bytes": 17987,
       "origins": [
-        "cargo-vendor/macro_rules_attribute-0.1.3/LICENSE-APACHE",
-        "cargo-vendor/macro_rules_attribute-proc_macro-0.1.3/LICENSE-APACHE"
-      ]
-    },
-    {
-      "sha256": "603fb27ef3266ea516872eefd9ae587746b8c34614a35c0fb24e4e9e0c17e137",
-      "bytes": 1112,
-      "origins": [
-        "cargo-vendor/macro_rules_attribute-0.1.3/LICENSE-MIT",
-        "cargo-vendor/macro_rules_attribute-proc_macro-0.1.3/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "1c41c0e19caa2c20b0adfeb8219b606b21b7c63914aa3ae74ae3e091d7ce09ca",
-      "bytes": 899,
-      "origins": [
-        "cargo-vendor/macro_rules_attribute-0.1.3/LICENSE-ZLIB",
-        "cargo-vendor/macro_rules_attribute-proc_macro-0.1.3/LICENSE-ZLIB"
-      ]
-    },
-    {
-      "sha256": "3c92a19e541755a97e51b4c963aa4335bbf93b64574dfbc36a5636c2899f3ab9",
-      "bytes": 1054,
-      "origins": [
-        "cargo-vendor/multiversion-0.9.2/LICENSE-MIT",
-        "cargo-vendor/multiversion-macros-0.9.2/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
-      "bytes": 10174,
-      "origins": [
-        "cargo-vendor/num-conv-0.2.2/LICENSE-Apache",
-        "cargo-vendor/pin-project-lite-0.2.17/LICENSE-APACHE",
-        "cargo-vendor/time-0.3.55/LICENSE-Apache",
-        "cargo-vendor/time-core-0.1.9/LICENSE-Apache"
-      ]
-    },
-    {
-      "sha256": "e2e245f2b566d0bfafb0f6a04c16b82d710c4e6e7d799e39bb4ef6e541b85b98",
-      "bytes": 1050,
-      "origins": [
-        "cargo-vendor/num-conv-0.2.2/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
-      "bytes": 1023,
-      "origins": [
-        "cargo-vendor/once_cell-1.21.4/LICENSE-MIT",
-        "cargo-vendor/paste-1.0.15/LICENSE-MIT",
-        "cargo-vendor/pin-project-lite-0.2.17/LICENSE-MIT",
-        "cargo-vendor/proc-macro2-1.0.107/LICENSE-MIT",
-        "cargo-vendor/quote-1.0.47/LICENSE-MIT",
-        "cargo-vendor/rustversion-1.0.23/LICENSE-MIT",
-        "cargo-vendor/serde-1.0.229/LICENSE-MIT",
-        "cargo-vendor/serde_core-1.0.229/LICENSE-MIT",
-        "cargo-vendor/serde_derive-1.0.229/LICENSE-MIT",
-        "cargo-vendor/syn-1.0.109/LICENSE-MIT",
-        "cargo-vendor/syn-2.0.119/LICENSE-MIT",
-        "cargo-vendor/syn-3.0.9/LICENSE-MIT",
-        "cargo-vendor/thiserror-2.0.21/LICENSE-MIT",
-        "cargo-vendor/thiserror-impl-2.0.21/LICENSE-MIT",
-        "cargo-vendor/unicode-ident-1.0.27/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "155420c6403d4e0fca34105e3c03fdd6939b64c393c7ec6f95f5b72c5474eab0",
-      "bytes": 11349,
-      "origins": [
-        "cargo-vendor/powerfmt-0.2.1/LICENSE-Apache"
-      ]
-    },
-    {
-      "sha256": "070dbc7dda03a29296f2d58bdb9b7331af90f2abc9f31df22875d1eabaf29852",
-      "bytes": 1062,
-      "origins": [
-        "cargo-vendor/powerfmt-0.2.1/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "90eb64f0279b0d9432accfa6023ff803bc4965212383697eee27a0f426d5f8d5",
-      "bytes": 569,
-      "origins": [
-        "cargo-vendor/rand-0.10.3/COPYRIGHT"
-      ]
-    },
-    {
-      "sha256": "35242e7a83f69875e6edeff02291e688c97caafe2f8902e4e19b49d3e78b4cab",
-      "bytes": 9724,
-      "origins": [
-        "cargo-vendor/rand-0.10.3/LICENSE-APACHE"
-      ]
-    },
-    {
-      "sha256": "209fbbe0ad52d9235e37badf9cadfe4dbdc87203179c0899e738b39ade42177b",
-      "bytes": 1117,
-      "origins": [
-        "cargo-vendor/rand-0.10.3/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "92b81db30f7ab6d693e0af5661a40d273ca1947e891123ed823924192c10cbc7",
-      "bytes": 478,
-      "origins": [
-        "cargo-vendor/rand_core-0.10.1/COPYRIGHT"
-      ]
-    },
-    {
-      "sha256": "6df43f6f4b5d4587f3d8d71e45532c688fd168afa5fe89d571cb32fa09c4ef51",
-      "bytes": 10282,
-      "origins": [
-        "cargo-vendor/rand_core-0.10.1/LICENSE-APACHE"
-      ]
-    },
-    {
-      "sha256": "8b6e9feec03e7c9a5facb26855cecd31662bf989b636bcfe79521bdf8ac863f0",
-      "bytes": 1076,
-      "origins": [
-        "cargo-vendor/rand_core-0.10.1/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "74db5baf44a41b1000312c673544b3374e4198af5605c7f9080a402cec42cfa3",
-      "bytes": 2847,
-      "origins": [
-        "cargo-vendor/regex-syntax-0.8.11/src/unicode_tables/LICENSE-UNICODE"
-      ]
-    },
-    {
-      "sha256": "95bd3988beee069fa2848f648dab43cc6e0b2add2ad6bcb17360caf749802bcc",
-      "bytes": 9722,
-      "origins": [
-        "cargo-vendor/rustc-hash-2.1.3/LICENSE-APACHE"
-      ]
-    },
-    {
-      "sha256": "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652",
-      "bytes": 1022,
-      "origins": [
-        "cargo-vendor/rustc-hash-2.1.3/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "d715eb0d9cfe1cc0cc22577e387436aa568b31ca272a7c837004dc0cdde925b5",
-      "bytes": 1075,
-      "origins": [
-        "cargo-vendor/ruzstd-0.9.1/LICENSE"
-      ]
-    },
-    {
-      "sha256": "249fdb6694467dd615b259f7ddde07be3f8ae5a72cecebb0e24f6629af4215fe",
-      "bytes": 11349,
-      "origins": [
-        "cargo-vendor/serde_spanned-1.1.2/LICENSE-APACHE",
-        "cargo-vendor/toml-1.1.8+spec-1.1.0/LICENSE-APACHE",
-        "cargo-vendor/toml_datetime-1.1.2+spec-1.1.0/LICENSE-APACHE",
-        "cargo-vendor/toml_parser-1.1.5+spec-1.1.0/LICENSE-APACHE",
-        "cargo-vendor/toml_writer-1.1.3+spec-1.1.0/LICENSE-APACHE"
-      ]
-    },
-    {
-      "sha256": "6efb0476a1cc085077ed49357026d8c173bf33017278ef440f222fb9cbcb66e6",
-      "bytes": 1062,
-      "origins": [
-        "cargo-vendor/serde_spanned-1.1.2/LICENSE-MIT",
-        "cargo-vendor/toml-1.1.8+spec-1.1.0/LICENSE-MIT",
-        "cargo-vendor/toml_datetime-1.1.2+spec-1.1.0/LICENSE-MIT",
-        "cargo-vendor/toml_parser-1.1.5+spec-1.1.0/LICENSE-MIT",
-        "cargo-vendor/toml_writer-1.1.3+spec-1.1.0/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "553fffcd9b1cb158bc3e9edc35da85ca5c3b3d7d2e61c883ebcfa8a65814b583",
-      "bytes": 566,
-      "origins": [
-        "cargo-vendor/shlex-2.0.1/LICENSE-APACHE"
-      ]
-    },
-    {
-      "sha256": "4455bf75a91154108304cb283e0fea9948c14f13e20d60887cf2552449dea3b1",
-      "bytes": 1092,
-      "origins": [
-        "cargo-vendor/shlex-2.0.1/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "8ce0830173fdac609dfb4ea603fdc002c2f4af0dc9b1a005653f5da9cf534b18",
-      "bytes": 1055,
-      "origins": [
-        "cargo-vendor/slab-0.4.12/LICENSE"
-      ]
-    },
-    {
-      "sha256": "a4c1d4736327f3f8d0b610d74a9e9ba0cf703f5828c5c4bc723dc65fbdaccdd1",
-      "bytes": 562,
-      "origins": [
-        "cargo-vendor/text_io-0.1.13/LICENSE.Apache-2.0"
-      ]
-    },
-    {
-      "sha256": "6ef1eec0b0aa9f4258eaa768afc3950359cc2db2d6088861721bbaa9e65370fc",
-      "bytes": 1064,
-      "origins": [
-        "cargo-vendor/text_io-0.1.13/LICENSE.MIT"
-      ]
-    },
-    {
-      "sha256": "2537228d9a1b44a5dc595241349cae7090b326c8de165aaf89bfddef4a00d0fc",
-      "bytes": 1057,
-      "origins": [
-        "cargo-vendor/time-0.3.55/LICENSE-MIT",
-        "cargo-vendor/time-core-0.1.9/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "fd80a26fbb3f644af1fa994134446702932968519797227e07a1368dea80f0bc",
-      "bytes": 1023,
-      "origins": [
-        "cargo-vendor/tinyvec-1.13.3/LICENSE-MIT.md"
-      ]
-    },
-    {
-      "sha256": "f59bcb1c02654665f78a5f290bae76b6358137675f6459f51e6d474a4623d8ea",
-      "bytes": 1080,
-      "origins": [
-        "cargo-vendor/twox-hash-2.1.5/LICENSE.txt"
-      ]
-    },
-    {
-      "sha256": "f7db81051789b729fea528a63ec4c938fdcb93d9d61d97dc8cc2e9df6d47f2a1",
-      "bytes": 1995,
-      "origins": [
-        "cargo-vendor/unicode-ident-1.0.27/LICENSE-UNICODE"
-      ]
-    },
-    {
-      "sha256": "fa84f04c495f2533ba036606acc8644b50077752f17bc2e943235459dda1c12c",
-      "bytes": 11541,
-      "origins": [
-        "cargo-vendor/unty-0.0.4/LICENSE-APACHE"
+        "apple/native/.build/engine-sources/azahar/misc/licenses/gplv2.txt",
+        "apple/native/.build/engine-sources/mupen-next/GLideN64/licenses/GlideHQ/gpl-2.0.txt",
+        "apple/native/.build/melonds/deps/melonds/src/dolphin/license_dolphin.txt",
+        "apple/native/.build/public-engine-sources/mupen-next/GLideN64/licenses/GlideHQ/gpl-2.0.txt"
       ]
     },
     {
@@ -2080,10 +1737,291 @@
       ]
     },
     {
-      "sha256": "ddcbb6914b62d5bebc3cb58ebe8d2738ffa9a48555469bbcbe65159979b878cf",
-      "bytes": 1103,
+      "sha256": "ac24e5ea920e4318e4d02c4086ae51f53cfb03feed06c18df1019e7ada1ec7bc",
+      "bytes": 458,
       "origins": [
-        "cargo-vendor/virtue-0.0.18/LICENSE.md"
+        "apple/native/.build/engine-sources/azahar/externals/vulkan-headers/LICENSE.md",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/Vulkan-Headers/LICENSE.md"
+      ]
+    },
+    {
+      "sha256": "ad9f07faa5f6f671df93523293cf8c1ce24f14886fa101013c21536c7890c59b",
+      "bytes": 1084,
+      "origins": [
+        "cargo-vendor/lzma-rs-perf-exp-0.2.1/LICENSE"
+      ]
+    },
+    {
+      "sha256": "adb783e734e906d1f46db5df29991dbde84bdb0ceab502ac2febb44fe3c2b5f4",
+      "bytes": 54705,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/glslang/LICENSE.txt",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/glslang/LICENSE.txt"
+      ]
+    },
+    {
+      "sha256": "ae3f7492114b3e1e8fb3c115ae4a1454a66888c42928fbd72776412fdadbde53",
+      "bytes": 900,
+      "origins": [
+        "apple/native/.build/melonds/deps/pntr/LICENSE.md"
+      ]
+    },
+    {
+      "sha256": "af272c1b4dd08dd61d43e001d3134119d03ca7a2b057a64f7355fdf27fbea3dd",
+      "bytes": 12876,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/cpu_features/LICENSE"
+      ]
+    },
+    {
+      "sha256": "af5a2bc623f97a8707322a971e78067c8a1fd25c7493328b52a9baafee97e735",
+      "bytes": 288,
+      "origins": [
+        "apple/native/.build/engine-sources/flycast/core/deps/picotcp/COPYING",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/picotcp/COPYING"
+      ]
+    },
+    {
+      "sha256": "b28aecf4796a6a22054167f0a976de13d9db335669d37afd2dc7ea4c335e1e13",
+      "bytes": 2960,
+      "origins": [
+        "apple/native/.build/melonds/deps/libslirp/COPYRIGHT",
+        "apple/native/.build/melonds/deps/melonds/src/net/libslirp/COPYRIGHT"
+      ]
+    },
+    {
+      "sha256": "b332d6f507142c66a0e904838b6437e6273734589c22a16b57392b89bfdccb2a",
+      "bytes": 820,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/tinygltf/tinygltf/examples/common/nativefiledialog/LICENSE"
+      ]
+    },
+    {
+      "sha256": "b3e2d68c9c8c48e16f3e55e1d9a99882956e8c9a813ce2aca52b8cb031e2ccea",
+      "bytes": 886,
+      "origins": [
+        "vendor/native/desmume-95b4d798.tar.gz!/desmume-95b4d798731caa809125b6c3c11d17cc332ff6ef/desmume/src/utils/AsmJit/COPYING.txt"
+      ]
+    },
+    {
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "bytes": 11357,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/aemu_postoffice/ext/tinyalloc-master/LICENSE"
+      ]
+    },
+    {
+      "sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d",
+      "bytes": 16706,
+      "origins": [
+        "apple/native/.build/engine-sources/flycast/core/deps/libunwind/libunwind/LICENSE.TXT",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/libunwind/libunwind/LICENSE.TXT"
+      ]
+    },
+    {
+      "sha256": "b634ab5640e258563c536e658cad87080553df6f34f62269a21d554844e58bfe",
+      "bytes": 26526,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ffmpeg/COPYING.LGPLv2.1"
+      ]
+    },
+    {
+      "sha256": "b6a03c1803eb58ffb1f1278d5c7d4096c4c116e66dce8a7553e8c77d163c3438",
+      "bytes": 2373,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/src/third-party/libpng/contrib/gregbook/LICENSE",
+        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/src/third-party/libpng/contrib/gregbook/LICENSE"
+      ]
+    },
+    {
+      "sha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0",
+      "bytes": 1078,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/LICENSES/MIT.txt",
+        "apple/native/.build/public-engine-sources/dolphin-retro/LICENSES/MIT.txt"
+      ]
+    },
+    {
+      "sha256": "b892df015d615340b15989687a20c34f9c86b9421efc470f8862d12e3f3e8de0",
+      "bytes": 551,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/src/android/app/src/main/java/org/citra/citra_emu/model/License.kt"
+      ]
+    },
+    {
+      "sha256": "b896e32fb2cdb3fc8b3b6fd854706fca4ac55619fbb6d5eb2429cb05ee338966",
+      "bytes": 1913,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/FatFs/LICENSE.txt",
+        "apple/native/.build/melonds/deps/melonds/src/fatfs/LICENSE.txt",
+        "apple/native/.build/public-engine-sources/dolphin-retro/Externals/FatFs/LICENSE.txt"
+      ]
+    },
+    {
+      "sha256": "b89aeb7c2a164a0576786dd2a8b57f2fb628b23981f0a06bd77e2f99a9befa0f",
+      "bytes": 16814,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/spirv_cross/SPIRV-Cross/LICENSES/CC-BY-4.0.txt",
+        "third-party/MoltenVK/External/SPIRV-Cross/LICENSES/CC-BY-4.0.txt",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/CC-BY-4.0.txt",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/SPIRV-Cross/LICENSES/CC-BY-4.0.txt"
+      ]
+    },
+    {
+      "sha256": "b8c6939380a400f53e11923d50fcc4dd2fa1ba8339fd9d04cda38a0251b6c9b0",
+      "bytes": 1082,
+      "origins": [
+        "cargo-vendor/chacha20-0.10.2/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "b94e67785852db5abe84b362aa4d950d98a02e1969caa2321df71672bf433631",
+      "bytes": 1074,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/cpp-jwt/LICENSE"
+      ]
+    },
+    {
+      "sha256": "ba9eb79ec5551d94158613a539acaf2a2c1072e12a6d6f2c845d3c74cb1f65d8",
+      "bytes": 1796,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/Common/UI/Notice.h"
+      ]
+    },
+    {
+      "sha256": "bab1aafdac47692ef40fc4bd0fef600b0b86cb32ee234ba118030d7269397c80",
+      "bytes": 1769,
+      "origins": [
+        "vendor/native/sameboy-1506d804.tar.gz!/iOS/License.html"
+      ]
+    },
+    {
+      "sha256": "bca3c56dd76cd327ae04f715f3ec0a0f12e0471f16f81d5f4308d0fe2cf469dc",
+      "bytes": 2280,
+      "origins": [
+        "apple/native/LICENSE.md"
+      ]
+    },
+    {
+      "sha256": "bcb02973ef6e87ea73d331b3a80df7748407f17efdb784b61b47e0e610d3bb5c",
+      "bytes": 2775,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/liblzma/COPYING",
+        "apple/native/.build/public-engine-sources/dolphin-retro/Externals/liblzma/COPYING"
+      ]
+    },
+    {
+      "sha256": "bd36c8b474855fa294c2ec5c184544478ef3720aad37d65a6296a4f264fd2d3b",
+      "bytes": 2149,
+      "origins": [
+        "apple/native/.build/engine-sources/flycast/core/deps/freetype/LICENSE.TXT",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/freetype/LICENSE.TXT",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/freetype/LICENSE.TXT"
+      ]
+    },
+    {
+      "sha256": "bdafa318b8e637d600ca1b60545e894881977a16a16b74809c95e805701621e3",
+      "bytes": 886,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/lodepng/lodepng/LICENSE",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/tinygltf/tinygltf/examples/common/LICENSE.lodepng"
+      ]
+    },
+    {
+      "sha256": "bf3c9bf6a176c890c7387c71f9ae5bcaf9d33324b9d4a5f8524a6f8bf3063097",
+      "bytes": 1569,
+      "origins": [
+        "third-party/MoltenVK/External/cereal/include/cereal/external/rapidjson/msinttypes/LICENSE"
+      ]
+    },
+    {
+      "sha256": "bf5e22b9dce8464064ae17a48ea1133c3369ac9e1d80ef9e320e5219aa14ea9b",
+      "bytes": 5345,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/src/third-party/libpng/LICENSE",
+        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/src/third-party/libpng/LICENSE"
+      ]
+    },
+    {
+      "sha256": "bf7017a73a95ea63bf3716b13ec2bcd79c92942356e3408c6fb66332bad6d977",
+      "bytes": 1614,
+      "origins": [
+        "cargo-vendor/zstd-sys-2.1.2+zstd.1.5.7/LICENSE.BSD-3-Clause"
+      ]
+    },
+    {
+      "sha256": "bf820c034966a3b6be050bb85f94ec841a0b972bd5d477e362337d0574b5c219",
+      "bytes": 1078,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/rcheevos/rcheevos/LICENSE",
+        "apple/native/.build/engine-sources/flycast/core/deps/rcheevos/LICENSE",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/rcheevos/LICENSE",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/rcheevos/LICENSE"
+      ]
+    },
+    {
+      "sha256": "bfb1112d49db5b1daecdfef24bd7e2f3ea0bafb33aa67aa0ab51e2bf8407c03d",
+      "bytes": 838,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/Zlib.txt"
+      ]
+    },
+    {
+      "sha256": "c6dbbf828498be844a89eaa3b84adbab3199e342eb5cb2ed2f0d4ba7ec0f38a3",
+      "bytes": 1896,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/bzip2/bzip2/LICENSE"
+      ]
+    },
+    {
+      "sha256": "c80c5789748d955c4a650562baa0d750494e2c7128c2ca66aaebe2e3c4e198bf",
+      "bytes": 1083,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/imgui/imgui/LICENSE.txt",
+        "apple/native/BuildSupport/offline160/licenses/dukex/subprojects/imgui/LICENSE.txt"
+      ]
+    },
+    {
+      "sha256": "c82445ab7080ec1891017466196787b38725f9431aa7de68b7cb3d9a230c6a39",
+      "bytes": 448,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/.github/workflows/license-header.yml"
+      ]
+    },
+    {
+      "sha256": "c82a5eb55679a3fd483d992c2428e66ee4b9b05b5b78b4ac916692368955b526",
+      "bytes": 1771,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/curl/curl/LICENSES/BSD-4-Clause-UC.txt"
+      ]
+    },
+    {
+      "sha256": "c8da3722b796121a751f8ea76d9edcad976de2313b23345a895154b448744ee0",
+      "bytes": 861,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/LicenseRef-jsoncpp-public-domain.txt"
+      ]
+    },
+    {
+      "sha256": "c90f6c00fb961170560299cbda28ca2d45804913aa8b2a9f36dbb8e0028d6930",
+      "bytes": 1637,
+      "origins": [
+        "apple/native/.build/melonds/deps/date/LICENSE.txt"
+      ]
+    },
+    {
+      "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566",
+      "bytes": 1338,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/boost/LICENSE_1_0.txt",
+        "apple/native/.build/engine-sources/azahar/externals/catch2/LICENSE.txt",
+        "apple/native/.build/engine-sources/azahar/externals/dynarmic/externals/catch/LICENSE.txt",
+        "apple/native/.build/engine-sources/flycast/core/deps/asio/asio/LICENSE_1_0.txt",
+        "apple/native/.build/engine-sources/flycast/core/deps/nowide/LICENSE",
+        "apple/native/.build/melonds/deps/span-lite/LICENSE.txt",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/asio/asio/LICENSE_1_0.txt",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/nowide/LICENSE",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/freetype/subprojects/dlg/LICENSE"
       ]
     },
     {
@@ -2091,13 +2029,6 @@
       "bytes": 1023,
       "origins": [
         "cargo-vendor/winnow-1.0.4/LICENSE-MIT"
-      ]
-    },
-    {
-      "sha256": "e72111c52b7d96ebe25348dee19f0744f444d3c95ae6b1ecb6ccaecc5bce05ba",
-      "bytes": 856,
-      "origins": [
-        "cargo-vendor/zlib-rs-0.6.8/LICENSE"
       ]
     },
     {
@@ -2109,174 +2040,10 @@
       ]
     },
     {
-      "sha256": "bf7017a73a95ea63bf3716b13ec2bcd79c92942356e3408c6fb66332bad6d977",
-      "bytes": 1614,
+      "sha256": "cec0db5f6d7ed6b3a72647bd50aed02e13c3377fd44382b96dc2915534c042ad",
+      "bytes": 2714,
       "origins": [
-        "cargo-vendor/zstd-sys-2.1.2+zstd.1.5.7/LICENSE.BSD-3-Clause"
-      ]
-    },
-    {
-      "sha256": "7574ee25dc96588606528d19bb883f84f7640ed459eb320e89ed882cf4625b68",
-      "bytes": 46807,
-      "origins": [
-        "source-evidence/NOTICE-INDEX.json"
-      ]
-    },
-    {
-      "sha256": "ea43b1de38a6f90c488800d66dec1ed671e68cda530266bc96951fb5b6307613",
-      "bytes": 23503,
-      "origins": [
-        "third-party/MoltenVK/External/SPIRV-Tools/external/spirv-headers/LICENSE"
-      ]
-    },
-    {
-      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
-      "bytes": 17023,
-      "origins": [
-        "third-party/MoltenVK/External/SPIRV-Tools/external/spirv-headers/LICENSES/CC-BY-4.0.txt"
-      ]
-    },
-    {
-      "sha256": "6d7c9e9d7d12c8d3753bdb24417b84819ba4d6c2f025c37948113d86dc81eef9",
-      "bytes": 1087,
-      "origins": [
-        "third-party/MoltenVK/External/SPIRV-Tools/external/spirv-headers/LICENSES/MIT.txt"
-      ]
-    },
-    {
-      "sha256": "95ad366d23fadf701d355bc45fb8b82ae2d700239471d35d41286ac3b08ff903",
-      "bytes": 495,
-      "origins": [
-        "third-party/MoltenVK/External/Vulkan-Headers/LICENSE.md"
-      ]
-    },
-    {
-      "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
-      "bytes": 10280,
-      "origins": [
-        "third-party/MoltenVK/External/Vulkan-Tools/LICENSES/Apache-2.0.txt"
-      ]
-    },
-    {
-      "sha256": "58604a126af6a671ea390ee3d5b3e42228aa59b2858fb7af1d5b20b31739ccbb",
-      "bytes": 1542,
-      "origins": [
-        "third-party/MoltenVK/External/cereal/LICENSE"
-      ]
-    },
-    {
-      "sha256": "642e7003561473f4f1f3dd09e053ee2a6ecfb0563e961a3392e914295f9d350c",
-      "bytes": 921,
-      "origins": [
-        "third-party/MoltenVK/External/cereal/include/cereal/external/LICENSE"
-      ]
-    },
-    {
-      "sha256": "dc2ef044e52a4c0ea784f9b54229775ce5275505cc09f21283dfa301e9c962fa",
-      "bytes": 678,
-      "origins": [
-        "third-party/MoltenVK/External/cereal/include/cereal/external/rapidjson/LICENSE"
-      ]
-    },
-    {
-      "sha256": "bf3c9bf6a176c890c7387c71f9ae5bcaf9d33324b9d4a5f8524a6f8bf3063097",
-      "bytes": 1569,
-      "origins": [
-        "third-party/MoltenVK/External/cereal/include/cereal/external/rapidjson/msinttypes/LICENSE"
-      ]
-    },
-    {
-      "sha256": "794bf3b2ecf5cf0c740ac6c524d66ce6284c4b1de1f983d21a242b8abbeb9720",
-      "bytes": 2804,
-      "origins": [
-        "third-party/MoltenVK/External/cereal/include/cereal/external/rapidxml/license.txt"
-      ]
-    },
-    {
-      "sha256": "b3e2d68c9c8c48e16f3e55e1d9a99882956e8c9a813ce2aca52b8cb031e2ccea",
-      "bytes": 886,
-      "origins": [
-        "vendor/native/desmume-95b4d798.tar.gz!/desmume-95b4d798731caa809125b6c3c11d17cc332ff6ef/desmume/src/utils/AsmJit/COPYING.txt"
-      ]
-    },
-    {
-      "sha256": "9f2e250993c6206fac643824e05e5a0d7d3e0895d9e09a5ce4b12bc2610afc11",
-      "bytes": 18326,
-      "origins": [
-        "vendor/native/desmume-95b4d798.tar.gz!/desmume-95b4d798731caa809125b6c3c11d17cc332ff6ef/license.txt"
-      ]
-    },
-    {
-      "sha256": "a6996dcf0c334281f734560926e079b2dbbd5b78e81c0ca00a413ec01e1cd2fb",
-      "bytes": 18010,
-      "origins": [
-        "vendor/native/fceumm-ac0d00a.tar.gz!/Copying",
-        "vendor/native/pce-4eee99c4.tar.gz!/beetle-pce-fast-libretro-4eee99c451f85ebe66d1591de88b892015b23059/COPYING",
-        "vendor/native/saturn-d0d84178.tar.gz!/beetle-saturn-libretro-d0d841784845da0278a9a49554cc4cc01597ee2c/COPYING"
-      ]
-    },
-    {
-      "sha256": "d2ab5758336489da61c12cc5bb757da5339c4ae9001f9bb0562b4370249af814",
-      "bytes": 1466,
-      "origins": [
-        "vendor/native/pce-4eee99c4.tar.gz!/beetle-pce-fast-libretro-4eee99c451f85ebe66d1591de88b892015b23059/mednafen/tremor/COPYING",
-        "vendor/native/saturn-d0d84178.tar.gz!/beetle-saturn-libretro-d0d841784845da0278a9a49554cc4cc01597ee2c/mednafen/tremor/COPYING"
-      ]
-    },
-    {
-      "sha256": "0efb4db8000c609bd2f06e61fcbc59af05519d122f5b3597b7c493224946c61d",
-      "bytes": 18730,
-      "origins": [
-        "vendor/native/pcsx-c8816799.tar.gz!/pcsx_rearmed-c8816799b50388e61cfe237fe2cdbb7d8175f20a/COPYING"
-      ]
-    },
-    {
-      "sha256": "d7bf9d064ac3e5840f9dd02422b7eeec4f1fd03f37fadbd043602be5e882304f",
-      "bytes": 25283,
-      "origins": [
-        "vendor/native/pcsx-c8816799.tar.gz!/pcsx_rearmed-c8816799b50388e61cfe237fe2cdbb7d8175f20a/deps/lightrec/COPYING"
-      ]
-    },
-    {
-      "sha256": "2618c32cea85fc3e6f721c5c66b8f1a26e15f9c7f74b444a1ba77efc8b160306",
-      "bytes": 6077,
-      "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/Common/UI/Notice.cpp"
-      ]
-    },
-    {
-      "sha256": "ba9eb79ec5551d94158613a539acaf2a2c1072e12a6d6f2c845d3c74cb1f65d8",
-      "bytes": 1796,
-      "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/Common/UI/Notice.h"
-      ]
-    },
-    {
-      "sha256": "ff265754cbb2e0d3b674f90a79ef5bbaa1f7f1075aec9f5e241524520e5049fa",
-      "bytes": 19740,
-      "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/LICENSE.TXT"
-      ]
-    },
-    {
-      "sha256": "56e17fd90cc5ff1d930db979bfbfcffeb7f311a57068f435e14e4f0548b3a4fc",
-      "bytes": 5472,
-      "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/COPYING.adoc"
-      ]
-    },
-    {
-      "sha256": "d3910dee6fe9fe134856d76268fe82adb1ade1ecf51b3568b7da6b94894b88f3",
-      "bytes": 10283,
-      "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/Apache-2.0.txt"
-      ]
-    },
-    {
-      "sha256": "e11af671c491efac2f94c1d752bea92f4308ca2450c7d11e582e4b48c40e4de1",
-      "bytes": 1480,
-      "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/BSD-3-Clause.txt"
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/src/external/jsoncpp/LICENSE"
       ]
     },
     {
@@ -2287,143 +2054,53 @@
       ]
     },
     {
-      "sha256": "6a573fb2f9082662978cf21fb153096df0a1981deaea7dbc10a11046fe005d9f",
-      "bytes": 6916,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358,
       "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/CC0-1.0.txt"
+        "apple/native/.build/engine-sources/azahar/externals/spirv-tools/LICENSE",
+        "apple/native/.build/engine-sources/azahar/externals/spirv-tools/utils/vscode/src/lsp/LICENSE",
+        "apple/native/.build/engine-sources/azahar/externals/vulkan-headers/LICENSES/Apache-2.0.txt",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/MoltenVK/LICENSE",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/Vulkan-Headers/LICENSES/Apache-2.0.txt",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/mbedtls/LICENSE",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/spirv_cross/SPIRV-Cross/LICENSE",
+        "apple/native/.build/public-engine-sources/dolphin-retro/Externals/MoltenVK/LICENSE",
+        "apple/native/.build/public-engine-sources/dolphin-retro/Externals/mbedtls/LICENSE",
+        "cargo-vendor/bitreader-0.3.11/LICENSE-APACHE",
+        "cargo-vendor/claxon-0.4.3/license",
+        "cargo-vendor/multiversion-0.9.2/LICENSE-APACHE",
+        "cargo-vendor/multiversion-macros-0.9.2/LICENSE-APACHE",
+        "cargo-vendor/tinyvec-1.13.3/LICENSE-APACHE.md",
+        "third-party/MoltenVK/External/SPIRV-Cross/LICENSE",
+        "third-party/MoltenVK/External/SPIRV-Tools/LICENSE",
+        "third-party/MoltenVK/External/SPIRV-Tools/utils/vscode/src/lsp/LICENSE",
+        "third-party/MoltenVK/External/Vulkan-Headers/LICENSES/Apache-2.0.txt",
+        "third-party/MoltenVK/External/Vulkan-Tools/LICENSE.txt",
+        "third-party/MoltenVK/LICENSE",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSE",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/SPIRV-Cross/LICENSE"
       ]
     },
     {
-      "sha256": "f2ec607f67bb0dd3053b49835b02110d5cd0f8eb6da3aac4dc0b142a6b299be9",
-      "bytes": 823,
+      "sha256": "d011d1e02cb32b71c1ce2922ab41a2e2ad30f4ecf8de22c078d53618205abc05",
+      "bytes": 1292,
       "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/ISC.txt"
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/lz4/lz4/contrib/djgpp/LICENSE"
       ]
     },
     {
-      "sha256": "631caf35cb7a21e2fa4e36617551d72566cc272619003857fe79b82399e8e8fa",
-      "bytes": 1036,
+      "sha256": "d077528956532ae91d04a40c1c17cc6839e8327661ce958b12e94857b0dee4ed",
+      "bytes": 908,
       "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/LicenseRef-Khronos-Free-Use-License-for-Software-and-Documentation.txt"
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/SFML/license.txt",
+        "apple/native/.build/public-engine-sources/dolphin-retro/Externals/SFML/license.txt"
       ]
     },
     {
-      "sha256": "35dea6a17ed48dfac1e6ad8491332af7acee340681ffc61a631ec9a1656476ad",
-      "bytes": 2827,
+      "sha256": "d0e2763686a48723084d9ed57b8e0f88d90a6c4a1c8d14a0f5bd2dc8494a57a5",
+      "bytes": 35223,
       "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/LicenseRef-KhronosSpecCopyright-WithNormativeWording-v10.txt"
-      ]
-    },
-    {
-      "sha256": "c8da3722b796121a751f8ea76d9edcad976de2313b23345a895154b448744ee0",
-      "bytes": 861,
-      "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/LicenseRef-jsoncpp-public-domain.txt"
-      ]
-    },
-    {
-      "sha256": "797832eda5ff4360a10fee3be94a3250995e76423b79675c9c44204c37ca492d",
-      "bytes": 4292,
-      "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/OFL-1.1-RFN.txt"
-      ]
-    },
-    {
-      "sha256": "567675401b124cc8ed1095665474a4f04ce1ed44134ee7eec46a691e387a1397",
-      "bytes": 1211,
-      "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/Unlicense.txt"
-      ]
-    },
-    {
-      "sha256": "bfb1112d49db5b1daecdfef24bd7e2f3ea0bafb33aa67aa0ab51e2bf8407c03d",
-      "bytes": 838,
-      "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/Zlib.txt"
-      ]
-    },
-    {
-      "sha256": "3f46b895fbd843c7abe5b49fa0b699a5093fc8b345940a7c587948c57cc8f270",
-      "bytes": 1070,
-      "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/src/external/jnipp/LICENSE"
-      ]
-    },
-    {
-      "sha256": "cec0db5f6d7ed6b3a72647bd50aed02e13c3377fd44382b96dc2915534c042ad",
-      "bytes": 2714,
-      "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/src/external/jsoncpp/LICENSE"
-      ]
-    },
-    {
-      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
-      "bytes": 11357,
-      "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/aemu_postoffice/ext/tinyalloc-master/LICENSE"
-      ]
-    },
-    {
-      "sha256": "791ff46884cdf62188f17cabf0f099b462e92ec68986033bab243b26573b7573",
-      "bytes": 1079,
-      "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/armips/LICENSE.txt"
-      ]
-    },
-    {
-      "sha256": "1b265537c97cfb422ffb52492c96979943f54fab8746a6dd38d8329953d487cc",
-      "bytes": 1086,
-      "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/armips/ext/filesystem/LICENSE"
-      ]
-    },
-    {
-      "sha256": "3ed00dd93c75655599456c83cba2f69c6824fd53f24fc24206ba27b65057709d",
-      "bytes": 1110,
-      "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/cityhash/COPYING"
-      ]
-    },
-    {
-      "sha256": "af272c1b4dd08dd61d43e001d3134119d03ca7a2b057a64f7355fdf27fbea3dd",
-      "bytes": 12876,
-      "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/cpu_features/LICENSE"
-      ]
-    },
-    {
-      "sha256": "a9a5c0646d67d9cc2596fab2ee1cac35bdcd4057d9dea7745425bd3cfcab40f0",
-      "bytes": 1086,
-      "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/gason/LICENSE"
-      ]
-    },
-    {
-      "sha256": "5d246dd2537307b80fed9ba5fdddf5d0fe7a8f023393a071182b9daed56b40fe",
-      "bytes": 1052,
-      "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/libdeflate/COPYING"
-      ]
-    },
-    {
-      "sha256": "7480ae23b082c05ad9823896163d78f3a96f1beadce51f29c96cf898545c27e5",
-      "bytes": 1527,
-      "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/miniupnp/LICENSE"
-      ]
-    },
-    {
-      "sha256": "48b79daf8988912a6c2dadffdbbba99f514817dddf11cebf3605a5f0dbfafa94",
-      "bytes": 1068,
-      "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/naett-lib/LICENSE"
-      ]
-    },
-    {
-      "sha256": "e82bc3dd03400aecabe12201219ba14750dbc4b36faab58663a7a6068548d372",
-      "bytes": 880,
-      "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/nanosvg/LICENSE.txt"
+        "vendor/native/gearsystem-d18766b3.tar.gz!/platforms/ios/LICENSE/LICENSE.txt"
       ]
     },
     {
@@ -2434,45 +2111,98 @@
       ]
     },
     {
-      "sha256": "837402bd25fad9b704265801ca3f92566a98157c1f9a7acd6f446299ba1c305a",
-      "bytes": 1057,
+      "sha256": "d2ab5758336489da61c12cc5bb757da5339c4ae9001f9bb0562b4370249af814",
+      "bytes": 1466,
       "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/rapidjson/bin/jsonschema/LICENSE"
+        "vendor/native/pce-4eee99c4.tar.gz!/beetle-pce-fast-libretro-4eee99c451f85ebe66d1591de88b892015b23059/mednafen/tremor/COPYING",
+        "vendor/native/saturn-d0d84178.tar.gz!/beetle-saturn-libretro-d0d841784845da0278a9a49554cc4cc01597ee2c/mednafen/tremor/COPYING",
+        "vendor/native/supergrafx-9c11dcd2.tar.gz!/mednafen/tremor/COPYING"
       ]
     },
     {
-      "sha256": "394faaedb93c1da8ecbd61322518834908fee64381117e01a611bf9fac20baa6",
-      "bytes": 2175,
+      "sha256": "d3910dee6fe9fe134856d76268fe82adb1ade1ecf51b3568b7da6b94894b88f3",
+      "bytes": 10283,
       "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/rapidjson/contrib/natvis/LICENSE"
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/Apache-2.0.txt"
       ]
     },
     {
-      "sha256": "5e0df8c845c742e76f2f64d2d9ce1b7e74a2422fddbc577ae6a56319083de0bf",
-      "bytes": 11386,
+      "sha256": "d3baf3a54943cf12a994c85867a18dec84f810901b2f2878ddfd77efcc3c150f",
+      "bytes": 18272,
       "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/rapidjson/thirdparty/gtest/googlemock/scripts/generator/LICENSE"
+        "apple/native/.build/engine-sources/azahar/externals/faad2/faad2/COPYING"
       ]
     },
     {
-      "sha256": "5221a36a801b981fbdfda7b87db64cff231a3b88223a066c325411b539df796f",
-      "bytes": 1475,
+      "sha256": "d3c80be055d94d798eaa786116e84fa0b010bc11420b5d2060d978ea77845436",
+      "bytes": 867,
       "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/snappy/COPYING"
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/zlib-ng/zlib-ng/LICENSE.md"
       ]
     },
     {
-      "sha256": "1070640aab24327354da44507627d1db6c67482a6facc8375a758796a05e3dff",
-      "bytes": 1337,
+      "sha256": "d3cdb764b98283ee7c3a3cea8d374e2a2957322374378d1f3263f4d512741fc3",
+      "bytes": 11346,
       "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/udis86/LICENSE"
+        "cargo-vendor/crc-catalog-2.5.0/LICENSES/Apache-2.0.txt"
       ]
     },
     {
-      "sha256": "b634ab5640e258563c536e658cad87080553df6f34f62269a21d554844e58bfe",
-      "bytes": 26526,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
+      "bytes": 17023,
       "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ffmpeg/COPYING.LGPLv2.1"
+        "third-party/MoltenVK/External/SPIRV-Tools/external/spirv-headers/LICENSES/CC-BY-4.0.txt"
+      ]
+    },
+    {
+      "sha256": "d5a549e4a7b88cb696d0db15b21830061131ed361257ab399a33ca08ce0b33d5",
+      "bytes": 210,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/sdl2/SDL/test/COPYING",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/SDL/SDL/test/COPYING"
+      ]
+    },
+    {
+      "sha256": "d638447635afa6837615553bcebbba60bc80a0e62ed9b158b4ed969e8bb72421",
+      "bytes": 1082,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/cpp-optparse/cpp-optparse/LICENSE"
+      ]
+    },
+    {
+      "sha256": "d6cb0e9e560f51085556949a84af12b79a00f10ab8b66c752537faf7cd665572",
+      "bytes": 18097,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/src/third-party/libpng/contrib/gregbook/COPYING",
+        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/src/third-party/libpng/contrib/gregbook/COPYING"
+      ]
+    },
+    {
+      "sha256": "d715eb0d9cfe1cc0cc22577e387436aa568b31ca272a7c837004dc0cdde925b5",
+      "bytes": 1075,
+      "origins": [
+        "cargo-vendor/ruzstd-0.9.1/LICENSE"
+      ]
+    },
+    {
+      "sha256": "d7bf9d064ac3e5840f9dd02422b7eeec4f1fd03f37fadbd043602be5e882304f",
+      "bytes": 25283,
+      "origins": [
+        "vendor/native/pcsx-c8816799.tar.gz!/pcsx_rearmed-c8816799b50388e61cfe237fe2cdbb7d8175f20a/deps/lightrec/COPYING"
+      ]
+    },
+    {
+      "sha256": "d808ce217e5b611854da622b57ec29fe545584c48bc5352fae72a4b6e5074a15",
+      "bytes": 23330,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/openal-soft/COPYING"
+      ]
+    },
+    {
+      "sha256": "da2fb2c802537710cdebe8881b55356d07b88a6dbd7e4b912ac3091f8e6b5f6a",
+      "bytes": 934,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/imgui/imgui/examples/libs/glfw/COPYING.txt"
       ]
     },
     {
@@ -2483,10 +2213,163 @@
       ]
     },
     {
-      "sha256": "2e06d5375e3ec10363d38f4ba0680d311ff4f2024ee7f9ddb1c7a2e2bb8a5585",
-      "bytes": 3940,
+      "sha256": "dae65ccf728227eff8e10194437078a5628047b9f55d796039688e7ca8e3aa4e",
+      "bytes": 947,
       "origins": [
-        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ffmpeg/LICENSE.md"
+        "apple/native/.build/engine-sources/azahar/externals/sdl2/SDL/visualtest/COPYING.txt"
+      ]
+    },
+    {
+      "sha256": "db089274ce766da70f5b7d791029c3486f9f9e27c8c79c652689603d3192e802",
+      "bytes": 1094,
+      "origins": [
+        "apple/native/BuildSupport/offline160/licenses/dukex/presentation/FidelityFX-FSR-LICENSE.txt"
+      ]
+    },
+    {
+      "sha256": "dc2ef044e52a4c0ea784f9b54229775ce5275505cc09f21283dfa301e9c962fa",
+      "bytes": 678,
+      "origins": [
+        "third-party/MoltenVK/External/cereal/include/cereal/external/rapidjson/LICENSE"
+      ]
+    },
+    {
+      "sha256": "ddcbb6914b62d5bebc3cb58ebe8d2738ffa9a48555469bbcbe65159979b878cf",
+      "bytes": 1103,
+      "origins": [
+        "cargo-vendor/virtue-0.0.18/LICENSE.md"
+      ]
+    },
+    {
+      "sha256": "df70b74967209c811812d4305f666ab6cabf5d4c21bb96ad2046642145544b66",
+      "bytes": 1068,
+      "origins": [
+        "apple/native/.build/melonds/deps/yamc/LICENSE"
+      ]
+    },
+    {
+      "sha256": "e11af671c491efac2f94c1d752bea92f4308ca2450c7d11e582e4b48c40e4de1",
+      "bytes": 1480,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/BSD-3-Clause.txt"
+      ]
+    },
+    {
+      "sha256": "e18f1989333b70044b2adfb7dc2f905d0119dbdcac3bc9f4bc9d540e3a29de5b",
+      "bytes": 1088,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/curl/curl/COPYING"
+      ]
+    },
+    {
+      "sha256": "e2e245f2b566d0bfafb0f6a04c16b82d710c4e6e7d799e39bb4ef6e541b85b98",
+      "bytes": 1050,
+      "origins": [
+        "cargo-vendor/num-conv-0.2.2/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "e32ff4e00d9d94930537635291da39e7e612703334bf6fde8c7f1686fe8a45a2",
+      "bytes": 1002,
+      "origins": [
+        "apple/native/.build/melonds/deps/zlib/LICENSE"
+      ]
+    },
+    {
+      "sha256": "e3989a7aee74a91b8cdbdfe204a6b8d03288863ec7533a21c51f1a987ba73539",
+      "bytes": 1493,
+      "origins": [
+        "apple/native/.build/engine-sources/flycast/core/deps/libchdr/LICENSE.txt",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/libchdr/LICENSE.txt",
+        "apple/native/BuildSupport/offline160/licenses/flycast/core/deps/libchdr/LICENSE.txt",
+        "apple/native/BuildSupport/offline160/licenses/play/deps/libchdr/LICENSE.txt",
+        "vendor/native/pce-4eee99c4.tar.gz!/beetle-pce-fast-libretro-4eee99c451f85ebe66d1591de88b892015b23059/deps/libchdr/LICENSE.txt",
+        "vendor/native/pcsx-c8816799.tar.gz!/pcsx_rearmed-c8816799b50388e61cfe237fe2cdbb7d8175f20a/deps/libchdr/LICENSE.txt",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/libchdr/LICENSE.txt"
+      ]
+    },
+    {
+      "sha256": "e3ba223bb1423f0aad8c3dfce0fe3148db48926d41e6fbc3afbbf5ff9e1c89cb",
+      "bytes": 10398,
+      "origins": [
+        "cargo-vendor/bytemuck-1.25.2/LICENSE-APACHE",
+        "cargo-vendor/bytemuck_derive-1.12.1/LICENSE-APACHE"
+      ]
+    },
+    {
+      "sha256": "e5e99718209e94baaf3e9cbf6f64aa3329c9e73c63b1ab47e10f29d81974e6f3",
+      "bytes": 1122,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/dynarmic/externals/zydis/LICENSE"
+      ]
+    },
+    {
+      "sha256": "e6ead88c5894007be86546cfd24d6c0b9fafcbf832fc27d8330eb7d46cedc84a",
+      "bytes": 1731,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/glslang/license-checker.cfg",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/glslang/license-checker.cfg"
+      ]
+    },
+    {
+      "sha256": "e72111c52b7d96ebe25348dee19f0744f444d3c95ae6b1ecb6ccaecc5bce05ba",
+      "bytes": 856,
+      "origins": [
+        "cargo-vendor/zlib-rs-0.6.8/LICENSE"
+      ]
+    },
+    {
+      "sha256": "e82bc3dd03400aecabe12201219ba14750dbc4b36faab58663a7a6068548d372",
+      "bytes": 880,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/nanosvg/LICENSE.txt"
+      ]
+    },
+    {
+      "sha256": "e8d3901c28744304957435401f88b9114a73ad95f35bf569e20c4feeb7e2db35",
+      "bytes": 1112,
+      "origins": [
+        "cargo-vendor/ext-trait-1.0.1/LICENSE-MIT",
+        "cargo-vendor/never-say-never-6.6.666/LICENSE-MIT"
+      ]
+    },
+    {
+      "sha256": "e9089da5950600267bb657503aba6eb59cb679b455c2997d341d83144144daab",
+      "bytes": 1336,
+      "origins": [
+        "apple/native/BuildSupport/offline160/licenses/play/License.txt",
+        "apple/native/BuildSupport/offline160/licenses/play/deps/Framework/License.txt"
+      ]
+    },
+    {
+      "sha256": "e998149780068b7adc7d3b5559c0415240d8c07760d52b7012aebe5ab7d8a04f",
+      "bytes": 876,
+      "origins": [
+        "apple/native/.build/engine-sources/flycast/core/deps/tinygettext/external/tinycmmc/LICENSE.md",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/tinygettext/external/tinycmmc/LICENSE.md",
+        "apple/native/BuildSupport/offline160/licenses/flycast/core/deps/tinygettext/external/tinycmmc/LICENSE.md"
+      ]
+    },
+    {
+      "sha256": "ea43b1de38a6f90c488800d66dec1ed671e68cda530266bc96951fb5b6307613",
+      "bytes": 23503,
+      "origins": [
+        "third-party/MoltenVK/External/SPIRV-Tools/external/spirv-headers/LICENSE"
+      ]
+    },
+    {
+      "sha256": "ebd1cb387d2a0dc5cda74796ca1334df4494e81a6b5e01164434453ea96469c1",
+      "bytes": 1065,
+      "origins": [
+        "apple/native/.build/engine-sources/flycast/shell/apple/emulator-ios/emulator/iCade-iOS/LICENSE",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/shell/apple/emulator-ios/emulator/iCade-iOS/LICENSE"
+      ]
+    },
+    {
+      "sha256": "ecc269ef87fd38a1d98e30bfac9ba964a9dbd9315c3770fed98d4d7cb5882055",
+      "bytes": 1049,
+      "origins": [
+        "cargo-vendor/indexmap-2.14.2/LICENSE-MIT"
       ]
     },
     {
@@ -2494,6 +2377,182 @@
       "bytes": 17984,
       "origins": [
         "vendor/native/tia-6ae5bf99.tar.gz!/tia-6ae5bf99/COPYING"
+      ]
+    },
+    {
+      "sha256": "edd65bdd88957a205c47d53fa499eed8865a70320f0f03f6391668cb304ea376",
+      "bytes": 11349,
+      "origins": [
+        "cargo-vendor/deranged-0.5.9/LICENSE-Apache"
+      ]
+    },
+    {
+      "sha256": "f0f2b1f498ed9a6af37f46b3b2cf656f08b6067bc79ce1e52ce97531a5b77672",
+      "bytes": 11385,
+      "origins": [
+        "cargo-vendor/lending-iterator-0.1.7/LICENSE-APACHE",
+        "cargo-vendor/nougat-0.2.4/LICENSE-APACHE",
+        "cargo-vendor/polonius-the-crab-0.2.1/LICENSE-APACHE"
+      ]
+    },
+    {
+      "sha256": "f2ec607f67bb0dd3053b49835b02110d5cd0f8eb6da3aac4dc0b142a6b299be9",
+      "bytes": 823,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/OpenXR-SDK/LICENSES/ISC.txt"
+      ]
+    },
+    {
+      "sha256": "f56ab0392925231e34dd008a7670bb5c5ead490203bc9e125de3106fef642a27",
+      "bytes": 1099,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/VulkanMemoryAllocator/LICENSE.txt"
+      ]
+    },
+    {
+      "sha256": "f59bcb1c02654665f78a5f290bae76b6358137675f6459f51e6d474a4623d8ea",
+      "bytes": 1080,
+      "origins": [
+        "cargo-vendor/twox-hash-2.1.5/LICENSE.txt"
+      ]
+    },
+    {
+      "sha256": "f68d76b9c1c2271422e55134ea94cf71f2ac3fc3ed6a7ec6b83a1a0538753214",
+      "bytes": 874,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/ed25519/license.txt",
+        "apple/native/.build/public-engine-sources/dolphin-retro/Externals/ed25519/license.txt"
+      ]
+    },
+    {
+      "sha256": "f7d74004cc75778cae46c5f0139f244d67c07ef64cf51937e8272352197dcb18",
+      "bytes": 1480,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/sdl2/SDL/src/video/yuv2rgb/LICENSE",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/SDL/SDL/src/video/yuv2rgb/LICENSE"
+      ]
+    },
+    {
+      "sha256": "f7db81051789b729fea528a63ec4c938fdcb93d9d61d97dc8cc2e9df6d47f2a1",
+      "bytes": 1995,
+      "origins": [
+        "cargo-vendor/unicode-ident-1.0.27/LICENSE-UNICODE"
+      ]
+    },
+    {
+      "sha256": "f9c375a1be4a41f7b70301dd83c91cb89e41567478859b77eef375a52d782505",
+      "bytes": 18091,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/zstd/COPYING",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/zstd/zstd/COPYING",
+        "apple/native/.build/engine-sources/flycast/core/deps/libchdr/deps/zstd-1.5.6/COPYING",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/libchdr/deps/zstd-1.5.6/COPYING",
+        "cargo-vendor/zstd-sys-2.1.2+zstd.1.5.7/zstd/COPYING",
+        "vendor/native/pce-4eee99c4.tar.gz!/beetle-pce-fast-libretro-4eee99c451f85ebe66d1591de88b892015b23059/deps/zstd/COPYING",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/libchdr/deps/zstd-1.5.6/COPYING",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/zstd/COPYING"
+      ]
+    },
+    {
+      "sha256": "f9ed9e332236c47042fcefdceae341418a8a67bc67bda0f4fd620296f69c44d6",
+      "bytes": 1174,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/cpp-ipc/cpp-ipc/LICENSE"
+      ]
+    },
+    {
+      "sha256": "fa84f04c495f2533ba036606acc8644b50077752f17bc2e943235459dda1c12c",
+      "bytes": 11541,
+      "origins": [
+        "cargo-vendor/unty-0.0.4/LICENSE-APACHE"
+      ]
+    },
+    {
+      "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+      "bytes": 16726,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/mGBA/mgba/LICENSE",
+        "apple/native/.build/engine-sources/flycast/core/deps/libjuice/LICENSE",
+        "apple/native/.build/public-engine-sources/flycast-interpreter/core/deps/libjuice/LICENSE",
+        "vendor/native/mgba-0.10.5.tar.gz!/mgba-26b7884bc25a5933960f3cdcd98bac1ae14d42e2/LICENSE"
+      ]
+    },
+    {
+      "sha256": "fab5d630b6474d7729a9cd8bff584e3c5d685259815228a12477015852a42596",
+      "bytes": 1057,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/dynarmic/externals/biscuit/LICENSE.md"
+      ]
+    },
+    {
+      "sha256": "fb5436aa63d1b71a8dfbf74ecaf1a5b4e1ec4df7f80074d11fec99284f69ca5f",
+      "bytes": 264,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/sdl2/SDL/src/hidapi/LICENSE-orig.txt",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/SDL/SDL/src/hidapi/LICENSE-orig.txt",
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/hidapi/hidapi-src/LICENSE-orig.txt"
+      ]
+    },
+    {
+      "sha256": "fbeaca472f4f70e276dd1106ca5097435967a22ad6c1d8200aef7ad9f70aaf3f",
+      "bytes": 1305,
+      "origins": [
+        "apple/native/.build/engine-sources/dolphin-retro/Externals/spirv_cross/SPIRV-Cross/LICENSES/LicenseRef-KhronosFreeUse.txt",
+        "third-party/MoltenVK/External/SPIRV-Cross/LICENSES/LicenseRef-KhronosFreeUse.txt",
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/ext/SPIRV-Cross/LICENSES/LicenseRef-KhronosFreeUse.txt"
+      ]
+    },
+    {
+      "sha256": "fc686023047ce5ce3a18a9b8a777156f0e475929d3de06bac279f3c025d2b2ca",
+      "bytes": 3509,
+      "origins": [
+        "apple/native/.build/melonds/deps/zlib/contrib/minizip/LICENSE.Info-Zip"
+      ]
+    },
+    {
+      "sha256": "fc82ca8b6fdb18d4e3e85cfd8ab58d1bcd3f1b29abe782895abd91d64763f8e7",
+      "bytes": 35068,
+      "origins": [
+        "apple/native/.build/engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/lightning/COPYING",
+        "apple/native/.build/public-engine-sources/mupen-next/mupen64plus-rsp-paraLLEl/lightning/COPYING",
+        "vendor/native/pcsx-c8816799.tar.gz!/pcsx_rearmed-c8816799b50388e61cfe237fe2cdbb7d8175f20a/deps/lightning/COPYING"
+      ]
+    },
+    {
+      "sha256": "fd80a26fbb3f644af1fa994134446702932968519797227e07a1368dea80f0bc",
+      "bytes": 1023,
+      "origins": [
+        "cargo-vendor/tinyvec-1.13.3/LICENSE-MIT.md"
+      ]
+    },
+    {
+      "sha256": "fe3eea6c599e23a00c08c5f5cb2320c30adc8f8687db5fcec9b79a662c53ff6b",
+      "bytes": 35120,
+      "origins": [
+        "apple/native/.build/bsnes-commercial/LICENSE",
+        "apple/native/COPYING"
+      ]
+    },
+    {
+      "sha256": "ff04ae7e6a468587fe59434fee2e67c0e2a749b592c794b764ff80f30b94a084",
+      "bytes": 4812,
+      "origins": [
+        "apple/native/.build/engine-sources/azahar/externals/sirit/sirit/externals/SPIRV-Headers/LICENSE",
+        "apple/native/.build/engine-sources/azahar/externals/spirv-headers/LICENSE"
+      ]
+    },
+    {
+      "sha256": "ff265754cbb2e0d3b674f90a79ef5bbaa1f7f1075aec9f5e241524520e5049fa",
+      "bytes": 19740,
+      "origins": [
+        "vendor/native/ppsspp-31e94fcf-veta-free-atlases.tar.gz!/ppsspp/LICENSE.TXT"
+      ]
+    },
+    {
+      "sha256": "ff8f68cb076caf8cefe7a6430d4ac086ce6af2ca8ce2c4e5a2004d4552ef52a2",
+      "bytes": 1060,
+      "origins": [
+        "cargo-vendor/hashbrown-0.17.1/LICENSE-MIT"
       ]
     }
   ]

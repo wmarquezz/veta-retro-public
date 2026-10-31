@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "build": 211,
+  "appStoreApproved": false,
+  "engineChanges": true,
+  "sourceManifestFiles": 103894,
+  "scope": "Verified cartridge header normalization, Rocket mapper, SPC700 timing correction and pinned compatibility cores; see RELEASE-1.0.0-rc.12.md"
+}

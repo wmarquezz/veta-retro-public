@@ -15,8 +15,9 @@ struct DeviceReadiness {
         var includedDSEngines: Set<DSGameEngine> = [.desmume]
         var includedInterpreterConsoles: Set<GameConsole> = []
         var includedWebAssemblyConsoles: Set<GameConsole> = []
+        var includedCompatibilityFrameworks: Set<String> = []
         static func == (lhs: Self, rhs: Self) -> Bool {
-            lhs.metalAvailable == rhs.metalAvailable && lhs.physicalMemory == rhs.physicalMemory && lhs.processorCount == rhs.processorCount && lhs.osVersion.majorVersion == rhs.osVersion.majorVersion && lhs.osVersion.minorVersion == rhs.osVersion.minorVersion && lhs.osVersion.patchVersion == rhs.osVersion.patchVersion && lhs.simulator == rhs.simulator && lhs.jitAvailable == rhs.jitAvailable && lhs.experimentalBuild == rhs.experimentalBuild && lhs.includedConsoles == rhs.includedConsoles && lhs.includedDSEngines == rhs.includedDSEngines && lhs.includedInterpreterConsoles == rhs.includedInterpreterConsoles && lhs.includedWebAssemblyConsoles == rhs.includedWebAssemblyConsoles
+            lhs.metalAvailable == rhs.metalAvailable && lhs.physicalMemory == rhs.physicalMemory && lhs.processorCount == rhs.processorCount && lhs.osVersion.majorVersion == rhs.osVersion.majorVersion && lhs.osVersion.minorVersion == rhs.osVersion.minorVersion && lhs.osVersion.patchVersion == rhs.osVersion.patchVersion && lhs.simulator == rhs.simulator && lhs.jitAvailable == rhs.jitAvailable && lhs.experimentalBuild == rhs.experimentalBuild && lhs.includedConsoles == rhs.includedConsoles && lhs.includedDSEngines == rhs.includedDSEngines && lhs.includedInterpreterConsoles == rhs.includedInterpreterConsoles && lhs.includedWebAssemblyConsoles == rhs.includedWebAssemblyConsoles && lhs.includedCompatibilityFrameworks == rhs.includedCompatibilityFrameworks
         }
     }
     enum Status: String, CaseIterable { case included, experimental, requiresJIT, unavailable }
@@ -112,7 +113,10 @@ struct DeviceReadiness {
             physicalMemory: ProcessInfo.processInfo.physicalMemory,
             processorCount: ProcessInfo.processInfo.activeProcessorCount,
             osVersion: ProcessInfo.processInfo.operatingSystemVersion, simulator: simulator,
-            jitAvailable: jit, experimentalBuild: experimental, includedConsoles: included, includedDSEngines: dsEngines, includedInterpreterConsoles: interpreters,includedWebAssemblyConsoles:webAssembly))
+            jitAvailable: jit, experimentalBuild: experimental, includedConsoles: included, includedDSEngines: dsEngines, includedInterpreterConsoles: interpreters,includedWebAssemblyConsoles:webAssembly, includedCompatibilityFrameworks:Set(["GearsystemCore","SuperGrafxCore","SameBoyCore"].filter { name in
+                guard let root=bundle.privateFrameworksURL else { return false }
+                return FileManager.default.fileExists(atPath:root.appendingPathComponent("\(name).framework/\(name)").path)
+            })))
     }
     func assess(console: GameConsole, plan: GameLaunchPlan? = nil) -> Assessment {
         let selected = plan ?? GameLaunchPlan.resolve(console: console, snapshot: snapshot)
@@ -149,6 +153,9 @@ struct DeviceReadiness {
             reasons: ["Compatibilidad del juego no validada.", snapshot.simulator ? "El simulador no acredita rendimiento en un iPhone." : "La velocidad depende del juego, del dispositivo y de su temperatura."] + (selected.notice.map { [$0] } ?? []), canAttemptLaunch: true)
     }
     func assess(game: Game, plan: GameLaunchPlan? = nil) -> Assessment {
+        if let name=CartridgeCompatibility.frameworkName(id:game.id,console:game.console), !snapshot.includedCompatibilityFrameworks.contains(name) {
+            return Assessment(console:game.console,status:.unavailable,reasons:["El motor no está incluido en esta instalación."],canAttemptLaunch:false)
+        }
         guard game.console == .ds else { return assess(console: game.console, plan: plan) }
         // The selected core is independent of the default DS framework. Presence
         // of DeSmuME must not hide a missing melonDS build (or the reverse).

@@ -26,26 +26,26 @@ program = [
     # block to it, port 0 the command's value (written last), echoed.
     ("command", [0xBA, 0xF6], "movw ya,$f6         ; the address"),
     (None, [0xDA, 0x00], "movw $00,ya         ; kept at $00-$01"),
-    (None, [0xFA, 0xF4, 0xF4], "mov $f4,$f4         ; echo the command"),
-    (None, [0xE4, 0xF5], "mov a,$f5"),
+    (None, [0xE4, 0xF5], "mov a,$f5           ; latch mode before acknowledgement"),
+    (None, [0xFA, 0xF4, 0xF4], "mov $f4,$f4         ; acknowledge command"),
     (None, [0xF0, ("rel", "jump")], "beq jump"),
-    (None, [0x8D, 0x00], "mov y,#0            ; counter and index"),
-    ("first", [0x7E, 0xF4], "cmp y,$f4           ; wait for the first byte's counter (0)"),
+    ("first", [0xEB, 0xF4], "mov y,$f4           ; first counter must be zero"),
     (None, [0xD0, ("rel", "first")], "bne first"),
-    # The time from the CPU writing a counter to our echo, and from the echo back to
-    # watching for the next, set the transfer's speed (games time their uploads by the
-    # console's): the common case takes no branch it can avoid.
-    ("data", [0xE4, 0xF5], "mov a,$f5           ; a byte"),
-    (None, [0xCB, 0xF4], "mov $f4,y           ; echo its counter (the CPU sends the next while it's stored)"),
+    # Preserve the 25-cycle ready-byte loop and the point at which the next
+    # counter is polled. Polling two cycles earlier can add an entire wait
+    # iteration per byte and shift a game's initialization out of VBlank.
+    ("next", [0x7E, 0xF4], "cmp y,$f4"),
+    (None, [0xD0, ("rel", "waiting")], "bne waiting"),
+    ("data", [0xE4, 0xF5], "mov a,$f5"),
+    (None, [0xCB, 0xF4], "mov $f4,y"),
     (None, [0xD7, 0x00], "mov [$00]+y,a"),
     (None, [0xFC], "inc y"),
-    (None, [0xF0, ("rel", "page")], "beq page            ; every 256 bytes"),
-    ("next", [0x7E, 0xF4], "cmp y,$f4           ; the next counter?"),
-    (None, [0xF0, ("rel", "data")], "beq data"),
-    (None, [0x10, ("rel", "next")], "bpl next            ; not yet (the CPU still shows the last one)"),
-    (None, [0x2F, ("rel", "command")], "bra command         ; ahead of it: the block's end, a command"),
-    ("page", [0xAB, 0x01], "inc $01             ; the next 256-byte page"),
-    (None, [0x2F, ("rel", "next")], "bra next"),
+    (None, [0xD0, ("rel", "next")], "bne next"),
+    (None, [0xAB, 0x01], "inc $01"),
+    ("waiting", [0x10, ("rel", "next")], "bpl next"),
+    (None, [0x7E, 0xF4], "cmp y,$f4           ; distinguish next byte from command"),
+    (None, [0x10, ("rel", "next")], "bpl next"),
+    (None, [0x2F, ("rel", "command")], "bra command"),
     ("jump", [0x1F, 0x00, 0x00], "jmp [$0000+x]       ; to the address at $00-$01"),
 ]
 

@@ -90,7 +90,7 @@ import SwiftUI
         for item in entries where !item.folder && LocalCoverImport.imageExtensions.contains((item.name as NSString).pathExtension.lowercased()) && stems.contains(DirectCloudArtworkIndex.stem(item.name)) && !chosen.contains(where: { $0.id == item.id }) { chosen.append(item) }
         guard !chosen.isEmpty else { return }
         busy = true; error = nil; result = nil
-        let transfer = DirectCloudTransfer(source: connection, extensions: supported)
+        let transfer = DirectCloudTransfer(source:connection,extensions:supported,continueOnError:true)
         operation = Task {
             defer { busy = false; operation = nil }
             do { pendingPlan = try await transfer.plan(selection: chosen); try Task.checkCancellation(); showPlan = true }
@@ -100,7 +100,7 @@ import SwiftUI
     func importPlan(_ commit: @escaping (CloudImportPreparation.Snapshot) throws -> String) {
         guard let plan = pendingPlan, let connection, !busy else { return }
         pendingPlan = nil; busy = true; downloading = true; error = nil; result = nil; progress = nil
-        let transfer = DirectCloudTransfer(source: connection, extensions: supported)
+        let transfer = DirectCloudTransfer(source:connection,extensions:supported,continueOnError:true)
         operation = Task {
             defer { busy = false; downloading = false; saving = false; progress = nil; operation = nil }
             do {

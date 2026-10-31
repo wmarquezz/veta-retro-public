@@ -87,6 +87,7 @@
 "Arcade" = "أركيد";
 "Archivo guardado en VETA-Retro / %@. No se pudo importar: %@" = "حُفظ الملف في VETA-Retro / %@. تعذّر الاستيراد: %@";
 "Archivos compatibles" = "الملفات المدعومة";
+"Archivos con incidencias" = "ملفات بها مشكلات";
 "Archivos conservados no puede ser un enlace." = "لا يمكن أن يكون مجلد الملفات المحتفظ بها رابطًا رمزيًا.";
 "Archivos de sistema Xbox importados. Ya puedes preparar el motor." = "تم استيراد ملفات نظام Xbox. يمكنك الآن تجهيز المحرك.";
 "Archivos del iPhone" = "ملفات iPhone";
@@ -241,6 +242,7 @@
 "Deseleccionar todo" = "إلغاء تحديد الكل";
 "Desliza por la cruceta para hacer diagonales. Puedes mantener dirección y A/B a la vez. A+B pulsa ambos botones. Select solo se activa al soltar sin arrastrar." = "اسحب على لوحة الاتجاهات للحركة القطرية. يمكن ضغط الاتجاه وA/B معًا. A+B يضغط الزرين. يعمل Select عند الإفلات دون سحب.";
 "Desprotege la partida antes de eliminarla." = "أزل حماية الحفظ قبل حذفه.";
+"Detalle de importación" = "تفاصيل الاستيراد";
 "Diagnóstico Xbox (firmware abierto)" = "تشخيص Xbox (برنامج ثابت مفتوح)";
 "Diagnóstico disponible" = "التشخيص متاح";
 "Diagnóstico guardado" = "حُفظ التشخيص";
@@ -294,9 +296,11 @@
 "El enlace y la contraseña se guardan en el llavero seguro de este iPhone. Si cambia la contraseña, tendrás que ingresar la nueva." = "يُحفظ الرابط وكلمة المرور في سلسلة المفاتيح الآمنة لهذا iPhone. إذا تغيرت كلمة المرور، ستحتاج إلى إدخال الجديدة.";
 "El estado supera el tamaño admitido." = "تتجاوز حالة الحفظ الحجم المسموح.";
 "El guardado rápido de Xbox incluye su disco virtual y pertenece a esta instalación." = "يتضمن الحفظ السريع لـ Xbox قرصه الافتراضي ويخص هذا التثبيت.";
+"El historial reciente se guarda en VETA y no se envía automáticamente. Los archivos originales no se modifican." = "يُحفظ السجل الأخير في VETA ولا يُرسل تلقائيًا. لا تُعدّل الملفات الأصلية.";
 "El informe incluye los nombres de los juegos y las mediciones guardadas. Tú eliges dónde guardarlo." = "يتضمن التقرير أسماء الألعاب والقياسات المحفوظة. يمكنك اختيار مكان حفظه.";
 "El juego debe ser un archivo de hasta 8 GB." = "يجب أن تكون اللعبة ملفًا لا يتجاوز 8 غيغابايت.";
 "El juego debe ser un archivo válido de hasta 64 GB." = "يجب أن تكون اللعبة ملفًا صالحًا لا يتجاوز 64 غيغابايت.";
+"El juego se conservó; falló su portada." = "تم الاحتفاظ باللعبة؛ تعذر استيراد غلافها.";
 "El juego se quitó de la biblioteca, pero no se pudo liberar todo su espacio. VETA reintentará la limpieza al abrirse de nuevo." = "أُزيلت اللعبة من المكتبة، لكن تعذّر تحرير كل مساحتها. سيعيد VETA محاولة التنظيف عند فتحه مجددًا.";
 "El juego supera los 64 GB permitidos." = "تتجاوز اللعبة حد 64 غيغابايت.";
 "El juego todavía no está listo." = "اللعبة ليست جاهزة بعد.";
@@ -502,6 +506,7 @@
 "Hecho para jugar" = "صُنع للعب";
 "Heredar de consola" = "استخدام إعداد الجهاز";
 "Herramientas de juego" = "أدوات اللعبة";
+"Historial de importación" = "سجل الاستيراد";
 "Horizontal" = "أفقي";
 "Idioma" = "اللغة";
 "Idioma de la app" = "لغة التطبيق";
@@ -552,6 +557,7 @@
 "Juegos de sus autores, organizados por consola. Descarga el original a Archivos o visita su página." = "ألعاب من مؤلفيها مرتبة حسب الجهاز. نزّل الأصل إلى الملفات أو زر صفحة المؤلف.";
 "Juegos gratis" = "ألعاب مجانية";
 "Juegos por consola" = "الألعاب حسب الجهاز";
+"Juegos procesados: %d. Archivos con incidencias: %d." = "الألعاب المعالجة: %d. الملفات التي بها مشكلات: %d.";
 "Juegos procesados: %d. Portadas añadidas: %d." = "الألعاب المعالجة: %d. الأغلفة المضافة: %d.";
 "Juegos y portadas" = "الألعاب والأغلفة";
 "Jugador" = "اللاعب";
@@ -770,6 +776,7 @@
 "No se pudo exportar el informe." = "تعذّر تصدير التقرير.";
 "No se pudo guardar al pausar: %@" = "تعذّر الحفظ عند الإيقاف المؤقت: %@";
 "No se pudo guardar al salir: %@" = "تعذّر الحفظ عند الخروج: %@";
+"No se pudo guardar el historial de importación. Los juegos procesados se conservaron." = "تعذر حفظ سجل الاستيراد. تم الاحتفاظ بالألعاب المعالجة.";
 "No se pudo guardar la conexión de forma segura. Desbloquea el iPhone y vuelve a intentarlo." = "تعذر حفظ الاتصال بأمان. افتح قفل iPhone وحاول مجددًا.";
 "No se pudo guardar la partida." = "تعذّر حفظ اللعبة.";
 "No se pudo guardar la partida. Tu guardado anterior se conserva." = "تعذّر حفظ اللعبة. تم الاحتفاظ بملف الحفظ السابق.";
@@ -781,7 +788,9 @@
 "No se pudo inicializar el motor nativo." = "تعذّرت تهيئة المحرك الأصلي.";
 "No se pudo iniciar el juego." = "تعذّر بدء اللعبة.";
 "No se pudo iniciar la sesión local. Vuelve a la biblioteca e inténtalo de nuevo." = "تعذّر بدء الجلسة المحلية. عُد إلى المكتبة وحاول مجددًا.";
+"No se pudo leer el historial de importación." = "تعذرت قراءة سجل الاستيراد.";
 "No se pudo leer la carpeta del juego." = "تعذّرت قراءة مجلد اللعبة.";
+"No se pudo leer o importar este archivo." = "تعذرت قراءة هذا الملف أو استيراده.";
 "No se pudo obtener el estado." = "تعذّر الحصول على حالة الحفظ.";
 "No se pudo obtener la foto. Reintenta o elige una imagen de Archivos." = "تعذّر جلب الصورة. حاول مجددًا أو اختر صورة من الملفات.";
 "No se pudo pausar el juego." = "تعذّر إيقاف اللعبة مؤقتًا.";
@@ -949,6 +958,7 @@
 "Restablecer posiciones" = "إعادة ضبط المواضع";
 "Restaurar valores heredados" = "استعادة القيم الموروثة";
 "Revisa el enlace compartido que te entregó el propietario." = "تحقق من الرابط المشترك الذي أعطاك إياه المالك.";
+"Revisa el historial de importación para ver los archivos y sus motivos." = "راجع سجل الاستيراد للاطلاع على الملفات والأسباب.";
 "Revisa el skin" = "راجع الشكل";
 "Revisa la contraseña del enlace o vuelve a entrar si tu sesión venció." = "تحقق من كلمة مرور الرابط أو ادخل مجددًا إذا انتهت جلستك.";
 "Revisar guía" = "مراجعة الدليل";
@@ -1011,6 +1021,7 @@
 "Si no se activa" = "إذا تعذّر التفعيل";
 "Sin captura en este guardado" = "لا توجد لقطة شاشة لهذا الحفظ";
 "Sin decidir" = "لم يُقرر";
+"Sin errores." = "لا توجد أخطاء.";
 "Sin juegos en esta vista" = "لا توجد ألعاب في هذا العرض";
 "Sin pulsar" = "لا توجد أزرار مضغوطة";
 "Sin recursos · suavizado nítido" = "الموارد غير متاحة · تنعيم واضح";
@@ -1054,6 +1065,7 @@
 "Todas" = "الكل";
 "Todas las consolas compatibles están disponibles. Aquí aparecen sólo las que tienen juegos." = "كل الأجهزة المدعومة متاحة. تظهر هنا الأجهزة التي تحتوي على ألعاب فقط.";
 "Todas las consolas compatibles están disponibles. Importa desde Agregar juegos; cada consola aparece en tu biblioteca cuando tiene juegos. También puedes usar sus carpetas en Archivos → En mi iPhone → VETA-Retro." = "كل الأجهزة المدعومة متاحة. استورد من إضافة ألعاب؛ يظهر كل جهاز في مكتبتك عندما يحتوي على ألعاب. يمكنك أيضًا استخدام مجلداته في الملفات ← على iPhone الخاص بي ← VETA-Retro.";
+"Todavía no hay importaciones registradas." = "لم يتم تسجيل أي عمليات استيراد بعد.";
 "Todavía no hay precios, compras ni suscripciones. La clasificación comercial se decidirá más adelante." = "لا توجد أسعار أو مشتريات أو اشتراكات بعد. سيُقرر التصنيف التجاري لاحقًا.";
 "Todavía no hay un cuadro del juego para capturar." = "لا يوجد إطار من اللعبة لالتقاطه بعد.";
 "Todo dentro de VETA" = "كل شيء داخل VETA";
@@ -1129,6 +1141,7 @@
 "Velocidad normal" = "السرعة العادية";
 "Ver biblioteca" = "عرض المكتبة";
 "Ver consolas y juegos" = "عرض الأجهزة والألعاب";
+"Ver historial" = "عرض السجل";
 "Ver imagen de origen" = "عرض الصورة الأصلية";
 "Ver juegos" = "عرض الألعاب";
 "Ver lista" = "عرض القائمة";

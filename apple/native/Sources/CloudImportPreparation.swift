@@ -6,6 +6,8 @@ final class CloudImportPreparation: @unchecked Sendable {
     struct Snapshot {
         let root: URL
         let files: [URL]
+        var issues:[ImportIssue]=[]
+        var sourceNames:[URL:String]=[:]
         func remove() { try? FileManager.default.removeItem(at: root) }
     }
     enum Failure: LocalizedError {
@@ -55,7 +57,7 @@ final class CloudImportPreparation: @unchecked Sendable {
     /// Runs off the main thread. Directory coordination enumerates metadata, then each
     /// supported file gets its own coordinated read to materialize remote placeholders.
     func prepare(_ selections: [URL], temporaryRoot: URL = FileManager.default.temporaryDirectory,
-                 combineExplicitFiles: Bool = false,
+                 combineExplicitFiles: Bool = false,continueOnError:Bool = false,
                  progress: @escaping (String, Int, Int) -> Void) throws -> Snapshot {
         let scoped = selections.filter { $0.startAccessingSecurityScopedResource() }
         defer { scoped.forEach { $0.stopAccessingSecurityScopedResource() } }
@@ -66,6 +68,13 @@ final class CloudImportPreparation: @unchecked Sendable {
         var sources: [URL] = [], seen = Set<URL>(), visited = Set<URL>()
         var examined = 0
         var selectedDirectory = false
+        var issues:[ImportIssue]=[]
+        func handle(_ url:URL,_ error:Error)throws {
+            if error is CancellationError {throw error}
+            if case Failure.tooMany = error {throw error}
+            guard continueOnError else {throw error}
+            issues.append(ImportIssue(file:url.lastPathComponent,error:error))
+        }
         func collect(_ url: URL, depth: Int) throws {
             try check()
             guard depth <= 20 else { throw Failure.tooDeep }
@@ -82,15 +91,15 @@ final class CloudImportPreparation: @unchecked Sendable {
                     try fm.contentsOfDirectory(at: $0, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
                 }
                 for child in children.sorted(by: { $0.lastPathComponent < $1.lastPathComponent }) {
-                    try collect(child, depth: depth + 1)
+                    do {try collect(child, depth: depth + 1)} catch {try handle(child,error)}
                 }
             } else if extensions.contains(url.pathExtension.lowercased()), seen.insert(identity).inserted {
                 sources.append(url)
             }
         }
         do {
-            for selection in selections { try collect(selection, depth: 0) }
-            guard !sources.isEmpty else { throw Failure.empty }
+            for selection in selections {do {try collect(selection, depth:0)} catch {try handle(selection,error)}}
+            guard !sources.isEmpty || (continueOnError && !issues.isEmpty) else {throw Failure.empty}
             // Some providers give each selected file a separate security-scoped parent.
             // Treat a file-only cloud selection as one batch when names are unique.
             // Directory selections and ambiguous duplicate names keep their boundaries.
@@ -107,6 +116,7 @@ final class CloudImportPreparation: @unchecked Sendable {
                     try fm.createDirectory(at: folder, withIntermediateDirectories: true); parents[parent] = folder
                 }
                 let target = folder.appendingPathComponent(source.lastPathComponent)
+                do {
                 try autoreleasepool { try read(source) { available in
                     let before = try available.resourceValues(forKeys: [.isRegularFileKey, .isSymbolicLinkKey, .fileSizeKey, .contentModificationDateKey])
                     guard before.isRegularFile == true, before.isSymbolicLink != true else { throw Failure.link }
@@ -129,12 +139,15 @@ final class CloudImportPreparation: @unchecked Sendable {
                     guard bytes == size, before.fileSize == after.fileSize,
                           before.contentModificationDate == after.contentModificationDate else { throw Failure.changed }
                 } }
-                files.append(target); progress(source.lastPathComponent, index + 1, sources.count)
+                files.append(target)
+                } catch {try? fm.removeItem(at:target);try handle(source,error)}
+                progress(source.lastPathComponent,index+1,sources.count)
             }
-            let expanded=try ZIPGameImport.expand(files,temporaryRoot:root,checkCancellation:check)
-            let ready=try expanded.importFiles()
+            let expanded=try ZIPGameImport.expand(files,temporaryRoot:root,continueOnError:continueOnError,checkCancellation:check)
+            issues += expanded.issues
+            let ready=try expanded.importFiles(onError:continueOnError ? {url,error in issues.append(ImportIssue(file:url.lastPathComponent,error:error,coverOnly:true))}:nil)
             try check(); keep = true
-            return Snapshot(root: root, files: ready)
+            return Snapshot(root:root,files:ready,issues:issues,sourceNames:expanded.sourceNames)
         } catch is CancellationError { throw CancellationError() }
         catch let error as Failure { throw error }
         catch let error as VetaError { throw error }

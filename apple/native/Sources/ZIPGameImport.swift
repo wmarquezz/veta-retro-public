@@ -16,12 +16,15 @@ enum ZIPGameImport {
         let files: [URL]
         let origins: [URL: URL]
         let directory: URL
-        func importFiles() throws -> [URL] {
+        var issues:[ImportIssue]=[]
+        var sourceNames:[URL:String]=[:]
+        func importFiles(onError:((URL,Error)->Void)? = nil) throws -> [URL] {
             var result=files
             // Index once: repeated path standardization for every game/image pair
             // accumulated gigabytes of temporary Foundation objects on large imports.
             let images=Dictionary(grouping:files.filter{LocalCoverImport.isImage($0)},by:LocalCoverImport.CoverKey.init)
             for (game,archive) in origins {
+                do {
                 let paired:URL? = try autoreleasepool {
                     if images[LocalCoverImport.CoverKey(game)] != nil { return nil }
                     guard let cover=images[LocalCoverImport.CoverKey(archive)]?.sorted(by:{$0.lastPathComponent<$1.lastPathComponent}).first else { return nil }
@@ -30,20 +33,22 @@ enum ZIPGameImport {
                     return target
                 }
                 if let paired { result.append(paired) }
+                } catch {if let onError {onError(archive,error)} else {throw error}}
             }
             return result
         }
         func remove() { try? FileManager.default.removeItem(at: directory) }
     }
-    static func expand(_ files: [URL], temporaryRoot: URL = FileManager.default.temporaryDirectory, checkCancellation: () throws -> Void = { try Task.checkCancellation() }) throws -> Expansion {
+    static func expand(_ files: [URL], temporaryRoot: URL = FileManager.default.temporaryDirectory, continueOnError:Bool = false, checkCancellation: () throws -> Void = { try Task.checkCancellation() }) throws -> Expansion {
         let root = temporaryRoot.appendingPathComponent("VetaZIP-" + UUID().uuidString)
         try FileManager.default.createDirectory(at: root, withIntermediateDirectories: true)
         do {
             var result: [URL] = [], origins: [URL: URL] = [:], total = 0
+            var issues:[ImportIssue]=[],sourceNames:[URL:String]=[:]
             for file in files {
                 guard file.pathExtension.lowercased() == "zip" else { result.append(file); continue }
+                let folder = root.appendingPathComponent(UUID().uuidString)
                 do {
-                    let folder = root.appendingPathComponent(UUID().uuidString)
                     let extracted = try autoreleasepool { try extract(file, into: folder, total: &total, checkCancellation: checkCancellation) }
                     var tracks=Set<URL>()
                     for cue in extracted where cue.pathExtension.lowercased()=="cue" {
@@ -52,14 +57,20 @@ enum ZIPGameImport {
                     }
                     let games = extracted.filter { !LocalCoverImport.isImage($0) && !tracks.contains($0) && $0.pathExtension.lowercased() != "wav" }
                     guard !games.isEmpty else { throw VetaError.message("El ZIP no contiene archivos de juego compatibles con esta versión de VETA.") }
+                    guard result.count<=10_000-extracted.count else {throw VetaError.message("Selecciona una carpeta con un máximo de 10.000 archivos.")}
                     result += extracted
+                    for path in extracted {sourceNames[path]=file.lastPathComponent}
                     // A single-game archive may use a different internal ROM filename.
                     // Its external cover belongs to that game, never to every game in a collection.
                     if games.count == 1 { origins[games[0]] = file }
                 } catch is CancellationError { throw CancellationError() }
-                catch { throw ArchiveError(name: file.lastPathComponent, underlying: error) }
+                catch {
+                    try? FileManager.default.removeItem(at:folder)
+                    guard continueOnError else {throw ArchiveError(name:file.lastPathComponent,underlying:error)}
+                    issues.append(ImportIssue(file:file.lastPathComponent,error:error))
+                }
             }
-            return Expansion(files: result, origins: origins, directory: root)
+            return Expansion(files: result, origins: origins, directory: root,issues:issues,sourceNames:sourceNames)
         } catch { try? FileManager.default.removeItem(at: root); throw error }
     }
     static func extract(_ file: URL, into folder: URL, total: inout Int, checkCancellation: () throws -> Void = { try Task.checkCancellation() }) throws -> [URL] {

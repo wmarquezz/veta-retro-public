@@ -36,7 +36,17 @@ enum LocalCoverImport {
     }
     struct Summary {
         var games=0,covers=0,unreadableCovers=0,backups=0
+        var issues:[ImportIssue]=[]
+        var historySaved=true
         var message:String {
+            if !historySaved {
+                return L10n.format("Juegos procesados: %d. Archivos con incidencias: %d.",games,issues.count)+" "+L10n.text("No se pudo guardar el historial de importación. Los juegos procesados se conservaron.")
+            }
+            if !issues.isEmpty {
+                var text=L10n.format("Juegos procesados: %d. Archivos con incidencias: %d.",games,issues.count)
+                text += " " + L10n.text("Revisa el historial de importación para ver los archivos y sus motivos.")
+                return text
+            }
             if games==0 && backups>0 {return L10n.text("Respaldo importado. Los juegos y portadas existentes se conservan.")}
             if games==0 {return L10n.text("Selecciona una ROM junto con su imagen, o la carpeta que contiene ambas. Las subcarpetas se importan por separado.")}
             var text=L10n.format("Juegos procesados: %d. Portadas añadidas: %d.",games,covers)
@@ -72,7 +82,7 @@ enum LocalCoverImport {
                 guard info.isRegularFile == true,info.isSymbolicLink != true else{throw VetaError.message("La portada no es un archivo de imagen normal.")}
                 // CoverImage enforces size/decode limits; storage strips metadata.
                 try store.setManual(CoverImage.read(image),for:game);summary.covers+=1
-            } catch {summary.unreadableCovers+=1}
+            } catch {summary.unreadableCovers+=1;summary.issues.append(ImportIssue(file:image.lastPathComponent,error:error,coverOnly:true))}
         }
     }
 }

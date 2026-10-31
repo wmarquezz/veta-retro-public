@@ -87,6 +87,7 @@
 "Arcade" = "आर्केड";
 "Archivo guardado en VETA-Retro / %@. No se pudo importar: %@" = "फ़ाइल VETA-Retro / %@ में सहेजी गई। आयात नहीं हो सका: %@";
 "Archivos compatibles" = "समर्थित फ़ाइलें";
+"Archivos con incidencias" = "समस्या वाली फ़ाइलें";
 "Archivos conservados no puede ser un enlace." = "संरक्षित फ़ाइलों का फ़ोल्डर प्रतीकात्मक लिंक नहीं हो सकता।";
 "Archivos de sistema Xbox importados. Ya puedes preparar el motor." = "Xbox सिस्टम फ़ाइलें आयात हो गईं। अब आप इंजन तैयार कर सकते हैं।";
 "Archivos del iPhone" = "iPhone की फ़ाइलें";
@@ -241,6 +242,7 @@
 "Deseleccionar todo" = "सभी का चयन हटाएँ";
 "Desliza por la cruceta para hacer diagonales. Puedes mantener dirección y A/B a la vez. A+B pulsa ambos botones. Select solo se activa al soltar sin arrastrar." = "तिरछी दिशा के लिए दिशा बटन पर खिसकाएँ। दिशा और A/B साथ दबा सकते हैं। A+B दोनों दबाता है। Select बिना खींचे छोड़ने पर सक्रिय होता है।";
 "Desprotege la partida antes de eliminarla." = "हटाने से पहले सेव की सुरक्षा हटाएँ।";
+"Detalle de importación" = "आयात विवरण";
 "Diagnóstico Xbox (firmware abierto)" = "Xbox निदान (खुला फ़र्मवेयर)";
 "Diagnóstico disponible" = "निदान उपलब्ध है";
 "Diagnóstico guardado" = "निदान सहेजा गया";
@@ -294,9 +296,11 @@
 "El enlace y la contraseña se guardan en el llavero seguro de este iPhone. Si cambia la contraseña, tendrás que ingresar la nueva." = "लिंक और पासवर्ड इस iPhone के सुरक्षित कीचेन में सहेजे जाते हैं। पासवर्ड बदलने पर नया पासवर्ड दर्ज करना होगा।";
 "El estado supera el tamaño admitido." = "सेव स्टेट समर्थित आकार से बड़ा है।";
 "El guardado rápido de Xbox incluye su disco virtual y pertenece a esta instalación." = "Xbox क्विक सेव में उसकी वर्चुअल डिस्क शामिल है और यह इसी इंस्टॉलेशन के लिए है।";
+"El historial reciente se guarda en VETA y no se envía automáticamente. Los archivos originales no se modifican." = "हाल का इतिहास VETA में सहेजा जाता है और अपने-आप नहीं भेजा जाता। मूल फ़ाइलें नहीं बदली जातीं।";
 "El informe incluye los nombres de los juegos y las mediciones guardadas. Tú eliges dónde guardarlo." = "रिपोर्ट में गेम के नाम और सहेजे गए माप शामिल हैं। इसे कहाँ सहेजना है, आप चुनते हैं।";
 "El juego debe ser un archivo de hasta 8 GB." = "गेम की फ़ाइल 8 GB से बड़ी नहीं होनी चाहिए।";
 "El juego debe ser un archivo válido de hasta 64 GB." = "गेम 64 GB तक की मान्य फ़ाइल होना चाहिए।";
+"El juego se conservó; falló su portada." = "गेम सुरक्षित है; उसका कवर आयात नहीं हो सका।";
 "El juego se quitó de la biblioteca, pero no se pudo liberar todo su espacio. VETA reintentará la limpieza al abrirse de nuevo." = "गेम लाइब्रेरी से हट गया, लेकिन पूरी जगह खाली नहीं हुई। VETA फिर खुलने पर सफ़ाई दोबारा करेगा।";
 "El juego supera los 64 GB permitidos." = "गेम 64 GB की सीमा से बड़ा है।";
 "El juego todavía no está listo." = "गेम अभी तैयार नहीं है।";
@@ -502,6 +506,7 @@
 "Hecho para jugar" = "खेलने के लिए बना";
 "Heredar de consola" = "कंसोल का डिफ़ॉल्ट उपयोग करें";
 "Herramientas de juego" = "गेम टूल";
+"Historial de importación" = "आयात इतिहास";
 "Horizontal" = "लैंडस्केप";
 "Idioma" = "भाषा";
 "Idioma de la app" = "ऐप की भाषा";
@@ -552,6 +557,7 @@
 "Juegos de sus autores, organizados por consola. Descarga el original a Archivos o visita su página." = "लेखकों के गेम, कंसोल के अनुसार। मूल गेम फ़ाइलों में डाउनलोड करें या लेखक का पेज खोलें।";
 "Juegos gratis" = "मुफ़्त गेम";
 "Juegos por consola" = "कंसोल के अनुसार गेम";
+"Juegos procesados: %d. Archivos con incidencias: %d." = "संसाधित गेम: %d। समस्या वाली फ़ाइलें: %d।";
 "Juegos procesados: %d. Portadas añadidas: %d." = "प्रोसेस किए गए गेम: %d। जोड़े गए कवर: %d।";
 "Juegos y portadas" = "गेम और कवर";
 "Jugador" = "खिलाड़ी";
@@ -770,6 +776,7 @@
 "No se pudo exportar el informe." = "रिपोर्ट निर्यात नहीं हो सकी।";
 "No se pudo guardar al pausar: %@" = "रोकने पर सेव नहीं हुआ: %@";
 "No se pudo guardar al salir: %@" = "बाहर निकलते समय सेव नहीं हुआ: %@";
+"No se pudo guardar el historial de importación. Los juegos procesados se conservaron." = "आयात इतिहास सहेजा नहीं जा सका। संसाधित गेम सुरक्षित हैं।";
 "No se pudo guardar la conexión de forma segura. Desbloquea el iPhone y vuelve a intentarlo." = "कनेक्शन सुरक्षित रूप से नहीं सहेजा जा सका। iPhone अनलॉक करके फिर कोशिश करें।";
 "No se pudo guardar la partida." = "गेम सेव नहीं हो सका।";
 "No se pudo guardar la partida. Tu guardado anterior se conserva." = "गेम सेव नहीं हो सका। आपका पिछला सेव सुरक्षित है।";
@@ -781,7 +788,9 @@
 "No se pudo inicializar el motor nativo." = "नेटिव इंजन आरंभ नहीं हो सका।";
 "No se pudo iniciar el juego." = "गेम शुरू नहीं हो सका।";
 "No se pudo iniciar la sesión local. Vuelve a la biblioteca e inténtalo de nuevo." = "स्थानीय सत्र शुरू नहीं हो सका। लाइब्रेरी पर लौटकर फिर कोशिश करें।";
+"No se pudo leer el historial de importación." = "आयात इतिहास पढ़ा नहीं जा सका।";
 "No se pudo leer la carpeta del juego." = "गेम फ़ोल्डर पढ़ा नहीं जा सका।";
+"No se pudo leer o importar este archivo." = "यह फ़ाइल पढ़ी या आयात नहीं की जा सकी।";
 "No se pudo obtener el estado." = "सेव स्टेट प्राप्त नहीं हुआ।";
 "No se pudo obtener la foto. Reintenta o elige una imagen de Archivos." = "फ़ोटो नहीं मिली। फिर प्रयास करें या Files से चित्र चुनें।";
 "No se pudo pausar el juego." = "गेम रोक नहीं सके।";
@@ -949,6 +958,7 @@
 "Restablecer posiciones" = "स्थितियाँ रीसेट करें";
 "Restaurar valores heredados" = "मूल सेटिंग बहाल करें";
 "Revisa el enlace compartido que te entregó el propietario." = "मालिक द्वारा दिया गया साझा लिंक जाँचें।";
+"Revisa el historial de importación para ver los archivos y sus motivos." = "फ़ाइलें और कारण देखने के लिए आयात इतिहास देखें।";
 "Revisa el skin" = "स्किन जाँचें";
 "Revisa la contraseña del enlace o vuelve a entrar si tu sesión venció." = "लिंक का पासवर्ड जाँचें या सत्र समाप्त होने पर फिर प्रवेश करें।";
 "Revisar guía" = "गाइड देखें";
@@ -1011,6 +1021,7 @@
 "Si no se activa" = "अगर सक्रियण विफल हो";
 "Sin captura en este guardado" = "इस सेव का कोई स्क्रीनशॉट नहीं है";
 "Sin decidir" = "तय नहीं";
+"Sin errores." = "कोई त्रुटि नहीं।";
 "Sin juegos en esta vista" = "इस दृश्य में कोई गेम नहीं";
 "Sin pulsar" = "कोई बटन नहीं दबाया";
 "Sin recursos · suavizado nítido" = "संसाधन उपलब्ध नहीं · स्पष्ट स्मूथिंग";
@@ -1054,6 +1065,7 @@
 "Todas" = "सभी";
 "Todas las consolas compatibles están disponibles. Aquí aparecen sólo las que tienen juegos." = "सभी समर्थित कंसोल उपलब्ध हैं। यहाँ केवल गेम वाले कंसोल दिखते हैं।";
 "Todas las consolas compatibles están disponibles. Importa desde Agregar juegos; cada consola aparece en tu biblioteca cuando tiene juegos. También puedes usar sus carpetas en Archivos → En mi iPhone → VETA-Retro." = "सभी समर्थित कंसोल उपलब्ध हैं। गेम जोड़ें से आयात करें; गेम होने पर कंसोल लाइब्रेरी में दिखता है। फ़ाइलें → मेरे iPhone पर → VETA-Retro के फ़ोल्डर भी उपयोग कर सकते हैं।";
+"Todavía no hay importaciones registradas." = "अभी तक कोई आयात दर्ज नहीं हुआ है।";
 "Todavía no hay precios, compras ni suscripciones. La clasificación comercial se decidirá más adelante." = "अभी कीमतें, खरीद या सदस्यताएँ नहीं हैं। व्यावसायिक वर्गीकरण बाद में तय होगा।";
 "Todavía no hay un cuadro del juego para capturar." = "अभी कैप्चर करने के लिए गेम का कोई फ़्रेम नहीं है।";
 "Todo dentro de VETA" = "सब कुछ VETA में";
@@ -1129,6 +1141,7 @@
 "Velocidad normal" = "सामान्य गति";
 "Ver biblioteca" = "लाइब्रेरी देखें";
 "Ver consolas y juegos" = "कंसोल और गेम देखें";
+"Ver historial" = "इतिहास देखें";
 "Ver imagen de origen" = "मूल चित्र देखें";
 "Ver juegos" = "गेम देखें";
 "Ver lista" = "सूची देखें";

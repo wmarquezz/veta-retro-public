@@ -89,26 +89,42 @@ enum DiscFiles {
     }
 }
 extension Library {
-    @discardableResult func importURLs(_ selections:[URL],console preferred:GameConsole?,artwork:ArtworkStore? = nil)throws -> LocalCoverImport.Summary {
+    @discardableResult func importURLs(_ selections:[URL],console preferred:GameConsole?,artwork:ArtworkStore? = nil,continueOnError:Bool = false,initialIssues:[ImportIssue] = [],sourceNames:[URL:String] = [:])throws -> LocalCoverImport.Summary {
         let scoped=selections.filter{$0.startAccessingSecurityScopedResource()};defer{scoped.forEach{$0.stopAccessingSecurityScopedResource()}}
         if let preferred, !GameConsole.allCases.contains(preferred) {throw VetaError.message("Consola desconocida.")}
         #if VETA_JIT_DEVELOPMENT
         if let console=preferred,console.isStandaloneEngine {for url in selections {_ = try importExperimental(url,console:console)};return .init(games:selections.count)}
         #endif
-        let originalFiles=try LocalCoverImport.files(selections)
-        let expanded=try ZIPGameImport.expand(originalFiles);defer{expanded.remove()}
+        var failures=initialIssues,originalFiles:[URL]=[]
+        if continueOnError {
+            for selection in selections {
+                do {originalFiles += try LocalCoverImport.files([selection])}
+                catch is CancellationError {throw CancellationError()}
+                catch {failures.append(ImportIssue(file:sourceNames[selection] ?? selection.lastPathComponent,error:error))}
+            }
+            originalFiles=Array(Set(originalFiles)).sorted {$0.path<$1.path}
+        } else {originalFiles=try LocalCoverImport.files(selections)}
+        guard originalFiles.count<=10_000 else {throw VetaError.message("Selecciona una carpeta con un máximo de 10.000 archivos.")}
+        let expanded=try ZIPGameImport.expand(originalFiles,continueOnError:continueOnError);defer{expanded.remove()}
+        failures += expanded.issues
+        func displayName(_ url:URL)->String {sourceNames[url] ?? expanded.sourceNames[url] ?? url.lastPathComponent}
         let files=expanded.files,covers=LocalCoverImport.Session(files:files+originalFiles)
         let urls=files.filter{!LocalCoverImport.isImage($0)}
         var processed=0
         var consumed=Set<URL>()
         for cue in urls where cue.pathExtension.lowercased()=="cue" {
+            consumed.insert(cue)
+            do {
             guard (try cue.resourceValues(forKeys:[.fileSizeKey]).fileSize ?? Int.max)<=1024*1024 else{throw VetaError.message("El descriptor CUE es demasiado grande.")}
             let cueBytes=try Data(contentsOf:cue),names=try DiscFiles.names(in:cueBytes)
+            let referenced=Set(names.map {$0.lowercased()})
+            consumed.formUnion(urls.filter {LocalCoverImport.parent($0)==LocalCoverImport.parent(cue) && referenced.contains($0.lastPathComponent.lowercased())})
             var sources:[String:URL]=[:]
             for name in names {
                 let matches=urls.filter{LocalCoverImport.parent($0)==LocalCoverImport.parent(cue) && $0.lastPathComponent.caseInsensitiveCompare(name) == .orderedSame}
                 guard matches.count<=1 else{throw VetaError.message("Hay varias pistas llamadas \(name). Importa un disco a la vez.")}
                 let track=matches.first ?? cue.deletingLastPathComponent().appendingPathComponent(name)
+                consumed.insert(track)
                 guard FileManager.default.fileExists(atPath:track.path) else{throw VetaError.message("Falta \(name). Selecciona el CUE junto con todas sus pistas BIN o WAV.")}
                 sources[name]=track
             }
@@ -138,6 +154,11 @@ extension Library {
             }
             if let game=games.first(where:{$0.id==id}) {processed+=1;if let artwork {covers.attach(to:game,from:cue,store:artwork);if let archive=expanded.origins[cue] {covers.attach(to:game,from:archive,store:artwork)}}}
             consumed.insert(cue);consumed.formUnion(sources.values)
+            } catch is CancellationError {throw CancellationError()}
+            catch {
+                guard continueOnError else {throw error}
+                failures.append(ImportIssue(file:displayName(cue),error:error))
+            }
         }
         for url in urls where !consumed.contains(url) {
             do {
@@ -145,9 +166,17 @@ extension Library {
                 if let game=try importURL(url,console:preferred) {processed+=1;if let artwork {covers.attach(to:game,from:url,store:artwork);if let archive=expanded.origins[url] {covers.attach(to:game,from:archive,store:artwork)}}}
                 }
             } catch is CancellationError { throw CancellationError() }
-            catch { throw ZIPGameImport.ArchiveError(name: (expanded.origins[url] ?? url).lastPathComponent, underlying: error) }
+            catch {
+                guard continueOnError else {throw ZIPGameImport.ArchiveError(name:displayName(url),underlying:error)}
+                failures.append(ImportIssue(file:displayName(url),error:error))
+            }
         }
         var summary=covers.summary;summary.games=processed;summary.backups=urls.filter{["vetanes","vetaretro"].contains($0.pathExtension.lowercased())}.count
+        summary.issues=failures+summary.issues
+        if continueOnError {
+            do {try ImportHistory.append(ImportReport(processed:summary.games,covers:summary.covers,issues:summary.issues),root:root)}
+            catch {summary.historySaved=false}
+        }
         return summary
     }
 }

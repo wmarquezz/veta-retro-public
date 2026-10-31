@@ -88,6 +88,7 @@ struct LibraryView:View {
     @FocusState private var searchFocused:Bool
     @State private var share:ShareItem?
     @State private var importMessage:String?
+    @State private var importHistory=false
     @State private var importingExperimental=false
     private var selectedLibraryConsole:GameConsole? {filter == "Consolas" ? consoleGames:consoleFilter}
     var filtered:[Game] {
@@ -155,19 +156,16 @@ struct LibraryView:View {
             }
         }
         .sheet(isPresented:$importOptions,onDismiss:applyImportChoice) {
-            GameImportOptionsView { choice in
-                importChoice=choice
-                importOptions=false
-            }
+            GameImportOptionsView(choose:{choice in importChoice=choice;importOptions=false},historyRoot:library.root)
         }
         .sheet(isPresented:$sharedCloud) {
             KrafifySharedAccessView { snapshot in
-                try library.importURLs(snapshot.files,console:selectedLibraryConsole,artwork:artwork).message
+                try library.importURLs(snapshot.files,console:selectedLibraryConsole,artwork:artwork,continueOnError:true,initialIssues:snapshot.issues,sourceNames:snapshot.sourceNames).message
             }
         }
         .sheet(isPresented:$directCloud) {
             DirectCloudView { snapshot in
-                try library.importURLs(snapshot.files,console:selectedLibraryConsole,artwork:artwork).message
+                try library.importURLs(snapshot.files,console:selectedLibraryConsole,artwork:artwork,continueOnError:true,initialIssues:snapshot.issues,sourceNames:snapshot.sourceNames).message
             }
         }
         .fullScreenCover(item:$activeLaunch,onDismiss:{query=""}) {launch in
@@ -210,7 +208,10 @@ struct LibraryView:View {
             if let consoleGames, !available.contains(consoleGames) { self.consoleGames=nil }
         }
         .alert("VETA Retro",isPresented:Binding(get:{library.error != nil},set:{if !$0 {library.error=nil}})) {Button("Aceptar"){library.error=nil}} message:{Text(L10n.text(library.error ?? ""))}
-        .alert("Biblioteca",isPresented:Binding(get:{importMessage != nil},set:{if !$0 {importMessage=nil}})) {Button("Listo"){importMessage=nil}} message:{Text(L10n.text(importMessage ?? ""))}
+        .sheet(isPresented:$importHistory) {
+            NavigationStack {ImportHistoryView(root:library.root).toolbar {ToolbarItem(placement:.cancellationAction) {Button("Cerrar") {importHistory=false}}}}
+        }
+        .alert("Biblioteca",isPresented:Binding(get:{importMessage != nil},set:{if !$0 {importMessage=nil}})) {Button("Listo"){importMessage=nil};Button("Ver historial"){importMessage=nil;importHistory=true}} message:{Text(L10n.text(importMessage ?? ""))}
     }
     private var libraryHeader:some View {
         VStack(alignment:.leading,spacing:18) {
@@ -264,7 +265,7 @@ struct LibraryView:View {
                 let snapshot=try await cloudImport.prepare(urls)
                 defer {snapshot.remove()}
                 await Task.yield()
-                let result=try library.importURLs(snapshot.files,console:console,artwork:artwork)
+                let result=try library.importURLs(snapshot.files,console:console,artwork:artwork,continueOnError:true,initialIssues:snapshot.issues,sourceNames:snapshot.sourceNames)
                 importMessage=result.message
             } catch is CancellationError {
                 importMessage="Importación cancelada. Tus originales y tu biblioteca se conservan."
@@ -290,7 +291,7 @@ struct LibraryView:View {
         }
         #endif
         perform {
-            let result=try library.importURLs(urls,console:selectedLibraryConsole,artwork:artwork)
+            let result=try library.importURLs(urls,console:selectedLibraryConsole,artwork:artwork,continueOnError:true)
             importMessage=result.message
         }
     }

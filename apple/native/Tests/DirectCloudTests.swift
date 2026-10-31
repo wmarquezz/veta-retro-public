@@ -46,6 +46,26 @@ private actor CloudFixtureHTTP: DirectCloudHTTP {
 }
 
 final class DirectCloudTests: XCTestCase {
+    func testTolerantPlanAndDownloadKeepGoodFileAndReportOthers() async throws {
+        let entries=[DirectCloudEntry(id:"denied",name:"Denied.gb",folder:false,size:1,canDownload:false),
+                     .init(id:"bad",name:"Unavailable.gb",folder:false,size:1),
+                     .init(id:"changed",name:"Changed.gb",folder:false,size:2),
+                     .init(id:"good",name:"Good.gb",folder:false,size:1)]
+        let source=CloudFixtureSource(payloads:["changed":Data([8]),"good":Data([7])],failID:"bad")
+        let transfer=DirectCloudTransfer(source:source,extensions:["gb"],continueOnError:true)
+        let plan=try await transfer.plan(selection:entries)
+        XCTAssertEqual(plan.files.count,3);XCTAssertEqual(plan.issues.map(\.file),["Denied.gb"])
+        let snapshot=try await transfer.prepare(plan){_ in};defer{snapshot.remove()}
+        XCTAssertEqual(snapshot.files.map(\.lastPathComponent),["Good.gb"])
+        XCTAssertEqual(try Data(contentsOf:XCTUnwrap(snapshot.files.first)),Data([7]))
+        XCTAssertEqual(Set(snapshot.issues.map(\.file)),["Denied.gb","Unavailable.gb","Changed.gb"])
+    }
+    func testTolerantDownloadWithNoValidFilesStillReturnsIssues() async throws {
+        let source=CloudFixtureSource(failID:"bad"),transfer=DirectCloudTransfer(source:source,extensions:["gb"],continueOnError:true)
+        let plan=try await transfer.plan(selection:[.init(id:"bad",name:"Bad.gb",folder:false,size:1)])
+        let snapshot=try await transfer.prepare(plan){_ in};defer{snapshot.remove()}
+        XCTAssertTrue(snapshot.files.isEmpty);XCTAssertEqual(snapshot.issues.map(\.file),["Bad.gb"])
+    }
     func data(_ object: Any) throws -> Data { try JSONSerialization.data(withJSONObject: object) }
     func config(_ provider: DirectCloudProvider = .google) -> DirectCloudConfiguration { .init(provider: provider, clientID: "test-client", redirectURI: "com.example.veta:/oauthredirect") }
     func testPKCEKnownVectorAndExactCallback() throws {

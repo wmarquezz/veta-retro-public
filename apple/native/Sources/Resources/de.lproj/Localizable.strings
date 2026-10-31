@@ -87,6 +87,7 @@
 "Arcade" = "Arcade";
 "Archivo guardado en VETA-Retro / %@. No se pudo importar: %@" = "Datei in VETA-Retro / %@ gespeichert. Konnte nicht importiert werden: %@";
 "Archivos compatibles" = "Unterstützte Dateien";
+"Archivos con incidencias" = "Dateien mit Problemen";
 "Archivos conservados no puede ser un enlace." = "Der Ordner „preserved-files“ darf kein symbolischer Link sein.";
 "Archivos de sistema Xbox importados. Ya puedes preparar el motor." = "Xbox-Systemdateien importiert. Jetzt können Sie den Motor vorbereiten.";
 "Archivos del iPhone" = "Dateien auf dem iPhone";
@@ -241,6 +242,7 @@
 "Deseleccionar todo" = "Auswahl aufheben";
 "Desliza por la cruceta para hacer diagonales. Puedes mantener dirección y A/B a la vez. A+B pulsa ambos botones. Select solo se activa al soltar sin arrastrar." = "Schieben Sie das Richtungspad für Diagonalen. Halten Sie eine Richtung und A/B zusammen. A+B drückt beide Tasten. Die Auswahl wird nur aktiviert, wenn sie ohne Ziehen losgelassen wird.";
 "Desprotege la partida antes de eliminarla." = "Heben Sie den Schutz des Speicherstands auf, bevor Sie ihn löschen.";
+"Detalle de importación" = "Importdetails";
 "Diagnóstico Xbox (firmware abierto)" = "Xbox-Diagnose (offene Firmware)";
 "Diagnóstico disponible" = "Diagnose verfügbar";
 "Diagnóstico guardado" = "Diagnose gespeichert";
@@ -294,9 +296,11 @@
 "El enlace y la contraseña se guardan en el llavero seguro de este iPhone. Si cambia la contraseña, tendrás que ingresar la nueva." = "Link und Passwort werden im sicheren Schlüsselbund dieses iPhone gespeichert. Bei einer Passwortänderung musst du das neue eingeben.";
 "El estado supera el tamaño admitido." = "Der Speicherstatus überschreitet die unterstützte Größe.";
 "El guardado rápido de Xbox incluye su disco virtual y pertenece a esta instalación." = "Xbox-Schnellspeicherungen umfassen die virtuelle Festplatte und gehören zu dieser Installation.";
+"El historial reciente se guarda en VETA y no se envía automáticamente. Los archivos originales no se modifican." = "Der aktuelle Verlauf wird in VETA gespeichert und nicht automatisch versendet. Originaldateien werden nicht verändert.";
 "El informe incluye los nombres de los juegos y las mediciones guardadas. Tú eliges dónde guardarlo." = "Der Bericht enthält Spielnamen und gespeicherte Messungen. Sie entscheiden, wo es gespeichert werden soll.";
 "El juego debe ser un archivo de hasta 8 GB." = "Das Spiel darf eine Datei sein, die nicht größer als 8 GB ist.";
 "El juego debe ser un archivo válido de hasta 64 GB." = "Das Spiel muss eine gültige Datei mit bis zu 64 GB sein.";
+"El juego se conservó; falló su portada." = "Das Spiel wurde behalten; sein Cover konnte nicht importiert werden.";
 "El juego se quitó de la biblioteca, pero no se pudo liberar todo su espacio. VETA reintentará la limpieza al abrirse de nuevo." = "Das Spiel wurde aus der Bibliothek entfernt, es konnte jedoch kein Speicherplatz freigegeben werden. VETA wird die Bereinigung erneut versuchen, wenn es erneut geöffnet wird.";
 "El juego supera los 64 GB permitidos." = "Das Spiel überschreitet die 64-GB-Grenze.";
 "El juego todavía no está listo." = "Das Spiel ist noch nicht bereit.";
@@ -502,6 +506,7 @@
 "Hecho para jugar" = "Zum Spielen gemacht";
 "Heredar de consola" = "Konsolenstandard verwenden";
 "Herramientas de juego" = "Spielwerkzeuge";
+"Historial de importación" = "Importverlauf";
 "Horizontal" = "Querformat";
 "Idioma" = "Sprache";
 "Idioma de la app" = "App-Sprache";
@@ -552,6 +557,7 @@
 "Juegos de sus autores, organizados por consola. Descarga el original a Archivos o visita su página." = "Spiele ihrer Autoren, geordnet nach Konsole. Laden Sie das Original unter „Dateien“ herunter oder besuchen Sie die Seite des Autors.";
 "Juegos gratis" = "Kostenlose Spiele";
 "Juegos por consola" = "Spiele nach Konsole";
+"Juegos procesados: %d. Archivos con incidencias: %d." = "Verarbeitete Spiele: %d. Dateien mit Problemen: %d.";
 "Juegos procesados: %d. Portadas añadidas: %d." = "Verarbeitete Spiele: %d. Hinzugefügte Cover: %d.";
 "Juegos y portadas" = "Spiele und Cover";
 "Jugador" = "Spieler";
@@ -770,6 +776,7 @@
 "No se pudo exportar el informe." = "Der Bericht konnte nicht exportiert werden.";
 "No se pudo guardar al pausar: %@" = "Beim Anhalten konnte nicht gespeichert werden: %@";
 "No se pudo guardar al salir: %@" = "Beim Beenden konnte nicht gespeichert werden: %@";
+"No se pudo guardar el historial de importación. Los juegos procesados se conservaron." = "Der Importverlauf konnte nicht gespeichert werden. Verarbeitete Spiele wurden behalten.";
 "No se pudo guardar la conexión de forma segura. Desbloquea el iPhone y vuelve a intentarlo." = "Die Verbindung konnte nicht sicher gespeichert werden. Entsperre dein iPhone und versuche es erneut.";
 "No se pudo guardar la partida." = "Der Spielstand konnte nicht gespeichert werden.";
 "No se pudo guardar la partida. Tu guardado anterior se conserva." = "Der Spielstand konnte nicht gespeichert werden. Dein vorheriger Spielstand bleibt erhalten.";
@@ -781,7 +788,9 @@
 "No se pudo inicializar el motor nativo." = "Die native Engine konnte nicht initialisiert werden.";
 "No se pudo iniciar el juego." = "Das Spiel konnte nicht gestartet werden.";
 "No se pudo iniciar la sesión local. Vuelve a la biblioteca e inténtalo de nuevo." = "Die lokale Sitzung konnte nicht gestartet werden. Kehre zur Bibliothek zurück und versuche es erneut.";
+"No se pudo leer el historial de importación." = "Der Importverlauf konnte nicht gelesen werden.";
 "No se pudo leer la carpeta del juego." = "Der Spielordner konnte nicht gelesen werden.";
+"No se pudo leer o importar este archivo." = "Diese Datei konnte nicht gelesen oder importiert werden.";
 "No se pudo obtener el estado." = "Der Speicherstatus konnte nicht abgerufen werden.";
 "No se pudo obtener la foto. Reintenta o elige una imagen de Archivos." = "Das Foto konnte nicht abgerufen werden. Versuchen Sie es erneut oder wählen Sie ein Bild aus den Dateien aus.";
 "No se pudo pausar el juego." = "Das Spiel konnte nicht pausiert werden.";
@@ -949,6 +958,7 @@
 "Restablecer posiciones" = "Positionen zurücksetzen";
 "Restaurar valores heredados" = "Geerbte Werte wiederherstellen";
 "Revisa el enlace compartido que te entregó el propietario." = "Prüfe den geteilten Link des Eigentümers.";
+"Revisa el historial de importación para ver los archivos y sus motivos." = "Dateien und Gründe findest du im Importverlauf.";
 "Revisa el skin" = "Skin überprüfen";
 "Revisa la contraseña del enlace o vuelve a entrar si tu sesión venció." = "Prüfe das Passwort oder melde dich nach Ablauf der Sitzung erneut an.";
 "Revisar guía" = "Spielanleitung ansehen";
@@ -1011,6 +1021,7 @@
 "Si no se activa" = "Falls die Aktivierung fehlschlägt";
 "Sin captura en este guardado" = "Kein Bildschirmfoto für diesen Spielstand";
 "Sin decidir" = "Noch nicht festgelegt";
+"Sin errores." = "Keine Fehler.";
 "Sin juegos en esta vista" = "Keine Spiele in dieser Ansicht";
 "Sin pulsar" = "Keine Taste gedrückt";
 "Sin recursos · suavizado nítido" = "Ressourcen nicht verfügbar · scharfe Glättung";
@@ -1054,6 +1065,7 @@
 "Todas" = "Alle";
 "Todas las consolas compatibles están disponibles. Aquí aparecen sólo las que tienen juegos." = "Alle unterstützten Konsolen sind verfügbar. Hier erscheinen nur Konsolen mit Spielen.";
 "Todas las consolas compatibles están disponibles. Importa desde Agregar juegos; cada consola aparece en tu biblioteca cuando tiene juegos. También puedes usar sus carpetas en Archivos → En mi iPhone → VETA-Retro." = "Alle unterstützten Konsolen sind verfügbar. Importiere über Spiele hinzufügen; jede Konsole erscheint mit ihren Spielen in der Bibliothek. Du kannst auch ihre Ordner in Dateien → Auf meinem iPhone → VETA-Retro verwenden.";
+"Todavía no hay importaciones registradas." = "Es wurden noch keine Importe aufgezeichnet.";
 "Todavía no hay precios, compras ni suscripciones. La clasificación comercial se decidirá más adelante." = "Es liegen noch keine Preise, Käufe oder Abonnements vor. Über die kommerzielle Klassifizierung wird später entschieden.";
 "Todavía no hay un cuadro del juego para capturar." = "Es ist noch kein Spielbild zum Erfassen vorhanden.";
 "Todo dentro de VETA" = "Alles in VETA";
@@ -1129,6 +1141,7 @@
 "Velocidad normal" = "Normale Geschwindigkeit";
 "Ver biblioteca" = "Bibliothek ansehen";
 "Ver consolas y juegos" = "Konsolen und Spiele ansehen";
+"Ver historial" = "Verlauf anzeigen";
 "Ver imagen de origen" = "Originalbild anzeigen";
 "Ver juegos" = "Spiele ansehen";
 "Ver lista" = "Listenansicht";

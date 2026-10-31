@@ -12,6 +12,7 @@ enum GameImportChoice { case files, folder, cloud, shared }
 struct GameImportOptionsView: View {
     @Environment(\.dismiss) private var dismiss
     let choose: (GameImportChoice) -> Void
+    let historyRoot:URL
     private var providers: [DirectCloudProvider] {
         DirectCloudProvider.allCases.filter { $0.configuration() != nil }
     }
@@ -29,6 +30,9 @@ struct GameImportOptionsView: View {
                     Text("Portada opcional: Juego.zip + Juego.png. Selecciona ambos archivos o importa su carpeta.")
                 }
                 Section {
+                    NavigationLink {ImportHistoryView(root:historyRoot)} label:{
+                        Label("Historial de importación",systemImage:"list.bullet.clipboard").frame(minHeight:44)
+                    }.accessibilityIdentifier("import-history")
                     NavigationLink { CloudImportHelpView(embedded: true) } label: {
                         Label("Cómo agregar juegos", systemImage: "questionmark.circle").frame(minHeight:44)
                     }.accessibilityIdentifier("import-source-help")
@@ -66,7 +70,7 @@ struct GameImportOptionsView: View {
         let job = CloudImportPreparation(extensions: LocalCoverImport.gameExtensions.union(NativeGameFile.extensions).union(LocalCoverImport.imageExtensions))
         operation = job
         let snapshot = try await Task.detached(priority: .userInitiated) { [weak self] in
-            try job.prepare(urls, combineExplicitFiles: true) { name, done, count in
+            try job.prepare(urls, combineExplicitFiles:true,continueOnError:true) { name, done, count in
                 Task { @MainActor in
                     guard let self, self.operation === job else { return }
                     self.name = name; self.completed = done; self.total = count

@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "build": 204,
+  "appStoreApproved": false,
+  "engineChanges": false,
+  "sourceManifestFiles": 103856,
+  "scope": "Tolerant batch import and persistent per-file import history; see RELEASE-1.0.0-rc.5.md"
+}

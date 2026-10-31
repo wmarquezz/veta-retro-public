@@ -87,6 +87,7 @@
 "Arcade" = "街机";
 "Archivo guardado en VETA-Retro / %@. No se pudo importar: %@" = "文件已保存到 VETA-Retro / %@。无法导入：%@";
 "Archivos compatibles" = "支持的文件";
+"Archivos con incidencias" = "出现问题的文件";
 "Archivos conservados no puede ser un enlace." = "保留文件的文件夹不能是符号链接。";
 "Archivos de sistema Xbox importados. Ya puedes preparar el motor." = "Xbox 系统文件已导入。现在可以准备模拟器核心。";
 "Archivos del iPhone" = "iPhone 文件";
@@ -241,6 +242,7 @@
 "Deseleccionar todo" = "取消全选";
 "Desliza por la cruceta para hacer diagonales. Puedes mantener dirección y A/B a la vez. A+B pulsa ambos botones. Select solo se activa al soltar sin arrastrar." = "在方向键上滑动可斜向移动。可同时按方向与 A/B。A+B 同时按两个按钮。Select 仅在不拖动而松开时触发。";
 "Desprotege la partida antes de eliminarla." = "删除前请解除存档保护。";
+"Detalle de importación" = "导入详情";
 "Diagnóstico Xbox (firmware abierto)" = "Xbox 诊断（开放固件）";
 "Diagnóstico disponible" = "诊断信息可用";
 "Diagnóstico guardado" = "诊断信息已保存";
@@ -294,9 +296,11 @@
 "El enlace y la contraseña se guardan en el llavero seguro de este iPhone. Si cambia la contraseña, tendrás que ingresar la nueva." = "链接和密码保存在此 iPhone 的安全钥匙串中。密码更改后，你需要输入新密码。";
 "El estado supera el tamaño admitido." = "即时存档超出支持的大小。";
 "El guardado rápido de Xbox incluye su disco virtual y pertenece a esta instalación." = "Xbox 快速存档包含其虚拟硬盘，仅适用于此安装。";
+"El historial reciente se guarda en VETA y no se envía automáticamente. Los archivos originales no se modifican." = "近期历史记录保存在 VETA 中，不会自动发送。原始文件不会被修改。";
 "El informe incluye los nombres de los juegos y las mediciones guardadas. Tú eliges dónde guardarlo." = "报告包含游戏名称和已保存的测量数据。你可以选择保存位置。";
 "El juego debe ser un archivo de hasta 8 GB." = "游戏必须为不超过 8 GB 的文件。";
 "El juego debe ser un archivo válido de hasta 64 GB." = "游戏必须是大小不超过 64 GB 的有效文件。";
+"El juego se conservó; falló su portada." = "游戏已保留，但封面导入失败。";
 "El juego se quitó de la biblioteca, pero no se pudo liberar todo su espacio. VETA reintentará la limpieza al abrirse de nuevo." = "游戏已从游戏库移除，但未能释放全部空间。VETA 将在重新打开时重试清理。";
 "El juego supera los 64 GB permitidos." = "游戏超过 64 GB 限制。";
 "El juego todavía no está listo." = "游戏尚未就绪。";
@@ -502,6 +506,7 @@
 "Hecho para jugar" = "为游戏而生";
 "Heredar de consola" = "使用主机默认值";
 "Herramientas de juego" = "游戏工具";
+"Historial de importación" = "导入历史";
 "Horizontal" = "横向";
 "Idioma" = "语言";
 "Idioma de la app" = "应用语言";
@@ -552,6 +557,7 @@
 "Juegos de sus autores, organizados por consola. Descarga el original a Archivos o visita su página." = "按主机分类的作者游戏。将原版下载到“文件”或访问作者页面。";
 "Juegos gratis" = "免费游戏";
 "Juegos por consola" = "按主机查看游戏";
+"Juegos procesados: %d. Archivos con incidencias: %d." = "已处理游戏：%d。出现问题的文件：%d。";
 "Juegos procesados: %d. Portadas añadidas: %d." = "已处理游戏：%d。已添加封面：%d。";
 "Juegos y portadas" = "游戏与封面";
 "Jugador" = "玩家";
@@ -770,6 +776,7 @@
 "No se pudo exportar el informe." = "无法导出报告。";
 "No se pudo guardar al pausar: %@" = "暂停时无法保存：%@";
 "No se pudo guardar al salir: %@" = "退出时无法保存：%@";
+"No se pudo guardar el historial de importación. Los juegos procesados se conservaron." = "无法保存导入历史。已处理的游戏已保留。";
 "No se pudo guardar la conexión de forma segura. Desbloquea el iPhone y vuelve a intentarlo." = "无法安全保存连接，请解锁 iPhone 后重试。";
 "No se pudo guardar la partida." = "无法保存游戏进度。";
 "No se pudo guardar la partida. Tu guardado anterior se conserva." = "无法保存游戏进度。此前的存档已保留。";
@@ -781,7 +788,9 @@
 "No se pudo inicializar el motor nativo." = "无法初始化原生引擎。";
 "No se pudo iniciar el juego." = "无法启动游戏。";
 "No se pudo iniciar la sesión local. Vuelve a la biblioteca e inténtalo de nuevo." = "无法启动本地会话。请返回游戏库后重试。";
+"No se pudo leer el historial de importación." = "无法读取导入历史。";
 "No se pudo leer la carpeta del juego." = "无法读取游戏文件夹。";
+"No se pudo leer o importar este archivo." = "无法读取或导入此文件。";
 "No se pudo obtener el estado." = "无法获取即时存档。";
 "No se pudo obtener la foto. Reintenta o elige una imagen de Archivos." = "无法获取照片。请重试或从“文件”选取图片。";
 "No se pudo pausar el juego." = "无法暂停游戏。";
@@ -949,6 +958,7 @@
 "Restablecer posiciones" = "重置位置";
 "Restaurar valores heredados" = "恢复继承值";
 "Revisa el enlace compartido que te entregó el propietario." = "请检查所有者提供的共享链接。";
+"Revisa el historial de importación para ver los archivos y sus motivos." = "查看导入历史以了解文件及原因。";
 "Revisa el skin" = "检查皮肤";
 "Revisa la contraseña del enlace o vuelve a entrar si tu sesión venció." = "请检查链接密码，或在会话过期后重新登录。";
 "Revisar guía" = "查看攻略";
@@ -1011,6 +1021,7 @@
 "Si no se activa" = "如果激活失败";
 "Sin captura en este guardado" = "此存档无截图";
 "Sin decidir" = "待定";
+"Sin errores." = "没有错误。";
 "Sin juegos en esta vista" = "此视图中没有游戏";
 "Sin pulsar" = "未按下按钮";
 "Sin recursos · suavizado nítido" = "资源不足 · 清晰平滑";
@@ -1054,6 +1065,7 @@
 "Todas" = "全部";
 "Todas las consolas compatibles están disponibles. Aquí aparecen sólo las que tienen juegos." = "所有支持的主机均可使用。这里只显示有游戏的主机。";
 "Todas las consolas compatibles están disponibles. Importa desde Agregar juegos; cada consola aparece en tu biblioteca cuando tiene juegos. También puedes usar sus carpetas en Archivos → En mi iPhone → VETA-Retro." = "所有支持的主机均可使用。从“添加游戏”导入；主机有游戏时就会出现在资料库中。也可使用“文件 → 我的 iPhone → VETA-Retro”中的文件夹。";
+"Todavía no hay importaciones registradas." = "尚无导入记录。";
 "Todavía no hay precios, compras ni suscripciones. La clasificación comercial se decidirá más adelante." = "目前没有定价、购买或订阅。商业分类将在以后确定。";
 "Todavía no hay un cuadro del juego para capturar." = "尚无可截取的游戏画面。";
 "Todo dentro de VETA" = "一切尽在 VETA";
@@ -1129,6 +1141,7 @@
 "Velocidad normal" = "正常速度";
 "Ver biblioteca" = "查看游戏库";
 "Ver consolas y juegos" = "浏览主机和游戏";
+"Ver historial" = "查看历史";
 "Ver imagen de origen" = "查看原图";
 "Ver juegos" = "查看游戏";
 "Ver lista" = "列表视图";

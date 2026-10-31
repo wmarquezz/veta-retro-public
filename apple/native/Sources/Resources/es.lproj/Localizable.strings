@@ -87,6 +87,7 @@
 "Arcade" = "Arcade";
 "Archivo guardado en VETA-Retro / %@. No se pudo importar: %@" = "Archivo guardado en VETA-Retro / %@. No se pudo importar: %@";
 "Archivos compatibles" = "Archivos compatibles";
+"Archivos con incidencias" = "Archivos con incidencias";
 "Archivos conservados no puede ser un enlace." = "Archivos conservados no puede ser un enlace.";
 "Archivos de sistema Xbox importados. Ya puedes preparar el motor." = "Archivos de sistema Xbox importados. Ya puedes preparar el motor.";
 "Archivos del iPhone" = "Archivos del iPhone";
@@ -241,6 +242,7 @@
 "Deseleccionar todo" = "Deseleccionar todo";
 "Desliza por la cruceta para hacer diagonales. Puedes mantener dirección y A/B a la vez. A+B pulsa ambos botones. Select solo se activa al soltar sin arrastrar." = "Desliza por la cruceta para hacer diagonales. Puedes mantener dirección y A/B a la vez. A+B pulsa ambos botones. Select solo se activa al soltar sin arrastrar.";
 "Desprotege la partida antes de eliminarla." = "Desprotege la partida antes de eliminarla.";
+"Detalle de importación" = "Detalle de importación";
 "Diagnóstico Xbox (firmware abierto)" = "Diagnóstico Xbox (firmware abierto)";
 "Diagnóstico disponible" = "Diagnóstico disponible";
 "Diagnóstico guardado" = "Diagnóstico guardado";
@@ -294,9 +296,11 @@
 "El enlace y la contraseña se guardan en el llavero seguro de este iPhone. Si cambia la contraseña, tendrás que ingresar la nueva." = "El enlace y la contraseña se guardan en el llavero seguro de este iPhone. Si cambia la contraseña, tendrás que ingresar la nueva.";
 "El estado supera el tamaño admitido." = "El estado supera el tamaño admitido.";
 "El guardado rápido de Xbox incluye su disco virtual y pertenece a esta instalación." = "El guardado rápido de Xbox incluye su disco virtual y pertenece a esta instalación.";
+"El historial reciente se guarda en VETA y no se envía automáticamente. Los archivos originales no se modifican." = "El historial reciente se guarda en VETA y no se envía automáticamente. Los archivos originales no se modifican.";
 "El informe incluye los nombres de los juegos y las mediciones guardadas. Tú eliges dónde guardarlo." = "El informe incluye los nombres de los juegos y las mediciones guardadas. Tú eliges dónde guardarlo.";
 "El juego debe ser un archivo de hasta 8 GB." = "El juego debe ser un archivo de hasta 8 GB.";
 "El juego debe ser un archivo válido de hasta 64 GB." = "El juego debe ser un archivo válido de hasta 64 GB.";
+"El juego se conservó; falló su portada." = "El juego se conservó; falló su portada.";
 "El juego se quitó de la biblioteca, pero no se pudo liberar todo su espacio. VETA reintentará la limpieza al abrirse de nuevo." = "El juego se quitó de la biblioteca, pero no se pudo liberar todo su espacio. VETA reintentará la limpieza al abrirse de nuevo.";
 "El juego supera los 64 GB permitidos." = "El juego supera los 64 GB permitidos.";
 "El juego todavía no está listo." = "El juego todavía no está listo.";
@@ -502,6 +506,7 @@
 "Hecho para jugar" = "Hecho para jugar";
 "Heredar de consola" = "Heredar de consola";
 "Herramientas de juego" = "Herramientas de juego";
+"Historial de importación" = "Historial de importación";
 "Horizontal" = "Horizontal";
 "Idioma" = "Idioma";
 "Idioma de la app" = "Idioma de la app";
@@ -552,6 +557,7 @@
 "Juegos de sus autores, organizados por consola. Descarga el original a Archivos o visita su página." = "Juegos de sus autores, organizados por consola. Descarga el original a Archivos o visita su página.";
 "Juegos gratis" = "Juegos gratis";
 "Juegos por consola" = "Juegos por consola";
+"Juegos procesados: %d. Archivos con incidencias: %d." = "Juegos procesados: %d. Archivos con incidencias: %d.";
 "Juegos procesados: %d. Portadas añadidas: %d." = "Juegos procesados: %d. Portadas añadidas: %d.";
 "Juegos y portadas" = "Juegos y portadas";
 "Jugador" = "Jugador";
@@ -770,6 +776,7 @@
 "No se pudo exportar el informe." = "No se pudo exportar el informe.";
 "No se pudo guardar al pausar: %@" = "No se pudo guardar al pausar: %@";
 "No se pudo guardar al salir: %@" = "No se pudo guardar al salir: %@";
+"No se pudo guardar el historial de importación. Los juegos procesados se conservaron." = "No se pudo guardar el historial de importación. Los juegos procesados se conservaron.";
 "No se pudo guardar la conexión de forma segura. Desbloquea el iPhone y vuelve a intentarlo." = "No se pudo guardar la conexión de forma segura. Desbloquea el iPhone y vuelve a intentarlo.";
 "No se pudo guardar la partida." = "No se pudo guardar la partida.";
 "No se pudo guardar la partida. Tu guardado anterior se conserva." = "No se pudo guardar la partida. Tu guardado anterior se conserva.";
@@ -781,7 +788,9 @@
 "No se pudo inicializar el motor nativo." = "No se pudo inicializar el motor nativo.";
 "No se pudo iniciar el juego." = "No se pudo iniciar el juego.";
 "No se pudo iniciar la sesión local. Vuelve a la biblioteca e inténtalo de nuevo." = "No se pudo iniciar la sesión local. Vuelve a la biblioteca e inténtalo de nuevo.";
+"No se pudo leer el historial de importación." = "No se pudo leer el historial de importación.";
 "No se pudo leer la carpeta del juego." = "No se pudo leer la carpeta del juego.";
+"No se pudo leer o importar este archivo." = "No se pudo leer o importar este archivo.";
 "No se pudo obtener el estado." = "No se pudo obtener el estado.";
 "No se pudo obtener la foto. Reintenta o elige una imagen de Archivos." = "No se pudo obtener la foto. Reintenta o elige una imagen de Archivos.";
 "No se pudo pausar el juego." = "No se pudo pausar el juego.";
@@ -949,6 +958,7 @@
 "Restablecer posiciones" = "Restablecer posiciones";
 "Restaurar valores heredados" = "Restaurar valores heredados";
 "Revisa el enlace compartido que te entregó el propietario." = "Revisa el enlace compartido que te entregó el propietario.";
+"Revisa el historial de importación para ver los archivos y sus motivos." = "Revisa el historial de importación para ver los archivos y sus motivos.";
 "Revisa el skin" = "Revisa el skin";
 "Revisa la contraseña del enlace o vuelve a entrar si tu sesión venció." = "Revisa la contraseña del enlace o vuelve a entrar si tu sesión venció.";
 "Revisar guía" = "Revisar guía";
@@ -1011,6 +1021,7 @@
 "Si no se activa" = "Si no se activa";
 "Sin captura en este guardado" = "Sin captura en este guardado";
 "Sin decidir" = "Sin decidir";
+"Sin errores." = "Sin errores.";
 "Sin juegos en esta vista" = "Sin juegos en esta vista";
 "Sin pulsar" = "Sin pulsar";
 "Sin recursos · suavizado nítido" = "Sin recursos · suavizado nítido";
@@ -1054,6 +1065,7 @@
 "Todas" = "Todas";
 "Todas las consolas compatibles están disponibles. Aquí aparecen sólo las que tienen juegos." = "Todas las consolas compatibles están disponibles. Aquí aparecen sólo las que tienen juegos.";
 "Todas las consolas compatibles están disponibles. Importa desde Agregar juegos; cada consola aparece en tu biblioteca cuando tiene juegos. También puedes usar sus carpetas en Archivos → En mi iPhone → VETA-Retro." = "Todas las consolas compatibles están disponibles. Importa desde Agregar juegos; cada consola aparece en tu biblioteca cuando tiene juegos. También puedes usar sus carpetas en Archivos → En mi iPhone → VETA-Retro.";
+"Todavía no hay importaciones registradas." = "Todavía no hay importaciones registradas.";
 "Todavía no hay precios, compras ni suscripciones. La clasificación comercial se decidirá más adelante." = "Todavía no hay precios, compras ni suscripciones. La clasificación comercial se decidirá más adelante.";
 "Todavía no hay un cuadro del juego para capturar." = "Todavía no hay un cuadro del juego para capturar.";
 "Todo dentro de VETA" = "Todo dentro de VETA";
@@ -1129,6 +1141,7 @@
 "Velocidad normal" = "Velocidad normal";
 "Ver biblioteca" = "Ver biblioteca";
 "Ver consolas y juegos" = "Ver consolas y juegos";
+"Ver historial" = "Ver historial";
 "Ver imagen de origen" = "Ver imagen de origen";
 "Ver juegos" = "Ver juegos";
 "Ver lista" = "Ver lista";

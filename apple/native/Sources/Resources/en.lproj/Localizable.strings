@@ -5,6 +5,7 @@
 "%@ todavía no está disponible en este dispositivo." = "%@ is not available on this device yet.";
 "%d archivos" = "%d files";
 "%d archivos · %@" = "%d files · %@";
+"%d seleccionados de %d juegos" = "%d selected out of %d games";
 "%lld juego" = "%lld game";
 "%lld juegos" = "%lld games";
 ", aporte único" = ", one-time contribution";
@@ -47,6 +48,7 @@
 "Activo: %@" = "Active: %@";
 "Actualizar" = "Refresh";
 "Actualizar carpeta" = "Refresh folder";
+"Administrar juegos" = "Manage games";
 "Agitar" = "Shake";
 "Agrega tu primer juego y su consola aparecerá aquí automáticamente." = "Add your first game and its console will appear here automatically.";
 "Agrega tus juegos o descubre los juegos gratuitos de VETA." = "Add your games or discover VETA’s free games.";
@@ -123,6 +125,7 @@
 "Buscar en Internet" = "Search the web";
 "Buscar en tu biblioteca" = "Search your library";
 "Buscar guía completa" = "Find a complete walkthrough";
+"Buscar no cambia tu selección. Seleccionar toda la consola incluye también los juegos ocultos por la búsqueda." = "Searching does not change your selection. Selecting the entire console also includes games hidden by the search.";
 "Buscar partida por Game Center" = "Find a game with Game Center";
 "Buscar portada en Internet" = "Find artwork online";
 "Búsqueda automática desactivada. Se conserva la imagen actual." = "Automatic search disabled. The current image is kept.";
@@ -346,10 +349,13 @@
 "Elige tu mando" = "Choose your controls";
 "Elige una imagen de hasta 30 MB." = "Choose an image up to 30 MB.";
 "Elige una imagen desde Archivos. Usa PNG con la proporción indicada; en horizontal, deja transparente el centro. Puedes exportar la plantilla para rediseñarla." = "Choose an image from Files. Use a PNG with the indicated aspect ratio; leave the center transparent in landscape. You can export the template to redesign it.";
+"Eliminando juegos…" = "Deleting games…";
 "Eliminar" = "Delete";
 "Eliminar %@" = "Delete %@";
+"Eliminar (%d)" = "Delete (%d)";
 "Eliminar juego" = "Delete game";
 "Eliminar partida" = "Delete save";
+"Eliminar seleccionados (%d)" = "Delete selected (%d)";
 "Emparejamiento guardado" = "Pairing file saved";
 "Emparejamiento guardado. Abre un juego de PS2 para activar JIT." = "Pairing file saved. Open a PS2 game to activate JIT.";
 "En este iPhone necesita JIT para jugar." = "Playing on this iPhone requires JIT.";
@@ -606,6 +612,7 @@
 "La primera vez, iOS pedirá permiso para la conexión local. La activación se repite cuando iOS cierra VETA." = "The first time, iOS will request permission for the local connection. Activation is repeated when iOS closes VETA.";
 "La sala rechazó la invitación o no está disponible." = "The room declined the invitation or is unavailable.";
 "La selección es demasiado grande. Elige una carpeta de consola más pequeña." = "The selection is too large. Choose a smaller console folder.";
+"La selección incluye juegos de otra consola. No se eliminó ningún juego." = "The selection includes games from another console. No games were deleted.";
 "La sesión actual se conservará en «Antes de cargar»." = "The current session will be kept in “Before loading”.";
 "La sesión encontró un error. Vuelve a la biblioteca e inténtalo de nuevo." = "The session encountered an error. Return to the library and try again.";
 "La sesión local ya está iniciada o cerrada." = "The local session has already started or closed.";
@@ -648,6 +655,7 @@
 "Los juegos quedan en este iPhone para jugar sin conexión. No modificamos los archivos compartidos. La contraseña no se guarda al cerrar este acceso." = "Games stay on this iPhone for offline play. Shared files are not modified. The password is not saved when you close this connection.";
 "Los juegos quedan en este iPhone para jugar sin conexión. Olvidar el acceso no elimina tus juegos importados." = "Games stay on this iPhone for offline play. Forgetting access does not remove imported games.";
 "Los juegos quedan en este iPhone para jugar sin conexión. Puedes desconectar la cuenta en cualquier momento." = "Games stay on this iPhone for offline play. You can disconnect your account at any time.";
+"Los juegos se quitaron de la biblioteca, pero queda espacio por liberar. VETA reintentará la limpieza al abrirse de nuevo." = "The games were removed from the library, but some space still needs to be freed. VETA will retry cleanup the next time it opens.";
 "Los mandos Bluetooth de iOS se detectan automáticamente. A y B son acción; Options es Select y Menu es Start. La cantidad de jugadores depende de la consola y del juego; configura los puertos en Mandos y jugadores." = "Compatible iOS Bluetooth controllers are detected automatically. A/B are action, Options is Select, Menu is Start. Player count depends on the console and game; assign ports in Controllers and players.";
 "Los mandos Bluetooth de iOS se detectan automáticamente. A y B son acción; Options es Select y Menu es Start. Se admiten dos mandos para juegos de dos jugadores en el mismo iPhone." = "Compatible iOS Bluetooth controllers are detected automatically. A/B are action, Options is Select, Menu is Start. Two controllers are supported for two-player games on one iPhone.";
 "Los nombres de juegos y consolas conservan su idioma original." = "Game and console names keep their original language.";
@@ -722,6 +730,7 @@
 "No hay espacio suficiente para descomprimir e importar el ZIP." = "There is not enough space to extract and import the ZIP.";
 "No hay estados rápidos ni vídeo remoto para este motor. La TV y los mandos cercanos requieren dispositivos compatibles." = "This engine has no save states or remote video. TV and nearby controllers require compatible devices.";
 "No hay juegos en esta carpeta." = "No games in this folder.";
+"No hay juegos que coincidan con esta búsqueda." = "No games match this search.";
 "No hay mandos compatibles conectados." = "No compatible controllers connected.";
 "No hay plaza libre para otro jugador." = "No free slot for another player.";
 "No hay portadas en este catálogo." = "There are no covers in this catalog.";
@@ -753,6 +762,7 @@
 "No se pudo cargar la partida guardada." = "Could not load the saved game.";
 "No se pudo completar" = "Could not complete";
 "No se pudo completar el aporte. Revisa tu conexión e inténtalo de nuevo." = "The contribution couldn't be completed. Check your connection and try again.";
+"No se pudo completar la operación" = "The operation could not be completed";
 "No se pudo continuar el juego." = "Could not resume the game.";
 "No se pudo copiar el juego." = "Could not copy the game.";
 "No se pudo crear una sesión privada." = "A private session could not be created.";
@@ -902,6 +912,7 @@
 "Quitar %@ de favoritos" = "Remove %@ from favorites";
 "Quitar de favoritos" = "Remove from favorites";
 "Quitar enlace" = "Remove link";
+"Quitar selección" = "Clear selection";
 "RETRO" = "RETRO";
 "RPCS3 · DukeX · XeniOS" = "RPCS3 · DukeX · XeniOS";
 "Ranura de guardado inválida." = "Invalid save slot.";
@@ -958,6 +969,7 @@
 "Se descartarán las descargas temporales. Los archivos compartidos y tus juegos de VETA se conservan." = "Temporary downloads will be discarded. Shared files and your VETA games will be kept.";
 "Se eliminará la conexión guardada en este iPhone. Tus juegos importados se conservan. Puedes revocar también el permiso desde la cuenta del proveedor." = "The connection saved on this iPhone will be removed. Your imported games are kept. You can also revoke permission in your provider account.";
 "Se eliminará «%@» de «%@». Las demás partidas y el guardado dentro del juego se conservan. Esta acción no se puede deshacer." = "“%@” for “%@” will be deleted. Other saves and in-game progress are kept. This cannot be undone.";
+"Se eliminarán %d juegos de %@, con sus portadas y todas sus partidas guardadas en VETA. No se puede deshacer. Los originales de Archivos o la nube y los demás juegos se conservan." = "This will delete %d games from %@, including their covers and all saved progress in VETA. This cannot be undone. Originals in Files or the cloud and other games will be kept.";
 "Se eliminarán las mediciones de este dispositivo. Los informes que hayas exportado se conservan." = "Measurements on this device will be deleted. Reports you have exported will be kept.";
 "Se eliminarán «%@», su portada y sus partidas guardadas de VETA. Esta acción no se puede deshacer. Los archivos originales en Archivos y los demás juegos se conservarán." = "“%@”, its cover and its saved games will be deleted from VETA. This cannot be undone. Original files in Files and other games will be kept.";
 "Se guardará en VETA-Retro / %@. Si la consola no está en tu colección, se agregará al confirmar. %@" = "It will be saved in VETA-Retro / %@. If this console is not in your collection, confirming will add it. %@";
@@ -985,6 +997,7 @@
 "Selecciona una imagen ISO/XISO de la consola elegida o un XEX2 para Xbox 360." = "Select an ISO/XISO image for the chosen console or an XEX2 for Xbox 360.";
 "Seleccionado" = "Selected";
 "Seleccionar %@" = "Select %@";
+"Seleccionar toda la consola" = "Select all games on this console";
 "Seleccionar todo" = "Select all";
 "Separación %lld %%" = "Spacing %lld %%";
 "Sesión nativa" = "Native session";
@@ -1171,6 +1184,7 @@
 "¿Eliminar esta partida?" = "Delete this save?";
 "¿Eliminar este skin?" = "Delete this skin?";
 "¿Eliminar juego de VETA?" = "Delete game from VETA?";
+"¿Eliminar los juegos seleccionados?" = "Delete the selected games?";
 "¿Guardar este emparejamiento para VETA?" = "Save this pairing file for VETA?";
 "¿Quitar el enlace de la guía?" = "Remove the guide link?";
 "¿Reemplazar el guardado rápido?" = "Replace the quick save?";

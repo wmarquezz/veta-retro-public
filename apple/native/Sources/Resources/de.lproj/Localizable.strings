@@ -5,6 +5,7 @@
 "%@ todavía no está disponible en este dispositivo." = "%@ ist auf diesem Gerät noch nicht verfügbar.";
 "%d archivos" = "%d Dateien";
 "%d archivos · %@" = "%d Dateien · %@";
+"%d seleccionados de %d juegos" = "%d von %d Spielen ausgewählt";
 "%lld juego" = "%lld Spiel";
 "%lld juegos" = "%lld Spiele";
 ", aporte único" = ", einmaliger Beitrag";
@@ -47,6 +48,7 @@
 "Activo: %@" = "Aktiv: %@";
 "Actualizar" = "Aktualisieren";
 "Actualizar carpeta" = "Ordner aktualisieren";
+"Administrar juegos" = "Spiele verwalten";
 "Agitar" = "Schütteln";
 "Agrega tu primer juego y su consola aparecerá aquí automáticamente." = "Füge dein erstes Spiel hinzu und seine Konsole erscheint hier automatisch.";
 "Agrega tus juegos o descubre los juegos gratuitos de VETA." = "Fügen Sie Ihre Spiele hinzu oder entdecken Sie die kostenlosen Spiele von VETA.";
@@ -123,6 +125,7 @@
 "Buscar en Internet" = "Durchsuchen Sie das Internet";
 "Buscar en tu biblioteca" = "Durchsuchen Sie Ihre Bibliothek";
 "Buscar guía completa" = "Hier finden Sie eine vollständige Komplettlösung";
+"Buscar no cambia tu selección. Seleccionar toda la consola incluye también los juegos ocultos por la búsqueda." = "Die Suche ändert deine Auswahl nicht. Die Auswahl der gesamten Konsole umfasst auch durch die Suche ausgeblendete Spiele.";
 "Buscar partida por Game Center" = "Finden Sie ein Spiel mit Game Center";
 "Buscar portada en Internet" = "Cover im Internet suchen";
 "Búsqueda automática desactivada. Se conserva la imagen actual." = "Automatische Suche deaktiviert. Das aktuelle Bild bleibt erhalten.";
@@ -346,10 +349,13 @@
 "Elige tu mando" = "Controller auswählen";
 "Elige una imagen de hasta 30 MB." = "Wählen Sie ein Bild mit bis zu 30 MB.";
 "Elige una imagen desde Archivos. Usa PNG con la proporción indicada; en horizontal, deja transparente el centro. Puedes exportar la plantilla para rediseñarla." = "Wähle ein Bild aus Dateien. Nutze PNG im angegebenen Seitenverhältnis; lass im Querformat die Mitte transparent. Du kannst die Vorlage exportieren und neu gestalten.";
+"Eliminando juegos…" = "Spiele werden gelöscht…";
 "Eliminar" = "Löschen";
 "Eliminar %@" = "%@ löschen";
+"Eliminar (%d)" = "Löschen (%d)";
 "Eliminar juego" = "Spiel löschen";
 "Eliminar partida" = "Spielstand löschen";
+"Eliminar seleccionados (%d)" = "Auswahl löschen (%d)";
 "Emparejamiento guardado" = "Kopplungsdatei gespeichert";
 "Emparejamiento guardado. Abre un juego de PS2 para activar JIT." = "Kopplungsdatei gespeichert. Öffne ein PS2-Spiel, um JIT zu aktivieren.";
 "En este iPhone necesita JIT para jugar." = "Zum Spielen auf diesem iPhone ist JIT erforderlich.";
@@ -606,6 +612,7 @@
 "La primera vez, iOS pedirá permiso para la conexión local. La activación se repite cuando iOS cierra VETA." = "Beim ersten Mal fordert iOS die Erlaubnis für die lokale Verbindung an. Die Aktivierung wird wiederholt, wenn iOS VETA schließt.";
 "La sala rechazó la invitación o no está disponible." = "Der Raum hat die Einladung abgelehnt oder ist nicht verfügbar.";
 "La selección es demasiado grande. Elige una carpeta de consola más pequeña." = "Die Auswahl ist zu groß. Wähle einen kleineren Konsolenordner.";
+"La selección incluye juegos de otra consola. No se eliminó ningún juego." = "Die Auswahl enthält Spiele einer anderen Konsole. Es wurden keine Spiele gelöscht.";
 "La sesión actual se conservará en «Antes de cargar»." = "Die aktuelle Sitzung bleibt unter „Vor dem Laden“ erhalten.";
 "La sesión encontró un error. Vuelve a la biblioteca e inténtalo de nuevo." = "In der Sitzung ist ein Fehler aufgetreten. Kehre zur Bibliothek zurück und versuche es erneut.";
 "La sesión local ya está iniciada o cerrada." = "Die lokale Sitzung wurde bereits gestartet oder geschlossen.";
@@ -648,6 +655,7 @@
 "Los juegos quedan en este iPhone para jugar sin conexión. No modificamos los archivos compartidos. La contraseña no se guarda al cerrar este acceso." = "Spiele bleiben zum Offline-Spielen auf diesem iPhone. Geteilte Dateien werden nicht verändert. Beim Schließen wird das Passwort nicht gespeichert.";
 "Los juegos quedan en este iPhone para jugar sin conexión. Olvidar el acceso no elimina tus juegos importados." = "Spiele bleiben zum Offline-Spielen auf diesem iPhone. Das Vergessen des Zugangs löscht keine importierten Spiele.";
 "Los juegos quedan en este iPhone para jugar sin conexión. Puedes desconectar la cuenta en cualquier momento." = "Die Spiele bleiben zum Offline-Spielen auf diesem iPhone. Du kannst das Konto jederzeit trennen.";
+"Los juegos se quitaron de la biblioteca, pero queda espacio por liberar. VETA reintentará la limpieza al abrirse de nuevo." = "Die Spiele wurden aus der Bibliothek entfernt, aber Speicherplatz muss noch freigegeben werden. VETA versucht die Bereinigung beim nächsten Öffnen erneut.";
 "Los mandos Bluetooth de iOS se detectan automáticamente. A y B son acción; Options es Select y Menu es Start. La cantidad de jugadores depende de la consola y del juego; configura los puertos en Mandos y jugadores." = "Kompatible iOS-Bluetooth-Controller werden automatisch erkannt. A/B sind Aktionen, Optionen ist Auswählen, Menü ist Start. Die Anzahl der Spieler hängt von der Konsole und dem Spiel ab. Weisen Sie Ports in Controllern und Playern zu.";
 "Los mandos Bluetooth de iOS se detectan automáticamente. A y B son acción; Options es Select y Menu es Start. Se admiten dos mandos para juegos de dos jugadores en el mismo iPhone." = "Kompatible iOS-Bluetooth-Controller werden automatisch erkannt. A/B sind Aktionen, Optionen ist Auswählen, Menü ist Start. Für Zwei-Spieler-Spiele auf einem iPhone werden zwei Controller unterstützt.";
 "Los nombres de juegos y consolas conservan su idioma original." = "Spiel- und Konsolennamen behalten ihre Originalsprache.";
@@ -722,6 +730,7 @@
 "No hay espacio suficiente para descomprimir e importar el ZIP." = "Es ist nicht genug Speicher zum Entpacken und Importieren der ZIP-Datei vorhanden.";
 "No hay estados rápidos ni vídeo remoto para este motor. La TV y los mandos cercanos requieren dispositivos compatibles." = "Diese Engine verfügt über keine Speicherstatus oder Remote-Video. Fernseher und in der Nähe befindliche Controller erfordern kompatible Geräte.";
 "No hay juegos en esta carpeta." = "Keine Spiele in diesem Ordner.";
+"No hay juegos que coincidan con esta búsqueda." = "Keine Spiele entsprechen dieser Suche.";
 "No hay mandos compatibles conectados." = "Keine kompatiblen Controller angeschlossen.";
 "No hay plaza libre para otro jugador." = "Kein freier Platz für einen anderen Spieler.";
 "No hay portadas en este catálogo." = "In diesem Katalog gibt es keine Cover.";
@@ -753,6 +762,7 @@
 "No se pudo cargar la partida guardada." = "Der gespeicherte Spielstand konnte nicht geladen werden.";
 "No se pudo completar" = "Konnte nicht abgeschlossen werden";
 "No se pudo completar el aporte. Revisa tu conexión e inténtalo de nuevo." = "Der Beitrag konnte nicht abgeschlossen werden. Prüfe deine Verbindung und versuche es erneut.";
+"No se pudo completar la operación" = "Der Vorgang konnte nicht abgeschlossen werden";
 "No se pudo continuar el juego." = "Das Spiel konnte nicht fortgesetzt werden.";
 "No se pudo copiar el juego." = "Das Spiel konnte nicht kopiert werden.";
 "No se pudo crear una sesión privada." = "Eine private Sitzung konnte nicht erstellt werden.";
@@ -902,6 +912,7 @@
 "Quitar %@ de favoritos" = "Entfernen Sie %@ aus den Favoriten";
 "Quitar de favoritos" = "Aus Favoriten entfernen";
 "Quitar enlace" = "Link entfernen";
+"Quitar selección" = "Auswahl aufheben";
 "RETRO" = "RETRO";
 "RPCS3 · DukeX · XeniOS" = "RPCS3 · DukeX · XeniOS";
 "Ranura de guardado inválida." = "Ungültiger Speicherplatz.";
@@ -958,6 +969,7 @@
 "Se descartarán las descargas temporales. Los archivos compartidos y tus juegos de VETA se conservan." = "Temporäre Downloads werden verworfen. Geteilte Dateien und deine VETA-Spiele bleiben erhalten.";
 "Se eliminará la conexión guardada en este iPhone. Tus juegos importados se conservan. Puedes revocar también el permiso desde la cuenta del proveedor." = "Die auf diesem iPhone gespeicherte Verbindung wird entfernt. Importierte Spiele bleiben erhalten. Du kannst die Berechtigung auch beim Anbieter widerrufen.";
 "Se eliminará «%@» de «%@». Las demás partidas y el guardado dentro del juego se conservan. Esta acción no se puede deshacer." = "„%@“ von „%@“ wird gelöscht. Andere Spielstände und im Spiel gespeicherter Fortschritt bleiben erhalten. Dies kann nicht rückgängig gemacht werden.";
+"Se eliminarán %d juegos de %@, con sus portadas y todas sus partidas guardadas en VETA. No se puede deshacer. Los originales de Archivos o la nube y los demás juegos se conservan." = "%d Spiele von %@ werden mit ihren Covern und allen Spielständen in VETA gelöscht. Dies kann nicht rückgängig gemacht werden. Originale in Dateien oder der Cloud und andere Spiele bleiben erhalten.";
 "Se eliminarán las mediciones de este dispositivo. Los informes que hayas exportado se conservan." = "Messungen auf diesem Gerät werden gelöscht. Von Ihnen exportierte Berichte bleiben erhalten.";
 "Se eliminarán «%@», su portada y sus partidas guardadas de VETA. Esta acción no se puede deshacer. Los archivos originales en Archivos y los demás juegos se conservarán." = "„%@“, sein Cover und seine Spielstände werden aus VETA gelöscht. Diese Aktion kann nicht rückgängig gemacht werden. Die Originaldateien in der App „Dateien“ und alle anderen Spiele bleiben erhalten.";
 "Se guardará en VETA-Retro / %@. Si la consola no está en tu colección, se agregará al confirmar. %@" = "Es wird in VETA-Retro / %@ gespeichert. Wenn sich diese Konsole nicht in Ihrer Sammlung befindet, wird sie durch Bestätigen hinzugefügt. %@";
@@ -985,6 +997,7 @@
 "Selecciona una imagen ISO/XISO de la consola elegida o un XEX2 para Xbox 360." = "Wählen Sie ein ISO/XISO-Image für die ausgewählte Konsole oder ein XEX2 für Xbox 360.";
 "Seleccionado" = "Ausgewählt";
 "Seleccionar %@" = "%@ auswählen";
+"Seleccionar toda la consola" = "Alle Spiele dieser Konsole auswählen";
 "Seleccionar todo" = "Alles auswählen";
 "Separación %lld %%" = "Abstand %lld %%";
 "Sesión nativa" = "Native Sitzung";
@@ -1171,6 +1184,7 @@
 "¿Eliminar esta partida?" = "Diesen Speicherstand löschen?";
 "¿Eliminar este skin?" = "Diesen Skin löschen?";
 "¿Eliminar juego de VETA?" = "Spiel aus VETA löschen?";
+"¿Eliminar los juegos seleccionados?" = "Ausgewählte Spiele löschen?";
 "¿Guardar este emparejamiento para VETA?" = "Diese Kopplungsdatei für VETA speichern?";
 "¿Quitar el enlace de la guía?" = "Anleitungslink entfernen?";
 "¿Reemplazar el guardado rápido?" = "Schnellspeicherung ersetzen?";

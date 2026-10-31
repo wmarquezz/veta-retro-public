@@ -2,10 +2,10 @@
   "schema": 1,
   "product": "VETA Retro",
   "version": "1.0.0",
-  "build": 202,
+  "build": 203,
   "channel": "release-candidate",
-  "candidate": 3,
-  "sourceTag": "v1.0.0-rc.3",
+  "candidate": 4,
+  "sourceTag": "v1.0.0-rc.4",
   "releaseDate": "2026-10-30",
   "appStoreApproved": false
 }

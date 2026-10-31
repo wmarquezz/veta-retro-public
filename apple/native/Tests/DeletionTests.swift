@@ -6,7 +6,14 @@ import UIKit
     var temp:URL!
     override func setUpWithError()throws {temp=FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString);try FileManager.default.createDirectory(at:temp,withIntermediateDirectories:true)}
     override func tearDownWithError()throws {try? FileManager.default.removeItem(at:temp)}
-    func rom(_ name:String="thwaite")throws -> Data {try Data(contentsOf:XCTUnwrap(Bundle.main.url(forResource:name,withExtension:"nes",subdirectory:"Content/\(name)")))}
+    func rom(_ name:String="thwaite")throws -> Data {
+        let bundle=Bundle(for:Self.self)
+        let url=try XCTUnwrap(bundle.url(forResource:"thwaite",withExtension:"nes",subdirectory:"SaveFixtures") ?? bundle.url(forResource:"thwaite",withExtension:"nes"))
+        var data=try Data(contentsOf:url)
+        if name != "thwaite" {data[data.count-1] ^= 1} // distinct deletion fixture; never executed
+        return data
+    }
+
     func testDeletionPreservesOriginalsOtherGamesAndAllowsFreshImport()throws {
         let source=temp.appendingPathComponent("original.nes");try rom().write(to:source)
         let library=Library(root:temp.appendingPathComponent("library"));try library.importURL(source)
@@ -62,6 +69,7 @@ import UIKit
         XCTAssertEqual(try Data(contentsOf:outside),Data([1]))
     }
     func testDeletedGameCannotRegainCoverFromOldDownloadAfterReimport()async throws {
+        try XCTSkipUnless(ArtworkDistributionPolicy.allowsRemoteCovers, "Remote artwork is disabled in the public edition")
         let library=Library(root:temp),game=try library.add(data:rom(),name:"Thwaite"),provider=StubCovers()
         let image=UIGraphicsImageRenderer(size:CGSize(width:32,height:32)).jpegData(withCompressionQuality:0.8){ctx in UIColor.blue.setFill();ctx.fill(CGRect(x:0,y:0,width:32,height:32))}
         let downloaded=DownloadedCover(image:image,source:URL(string:"https://raw.githubusercontent.com/libretro-thumbnails/Test/master/Named_Boxarts/Test.png")!)

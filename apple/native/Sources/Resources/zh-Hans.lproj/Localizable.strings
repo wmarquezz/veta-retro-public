@@ -5,6 +5,7 @@
 "%@ todavía no está disponible en este dispositivo." = "此设备尚不支持 %@。";
 "%d archivos" = "%d 个文件";
 "%d archivos · %@" = "%d 个文件 · %@";
+"%d seleccionados de %d juegos" = "已选择 %d 个，共 %d 个游戏";
 "%lld juego" = "%lld 个游戏";
 "%lld juegos" = "%lld 个游戏";
 ", aporte único" = "，一次性支持";
@@ -47,6 +48,7 @@
 "Activo: %@" = "当前：%@";
 "Actualizar" = "刷新";
 "Actualizar carpeta" = "刷新文件夹";
+"Administrar juegos" = "管理游戏";
 "Agitar" = "摇动";
 "Agrega tu primer juego y su consola aparecerá aquí automáticamente." = "添加第一个游戏后，对应主机会自动出现在这里。";
 "Agrega tus juegos o descubre los juegos gratuitos de VETA." = "添加游戏或发现 VETA 的免费游戏。";
@@ -123,6 +125,7 @@
 "Buscar en Internet" = "搜索互联网";
 "Buscar en tu biblioteca" = "搜索游戏库";
 "Buscar guía completa" = "搜索完整攻略";
+"Buscar no cambia tu selección. Seleccionar toda la consola incluye también los juegos ocultos por la búsqueda." = "搜索不会更改选择。选择整台主机的游戏也会包括被搜索隐藏的游戏。";
 "Buscar partida por Game Center" = "通过 Game Center 查找游戏";
 "Buscar portada en Internet" = "在线查找封面";
 "Búsqueda automática desactivada. Se conserva la imagen actual." = "已停用自动搜索。保留当前图片。";
@@ -346,10 +349,13 @@
 "Elige tu mando" = "选择控制器";
 "Elige una imagen de hasta 30 MB." = "请选择不超过 30 MB 的图片。";
 "Elige una imagen desde Archivos. Usa PNG con la proporción indicada; en horizontal, deja transparente el centro. Puedes exportar la plantilla para rediseñarla." = "从“文件”中选择图片。使用符合所示宽高比的 PNG；横屏时请让中央区域保持透明。你可以导出模板并重新设计。";
+"Eliminando juegos…" = "正在删除游戏…";
 "Eliminar" = "删除";
 "Eliminar %@" = "删除 %@";
+"Eliminar (%d)" = "删除（%d）";
 "Eliminar juego" = "删除游戏";
 "Eliminar partida" = "删除存档";
+"Eliminar seleccionados (%d)" = "删除所选游戏（%d）";
 "Emparejamiento guardado" = "配对文件已保存";
 "Emparejamiento guardado. Abre un juego de PS2 para activar JIT." = "配对文件已保存。打开 PS2 游戏以激活 JIT。";
 "En este iPhone necesita JIT para jugar." = "在此 iPhone 上游玩需要 JIT。";
@@ -606,6 +612,7 @@
 "La primera vez, iOS pedirá permiso para la conexión local. La activación se repite cuando iOS cierra VETA." = "首次使用时，iOS 会请求本地连接权限。iOS 关闭 VETA 后需要重新激活。";
 "La sala rechazó la invitación o no está disponible." = "房间拒绝了邀请或不可用。";
 "La selección es demasiado grande. Elige una carpeta de consola más pequeña." = "所选内容过大，请选择较小的主机文件夹。";
+"La selección incluye juegos de otra consola. No se eliminó ningún juego." = "所选内容包括其他主机的游戏。未删除任何游戏。";
 "La sesión actual se conservará en «Antes de cargar»." = "当前会话将保存在“加载前”中。";
 "La sesión encontró un error. Vuelve a la biblioteca e inténtalo de nuevo." = "会话发生错误。请返回游戏库后重试。";
 "La sesión local ya está iniciada o cerrada." = "本地会话已启动或已关闭。";
@@ -648,6 +655,7 @@
 "Los juegos quedan en este iPhone para jugar sin conexión. No modificamos los archivos compartidos. La contraseña no se guarda al cerrar este acceso." = "游戏保存在此 iPhone 上，可离线游玩。共享文件不会被修改。关闭连接后不保存密码。";
 "Los juegos quedan en este iPhone para jugar sin conexión. Olvidar el acceso no elimina tus juegos importados." = "游戏保存在此 iPhone 上，可离线游玩。忘记访问凭据不会删除已导入的游戏。";
 "Los juegos quedan en este iPhone para jugar sin conexión. Puedes desconectar la cuenta en cualquier momento." = "游戏保存在此 iPhone 上，可离线游玩。你可随时断开账户连接。";
+"Los juegos se quitaron de la biblioteca, pero queda espacio por liberar. VETA reintentará la limpieza al abrirse de nuevo." = "游戏已从游戏库移除，但仍有空间需要释放。VETA 将在下次打开时重试清理。";
 "Los mandos Bluetooth de iOS se detectan automáticamente. A y B son acción; Options es Select y Menu es Start. La cantidad de jugadores depende de la consola y del juego; configura los puertos en Mandos y jugadores." = "自动检测兼容的 iOS 蓝牙控制器。A/B 为动作，Options 为 Select，Menu 为 Start。玩家数取决于主机和游戏；请在“控制器与玩家”中分配端口。";
 "Los mandos Bluetooth de iOS se detectan automáticamente. A y B son acción; Options es Select y Menu es Start. Se admiten dos mandos para juegos de dos jugadores en el mismo iPhone." = "自动检测兼容的 iOS 蓝牙控制器。A/B 为动作，Options 为 Select，Menu 为 Start。同一 iPhone 的双人游戏支持两个控制器。";
 "Los nombres de juegos y consolas conservan su idioma original." = "游戏与主机名称保留原始语言。";
@@ -722,6 +730,7 @@
 "No hay espacio suficiente para descomprimir e importar el ZIP." = "没有足够空间解压并导入 ZIP。";
 "No hay estados rápidos ni vídeo remoto para este motor. La TV y los mandos cercanos requieren dispositivos compatibles." = "此引擎不支持即时存档或远程视频。电视和附近控制器需要兼容的设备。";
 "No hay juegos en esta carpeta." = "此文件夹中没有游戏。";
+"No hay juegos que coincidan con esta búsqueda." = "没有与搜索匹配的游戏。";
 "No hay mandos compatibles conectados." = "未连接兼容的控制器。";
 "No hay plaza libre para otro jugador." = "没有空余的玩家位置。";
 "No hay portadas en este catálogo." = "此目录中没有封面。";
@@ -753,6 +762,7 @@
 "No se pudo cargar la partida guardada." = "无法加载已保存的游戏进度。";
 "No se pudo completar" = "无法完成";
 "No se pudo completar el aporte. Revisa tu conexión e inténtalo de nuevo." = "无法完成支持。请检查网络连接后重试。";
+"No se pudo completar la operación" = "无法完成操作";
 "No se pudo continuar el juego." = "无法继续游戏。";
 "No se pudo copiar el juego." = "无法复制游戏。";
 "No se pudo crear una sesión privada." = "无法创建私密会话。";
@@ -902,6 +912,7 @@
 "Quitar %@ de favoritos" = "从收藏中移除 %@";
 "Quitar de favoritos" = "取消收藏";
 "Quitar enlace" = "移除链接";
+"Quitar selección" = "取消选择";
 "RETRO" = "RETRO";
 "RPCS3 · DukeX · XeniOS" = "RPCS3 · DukeX · XeniOS";
 "Ranura de guardado inválida." = "存档槽无效。";
@@ -958,6 +969,7 @@
 "Se descartarán las descargas temporales. Los archivos compartidos y tus juegos de VETA se conservan." = "临时下载将被丢弃。共享文件和 VETA 游戏会保留。";
 "Se eliminará la conexión guardada en este iPhone. Tus juegos importados se conservan. Puedes revocar también el permiso desde la cuenta del proveedor." = "将删除此 iPhone 上保存的连接，已导入的游戏会保留。你也可在云服务账户中撤销权限。";
 "Se eliminará «%@» de «%@». Las demás partidas y el guardado dentro del juego se conservan. Esta acción no se puede deshacer." = "将删除“%@”（游戏“%@”）。其他存档和游戏内进度会保留。此操作无法撤销。";
+"Se eliminarán %d juegos de %@, con sus portadas y todas sus partidas guardadas en VETA. No se puede deshacer. Los originales de Archivos o la nube y los demás juegos se conservan." = "将删除 %d 个游戏（%@），包括封面及 VETA 中的所有存档。此操作无法撤销。“文件”或云端的原始文件及其他游戏会保留。";
 "Se eliminarán las mediciones de este dispositivo. Los informes que hayas exportado se conservan." = "此设备上的测量数据将被删除。已导出的报告将保留。";
 "Se eliminarán «%@», su portada y sus partidas guardadas de VETA. Esta acción no se puede deshacer. Los archivos originales en Archivos y los demás juegos se conservarán." = "将从 VETA 删除“%@”、其封面和存档。此操作无法撤销。“文件”中的原始文件和其他游戏将保留。";
 "Se guardará en VETA-Retro / %@. Si la consola no está en tu colección, se agregará al confirmar. %@" = "将保存到 VETA-Retro / %@。如果收藏中没有此主机，确认后将添加。%@";
@@ -985,6 +997,7 @@
 "Selecciona una imagen ISO/XISO de la consola elegida o un XEX2 para Xbox 360." = "请选择所选主机的 ISO/XISO 镜像，或 Xbox 360 的 XEX2 文件。";
 "Seleccionado" = "已选择";
 "Seleccionar %@" = "选择 %@";
+"Seleccionar toda la consola" = "选择此主机的所有游戏";
 "Seleccionar todo" = "全选";
 "Separación %lld %%" = "间距 %lld %%";
 "Sesión nativa" = "原生会话";
@@ -1171,6 +1184,7 @@
 "¿Eliminar esta partida?" = "删除此存档？";
 "¿Eliminar este skin?" = "删除此皮肤？";
 "¿Eliminar juego de VETA?" = "从 VETA 删除游戏？";
+"¿Eliminar los juegos seleccionados?" = "删除所选游戏？";
 "¿Guardar este emparejamiento para VETA?" = "为 VETA 保存此配对文件？";
 "¿Quitar el enlace de la guía?" = "移除攻略链接？";
 "¿Reemplazar el guardado rápido?" = "替换快速存档？";

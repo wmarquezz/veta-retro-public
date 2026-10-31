@@ -5,6 +5,7 @@
 "%@ todavía no está disponible en este dispositivo." = "%@ अभी इस डिवाइस पर उपलब्ध नहीं है।";
 "%d archivos" = "%d फ़ाइलें";
 "%d archivos · %@" = "%d फ़ाइलें · %@";
+"%d seleccionados de %d juegos" = "%d चयनित, कुल %d गेम";
 "%lld juego" = "%lld गेम";
 "%lld juegos" = "%lld गेम";
 ", aporte único" = ", एक बार का योगदान";
@@ -47,6 +48,7 @@
 "Activo: %@" = "सक्रिय: %@";
 "Actualizar" = "रीफ़्रेश करें";
 "Actualizar carpeta" = "फ़ोल्डर रीफ़्रेश करें";
+"Administrar juegos" = "गेम प्रबंधित करें";
 "Agitar" = "हिलाएँ";
 "Agrega tu primer juego y su consola aparecerá aquí automáticamente." = "अपना पहला गेम जोड़ें और उसका कंसोल यहाँ अपने आप दिखेगा।";
 "Agrega tus juegos o descubre los juegos gratuitos de VETA." = "अपने गेम जोड़ें या VETA के मुफ़्त गेम खोजें।";
@@ -123,6 +125,7 @@
 "Buscar en Internet" = "इंटरनेट पर खोजें";
 "Buscar en tu biblioteca" = "अपनी लाइब्रेरी में खोजें";
 "Buscar guía completa" = "पूरी गाइड खोजें";
+"Buscar no cambia tu selección. Seleccionar toda la consola incluye también los juegos ocultos por la búsqueda." = "खोज करने से आपका चयन नहीं बदलता। पूरे कंसोल को चुनने पर खोज में छिपे गेम भी शामिल होते हैं।";
 "Buscar partida por Game Center" = "Game Center से गेम खोजें";
 "Buscar portada en Internet" = "ऑनलाइन कवर खोजें";
 "Búsqueda automática desactivada. Se conserva la imagen actual." = "स्वचालित खोज बंद है। वर्तमान चित्र रखा गया है।";
@@ -346,10 +349,13 @@
 "Elige tu mando" = "अपने नियंत्रण चुनें";
 "Elige una imagen de hasta 30 MB." = "30 MB तक का चित्र चुनें।";
 "Elige una imagen desde Archivos. Usa PNG con la proporción indicada; en horizontal, deja transparente el centro. Puedes exportar la plantilla para rediseñarla." = "फ़ाइल्स से चित्र चुनें। बताए गए अनुपात वाला PNG इस्तेमाल करें; लैंडस्केप में बीच का हिस्सा पारदर्शी रखें। दोबारा डिज़ाइन करने के लिए टेम्पलेट निर्यात कर सकते हैं।";
+"Eliminando juegos…" = "गेम हटाए जा रहे हैं…";
 "Eliminar" = "हटाएँ";
 "Eliminar %@" = "%@ हटाएँ";
+"Eliminar (%d)" = "हटाएँ (%d)";
 "Eliminar juego" = "गेम हटाएँ";
 "Eliminar partida" = "सेव हटाएँ";
+"Eliminar seleccionados (%d)" = "चयनित हटाएँ (%d)";
 "Emparejamiento guardado" = "पेयरिंग फ़ाइल सहेजी गई";
 "Emparejamiento guardado. Abre un juego de PS2 para activar JIT." = "पेयरिंग फ़ाइल सहेजी गई। JIT सक्रिय करने के लिए PS2 गेम खोलें।";
 "En este iPhone necesita JIT para jugar." = "इस iPhone पर खेलने के लिए JIT चाहिए।";
@@ -606,6 +612,7 @@
 "La primera vez, iOS pedirá permiso para la conexión local. La activación se repite cuando iOS cierra VETA." = "पहली बार iOS स्थानीय कनेक्शन की अनुमति माँगेगा। iOS द्वारा VETA बंद करने पर फिर से सक्रिय करना होगा।";
 "La sala rechazó la invitación o no está disponible." = "कमरे ने आमंत्रण अस्वीकार किया या उपलब्ध नहीं है।";
 "La selección es demasiado grande. Elige una carpeta de consola más pequeña." = "चयन बहुत बड़ा है। छोटा कंसोल फ़ोल्डर चुनें।";
+"La selección incluye juegos de otra consola. No se eliminó ningún juego." = "चयन में दूसरे कंसोल के गेम शामिल हैं। कोई गेम नहीं हटाया गया।";
 "La sesión actual se conservará en «Antes de cargar»." = "वर्तमान सत्र “लोड करने से पहले” में रखा जाएगा।";
 "La sesión encontró un error. Vuelve a la biblioteca e inténtalo de nuevo." = "सत्र में त्रुटि आई। लाइब्रेरी पर लौटकर फिर कोशिश करें।";
 "La sesión local ya está iniciada o cerrada." = "स्थानीय सत्र पहले ही शुरू या बंद हो चुका है।";
@@ -648,6 +655,7 @@
 "Los juegos quedan en este iPhone para jugar sin conexión. No modificamos los archivos compartidos. La contraseña no se guarda al cerrar este acceso." = "गेम ऑफ़लाइन खेलने के लिए इस iPhone पर रहते हैं। साझा फ़ाइलें नहीं बदलतीं। कनेक्शन बंद करने पर पासवर्ड नहीं सहेजा जाता।";
 "Los juegos quedan en este iPhone para jugar sin conexión. Olvidar el acceso no elimina tus juegos importados." = "गेम ऑफ़लाइन खेलने के लिए इस iPhone पर रहते हैं। पहुँच भूलने से आयात किए गए गेम नहीं मिटते।";
 "Los juegos quedan en este iPhone para jugar sin conexión. Puedes desconectar la cuenta en cualquier momento." = "गेम इस iPhone पर ऑफ़लाइन खेलने के लिए रहते हैं। आप कभी भी खाता डिस्कनेक्ट कर सकते हैं।";
+"Los juegos se quitaron de la biblioteca, pero queda espacio por liberar. VETA reintentará la limpieza al abrirse de nuevo." = "गेम लाइब्रेरी से हटा दिए गए हैं, लेकिन कुछ जगह अभी खाली करनी है। अगली बार खुलने पर VETA सफ़ाई फिर करेगा।";
 "Los mandos Bluetooth de iOS se detectan automáticamente. A y B son acción; Options es Select y Menu es Start. La cantidad de jugadores depende de la consola y del juego; configura los puertos en Mandos y jugadores." = "iOS के संगत Bluetooth कंट्रोलर अपने आप मिलते हैं। A/B क्रिया, Options Select और Menu Start है। खिलाड़ी संख्या कंसोल और गेम पर निर्भर है; कंट्रोलर और खिलाड़ी में पोर्ट चुनें।";
 "Los mandos Bluetooth de iOS se detectan automáticamente. A y B son acción; Options es Select y Menu es Start. Se admiten dos mandos para juegos de dos jugadores en el mismo iPhone." = "iOS के संगत Bluetooth कंट्रोलर अपने आप मिलते हैं। A/B क्रिया, Options Select और Menu Start है। एक iPhone पर दो खिलाड़ियों के लिए दो कंट्रोलर समर्थित हैं।";
 "Los nombres de juegos y consolas conservan su idioma original." = "गेम और कंसोल के नाम मूल भाषा में रहते हैं।";
@@ -722,6 +730,7 @@
 "No hay espacio suficiente para descomprimir e importar el ZIP." = "ZIP निकालने और आयात करने के लिए पर्याप्त जगह नहीं है।";
 "No hay estados rápidos ni vídeo remoto para este motor. La TV y los mandos cercanos requieren dispositivos compatibles." = "इस इंजन में सेव स्टेट या रिमोट वीडियो नहीं हैं। टीवी और आस-पास के नियंत्रकों के लिए संगत डिवाइस आवश्यक हैं।";
 "No hay juegos en esta carpeta." = "इस फ़ोल्डर में कोई गेम नहीं है।";
+"No hay juegos que coincidan con esta búsqueda." = "इस खोज से कोई गेम मेल नहीं खाता।";
 "No hay mandos compatibles conectados." = "कोई संगत कंट्रोलर जुड़ा नहीं है।";
 "No hay plaza libre para otro jugador." = "दूसरे खिलाड़ी के लिए जगह नहीं है।";
 "No hay portadas en este catálogo." = "इस कैटलॉग में कवर नहीं हैं।";
@@ -753,6 +762,7 @@
 "No se pudo cargar la partida guardada." = "सेव किया गया गेम लोड नहीं हो सका।";
 "No se pudo completar" = "पूरा नहीं हो सका";
 "No se pudo completar el aporte. Revisa tu conexión e inténtalo de nuevo." = "योगदान पूरा नहीं हुआ। कनेक्शन जाँचकर फिर कोशिश करें।";
+"No se pudo completar la operación" = "कार्रवाई पूरी नहीं हो सकी";
 "No se pudo continuar el juego." = "गेम फिर से शुरू नहीं हो सका।";
 "No se pudo copiar el juego." = "गेम कॉपी नहीं हुआ।";
 "No se pudo crear una sesión privada." = "निजी सत्र बनाया नहीं जा सका।";
@@ -902,6 +912,7 @@
 "Quitar %@ de favoritos" = "%@ को पसंदीदा से हटाएँ";
 "Quitar de favoritos" = "पसंदीदा से हटाएँ";
 "Quitar enlace" = "लिंक हटाएँ";
+"Quitar selección" = "चयन हटाएँ";
 "RETRO" = "RETRO";
 "RPCS3 · DukeX · XeniOS" = "RPCS3 · DukeX · XeniOS";
 "Ranura de guardado inválida." = "सेव स्लॉट अमान्य है।";
@@ -958,6 +969,7 @@
 "Se descartarán las descargas temporales. Los archivos compartidos y tus juegos de VETA se conservan." = "अस्थायी डाउनलोड हट जाएँगे। साझा फ़ाइलें और आपके VETA गेम सुरक्षित रहेंगे।";
 "Se eliminará la conexión guardada en este iPhone. Tus juegos importados se conservan. Puedes revocar también el permiso desde la cuenta del proveedor." = "इस iPhone पर सहेजा कनेक्शन हटेगा। आयात किए गेम रहेंगे। प्रदाता के खाते से भी अनुमति रद्द कर सकते हैं।";
 "Se eliminará «%@» de «%@». Las demás partidas y el guardado dentro del juego se conservan. Esta acción no se puede deshacer." = "«%@» («%@») हटाया जाएगा। अन्य सेव और गेम के भीतर की प्रगति सुरक्षित रहेंगे। यह कार्रवाई वापस नहीं की जा सकती।";
+"Se eliminarán %d juegos de %@, con sus portadas y todas sus partidas guardadas en VETA. No se puede deshacer. Los originales de Archivos o la nube y los demás juegos se conservan." = "%d गेम (%@), उनके कवर और VETA में उनकी सभी सेव की गई प्रगति हट जाएगी। इसे पूर्ववत नहीं किया जा सकता। Files या क्लाउड में मूल फ़ाइलें और अन्य गेम सुरक्षित रहेंगे।";
 "Se eliminarán las mediciones de este dispositivo. Los informes que hayas exportado se conservan." = "इस डिवाइस के माप मिटा दिए जाएँगे। निर्यात की गई रिपोर्ट बनी रहेंगी।";
 "Se eliminarán «%@», su portada y sus partidas guardadas de VETA. Esta acción no se puede deshacer. Los archivos originales en Archivos y los demás juegos se conservarán." = "VETA से “%@”, उसका कवर और सहेजे गए गेम मिटा दिए जाएँगे। इसे पूर्ववत नहीं किया जा सकता। Files में मूल फ़ाइलें और अन्य गेम बने रहेंगे।";
 "Se guardará en VETA-Retro / %@. Si la consola no está en tu colección, se agregará al confirmar. %@" = "यह VETA-Retro / %@ में सहेजा जाएगा। यदि यह कंसोल आपके संग्रह में नहीं है, तो पुष्टि करने पर जुड़ जाएगा। %@";
@@ -985,6 +997,7 @@
 "Selecciona una imagen ISO/XISO de la consola elegida o un XEX2 para Xbox 360." = "चुने कंसोल की ISO/XISO इमेज या Xbox 360 के लिए XEX2 चुनें।";
 "Seleccionado" = "चुना गया";
 "Seleccionar %@" = "%@ चुनें";
+"Seleccionar toda la consola" = "इस कंसोल के सभी गेम चुनें";
 "Seleccionar todo" = "सभी चुनें";
 "Separación %lld %%" = "अंतर %lld %%";
 "Sesión nativa" = "मूल सत्र";
@@ -1171,6 +1184,7 @@
 "¿Eliminar esta partida?" = "यह सेव हटाएँ?";
 "¿Eliminar este skin?" = "यह स्किन हटाएँ?";
 "¿Eliminar juego de VETA?" = "VETA से गेम हटाएँ?";
+"¿Eliminar los juegos seleccionados?" = "चयनित गेम हटाएँ?";
 "¿Guardar este emparejamiento para VETA?" = "VETA के लिए यह पेयरिंग फ़ाइल सहेजें?";
 "¿Quitar el enlace de la guía?" = "गाइड का लिंक हटाएँ?";
 "¿Reemplazar el guardado rápido?" = "त्वरित सेव बदलें?";

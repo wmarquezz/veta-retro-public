@@ -69,6 +69,7 @@ struct LibraryView:View {
     @State private var profileGame:Game?
     @State private var guideGame:Game?
     @State private var deletionGame:Game?
+    @State private var managementConsole:GameConsole?
     @Environment(\.scenePhase) private var scenePhase
     init(library:Library) {self.library=library;_artwork=StateObject(wrappedValue:ArtworkStore(root:library.root))}
     @State private var query=""
@@ -192,6 +193,9 @@ struct LibraryView:View {
         .sheet(isPresented:$settings) {settingsView}
         .sheet(isPresented:$showFreeGames) {NavigationStack {ScrollView {DiscoveryView(library:library).padding()}.background(VetaTheme.background).tint(VetaTheme.mint).navigationTitle("Juegos por consola").toolbar {Button("Listo"){showFreeGames=false}}}}
         .sheet(item:$previewConsole) {console in ConsoleSkinPicker(console:console)}
+        .sheet(item:$managementConsole) {console in
+            ConsoleGameManagementView(library:library,artwork:artwork,console:console)
+        }
         .alert("¿Eliminar juego de VETA?",isPresented:Binding(get:{deletionGame != nil},set:{if !$0 {deletionGame=nil}}),presenting:deletionGame) {game in
             Button("Eliminar juego",role:.destructive) {
                 perform {try library.remove(game);artwork.forget(game)}
@@ -226,6 +230,13 @@ struct LibraryView:View {
                 Button {listView=true} label:{Image(systemName:"list.bullet").frame(width:44,height:44)}.foregroundStyle(listView ? VetaTheme.mint:VetaTheme.muted).accessibilityLabel("Ver lista").accessibilityIdentifier("view-list")
             }
 
+            Menu {
+                ForEach(library.populatedConsoles) {console in
+                    Button(console.name) {managementConsole=console}
+                }
+            } label:{Label("Administrar juegos",systemImage:"checklist")}
+                .buttonStyle(VetaButton()).disabled(library.populatedConsoles.isEmpty)
+                .accessibilityIdentifier("manage-library-games")
             ConsoleTimeline(
                 consoles:library.populatedConsoles,
                 counts:Dictionary(grouping:library.games,by: \.console).mapValues(\.count),selection:$consoleFilter)
@@ -360,8 +371,15 @@ struct LibraryView:View {
                 .focused($searchFocused).submitLabel(.search).onSubmit {searchFocused=false}
                 .padding(14).background(VetaTheme.panel,in:RoundedRectangle(cornerRadius:9))
                 .accessibilityIdentifier("console-game-search")
-            addButton
+            ViewThatFits(in:.horizontal) {
+                HStack {manageGamesButton(console);Spacer();addButton}
+                VStack(alignment:.leading) {manageGamesButton(console);addButton}
+            }
         }
+    }
+    private func manageGamesButton(_ console:GameConsole)->some View {
+        Button {managementConsole=console} label:{Label("Administrar juegos",systemImage:"checklist")}
+            .buttonStyle(VetaButton()).accessibilityIdentifier("manage-console-games")
     }
     private var consoleHero:some View {
         LazyVStack(alignment:.leading,spacing:20) {

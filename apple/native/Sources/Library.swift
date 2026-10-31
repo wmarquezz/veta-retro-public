@@ -411,34 +411,55 @@ struct StateFile: Codable {
         }
     }
     func remove(_ game:Game)throws {
-        guard Self.validGameID(game.id) else {throw VetaError.message("No se pudo identificar el juego que quieres eliminar.")}
-        guard games.contains(where:{$0.id==game.id}) else{return}
+        _ = try removeGames(ids:[game.id],console:game.console)
+    }
+    /// One index commit for the entire selection. Until that commit, every staged
+    /// directory still belongs to the old index and can be recovered on launch.
+    @discardableResult func removeGames(ids:Set<String>,console:GameConsole)throws -> [Game] {
+        guard ids.allSatisfy(Self.validGameID) else {
+            throw VetaError.message("No se pudo identificar el juego que quieres eliminar.")
+        }
+        let selected=games.filter {ids.contains($0.id)}
+        guard selected.allSatisfy({$0.console == console}) else {
+            throw VetaError.message("La selección incluye juegos de otra consola. No se eliminó ningún juego.")
+        }
+        guard !selected.isEmpty else{return []}
         try recoverInterruptedDeletions()
         #if VETA_JIT_DEVELOPMENT
         do {try recoverPS3Deletions()} catch {self.error=error.localizedDescription}
-        try preparePS3Deletion(game)
+        for game in selected {try preparePS3Deletion(game)}
         #endif
-        let fm=FileManager.default,original=directory(game.id),staged=deletionDirectory.appendingPathComponent(game.id,isDirectory:true)
-        let next=games.filter{$0.id != game.id}
+        let fm=FileManager.default
+        let next=games.filter {!ids.contains($0.id)}
         let encoded=try JSONEncoder().encode(next)
-        let hasFiles=fm.fileExists(atPath:original.path)
-        if hasFiles {
-            try fm.createDirectory(at:deletionDirectory,withIntermediateDirectories:true)
-            try fm.moveItem(at:original,to:staged)
-        }
-        do {try encoded.write(to:root.appendingPathComponent("library.json"),options:.atomic)}
-        catch {
-            if hasFiles {try fm.moveItem(at:staged,to:original)}
+        try fm.createDirectory(at:deletionDirectory,withIntermediateDirectories:true)
+        var moved:[String]=[]
+        do {
+            for game in selected {
+                let original=directory(game.id)
+                if fm.fileExists(atPath:original.path) {
+                    try fm.moveItem(at:original,to:deletionDirectory.appendingPathComponent(game.id,isDirectory:true))
+                    moved.append(game.id)
+                }
+            }
+            try encoded.write(to:root.appendingPathComponent("library.json"),options:.atomic)
+        } catch {
+            // Attempt every rollback, even if one directory cannot be restored.
+            // Any remaining staging entries are recoverable from the old index.
+            for id in moved.reversed() {
+                try? fm.moveItem(at:deletionDirectory.appendingPathComponent(id),to:directory(id))
+            }
             throw error
         }
         games=next
         #if VETA_JIT_DEVELOPMENT
         do {try recoverPS3Deletions()} catch {self.error=error.localizedDescription}
         #endif
-        if hasFiles {
-            do {try fm.removeItem(at:staged)}
-            catch {self.error="El juego se quitó de la biblioteca, pero no se pudo liberar todo su espacio. VETA reintentará la limpieza al abrirse de nuevo."}
+        do {try recoverInterruptedDeletions()}
+        catch {
+            self.error="Los juegos se quitaron de la biblioteca, pero queda espacio por liberar. VETA reintentará la limpieza al abrirse de nuevo."
         }
+        return selected
     }
     func update(_ game: Game) {
         if let i = games.firstIndex(where: { $0.id == game.id }) {

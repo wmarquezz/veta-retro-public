@@ -28,10 +28,18 @@ import UniformTypeIdentifiers
             .environmentObject(localization).environment(\.locale,localization.locale).environment(\.layoutDirection,localization.layoutDirection)
             .onOpenURL { _ in }
         #else
-        LibraryView(library:library).preferredColorScheme(.dark)
+        publicContent.preferredColorScheme(.dark)
             .environmentObject(localization).environment(\.locale,localization.locale).environment(\.layoutDirection,localization.layoutDirection)
         #endif
     }}
+    @ViewBuilder private var publicContent:some View {
+        #if DEBUG && targetEnvironment(simulator)
+        if ProcessInfo.processInfo.arguments.contains("--catalog-preview") {CloudCatalogPreview()}
+        else {LibraryView(library:library)}
+        #else
+        LibraryView(library:library)
+        #endif
+    }
     #if VETA_JIT_DEVELOPMENT
     @ViewBuilder private var developmentContent:some View {
             if ProcessInfo.processInfo.arguments.contains("--veta165-webjit") {
@@ -160,13 +168,13 @@ struct LibraryView:View {
         }
         .sheet(isPresented:$sharedCloud) {
             KrafifySharedAccessView { snapshot in
-                try library.importURLs(snapshot.files,console:selectedLibraryConsole,artwork:artwork,continueOnError:true,initialIssues:snapshot.issues,sourceNames:snapshot.sourceNames).message
-            }
+                try library.importURLs(snapshot.files,console:selectedLibraryConsole,artwork:artwork,continueOnError:true,initialIssues:snapshot.issues,sourceNames:snapshot.sourceNames,consoleHints:snapshot.consoleHints).message
+            }.environment(\.cloudInstalledGameIDs, Set(library.games.map(\.id)))
         }
         .sheet(isPresented:$directCloud) {
             DirectCloudView { snapshot in
-                try library.importURLs(snapshot.files,console:selectedLibraryConsole,artwork:artwork,continueOnError:true,initialIssues:snapshot.issues,sourceNames:snapshot.sourceNames).message
-            }
+                try library.importURLs(snapshot.files,console:selectedLibraryConsole,artwork:artwork,continueOnError:true,initialIssues:snapshot.issues,sourceNames:snapshot.sourceNames,consoleHints:snapshot.consoleHints).message
+            }.environment(\.cloudInstalledGameIDs, Set(library.games.map(\.id)))
         }
         .fullScreenCover(item:$activeLaunch,onDismiss:{query=""}) {launch in
             let game=launch.game

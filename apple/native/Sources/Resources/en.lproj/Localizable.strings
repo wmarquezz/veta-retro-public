@@ -5,6 +5,7 @@
 "%@ todavía no está disponible en este dispositivo." = "%@ is not available on this device yet.";
 "%d archivos" = "%d files";
 "%d archivos · %@" = "%d files · %@";
+"%d juegos · %d disponibles" = "%d games · %d available";
 "%d seleccionados de %d juegos" = "%d selected out of %d games";
 "%lld juego" = "%lld game";
 "%lld juegos" = "%lld games";
@@ -126,6 +127,7 @@
 "Buscar en Internet" = "Search the web";
 "Buscar en tu biblioteca" = "Search your library";
 "Buscar guía completa" = "Find a complete walkthrough";
+"Buscar juego" = "Search games";
 "Buscar no cambia tu selección. Seleccionar toda la consola incluye también los juegos ocultos por la búsqueda." = "Searching does not change your selection. Selecting the entire console also includes games hidden by the search.";
 "Buscar partida por Game Center" = "Find a game with Game Center";
 "Buscar portada en Internet" = "Find artwork online";
@@ -154,6 +156,7 @@
 "Carpetas compartidas" = "Shared folders";
 "Carpetas completas" = "Whole folders";
 "Carpetas y archivos que te compartieron." = "Folders and files shared with you.";
+"Catálogo detectado. Los juegos que ya tienes no se volverán a importar." = "Catalog found. Games already in your library will not be imported again.";
 "Centro de soporte" = "Support center";
 "Cerrando motor…" = "Closing engine…";
 "Cerrar" = "Close";
@@ -528,6 +531,7 @@
 "Importar descargas" = "Import downloads";
 "Importar desde la nube" = "Import from cloud";
 "Importar diseño JSON" = "Import JSON layout";
+"Importar disponibles" = "Import available games";
 "Importar el archivo no instala un perfil ni conecta una VPN. La conexión se solicita al preparar el juego. Puedes desconectarla en Ajustes de iOS → General → VPN y gestión de dispositivos." = "Importing the file does not install a profile or connect a VPN. The connection is requested when preparing the game. Disconnect it in iOS Settings → General → VPN & Device Management.";
 "Importar emparejamiento" = "Import pairing file";
 "Importar esta carpeta" = "Import this folder";
@@ -737,6 +741,7 @@
 "No hay estados rápidos ni vídeo remoto para este motor. La TV y los mandos cercanos requieren dispositivos compatibles." = "This engine has no save states or remote video. TV and nearby controllers require compatible devices.";
 "No hay juegos en esta carpeta." = "No games in this folder.";
 "No hay juegos que coincidan con esta búsqueda." = "No games match this search.";
+"No hay juegos que coincidan con la búsqueda." = "No games match your search.";
 "No hay mandos compatibles conectados." = "No compatible controllers connected.";
 "No hay plaza libre para otro jugador." = "No free slot for another player.";
 "No hay portadas en este catálogo." = "There are no covers in this catalog.";
@@ -788,6 +793,7 @@
 "No se pudo inicializar el motor nativo." = "The native engine could not be initialized.";
 "No se pudo iniciar el juego." = "Could not start the game.";
 "No se pudo iniciar la sesión local. Vuelve a la biblioteca e inténtalo de nuevo." = "Could not start the local session. Return to the library and try again.";
+"No se pudo leer el catálogo. Puedes explorar las carpetas e importar tus archivos." = "The catalog could not be read. You can browse folders and import your files.";
 "No se pudo leer el historial de importación." = "The import history could not be read.";
 "No se pudo leer la carpeta del juego." = "The game folder could not be read.";
 "No se pudo leer o importar este archivo." = "This file could not be read or imported.";
@@ -1171,6 +1177,7 @@
 "Ya existe una carpeta de este disco fuera del índice. Se conservó sin modificar." = "A folder for this disc already exists outside the index. It was kept unchanged.";
 "Ya existe una carpeta para este juego. Se conservó sin modificar." = "A folder for this game already exists. It was kept unchanged.";
 "Ya existe una carpeta sin registrar para este juego. Sus archivos se conservaron." = "An unregistered folder already exists for this game. Its files were preserved.";
+"Ya instalado" = "Already installed";
 "bsnes-mercury · GPL v3" = "bsnes-mercury · GPL v3";
 "https://…" = "https://…";
 "iOS no concedió el espacio de direcciones que necesita PS3. No se inició el núcleo para evitar cerrar VETA. Revisa las capacidades de memoria del perfil de desarrollo; activar JIT por sí solo no amplía ese espacio." = "iOS did not grant the address space PS3 needs. The core was not started to avoid crashing VETA. Check the development profile’s memory capabilities; activating JIT alone does not expand that address space.";

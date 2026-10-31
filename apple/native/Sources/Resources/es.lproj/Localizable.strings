@@ -5,6 +5,7 @@
 "%@ todavía no está disponible en este dispositivo." = "%@ todavía no está disponible en este dispositivo.";
 "%d archivos" = "%d archivos";
 "%d archivos · %@" = "%d archivos · %@";
+"%d juegos · %d disponibles" = "%d juegos · %d disponibles";
 "%d seleccionados de %d juegos" = "%d seleccionados de %d juegos";
 "%lld juego" = "%lld juego";
 "%lld juegos" = "%lld juegos";
@@ -126,6 +127,7 @@
 "Buscar en Internet" = "Buscar en Internet";
 "Buscar en tu biblioteca" = "Buscar en tu biblioteca";
 "Buscar guía completa" = "Buscar guía completa";
+"Buscar juego" = "Buscar juego";
 "Buscar no cambia tu selección. Seleccionar toda la consola incluye también los juegos ocultos por la búsqueda." = "Buscar no cambia tu selección. Seleccionar toda la consola incluye también los juegos ocultos por la búsqueda.";
 "Buscar partida por Game Center" = "Buscar partida por Game Center";
 "Buscar portada en Internet" = "Buscar portada en Internet";
@@ -154,6 +156,7 @@
 "Carpetas compartidas" = "Carpetas compartidas";
 "Carpetas completas" = "Carpetas completas";
 "Carpetas y archivos que te compartieron." = "Carpetas y archivos que te compartieron.";
+"Catálogo detectado. Los juegos que ya tienes no se volverán a importar." = "Catálogo detectado. Los juegos que ya tienes no se volverán a importar.";
 "Centro de soporte" = "Centro de soporte";
 "Cerrando motor…" = "Cerrando motor…";
 "Cerrar" = "Cerrar";
@@ -528,6 +531,7 @@
 "Importar descargas" = "Importar descargas";
 "Importar desde la nube" = "Importar desde la nube";
 "Importar diseño JSON" = "Importar diseño JSON";
+"Importar disponibles" = "Importar disponibles";
 "Importar el archivo no instala un perfil ni conecta una VPN. La conexión se solicita al preparar el juego. Puedes desconectarla en Ajustes de iOS → General → VPN y gestión de dispositivos." = "Importar el archivo no instala un perfil ni conecta una VPN. La conexión se solicita al preparar el juego. Puedes desconectarla en Ajustes de iOS → General → VPN y gestión de dispositivos.";
 "Importar emparejamiento" = "Importar emparejamiento";
 "Importar esta carpeta" = "Importar esta carpeta";
@@ -737,6 +741,7 @@
 "No hay estados rápidos ni vídeo remoto para este motor. La TV y los mandos cercanos requieren dispositivos compatibles." = "No hay estados rápidos ni vídeo remoto para este motor. La TV y los mandos cercanos requieren dispositivos compatibles.";
 "No hay juegos en esta carpeta." = "No hay juegos en esta carpeta.";
 "No hay juegos que coincidan con esta búsqueda." = "No hay juegos que coincidan con esta búsqueda.";
+"No hay juegos que coincidan con la búsqueda." = "No hay juegos que coincidan con la búsqueda.";
 "No hay mandos compatibles conectados." = "No hay mandos compatibles conectados.";
 "No hay plaza libre para otro jugador." = "No hay plaza libre para otro jugador.";
 "No hay portadas en este catálogo." = "No hay portadas en este catálogo.";
@@ -788,6 +793,7 @@
 "No se pudo inicializar el motor nativo." = "No se pudo inicializar el motor nativo.";
 "No se pudo iniciar el juego." = "No se pudo iniciar el juego.";
 "No se pudo iniciar la sesión local. Vuelve a la biblioteca e inténtalo de nuevo." = "No se pudo iniciar la sesión local. Vuelve a la biblioteca e inténtalo de nuevo.";
+"No se pudo leer el catálogo. Puedes explorar las carpetas e importar tus archivos." = "No se pudo leer el catálogo. Puedes explorar las carpetas e importar tus archivos.";
 "No se pudo leer el historial de importación." = "No se pudo leer el historial de importación.";
 "No se pudo leer la carpeta del juego." = "No se pudo leer la carpeta del juego.";
 "No se pudo leer o importar este archivo." = "No se pudo leer o importar este archivo.";
@@ -1171,6 +1177,7 @@
 "Ya existe una carpeta de este disco fuera del índice. Se conservó sin modificar." = "Ya existe una carpeta de este disco fuera del índice. Se conservó sin modificar.";
 "Ya existe una carpeta para este juego. Se conservó sin modificar." = "Ya existe una carpeta para este juego. Se conservó sin modificar.";
 "Ya existe una carpeta sin registrar para este juego. Sus archivos se conservaron." = "Ya existe una carpeta sin registrar para este juego. Sus archivos se conservaron.";
+"Ya instalado" = "Ya instalado";
 "bsnes-mercury · GPL v3" = "bsnes-mercury · GPL v3";
 "https://…" = "https://…";
 "iOS no concedió el espacio de direcciones que necesita PS3. No se inició el núcleo para evitar cerrar VETA. Revisa las capacidades de memoria del perfil de desarrollo; activar JIT por sí solo no amplía ese espacio." = "iOS no concedió el espacio de direcciones que necesita PS3. No se inició el núcleo para evitar cerrar VETA. Revisa las capacidades de memoria del perfil de desarrollo; activar JIT por sí solo no amplía ese espacio.";

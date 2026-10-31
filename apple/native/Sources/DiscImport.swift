@@ -89,7 +89,7 @@ enum DiscFiles {
     }
 }
 extension Library {
-    @discardableResult func importURLs(_ selections:[URL],console preferred:GameConsole?,artwork:ArtworkStore? = nil,continueOnError:Bool = false,initialIssues:[ImportIssue] = [],sourceNames:[URL:String] = [:])throws -> LocalCoverImport.Summary {
+    @discardableResult func importURLs(_ selections:[URL],console preferred:GameConsole?,artwork:ArtworkStore? = nil,continueOnError:Bool = false,initialIssues:[ImportIssue] = [],sourceNames:[URL:String] = [:],consoleHints:[URL:GameConsole] = [:])throws -> LocalCoverImport.Summary {
         let scoped=selections.filter{$0.startAccessingSecurityScopedResource()};defer{scoped.forEach{$0.stopAccessingSecurityScopedResource()}}
         if let preferred, !GameConsole.allCases.contains(preferred) {throw VetaError.message("Consola desconocida.")}
         #if VETA_JIT_DEVELOPMENT
@@ -163,7 +163,7 @@ extension Library {
         for url in urls where !consumed.contains(url) {
             do {
                 try autoreleasepool {
-                if let game=try importURL(url,console:preferred) {processed+=1;if let artwork {covers.attach(to:game,from:url,store:artwork);if let archive=expanded.origins[url] {covers.attach(to:game,from:archive,store:artwork)}}}
+                if let game=try importURL(url,console:consoleHints[expanded.origins[url] ?? url] ?? preferred) {processed+=1;if let artwork {covers.attach(to:game,from:url,store:artwork);if let archive=expanded.origins[url] {covers.attach(to:game,from:archive,store:artwork)}}}
                 }
             } catch is CancellationError { throw CancellationError() }
             catch {

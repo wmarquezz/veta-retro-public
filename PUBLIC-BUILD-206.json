@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "build": 206,
+  "appStoreApproved": false,
+  "engineChanges": false,
+  "sourceManifestFiles": 103865,
+  "scope": "Validated cloud catalog, console selection, search, installed-game exclusion and verified imports; see RELEASE-1.0.0-rc.7.md"
+}

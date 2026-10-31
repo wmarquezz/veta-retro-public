@@ -5,6 +5,7 @@
 "%@ todavía no está disponible en este dispositivo." = "%@ غير متاح على هذا الجهاز بعد.";
 "%d archivos" = "%d ملفات";
 "%d archivos · %@" = "%d ملفات · %@";
+"%d juegos · %d disponibles" = "%d ألعاب · %d متاحة";
 "%d seleccionados de %d juegos" = "تم تحديد %d من أصل %d لعبة";
 "%lld juego" = "%lld لعبة";
 "%lld juegos" = "%lld ألعاب";
@@ -126,6 +127,7 @@
 "Buscar en Internet" = "البحث على الإنترنت";
 "Buscar en tu biblioteca" = "البحث في مكتبتك";
 "Buscar guía completa" = "البحث عن دليل كامل";
+"Buscar juego" = "البحث عن لعبة";
 "Buscar no cambia tu selección. Seleccionar toda la consola incluye también los juegos ocultos por la búsqueda." = "البحث لا يغيّر تحديدك. تحديد كل ألعاب الجهاز يشمل أيضًا الألعاب المخفية بسبب البحث.";
 "Buscar partida por Game Center" = "البحث عن لعبة عبر Game Center";
 "Buscar portada en Internet" = "البحث عن غلاف عبر الإنترنت";
@@ -154,6 +156,7 @@
 "Carpetas compartidas" = "مجلدات مشتركة";
 "Carpetas completas" = "مجلدات كاملة";
 "Carpetas y archivos que te compartieron." = "المجلدات والملفات التي تمت مشاركتها معك.";
+"Catálogo detectado. Los juegos que ya tienes no se volverán a importar." = "تم العثور على الكتالوج. لن تُستورد الألعاب الموجودة في مكتبتك مرة أخرى.";
 "Centro de soporte" = "مركز الدعم";
 "Cerrando motor…" = "جارٍ إغلاق المحرك…";
 "Cerrar" = "إغلاق";
@@ -528,6 +531,7 @@
 "Importar descargas" = "استيراد التنزيلات";
 "Importar desde la nube" = "استيراد من السحابة";
 "Importar diseño JSON" = "استيراد تخطيط JSON";
+"Importar disponibles" = "استيراد الألعاب المتاحة";
 "Importar el archivo no instala un perfil ni conecta una VPN. La conexión se solicita al preparar el juego. Puedes desconectarla en Ajustes de iOS → General → VPN y gestión de dispositivos." = "استيراد الملف لا يثبت ملف تعريف ولا يتصل بـ VPN. يُطلب الاتصال عند تجهيز اللعبة. يمكنك فصله في إعدادات iOS ← عام ← VPN وإدارة الجهاز.";
 "Importar emparejamiento" = "استيراد ملف الاقتران";
 "Importar esta carpeta" = "استيراد هذا المجلد";
@@ -737,6 +741,7 @@
 "No hay estados rápidos ni vídeo remoto para este motor. La TV y los mandos cercanos requieren dispositivos compatibles." = "لا يوفر هذا المحرك حفظ الحالة أو الفيديو عن بُعد. يتطلب التلفزيون ووحدات التحكم القريبة أجهزة متوافقة.";
 "No hay juegos en esta carpeta." = "لا توجد ألعاب في هذا المجلد.";
 "No hay juegos que coincidan con esta búsqueda." = "لا توجد ألعاب تطابق هذا البحث.";
+"No hay juegos que coincidan con la búsqueda." = "لا توجد ألعاب تطابق بحثك.";
 "No hay mandos compatibles conectados." = "لا توجد أدوات تحكم متوافقة متصلة.";
 "No hay plaza libre para otro jugador." = "لا توجد خانة متاحة للاعب آخر.";
 "No hay portadas en este catálogo." = "لا توجد أغلفة في هذا الكتالوج.";
@@ -788,6 +793,7 @@
 "No se pudo inicializar el motor nativo." = "تعذّرت تهيئة المحرك الأصلي.";
 "No se pudo iniciar el juego." = "تعذّر بدء اللعبة.";
 "No se pudo iniciar la sesión local. Vuelve a la biblioteca e inténtalo de nuevo." = "تعذّر بدء الجلسة المحلية. عُد إلى المكتبة وحاول مجددًا.";
+"No se pudo leer el catálogo. Puedes explorar las carpetas e importar tus archivos." = "تعذرت قراءة الكتالوج. يمكنك تصفح المجلدات واستيراد ملفاتك.";
 "No se pudo leer el historial de importación." = "تعذرت قراءة سجل الاستيراد.";
 "No se pudo leer la carpeta del juego." = "تعذّرت قراءة مجلد اللعبة.";
 "No se pudo leer o importar este archivo." = "تعذرت قراءة هذا الملف أو استيراده.";
@@ -1171,6 +1177,7 @@
 "Ya existe una carpeta de este disco fuera del índice. Se conservó sin modificar." = "يوجد مجلد لهذا القرص خارج الفهرس. تم الاحتفاظ به دون تعديل.";
 "Ya existe una carpeta para este juego. Se conservó sin modificar." = "يوجد مجلد لهذه اللعبة بالفعل. تم الاحتفاظ به دون تعديل.";
 "Ya existe una carpeta sin registrar para este juego. Sus archivos se conservaron." = "يوجد مجلد غير مسجل لهذه اللعبة بالفعل. تم الاحتفاظ بملفاته.";
+"Ya instalado" = "مثبت بالفعل";
 "bsnes-mercury · GPL v3" = "bsnes-mercury · GPL v3";
 "https://…" = "https://…";
 "iOS no concedió el espacio de direcciones que necesita PS3. No se inició el núcleo para evitar cerrar VETA. Revisa las capacidades de memoria del perfil de desarrollo; activar JIT por sí solo no amplía ese espacio." = "لم يمنح iOS مساحة العناوين التي يحتاجها PS3. لم تُشغّل النواة لتجنب تعطل VETA. تحقق من صلاحيات الذاكرة في ملف تعريف التطوير؛ فتفعيل JIT وحده لا يوسّع مساحة العناوين هذه.";

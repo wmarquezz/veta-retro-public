@@ -64,9 +64,9 @@ struct DirectCloudTransfer {
         let values = try url.resourceValues(forKeys: [.fileSizeKey, .isRegularFileKey, .isSymbolicLinkKey])
         guard values.isRegularFile == true, values.isSymbolicLink != true,
               Int64(values.fileSize ?? -1) == entry.size else { throw DirectCloudError.changed }
-        if entry.md5 == nil && entry.dropboxHash == nil { return }
+        if entry.md5 == nil && entry.dropboxHash == nil && entry.sha256 == nil { return }
         let input = try FileHandle(forReadingFrom: url); defer { try? input.close() }
-        var md5 = Insecure.MD5(), dropbox = SHA256()
+        var md5 = Insecure.MD5(), dropbox = SHA256(), sha = SHA256()
         // Dropbox content_hash is SHA256 of concatenated 4 MiB block SHA256 digests.
         while true {
             try Task.checkCancellation()
@@ -78,11 +78,13 @@ struct DirectCloudTransfer {
             }
             if block.isEmpty { break }
             md5.update(data: block)
+            sha.update(data: block)
             dropbox.update(data: Data(SHA256.hash(data: block)))
         }
         func hex(_ data: some Sequence<UInt8>) -> String { data.map { String(format: "%02x", $0) }.joined() }
         if let expected = entry.md5, hex(md5.finalize()) != expected.lowercased() { throw DirectCloudError.changed }
         if let expected = entry.dropboxHash, hex(dropbox.finalize()) != expected.lowercased() { throw DirectCloudError.changed }
+        if let expected = entry.sha256, hex(sha.finalize()) != expected.lowercased() { throw DirectCloudError.changed }
     }
     func prepare(_ plan: DirectCloudPlan, temporaryRoot: URL = FileManager.default.temporaryDirectory,
                  progress: @escaping @Sendable (DirectCloudProgress) -> Void) async throws -> CloudImportPreparation.Snapshot {
@@ -94,7 +96,7 @@ struct DirectCloudTransfer {
         let required = plan.bytes * 2 + 128 * 1024 * 1024
         if let free = try root.resourceValues(forKeys: [.volumeAvailableCapacityForImportantUsageKey]).volumeAvailableCapacityForImportantUsage,
            free < required { throw DirectCloudError.noSpace }
-        var paths:[URL]=[],done:Int64=0,issues=plan.issues
+        var paths:[URL]=[],done:Int64=0,issues=plan.issues,hints:[URL:GameConsole]=[:]
         for (index, file) in plan.files.enumerated() {
             try Task.checkCancellation()
             let already = done
@@ -112,6 +114,7 @@ struct DirectCloudTransfer {
             guard !fm.fileExists(atPath: target.path) else { throw DirectCloudError.ambiguousNames }
             try fm.moveItem(at: downloaded, to: target)
             paths.append(target)
+            if let code = file.entry.catalogConsole, let console = GameConsole(rawValue: code) { hints[target] = console }
             } catch is CancellationError {throw CancellationError()}
             catch {
                 guard continueOnError else {throw error}
@@ -123,7 +126,9 @@ struct DirectCloudTransfer {
         let expanded=try ZIPGameImport.expand(paths,temporaryRoot:root,continueOnError:continueOnError)
         issues += expanded.issues
         let ready=try expanded.importFiles(onError:continueOnError ? {url,error in issues.append(ImportIssue(file:url.lastPathComponent,error:error,coverOnly:true))}:nil)
+        var finalHints:[URL:GameConsole]=[:]
+        for url in ready { if let console = hints[expanded.origins[url] ?? url] { finalHints[url] = console } }
         try Task.checkCancellation(); keep = true
-        return .init(root:root,files:ready,issues:issues,sourceNames:expanded.sourceNames)
+        return .init(root:root,files:ready,issues:issues,sourceNames:expanded.sourceNames,consoleHints:finalHints)
     }
 }

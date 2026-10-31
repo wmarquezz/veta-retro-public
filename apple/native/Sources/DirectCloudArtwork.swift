@@ -19,7 +19,12 @@ struct DirectCloudArtworkIndex {
         let images = entries.filter(Self.isImage)
         let grouped = Dictionary(grouping: images, by: { Self.stem($0.name) })
         var result: [String: DirectCloudEntry] = [:], paired = Set<String>()
+        let byID = Dictionary(images.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
         for game in games {
+            if game.catalogGameID != nil {
+                if let id = game.artworkID, let image = byID[id] { result[game.id] = image; paired.insert(id) }
+                continue
+            }
             let matches = grouped[Self.stem(game.name)] ?? []
             let preferred = matches.sorted {
                 let order = ["png", "jpg", "jpeg", "heic", "webp"]

@@ -5,6 +5,7 @@
 "%@ todavía no está disponible en este dispositivo." = "此设备尚不支持 %@。";
 "%d archivos" = "%d 个文件";
 "%d archivos · %@" = "%d 个文件 · %@";
+"%d juegos · %d disponibles" = "%d 个游戏 · %d 个可用";
 "%d seleccionados de %d juegos" = "已选择 %d 个，共 %d 个游戏";
 "%lld juego" = "%lld 个游戏";
 "%lld juegos" = "%lld 个游戏";
@@ -126,6 +127,7 @@
 "Buscar en Internet" = "搜索互联网";
 "Buscar en tu biblioteca" = "搜索游戏库";
 "Buscar guía completa" = "搜索完整攻略";
+"Buscar juego" = "搜索游戏";
 "Buscar no cambia tu selección. Seleccionar toda la consola incluye también los juegos ocultos por la búsqueda." = "搜索不会更改选择。选择整台主机的游戏也会包括被搜索隐藏的游戏。";
 "Buscar partida por Game Center" = "通过 Game Center 查找游戏";
 "Buscar portada en Internet" = "在线查找封面";
@@ -154,6 +156,7 @@
 "Carpetas compartidas" = "共享文件夹";
 "Carpetas completas" = "整个文件夹";
 "Carpetas y archivos que te compartieron." = "与你共享的文件夹和文件。";
+"Catálogo detectado. Los juegos que ya tienes no se volverán a importar." = "已检测到目录。已在游戏库中的游戏不会重复导入。";
 "Centro de soporte" = "支持中心";
 "Cerrando motor…" = "正在关闭引擎…";
 "Cerrar" = "关闭";
@@ -528,6 +531,7 @@
 "Importar descargas" = "导入已下载的文件";
 "Importar desde la nube" = "从云端导入";
 "Importar diseño JSON" = "导入 JSON 布局";
+"Importar disponibles" = "导入可用游戏";
 "Importar el archivo no instala un perfil ni conecta una VPN. La conexión se solicita al preparar el juego. Puedes desconectarla en Ajustes de iOS → General → VPN y gestión de dispositivos." = "导入文件不会安装描述文件或连接 VPN。准备游戏时才会请求连接。可在 iOS 设置 → 通用 → VPN 与设备管理中断开连接。";
 "Importar emparejamiento" = "导入配对文件";
 "Importar esta carpeta" = "导入此文件夹";
@@ -737,6 +741,7 @@
 "No hay estados rápidos ni vídeo remoto para este motor. La TV y los mandos cercanos requieren dispositivos compatibles." = "此引擎不支持即时存档或远程视频。电视和附近控制器需要兼容的设备。";
 "No hay juegos en esta carpeta." = "此文件夹中没有游戏。";
 "No hay juegos que coincidan con esta búsqueda." = "没有与搜索匹配的游戏。";
+"No hay juegos que coincidan con la búsqueda." = "没有符合搜索条件的游戏。";
 "No hay mandos compatibles conectados." = "未连接兼容的控制器。";
 "No hay plaza libre para otro jugador." = "没有空余的玩家位置。";
 "No hay portadas en este catálogo." = "此目录中没有封面。";
@@ -788,6 +793,7 @@
 "No se pudo inicializar el motor nativo." = "无法初始化原生引擎。";
 "No se pudo iniciar el juego." = "无法启动游戏。";
 "No se pudo iniciar la sesión local. Vuelve a la biblioteca e inténtalo de nuevo." = "无法启动本地会话。请返回游戏库后重试。";
+"No se pudo leer el catálogo. Puedes explorar las carpetas e importar tus archivos." = "无法读取目录。你仍可浏览文件夹并导入文件。";
 "No se pudo leer el historial de importación." = "无法读取导入历史。";
 "No se pudo leer la carpeta del juego." = "无法读取游戏文件夹。";
 "No se pudo leer o importar este archivo." = "无法读取或导入此文件。";
@@ -1171,6 +1177,7 @@
 "Ya existe una carpeta de este disco fuera del índice. Se conservó sin modificar." = "索引外已存在此光盘的文件夹，已原样保留。";
 "Ya existe una carpeta para este juego. Se conservó sin modificar." = "此游戏的文件夹已存在，已原样保留。";
 "Ya existe una carpeta sin registrar para este juego. Sus archivos se conservaron." = "此游戏已有未登记的文件夹。其文件已保留。";
+"Ya instalado" = "已安装";
 "bsnes-mercury · GPL v3" = "bsnes-mercury · GPL v3";
 "https://…" = "https://…";
 "iOS no concedió el espacio de direcciones que necesita PS3. No se inició el núcleo para evitar cerrar VETA. Revisa las capacidades de memoria del perfil de desarrollo; activar JIT por sí solo no amplía ese espacio." = "iOS 未提供 PS3 所需的地址空间。为避免 VETA 崩溃，未启动模拟核心。请检查开发配置描述文件的内存权限；仅激活 JIT 不会扩大该地址空间。";

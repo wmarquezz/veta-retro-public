@@ -82,6 +82,11 @@ struct DirectCloudEntry: Identifiable, Hashable {
     var dropboxHash: String?
     var canDownload = true
     var resourceKey: String?
+    var sha256: String?
+    var catalogGameID: String?
+    var catalogTitle: String?
+    var artworkID: String?
+    var catalogConsole: String?
 }
 struct DirectCloudPage { let entries: [DirectCloudEntry]; let next: String? }
 

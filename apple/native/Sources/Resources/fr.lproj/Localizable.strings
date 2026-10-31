@@ -5,6 +5,7 @@
 "%@ todavía no está disponible en este dispositivo." = "%@ n’est pas encore disponible sur cet appareil.";
 "%d archivos" = "%d fichiers";
 "%d archivos · %@" = "%d fichiers · %@";
+"%d juegos · %d disponibles" = "%d jeux · %d disponibles";
 "%d seleccionados de %d juegos" = "%d sélectionnés sur %d jeux";
 "%lld juego" = "%lld jeu";
 "%lld juegos" = "%lld jeux";
@@ -126,6 +127,7 @@
 "Buscar en Internet" = "Rechercher sur Internet";
 "Buscar en tu biblioteca" = "Rechercher dans la bibliothèque";
 "Buscar guía completa" = "Chercher un guide complet";
+"Buscar juego" = "Rechercher un jeu";
 "Buscar no cambia tu selección. Seleccionar toda la consola incluye también los juegos ocultos por la búsqueda." = "La recherche ne modifie pas votre sélection. Sélectionner toute la console inclut aussi les jeux masqués par la recherche.";
 "Buscar partida por Game Center" = "Chercher une partie via Game Center";
 "Buscar portada en Internet" = "Chercher une jaquette en ligne";
@@ -154,6 +156,7 @@
 "Carpetas compartidas" = "Dossiers partagés";
 "Carpetas completas" = "Dossiers complets";
 "Carpetas y archivos que te compartieron." = "Dossiers et fichiers partagés avec vous.";
+"Catálogo detectado. Los juegos que ya tienes no se volverán a importar." = "Catalogue détecté. Les jeux déjà présents dans votre bibliothèque ne seront pas réimportés.";
 "Centro de soporte" = "Centre d’assistance";
 "Cerrando motor…" = "Fermeture du moteur…";
 "Cerrar" = "Fermer";
@@ -528,6 +531,7 @@
 "Importar descargas" = "Importer les téléchargements";
 "Importar desde la nube" = "Importer depuis le cloud";
 "Importar diseño JSON" = "Importer une disposition JSON";
+"Importar disponibles" = "Importer les jeux disponibles";
 "Importar el archivo no instala un perfil ni conecta una VPN. La conexión se solicita al preparar el juego. Puedes desconectarla en Ajustes de iOS → General → VPN y gestión de dispositivos." = "Importer le fichier n’installe aucun profil et ne connecte aucun VPN. La connexion est demandée à la préparation du jeu. Déconnectez-la dans Réglages iOS → Général → VPN et gestion de l’appareil.";
 "Importar emparejamiento" = "Importer le jumelage";
 "Importar esta carpeta" = "Importer ce dossier";
@@ -737,6 +741,7 @@
 "No hay estados rápidos ni vídeo remoto para este motor. La TV y los mandos cercanos requieren dispositivos compatibles." = "Ce moteur ne propose ni sauvegarde d’état ni vidéo à distance. La TV et les manettes à proximité nécessitent des appareils compatibles.";
 "No hay juegos en esta carpeta." = "Aucun jeu dans ce dossier.";
 "No hay juegos que coincidan con esta búsqueda." = "Aucun jeu ne correspond à cette recherche.";
+"No hay juegos que coincidan con la búsqueda." = "Aucun jeu ne correspond à votre recherche.";
 "No hay mandos compatibles conectados." = "Aucune manette compatible connectée.";
 "No hay plaza libre para otro jugador." = "Aucune place libre pour un autre joueur.";
 "No hay portadas en este catálogo." = "Ce catalogue ne contient aucune jaquette.";
@@ -788,6 +793,7 @@
 "No se pudo inicializar el motor nativo." = "Impossible d’initialiser le moteur natif.";
 "No se pudo iniciar el juego." = "Impossible de lancer le jeu.";
 "No se pudo iniciar la sesión local. Vuelve a la biblioteca e inténtalo de nuevo." = "Impossible de démarrer la session locale. Revenez à la bibliothèque et réessayez.";
+"No se pudo leer el catálogo. Puedes explorar las carpetas e importar tus archivos." = "Impossible de lire le catalogue. Vous pouvez parcourir les dossiers et importer vos fichiers.";
 "No se pudo leer el historial de importación." = "Impossible de lire l’historique des importations.";
 "No se pudo leer la carpeta del juego." = "Impossible de lire le dossier du jeu.";
 "No se pudo leer o importar este archivo." = "Impossible de lire ou d’importer ce fichier.";
@@ -1171,6 +1177,7 @@
 "Ya existe una carpeta de este disco fuera del índice. Se conservó sin modificar." = "Un dossier de ce disque existe hors de l’index. Il a été conservé sans modification.";
 "Ya existe una carpeta para este juego. Se conservó sin modificar." = "Un dossier existe déjà pour ce jeu. Il a été conservé sans modification.";
 "Ya existe una carpeta sin registrar para este juego. Sus archivos se conservaron." = "Un dossier non enregistré existe déjà pour ce jeu. Ses fichiers ont été conservés.";
+"Ya instalado" = "Déjà installé";
 "bsnes-mercury · GPL v3" = "bsnes-mercury · GPL v3";
 "https://…" = "https://…";
 "iOS no concedió el espacio de direcciones que necesita PS3. No se inició el núcleo para evitar cerrar VETA. Revisa las capacidades de memoria del perfil de desarrollo; activar JIT por sí solo no amplía ese espacio." = "iOS n’a pas accordé l’espace d’adressage nécessaire à la PS3. Le cœur n’a pas été démarré pour éviter un plantage de VETA. Vérifiez les capacités mémoire du profil de développement ; activer JIT seul n’agrandit pas cet espace d’adressage.";

@@ -8,6 +8,7 @@ final class CloudImportPreparation: @unchecked Sendable {
         let files: [URL]
         var issues:[ImportIssue]=[]
         var sourceNames:[URL:String]=[:]
+        var consoleHints:[URL:GameConsole]=[:]
         func remove() { try? FileManager.default.removeItem(at: root) }
     }
     enum Failure: LocalizedError {

@@ -5,6 +5,7 @@
 "%@ todavía no está disponible en este dispositivo." = "%@ अभी इस डिवाइस पर उपलब्ध नहीं है।";
 "%d archivos" = "%d फ़ाइलें";
 "%d archivos · %@" = "%d फ़ाइलें · %@";
+"%d juegos · %d disponibles" = "%d गेम · %d उपलब्ध";
 "%d seleccionados de %d juegos" = "%d चयनित, कुल %d गेम";
 "%lld juego" = "%lld गेम";
 "%lld juegos" = "%lld गेम";
@@ -126,6 +127,7 @@
 "Buscar en Internet" = "इंटरनेट पर खोजें";
 "Buscar en tu biblioteca" = "अपनी लाइब्रेरी में खोजें";
 "Buscar guía completa" = "पूरी गाइड खोजें";
+"Buscar juego" = "गेम खोजें";
 "Buscar no cambia tu selección. Seleccionar toda la consola incluye también los juegos ocultos por la búsqueda." = "खोज करने से आपका चयन नहीं बदलता। पूरे कंसोल को चुनने पर खोज में छिपे गेम भी शामिल होते हैं।";
 "Buscar partida por Game Center" = "Game Center से गेम खोजें";
 "Buscar portada en Internet" = "ऑनलाइन कवर खोजें";
@@ -154,6 +156,7 @@
 "Carpetas compartidas" = "साझा फ़ोल्डर";
 "Carpetas completas" = "पूरे फ़ोल्डर";
 "Carpetas y archivos que te compartieron." = "आपके साथ साझा फ़ोल्डर और फ़ाइलें।";
+"Catálogo detectado. Los juegos que ya tienes no se volverán a importar." = "कैटलॉग मिल गया। लाइब्रेरी में मौजूद गेम दोबारा आयात नहीं होंगे।";
 "Centro de soporte" = "सहायता केंद्र";
 "Cerrando motor…" = "इंजन बंद हो रहा है…";
 "Cerrar" = "बंद करें";
@@ -528,6 +531,7 @@
 "Importar descargas" = "डाउनलोड की गई फ़ाइलें आयात करें";
 "Importar desde la nube" = "क्लाउड से आयात करें";
 "Importar diseño JSON" = "JSON लेआउट आयात करें";
+"Importar disponibles" = "उपलब्ध गेम आयात करें";
 "Importar el archivo no instala un perfil ni conecta una VPN. La conexión se solicita al preparar el juego. Puedes desconectarla en Ajustes de iOS → General → VPN y gestión de dispositivos." = "फ़ाइल आयात करने से प्रोफ़ाइल इंस्टॉल या VPN कनेक्ट नहीं होता। गेम तैयार करते समय कनेक्शन माँगा जाता है। iOS सेटिंग्स → सामान्य → VPN और डिवाइस प्रबंधन में इसे डिस्कनेक्ट करें।";
 "Importar emparejamiento" = "पेयरिंग फ़ाइल आयात करें";
 "Importar esta carpeta" = "यह फ़ोल्डर आयात करें";
@@ -737,6 +741,7 @@
 "No hay estados rápidos ni vídeo remoto para este motor. La TV y los mandos cercanos requieren dispositivos compatibles." = "इस इंजन में सेव स्टेट या रिमोट वीडियो नहीं हैं। टीवी और आस-पास के नियंत्रकों के लिए संगत डिवाइस आवश्यक हैं।";
 "No hay juegos en esta carpeta." = "इस फ़ोल्डर में कोई गेम नहीं है।";
 "No hay juegos que coincidan con esta búsqueda." = "इस खोज से कोई गेम मेल नहीं खाता।";
+"No hay juegos que coincidan con la búsqueda." = "आपकी खोज से कोई गेम मेल नहीं खाता।";
 "No hay mandos compatibles conectados." = "कोई संगत कंट्रोलर जुड़ा नहीं है।";
 "No hay plaza libre para otro jugador." = "दूसरे खिलाड़ी के लिए जगह नहीं है।";
 "No hay portadas en este catálogo." = "इस कैटलॉग में कवर नहीं हैं।";
@@ -788,6 +793,7 @@
 "No se pudo inicializar el motor nativo." = "नेटिव इंजन आरंभ नहीं हो सका।";
 "No se pudo iniciar el juego." = "गेम शुरू नहीं हो सका।";
 "No se pudo iniciar la sesión local. Vuelve a la biblioteca e inténtalo de nuevo." = "स्थानीय सत्र शुरू नहीं हो सका। लाइब्रेरी पर लौटकर फिर कोशिश करें।";
+"No se pudo leer el catálogo. Puedes explorar las carpetas e importar tus archivos." = "कैटलॉग पढ़ा नहीं जा सका। आप फ़ोल्डर खोलकर अपनी फ़ाइलें आयात कर सकते हैं।";
 "No se pudo leer el historial de importación." = "आयात इतिहास पढ़ा नहीं जा सका।";
 "No se pudo leer la carpeta del juego." = "गेम फ़ोल्डर पढ़ा नहीं जा सका।";
 "No se pudo leer o importar este archivo." = "यह फ़ाइल पढ़ी या आयात नहीं की जा सकी।";
@@ -1171,6 +1177,7 @@
 "Ya existe una carpeta de este disco fuera del índice. Se conservó sin modificar." = "इंडेक्स के बाहर इस डिस्क का फ़ोल्डर पहले से है। उसे बिना बदलाव रखा गया।";
 "Ya existe una carpeta para este juego. Se conservó sin modificar." = "इस गेम का फ़ोल्डर पहले से है। उसे बिना बदलाव रखा गया।";
 "Ya existe una carpeta sin registrar para este juego. Sus archivos se conservaron." = "इस गेम का अपंजीकृत फ़ोल्डर पहले से है। उसकी फ़ाइलें सुरक्षित रखी गईं।";
+"Ya instalado" = "पहले से इंस्टॉल है";
 "bsnes-mercury · GPL v3" = "bsnes-mercury · GPL v3";
 "https://…" = "https://…";
 "iOS no concedió el espacio de direcciones que necesita PS3. No se inició el núcleo para evitar cerrar VETA. Revisa las capacidades de memoria del perfil de desarrollo; activar JIT por sí solo no amplía ese espacio." = "iOS ने PS3 के लिए आवश्यक एड्रेस स्पेस नहीं दिया। VETA को क्रैश होने से बचाने के लिए कोर शुरू नहीं किया गया। डेवलपमेंट प्रोफ़ाइल की मेमोरी क्षमताएँ जाँचें; केवल JIT सक्रिय करने से एड्रेस स्पेस नहीं बढ़ता।";

@@ -5,6 +5,7 @@
 "%@ todavía no está disponible en este dispositivo." = "%@ ist auf diesem Gerät noch nicht verfügbar.";
 "%d archivos" = "%d Dateien";
 "%d archivos · %@" = "%d Dateien · %@";
+"%d juegos · %d disponibles" = "%d Spiele · %d verfügbar";
 "%d seleccionados de %d juegos" = "%d von %d Spielen ausgewählt";
 "%lld juego" = "%lld Spiel";
 "%lld juegos" = "%lld Spiele";
@@ -126,6 +127,7 @@
 "Buscar en Internet" = "Durchsuchen Sie das Internet";
 "Buscar en tu biblioteca" = "Durchsuchen Sie Ihre Bibliothek";
 "Buscar guía completa" = "Hier finden Sie eine vollständige Komplettlösung";
+"Buscar juego" = "Spiel suchen";
 "Buscar no cambia tu selección. Seleccionar toda la consola incluye también los juegos ocultos por la búsqueda." = "Die Suche ändert deine Auswahl nicht. Die Auswahl der gesamten Konsole umfasst auch durch die Suche ausgeblendete Spiele.";
 "Buscar partida por Game Center" = "Finden Sie ein Spiel mit Game Center";
 "Buscar portada en Internet" = "Cover im Internet suchen";
@@ -154,6 +156,7 @@
 "Carpetas compartidas" = "Geteilte Ordner";
 "Carpetas completas" = "Ganze Ordner";
 "Carpetas y archivos que te compartieron." = "Mit dir geteilte Ordner und Dateien.";
+"Catálogo detectado. Los juegos que ya tienes no se volverán a importar." = "Katalog erkannt. Spiele in deiner Bibliothek werden nicht erneut importiert.";
 "Centro de soporte" = "Support-Center";
 "Cerrando motor…" = "Motor schließen…";
 "Cerrar" = "Schließen";
@@ -528,6 +531,7 @@
 "Importar descargas" = "Downloads importieren";
 "Importar desde la nube" = "Aus der Cloud importieren";
 "Importar diseño JSON" = "JSON-Layout importieren";
+"Importar disponibles" = "Verfügbare Spiele importieren";
 "Importar el archivo no instala un perfil ni conecta una VPN. La conexión se solicita al preparar el juego. Puedes desconectarla en Ajustes de iOS → General → VPN y gestión de dispositivos." = "Der Import installiert kein Profil und verbindet kein VPN. Die Verbindung wird beim Vorbereiten des Spiels angefordert. Trenne sie unter iOS-Einstellungen → Allgemein → VPN und Geräteverwaltung.";
 "Importar emparejamiento" = "Kopplungsdatei importieren";
 "Importar esta carpeta" = "Diesen Ordner importieren";
@@ -737,6 +741,7 @@
 "No hay estados rápidos ni vídeo remoto para este motor. La TV y los mandos cercanos requieren dispositivos compatibles." = "Diese Engine verfügt über keine Speicherstatus oder Remote-Video. Fernseher und in der Nähe befindliche Controller erfordern kompatible Geräte.";
 "No hay juegos en esta carpeta." = "Keine Spiele in diesem Ordner.";
 "No hay juegos que coincidan con esta búsqueda." = "Keine Spiele entsprechen dieser Suche.";
+"No hay juegos que coincidan con la búsqueda." = "Keine Spiele entsprechen deiner Suche.";
 "No hay mandos compatibles conectados." = "Keine kompatiblen Controller angeschlossen.";
 "No hay plaza libre para otro jugador." = "Kein freier Platz für einen anderen Spieler.";
 "No hay portadas en este catálogo." = "In diesem Katalog gibt es keine Cover.";
@@ -788,6 +793,7 @@
 "No se pudo inicializar el motor nativo." = "Die native Engine konnte nicht initialisiert werden.";
 "No se pudo iniciar el juego." = "Das Spiel konnte nicht gestartet werden.";
 "No se pudo iniciar la sesión local. Vuelve a la biblioteca e inténtalo de nuevo." = "Die lokale Sitzung konnte nicht gestartet werden. Kehre zur Bibliothek zurück und versuche es erneut.";
+"No se pudo leer el catálogo. Puedes explorar las carpetas e importar tus archivos." = "Der Katalog konnte nicht gelesen werden. Du kannst Ordner durchsuchen und Dateien importieren.";
 "No se pudo leer el historial de importación." = "Der Importverlauf konnte nicht gelesen werden.";
 "No se pudo leer la carpeta del juego." = "Der Spielordner konnte nicht gelesen werden.";
 "No se pudo leer o importar este archivo." = "Diese Datei konnte nicht gelesen oder importiert werden.";
@@ -1171,6 +1177,7 @@
 "Ya existe una carpeta de este disco fuera del índice. Se conservó sin modificar." = "Außerhalb des Index ist bereits ein Ordner für diese CD vorhanden. Es wurde unverändert beibehalten.";
 "Ya existe una carpeta para este juego. Se conservó sin modificar." = "Ein Ordner für dieses Spiel existiert bereits. Es wurde unverändert beibehalten.";
 "Ya existe una carpeta sin registrar para este juego. Sus archivos se conservaron." = "Für dieses Spiel ist bereits ein nicht registrierter Ordner vorhanden. Seine Akten blieben erhalten.";
+"Ya instalado" = "Bereits installiert";
 "bsnes-mercury · GPL v3" = "bsnes-mercury · GPL v3";
 "https://…" = "https://…";
 "iOS no concedió el espacio de direcciones que necesita PS3. No se inició el núcleo para evitar cerrar VETA. Revisa las capacidades de memoria del perfil de desarrollo; activar JIT por sí solo no amplía ese espacio." = "iOS hat den für PS3 erforderlichen Adressraum nicht bereitgestellt. Der Kern wurde nicht gestartet, um einen Absturz von VETA zu vermeiden. Überprüfen Sie die Speicherkapazitäten des Entwicklungsprofils. Durch die alleinige Aktivierung von JIT wird dieser Adressraum nicht erweitert.";

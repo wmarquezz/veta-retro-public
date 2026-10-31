@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "build": 205,
+  "appStoreApproved": false,
+  "engineChanges": true,
+  "sourceManifestFiles": 103859,
+  "scope": "NES cartridge RAM flags/open bus and Nintendo DS slot/renderer reinitialization; see RELEASE-1.0.0-rc.6.md"
+}

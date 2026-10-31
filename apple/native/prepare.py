@@ -11,6 +11,8 @@ core.mkdir(parents=True,exist_ok=True)
 with tarfile.open(archive) as f:
     assert all(not m.name.startswith('/') and '..' not in Path(m.name).parts and not m.issym() and not m.islnk() for m in f.getmembers())
     f.extractall(core)
+from BuildSupport.patch_nes_lifecycle import apply as patch_nes_lifecycle
+patch_nes_lifecycle(core)
 make='CORE_DIR := src\nHAVE_NTSC := 0\nHAVE_HDPACK := 0\nSTATIC_LINKING := 0\ninclude Makefile.common\nprint:\n\t@echo $(SOURCES_C)\n'
 sources=subprocess.check_output(['make','-s','-f','-','print'],input=make.encode(),cwd=core).decode().split()
 includes=['src','src/input','src/boards','src/drivers/libretro','src/drivers/libretro/libretro-common/include']
@@ -82,6 +84,9 @@ for item in json.loads((base/'BuildSupport/extra-cores.json').read_text()):
             assert not member.name.startswith('/') and '..' not in Path(member.name).parts and not member.issym() and not member.islnk()
             archive.extract(member,destination)
     if item['name']=='pcsx': (destination/'include/revision.h').write_text('#define REV "'+item['commit'][:8]+'"\n')
+    if item['name']=='desmume':
+        from BuildSupport.patch_ds_lifecycle import apply as patch_ds_lifecycle
+        patch_ds_lifecycle(destination)
     if item['name']=='genesis':
         from BuildSupport.patch_genesis_state import patch_genesis_state
         patch_genesis_state(destination)

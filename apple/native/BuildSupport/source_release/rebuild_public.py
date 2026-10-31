@@ -20,11 +20,16 @@ def unpack(filename,destination,strip=1,expected=None):
 def run(args):subprocess.run([str(x) for x in args],cwd=ROOT,check=True)
 p=argparse.ArgumentParser(description=__doc__);p.add_argument('--prepare-only',action='store_true');a=p.parse_args()
 unpack('fceumm-ac0d00a.tar.gz',BASE/'.build/fceumm',0,'6d9664deb1223c079ffa982e664a89485932761cd8655609a9b2039699434612')
+from patch_nes_lifecycle import apply as patch_nes_lifecycle
+patch_nes_lifecycle(BASE/'.build/fceumm')
 unpack('mgba-0.10.5.tar.gz',BASE/'.build/mgba',1,'9475c26e9fa2f4b30c07ab6636e4b0a5b62e4baee2109ede7b2fecc52edae366')
 for core in json.loads((BASE/'BuildSupport/extra-cores.json').read_text()):
  if core['name'] in ('genesis','stella'):continue
  unpack(core['archive'],BASE/'.build'/core['name'],1,core['sha256'])
  if core['name']=='pcsx':(BASE/'.build/pcsx/include/revision.h').write_text('#define REV "'+core['commit'][:8]+'"\n')
+ if core['name']=='desmume':
+  from patch_ds_lifecycle import apply as patch_ds_lifecycle
+  patch_ds_lifecycle(BASE/'.build/desmume')
 psp=json.loads((BASE/'BuildSupport/ppsspp.json').read_text())
 unpack(psp['archive'],BASE/'.build/ppsspp',1,psp['sha256'])
 from public_games import apply,audit

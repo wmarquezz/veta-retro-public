@@ -128,7 +128,19 @@ extension Library {
         // executable bytes and leaving the original untouched.
         if ext=="dol",size%32 != 0 {let padding=Data(repeating:0,count:32-size%32);try output.write(contentsOf:padding);digest.update(data:padding)}
         try output.synchronize();let id=digest.finalize().map{String(format:"%02x",$0)}.joined()
-        if let existing=games.first(where:{$0.id==id}) {return existing}
+        // Keep source identity stable for cloud deduplication and existing saves.
+        let normalized = console == .threeDS ? try ThreeDSImportNormalization.apply(toStagedCopy:copy):false
+        if let existing=games.first(where:{$0.id==id}) {
+            // Reimport can repair the old internal copy without changing its
+            // record, cover or saves. Never overwrite a different user file.
+            let current=romURL(existing)
+            if normalized, existing.console == .threeDS,
+               try ThreeDSImportNormalization.patch(for:current) != nil,
+               try ThreeDSImportNormalization.digest(of:current) == id {
+                _ = try fm.replaceItemAt(current,withItemAt:copy)
+            }
+            return existing
+        }
         var game=Game(id:id,name:String(url.deletingPathExtension().lastPathComponent.prefix(160)),console:console);game.contentName=filename
         let destination=directory(id)
         guard !fm.fileExists(atPath:destination.path) else{throw VetaError.message("Ya existe una carpeta para este juego. Se conservó sin modificar.")}

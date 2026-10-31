@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "build": 208,
+  "appStoreApproved": false,
+  "engineChanges": false,
+  "sourceManifestFiles": 103871,
+  "scope": "Verified plaintext 3DS header normalization, stable identity and backup compatibility; see RELEASE-1.0.0-rc.9.md"
+}

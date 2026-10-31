@@ -335,7 +335,7 @@ struct StateFile: Codable {
                     guard entry.game.contentName==nil else{throw VetaError.message("Faltan archivos del juego en el respaldo.")}
                     try Self.validateROM(entry.rom,console:entry.game.console)
                 }
-                guard entry.game.id == sha256(entry.rom) else { throw VetaError.message("El respaldo contiene una ROM dañada.") }
+                guard entry.game.id == sha256(entry.rom) || (entry.game.console == .threeDS && ThreeDSImportNormalization.matchesOriginalIdentity(entry.rom,id:entry.game.id)) else { throw VetaError.message("El respaldo contiene una ROM dañada.") }
             }
             if let cheats=entry.nesCheats {
                 guard entry.game.console == .nes else {throw VetaError.message("Los trucos de este respaldo no corresponden a NES.")}
@@ -391,7 +391,9 @@ struct StateFile: Codable {
         } else if let name=entry.game.contentName,NativeGameFile.isStreamedContent(entry.game) {
             let staging=FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString,isDirectory:true)
             try FileManager.default.createDirectory(at:staging,withIntermediateDirectories:true);defer{try? FileManager.default.removeItem(at:staging)}
-            let url=staging.appendingPathComponent(name);try entry.rom.write(to:url);game=try importNativeFile(url,console:entry.game.console)
+            let url=staging.appendingPathComponent(name)
+            let importBytes = entry.game.console == .threeDS ? (ThreeDSImportNormalization.originalContent(entry.rom,id:entry.game.id) ?? entry.rom):entry.rom
+            try importBytes.write(to:url);game=try importNativeFile(url,console:entry.game.console)
         } else {game = try add(data: entry.rom, name: entry.game.name,console:entry.game.console)}
         game.dsEngine=entry.game.dsEngine
         _ = try prepareSessionSaves(for:game)

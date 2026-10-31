@@ -1,6 +1,6 @@
-# VETA Retro 1.0.0 · candidata 8
+# VETA Retro 1.0.0 · candidata 9
 
-Paquete completo de fuentes de la compilación 207. [Notas y numeración](RELEASE-1.0.0-rc.8.md). No requiere los archivos de versiones previas. Las referencias numéricas anteriores de la receta son históricas.
+Paquete completo de fuentes de la compilación 208. [Notas y numeración](RELEASE-1.0.0-rc.9.md). No requiere los archivos de versiones previas. Las referencias numéricas anteriores de la receta son históricas.
 
 ## Importación desde la nube191
 

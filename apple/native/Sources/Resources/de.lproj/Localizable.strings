@@ -280,6 +280,7 @@
 "El archivo descargado está vacío." = "Die heruntergeladene Datei ist leer.";
 "El archivo no es un skin VETA válido o pertenece a otra consola." = "Die Datei ist kein gültiger VETA-Skin oder gehört zu einer anderen Konsole.";
 "El archivo no tiene una cabecera válida de %@ o está incompleto." = "Die Datei hat keinen gültigen %@-Header oder ist unvollständig.";
+"El archivo supera el límite de tamaño permitido para este formato." = "Die Datei überschreitet die Größenbegrenzung für dieses Format.";
 "El archivo supera los 256 MB. Importa las ROMs por separado." = "Die Datei überschreitet 256 MB. Importieren Sie die ROMs separat.";
 "El autoguardado nunca reemplaza tus guardados manuales. Si el iPhone se apaga de golpe o la app falla, se conserva el último guardado completado." = "Automatisches Speichern ersetzt nie manuelle Spielstände. Bei plötzlichem Ausschalten oder App-Absturz bleibt der letzte abgeschlossene Spielstand erhalten.";
 "El autor advierte errores gráficos o rendimiento limitado. No se ha validado este juego en VETA." = "Der Autor warnt vor Grafikproblemen oder eingeschränkter Leistung. Dieses Spiel wurde in VETA nicht validiert.";
@@ -577,6 +578,7 @@
 "La ROM Mega Drive está incompleta o usa un formato no compatible." = "Die Mega-Drive-ROM ist unvollständig oder verwendet ein nicht unterstütztes Format.";
 "La ROM NES está incompleta." = "Das NES-ROM ist unvollständig.";
 "La ROM Nintendo DS está incompleta." = "Das Nintendo DS-ROM ist unvollständig.";
+"La ROM Nintendo DS supera el límite de 512 MiB." = "Die Nintendo-DS-ROM überschreitet das Limit von 512 MiB.";
 "La ROM supera los 64 MB." = "Der ROM ist größer als 64 MB.";
 "La TV debe admitir AirPlay o usar un receptor compatible. La transmisión inalámbrica puede añadir retraso. El sonido sigue la salida de audio de iOS." = "Der Fernseher muss AirPlay unterstützen oder einen kompatiblen Receiver verwenden. Drahtloses Streaming kann zu Verzögerungen führen. Der Ton folgt der iOS-Audioausgabe.";
 "La activación es por dispositivo y sesión, no por cuenta. Tener un archivo guardado no confirma que corresponda a este iPhone." = "Die Aktivierung gilt pro Gerät und Sitzung, nicht pro Konto. Eine gespeicherte Datei bestätigt nicht, dass sie zu diesem iPhone gehört.";

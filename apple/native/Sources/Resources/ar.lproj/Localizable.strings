@@ -280,6 +280,7 @@
 "El archivo descargado está vacío." = "الملف المُنزّل فارغ.";
 "El archivo no es un skin VETA válido o pertenece a otra consola." = "الملف ليس شكل VETA صالحًا أو يخص جهازًا آخر.";
 "El archivo no tiene una cabecera válida de %@ o está incompleto." = "لا يحتوي الملف على ترويسة %@ صالحة أو أنه غير مكتمل.";
+"El archivo supera el límite de tamaño permitido para este formato." = "يتجاوز الملف حد الحجم المسموح به لهذا التنسيق.";
 "El archivo supera los 256 MB. Importa las ROMs por separado." = "يتجاوز الملف 256 ميغابايت. استورد ملفات ROM منفصلة.";
 "El autoguardado nunca reemplaza tus guardados manuales. Si el iPhone se apaga de golpe o la app falla, se conserva el último guardado completado." = "الحفظ التلقائي لا يستبدل اليدوي. إذا انطفأ iPhone فجأة أو تعطل التطبيق، يبقى آخر حفظ مكتمل.";
 "El autor advierte errores gráficos o rendimiento limitado. No se ha validado este juego en VETA." = "يحذّر المؤلف من مشاكل رسومية أو أداء محدود. لم تُختبر هذه اللعبة في VETA.";
@@ -577,6 +578,7 @@
 "La ROM Mega Drive está incompleta o usa un formato no compatible." = "ملف ROM الخاص بـ Mega Drive غير مكتمل أو يستخدم تنسيقًا غير مدعوم.";
 "La ROM NES está incompleta." = "ملف ROM لجهاز NES غير مكتمل.";
 "La ROM Nintendo DS está incompleta." = "ملف ROM لجهاز Nintendo DS غير مكتمل.";
+"La ROM Nintendo DS supera el límite de 512 MiB." = "يتجاوز ملف ROM لجهاز Nintendo DS الحد البالغ 512 MiB.";
 "La ROM supera los 64 MB." = "يتجاوز ROM حجم 64 ميغابايت.";
 "La TV debe admitir AirPlay o usar un receptor compatible. La transmisión inalámbrica puede añadir retraso. El sonido sigue la salida de audio de iOS." = "يجب أن يدعم التلفاز AirPlay أو يستخدم مستقبلًا متوافقًا. قد يضيف البث اللاسلكي تأخيرًا. يتبع الصوت مخرج iOS.";
 "La activación es por dispositivo y sesión, no por cuenta. Tener un archivo guardado no confirma que corresponda a este iPhone." = "التفعيل خاص بكل جهاز وجلسة وليس بالحساب. وجود ملف محفوظ لا يؤكد أنه يخص هذا الـ iPhone.";

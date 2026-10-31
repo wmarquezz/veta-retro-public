@@ -280,6 +280,7 @@
 "El archivo descargado está vacío." = "The downloaded file is empty.";
 "El archivo no es un skin VETA válido o pertenece a otra consola." = "The file is not a valid VETA skin or belongs to another console.";
 "El archivo no tiene una cabecera válida de %@ o está incompleto." = "The file has no valid %@ header or is incomplete.";
+"El archivo supera el límite de tamaño permitido para este formato." = "The file exceeds the size limit for this format.";
 "El archivo supera los 256 MB. Importa las ROMs por separado." = "The file exceeds 256 MB. Import the ROMs separately.";
 "El autoguardado nunca reemplaza tus guardados manuales. Si el iPhone se apaga de golpe o la app falla, se conserva el último guardado completado." = "Autosave never replaces manual saves. If the iPhone suddenly shuts down or the app crashes, the last completed save is kept.";
 "El autor advierte errores gráficos o rendimiento limitado. No se ha validado este juego en VETA." = "The author warns of graphical issues or limited performance. This game has not been validated in VETA.";
@@ -577,6 +578,7 @@
 "La ROM Mega Drive está incompleta o usa un formato no compatible." = "The Mega Drive ROM is incomplete or uses an unsupported format.";
 "La ROM NES está incompleta." = "The NES ROM is incomplete.";
 "La ROM Nintendo DS está incompleta." = "The Nintendo DS ROM is incomplete.";
+"La ROM Nintendo DS supera el límite de 512 MiB." = "The Nintendo DS ROM exceeds the 512 MiB limit.";
 "La ROM supera los 64 MB." = "The ROM exceeds 64 MB.";
 "La TV debe admitir AirPlay o usar un receptor compatible. La transmisión inalámbrica puede añadir retraso. El sonido sigue la salida de audio de iOS." = "The TV must support AirPlay or use a compatible receiver. Wireless streaming may add delay. Sound follows the iOS audio output.";
 "La activación es por dispositivo y sesión, no por cuenta. Tener un archivo guardado no confirma que corresponda a este iPhone." = "Activation applies to each device and session, not an account. A saved file does not confirm that it belongs to this iPhone.";

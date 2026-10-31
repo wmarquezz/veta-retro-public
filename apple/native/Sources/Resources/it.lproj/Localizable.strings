@@ -280,6 +280,7 @@
 "El archivo descargado está vacío." = "Il file scaricato è vuoto.";
 "El archivo no es un skin VETA válido o pertenece a otra consola." = "Il file non è una skin VETA valida oppure appartiene a un’altra console.";
 "El archivo no tiene una cabecera válida de %@ o está incompleto." = "Il file non ha un'intestazione %@ valida o è incompleto.";
+"El archivo supera el límite de tamaño permitido para este formato." = "Il file supera il limite di dimensione previsto per questo formato.";
 "El archivo supera los 256 MB. Importa las ROMs por separado." = "Il file supera i 256 MB. Importa le ROM separatamente.";
 "El autoguardado nunca reemplaza tus guardados manuales. Si el iPhone se apaga de golpe o la app falla, se conserva el último guardado completado." = "Il salvataggio automatico non sostituisce mai quelli manuali. Se iPhone si spegne improvvisamente o l’app si blocca, resta l’ultimo salvataggio completato.";
 "El autor advierte errores gráficos o rendimiento limitado. No se ha validado este juego en VETA." = "L'autore avverte di problemi grafici o prestazioni limitate. Questo gioco non è stato convalidato in VETA.";
@@ -577,6 +578,7 @@
 "La ROM Mega Drive está incompleta o usa un formato no compatible." = "La ROM Mega Drive è incompleta o utilizza un formato non supportato.";
 "La ROM NES está incompleta." = "La ROM del NES è incompleta.";
 "La ROM Nintendo DS está incompleta." = "La ROM del Nintendo DS è incompleta.";
+"La ROM Nintendo DS supera el límite de 512 MiB." = "La ROM Nintendo DS supera il limite di 512 MiB.";
 "La ROM supera los 64 MB." = "La ROM supera i 64 MB.";
 "La TV debe admitir AirPlay o usar un receptor compatible. La transmisión inalámbrica puede añadir retraso. El sonido sigue la salida de audio de iOS." = "La TV deve supportare AirPlay o utilizzare un ricevitore compatibile. Lo streaming wireless potrebbe aggiungere ritardi. Il suono segue l'uscita audio iOS.";
 "La activación es por dispositivo y sesión, no por cuenta. Tener un archivo guardado no confirma que corresponda a este iPhone." = "L’attivazione vale per dispositivo e sessione, non per account. Un file salvato non conferma che appartenga a questo iPhone.";

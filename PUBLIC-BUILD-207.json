@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "build": 207,
+  "appStoreApproved": false,
+  "engineChanges": false,
+  "sourceManifestFiles": 103868,
+  "scope": "DS size and legacy SNES header import corrections; see RELEASE-1.0.0-rc.8.md"
+}

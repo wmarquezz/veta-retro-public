@@ -247,7 +247,24 @@ struct StateFile: Codable {
             let valid=[0x7fc0,0xffc0,0x40ffc0].contains {base in
                 let h=base+offset;guard data.count>=h+64 else{return false}
                 let reset=Int(data[h+0x3c]) | Int(data[h+0x3d])<<8
-                return reset>=0x8000 && [0x20,0x21,0x22,0x23,0x25,0x30,0x31,0x32,0x35].contains(data[h+0x15])
+                guard reset>=0x8000 else{return false}
+                if [0x20,0x21,0x22,0x23,0x25,0x30,0x31,0x32,0x35].contains(data[h+0x15]) {return true}
+                // Early cartridges can use the mapper byte as the last title character.
+                // Require independent checksum and executable reset evidence in that case.
+                let entry=offset+(base & ~0x7fff)+(reset & 0x7fff)
+                guard entry<data.count else{return false}
+                let checksum=Int(data[h+0x1e]) | Int(data[h+0x1f])<<8
+                let complement=Int(data[h+0x1c]) | Int(data[h+0x1d])<<8
+                let resetOpcode=[0x78,0x18,0x38,0x9c,0x4c,0x5c].contains(data[entry])
+                if resetOpcode && checksum>0 && complement>0 && checksum+complement==0xffff {return true}
+                // Some unlicensed HiROM cartridges omit metadata but provide a native-mode
+                // reset trampoline (CLC; XCE; JML) into a populated ROM bank.
+                guard base==0xffc0, data.count-offset>=32768, (data.count-offset)%32768==0,
+                      data[h..<h+32].allSatisfy({$0==0}), entry+6<=data.count,
+                      Array(data[entry..<entry+3])==[0x18,0xfb,0x5c] else{return false}
+                let target=Int(data[entry+3]) | Int(data[entry+4])<<8 | Int(data[entry+5])<<16
+                let targetOffset=offset+(target & 0x3fffff)
+                return target>=0xc00000 && targetOffset<data.count && ![0x00,0xff].contains(data[targetOffset])
             }
             guard data.count>=32768,valid else{throw VetaError.message("Selecciona una ROM SNES válida (.sfc o .smc).")};return
         }
@@ -284,8 +301,15 @@ struct StateFile: Codable {
         let access = url.startAccessingSecurityScopedResource(); defer { if access { url.stopAccessingSecurityScopedResource() } }
         if NativeGameFile.extensions.contains(url.pathExtension.lowercased()) {return try importNativeFile(url,console:preferred)}
         let size = try url.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0
-        guard size < 256*1024*1024 else { throw VetaError.message("El archivo supera los 256 MB. Importa las ROMs por separado.") }
-        let data = try Data(contentsOf: url)
+        // DS cartridges may be up to 512 MiB; keep other cartridge and backup
+        // limits unchanged. The console-specific validator still checks contents.
+        let isDS = url.pathExtension.lowercased() == "nds"
+        if isDS {
+            guard size <= 512*1024*1024 else { throw VetaError.message("La ROM Nintendo DS supera el límite de 512 MiB.") }
+        } else {
+            guard size < 256*1024*1024 else { throw VetaError.message("El archivo supera el límite de tamaño permitido para este formato.") }
+        }
+        let data = try Data(contentsOf: url, options: isDS ? .mappedIfSafe : [])
         if !["vetanes","vetaretro"].contains(url.pathExtension.lowercased()) {
             let normalized = try MegaDriveROM.normalize(data, extension: url.pathExtension)
             let console=try GameConsole.detect(normalized,extension:url.pathExtension,preferred:preferred)

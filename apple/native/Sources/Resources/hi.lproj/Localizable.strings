@@ -280,6 +280,7 @@
 "El archivo descargado está vacío." = "डाउनलोड की गई फ़ाइल खाली है।";
 "El archivo no es un skin VETA válido o pertenece a otra consola." = "फ़ाइल मान्य VETA स्किन नहीं है या दूसरे कंसोल की है।";
 "El archivo no tiene una cabecera válida de %@ o está incompleto." = "फ़ाइल में वैध %@ हेडर नहीं है या वह अधूरी है।";
+"El archivo supera el límite de tamaño permitido para este formato." = "फ़ाइल इस प्रारूप की आकार सीमा से बड़ी है।";
 "El archivo supera los 256 MB. Importa las ROMs por separado." = "फ़ाइल 256 MB से बड़ी है। ROM अलग-अलग आयात करें।";
 "El autoguardado nunca reemplaza tus guardados manuales. Si el iPhone se apaga de golpe o la app falla, se conserva el último guardado completado." = "ऑटोसेव मैन्युअल सेव नहीं बदलता। iPhone अचानक बंद होने या ऐप क्रैश होने पर अंतिम पूरा सेव रहता है।";
 "El autor advierte errores gráficos o rendimiento limitado. No se ha validado este juego en VETA." = "लेखक ने ग्राफ़िक्स की समस्याओं या सीमित प्रदर्शन की चेतावनी दी है। VETA में यह गेम सत्यापित नहीं है।";
@@ -577,6 +578,7 @@
 "La ROM Mega Drive está incompleta o usa un formato no compatible." = "Mega Drive ROM अधूरी है या असमर्थित प्रारूप का उपयोग करती है।";
 "La ROM NES está incompleta." = "NES ROM अधूरी है।";
 "La ROM Nintendo DS está incompleta." = "Nintendo DS ROM अधूरी है।";
+"La ROM Nintendo DS supera el límite de 512 MiB." = "Nintendo DS ROM 512 MiB की सीमा से बड़ी है।";
 "La ROM supera los 64 MB." = "ROM 64 MB से बड़ी है।";
 "La TV debe admitir AirPlay o usar un receptor compatible. La transmisión inalámbrica puede añadir retraso. El sonido sigue la salida de audio de iOS." = "TV में AirPlay या संगत रिसीवर होना चाहिए। वायरलेस स्ट्रीमिंग में देरी हो सकती है। ध्वनि iOS ऑडियो आउटपुट का उपयोग करती है।";
 "La activación es por dispositivo y sesión, no por cuenta. Tener un archivo guardado no confirma que corresponda a este iPhone." = "सक्रियण हर डिवाइस और सत्र के लिए है, खाते के लिए नहीं। सहेजी हुई फ़ाइल से यह पुष्टि नहीं होती कि वह इसी iPhone की है।";

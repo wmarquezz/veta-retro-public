@@ -280,6 +280,7 @@
 "El archivo descargado está vacío." = "下载的文件为空。";
 "El archivo no es un skin VETA válido o pertenece a otra consola." = "文件不是有效的 VETA 皮肤，或属于另一主机。";
 "El archivo no tiene una cabecera válida de %@ o está incompleto." = "文件没有有效的 %@ 文件头，或不完整。";
+"El archivo supera el límite de tamaño permitido para este formato." = "文件超过此格式的大小限制。";
 "El archivo supera los 256 MB. Importa las ROMs por separado." = "文件超过 256 MB。请分别导入 ROM。";
 "El autoguardado nunca reemplaza tus guardados manuales. Si el iPhone se apaga de golpe o la app falla, se conserva el último guardado completado." = "自动存档不会替换手动存档。如果 iPhone 突然关机或应用崩溃，将保留最后完成的存档。";
 "El autor advierte errores gráficos o rendimiento limitado. No se ha validado este juego en VETA." = "作者提示可能存在画面问题或性能限制。此游戏尚未在 VETA 中验证。";
@@ -577,6 +578,7 @@
 "La ROM Mega Drive está incompleta o usa un formato no compatible." = "Mega Drive ROM 不完整或使用了不支持的格式。";
 "La ROM NES está incompleta." = "NES ROM 不完整。";
 "La ROM Nintendo DS está incompleta." = "Nintendo DS ROM 不完整。";
+"La ROM Nintendo DS supera el límite de 512 MiB." = "Nintendo DS ROM 超过 512 MiB 限制。";
 "La ROM supera los 64 MB." = "ROM 超过 64 MB。";
 "La TV debe admitir AirPlay o usar un receptor compatible. La transmisión inalámbrica puede añadir retraso. El sonido sigue la salida de audio de iOS." = "电视须支持 AirPlay 或使用兼容接收器。无线传输可能增加延迟。声音使用 iOS 音频输出。";
 "La activación es por dispositivo y sesión, no por cuenta. Tener un archivo guardado no confirma que corresponda a este iPhone." = "激活针对每台设备和每次会话，不针对账户。保存了文件并不代表它属于此 iPhone。";

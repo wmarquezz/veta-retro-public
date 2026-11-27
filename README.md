@@ -1,3 +1,13 @@
+# VETA Retro 1.0.0 — build247 / source candidate45
+
+[Download the complete247 source package](https://github.com/wmarquezz/veta-retro-public/releases/tag/v1.0.0-rc.45). This attachment is the authoritative corresponding-source snapshot for build247, including pinned engine sources, modifications, dependencies, notices and recipes. The older source files below and in this branch remain historical review snapshots; downloading GitHub's automatic "Source code" ZIP alone is not the complete247 package.
+
+SHA256: `90902a4a3094e7152830b65ba8734757e27163d4c631bca6c06dcf3256de331f`. Archive size: 692088525 bytes. Per-file verification passed for the complete package. Runtime code and artwork are unchanged by the documentation reconciliation.
+
+[Release notes and scope](RELEASE-247.md). This is a source release, not an App Store approval or a binary installation. Original contributions are GPL-3.0-or-later; third parties retain their licenses.
+
+---
+
 # VETA Retro 1.0.0 · candidata 12
 
 Paquete completo de fuentes de la compilación 211. [Notas y numeración](RELEASE-1.0.0-rc.12.md). No requiere los archivos de versiones previas. Las referencias numéricas anteriores de la receta son históricas.

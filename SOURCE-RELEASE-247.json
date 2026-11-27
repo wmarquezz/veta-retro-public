@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "version": "1.0.0",
+  "build": 247,
+  "tag": "v1.0.0-rc.45",
+  "sourceArchive": "https://github.com/wmarquezz/veta-retro-public/releases/download/v1.0.0-rc.45/VETA-Retro-public-sources-247.tar.gz",
+  "sha256": "90902a4a3094e7152830b65ba8734757e27163d4c631bca6c06dcf3256de331f",
+  "bytes": 692088525,
+  "files": 103958,
+  "completeSource": "Release attachment; not the historical branch tree or auto-generated GitHub source ZIP",
+  "appStoreApproved": false
+}
